@@ -1,18 +1,10 @@
-import DocumentHead from "./DocumentHead";
 import TopBar from "./TopBar";
 
-const Header = ({pageTitle, pageDescription}) => {
+const Header = () => {
     return (
-        <>
-            <DocumentHead
-                pageTitle={pageTitle}
-                pageDescription={pageDescription}
-            >
-            </DocumentHead>
-            <header>
-                <TopBar/>
-            </header>
-        </>
+        <header>
+          <TopBar/>
+        </header>
     );
 };
 

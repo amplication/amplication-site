@@ -1,11 +1,14 @@
-import MainLayout from "../components/Layouts/MainLayout"
+import Main from "../components/Layouts/Main"
+import DocumentHead from '../components/Common/DocumentHead';
 
 const Home = () => {
   return (
-    <MainLayout
-      pageTitle='Main Page'
-      pageDescription='Main page description'
-    />
+    <>
+      <DocumentHead
+        pageTitle='some'
+        pageDescription='some' />
+      <Main />
+    </>
   )
 }
 
