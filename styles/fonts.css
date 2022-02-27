@@ -1,7 +1,37 @@
+/**
+ * DMMono
+ */
 @font-face {
     font-family: "dm_mono";
-    src: url("../public/fonts/DMMono-Regular.woff2") format("woff2"),
-    url("../public/fonts/DMMono-Regular.woff") format("woff");
+    src: url("../public/fonts/DMMono/DMMono-Regular.woff2") format("woff2"),
+    url("../public/fonts/DMMono/DMMono-Regular.woff") format("woff");
     font-weight: normal;
+    font-style: normal;
+}
+
+/**
+ * Poppins
+ */
+@font-face {
+    font-family: "poppins";
+    src: url("../public/fonts/poppins/poppins-v19-latin-regular.woff2") format("woff2"),
+    url("../public/fonts/poppins/poppins-v19-latin-regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "poppins";
+    src: url("../public/fonts/poppins/poppins-v19-latin-500.woff2") format("woff2"),
+    url("../public/fonts/poppins/poppins-v19-latin-500.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "poppins";
+    src: url("../public/fonts/poppins/poppins-v19-latin-600.woff2") format("woff2"),
+    url("../public/fonts/poppins/poppins-v19-latin-600.woff") format("woff");
+    font-weight: 600;
     font-style: normal;
 }

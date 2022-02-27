@@ -5,7 +5,7 @@ const DocumentHead = ({pageTitle, pageDescription}) => {
       <Head>
         <title>{pageTitle} - Amplication</title>
         <meta name='description' content={pageDescription}/>
-        <link rel='icon' href='./public/images/favicon.ico'/>
+        <link rel='icon' href='/../public/images/favicon.ico'/>
       </Head>
   );
 }
