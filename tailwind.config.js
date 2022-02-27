@@ -7,6 +7,11 @@ module.exports = {
     fontFamily: {
       'dmmono': ['dm_mono']
     },
+    screens: {
+      'tablet': '640px',
+      'laptop': '992px',
+      'desktop': '1280px',
+    },
     maxWidth: {
       'container': '1600px'
     },
