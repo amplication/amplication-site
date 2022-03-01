@@ -17,12 +17,12 @@ const PostCard = (props) => {
         <div className="px-4">
           <Author
             avatar={ post.author?.profileImage }
-            name={ post.author?.firstName + '' + post.author?.lastName }
+            name={ post.author?.firstName + ' ' + post.author?.lastName }
             date={ post.createdAt }
           />
           <Tags list={post.tags}/>
           <Title level={2} className="text-lg font-semibold mt-4">
-            <Link href={helpers.makePostSlug(post.title, post.id)} passHref>
+            <Link href={helpers.getPostSlug(post.title, post.id)} passHref>
               <a className="text-white hover:text-blue-700 transition-colors">{ post.title }</a>
             </Link>
           </Title>
