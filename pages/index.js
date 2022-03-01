@@ -1,4 +1,6 @@
 import DocumentHead from '../components/Common/DocumentHead';
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 import client from '../services';
 import {gql} from '@apollo/client';
 import Header from '../components/Header';

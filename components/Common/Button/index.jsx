@@ -29,7 +29,7 @@ const Button = ({text, isAlignFull, backgroundColor, isLink, href }) => {
 }
 
 Button.propTypes = {
-  text: PropTypes.string,
+  text: PropTypes.string.isRequired,
   isAlignFull: PropTypes.bool,
   backgroundColor: PropTypes.string,
   isLink: PropTypes.bool,
@@ -37,7 +37,6 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  text: '',
   isAlignFull: false,
   backgroundColor: 'purpleDark',
   isLink: false,
