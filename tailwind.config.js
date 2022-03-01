@@ -14,6 +14,12 @@ module.exports = {
       'desktop': '1280px',
       'extra_large': '1920px',
     },
+    screens: {
+      'tablet': '640px',
+      'laptop': '992px',
+      'desktop': '1280px',
+      'extra_large': '1920px',
+    },
     maxWidth: {
       'container-desktop': '1600px'
     },
