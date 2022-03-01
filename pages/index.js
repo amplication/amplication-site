@@ -1,4 +1,6 @@
 import DocumentHead from '../components/Common/DocumentHead';
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 import client from '../services';
 import {gql} from '@apollo/client';
 import Header from '../components/Header';
@@ -7,15 +9,16 @@ import Posts from '../components/Posts';
 const Home = ({posts, tags}) => (
   <>
     <DocumentHead
-      pageTitle="some"
-      pageDescription="some"
-    />
+      pageTitle="Page Title"
+      pageDescription="Page Description"/>
 
-    <Header/>
-
-    <main className="w-full bg-dark-black-100">
-      <Posts posts={ posts } tags={ tags }/>
-    </main>
+    <div className='page min-h-screen flex flex-col justify-start justify-items-stretch'>
+      <Header />
+      <main className="w-full bg-dark-black-100">
+        <Posts posts={ posts } tags={ tags }/>
+      </main>
+      <Footer />
+    </div>
   </>
 );
 
