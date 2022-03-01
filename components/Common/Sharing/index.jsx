@@ -2,13 +2,13 @@ import Link from "next/link";
 
 const Sharing = () => {
   return (
-    <div className='w-full mb-12'>
-      <p className='font-poppins font-medium text-white text-center text-sm mb-3'>
+    <div className='w-full mb-12 laptop:w-auto laptop:my-0'>
+      <p className='font-poppins font-medium text-white text-center text-sm mb-3 laptop:text-lg laptop:text-left laptop:mb-6'>
         Follow us
       </p>
-      <ul className='flex justify-center items-center flex-wrap'>
+      <ul className='flex justify-center items-center flex-wrap laptop:justify-start'>
         {/*Github*/}
-        <li className='m-3'>
+        <li className='m-3 laptop:ml-0 laptop:mt-0 laptop:mr-7 laptop:mb-7'>
           <Link href='https://twitter.com'>
             <a>
               <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -18,7 +18,7 @@ const Sharing = () => {
           </Link>
         </li>
         {/*LinkedIn*/}
-        <li className='m-3'>
+        <li className='m-3 laptop:ml-0 laptop:mt-0 laptop:mr-7 laptop:mb-7'>
           <Link href='https://linkedin.com'>
             <a>
               <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -28,7 +28,7 @@ const Sharing = () => {
           </Link>
         </li>
         {/*Twitter*/}
-        <li className='m-3'>
+        <li className='m-3 laptop:ml-0 laptop:mt-0 laptop:mr-7 laptop:mb-7'>
           <Link href='https://twitter.com'>
             <a>
               <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">

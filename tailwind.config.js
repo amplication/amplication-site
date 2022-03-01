@@ -26,13 +26,17 @@ module.exports = {
         'container-desktop': '0 56px',
       },
       colors: {
-        'light-blue': '#22273C',
+        'blue-light': '#22273C',
+        'blue-dark': '#090979',
         'purple': '#8D64FF',
         'purple-dark': '#15192C',
         'purple-light': '#2C3249',
         'turquoise': '#48D4E9',
         'gray': '#A3A8B8',
       },
+      backgroundImage: ({
+        'radial-gradient': 'radial-gradient(circle, transparent 0%, transparent 30%, rgba(9,9,121,0.1) 30%, rgba(9,9,121,0.1) 70%, rgba(118,79,229,0) 70%)',
+      })
     },
   },
   plugins: [
