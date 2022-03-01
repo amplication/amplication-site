@@ -17,14 +17,25 @@ module.exports = {
       'container': '1600px'
     },
     extend: {
+      fontSize: {
+        'tiny': '10px',
+        'base': '15px',
+      },
       margin: {
         'container': '0 auto'
       },
       padding: {
         'container': '0 56px'
       },
+      borderColor: {
+        'lite': '#444B66',
+      },
+      lineHeight: {
+        'tag': '1.2',
+      },
       colors: {
         'light-blue': '#22273C',
+        'dark-black-100': '#15192C',
       },
     },
   },
