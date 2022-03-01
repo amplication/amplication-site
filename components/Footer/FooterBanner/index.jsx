@@ -15,7 +15,7 @@ const FooterBanner = () => {
           <Button
             text='Try amplication in 5 minutes'
             isAlignFull={false}
-            backgroundColor='#15192C'
+            backgroundColor='purpleDark'
             isLink={true}
             href='https://amplication.com'
           />

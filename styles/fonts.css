@@ -4,8 +4,8 @@
 @font-face {
     font-family: "dm_mono";
     src: url("../public/fonts/DMMono/DMMono-Regular.woff2") format("woff2"),
-    url("../public/fonts/DMMono/DMMono-Regular.woff") format("woff");
-    url("../public/fonts/DMMono/DMMono-Regular.eot") format("opentype");
+    url("../public/fonts/DMMono/DMMono-Regular.woff") format("woff"),
+    url("../public/fonts/DMMono/DMMono-Regular.eot") format("opentype"),
     url("../public/fonts/DMMono/DMMono-Regular.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
@@ -17,8 +17,8 @@
 @font-face {
     font-family: "poppins";
     src: url("../public/fonts/poppins/poppins-v19-latin-regular.woff2") format("woff2"),
-    url("../public/fonts/poppins/poppins-v19-latin-regular.woff") format("woff");
-    url("../public/fonts/poppins/poppins-v19-latin-regular.svg") format("svg");
+    url("../public/fonts/poppins/poppins-v19-latin-regular.woff") format("woff"),
+    url("../public/fonts/poppins/poppins-v19-latin-regular.svg") format("svg"),
     url("../public/fonts/poppins/poppins-v19-latin-regular.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
@@ -27,8 +27,8 @@
 @font-face {
     font-family: "poppins";
     src: url("../public/fonts/poppins/poppins-v19-latin-500.woff2") format("woff2"),
-    url("../public/fonts/poppins/poppins-v19-latin-500.woff") format("woff");
-    url("../public/fonts/poppins/poppins-v19-latin-500.svg") format("svg");
+    url("../public/fonts/poppins/poppins-v19-latin-500.woff") format("woff"),
+    url("../public/fonts/poppins/poppins-v19-latin-500.svg") format("svg"),
     url("../public/fonts/poppins/poppins-v19-latin-500.ttf") format("truetype");
     font-weight: 500;
     font-style: normal;
@@ -37,8 +37,8 @@
 @font-face {
     font-family: "poppins";
     src: url("../public/fonts/poppins/poppins-v19-latin-600.woff2") format("woff2"),
-    url("../public/fonts/poppins/poppins-v19-latin-600.woff") format("woff");
-    url("../public/fonts/poppins/poppins-v19-latin-600.svg") format("svg");
+    url("../public/fonts/poppins/poppins-v19-latin-600.woff") format("woff"),
+    url("../public/fonts/poppins/poppins-v19-latin-600.svg") format("svg"),
     url("../public/fonts/poppins/poppins-v19-latin-600.ttf") format("truetype");
     font-weight: 600;
     font-style: normal;
