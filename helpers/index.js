@@ -76,9 +76,15 @@ const helpers = {
     return string;
   },
 
-  makePostSlug: ( postTitle, postID ) => {
+  getPostSlug: ( postTitle, postID ) => {
     return `/posts/${postTitle}-${postID}`.split(' ').join('-').toLowerCase();
-  }
+  },
+
+  getPostDate: ( date ) => {
+    let d = new Date( date || 'Dec 27, 2022' );
+
+    return `${d.toLocaleString('en-US', { month: 'long' }).substr(0, 3)} ${d.getDate()}, ${d.getFullYear()}`;
+  },
 };
 
 export default helpers;
