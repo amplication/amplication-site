@@ -8,7 +8,8 @@ const Home = ({posts, tags}) => (
   <>
     <DocumentHead
       pageTitle="some"
-      pageDescription="some"/>
+      pageDescription="some"
+    />
 
     <Header/>
 
@@ -19,10 +20,11 @@ const Home = ({posts, tags}) => (
 );
 
 export const getServerSideProps = async () => {
-  const {data} = await client.query({
-    query: gql`
+  try {
+    const {data} = await client.query({
+      query: gql`
       query {
-        posts(orderBy: { createdAt: Desc }) {
+        posts(take: 3, orderBy: { createdAt: Desc }) {
           id
           title
           content
@@ -45,14 +47,23 @@ export const getServerSideProps = async () => {
         }
       }
     `,
-  });
+    });
+    return {
+      props: {
+        posts: data?.posts,
+        tags: data?.tags,
+      },
+    };
+  } catch (e) {
+    console.error(e)
+  }
 
   return {
     props: {
-      posts: data.posts,
-      tags: data.tags,
+      posts: null,
+      tags: null,
     },
-  };
+  }
 };
 
 export default Home;

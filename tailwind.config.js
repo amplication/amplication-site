@@ -21,6 +21,9 @@ module.exports = {
         'tiny': '10px',
         'base': '15px',
       },
+      gap: {
+        '7.5': '1.875rem',
+      },
       margin: {
         'container': '0 auto'
       },
@@ -36,6 +39,9 @@ module.exports = {
       colors: {
         'light-blue': '#22273C',
         'dark-black-100': '#15192C',
+      },
+      aspectRatio: {
+        'thumbnail': '238 / 125',
       },
     },
   },
