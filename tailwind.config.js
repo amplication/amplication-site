@@ -18,12 +18,25 @@ module.exports = {
       'container-desktop': '1600px'
     },
     extend: {
+      fontSize: {
+        'tiny': '10px',
+        'base': '15px',
+      },
+      gap: {
+        '7.5': '1.875rem',
+      },
       margin: {
         'container-desktop': '0 auto'
       },
       padding: {
         'container': '0 15px',
         'container-desktop': '0 56px',
+      },
+      borderColor: {
+        'lite': '#444B66',
+      },
+      lineHeight: {
+        'tag': '1.2',
       },
       colors: {
         'light-blue': '#22273C',
@@ -33,6 +46,10 @@ module.exports = {
         'purple-light': '#2C3249',
         'turquoise': '#48D4E9',
         'gray': '#A3A8B8',
+        'dark-black-100': '#15192C',
+      },
+      aspectRatio: {
+        'thumbnail': '238 / 125',
       },
       backgroundImage: ({
         'radial-gradient': 'radial-gradient(circle, transparent 0%, transparent 30%, rgba(9,9,121,0.1) 30%, rgba(9,9,121,0.1) 70%, rgba(118,79,229,0) 70%)',
