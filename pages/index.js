@@ -4,9 +4,20 @@ import {gql} from '@apollo/client';
 import Header from '../components/Header';
 import Posts from '../components/Posts';
 import Filter from '../components/Posts/Filter';
-import Footer from "../components/Footer";
+import Footer from '../components/Footer';
+import {useEffect, useState} from 'react';
 
-const Home = ({posts, tags, query}) => {
+const Home = ({posts, tags, postsLoaded}) => {
+  const [postLoading, setPostLoading] = useState(false);
+  const isPostsLoading = (value) => {
+    setPostLoading(value);
+    postsLoaded = false;
+  }
+
+  useEffect(() => {
+    console.log(postLoading)
+  }, []);
+
   return (
     <>
       <DocumentHead
@@ -16,10 +27,16 @@ const Home = ({posts, tags, query}) => {
 
       <Header/>
 
-      <main className="w-full bg-dark-black-100">
-        <Filter tags={tags}/>
+      <main className="w-full bg-dark-black-100 font-poppins">
+        <Filter tags={tags} isPostsLoading={isPostsLoading} />
 
-        <Posts posts={posts}/>
+        {postLoading ? (
+          <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-12 text-white text-center !pb-12'>
+            Posts loading...
+          </div>
+        ) : (
+          <Posts posts={posts} isPostsLoading={isPostsLoading} />
+        )}
       </main>
 
       <Footer/>
@@ -61,8 +78,8 @@ export const getServerSideProps = async (context) => {
     return {
       props: {
         posts: data?.posts,
+        postsLoaded: true,
         tags: data?.tags,
-        query: context.query,
       },
     };
   } catch (e) {
@@ -72,8 +89,8 @@ export const getServerSideProps = async (context) => {
   return {
     props: {
       posts: null,
+      postsLoaded: true,
       tags: null,
-      query: context.query,
     },
   }
 };
