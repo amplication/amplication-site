@@ -9,7 +9,7 @@ const PostCard = (props) => {
   const post = props.data || null;
   if (post) {
     return (
-      <div >
+      <div>
         <Thumbnail
           src={ helpers.isValidUrl( post.featuredImage ) ? post.featuredImage : null }
           alt={ post.title }
