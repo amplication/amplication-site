@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Button from "../../Common/Button";
 import {useState} from 'react';
 
 const menuItems = [
@@ -30,23 +31,24 @@ const menuItems = [
 
 const Menu = () => {
   const [isMobileMenuOpened, setIsMobileMenuOpened] = useState(false);
+
   return(
     <div className=''>
-      <div onClick={() => setIsMobileMenuOpened(!isMobileMenuOpened)} className='open cursor-pointer relative w-h h-6'>
-        <div className={isMobileMenuOpened ? 'menu active' : 'menu'}>
-          <div className="bar"></div>
-          <div className="bar"></div>
-          <div className="bar"></div>
+      <div onClick={() => setIsMobileMenuOpened(!isMobileMenuOpened)} className='cursor-pointer relative w-h h-6 laptop:hidden'>
+        <div className={'burger-menu' + (isMobileMenuOpened ? ' burger-menu--active' : '')}>
+          <div className="burger-menu__item"></div>
+          <div className="burger-menu__item"></div>
+          <div className="burger-menu__item"></div>
         </div>
       </div>
-      <div className={isMobileMenuOpened ? 'mobile-menu mobile-menu-opened' : 'mobile-menu mobile-menu-closed'}>
+      <div className={`menu ${isMobileMenuOpened ? 'menu--opened' : 'menu--closed'}`}>
         <nav>
-          <ul className='flex flex-col justify-start items-stretch'>
+          <ul className='flex flex-col justify-start items-stretch laptop:flex-row justify:end items:center'>
             {menuItems.map((item, index) => {
               return (
-                <li key={index.toString()} className='menu-item'>
+                <li key={index.toString()} className='menu__item laptop:mx-4'>
                   <Link href={item.href}>
-                    <a className='text-white text-xl py-3 inline-block'>
+                    <a className='text-white text-xl py-3 inline-block laptop:text-base laptop:p-1'>
                       {item.title}
                     </a>
                   </Link>
@@ -56,6 +58,12 @@ const Menu = () => {
             }
           </ul>
         </nav>
+        <div className='hidden laptop:inline-block'>
+          <Button
+            text='Login'
+            backgroundColor='purpleBright'
+            />
+        </div>
       </div>
     </div>
   )

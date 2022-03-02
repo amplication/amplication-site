@@ -5,15 +5,12 @@ import logoImageDesktop from '../../../public/images/logo_desktop.svg';
 
 const Logo = () => {
   return (
-    <div className=''>
+    <div>
       <Link href='/'>
-        <a className='inline-block'>
+        <a className='flex justify-center items-center'>
           <Image src={logoImage} />
         </a>
       </Link>
-      {/*<a className='hidden laptop:inline-block'>*/}
-      {/*  <Image src={logoImageDesktop} />*/}
-      {/*</a>*/}
     </div>
   )
 }
