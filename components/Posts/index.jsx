@@ -4,10 +4,7 @@ import PostCard from './PostCard';
 const Posts = ({posts, tags}) => {
   if ( posts ) {
     return (
-      <div
-        itemScope=""
-        itemType="http://schema.org/Blog"
-        className='w-full overflow-hidden max-w-container m-container p-container py-12 bg-dark-black-100 grid grid-cols-3 gap-7.5'>
+      <div className='w-full overflow-hidden max-w-container m-container p-container py-12 bg-dark-black-100 grid grid-cols-3 gap-7.5'>
         { posts.map(post => <PostCard data={ post } key={ post.id }/>) }
       </div>
     )
