@@ -29,6 +29,7 @@ const Home = ({posts, tags, query}) => {
 
 export const getServerSideProps = async (context) => {
   // , where: {tags: {every: {id: {equals: "ckzi8vhkg125901s6hrno1z39"}}}}
+
   try {
     const {data} = await client.query({
       query: gql`
