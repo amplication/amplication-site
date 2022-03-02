@@ -7,6 +7,7 @@ module.exports = {
     fontFamily: {
       'dmmono': ['dm_mono'],
       'poppins': ['poppins'],
+      'ubuntumono': ['ubuntu_mono'],
     },
     screens: {
       'tablet': '640px',
@@ -15,7 +16,8 @@ module.exports = {
       'extra_large': '1920px',
     },
     maxWidth: {
-      'container-desktop': '1600px'
+      'container-desktop': '1600px',
+      'container-desktop-enlarged': '1920px',
     },
     extend: {
       fontSize: {
@@ -31,6 +33,7 @@ module.exports = {
       padding: {
         'container': '0 15px',
         'container-desktop': '0 56px',
+        'container-desktop-enlarged': '0 34px',
       },
       borderColor: {
         'lite': '#444B66',
@@ -44,6 +47,7 @@ module.exports = {
         'blue-dark': '#090979',
         'purple': '#8D64FF',
         'purple-dark': '#15192C',
+        'purple-bright': '#7950ED',
         'purple-light': '#2C3249',
         'turquoise': '#48D4E9',
         'gray': '#A3A8B8',

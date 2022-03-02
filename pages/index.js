@@ -12,13 +12,15 @@ const Home = ({posts, tags}) => (
       pageDescription="some"
     />
 
+    <div className='page min-h-screen flex flex-col justify-start justify-items-stretch'>
     <Header/>
 
-    <main className="w-full bg-dark-black-100">
-      <Posts posts={ posts } tags={ tags }/>
-    </main>
+    {/*<main className="w-full bg-dark-black-100">*/}
+    {/*  <Posts posts={ posts } tags={ tags }/>*/}
+    {/*</main>*/}
 
     <Footer />
+    </div>
   </>
 );
 

@@ -3,3 +3,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .burger-line {
+        @apply absolute w-[22px] h-[3px] bg-white inset-1/2 translate-x-[-50%];
+    }
+    .container-desktop-enlarged {
+        @apply p-container laptop:max-w-container-desktop-enlarged laptop:p-container-desktop-enlarged laptop:m-container-desktop
+    }
+    .mobile-menu-closed {
+
+    }
+    .mobile-menu-opened {
+
+    }
+}
