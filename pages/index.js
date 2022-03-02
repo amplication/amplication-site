@@ -7,7 +7,6 @@ import Filter from '../components/Posts/Filter';
 import Footer from "../components/Footer";
 
 const Home = ({posts, tags, query}) => {
-  console.log(query)
   return (
     <>
       <DocumentHead
@@ -19,6 +18,7 @@ const Home = ({posts, tags, query}) => {
 
       <main className="w-full bg-dark-black-100">
         <Filter tags={tags}/>
+
         <Posts posts={posts}/>
       </main>
 
@@ -28,35 +28,35 @@ const Home = ({posts, tags, query}) => {
 }
 
 export const getServerSideProps = async (context) => {
-  // , where: {tags: {every: {id: {equals: "ckzi8vhkg125901s6hrno1z39"}}}}
+  const postsByTagId = context.query.tagID ? `where: {tags: {some: {id: {equals: "${context.query.tagID}"}}}}, ` : '';
 
   try {
     const {data} = await client.query({
       query: gql`
-      query {
-        posts(take: 9, orderBy: {createdAt: Desc}` + ( context.query && context.query.tagID ? `, where: {tags: {every: {id: {equals: "${context.query.tagID}"}}}}` : `` ) + `) {
-          id
-          title
-          content
-          featuredImage
+        query {
+          posts(take: 9, ${postsByTagId} orderBy: {createdAt: Desc}) {
+            id
+            title
+            content
+            featuredImage
+            tags {
+              id
+              name
+            }
+            author {
+              id
+              firstName
+              lastName
+              profileImage
+            }
+            createdAt
+          }
           tags {
             id
             name
           }
-          author {
-            id
-            firstName
-            lastName
-            profileImage
-          }
-          createdAt
         }
-        tags {
-          id
-          name
-        }
-      }
-    `,
+      `,
     });
     return {
       props: {

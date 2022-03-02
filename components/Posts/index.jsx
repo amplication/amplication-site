@@ -1,7 +1,7 @@
 import PostCard from './PostCard';
 
 const Posts = ({posts}) => {
-  if ( posts ) {
+  if ( Array.isArray(posts) && posts.length ) {
     return (
       <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-12 grid grid-cols-3 gap-7.5'>
         {
