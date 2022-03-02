@@ -1,14 +1,5 @@
 import Link from "next/link";
-let isMenuOpened = false;
-
-const toggleMobileMenu = () => {
-  isMenuOpened = !isMenuOpened;
-  console.log(isMenuOpened);
-}
-
-const getMenuCurrentState = () => {
-  return isMenuOpened;
-}
+import {useState} from 'react';
 
 const menuItems = [
   {
@@ -38,15 +29,16 @@ const menuItems = [
 ];
 
 const Menu = () => {
-  let test = getMenuCurrentState();
+  const [isOpened, setIsOpened] = useState(false);
+
   return(
     <div className='overflow-hidden'>
-      <div onClick={toggleMobileMenu} className='w-6 h-6 cursor-pointer relative'>
+      <div onClick={() => setIsOpened(!isOpened)} className='w-6 h-6 cursor-pointer relative'>
         <span className='burger-line translate-y-[-200%]'></span>
         <span className='burger-line translate-y-[0]'></span>
         <span className='burger-line translate-y-[200%]'></span>
       </div>
-      <div className={isMenuOpened ? 'mobile-menu-opened' : 'mobile-menu-closed'}>
+      <div className={isOpened ? 'mobile-menu-opened' : 'mobile-menu-closed'}>
         <nav>
           <ul>
             {menuItems.map((item, index) => {
