@@ -3,53 +3,72 @@ import client from '../services';
 import {gql} from '@apollo/client';
 import Header from '../components/Header';
 import Posts from '../components/Posts';
-import Footer from "../components/Footer";
+import Filter from '../components/Posts/Filter';
+import Footer from '../components/Footer';
+import {useState} from 'react';
 
-const Home = ({posts, tags}) => (
-  <>
-    <DocumentHead
-      pageTitle="some"
-      pageDescription="some"
-    />
+const Home = ({posts, tags}) => {
+  const [postLoading, setPostLoading] = useState(false);
+  const isPostsLoading = (value) => {
+    setPostLoading(value);
+  }
 
-    <Header/>
+  return (
+    <>
+      <DocumentHead
+        pageTitle="some"
+        pageDescription="some"
+      />
 
-    <main className="w-full bg-dark-black-100">
-      <Posts posts={ posts } tags={ tags }/>
-    </main>
+      <Header/>
 
-    <Footer />
-  </>
-);
+      <main className="w-full bg-dark-black-100 font-poppins">
+        <Filter tags={tags} isPostsLoading={isPostsLoading} />
 
-export const getServerSideProps = async () => {
+        {postLoading ? (
+          <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-12 text-white text-center !pb-12'>
+            Posts loading...
+          </div>
+        ) : (
+          <Posts posts={posts} isPostsLoading={isPostsLoading} />
+        )}
+      </main>
+
+      <Footer/>
+    </>
+  )
+}
+
+export const getServerSideProps = async (context) => {
+  const postsByTagId = context.query.tagID ? `where: {tags: {some: {id: {equals: "${context.query.tagID}"}}}}, ` : '';
+
   try {
     const {data} = await client.query({
       query: gql`
-      query {
-        posts(take: 3, orderBy: { createdAt: Desc }) {
-          id
-          title
-          content
-          featuredImage
+        query {
+          posts(take: 9, ${postsByTagId} orderBy: {createdAt: Desc}) {
+            id
+            title
+            content
+            featuredImage
+            tags {
+              id
+              name
+            }
+            author {
+              id
+              firstName
+              lastName
+              profileImage
+            }
+            createdAt
+          }
           tags {
             id
             name
           }
-          author {
-            id
-            firstName
-            lastName
-            profileImage
-          }
-          createdAt
         }
-        tags {
-          id
-          name
-        }
-      }
-    `,
+      `,
     });
     return {
       props: {
