@@ -1,5 +1,4 @@
 import PostCard from './PostCard';
-import {useEffect} from 'react';
 
 const Posts = ({posts}) => {
   if ( Array.isArray(posts) && posts.length ) {

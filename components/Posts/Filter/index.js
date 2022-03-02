@@ -18,7 +18,6 @@ const Filter = ({tags, isPostsLoading}) => {
     if (tagID) {
       setActiveTagID(tagID);
     }
-    console.log(436346456)
     isPostsLoading(false);
   }, [tags]);
 
