@@ -5,18 +5,13 @@ import Header from '../components/Header';
 import Posts from '../components/Posts';
 import Filter from '../components/Posts/Filter';
 import Footer from '../components/Footer';
-import {useEffect, useState} from 'react';
+import {useState} from 'react';
 
-const Home = ({posts, tags, postsLoaded}) => {
+const Home = ({posts, tags}) => {
   const [postLoading, setPostLoading] = useState(false);
   const isPostsLoading = (value) => {
     setPostLoading(value);
-    postsLoaded = false;
   }
-
-  useEffect(() => {
-    console.log(postLoading)
-  }, []);
 
   return (
     <>
@@ -78,7 +73,6 @@ export const getServerSideProps = async (context) => {
     return {
       props: {
         posts: data?.posts,
-        postsLoaded: true,
         tags: data?.tags,
       },
     };
@@ -89,7 +83,6 @@ export const getServerSideProps = async (context) => {
   return {
     props: {
       posts: null,
-      postsLoaded: true,
       tags: null,
     },
   }
