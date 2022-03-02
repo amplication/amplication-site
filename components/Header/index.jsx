@@ -4,7 +4,7 @@ import BottomBar from "./BottomBar";
 
 const Header = () => {
   return (
-    <header>
+    <header className='fixed w-full top-0 z-10'>
       <TopBar/>
       <MainBar/>
       <BottomBar/>

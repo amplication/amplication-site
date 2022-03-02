@@ -1,14 +1,5 @@
 import Link from "next/link";
-let isMenuOpened = false;
-
-const toggleMobileMenu = () => {
-  isMenuOpened = !isMenuOpened;
-  console.log(isMenuOpened);
-}
-
-const getMenuCurrentState = () => {
-  return isMenuOpened;
-}
+import {useState} from 'react';
 
 const menuItems = [
   {
@@ -38,22 +29,24 @@ const menuItems = [
 ];
 
 const Menu = () => {
-  let test = getMenuCurrentState();
+  const [isMobileMenuOpened, setIsMobileMenuOpened] = useState(false);
   return(
-    <div className='overflow-hidden'>
-      <div onClick={toggleMobileMenu} className='w-6 h-6 cursor-pointer relative'>
-        <span className='burger-line translate-y-[-200%]'></span>
-        <span className='burger-line translate-y-[0]'></span>
-        <span className='burger-line translate-y-[200%]'></span>
+    <div className=''>
+      <div onClick={() => setIsMobileMenuOpened(!isMobileMenuOpened)} className='open cursor-pointer relative w-h h-6'>
+        <div className={isMobileMenuOpened ? 'menu active' : 'menu'}>
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+        </div>
       </div>
-      <div className={isMenuOpened ? 'mobile-menu-opened' : 'mobile-menu-closed'}>
+      <div className={isMobileMenuOpened ? 'mobile-menu mobile-menu-opened' : 'mobile-menu mobile-menu-closed'}>
         <nav>
-          <ul>
+          <ul className='flex flex-col justify-start items-stretch'>
             {menuItems.map((item, index) => {
               return (
-                <li key={index.toString()}>
+                <li key={index.toString()} className='menu-item'>
                   <Link href={item.href}>
-                    <a>
+                    <a className='text-white text-xl py-3 inline-block'>
                       {item.title}
                     </a>
                   </Link>
