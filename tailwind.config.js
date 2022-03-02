@@ -31,6 +31,7 @@ module.exports = {
         'container': '0 56px'
       },
       borderColor: {
+        'light-turquoise': '#41CADD',
         'lite': '#444B66',
       },
       lineHeight: {
