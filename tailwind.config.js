@@ -31,8 +31,10 @@ module.exports = {
       padding: {
         'container': '0 15px',
         'container-desktop': '0 56px',
+        'card': '0 0 61px 0',
       },
       borderColor: {
+        'light-turquoise': '#41CADD',
         'lite': '#444B66',
       },
       lineHeight: {
@@ -47,6 +49,12 @@ module.exports = {
         'turquoise': '#48D4E9',
         'gray': '#A3A8B8',
         'dark-black-100': '#15192C',
+        'blue-dark': '#090979',
+        'purple': '#8D64FF',
+        'purple-dark': '#15192C',
+        'purple-light': '#2C3249',
+        'turquoise': '#48D4E9',
+        'gray': '#A3A8B8',
       },
       aspectRatio: {
         'thumbnail': '238 / 125',
