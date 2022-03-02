@@ -3,7 +3,7 @@ import PostCard from './PostCard';
 const Posts = ({posts}) => {
   if ( posts ) {
     return (
-      <div className='w-full overflow-hidden max-w-container m-container p-container py-12 grid grid-cols-3 gap-7.5'>
+      <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-12 grid grid-cols-3 gap-7.5'>
         {
           posts.slice(0, 3).map((post) => {
             return <PostCard data={ post } key={ post.id }/>
@@ -20,7 +20,7 @@ const Posts = ({posts}) => {
   }
 
   return (
-    <div className='w-full overflow-hidden max-w-container m-container p-container py-12 text-white text-center'>
+    <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-12 text-white text-center !pb-12'>
       Posts not found
     </div>
   )

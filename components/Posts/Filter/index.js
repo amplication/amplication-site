@@ -22,7 +22,7 @@ const Filter = ({tags, updateTagID}) => {
   //console.log(tags);
   if ( tags ) {
     return (
-      <div className='w-full max-w-container m-container p-container py-6 text-white text-lg'>
+      <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop w-full py-6 text-white text-lg !mb-12'>
         <Link href={''}>
           <span
             onClick={() => setQueryTagID()}
@@ -45,7 +45,7 @@ const Filter = ({tags, updateTagID}) => {
   }
 
   return (
-    <div className='w-full text-white text-center'>
+    <div className='w-full text-white text-center py-6 !mb-12'>
       Tags not found
     </div>
   )

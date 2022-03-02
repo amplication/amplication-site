@@ -6,31 +6,34 @@ import Posts from '../components/Posts';
 import Filter from '../components/Posts/Filter';
 import Footer from "../components/Footer";
 
-const Home = ({posts, tags}) => (
-  <>
-    <DocumentHead
-      pageTitle="some"
-      pageDescription="some"
-    />
+const Home = ({posts, tags, query}) => {
+  console.log(query)
+  return (
+    <>
+      <DocumentHead
+        pageTitle="some"
+        pageDescription="some"
+      />
 
-    <Header/>
+      <Header/>
 
-    <main className="w-full bg-dark-black-100">
-      <Filter tags={tags} />
-      <Posts posts={posts} />
-    </main>
+      <main className="w-full bg-dark-black-100">
+        <Filter tags={tags}/>
+        <Posts posts={posts}/>
+      </main>
 
-    <Footer />
-  </>
-);
+      <Footer/>
+    </>
+  )
+}
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async (context) => {
   // , where: {tags: {every: {id: {equals: "ckzi8vhkg125901s6hrno1z39"}}}}
   try {
     const {data} = await client.query({
       query: gql`
       query {
-        posts(take: 9, orderBy: {createdAt: Desc}) {
+        posts(take: 9, orderBy: {createdAt: Desc}` + ( context.query && context.query.tagID ? `, where: {tags: {every: {id: {equals: "${context.query.tagID}"}}}}` : `` ) + `) {
           id
           title
           content
@@ -58,6 +61,7 @@ export const getServerSideProps = async () => {
       props: {
         posts: data?.posts,
         tags: data?.tags,
+        query: context.query,
       },
     };
   } catch (e) {
@@ -68,6 +72,7 @@ export const getServerSideProps = async () => {
     props: {
       posts: null,
       tags: null,
+      query: context.query,
     },
   }
 };
