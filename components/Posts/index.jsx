@@ -1,5 +1,4 @@
 import PostCard from './PostCard';
-import {useEffect} from 'react';
 
 const Posts = ({posts}) => {
   if ( Array.isArray(posts) && posts.length ) {
@@ -18,6 +17,17 @@ const Posts = ({posts}) => {
             })
           }
         </div>
+
+        {posts.length >= 9 && (
+          <div className='pt-8 pb-8 text-center'>
+            <button
+              className='w-[118px] py-2 px-4 rounded text-white transition bg-dark-black-70 hover:bg-purple'
+              onClick={() => setPostLimit((prev) => prev + 9)}
+            >
+              Load More
+            </button>
+          </div>
+        )}
       </>
     )
   }
