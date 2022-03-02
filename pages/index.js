@@ -4,24 +4,25 @@ import {gql} from '@apollo/client';
 import Header from '../components/Header';
 import Posts from '../components/Posts';
 import Filter from '../components/Posts/Filter';
+import Footer from "../components/Footer";
 
-const Home = ({posts, tags}) => {
-  return (
-    <>
-      <DocumentHead
-        pageTitle="some"
-        pageDescription="some"
-      />
+const Home = ({posts, tags}) => (
+  <>
+    <DocumentHead
+      pageTitle="some"
+      pageDescription="some"
+    />
 
-      <Header/>
+    <Header/>
 
-      <main className="w-full bg-dark-black-100">
-        <Filter tags={tags} />
-        <Posts posts={posts} />
-      </main>
-    </>
-  )
-};
+    <main className="w-full bg-dark-black-100">
+      <Filter tags={tags} />
+      <Posts posts={posts} />
+    </main>
+
+    <Footer />
+  </>
+);
 
 export const getServerSideProps = async () => {
   // , where: {tags: {every: {id: {equals: "ckzi8vhkg125901s6hrno1z39"}}}}
