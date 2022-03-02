@@ -3,6 +3,7 @@ import client from '../services';
 import {gql} from '@apollo/client';
 import Header from '../components/Header';
 import Posts from '../components/Posts';
+import Footer from "../components/Footer";
 
 const Home = ({posts, tags}) => (
   <>
@@ -16,6 +17,8 @@ const Home = ({posts, tags}) => (
     <main className="w-full bg-dark-black-100">
       <Posts posts={ posts } tags={ tags }/>
     </main>
+
+    <Footer />
   </>
 );
 
