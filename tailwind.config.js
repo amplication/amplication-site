@@ -28,7 +28,8 @@ module.exports = {
         'container': '0 auto'
       },
       padding: {
-        'container': '0 56px'
+        'container': '0 56px',
+        'card': '0 0 61px 0',
       },
       borderColor: {
         'light-turquoise': '#41CADD',

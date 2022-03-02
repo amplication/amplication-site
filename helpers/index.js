@@ -83,7 +83,7 @@ const helpers = {
   getPostDate: ( date ) => {
     let d = new Date( date || 'Dec 27, 2022' );
 
-    return `${d.toLocaleString('en-US', { month: 'long' }).substr(0, 3)} ${d.getDate()}, ${d.getFullYear()}`;
+    return `${d.toLocaleString('en-US', { month: 'long' }).substring(0, 3)} ${d.getDate()}, ${d.getFullYear()}`;
   },
 };
 

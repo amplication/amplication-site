@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router';
 import DocumentHead from '../components/Common/DocumentHead';
 import client from '../services';
 import {gql} from '@apollo/client';
@@ -7,16 +6,6 @@ import Posts from '../components/Posts';
 import Filter from '../components/Posts/Filter';
 
 const Home = ({posts, tags}) => {
-  const router = useRouter();
-  const updateTagID = (value) => {
-    console.log(value);
-    router.push({
-      query: {
-        tagID: value,
-      },
-    });
-  }
-
   return (
     <>
       <DocumentHead
@@ -27,7 +16,7 @@ const Home = ({posts, tags}) => {
       <Header/>
 
       <main className="w-full bg-dark-black-100">
-        <Filter tags={tags} updateTagID={updateTagID} />
+        <Filter tags={tags} />
         <Posts posts={posts} />
       </main>
     </>
@@ -40,7 +29,7 @@ export const getServerSideProps = async () => {
     const {data} = await client.query({
       query: gql`
       query {
-        posts(take: 9, orderBy: {createdAt: Desc}, where: {tags: {every: {id: {equals: ""}}}}) {
+        posts(take: 9, orderBy: {createdAt: Desc}) {
           id
           title
           content
