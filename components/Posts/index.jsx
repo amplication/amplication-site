@@ -37,6 +37,8 @@ const Posts = ({posts}) => {
       if (!posts.length) {
         setLoadMore(false);
       }
+    } else {
+      setPostsList([]);
     }
   }, [posts]);
 
