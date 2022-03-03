@@ -43,3 +43,16 @@
     font-weight: 600;
     font-style: normal;
 }
+
+/**
+ * Ubuntu Mono
+ */
+@font-face {
+    font-family: "ubuntu_mono";
+    src: url("../public/fonts/ubuntu-mono/ubuntu-mono-v14-latin-regular.woff2") format("woff2"),
+    url("../public/fonts/ubuntu-mono/ubuntu-mono-v14-latin-regular.woff") format("woff"),
+    url("../public/fonts/ubuntu-mono/ubuntu-mono-v14-latin-regular.svg") format("svg"),
+    url("../public/fonts/ubuntu-mono/ubuntu-mono-v14-latin-regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}

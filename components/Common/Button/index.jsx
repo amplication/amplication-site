@@ -4,6 +4,7 @@ import Link from "next/link";
 // Background Colors
 const ButtonColorsConfig = {
   purpleDark: 'bg-purple-dark',
+  purpleBright: 'bg-purple-bright',
 };
 
 const Button = ({text, isAlignFull, backgroundColor, isLink, href }) => {

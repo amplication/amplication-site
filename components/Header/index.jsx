@@ -1,9 +1,13 @@
 import TopBar from "./TopBar";
+import MainBar from "./MainBar";
+import BottomBar from "./BottomBar";
 
 const Header = () => {
   return (
-    <header>
+    <header className='fixed w-full top-0 z-10 laptop:static'>
       <TopBar/>
+      <MainBar/>
+      <BottomBar/>
     </header>
   );
 };
