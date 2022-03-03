@@ -20,8 +20,6 @@ const Home = ({posts, tags}) => {
         pageDescription="some"
       />
 
-      <Header/>
-
       <div className='page min-h-screen flex flex-col justify-start justify-items-stretch overflow-hidden pt-[65px] laptop:pt-0 bg-purple-dark'>
         <Header/>
 
