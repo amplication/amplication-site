@@ -16,7 +16,7 @@ const Home = ({posts, tags}) => {
 
       <Header/>
 
-      <main className="w-full bg-dark-black-100 font-poppins">
+      <main className="w-full bg-dark-black-100 font-poppins overflow-hidden">
         <Filter tags={tags} />
 
         <Posts posts={posts} />
