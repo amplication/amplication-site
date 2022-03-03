@@ -19,7 +19,6 @@ const Home = ({posts, tags}) => {
 
         <main className="w-full bg-dark-black-100 font-poppins overflow-hidden">
           <Filter tags={tags} />
-
           <Posts posts={posts} />
         </main>
 
