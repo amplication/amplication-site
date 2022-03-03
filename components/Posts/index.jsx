@@ -1,4 +1,5 @@
 import PostCard from './PostCard';
+import PostHot from './PostHot';
 import Link from 'next/link';
 import {useRouter} from 'next/router';
 import {useEffect, useState} from "react";
@@ -43,11 +44,11 @@ const Posts = ({posts}) => {
     return (
       <>
         { hotPost &&
-        (
-          <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-12 grid grid-cols-3 gap-7.5'>
-            HOT POST
-          </div>
-        )
+          (
+            <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop col-span-3'>
+              <PostHot data={hotPost} />
+            </div>
+          )
         }
 
         <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-12 grid grid-cols-3 gap-7.5'>
@@ -65,17 +66,17 @@ const Posts = ({posts}) => {
         </div>
 
         { ( ( loadMore || typeof page === 'undefined' ) && postsList.length >= 3 ) &&
-        (
-          <div className='pt-8 pb-8 text-center'>
-            <Link href={`?page=${page ? parseInt(page) + 1 : 2}` + (tagID ? `&tagID=${tagID}` : '')}>
-              <a
-                //onClick={() => router.push(setQuery(page, tagID))}
-                className='w-[118px] py-2 px-4 rounded text-white transition bg-dark-black-70 hover:bg-purple'>
-                Load More
-              </a>
-            </Link>
-          </div>
-        )
+          (
+            <div className='pt-8 pb-8 text-center'>
+              <Link href={`?page=${page ? parseInt(page) + 1 : 2}` + (tagID ? `&tagID=${tagID}` : '')}>
+                <a
+                  //onClick={() => router.push(setQuery(page, tagID))}
+                  className='w-[118px] py-2 px-4 rounded text-white transition bg-dark-black-70 hover:bg-purple'>
+                  Load More
+                </a>
+              </Link>
+            </div>
+          )
         }
       </>
     )
