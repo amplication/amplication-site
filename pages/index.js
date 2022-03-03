@@ -17,16 +17,15 @@ const Home = ({posts, tags}) => {
       <div className='page min-h-screen flex flex-col justify-start justify-items-stretch overflow-hidden pt-[65px] laptop:pt-0 bg-purple-dark'>
         <Header/>
 
-        <main className="w-full bg-dark-black-100 font-poppins">
+        <main className="w-full bg-dark-black-100 font-poppins overflow-hidden">
           <Filter tags={tags} />
-
           <Posts posts={posts} />
         </main>
 
         <Footer />
       </div>
     </>
-  );
+  )
 }
 
 export const getServerSideProps = async (context) => {
