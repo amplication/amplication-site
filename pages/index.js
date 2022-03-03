@@ -14,17 +14,19 @@ const Home = ({posts, tags}) => {
         pageDescription="some"
       />
 
-      <Header/>
+      <div className='page min-h-screen flex flex-col justify-start justify-items-stretch overflow-hidden pt-[65px] laptop:pt-0 bg-purple-dark'>
+        <Header/>
 
-      <main className="w-full bg-dark-black-100 font-poppins">
-        <Filter tags={tags} />
+        <main className="w-full bg-dark-black-100 font-poppins">
+          <Filter tags={tags} />
 
-        <Posts posts={posts} />
-      </main>
+          <Posts posts={posts} />
+        </main>
 
-      <Footer/>
+        <Footer />
+      </div>
     </>
-  )
+  );
 }
 
 export const getServerSideProps = async (context) => {
