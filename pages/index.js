@@ -39,6 +39,7 @@ const Home = ({posts, tags}) => {
       </div>
     </>
   );
+}
 
 export const getServerSideProps = async (context) => {
   const postsByTagId = context.query.tagID ? `where: {tags: {some: {id: {equals: "${context.query.tagID}"}}}}, ` : '';
