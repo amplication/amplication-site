@@ -45,6 +45,12 @@ module.exports = {
       },
       colors: {
         'light-blue': '#22273C',
+        'blue-dark': '#090979',
+        'purple': '#8D64FF',
+        'purple-dark': '#15192C',
+        'purple-light': '#2C3249',
+        'turquoise': '#48D4E9',
+        'gray': '#A3A8B8',
         'dark-black-100': '#15192C',
         'blue-dark': '#090979',
         'purple': '#8D64FF',
