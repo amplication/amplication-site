@@ -2,24 +2,22 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
-const Filter = ({tags, isPostsLoading}) => {
+const Filter = ({tags}) => {
   const [activeTagID, setActiveTagID] = useState('');
   const tagClass = 'px-4 pb-2 cursor-pointer border-b-2 border-transparent inline-block';
 
   const router = useRouter();
-  const { tagID } = router.query
+  const { tagID } = router.query;
+
+  useEffect(() => {
+    if ( tagID ) {
+      setActiveTagID(tagID);
+    }
+  }, [tags]);
 
   const setQueryTagID = ( tagID = '' ) => {
     setActiveTagID(tagID);
-    isPostsLoading(true);
   }
-
-  useEffect(() => {
-    if (tagID) {
-      setActiveTagID(tagID);
-    }
-    isPostsLoading(false);
-  }, [tags]);
 
   if ( tags ) {
     return (
