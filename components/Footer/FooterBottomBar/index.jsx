@@ -2,11 +2,11 @@ import Link from "next/link";
 
 const FooterBottomBar = () => {
   return (
-    <div className='w-full'>
+    <div className='w-full relative'>
       <ul className='w-full flex justify-start items-center'>
         <li className='w-1/2 py-3.5 laptop:py-8'>
           <p className='text-white text-xs text-gray font-poppins laptop:text-base'>
-            ©2020 amplication
+            {`©${new Date().getFullYear()} amplication`}
           </p>
         </li>
         <li className='w-1/2 text-right py-3.5 laptop:py-8'>

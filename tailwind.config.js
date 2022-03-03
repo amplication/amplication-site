@@ -49,6 +49,7 @@ module.exports = {
         'purple-dark': '#15192C',
         'purple-bright': '#7950ED',
         'purple-light': '#2C3249',
+        'pink': '#F85B6E',
         'turquoise': '#48D4E9',
         'gray': '#A3A8B8',
       },
