@@ -22,21 +22,25 @@ const Home = ({posts, tags}) => {
 
       <Header/>
 
-      <main className="w-full bg-dark-black-100 font-poppins">
-        <Filter tags={tags} isPostsLoading={isPostsLoading} />
+      <div className='page min-h-screen flex flex-col justify-start justify-items-stretch overflow-hidden pt-[65px] laptop:pt-0 bg-purple-dark'>
+        <Header/>
 
-        {postLoading ? (
-          <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-12 text-white text-center !pb-12'>
-            Posts loading...
-          </div>
-        ) : (
-          <Posts posts={posts} isPostsLoading={isPostsLoading} />
-        )}
-      </main>
+        <main className="w-full bg-dark-black-100 font-poppins">
+          <Filter tags={tags} isPostsLoading={isPostsLoading} />
 
-      <Footer/>
+          {postLoading ? (
+            <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-12 text-white text-center !pb-12'>
+              Posts loading...
+            </div>
+          ) : (
+            <Posts posts={posts} isPostsLoading={isPostsLoading} />
+          )}
+        </main>
+
+        <Footer />
+      </div>
     </>
-  )
+  );
 }
 
 export const getServerSideProps = async (context) => {

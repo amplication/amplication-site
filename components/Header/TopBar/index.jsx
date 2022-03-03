@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const TopBar = () => {
   return (
-    <div className='w-full bg-light-blue'>
+    <div className='w-full bg-light-blue laptop:mb-[-1px]'>
       <div className='w-full hidden laptop:flex justify-center items-center max-w-container m-container p-container py-3'>
         <span className='inline-block mx-1.5'>
           <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
