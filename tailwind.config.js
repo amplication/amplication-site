@@ -34,8 +34,10 @@ module.exports = {
         'container': '0 15px',
         'container-desktop': '0 56px',
         'container-desktop-enlarged': '0 34px',
+        'card': '0 0 61px 0',
       },
       borderColor: {
+        'light-turquoise': '#41CADD',
         'lite': '#444B66',
       },
       lineHeight: {
