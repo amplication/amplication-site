@@ -3,3 +3,87 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+
+    .container-desktop-enlarged {
+        @apply p-container laptop:max-w-container-desktop-enlarged laptop:p-container-desktop-enlarged laptop:m-container-desktop
+    }
+
+    .menu {
+        transition: all 0.4s ease-in-out;
+        max-height: calc(100vh - 65px);
+        height: calc(100vh - 65px);
+        @apply absolute w-full top-full z-10 overflow-y-auto bg-purple-dark container-desktop-enlarged pt-5 pb-7 laptop:flex laptop:justify-end laptop:items-center laptop:static laptop:inset-auto laptop:h-auto laptop:p-0;
+    }
+
+    .menu--closed {
+        @apply left-full laptop:inset-auto;
+    }
+
+    .menu--opened {
+        @apply left-0 laptop:inset-auto;
+    }
+
+    .burger-menu {
+        @apply w-6 h-6 relative cursor-pointer duration-300;
+    }
+
+    .burger-menu__item {
+        @apply absolute w-6 h-[3px] block bg-white duration-[400];
+    }
+
+    .burger-menu__item:nth-of-type(1) {
+        transition: top 0.3s ease 0.3s,
+            transform 0.3s ease-out 0.1s;
+        @apply top-[1.5px];
+    }
+
+    .burger-menu__item:nth-of-type(2) {
+        transition: ease 0.3s 0.3s;
+        @apply top-[10.5px]
+    }
+
+    .burger-menu__item:nth-of-type(3) {
+        transition: top 0.3s ease 0.3s,
+            transform 0.3s ease-out 0.1s;
+        @apply top-[19.5px]
+    }
+
+    .burger-menu.burger-menu--active .burger-menu__item:nth-of-type(1) {
+        @apply top-[10.5px];
+        transform: rotate(45deg);
+        transition: top 0.3s ease 0.1s,
+            transform 0.3s ease-out 0.5s;
+    }
+
+    .burger-menu.burger-menu--active .burger-menu__item:nth-of-type(2) {
+        @apply opacity-0;
+    }
+
+    .burger-menu.burger-menu--active .burger-menu__item:nth-of-type(3) {
+        @apply top-[10.5px];
+        transform: rotate(-45deg);
+        transition: top 0.3s ease 0.1s,
+            transform 0.3s ease-out 0.5s;
+    }
+
+    .menu .menu__item {
+        @apply opacity-0 laptop:opacity-100;
+    }
+
+    .menu--opened .menu__item {
+        animation: menu-item-anim .6s forwards 0.4s ease-in-out;
+    }
+
+    @keyframes menu-item-anim {
+        from {
+            transform: translateY(30%);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+}

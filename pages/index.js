@@ -20,24 +20,25 @@ const Home = ({posts, tags}) => {
         pageDescription="some"
       />
 
-      <Header/>
+      <div className='page min-h-screen flex flex-col justify-start justify-items-stretch overflow-hidden pt-[65px] laptop:pt-0 bg-purple-dark'>
+        <Header/>
 
-      <main className="w-full bg-dark-black-100 font-poppins">
-        <Filter tags={tags} isPostsLoading={isPostsLoading} />
+        <main className="w-full bg-dark-black-100 font-poppins">
+          <Filter tags={tags} isPostsLoading={isPostsLoading} />
 
-        {postLoading ? (
-          <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-12 text-white text-center !pb-12'>
-            Posts loading...
-          </div>
-        ) : (
-          <Posts posts={posts} isPostsLoading={isPostsLoading} />
-        )}
-      </main>
+          {postLoading ? (
+            <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-12 text-white text-center !pb-12'>
+              Posts loading...
+            </div>
+          ) : (
+            <Posts posts={posts} isPostsLoading={isPostsLoading} />
+          )}
+        </main>
 
-      <Footer/>
+        <Footer />
+      </div>
     </>
-  )
-}
+  );
 
 export const getServerSideProps = async (context) => {
   const postsByTagId = context.query.tagID ? `where: {tags: {some: {id: {equals: "${context.query.tagID}"}}}}, ` : '';
