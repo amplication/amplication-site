@@ -40,6 +40,9 @@ module.exports = {
         'light-turquoise': '#41CADD',
         'lite': '#444B66',
       },
+      boxShadow: {
+        'hot-post': '0px 44px 48px -24px rgba(9, 11, 20, 0.3)',
+      },
       lineHeight: {
         'tag': '1.2',
       },
@@ -58,6 +61,7 @@ module.exports = {
       },
       aspectRatio: {
         'thumbnail': '238 / 125',
+        'hot': '62 / 35',
       },
       backgroundImage: ({
         'radial-gradient': 'radial-gradient(circle, transparent 0%, transparent 30%, rgba(9,9,121,0.1) 30%, rgba(9,9,121,0.1) 70%, rgba(118,79,229,0) 70%)',
