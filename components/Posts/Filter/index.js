@@ -10,9 +10,7 @@ const Filter = ({tags}) => {
   const { tagID } = router.query;
 
   useEffect(() => {
-    if ( tagID ) {
-      setActiveTagID(tagID);
-    }
+    setActiveTagID(typeof tagID !== 'undefined' ? tagID : '');
   }, [tags]);
 
   const setQueryTagID = ( tagID = '' ) => {
