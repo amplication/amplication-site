@@ -1,4 +1,5 @@
 import PostCard from './PostCard';
+import PostHot from './PostHot';
 import Link from 'next/link';
 import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
@@ -42,11 +43,11 @@ const Posts = ({posts}) => {
     return (
       <>
         { hotPost &&
-        (
-          <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-12 grid grid-cols-3 gap-7.5'>
-            HOT POST
-          </div>
-        )
+          (
+            <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop col-span-3'>
+              <PostHot data={hotPost} />
+            </div>
+          )
         }
 
         <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-12 grid grid-cols-3 gap-7.5'>
