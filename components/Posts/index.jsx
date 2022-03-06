@@ -51,14 +51,14 @@ const Posts = ({posts}) => {
           )
         }
 
-        <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-12 grid grid-cols-3 gap-7.5'>
+        <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-6 laptop:py-12 grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-7.5'>
           {
             postsList.slice(0, 3).map((post) => {
               return <PostCard data={ post } key={ post.id }/>
             })
           }
 
-          <div className='p-card col-span-3 text-white text-center' key='subscribe'>
+          <div className='col-span-1 tablet:col-span-2 laptop:col-span-3 text-white text-center py-6 laptop:pb-[61px] laptop:pt-0' key='subscribe'>
             insert the subscription form here
           </div>
 

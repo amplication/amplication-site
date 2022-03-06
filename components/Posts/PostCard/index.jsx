@@ -9,12 +9,12 @@ const PostCard = (props) => {
   const post = props.data || null;
   if (post) {
     return (
-      <div className='p-card'>
+      <div className='border border-solid border-dark-black-70 laptop:border-0 laptop:border-transparent rounded-2xl pb-6 laptop:pb-[61px]'>
         <Thumbnail
           src={ helpers.isValidUrl( post.featuredImage ) ? post.featuredImage : null }
           alt={ post.title }
         />
-        <div className="px-4">
+        <div className="px-6 laptop:px-4">
           <Author
             avatar={ post.author?.profileImage }
             name={ post.author?.firstName + ' ' + post.author?.lastName }
@@ -26,7 +26,7 @@ const PostCard = (props) => {
               <a className="text-white hover:text-blue-700 transition-colors text-ellipsis display-block">{ post.title }</a>
             </Link>
           </Title>
-          <div className="text-base text-white leading-6 mt-2 line-clamp-2">
+          <div className="hidden text-base text-white leading-6 mt-2 laptop:line-clamp-2">
             {helpers.removeMarkdown( post.content )}
           </div>
         </div>
