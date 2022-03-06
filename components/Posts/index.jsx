@@ -15,7 +15,7 @@ const Posts = ({posts}) => {
   const { tagID, page } = router.query;
 
   useEffect(() => {
-    if ( Array.isArray(posts) && posts.length ) {
+    if (Array.isArray(posts) && posts.length) {
       if (
         typeof tagID === 'undefined' && typeof page === 'undefined'   // is home page
       ) {
