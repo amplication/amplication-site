@@ -7,7 +7,6 @@ import Link from 'next/link';
 
 const PostHot = (props) => {
   const post = props.data || null;
-  console.log(post);
   if (post) {
     return (
       <div className='flex relative rounded-2xl overflow-hidden mb-[100px] bg-light-blue shadow-hot-post'>
