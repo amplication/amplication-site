@@ -20,8 +20,9 @@ const Posts = ({posts}) => {
       if (
         typeof tagID === 'undefined' && typeof page === 'undefined'   // is home page
       ) {
-      //if ( ( typeof page === 'undefined' || parseInt(page) < 2 ) && ( hotPost === null || typeof tagID === 'undefined' ) ) {
         setHotPost(posts.shift());
+      } else {
+        setHotPost(null);
       }
 
       if (typeof page === 'undefined') {
@@ -69,15 +70,15 @@ const Posts = ({posts}) => {
         </div>
 
         { ( ( loadMore || typeof page === 'undefined' ) && postsList.length >= postPerPage ) &&
-        (
-          <div className='pt-8 pb-8 text-center'>
-            <Link href={`?page=${page ? parseInt(page) + 1 : 2}` + (tagID ? `&tagID=${tagID}` : '')} scroll={false}>
-              <a className='w-[118px] py-2 px-4 rounded text-white transition bg-dark-black-70 hover:bg-purple'>
-                Load More
-              </a>
-            </Link>
-          </div>
-        )
+          (
+            <div className='pt-8 pb-8 text-center'>
+              <Link href={`?page=${page ? parseInt(page) + 1 : 2}` + (tagID ? `&tagID=${tagID}` : '')} scroll={false}>
+                <a className='w-[118px] py-2 px-4 rounded text-white transition bg-dark-black-70 hover:bg-purple'>
+                  Load More
+                </a>
+              </Link>
+            </div>
+          )
         }
       </>
     )
