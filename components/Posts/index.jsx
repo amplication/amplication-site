@@ -21,6 +21,8 @@ const Posts = ({posts}) => {
         typeof tagID === 'undefined' && typeof page === 'undefined'   // is home page
       ) {
         setHotPost(posts.shift());
+      } else {
+        setHotPost(null);
       }
 
       if (typeof page === 'undefined') {
