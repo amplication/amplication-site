@@ -1,4 +1,5 @@
 import PostCard from './PostCard';
+import SubscribeForm from "../Common/SubscribeForm";
 import PostHot from './PostHot';
 import Link from 'next/link';
 import {useRouter} from 'next/router';
