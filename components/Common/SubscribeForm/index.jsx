@@ -1,0 +1,190 @@
+import {useState} from 'react';
+import Select from 'react-select';
+import jsonp from 'jsonp';
+
+const SubscribeForm = () => {
+  const fieldErrorMessage = 'This field is required';
+  const [email, setEmail] = useState('');
+  const [emailFieldError, setEmailFieldError] = useState(false);
+  const [fullName, setFullName] = useState('');
+  const [fullNameFieldError, setFullNameFieldError] = useState(false);
+  const [source, setSource] = useState('Other');
+  const [sourceFieldError, setSourceFieldError] = useState(false);
+  const [formSuccess, setFormSuccess] = useState(null);
+  const [isWaitingForResponse, setIsWaitingForResponse] = useState(false);
+  const [afterFormSubmitMessage, setAfterFormSubmitMessage] = useState('');
+  const sourceOptions = [
+    {value: 'Reddit', label: 'Reddit'},
+    {value: 'Friend told me', label: 'Friend told me'},
+    {value: 'Colleague told me', label: 'Colleague told me'},
+    {value: 'Other', label: 'Other'},
+  ];
+  const selectCustomStyles = {
+    control: (base, state) => ({
+      ...base,
+      background: '#15192C',
+      borderRadius: '0.5rem',
+      borderColor: sourceFieldError ? '#CC2C3F' : '#444B66',
+      padding: 0,
+      boxShadow: null,
+      textAlign: 'left',
+      color: '#A3A8B8',
+    }),
+    menu: base => ({
+      ...base,
+      borderRadius: '0.5rem',
+      marginTop: 0,
+      background: '#15192C',
+      color: '#A3A8B8'
+    }),
+    menuList: base => ({
+      ...base,
+      padding: 0,
+      background: '#15192C',
+      color: '#A3A8B8'
+    }),
+    option: (provided, state) => ({
+      ...provided,
+      color: '#A3A8B8',
+      transition: 'all 0.2s ease-in-out',
+      '&:hover': {
+        background: '#A3A8B8',
+        color: '#15192C',
+      }
+    }),
+    singleValue: (provided, state) => ({
+      ...provided,
+      color: '#ffffff',
+    })
+  };
+
+  const submitSubscriptionForm = async (e) => {
+    e.preventDefault();
+
+    setIsWaitingForResponse(true);
+
+    // Validation
+    let isValid = true;
+    if (!email) {
+      isValid = false;
+      setEmailFieldError(true);
+    } else {
+      setEmailFieldError(false);
+    }
+    if (!fullName) {
+      isValid = false;
+      setFullNameFieldError(true);
+    } else {
+      setFullNameFieldError(false);
+    }
+    if (!source.value) {
+      isValid = false;
+      setSourceFieldError(true);
+    } else {
+      setSourceFieldError(false);
+    }
+    if (!isValid) {
+      setIsWaitingForResponse(false);
+      return;
+    }
+    setAfterFormSubmitMessage('');
+    setFormSuccess(null);
+
+    let host = 'https://dev.us5.list-manage.com/subscribe/post-json?';
+    let data = {
+      u: 'cc391beefd07bdde0f03f8e95',
+      id: '39a8feead1',
+      c: 'jQuery190022527047066005612_1646552810702',
+      EMAIL: email,
+      FNAME: fullName,
+      SOURCE: source.value,
+      b_cc391beefd07bdde0f03f8e95_39a8feead1: '',
+      subscribe: 'Subscribe',
+      _: '1646552810703',
+    };
+    host += new URLSearchParams(data).toString();
+
+    jsonp(host, {
+      param: 'c'
+    }, function (err, data) {
+      if (err) {
+        console.log('err', err);
+        setAfterFormSubmitMessage('Something is wrong');
+        setFormSuccess(false);
+      } else if (data.result !== "success" || ! 'result' in data) {
+        setAfterFormSubmitMessage(('msg' in data ? data.msg : 'Something is wrong'));
+        setFormSuccess(false);
+      } else {
+        setAfterFormSubmitMessage(data.msg);
+        setFormSuccess(true);
+      }
+
+      setIsWaitingForResponse(false);
+    });
+  }
+
+  let loaderClasses = 'w-full h-full absolute l-0 t-0 rounded-2xl transition-all opacity-50 pointer-events-none';
+  loaderClasses += isWaitingForResponse ? ' bg-purple-light z-10 pointer-events-auto' : '';
+
+  return (
+    <div className='w-full rounded-2xl bg-purple-light bg-form-pattern-1-mobile bg-no-repeat bg-right-top laptop:bg-form-pattern-1-desktop transition-all'>
+      <div className='w-full rounded-2xl bg-form-pattern-2-mobile bg-no-repeat bg-left-bottom laptop:bg-form-pattern-2-desktop relative'>
+        <div className={loaderClasses}></div>
+        <div className='w-full px-4 py-16 max-w-[600px] laptop:max-w-[100%] mx-auto laptop:flex laptop:items-center laptop:justify-between laptop:px-16 laptop:py-14 laptop:max-w-[1436px] relative'>
+          {formSuccess &&
+          <h2 className='w-full text-center'>{afterFormSubmitMessage}</h2>
+          }
+          {!formSuccess &&
+          <>
+            <h2 className='text-white text-lg font-poppins font-bold text-left mb-6 laptop:w-[calc(50%-20px)] laptop:mr-5 laptop:grow laptop:text-2xl laptop:m-0'>
+              Sign up to stay up-to-date with our latest developments. We promise not to spam you.
+            </h2>
+            <form className="w-full flex flex-col justify-start items-stretch laptop:max-w-[50%] laptop:w-[572px] laptop:flex-row laptop:flex-wrap laptop:items-start laptop:justify-between" onSubmit={(e) => submitSubscriptionForm(e)}>
+              <div className="mb-4 laptop:w-[calc(50%-8px)] laptop:my-1">
+                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} name="EMAIL"
+                       placeholder='email@example.com'
+                       className={'block w-full rounded-lg border border-solid bg-purple-dark py-2 px-3 font-poppins text-sm text-white placeholder:text-gray ' + (emailFieldError ? 'border-error-red' : 'border-lite')}/>
+                {emailFieldError &&
+                <span className='text-left block w-full text-xs text-error-red py-0.5 '>{fieldErrorMessage}</span>
+                }
+              </div>
+              <div className="mb-4 laptop:w-[calc(50%-8px)] laptop:my-1">
+                <input type="text" value={fullName} onChange={(e) => setFullName(e.target.value)}
+                       placeholder='Full Name' name="FULLNAME"
+                       className={'block w-full rounded-lg border border-solid bg-purple-dark py-2 px-3 font-poppins text-sm text-white placeholder:text-gray ' + (fullNameFieldError ? 'border-error-red' : 'border-lite')}/>
+                {fullNameFieldError &&
+                <span className='text-left block w-full text-xs text-error-red py-0.5 '>{fieldErrorMessage}</span>
+                }
+              </div>
+              <div className="mb-6 laptop:w-[calc(50%-8px)] laptop:my-1">
+                <Select
+                  className='text-sm text-gray'
+                  name='source'
+                  styles={selectCustomStyles}
+                  defaultValue={{value: '', label: 'How did you hear about us'}}
+                  options={sourceOptions}
+                  onChange={setSource}
+                  isSearchable={false}
+                />
+                {sourceFieldError &&
+                <span className='text-left block w-full text-xs text-error-red py-0.5'>{fieldErrorMessage}</span>
+                }
+              </div>
+              <div className='laptop:w-[calc(50%-8px)] laptop:my-1'>
+                <input type="hidden" name="b_d4caec21be60d280924827504_49d58a40fc" tabIndex="-1"/>
+                <input type="submit" value="Subscribe" name="subscribe"
+                       className="w-full cursor-pointer flex justify-center items-center bg-purple-bright text-white font-poppins text-base font-normal text-center rounded py-2 px-5"/>
+              </div>
+              {formSuccess === false &&
+              <div className='w-full laptop:my-1 text-left text-xs text-error-red py-1.5' dangerouslySetInnerHTML={{__html: afterFormSubmitMessage}}></div>
+              }
+            </form>
+          </>
+          }
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default SubscribeForm

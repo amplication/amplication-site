@@ -1,4 +1,5 @@
 import PostCard from './PostCard';
+import SubscribeForm from "../Common/SubscribeForm";
 
 const Posts = ({posts}) => {
   if ( Array.isArray(posts) && posts.length ) {
@@ -10,7 +11,9 @@ const Posts = ({posts}) => {
               return <PostCard data={ post } key={ post.id }/>
             })
           }
-          <div className='p-card col-span-3 text-white text-center' key='subscribe'>insert the subscription form here</div>
+          <div className='p-card col-span-3 text-white text-center' key='subscribe'>
+            <SubscribeForm />
+          </div>
           {
             posts.slice(3, 9).map((post) => {
               return <PostCard data={ post } key={ post.id }/>
