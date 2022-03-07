@@ -92,15 +92,15 @@ const SubscribeForm = () => {
 
     let host = 'https://dev.us5.list-manage.com/subscribe/post-json?';
     let data = {
-      u: 'cc391beefd07bdde0f03f8e95',
-      id: '39a8feead1',
-      c: 'jQuery190022527047066005612_1646552810702',
+      u: process.env.NEXT_PUBLIC_MAILCHIMP_SUBSCRIBE_FORM_U,
+      id: process.env.NEXT_PUBLIC_MAILCHIMP_ID,
+      c: process.env.NEXT_PUBLIC_MAILCHIMP_SUBSCRIBE_FORM_C,
       EMAIL: email,
       FNAME: fullName,
       SOURCE: source.value,
       b_cc391beefd07bdde0f03f8e95_39a8feead1: '',
       subscribe: 'Subscribe',
-      _: '1646552810703',
+      _: process.env.NEXT_PUBLIC_MAILCHIMP_SUBSCRIBE_FORM_,
     };
     host += new URLSearchParams(data).toString();
 
