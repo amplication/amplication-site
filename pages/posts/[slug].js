@@ -1,21 +1,19 @@
 import DocumentHead from '../../components/Common/DocumentHead';
 import client from '../../services';
+import helpers from '../../helpers';
 import {gql} from '@apollo/client';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import Posts from '../../components/Posts';
-import helpers from '../../helpers';
 import Thumbnail from '../../components/Posts/PostCard/Tumbnail';
 import Author from '../../components/Posts/PostCard/Author';
 import Tags from '../../components/Posts/PostCard/Tags';
 import Title from '../../components/Posts/PostCard/Title';
 import showdown from 'showdown';
+import PostCard from '../../components/Posts/PostCard';
+import { Swiper, SwiperSlide } from 'swiper';
+import 'swiper/css';
 
 const Post = ({posts, post}) => {
-  const Showdown = new showdown.Converter({
-    tables: true,
-  });
-  console.log(post)
   return (
     <>
       <DocumentHead
@@ -47,7 +45,9 @@ const Post = ({posts, post}) => {
                 <div
                   className='text-base text-white leading-6 mt-2'
                   dangerouslySetInnerHTML={{
-                    __html: Showdown.makeHtml( post.content )
+                    __html: new showdown.Converter({
+                      tables: true,
+                    }).makeHtml( post.content )
                   }}
                 >
 
@@ -62,12 +62,42 @@ const Post = ({posts, post}) => {
         </main>
 
         <div className='w-full p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop'>
-          <Title level={2} className='text-lg font-medium text-white text-[32px] leading-[48px] mb-8'>
+          <Title level={2} className='text-2xl laptop:text-[32px] leading-9 laptop:leading-[48px] font-semibold text-white mb-[-8px] laptop:mb-[-16px] mt-[60px]'>
             Related Posts<span className='text-[#53DBEE]'>.</span>
           </Title>
         </div>
 
-        <Posts posts={posts} excludeHot={true} />
+        { posts.length ?
+          (
+            // <Swiper
+            //   spaceBetween={24}
+            //   slidesPerView={3}
+            //   onSlideChange={() => console.log('slide change')}
+            //   onSwiper={(swiper) => console.log(swiper)}
+            // >
+            //   {
+            //     posts.map((post, i) => {
+            //       return (
+            //         <SwiperSlide key={post} virtualIndex={i}>
+            //           <PostCard data={ post } key={ post.id } className={i === 2 ? 'tablet:hidden laptop:block' : ''} />
+            //         </SwiperSlide>
+            //       )
+            //     })
+            //   }
+            // </Swiper>
+            <div className={'w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-6 laptop:pt-12 laptop:pb-10 grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-7.5'}>
+              {
+                posts.map((post, i) => {
+                  return <PostCard data={ post } key={ post.id } className={i === 2 ? 'tablet:hidden laptop:block' : ''} />
+                })
+              }
+            </div>
+          ) : (
+            <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-12 text-white text-center !pb-12'>
+              Posts not found
+            </div>
+          )
+        }
 
         <Footer />
       </div>
