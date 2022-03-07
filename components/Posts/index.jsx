@@ -1,4 +1,5 @@
 import PostCard from './PostCard';
+import SubscribeForm from "../Common/SubscribeForm";
 import PostHot from './PostHot';
 import Link from 'next/link';
 import {useRouter} from 'next/router';
@@ -57,13 +58,11 @@ const Posts = ({posts, excludeHot = false}) => {
               return <PostCard data={ post } key={ post.id }/>
             })
           }
-
           { !excludeHot &&
             <div className='col-span-1 tablet:col-span-2 laptop:col-span-3 text-white text-center py-6 laptop:pb-[61px] laptop:pt-0' key='subscribe'>
-              insert the subscription form here
+              <SubscribeForm />
             </div>
           }
-
           {
             postsList.slice(3, ( postPerPage * ( typeof page !== 'undefined' ? parseInt(page) + 1 : 2 ) )).map((post) => {
               return <PostCard data={ post } key={ post.id }/>
