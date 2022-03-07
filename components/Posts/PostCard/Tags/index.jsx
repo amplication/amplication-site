@@ -1,6 +1,6 @@
 
 const Tags = (props) => {
-    if ( props.list ) {
+    if ( Array.isArray(props.list) && props.list.length ) {
         return (
             <div className={'mt-4 text-tiny text-white flex flex-row ' + props.className ?? ''}>
                 { props.list.map(tag => {
@@ -8,6 +8,8 @@ const Tags = (props) => {
                 })}
             </div>
         )
+    } else {
+        return false;
     }
 }
 

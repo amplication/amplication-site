@@ -2,38 +2,36 @@ import PostCard from './PostCard';
 import PostHot from './PostHot';
 import Link from 'next/link';
 import {useRouter} from 'next/router';
-import {useEffect, useState} from "react";
+import {useEffect, useState} from 'react';
+import helpers from '../../helpers';
 
 const Posts = ({posts}) => {
   const [hotPost, setHotPost] = useState(null);
   const [postsList, setPostsList] = useState([]);
   const [loadMore, setLoadMore] = useState(true);
 
+  const postPerPage = helpers.getPostPerPage();
+
   const router = useRouter();
   const { tagID, page } = router.query;
 
-  const setQuery = (page, tagid) => {
-    let query = {
-      query: {
-        page: (page ? parseInt(page) + 1 : 2),
-      }
-    }
-    if (tagid) {
-      query = {...query, ...{
-          query: {
-            tagID: tagid
-          }
-        }};
-    }
-    return query;
-  }
-
   useEffect(() => {
-    if (Array.isArray(posts) && posts.length) {
-      if (hotPost === null) {
+    if ( Array.isArray(posts) && posts.length ) {
+      if (
+        typeof tagID === 'undefined' && typeof page === 'undefined'   // is home page
+      ) {
         setHotPost(posts.shift());
+      } else {
+        setHotPost(null);
       }
-      setPostsList(posts.splice(0, 3));
+
+      if (typeof page === 'undefined') {
+        setLoadMore(true);
+        setPostsList(posts.splice(0, postPerPage));
+      } else {
+        setPostsList([...postsList, ...posts.splice(0, postPerPage)]);
+      }
+
       if (!posts.length) {
         setLoadMore(false);
       }
@@ -53,27 +51,29 @@ const Posts = ({posts}) => {
           )
         }
 
-        <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-12 grid grid-cols-3 gap-7.5'>
+        <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-6 laptop:pt-12 laptop:pb-10 grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-7.5'>
           {
             postsList.slice(0, 3).map((post) => {
               return <PostCard data={ post } key={ post.id }/>
             })
           }
-          <div className='p-card col-span-3 text-white text-center' key='subscribe'>insert the subscription form here</div>
+
+          <div className='col-span-1 tablet:col-span-2 laptop:col-span-3 text-white text-center py-6 laptop:pb-[61px] laptop:pt-0' key='subscribe'>
+            insert the subscription form here
+          </div>
+
           {
-            postsList.slice(3, 9).map((post) => {
+            postsList.slice(3, ( postPerPage * ( typeof page !== 'undefined' ? parseInt(page) + 1 : 2 ) )).map((post) => {
               return <PostCard data={ post } key={ post.id }/>
             })
           }
         </div>
 
-        { ( ( loadMore || typeof page === 'undefined' ) && postsList.length >= 3 ) &&
+        { ( ( loadMore || typeof page === 'undefined' ) && postsList.length >= postPerPage ) &&
           (
-            <div className='pt-8 pb-8 text-center'>
-              <Link href={`?page=${page ? parseInt(page) + 1 : 2}` + (tagID ? `&tagID=${tagID}` : '')}>
-                <a
-                  //onClick={() => router.push(setQuery(page, tagID))}
-                  className='w-[118px] py-2 px-4 rounded text-white transition bg-dark-black-70 hover:bg-purple'>
+            <div className='pb-[68px] text-center'>
+              <Link href={`?page=${page ? parseInt(page) + 1 : 2}` + (tagID ? `&tagID=${tagID}` : '')} scroll={false}>
+                <a className='w-[118px] py-2 px-4 rounded text-white transition bg-dark-black-70 hover:bg-purple'>
                   Load More
                 </a>
               </Link>

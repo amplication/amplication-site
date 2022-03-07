@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import Posts from '../components/Posts';
 import Filter from '../components/Posts/Filter';
 import Footer from '../components/Footer';
+import helpers from '../helpers';
 
 const Home = ({posts, tags}) => {
   return (
@@ -30,7 +31,7 @@ const Home = ({posts, tags}) => {
 
 export const getServerSideProps = async (context) => {
   const hotPostCount = 1;
-  const postsPerPage = 3;
+  const postsPerPage = helpers.getPostPerPage();
   const postsByTagID = context.query.tagID ? `where: {tags: {some: {id: {equals: "${context.query.tagID}"}}}}, ` : '';
   const postsTake    = context.query.page ? postsPerPage + 1 : hotPostCount + postsPerPage + 1;
   const postsSkip    = context.query.page ? ( parseInt( context.query.page ) - 1 ) * postsPerPage + hotPostCount : 0;
@@ -66,7 +67,7 @@ export const getServerSideProps = async (context) => {
     return {
       props: {
         posts: data?.posts,
-        tags: data?.tags,
+        tags: data?.tags
       },
     };
   } catch (e) {
@@ -76,7 +77,7 @@ export const getServerSideProps = async (context) => {
   return {
     props: {
       posts: null,
-      tags: null,
+      tags: null
     },
   }
 };
