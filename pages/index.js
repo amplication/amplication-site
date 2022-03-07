@@ -5,14 +5,8 @@ import Header from '../components/Header';
 import Posts from '../components/Posts';
 import Filter from '../components/Posts/Filter';
 import Footer from '../components/Footer';
-import {useState} from 'react';
 
 const Home = ({posts, tags}) => {
-  const [postLoading, setPostLoading] = useState(false);
-  const isPostsLoading = (value) => {
-    setPostLoading(value);
-  }
-
   return (
     <>
       <DocumentHead
@@ -23,32 +17,29 @@ const Home = ({posts, tags}) => {
       <div className='page min-h-screen flex flex-col justify-start justify-items-stretch overflow-hidden pt-[65px] laptop:pt-0 bg-purple-dark'>
         <Header/>
 
-        <main className="w-full bg-dark-black-100 font-poppins">
-          <Filter tags={tags} isPostsLoading={isPostsLoading} />
-
-          {postLoading ? (
-            <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-12 text-white text-center !pb-12'>
-              Posts loading...
-            </div>
-          ) : (
-            <Posts posts={posts} isPostsLoading={isPostsLoading} />
-          )}
+        <main className="w-full bg-dark-black-100 font-poppins overflow-hidden">
+          <Filter tags={tags} />
+          <Posts posts={posts} />
         </main>
 
         <Footer />
       </div>
     </>
-  );
+  )
 }
 
 export const getServerSideProps = async (context) => {
-  const postsByTagId = context.query.tagID ? `where: {tags: {some: {id: {equals: "${context.query.tagID}"}}}}, ` : '';
+  const hotPostCount = 1;
+  const postsPerPage = 3;
+  const postsByTagID = context.query.tagID ? `where: {tags: {some: {id: {equals: "${context.query.tagID}"}}}}, ` : '';
+  const postsTake    = context.query.page ? postsPerPage + 1 : hotPostCount + postsPerPage + 1;
+  const postsSkip    = context.query.page ? ( parseInt( context.query.page ) - 1 ) * postsPerPage + hotPostCount : 0;
 
   try {
     const {data} = await client.query({
       query: gql`
         query {
-          posts(take: 9, ${postsByTagId} orderBy: {createdAt: Desc}) {
+          posts(take: ${postsTake}, skip: ${postsSkip}, orderBy: {createdAt: Desc} ${postsByTagID}) {
             id
             title
             content
@@ -70,7 +61,7 @@ export const getServerSideProps = async (context) => {
             name
           }
         }
-      `,
+      `
     });
     return {
       props: {
