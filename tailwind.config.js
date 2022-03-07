@@ -34,17 +34,21 @@ module.exports = {
         'container': '0 15px',
         'container-desktop': '0 56px',
         'container-desktop-enlarged': '0 34px',
-        'card': '0 0 61px 0',
       },
       borderColor: {
+        'dark-black-70': '#373D57',
         'light-turquoise': '#41CADD',
         'lite': '#444B66',
+      },
+      boxShadow: {
+        'hot-post': '0px 44px 48px -24px rgba(9, 11, 20, 0.3)',
       },
       lineHeight: {
         'tag': '1.2',
       },
       colors: {
         'light-blue': '#22273C',
+        'dark-black-70': '#373D57',
         'dark-black-100': '#15192C',
         'blue-dark': '#090979',
         'purple': '#8D64FF',
@@ -58,6 +62,10 @@ module.exports = {
       },
       aspectRatio: {
         'thumbnail': '238 / 125',
+        'thumbnail-normal': '328 / 200',
+        'thumbnail-hero': '881 / 400',
+        'hot': '62 / 35',
+        'hot-normal': '164 / 125',
       },
       backgroundImage: ({
         'radial-gradient': 'radial-gradient(circle, transparent 0%, transparent 30%, rgba(9,9,121,0.1) 30%, rgba(9,9,121,0.1) 70%, rgba(118,79,229,0) 70%)',
