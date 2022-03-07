@@ -5,7 +5,7 @@ import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
 import helpers from '../../helpers';
 
-const Posts = ({posts}) => {
+const Posts = ({posts, excludeHot = false}) => {
   const [hotPost, setHotPost] = useState(null);
   const [postsList, setPostsList] = useState([]);
   const [loadMore, setLoadMore] = useState(true);
@@ -17,12 +17,12 @@ const Posts = ({posts}) => {
 
   useEffect(() => {
     if ( Array.isArray(posts) && posts.length ) {
-      if (
-        typeof tagID === 'undefined' && typeof page === 'undefined'   // is home page
-      ) {
-        setHotPost(posts.shift());
-      } else {
-        setHotPost(null);
+      if (!excludeHot) {
+        if ( typeof tagID === 'undefined' && typeof page === 'undefined' ) {
+          setHotPost(posts.shift());
+        } else {
+          setHotPost(null);
+        }
       }
 
       if (typeof page === 'undefined') {
@@ -58,9 +58,11 @@ const Posts = ({posts}) => {
             })
           }
 
-          <div className='col-span-1 tablet:col-span-2 laptop:col-span-3 text-white text-center py-6 laptop:pb-[61px] laptop:pt-0' key='subscribe'>
-            insert the subscription form here
-          </div>
+          { !excludeHot &&
+            <div className='col-span-1 tablet:col-span-2 laptop:col-span-3 text-white text-center py-6 laptop:pb-[61px] laptop:pt-0' key='subscribe'>
+              insert the subscription form here
+            </div>
+          }
 
           {
             postsList.slice(3, ( postPerPage * ( typeof page !== 'undefined' ? parseInt(page) + 1 : 2 ) )).map((post) => {
