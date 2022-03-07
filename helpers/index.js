@@ -85,6 +85,10 @@ const helpers = {
 
     return `${d.toLocaleString('en-US', { month: 'long' }).substring(0, 3)} ${d.getDate()}, ${d.getFullYear()}`;
   },
+
+  getPostPerPage: () => {
+    return 9;
+  },
 };
 
 export default helpers;
