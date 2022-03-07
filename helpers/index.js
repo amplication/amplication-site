@@ -76,6 +76,10 @@ const helpers = {
     return string;
   },
 
+  getPostID: ( slug ) => {
+    return slug.split('-').pop();
+  },
+
   getPostSlug: ( postTitle, postID ) => {
     return `/posts/${postTitle}-${postID}`.split(' ').join('-').toLowerCase();
   },
