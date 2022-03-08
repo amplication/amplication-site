@@ -63,6 +63,7 @@ module.exports = {
       aspectRatio: {
         'thumbnail': '238 / 125',
         'thumbnail-normal': '328 / 200',
+        'thumbnail-hero': '881 / 400',
         'hot': '62 / 35',
         'hot-normal': '164 / 125',
       },

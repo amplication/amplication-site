@@ -18,9 +18,7 @@ const Posts = ({posts}) => {
 
   useEffect(() => {
     if ( Array.isArray(posts) && posts.length ) {
-      if (
-        typeof tagID === 'undefined' && typeof page === 'undefined'   // is home page
-      ) {
+      if ( typeof tagID === 'undefined' && typeof page === 'undefined' ) {
         setHotPost(posts.shift());
       } else {
         setHotPost(null);
@@ -52,7 +50,7 @@ const Posts = ({posts}) => {
           )
         }
 
-        <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-6 laptop:pt-12 laptop:pb-10 grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-7.5'>
+        <div className={'w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-6 laptop:pt-12 laptop:pb-10 grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-7.5'}>
           {
             postsList.slice(0, 3).map((post) => {
               return <PostCard data={ post } key={ post.id }/>
