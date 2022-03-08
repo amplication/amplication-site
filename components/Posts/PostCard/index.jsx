@@ -9,7 +9,7 @@ const PostCard = (props) => {
   const post = props.data || null;
   if (post) {
     return (
-      <div className='border border-solid border-dark-black-70 laptop:border-0 laptop:border-transparent rounded-2xl pb-6 laptop:pb-[61px]'>
+      <div className={'border border-solid border-dark-black-70 laptop:border-0 laptop:border-transparent rounded-2xl pb-6 laptop:pb-[61px] ' + props.className ?? ''} >
         <Thumbnail
           src={ helpers.isValidUrl( post.featuredImage ) ? post.featuredImage : null }
           alt={ post.title }
