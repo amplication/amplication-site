@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 
 const Tags = (props) => {
     if ( Array.isArray(props.list) && props.list.length ) {
@@ -11,6 +12,14 @@ const Tags = (props) => {
     } else {
         return false;
     }
+}
+
+Tags.propTypes = {
+    props: PropTypes.object,
+};
+
+Tags.defaultProps = {
+    props: {},
 }
 
 export default Tags

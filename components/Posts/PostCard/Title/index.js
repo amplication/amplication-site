@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const Title = (props) => {
   const Tag = props.level ? `h${ props.level }` : 'div';
 
@@ -6,6 +8,14 @@ const Title = (props) => {
       { props.text || props.children }
     </Tag>
   );
+}
+
+Title.propTypes = {
+  props: PropTypes.object,
+};
+
+Title.defaultProps = {
+  props: {},
 }
 
 export default Title;
