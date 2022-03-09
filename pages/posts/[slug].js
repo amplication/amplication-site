@@ -75,7 +75,7 @@ const Post = ({posts, post, tags}) => {
             <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-6 laptop:pt-12'>
               <Swiper
                 className='flex flex-col-reverse'
-                loop={true}
+                loop={false}
                 spaceBetween={24}
                 slidesPerView={3}
                 breakpoints={{
