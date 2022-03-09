@@ -57,6 +57,7 @@ module.exports = {
         'purple-light': '#2C3249',
         'pink': '#F85B6E',
         'turquoise': '#48D4E9',
+        'secondary-turquoise': '#53DBEE',
         'gray': '#A3A8B8',
       },
       aspectRatio: {
