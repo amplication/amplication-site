@@ -1,4 +1,7 @@
 import helpers from '../../../../helpers';
+import Filter from "../../Filter";
+import PropTypes from 'prop-types';
+import Button from "../../../Common/Button";
 
 const Author = (props) => {
   return (
@@ -16,6 +19,14 @@ const Author = (props) => {
       </div>
     </div>
   )
+}
+
+Author.propTypes = {
+  props: PropTypes.object,
+};
+
+Author.defaultProps = {
+  props: {},
 }
 
 export default Author

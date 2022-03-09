@@ -4,6 +4,7 @@ import Title from '../PostCard/Title';
 import Thumbnail from '../PostCard/Tumbnail';
 import helpers from '../../../helpers';
 import Link from 'next/link';
+import PropTypes from 'prop-types';
 
 const PostHot = (props) => {
   const post = props.data || null;
@@ -41,5 +42,13 @@ const PostHot = (props) => {
     );
   }
 };
+
+PostHot.propTypes = {
+  props: PropTypes.object,
+};
+
+PostHot.defaultProps = {
+  props: {},
+}
 
 export default PostHot;

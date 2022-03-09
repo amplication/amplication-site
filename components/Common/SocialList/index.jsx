@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const Sharing = () => {
+const SocialList = () => {
   return (
     <div className='w-full mb-12 laptop:w-auto laptop:my-0'>
       <p className='font-poppins font-medium text-white text-center text-sm mb-3 laptop:text-lg laptop:text-left laptop:mb-6'>
@@ -42,4 +42,4 @@ const Sharing = () => {
   )
 }
 
-export default Sharing
+export default SocialList
