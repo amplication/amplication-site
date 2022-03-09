@@ -16,7 +16,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-const Post = ({posts, post}) => {
+const Post = ({posts, post, tags}) => {
   return (
     <>
       <DocumentHead
@@ -70,7 +70,7 @@ const Post = ({posts, post}) => {
           </Title>
         </div>
 
-        { posts.length ?
+        { Array.isArray(posts) && posts.length ?
           (
             <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-6 laptop:pt-12'>
               <Swiper
@@ -127,7 +127,7 @@ export const getServerSideProps = async (context) => {
     const {data} = await client.query({
       query: gql`
         query {
-          posts(take: 3, orderBy: {createdAt: Desc}, where: {id: {not: "${postID}"}}) {
+          post(where: {id: "${postID}"}) {
             id
             title
             content
@@ -144,7 +144,17 @@ export const getServerSideProps = async (context) => {
             }
             createdAt
           }
-          post(where: {id: "${postID}"}) {
+        }
+      `
+    });
+
+    const tags = data.post.tags && data.post.tags.length ? `, tags: {some: {id: {in: ["${data.post.tags.map((tag) => {
+      return tag.id
+    }).join('" ,"')}"]}}}` : '';
+    let posts = await client.query({
+      query: gql`
+        query {
+          posts(take: 3, orderBy: {createdAt: Desc}, where: {id: {not: "${data.post.id}"} ${tags}}) {
             id
             title
             content
@@ -166,7 +176,7 @@ export const getServerSideProps = async (context) => {
     });
     return {
       props: {
-        posts: data?.posts,
+        posts: posts?.data?.posts,
         post: data?.post
       },
     };
