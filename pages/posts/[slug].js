@@ -11,12 +11,14 @@ import Tags from '../../components/Posts/PostCard/Tags';
 import Title from '../../components/Posts/PostCard/Title';
 import showdown from 'showdown';
 import PostCard from '../../components/Posts/PostCard';
-import { Swiper, SwiperSlide } from 'swiper';
+import { Pagination } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import Sidebar from '../../components/Sidebar';
 import 'swiper/css';
-import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
-const Post = ({posts, post}) => {
+const Post = ({posts, post, tags}) => {
   return (
     <>
       <DocumentHead
@@ -89,30 +91,43 @@ const Post = ({posts, post}) => {
           </Title>
         </div>
 
-        { posts.length ?
+        { Array.isArray(posts) && posts.length ?
           (
-            // <Swiper
-            //   spaceBetween={24}
-            //   slidesPerView={3}
-            //   onSlideChange={() => console.log('slide change')}
-            //   onSwiper={(swiper) => console.log(swiper)}
-            // >
-            //   {
-            //     posts.map((post, i) => {
-            //       return (
-            //         <SwiperSlide key={post} virtualIndex={i}>
-            //           <PostCard data={ post } key={ post.id } className={i === 2 ? 'tablet:hidden laptop:block' : ''} />
-            //         </SwiperSlide>
-            //       )
-            //     })
-            //   }
-            // </Swiper>
-            <div className={'w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-6 laptop:pt-12 laptop:pb-10 grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-7.5'}>
-              {
-                posts.map((post, i) => {
-                  return <PostCard data={ post } key={ post.id } className={i === 2 ? 'tablet:hidden laptop:block' : ''} />
-                })
-              }
+            <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-6 laptop:pt-12'>
+              <Swiper
+                className='flex flex-col-reverse'
+                loop={false}
+                spaceBetween={24}
+                slidesPerView={3}
+                breakpoints={{
+                  320: {
+                    slidesPerView: 1,
+                  },
+                  640: {
+                    slidesPerView: 2,
+                  },
+                  991: {
+                    slidesPerView: 3,
+                  },
+                }}
+                modules={[Pagination]}
+                pagination={{
+                  clickable: true,
+                  clickableClass: `swiper-pagination-clickable !relative pt-4`,
+                  bulletClass: `swiper-pagination-bullet !bg-white`,
+                  bulletActiveClass: `swiper-pagination-bullet-active relative top-[1px] !bg-secondary-turquoise !w-2.5 !h-2.5`,
+                }}
+              >
+                {
+                  posts.map((post, i) => {
+                    return (
+                      <SwiperSlide key={ post.id } virtualIndex={i}>
+                        <PostCard data={ post } key={ post.id } />
+                      </SwiperSlide>
+                    )
+                  })
+                }
+              </Swiper>
             </div>
           ) : (
             <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-12 text-white text-center !pb-12'>
@@ -133,7 +148,7 @@ export const getServerSideProps = async (context) => {
     const {data} = await client.query({
       query: gql`
         query {
-          posts(take: 3, orderBy: {createdAt: Desc}, where: {id: {not: "${postID}"}}) {
+          post(where: {id: "${postID}"}) {
             id
             title
             content
@@ -150,7 +165,17 @@ export const getServerSideProps = async (context) => {
             }
             createdAt
           }
-          post(where: {id: "${postID}"}) {
+        }
+      `
+    });
+
+    const tags = data.post.tags && data.post.tags.length ? `, tags: {some: {id: {in: ["${data.post.tags.map((tag) => {
+      return tag.id
+    }).join('" ,"')}"]}}}` : '';
+    let posts = await client.query({
+      query: gql`
+        query {
+          posts(take: 3, orderBy: {createdAt: Desc}, where: {id: {not: "${data.post.id}"} ${tags}}) {
             id
             title
             content
@@ -172,7 +197,7 @@ export const getServerSideProps = async (context) => {
     });
     return {
       props: {
-        posts: data?.posts,
+        posts: posts?.data?.posts,
         post: data?.post
       },
     };
