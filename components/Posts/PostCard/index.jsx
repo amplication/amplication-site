@@ -4,6 +4,7 @@ import Title from './Title';
 import Thumbnail from './Tumbnail';
 import helpers from '../../../helpers';
 import Link from 'next/link';
+import PropTypes from 'prop-types';
 
 const PostCard = (props) => {
   const post = props.data || null;
@@ -33,6 +34,14 @@ const PostCard = (props) => {
       </div>
     );
   }
+};
+
+PostCard.propTypes = {
+  props: PropTypes.object,
+};
+
+PostCard.defaultProps = {
+  props: {},
 };
 
 export default PostCard;

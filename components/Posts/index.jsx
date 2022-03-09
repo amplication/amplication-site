@@ -1,9 +1,11 @@
 import PostCard from './PostCard';
+import SubscribeForm from "../Common/SubscribeForm";
 import PostHot from './PostHot';
 import Link from 'next/link';
 import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
 import helpers from '../../helpers';
+import PropTypes from "prop-types";
 
 const Posts = ({posts}) => {
   const [hotPost, setHotPost] = useState(null);
@@ -55,11 +57,9 @@ const Posts = ({posts}) => {
               return <PostCard data={ post } key={ post.id }/>
             })
           }
-
           <div className='col-span-1 tablet:col-span-2 laptop:col-span-3 text-white text-center py-6 laptop:pb-[61px] laptop:pt-0' key='subscribe'>
-            insert the subscription form here
+            <SubscribeForm />
           </div>
-
           {
             postsList.slice(3, ( postPerPage * ( typeof page !== 'undefined' ? parseInt(page) + 1 : 2 ) )).map((post) => {
               return <PostCard data={ post } key={ post.id }/>
@@ -87,6 +87,14 @@ const Posts = ({posts}) => {
       Posts not found
     </div>
   )
+}
+
+Posts.propTypes = {
+  posts: PropTypes.array,
+};
+
+Posts.defaultProps = {
+  posts: [],
 }
 
 export default Posts;

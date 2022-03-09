@@ -1,4 +1,6 @@
 import Head from "next/head";
+import PropTypes from "prop-types";
+import Button from "../Button";
 
 const DocumentHead = ({pageTitle, pageDescription}) => {
   return (
@@ -9,5 +11,14 @@ const DocumentHead = ({pageTitle, pageDescription}) => {
     </Head>
   );
 }
+
+DocumentHead.propTypes = {
+  pageTitle: PropTypes.string.isRequired,
+  pageDescription: PropTypes.string,
+};
+
+DocumentHead.defaultProps = {
+  pageDescription: '',
+};
 
 export default DocumentHead
