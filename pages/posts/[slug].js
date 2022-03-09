@@ -15,7 +15,6 @@ import { Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Sidebar from '../../components/Sidebar';
 import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 const Post = ({posts, post, tags}) => {
