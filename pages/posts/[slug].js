@@ -13,7 +13,6 @@ import PostCard from '../../components/Posts/PostCard';
 import { Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 const Post = ({posts, post, tags}) => {
