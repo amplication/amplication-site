@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import Button from "../../Common/Button";
 
 const Filter = ({tags}) => {
   const [activeTagID, setActiveTagID] = useState('');
@@ -47,5 +48,9 @@ const Filter = ({tags}) => {
     </div>
   )
 }
+
+Filter.defaultProps = {
+  tags: [],
+};
 
 export default Filter;
