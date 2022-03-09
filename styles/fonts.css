@@ -54,6 +54,16 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: "poppins";
+    src: url("../public/fonts/poppins/poppins-v19-latin-800.woff2") format("woff2"),
+    url("../public/fonts/poppins/poppins-v19-latin-800.woff") format("woff"),
+    url("../public/fonts/poppins/poppins-v19-latin-800.svg") format("svg"),
+    url("../public/fonts/poppins/poppins-v19-latin-800.ttf") format("truetype");
+    font-weight: 800;
+    font-style: normal;
+}
+
 /**
  * Ubuntu Mono
  */
