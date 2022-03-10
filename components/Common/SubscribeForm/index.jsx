@@ -47,15 +47,16 @@ const SubscribeForm = ({isCompactView}) => {
     option: (provided, state) => ({
       ...provided,
       color: '#A3A8B8',
+      background: '#15192C',
       transition: 'all 0.2s ease-in-out',
       '&:hover': {
-        background: '#A3A8B8',
-        color: '#15192C',
+        background: '#7950ED',
+        color: '#FFFFFF',
       }
     }),
     singleValue: (provided, state) => ({
       ...provided,
-      color: '#ffffff',
+      color: source === 'Other' ? '#A3A8B8' : '#ffffff',
     })
   };
 
