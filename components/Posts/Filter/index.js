@@ -18,19 +18,18 @@ const Filter = ({tags}) => {
     setActiveTagID(tagID);
   }
 
-  if ( tags.length ) {
-    return (
-      <div className='overflow-hidden relative flex flex-row flex-nowrap w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop text-lg !py-12'>
-        <Link href={''}>
+  return (
+    <div className='overflow-hidden relative flex flex-row flex-nowrap w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop text-lg !py-12'>
+      <Link href={''}>
           <span
             onClick={() => setQueryTagID()}
             data-before='All'
             className={tagClass + ( activeTagID === '' ? ' before:font-bold border-b-light-turquoise' : ' before:font-medium' )}>
             <span className='font-bold text-transparent'>All</span>
           </span>
-        </Link>
-        { tags.map(tag =>
-          <Link href={`?tagID=${tag.id}`} key={tag.id}>
+      </Link>
+      { tags.map(tag =>
+        <Link href={`?tagID=${tag.id}`} key={tag.id}>
             <span
               onClick={() => setQueryTagID(tag.id)}
               data-before={tag.name}
@@ -38,17 +37,11 @@ const Filter = ({tags}) => {
             >
               <span className='font-bold text-transparent'>{tag.name}</span>
             </span>
-          </Link>
-          ) }
-      </div>
-    )
-  }
-
-  return (
-    <div className='w-full text-white text-center py-6 !my-12'>
-      Tags not found
+        </Link>
+      ) }
     </div>
   )
+
 }
 
 Filter.defaultProps = {
