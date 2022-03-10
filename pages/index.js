@@ -6,7 +6,7 @@ import Posts from '../components/Posts';
 import Filter from '../components/Posts/Filter';
 import Footer from '../components/Footer';
 import helpers from '../helpers';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 const Home = ({posts, tags}) => {
   return (
@@ -19,7 +19,7 @@ const Home = ({posts, tags}) => {
       <div className='page min-h-screen flex flex-col justify-start justify-items-stretch overflow-hidden pt-[65px] laptop:pt-0 bg-purple-dark'>
         <Header/>
 
-        <main className="w-full bg-dark-black-100 font-poppins overflow-hidden">
+        <main className="w-full bg-dark-black-100 font-poppins">
           <Filter tags={tags} />
           <Posts posts={posts} />
         </main>
@@ -33,15 +33,15 @@ const Home = ({posts, tags}) => {
 export const getServerSideProps = async (context) => {
   const hotPostCount = 1;
   const postsPerPage = helpers.getPostPerPage();
-  const postsByTagID = context.query.tagID ? `where: {tags: {some: {id: {equals: "${context.query.tagID}"}}}}, ` : '';
+  const postsByTagID = context.query.tagID ? `, where: {tags: {some: {id: {equals: "${context.query.tagID}"}}}}, ` : '';
   const postsTake    = context.query.page ? postsPerPage + 1 : hotPostCount + postsPerPage + 1;
-  const postsSkip    = context.query.page ? ( parseInt( context.query.page ) - 1 ) * postsPerPage + hotPostCount : 0;
+  const postsSkip    = context.query.page ? ( parseInt( context.query.page ) - 1 ) * postsPerPage + ( context.query.tagID ? 0 : hotPostCount ) : 0;
 
   try {
     const {data} = await client.query({
       query: gql`
         query {
-          posts(take: ${postsTake}, skip: ${postsSkip}, orderBy: {createdAt: Desc} ${postsByTagID}) {
+          posts(take: ${postsTake}, skip: ${postsSkip}, orderBy: {createdAt: Desc}${postsByTagID}) {
             id
             title
             content
