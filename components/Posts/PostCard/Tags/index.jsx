@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 
 const Tags = (props) => {
-    if ( props.list ) {
+    if ( props.list.length ) {
         return (
             <div className={'mt-4 text-tiny text-white flex flex-row ' + props.className ?? ''}>
                 { props.list.map(tag => {
@@ -8,7 +9,17 @@ const Tags = (props) => {
                 })}
             </div>
         )
+    } else {
+        return false;
     }
+}
+
+Tags.propTypes = {
+    list: PropTypes.array,
+};
+
+Tags.defaultProps = {
+    list: [],
 }
 
 export default Tags

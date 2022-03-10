@@ -76,6 +76,10 @@ const helpers = {
     return string;
   },
 
+  getPostID: ( slug ) => {
+    return slug.split('-').pop();
+  },
+
   getPostSlug: ( postTitle, postID ) => {
     return `/posts/${postTitle}-${postID}`.split(' ').join('-').toLowerCase();
   },
@@ -84,6 +88,10 @@ const helpers = {
     let d = new Date( date || 'Dec 27, 2022' );
 
     return `${d.toLocaleString('en-US', { month: 'long' }).substring(0, 3)} ${d.getDate()}, ${d.getFullYear()}`;
+  },
+
+  getPostPerPage: () => {
+    return 9;
   },
 };
 

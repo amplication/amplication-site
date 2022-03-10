@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const Title = (props) => {
   const Tag = props.level ? `h${ props.level }` : 'div';
 
@@ -6,6 +8,16 @@ const Title = (props) => {
       { props.text || props.children }
     </Tag>
   );
+}
+
+Title.propTypes = {
+  level: PropTypes.number,
+  text: PropTypes.string,
+};
+
+Title.defaultProps = {
+  level: 2,
+  text: '',
 }
 
 export default Title;
