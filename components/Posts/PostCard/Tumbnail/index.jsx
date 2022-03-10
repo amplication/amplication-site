@@ -9,11 +9,12 @@ const Thumbnail = (props) => {
 }
 
 Thumbnail.propTypes = {
-  props: PropTypes.object,
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string,
 };
 
 Thumbnail.defaultProps = {
-  props: {},
+  alt: '',
 }
 
 export default Thumbnail

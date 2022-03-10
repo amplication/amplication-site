@@ -7,12 +7,12 @@ import Link from 'next/link';
 import PropTypes from 'prop-types';
 
 const PostCard = (props) => {
-  const post = props.data || null;
-  if (post) {
+  const post = props.data;
+  if (Object.keys(post).length) {
     return (
       <div className={'border border-solid border-dark-black-70 laptop:border-0 laptop:border-transparent rounded-2xl pb-6 laptop:pb-[61px] ' + props.className ?? ''} >
         <Thumbnail
-          src={ helpers.isValidUrl( post.featuredImage ) ? post.featuredImage : null }
+          src={ helpers.isValidUrl( post.featuredImage ) ? post.featuredImage : '' }
           alt={ post.title }
         />
         <div className="px-6 laptop:px-4">
@@ -37,11 +37,7 @@ const PostCard = (props) => {
 };
 
 PostCard.propTypes = {
-  props: PropTypes.object,
-};
-
-PostCard.defaultProps = {
-  props: {},
+  data: PropTypes.object.isRequired,
 };
 
 export default PostCard;
