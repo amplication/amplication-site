@@ -5,7 +5,7 @@ import {gql} from '@apollo/client';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Thumbnail from '../../components/Posts/PostCard/Tumbnail';
-import Link from "next/link";
+import Link from 'next/link';
 import Author from '../../components/Posts/PostCard/Author';
 import Tags from '../../components/Posts/PostCard/Tags';
 import Title from '../../components/Posts/PostCard/Title';
@@ -17,7 +17,7 @@ import Sidebar from '../../components/Sidebar';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-const Post = ({posts, post, tags}) => {
+const Post = ({posts, post}) => {
   return (
     <>
       <DocumentHead
@@ -47,8 +47,8 @@ const Post = ({posts, post, tags}) => {
           </nav>
         </div>
 
-        <main className='flex justify-between w-full bg-dark-black-100 font-poppins overflow-hidden p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-6 laptop:pt-12 laptop:pb-10'>
-          <article className='w-[881px]'>
+        <main className='flex flex-col flex-wrap laptop:flex-row justify-between w-full bg-dark-black-100 font-poppins overflow-hidden p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-6 laptop:pt-12 laptop:pb-10 gap-8'>
+          <div className='w-full laptop:max-w-[881px] flex-1 order-1'>
             { post &&
               <>
                 <Title level={1} className='text-lg font-medium text-white text-[32px] leading-[48px] mb-8' text={ post.title } />
@@ -77,63 +77,63 @@ const Post = ({posts, post, tags}) => {
                 </div>
               </>
             }
-          </article>
+          </div>
 
-          <aside className='w-[425px]'>
+          <aside className='w-full laptop:w-[425px] order-9 laptop:order-2'>
             <Sidebar />
           </aside>
+
+          <div className='w-full order-3'>
+            <Title level={2} className='text-2xl laptop:text-[32px] leading-9 laptop:leading-[48px] font-semibold text-white mb-[-8px] laptop:mb-[-16px] mt-[60px]'>
+              Related Posts<span className='text-[#53DBEE]'>.</span>
+            </Title>
+          </div>
+
+          { Array.isArray(posts) && posts.length ?
+            (
+              <div className='w-full pb-6 order-4'>
+                <Swiper
+                  className='flex flex-col-reverse'
+                  loop={false}
+                  spaceBetween={24}
+                  slidesPerView={3}
+                  breakpoints={{
+                    320: {
+                      slidesPerView: 1,
+                    },
+                    640: {
+                      slidesPerView: 2,
+                    },
+                    991: {
+                      slidesPerView: 3,
+                    },
+                  }}
+                  modules={[Pagination]}
+                  pagination={{
+                    clickable: true,
+                    clickableClass: `swiper-pagination-clickable !relative pt-4`,
+                    bulletClass: `swiper-pagination-bullet !bg-white`,
+                    bulletActiveClass: `swiper-pagination-bullet-active relative top-[1px] !bg-secondary-turquoise !w-2.5 !h-2.5`,
+                  }}
+                >
+                  {
+                    posts.map((post, i) => {
+                      return (
+                        <SwiperSlide key={ post.id } virtualIndex={i}>
+                          <PostCard data={ post } key={ post.id } />
+                        </SwiperSlide>
+                      )
+                    })
+                  }
+                </Swiper>
+              </div>
+            ) : (
+              <div className='w-full order-4 max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-12 text-white text-center !pb-12'>
+                Posts not found
+              </div>
+            )
+          }
         </main>
-
-        <div className='w-full p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop'>
-          <Title level={2} className='text-2xl laptop:text-[32px] leading-9 laptop:leading-[48px] font-semibold text-white mb-[-8px] laptop:mb-[-16px] mt-[60px]'>
-            Related Posts<span className='text-[#53DBEE]'>.</span>
-          </Title>
-        </div>
-
-        { Array.isArray(posts) && posts.length ?
-          (
-            <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-6 laptop:pt-12'>
-              <Swiper
-                className='flex flex-col-reverse'
-                loop={false}
-                spaceBetween={24}
-                slidesPerView={3}
-                breakpoints={{
-                  320: {
-                    slidesPerView: 1,
-                  },
-                  640: {
-                    slidesPerView: 2,
-                  },
-                  991: {
-                    slidesPerView: 3,
-                  },
-                }}
-                modules={[Pagination]}
-                pagination={{
-                  clickable: true,
-                  clickableClass: `swiper-pagination-clickable !relative pt-4`,
-                  bulletClass: `swiper-pagination-bullet !bg-white`,
-                  bulletActiveClass: `swiper-pagination-bullet-active relative top-[1px] !bg-secondary-turquoise !w-2.5 !h-2.5`,
-                }}
-              >
-                {
-                  posts.map((post, i) => {
-                    return (
-                      <SwiperSlide key={ post.id } virtualIndex={i}>
-                        <PostCard data={ post } key={ post.id } />
-                      </SwiperSlide>
-                    )
-                  })
-                }
-              </Swiper>
-            </div>
-          ) : (
-            <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-12 text-white text-center !pb-12'>
-              Posts not found
-            </div>
-          )
-        }
 
         <Footer />
       </div>

@@ -31,7 +31,7 @@ const PostHot = (props) => {
             {helpers.removeMarkdown( post.content )}
           </div>
         </div>
-        <div className='w-full rounded-t-2xl overflow-hidden laptop:w-1/2 laptop:rounded-r-2xl'>
+        <div className='w-full overflow-hidden laptop:w-1/2 rounded-2xl laptop:rounded-l-none'>
           <Thumbnail
             alt={ post.title }
             className='aspect-hot-normal !rounded-l-none laptop:aspect-hot'
