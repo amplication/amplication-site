@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import PropTypes from "prop-types";
 
 const Filter = ({tags}) => {
   const [activeTagID, setActiveTagID] = useState('');
@@ -17,7 +18,7 @@ const Filter = ({tags}) => {
     setActiveTagID(tagID);
   }
 
-  if ( tags ) {
+  if ( tags.length ) {
     return (
       <div className='flex flex-row flex-nowrap w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop w-full text-white text-lg !py-12'>
         <Link href={''}>
@@ -47,5 +48,9 @@ const Filter = ({tags}) => {
     </div>
   )
 }
+
+Filter.defaultProps = {
+  tags: PropTypes.array.isRequired,
+};
 
 export default Filter;

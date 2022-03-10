@@ -5,6 +5,7 @@ import Link from 'next/link';
 import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
 import helpers from '../../helpers';
+import PropTypes from "prop-types";
 
 const Posts = ({posts}) => {
   const [hotPost, setHotPost] = useState(null);
@@ -86,6 +87,14 @@ const Posts = ({posts}) => {
       Posts not found
     </div>
   )
+}
+
+Posts.propTypes = {
+  posts: PropTypes.array,
+};
+
+Posts.defaultProps = {
+  posts: [],
 }
 
 export default Posts;

@@ -1,6 +1,6 @@
 import FooterText from "../FooterText";
 import FooterMenu from "../FooterMenu";
-import Sharing from "../../Common/Sharing";
+import SocialList from "../../Common/SocialList";
 
 const FooterContent = () => {
   return (
@@ -13,7 +13,7 @@ const FooterContent = () => {
       <FooterMenu />
 
       {/*Footer Sharing Block*/}
-      <Sharing />
+      <SocialList />
 
     </div>
   )

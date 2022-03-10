@@ -5,15 +5,20 @@ import {gql} from '@apollo/client';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Thumbnail from '../../components/Posts/PostCard/Tumbnail';
+import Link from "next/link";
 import Author from '../../components/Posts/PostCard/Author';
 import Tags from '../../components/Posts/PostCard/Tags';
 import Title from '../../components/Posts/PostCard/Title';
 import showdown from 'showdown';
 import PostCard from '../../components/Posts/PostCard';
 import { Swiper, SwiperSlide } from 'swiper';
+import Sidebar from '../../components/Sidebar';
 import 'swiper/css';
+import 'swiper/css';
+import PropTypes from "prop-types";
 
 const Post = ({posts, post}) => {
+
   return (
     <>
       <DocumentHead
@@ -23,6 +28,25 @@ const Post = ({posts, post}) => {
 
       <div className='page min-h-screen flex flex-col justify-start justify-items-stretch overflow-hidden pt-[65px] laptop:pt-0 bg-purple-dark'>
         <Header/>
+
+        <div className='w-full p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop mt-16 laptop:mt-12'>
+          <nav>
+            <ul className='flex justify-start items-center flex-wrap'>
+              <li className='text-white inline-block mr-1'>
+                <Link href='/'>
+                  <a className='text-white font-poppins font-medium text-sm'>
+                    Blog
+                  </a>
+                </Link> /
+              </li>
+              <li className='text-turquoise inline-block'>
+                <span className='text-turquoise font-poppins font-medium text-sm'>
+                  {post.title}
+                </span>
+              </li>
+            </ul>
+          </nav>
+        </div>
 
         <main className='flex justify-between w-full bg-dark-black-100 font-poppins overflow-hidden p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-6 laptop:pt-12 laptop:pb-10'>
           <article className='w-[881px]'>
@@ -57,7 +81,7 @@ const Post = ({posts, post}) => {
           </article>
 
           <aside className='w-[425px]'>
-            sidebar
+            <Sidebar />
           </aside>
         </main>
 
@@ -164,6 +188,15 @@ export const getServerSideProps = async (context) => {
       post: null
     },
   }
+};
+
+Post.propTypes = {
+  post: PropTypes.object.isRequired,
+  posts: PropTypes.array,
+};
+
+Post.defaultProps = {
+  posts: [],
 };
 
 export default Post;

@@ -1,4 +1,6 @@
 import helpers from '../../../../helpers';
+import Filter from "../../Filter";
+import PropTypes from 'prop-types';
 
 const Author = (props) => {
   return (
@@ -17,5 +19,17 @@ const Author = (props) => {
     </div>
   )
 }
+
+Author.propTypes = {
+  avatar: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  name: PropTypes.string,
+  large: PropTypes.bool,
+};
+
+Author.defaultProps = {
+  name: '',
+  large: false,
+};
 
 export default Author

@@ -6,6 +6,7 @@ import Posts from '../components/Posts';
 import Filter from '../components/Posts/Filter';
 import Footer from '../components/Footer';
 import helpers from '../helpers';
+import PropTypes from "prop-types";
 
 const Home = ({posts, tags}) => {
   return (
@@ -81,5 +82,15 @@ export const getServerSideProps = async (context) => {
     },
   }
 };
+
+Home.propTypes = {
+  posts: PropTypes.array,
+  tags: PropTypes.array,
+};
+
+Home.defaultProps = {
+  posts: [],
+  tags: [],
+}
 
 export default Home;
