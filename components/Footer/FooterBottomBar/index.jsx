@@ -10,7 +10,7 @@ const FooterBottomBar = () => {
           </p>
         </li>
         <li className='w-1/2 text-right py-3.5 laptop:py-8'>
-          <Link href='https://amplication/privacy-policy'>
+          <Link href={ `${process.env.NEXT_PUBLIC_SITE}/privacy-policy` }>
             <a className='text-white text-xs text-gray font-poppins underline laptop:text-base'>
               Privacy Policy
             </a>
