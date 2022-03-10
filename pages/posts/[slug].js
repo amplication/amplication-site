@@ -15,8 +15,8 @@ import { Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Sidebar from '../../components/Sidebar';
 import 'swiper/css';
-import PropTypes from "prop-types";
 import 'swiper/css/pagination';
+import PropTypes from 'prop-types';
 
 const Post = ({posts, post}) => {
   return (
