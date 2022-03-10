@@ -84,54 +84,51 @@ const Post = ({posts, post}) => {
             <Sidebar />
           </aside>
 
-          <div className='w-full order-3'>
-            <Title level={2} className='text-2xl laptop:text-[32px] leading-9 laptop:leading-[48px] font-semibold text-white mb-[-8px] laptop:mb-[-16px] mt-[60px]'>
-              Related Posts<span className='text-[#53DBEE]'>.</span>
-            </Title>
-          </div>
-
-          { Array.isArray(posts) && posts.length ?
+          { Array.isArray(posts) && posts.length &&
             (
-              <div className='w-full pb-6 order-4'>
-                <Swiper
-                  className='flex flex-col-reverse'
-                  loop={false}
-                  spaceBetween={24}
-                  slidesPerView={3}
-                  breakpoints={{
-                    320: {
-                      slidesPerView: 1,
-                    },
-                    640: {
-                      slidesPerView: 2,
-                    },
-                    991: {
-                      slidesPerView: 3,
-                    },
-                  }}
-                  modules={[Pagination]}
-                  pagination={{
-                    clickable: true,
-                    clickableClass: `swiper-pagination-clickable !relative pt-4`,
-                    bulletClass: `swiper-pagination-bullet !bg-white`,
-                    bulletActiveClass: `swiper-pagination-bullet-active relative top-[1px] !bg-secondary-turquoise !w-2.5 !h-2.5`,
-                  }}
-                >
-                  {
-                    posts.map((post, i) => {
-                      return (
-                        <SwiperSlide key={ post.id } virtualIndex={i}>
-                          <PostCard data={ post } key={ post.id } />
-                        </SwiperSlide>
-                      )
-                    })
-                  }
-                </Swiper>
-              </div>
-            ) : (
-              <div className='w-full order-4 max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-12 text-white text-center !pb-12'>
-                Posts not found
-              </div>
+              <>
+                <div className='w-full order-3'>
+                  <Title level={2} className='text-2xl laptop:text-[32px] leading-9 laptop:leading-[48px] font-semibold text-white mb-[-8px] laptop:mb-[-16px] mt-[60px]'>
+                    Related Posts<span className='text-[#53DBEE]'>.</span>
+                  </Title>
+                </div>
+                <div className='w-full pb-6 order-4'>
+                  <Swiper
+                    className='flex flex-col-reverse'
+                    loop={false}
+                    spaceBetween={24}
+                    slidesPerView={3}
+                    breakpoints={{
+                      320: {
+                        slidesPerView: 1,
+                      },
+                      640: {
+                        slidesPerView: 2,
+                      },
+                      991: {
+                        slidesPerView: 3,
+                      },
+                    }}
+                    modules={[Pagination]}
+                    pagination={{
+                      clickable: true,
+                      clickableClass: `swiper-pagination-clickable !relative pt-4`,
+                      bulletClass: `swiper-pagination-bullet !bg-white`,
+                      bulletActiveClass: `swiper-pagination-bullet-active relative top-[1px] !bg-secondary-turquoise !w-2.5 !h-2.5`,
+                    }}
+                  >
+                    {
+                      posts.map((post, i) => {
+                        return (
+                          <SwiperSlide key={ post.id } virtualIndex={i}>
+                            <PostCard data={ post } key={ post.id } />
+                          </SwiperSlide>
+                        )
+                      })
+                    }
+                  </Swiper>
+                </div>
+              </>
             )
           }
         </main>

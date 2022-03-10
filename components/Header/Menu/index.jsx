@@ -48,7 +48,7 @@ const Menu = () => {
               return (
                 <li key={index.toString()} className='menu__item laptop:mx-4'>
                   <Link href={item.href}>
-                    <a className='text-white text-xl py-3 inline-block laptop:text-base laptop:p-1'>
+                    <a className='text-xl py-3 inline-block laptop:text-base laptop:p-1 text-[#A3A8B8] hover:text-white'>
                       {item.title}
                     </a>
                   </Link>
