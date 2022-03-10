@@ -33,6 +33,13 @@ const Post = ({posts, post}) => {
           <nav>
             <ul className='flex justify-start items-center flex-wrap'>
               <li className='text-white inline-block mr-1'>
+                <Link href={process.env.NEXT_PUBLIC_SITE}>
+                  <a className='text-white font-poppins font-medium text-sm'>
+                    Home
+                  </a>
+                </Link> /
+              </li>
+              <li className='text-white inline-block mr-1'>
                 <Link href='/'>
                   <a className='text-white font-poppins font-medium text-sm'>
                     Blog
