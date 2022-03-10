@@ -20,8 +20,13 @@ const Home = ({posts, tags}) => {
         <Header/>
 
         <main className="w-full bg-dark-black-100 font-poppins overflow-hidden">
-          <Filter tags={tags} />
-          <Posts posts={posts} />
+          { (Array.isArray(tags) && tags.length) && <Filter tags={tags} /> }
+          { (Array.isArray(posts) && posts.length) && <Posts posts={posts} /> }
+          { (!Array.isArray(posts) || !posts.length) &&
+            <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-12 text-white text-center !pb-12'>
+              Posts not found
+            </div>
+          }
         </main>
 
         <Footer />
@@ -91,6 +96,6 @@ Home.propTypes = {
 Home.defaultProps = {
   posts: [],
   tags: [],
-}
+};
 
 export default Home;

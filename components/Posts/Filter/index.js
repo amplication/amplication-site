@@ -18,33 +18,25 @@ const Filter = ({tags}) => {
     setActiveTagID(tagID);
   }
 
-  if ( tags.length ) {
-    return (
-      <div className='flex flex-row flex-nowrap w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop w-full text-white text-lg !py-12'>
-        <Link href={''}>
+  return (
+    <div className='flex flex-row flex-nowrap w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop w-full text-white text-lg !py-12'>
+      <Link href={''}>
+        <span
+          onClick={() => setQueryTagID()}
+          className={tagClass + ( activeTagID === '' ? ' font-bold border-b-light-turquoise' : '' )}>
+          All
+        </span>
+      </Link>
+      { tags.map(tag =>
+        <Link href={`?tagID=${tag.id}`} key={tag.id}>
           <span
-            onClick={() => setQueryTagID()}
-            className={tagClass + ( activeTagID === '' ? ' font-bold border-b-light-turquoise' : '' )}>
-            All
+            onClick={() => setQueryTagID(tag.id)}
+            className={'border-transparent hover:border-b-light-turquoise ' + tagClass + ( activeTagID === tag.id ? ' font-bold border-b-light-turquoise' : '' )}
+          >
+            {tag.name}
           </span>
         </Link>
-        { tags.map(tag =>
-          <Link href={`?tagID=${tag.id}`} key={tag.id}>
-            <span
-              onClick={() => setQueryTagID(tag.id)}
-              className={'border-transparent hover:border-b-light-turquoise ' + tagClass + ( activeTagID === tag.id ? ' font-bold border-b-light-turquoise' : '' )}
-            >
-              {tag.name}
-            </span>
-          </Link>
-          ) }
-      </div>
-    )
-  }
-
-  return (
-    <div className='w-full text-white text-center py-6 !my-12'>
-      Tags not found
+      ) }
     </div>
   )
 }
