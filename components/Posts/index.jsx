@@ -8,7 +8,6 @@ import helpers from '../../helpers';
 import PropTypes from 'prop-types';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import {Pagination} from "swiper";
 
 const Posts = ({posts}) => {
   const [hotPost, setHotPost] = useState(null);
