@@ -1,10 +1,12 @@
-import {useRouter} from "next/router";
+import {useEffect, useState} from 'react';
 import {LinkedinShareButton, FacebookShareButton, TwitterShareButton} from "next-share";
 
 const SharingBlock = () => {
-  const router = useRouter();
-  const baseURL = 'http://localhost.com/'; //todo
-  const currentURL = baseURL + router.asPath;
+  const [currentURL, setCurrentURL] = useState('');
+
+  useEffect(() => {
+    setCurrentURL(window.location.href);
+  });
 
   return (
     <div className='w-full'>

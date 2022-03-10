@@ -1,7 +1,6 @@
 import helpers from '../../../../helpers';
 import Filter from "../../Filter";
 import PropTypes from 'prop-types';
-import Button from "../../../Common/Button";
 
 const Author = (props) => {
   return (
@@ -22,11 +21,15 @@ const Author = (props) => {
 }
 
 Author.propTypes = {
-  props: PropTypes.object,
+  avatar: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  name: PropTypes.string,
+  large: PropTypes.bool,
 };
 
 Author.defaultProps = {
-  props: {},
-}
+  name: '',
+  large: false,
+};
 
 export default Author
