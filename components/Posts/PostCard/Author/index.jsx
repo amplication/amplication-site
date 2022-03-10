@@ -14,7 +14,7 @@ const Author = (props) => {
         className={'flex flex-col ml-3 text-xs ' + ( props.large ? 'laptop:text-lg' : '' )}
       >
         <div className='text-white capitalize'>{props.name || 'Amplication Team'}</div>
-        <div className='text-white'>{helpers.getPostDate(props.date)}</div>
+        <div className={'text-white ' + ( props.large ? 'laptop:text-sm' : '' )}>{helpers.getPostDate(props.date)}</div>
       </div>
     </div>
   )
