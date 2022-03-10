@@ -60,6 +60,7 @@ module.exports = {
         'secondary-turquoise': '#53DBEE',
         'gray': '#A3A8B8',
         'error-red': '#CC2C3F',
+        'light-turquoise': '#41CADD',
       },
       aspectRatio: {
         'thumbnail': '238 / 125',
