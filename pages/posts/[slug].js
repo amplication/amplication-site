@@ -15,6 +15,7 @@ import { Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Sidebar from '../../components/Sidebar';
 import 'swiper/css';
+import PropTypes from "prop-types";
 import 'swiper/css/pagination';
 
 const Post = ({posts, post}) => {
@@ -40,7 +41,7 @@ const Post = ({posts, post}) => {
               </li>
               <li className='text-turquoise inline-block'>
                 <span className='text-turquoise font-poppins font-medium text-sm'>
-                  Current Post
+                  {post.title}
                 </span>
               </li>
             </ul>
@@ -210,6 +211,15 @@ export const getServerSideProps = async (context) => {
       post: null
     },
   }
+};
+
+Post.propTypes = {
+  post: PropTypes.object.isRequired,
+  posts: PropTypes.array,
+};
+
+Post.defaultProps = {
+  posts: [],
 };
 
 export default Post;

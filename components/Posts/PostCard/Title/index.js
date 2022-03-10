@@ -11,11 +11,13 @@ const Title = (props) => {
 }
 
 Title.propTypes = {
-  props: PropTypes.object,
+  level: PropTypes.number,
+  text: PropTypes.string,
 };
 
 Title.defaultProps = {
-  props: {},
+  level: 2,
+  text: '',
 }
 
 export default Title;

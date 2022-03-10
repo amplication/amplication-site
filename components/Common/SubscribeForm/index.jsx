@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import Select from 'react-select';
 import jsonp from 'jsonp';
+import PropTypes from "prop-types";
 
 const SubscribeForm = ({isCompactView}) => {
   const fieldErrorMessage = 'This field is required';
@@ -210,6 +211,10 @@ const SubscribeForm = ({isCompactView}) => {
     </div>
   );
 }
+
+SubscribeForm.propTypes = {
+  isCompactView: PropTypes.bool
+};
 
 SubscribeForm.defaultProps = {
   isCompactView: false
