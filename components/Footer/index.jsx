@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 const Footer = ({compactView}) => {
   return (
-    <footer className='w-full mt-auto bg-dark-black-100 pt-3 relative overflow-hidden'>
+    <footer className='w-full mt-auto pt-3 relative overflow-hidden z-10'>
       {!compactView &&
         <div className='hidden laptop:block absolute w-[60%] h-[155%] rounded-[50%] bg-pink top-0 left-0 translate-x-[-50%] translate-y-[30%] opacity-20 blur-[300px]'></div>
       }

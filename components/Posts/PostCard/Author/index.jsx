@@ -1,5 +1,4 @@
 import helpers from '../../../../helpers';
-import Filter from "../../Filter";
 import PropTypes from 'prop-types';
 
 const Author = (props) => {

@@ -39,6 +39,7 @@ module.exports = {
         'dark-black-70': '#373D57',
         'light-turquoise': '#41CADD',
         'lite': '#444B66',
+        'footer': '#fff3',
       },
       boxShadow: {
         'hot-post': '0px 44px 48px -24px rgba(9, 11, 20, 0.3)',

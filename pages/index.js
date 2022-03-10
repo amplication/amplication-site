@@ -16,15 +16,20 @@ const Home = ({posts, tags}) => {
         pageDescription="some"
       />
 
-      <div className='page min-h-screen flex flex-col justify-start justify-items-stretch overflow-hidden pt-[65px] laptop:pt-0 bg-purple-dark'>
+      <div className='page bg-dark-black-100 min-h-screen flex flex-col justify-start justify-items-stretch overflow-hidden pt-[65px] laptop:pt-0 bg-purple-dark relative'>
         <Header/>
 
-        <main className="w-full bg-dark-black-100 font-poppins">
+        <main className="w-full font-poppins z-10">
           <Filter tags={tags} />
           <Posts posts={posts} />
         </main>
 
         <Footer />
+
+        <div className="hidden laptop:block absolute w-[2047px] h-[2358px] rounded-[50%] bg-[#A787FF] opacity-20 blur-[264px] top-[10%] left-[-90%] z-0"></div>
+        <div className="hidden laptop:block absolute w-[1612px] h-[1824px] rounded-[50%] bg-[#41CADD] opacity-[.12] blur-[200px] top-[-10%] left-[90%] z-0"></div>
+        <div className="hidden laptop:block absolute w-[860px] h-[970px] rounded-[50%] bg-[#8DD9B9] opacity-[.09] blur-[192px] top-[25%] left-[40%] z-0"></div>
+        <div className="hidden laptop:block absolute w-[1920px] h-[2170px] rounded-[50%] bg-[#F6AA50] opacity-20 blur-[200px] bottom-[-5%] left-[90%] z-0"></div>
       </div>
     </>
   )
