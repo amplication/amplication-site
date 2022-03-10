@@ -59,6 +59,7 @@ module.exports = {
         'turquoise': '#48D4E9',
         'secondary-turquoise': '#53DBEE',
         'gray': '#A3A8B8',
+        'error-red': '#CC2C3F',
       },
       aspectRatio: {
         'thumbnail': '238 / 125',
@@ -69,6 +70,10 @@ module.exports = {
       },
       backgroundImage: ({
         'radial-gradient': 'radial-gradient(circle, transparent 0%, transparent 30%, rgba(9,9,121,0.1) 30%, rgba(9,9,121,0.1) 70%, rgba(118,79,229,0) 70%)',
+        'form-pattern-1-mobile': "url('/images/decor_1_mobile.svg')",
+        'form-pattern-1-desktop': "url('/images/decor_1_desktop.svg')",
+        'form-pattern-2-mobile': "url('/images/decor_2_mobile.svg')",
+        'form-pattern-2-desktop': "url('/images/decor_2_desktop.svg')",
       })
     },
   },

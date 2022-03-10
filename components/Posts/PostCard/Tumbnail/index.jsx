@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 
 const Thumbnail = (props) => {
     return (
@@ -5,6 +6,15 @@ const Thumbnail = (props) => {
             <img className='w-full h-full object-cover' src={props.src ?? 'https://placehold.co/476x250?text=amplication'} alt={props.alt || ''} width='476' height='250' />
         </div>
     )
+}
+
+Thumbnail.propTypes = {
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string,
+};
+
+Thumbnail.defaultProps = {
+  alt: '',
 }
 
 export default Thumbnail
