@@ -199,7 +199,7 @@ const SubscribeForm = ({isCompactView}) => {
               <div className={fieldContainerClasses}>
                 <input type="hidden" name="b_d4caec21be60d280924827504_49d58a40fc" tabIndex="-1"/>
                 <input type="submit" value="Subscribe" name="subscribe"
-                       className="w-full cursor-pointer flex justify-center items-center bg-purple-bright text-white font-poppins text-base font-normal text-center rounded py-2 px-5"/>
+                       className="w-full cursor-pointer flex justify-center items-center bg-purple-bright text-white font-poppins text-base font-normal text-center rounded py-2 px-5 hover:bg-purple-bright-hover"/>
               </div>
               {formSuccess === false &&
               <div className='w-full laptop:my-1 text-left text-xs text-error-red py-1.5' dangerouslySetInnerHTML={{__html: afterFormSubmitMessage}}></div>

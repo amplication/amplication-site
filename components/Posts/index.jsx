@@ -120,7 +120,7 @@ const Posts = ({posts}) => {
         (
           <div className='pb-[68px] text-center'>
             <Link href={`?page=${page ? parseInt(page) + 1 : 2}` + (tagID ? `&tagID=${tagID}` : '')} scroll={false}>
-              <a className='w-[118px] py-2 px-4 rounded text-white transition bg-dark-black-70 hover:bg-purple'>
+              <a className='w-[118px] py-2 px-4 rounded text-white bg-dark-black-70 hover:bg-purple'>
                 Load More
               </a>
             </Link>

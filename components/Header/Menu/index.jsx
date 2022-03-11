@@ -62,6 +62,7 @@ const Menu = () => {
           <Button
             text='Login'
             backgroundColor='purpleBright'
+            hoverBackgroundColor='purpleBrightHover'
             />
         </div>
       </div>
