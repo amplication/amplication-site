@@ -26,12 +26,14 @@ const FooterBanner = () => {
           <Image
             src={footerBanner}
             objectPosition='center bottom'
+            alt=''
           />
         </div>
         <div className='hidden laptop:flex laptop:flex-col laptop:justify-end'>
           <Image
             src={footerBannerDesktop}
             objectPosition='center bottom'
+            alt=''
           />
         </div>
       </div>

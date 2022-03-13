@@ -12,7 +12,7 @@ const Filter = ({tags}) => {
 
   useEffect(() => {
     setActiveTagID(typeof tagID !== 'undefined' ? tagID : '');
-  }, [tags]);
+  }, [tags, tagID]);
 
   const setQueryTagID = ( tagID = '' ) => {
     setActiveTagID(tagID);
@@ -20,7 +20,7 @@ const Filter = ({tags}) => {
 
   return (
     <div className='overflow-hidden relative flex flex-row flex-nowrap w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop text-lg !py-12'>
-      <Link href={''}>
+      <Link href='' passHref>
         <span
           onClick={() => setQueryTagID()}
           data-before='All'
@@ -29,7 +29,7 @@ const Filter = ({tags}) => {
         </span>
       </Link>
       { tags.map(tag =>
-        <Link href={`?tagID=${tag.id}`} key={tag.id}>
+        <Link href={`?tagID=${tag.id}`} key={tag.id} passHref>
           <span
             onClick={() => setQueryTagID(tag.id)}
             data-before={tag.name}
