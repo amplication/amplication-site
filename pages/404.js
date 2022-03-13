@@ -21,7 +21,7 @@ const errorPage = () => {
           <main className="w-full bg-dark-black-100 font-poppins overflow-hidden my-auto py-8">
             <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop'>
               <div className='max-w-[670px] mx-auto'>
-                <Image src={PageNotFoundIcon} />
+                <Image src={PageNotFoundIcon} alt='404' />
               </div>
               <div className='flex flex-col justify-start items-stretch max-w-[410px] mx-auto px-4'>
                 <h3 className='w-full text-lg text-white text-center mb-4'>

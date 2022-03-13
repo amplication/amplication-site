@@ -12,7 +12,7 @@ const Filter = ({tags}) => {
 
   useEffect(() => {
     setActiveTagID(typeof tagID !== 'undefined' ? tagID : '');
-  }, [tags]);
+  }, [tags, tagID]);
 
   const setQueryTagID = ( tagID = '' ) => {
     setActiveTagID(tagID);
