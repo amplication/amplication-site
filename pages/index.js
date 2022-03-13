@@ -71,6 +71,9 @@ export const getServerSideProps = async (context) => {
           tags {
             id
             name
+            posts(take: 1) {
+              id
+            }
           }
         }
       `

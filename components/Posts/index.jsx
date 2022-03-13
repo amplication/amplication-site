@@ -13,6 +13,7 @@ const Posts = ({posts}) => {
   const [hotPost, setHotPost] = useState(null);
   const [postsList, setPostsList] = useState([]);
   const [loadMore, setLoadMore] = useState(true);
+  const [loader, setLoader] = useState(false);
 
   const postPerPage = helpers.getPostPerPage();
 
@@ -42,6 +43,7 @@ const Posts = ({posts}) => {
     } else {
       setPostsList([]);
     }
+    setLoader(false);
   }, [posts]);
 
   return (
@@ -120,7 +122,10 @@ const Posts = ({posts}) => {
         (
           <div className='pb-[68px] text-center'>
             <Link href={`?page=${page ? parseInt(page) + 1 : 2}` + (tagID ? `&tagID=${tagID}` : '')} scroll={false}>
-              <a className='w-[118px] py-2 px-4 rounded text-white bg-dark-black-70 hover:bg-purple'>
+              <a
+                onClick={() => setLoader(true)}
+                className={'w-[118px] py-2 px-4 rounded text-white bg-dark-black-70 hover:bg-purple' + (loader ? ' loader' : '')}
+              >
                 Load More
               </a>
             </Link>

@@ -11,7 +11,7 @@ const FooterBottomBar = () => {
         </li>
         <li className='w-1/2 text-right py-3.5 laptop:py-8'>
           <Link href={ `${process.env.NEXT_PUBLIC_SITE}/privacy-policy` }>
-            <a className='text-white text-xs text-gray font-poppins underline laptop:text-base'>
+            <a className='text-white text-xs text-gray font-poppins underline laptop:text-base hover:text-purple-bright-hover'>
               Privacy Policy
             </a>
           </Link>

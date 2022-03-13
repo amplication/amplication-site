@@ -86,4 +86,30 @@
             opacity: 1;
         }
     }
+
+    .loader {
+        @apply relative !bg-purple !text-transparent;
+    }
+
+    .loader::after {
+        content: '';
+        display: inline-block;
+        vertical-align: text-bottom;
+        border: 1px solid currentColor;
+        border-right-color: transparent;
+        border-radius: 50%;
+        color: #fff;
+        position: absolute;
+        width: 1rem;
+        height: 1rem;
+        left: calc(50% - .5rem);
+        top: calc(50% - .5rem);
+        animation: spinner-border .25s linear infinite;
+    }
+
+    @keyframes spinner-border {
+        to {
+            transform: rotate(360deg)
+        }
+    }
 }
