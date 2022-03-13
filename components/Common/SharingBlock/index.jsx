@@ -6,7 +6,7 @@ const SharingBlock = () => {
 
   useEffect(() => {
     setCurrentURL(window.location.href);
-  });
+  }, []);
 
   return (
     <div className='w-full'>
