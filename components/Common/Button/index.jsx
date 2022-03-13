@@ -3,7 +3,7 @@ import Link from "next/link";
 
 // Background Colors
 const ButtonColorsConfig = {
-  purpleDark: 'bg-purple-dark',
+  purpleDark: 'bg-purple-dark hover:bg-purple-bright-hover',
   purpleBright: 'bg-purple-bright',
   purpleBrightHover: 'hover:bg-purple-bright-hover',
 };

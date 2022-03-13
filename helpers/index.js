@@ -81,7 +81,7 @@ const helpers = {
   },
 
   getPostSlug: ( postTitle, postID ) => {
-    return `/posts/${postTitle}-${postID}`.split(' ').join('-').toLowerCase();
+    return `/${postTitle}-${postID}`.split(' ').join('-').toLowerCase();
   },
 
   getPostDate: ( date ) => {

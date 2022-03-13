@@ -1,19 +1,19 @@
-import DocumentHead from '../../components/Common/DocumentHead';
-import client from '../../services';
-import helpers from '../../helpers';
+import DocumentHead from '../components/Common/DocumentHead';
+import client from '../services';
+import helpers from '../helpers';
 import {gql} from '@apollo/client';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
-import Thumbnail from '../../components/Posts/PostCard/Tumbnail';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import Thumbnail from '../components/Posts/PostCard/Tumbnail';
 import Link from 'next/link';
-import Author from '../../components/Posts/PostCard/Author';
-import Tags from '../../components/Posts/PostCard/Tags';
-import Title from '../../components/Posts/PostCard/Title';
+import Author from '../components/Posts/PostCard/Author';
+import Tags from '../components/Posts/PostCard/Tags';
+import Title from '../components/Posts/PostCard/Title';
 import showdown from 'showdown';
-import PostCard from '../../components/Posts/PostCard';
+import PostCard from '../components/Posts/PostCard';
 import { Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import Sidebar from '../../components/Sidebar';
+import Sidebar from '../components/Sidebar';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import PropTypes from 'prop-types';
@@ -34,14 +34,14 @@ const Post = ({posts, post}) => {
             <ul className='flex justify-start items-center flex-wrap'>
               <li className='text-white inline-block mr-1'>
                 <Link href={process.env.NEXT_PUBLIC_SITE}>
-                  <a className='text-white font-poppins font-medium text-sm'>
+                  <a className='text-white font-poppins font-medium text-sm hover:text-purple-bright-hover'>
                     Home
                   </a>
                 </Link> /
               </li>
               <li className='text-white inline-block mr-1'>
                 <Link href='/'>
-                  <a className='text-white font-poppins font-medium text-sm'>
+                  <a className='text-white font-poppins font-medium text-sm hover:text-purple-bright-hover'>
                     Blog
                   </a>
                 </Link> /
@@ -69,7 +69,7 @@ const Post = ({posts, post}) => {
                   large={ true }
                 />
                 <Thumbnail
-                  className={ 'my-8 rounded-2xl aspect-thumbnail-hero laptop:aspect-thumbnail-hero' }
+                  className={ 'my-8 rounded-2xl aspect-auto' }
                   src={ helpers.isValidUrl( post.featuredImage ) ? post.featuredImage : null }
                   alt={ post.title }
                 />
@@ -91,7 +91,7 @@ const Post = ({posts, post}) => {
             <Sidebar />
           </aside>
 
-          { Array.isArray(posts) && posts.length &&
+          { Array.isArray(posts) && !!posts.length &&
             (
               <>
                 <div className='w-full order-3'>

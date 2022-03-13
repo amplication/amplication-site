@@ -1,15 +1,15 @@
-import client from '../services';
-import {gql} from '@apollo/client';
-import helpers from '../helpers';
+import DocumentHead from '../../components/Common/DocumentHead';
+import Header from '../../components/Header';
+import Posts from '../../components/Posts';
+import Filter from '../../components/Posts/Filter';
+import Footer from '../../components/Footer';
+import Background from '../../components/Background';
+import helpers from '../../helpers';
 import PropTypes from 'prop-types';
-import DocumentHead from '../components/Common/DocumentHead';
-import Header from '../components/Header';
-import Posts from '../components/Posts';
-import Filter from '../components/Posts/Filter';
-import Footer from '../components/Footer';
-import Background from '../components/Background';
+import client from '../../services';
+import {gql} from '@apollo/client';
 
-const Home = ({posts, tags}) => {
+const TagsPage = ({posts, tags, query}) => {
   return (
     <>
       <DocumentHead
@@ -78,7 +78,8 @@ export const getServerSideProps = async (context) => {
     return {
       props: {
         posts: data?.posts,
-        tags: data?.tags
+        tags: data?.tags,
+        query: context.query,
       },
     };
   } catch (e) {
@@ -88,19 +89,20 @@ export const getServerSideProps = async (context) => {
   return {
     props: {
       posts: null,
-      tags: null
+      tags: null,
+      query: null,
     },
   }
 };
 
-Home.propTypes = {
+TagsPage.propTypes = {
   posts: PropTypes.array,
   tags: PropTypes.array,
 };
 
-Home.defaultProps = {
+TagsPage.defaultProps = {
   posts: [],
   tags: [],
 };
 
-export default Home;
+export default TagsPage;

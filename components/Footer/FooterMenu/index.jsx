@@ -9,7 +9,7 @@ const FooterMenu = () => {
       <ul className='w-full flex flex-col justify-start items-center'>
         <li className='mb-1'>
           <Link href='mailto:amplication@gmail.com'>
-            <a className='text-gray text-base laptop:text-lg'>
+            <a className='text-gray text-base laptop:text-lg hover:text-purple-bright-hover'>
               contact@amplication.com
             </a>
           </Link>

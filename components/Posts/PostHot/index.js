@@ -11,7 +11,7 @@ const PostHot = (props) => {
   if ((Object.keys(post).length)) {
     return (
       <Link href={helpers.getPostSlug(post.title, post.id)} passHref>
-        <div className='flex flex-col-reverse relative rounded-2xl cursor-pointer overflow-hidden bg-light-blue shadow-hot-post laptop:flex-row laptop:mb-[100px] group border border-transparent transition-all duration-1000 hover:border-lite'>
+        <a className='flex flex-col-reverse relative rounded-2xl overflow-hidden bg-light-blue shadow-hot-post laptop:flex-row laptop:mb-[100px]'>
           <div className='absolute top-0 left-0 ml-6 laptop:ml-8 bg-[#8DD9B9] text rounded-bl-lg rounded-br-lg w-[91px] py-2 laptop:py-[6px] text-center text-sm font-poppins font-semibold text-dark-100'>
             Hot News
           </div>
@@ -23,23 +23,21 @@ const PostHot = (props) => {
               date={ post.createdAt }
             />
             <Tags list={post.tags} className='mt-6' />
-            <Title level={2} className="text-lg leading-[27px] laptop:text-2xl laptop:leading-9 font-medium my-6">
-              <span className="text-white hover:text-blue-700 transition-colors">{ post.title }</span>
+            <Title level={2} className="text-white text-lg leading-[27px] laptop:text-2xl laptop:leading-9 font-medium my-6">
+              { post.title }
             </Title>
             <div className="text-[15px] text-white line-clamp-2 laptop:text-base leading-6">
               {helpers.removeMarkdown( post.content )}
             </div>
           </div>
-          <div className='w-full overflow-hidden laptop:w-1/2 rounded-2xl laptop:rounded-l-none overflow-hidden'>
-            <div className='group-hover:scale-105 transition-all duration-1000'>
-              <Thumbnail
-                alt={ post.title }
-                className='aspect-hot-normal !rounded-l-none laptop:aspect-hot'
-                src={ helpers.isValidUrl( post.featuredImage ) ? post.featuredImage : '' }
-              />
-            </div>
+          <div className='w-full overflow-hidden laptop:w-1/2 rounded-2xl laptop:rounded-l-none'>
+            <Thumbnail
+              alt={ post.title }
+              className='aspect-hot-normal !rounded-l-none laptop:aspect-hot'
+              src={ helpers.isValidUrl( post.featuredImage ) ? post.featuredImage : '' }
+            />
           </div>
-        </div>
+        </a>
       </Link>
     );
   }
