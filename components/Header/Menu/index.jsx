@@ -63,6 +63,8 @@ const Menu = () => {
             text='Login'
             backgroundColor='purpleBright'
             hoverBackgroundColor='purpleBrightHover'
+            isLink={true}
+            href={process.env.NEXT_PUBLIC_SITE}
             />
         </div>
       </div>

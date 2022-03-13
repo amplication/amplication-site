@@ -86,4 +86,24 @@
             opacity: 1;
         }
     }
+
+    body::-webkit-scrollbar-thumb:hover {
+        background: #a0aec0;
+    }
+
+    body::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    body::-webkit-scrollbar-track {
+        background: #ffffff00;
+    }
+
+    body::-webkit-scrollbar-thumb {
+        background: #7950ed;
+    }
+
+    body::-webkit-scrollbar-thumb:hover {
+        background: #5e2de9;
+    }
 }
