@@ -87,6 +87,22 @@
         }
     }
 
+    body::-webkit-scrollbar {
+        @apply w-[5px];
+    }
+
+    body::-webkit-scrollbar-track {
+        @apply bg-gray;
+    }
+
+    body::-webkit-scrollbar-thumb {
+        @apply bg-purple-bright;
+    }
+
+    body::-webkit-scrollbar-thumb:hover {
+        @apply bg-purple-bright-hover;
+    }
+  
     .loader {
         @apply relative !bg-purple !text-transparent;
     }
