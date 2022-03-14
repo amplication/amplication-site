@@ -40,7 +40,7 @@ const Post = ({posts, post}) => {
                 </Link> /
               </li>
               <li className='text-white inline-block mr-1'>
-                <Link href='/'>
+                <Link href='/blog'>
                   <a className='text-white font-poppins font-medium text-sm hover:text-purple-bright-hover'>
                     Blog
                   </a>
@@ -69,7 +69,8 @@ const Post = ({posts, post}) => {
                   large={ true }
                 />
                 <Thumbnail
-                  className={ 'my-8 rounded-2xl aspect-auto' }
+                  objectFit='initial'
+                  className={ 'my-8 rounded-2xl !aspect-auto' }
                   src={ helpers.isValidUrl( post.featuredImage ) ? post.featuredImage : null }
                   alt={ post.title }
                 />
@@ -127,7 +128,7 @@ const Post = ({posts, post}) => {
                     {
                       posts.map((post, i) => {
                         return (
-                          <SwiperSlide key={ post.id } virtualIndex={i}>
+                          <SwiperSlide className='!h-auto' key={ post.id } virtualIndex={i}>
                             <PostCard data={ post } key={ post.id } />
                           </SwiperSlide>
                         )
