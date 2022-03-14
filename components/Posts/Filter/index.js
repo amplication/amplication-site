@@ -20,7 +20,7 @@ const Filter = ({tags}) => {
 
   return (
     <div className='overflow-hidden relative flex flex-row flex-nowrap w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop text-lg !py-12'>
-      <Link href={'/blog'}>
+      <Link href={'/'}>
         <span
           onClick={() => setQueryTagID()}
           data-before='All'
