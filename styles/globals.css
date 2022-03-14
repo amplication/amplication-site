@@ -17,9 +17,9 @@
 
     .menu {
         transition: all 0.4s ease-in-out;
-        max-height: calc(100vh - 65px);
-        height: calc(100vh - 65px);
-        @apply absolute w-full top-full z-10 overflow-y-auto bg-purple-dark container-desktop-enlarged pt-5 pb-7 laptop:flex laptop:justify-end laptop:items-center laptop:static laptop:inset-auto laptop:h-auto laptop:p-0;
+        max-height: calc(100vh - 60px);
+        height: calc(100vh - 60px);
+        @apply absolute w-full top-[calc(100%+1px)] z-10 overflow-y-auto bg-purple-dark container-desktop-enlarged pt-5 pb-7 laptop:flex laptop:justify-end laptop:items-center laptop:static laptop:inset-auto laptop:h-auto laptop:p-0;
     }
 
     .menu--closed {
@@ -132,5 +132,47 @@
         to {
             transform: rotate(360deg)
         }
+    }
+
+    .content h1 {
+        @apply block w-full text-3xl my-3;
+    }
+    .content h2 {
+        @apply block w-full text-2xl my-3.5;
+    }
+    .content h3 {
+        @apply block w-full text-lg my-4;
+    }
+    .content h4 {
+        @apply block w-full text-base my-5;
+    }
+    .content h5 {
+        @apply block w-full text-sm my-6;
+    }
+    .content h6 {
+        @apply block w-full text-xs my-7;
+    }
+    .content ul {
+        @apply list-disc pl-4;
+    }
+    .content ol {
+        @apply list-decimal pl-4;
+    }
+    .content ul li,
+    .content ol li {
+        @apply mb-3;
+    }
+    .content p {
+        @apply mb-3;
+    }
+    .content a {
+        @apply underline decoration-light-turquoise decoration-2 hover:decoration-3;
+    }
+    .content table {
+        @apply w-full border-collapse border border-[rgba(255,255,255,0.3)] mb-3;
+    }
+    .content table th,
+    .content table td {
+        @apply border border-[rgba(255,255,255,0.3)] p-3;
     }
 }
