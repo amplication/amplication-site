@@ -120,11 +120,11 @@ const Posts = ({posts}) => {
 
       { ( ( loadMore || typeof page === 'undefined' ) && postsList.length >= postPerPage ) &&
         (
-          <div className='pb-[68px] text-center'>
+          <div className='pt-6 pb-4 text-center'>
             <Link href={`?page=${page ? parseInt(page) + 1 : 2}`} scroll={false}>
               <a
                 onClick={() => setLoader(true)}
-                className={'w-[118px] py-2 px-4 rounded text-white bg-dark-black-70 hover:bg-purple' + (loader ? ' loader' : '')}
+                className={'w-[118px] inline-block py-2 px-4 rounded text-white bg-dark-black-70 hover:bg-purple' + (loader ? ' loader' : '')}
               >
                 Load More
               </a>

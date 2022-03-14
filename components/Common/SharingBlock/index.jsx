@@ -14,7 +14,7 @@ const SharingBlock = () => {
         Share this post.
       </h4>
       <ul className='w-full flex justify-start items-center flex-wrap gap-2.5'>
-        <li className='flex justify-center items-center'>
+        <li className='flex justify-center items-center transition-opacity hover:opacity-50'>
           <LinkedinShareButton
             url={currentURL}
           >
@@ -23,7 +23,7 @@ const SharingBlock = () => {
             </svg>
           </LinkedinShareButton>
         </li>
-        <li className='flex justify-center items-center'>
+        <li className='flex justify-center items-center transition-opacity hover:opacity-50'>
           <FacebookShareButton
             url={currentURL}
           >
@@ -32,7 +32,7 @@ const SharingBlock = () => {
             </svg>
           </FacebookShareButton>
         </li>
-        <li className='flex justify-center items-center'>
+        <li className='flex justify-center items-center transition-opacity hover:opacity-50'>
           <TwitterShareButton
             url={currentURL}
           >

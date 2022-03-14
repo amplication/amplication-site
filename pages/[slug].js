@@ -40,7 +40,7 @@ const Post = ({posts, post}) => {
                 </Link> /
               </li>
               <li className='text-white inline-block mr-1'>
-                <Link href='/'>
+                <Link href='/blog'>
                   <a className='text-white font-poppins font-medium text-sm hover:text-purple-bright-hover'>
                     Blog
                   </a>
@@ -55,7 +55,7 @@ const Post = ({posts, post}) => {
           </nav>
         </div>
 
-        <main className='flex flex-col flex-wrap laptop:flex-row justify-between w-full bg-dark-black-100 font-poppins overflow-hidden p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-6 laptop:pt-12 laptop:pb-10 gap-8'>
+        <main className='flex flex-col flex-wrap laptop:flex-row justify-between w-full bg-dark-black-100 font-poppins overflow-hidden p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-8 gap-8 desktop:gap-28'>
           <div className='w-full laptop:max-w-[881px] flex-1 order-1'>
             { post &&
               <>
@@ -74,7 +74,7 @@ const Post = ({posts, post}) => {
                   alt={ post.title }
                 />
                 <div
-                  className='text-base text-white leading-6 mt-2'
+                  className='content text-base text-white leading-6 mt-2'
                   dangerouslySetInnerHTML={{
                     __html: new showdown.Converter({
                       tables: true,

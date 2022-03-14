@@ -74,6 +74,9 @@ module.exports = {
         'hot': '62 / 35',
         'hot-normal': '164 / 125',
       },
+      textDecorationThickness: {
+        3: '3px',
+      },
       backgroundImage: ({
         'radial-gradient': 'radial-gradient(circle, transparent 0%, transparent 30%, rgba(9,9,121,0.1) 30%, rgba(9,9,121,0.1) 70%, rgba(118,79,229,0) 70%)',
         'form-pattern-1-mobile': "url('/images/decor_1_mobile.svg')",

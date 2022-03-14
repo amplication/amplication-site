@@ -4,7 +4,7 @@ import BottomBar from "./BottomBar";
 
 const Header = () => {
   return (
-    <header className='fixed w-full top-0 z-20 laptop:static font-poppins'>
+    <header className='z-20 font-poppins'>
       <TopBar/>
       <MainBar/>
       <BottomBar/>
