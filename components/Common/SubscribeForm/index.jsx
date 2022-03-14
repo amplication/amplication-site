@@ -161,60 +161,62 @@ const SubscribeForm = ({isCompactView}) => {
   return (
     <div className='w-full rounded-2xl bg-purple-light bg-form-pattern-1-mobile bg-no-repeat bg-right-top laptop:bg-form-pattern-1-desktop transition-all'>
       <div className='w-full rounded-2xl bg-form-pattern-2-mobile bg-no-repeat bg-left-bottom laptop:bg-form-pattern-2-desktop relative'>
-        <div className={loaderClasses}></div>
-        <div className={containerClasses}>
-          {formSuccess &&
-          <h2 className='w-full text-center text-white text-2xl font-bold'>{afterFormSubmitMessage}</h2>
-          }
-          {!formSuccess &&
-          <>
-            <h2 className={titleClasses}>
-              Sign up to stay up-to-date with our latest developments. We promise not to spam you.
-            </h2>
-            <form className={formClasses} onSubmit={(e) => submitSubscriptionForm(e)}>
-              <div className={fieldContainerClasses}>
-                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} name="EMAIL"
-                       placeholder='email@example.com'
-                       className={'block w-full rounded-lg border border-solid bg-purple-dark py-2 px-3 font-poppins text-sm text-white placeholder:text-gray ' + (emailFieldError ? 'border-error-red' : 'border-lite')}/>
-                {emailFieldError &&
-                <span className='text-left block w-full text-xs text-error-red py-0.5 '>{fieldErrorMessage}</span>
+        <div className='bg-noise'>
+          <div className={loaderClasses}></div>
+          <div className={containerClasses}>
+            {formSuccess &&
+            <h2 className='w-full text-center text-white text-2xl font-bold'>{afterFormSubmitMessage}</h2>
+            }
+            {!formSuccess &&
+            <>
+              <h2 className={titleClasses}>
+                Sign up to stay up-to-date with our latest developments. We promise not to spam you.
+              </h2>
+              <form className={formClasses} onSubmit={(e) => submitSubscriptionForm(e)}>
+                <div className={fieldContainerClasses}>
+                  <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} name="EMAIL"
+                         placeholder='email@example.com'
+                         className={'block w-full rounded-lg border border-solid bg-purple-dark py-2 px-3 font-poppins text-sm text-white placeholder:text-gray ' + (emailFieldError ? 'border-error-red' : 'border-lite')}/>
+                  {emailFieldError &&
+                  <span className='text-left block w-full text-xs text-error-red py-0.5 '>{fieldErrorMessage}</span>
+                  }
+                </div>
+                <div className={fieldContainerClasses}>
+                  <input type="text" value={fullName} onChange={(e) => setFullName(e.target.value)}
+                         placeholder='Full Name' name="FULLNAME"
+                         className={'block w-full rounded-lg border border-solid bg-purple-dark py-2 px-3 font-poppins text-sm text-white placeholder:text-gray ' + (fullNameFieldError ? 'border-error-red' : 'border-lite')}/>
+                  {fullNameFieldError &&
+                  <span className='text-left block w-full text-xs text-error-red py-0.5 '>{fieldErrorMessage}</span>
+                  }
+                </div>
+                <div className={fieldContainerClasses}>
+                  <Select
+                    className='text-sm text-gray'
+                    name='source'
+                    id='source'
+                    instanceId='source'
+                    styles={selectCustomStyles}
+                    defaultValue={{value: '', label: 'How did you hear about us'}}
+                    options={sourceOptions}
+                    onChange={setSource}
+                    isSearchable={false}
+                  />
+                  {sourceFieldError &&
+                  <span className='text-left block w-full text-xs text-error-red py-0.5'>{fieldErrorMessage}</span>
+                  }
+                </div>
+                <div className={fieldContainerClasses}>
+                  <input type="hidden" name="b_d4caec21be60d280924827504_49d58a40fc" tabIndex="-1"/>
+                  <input type="submit" value="Subscribe" name="subscribe"
+                         className="w-full cursor-pointer flex justify-center items-center bg-purple-bright text-white font-poppins text-base font-normal text-center rounded py-2 px-5 hover:bg-purple-bright-hover"/>
+                </div>
+                {formSuccess === false &&
+                <div className='w-full laptop:my-1 text-left text-xs text-error-red py-1.5' dangerouslySetInnerHTML={{__html: afterFormSubmitMessage}}></div>
                 }
-              </div>
-              <div className={fieldContainerClasses}>
-                <input type="text" value={fullName} onChange={(e) => setFullName(e.target.value)}
-                       placeholder='Full Name' name="FULLNAME"
-                       className={'block w-full rounded-lg border border-solid bg-purple-dark py-2 px-3 font-poppins text-sm text-white placeholder:text-gray ' + (fullNameFieldError ? 'border-error-red' : 'border-lite')}/>
-                {fullNameFieldError &&
-                <span className='text-left block w-full text-xs text-error-red py-0.5 '>{fieldErrorMessage}</span>
-                }
-              </div>
-              <div className={fieldContainerClasses}>
-                <Select
-                  className='text-sm text-gray'
-                  name='source'
-                  id='source'
-                  instanceId='source'
-                  styles={selectCustomStyles}
-                  defaultValue={{value: '', label: 'How did you hear about us'}}
-                  options={sourceOptions}
-                  onChange={setSource}
-                  isSearchable={false}
-                />
-                {sourceFieldError &&
-                <span className='text-left block w-full text-xs text-error-red py-0.5'>{fieldErrorMessage}</span>
-                }
-              </div>
-              <div className={fieldContainerClasses}>
-                <input type="hidden" name="b_d4caec21be60d280924827504_49d58a40fc" tabIndex="-1"/>
-                <input type="submit" value="Subscribe" name="subscribe"
-                       className="w-full cursor-pointer flex justify-center items-center bg-purple-bright text-white font-poppins text-base font-normal text-center rounded py-2 px-5 hover:bg-purple-bright-hover"/>
-              </div>
-              {formSuccess === false &&
-              <div className='w-full laptop:my-1 text-left text-xs text-error-red py-1.5' dangerouslySetInnerHTML={{__html: afterFormSubmitMessage}}></div>
-              }
-            </form>
-          </>
-          }
+              </form>
+            </>
+            }
+          </div>
         </div>
       </div>
     </div>

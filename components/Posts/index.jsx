@@ -56,7 +56,7 @@ const Posts = ({posts}) => {
         )
       }
 
-      <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop mt-6 laptop:mt-0'>
+      <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop mt-6 laptop:mt-0 laptop:mb-10'>
         <Swiper
           className='flex flex-col-reverse'
           loop={false}
@@ -97,7 +97,7 @@ const Posts = ({posts}) => {
           {
             postsList.slice(0, 3).map((post, i) => {
               return (
-                <SwiperSlide key={ post.id } virtualIndex={i}>
+                <SwiperSlide className='!h-auto' key={ post.id } virtualIndex={i}>
                   <PostCard data={ post } key={ post.id } />
                 </SwiperSlide>
               )
@@ -121,7 +121,7 @@ const Posts = ({posts}) => {
       { ( ( loadMore || typeof page === 'undefined' ) && postsList.length >= postPerPage ) &&
         (
           <div className='pt-6 pb-4 text-center'>
-            <Link href={`?page=${page ? parseInt(page) + 1 : 2}`} scroll={false}>
+            <Link href={(tagID ? `/tags/${tagID}` : '') + `?page=${page ? parseInt(page) + 1 : 2}`} scroll={false}>
               <a
                 onClick={() => setLoader(true)}
                 className={'w-[118px] inline-block py-2 px-4 rounded text-white bg-dark-black-70 hover:bg-purple' + (loader ? ' loader' : '')}
