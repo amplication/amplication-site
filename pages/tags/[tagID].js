@@ -39,16 +39,15 @@ const TagsPage = ({posts, tags, query}) => {
 
 export const getServerSideProps = async (context) => {
   const hotPostCount = 1;
-  const postsPerPage = helpers.getPostPerPage();
+  const postsPerPage = helpers.getPostPerPage() * ( context.query.page ? parseInt( context.query.page ) : 1 );
   const postsByTagID = context.query.tagID ? `, where: {tags: {some: {id: {equals: "${context.query.tagID}"}}}}, ` : '';
-  const postsTake    = context.query.page ? postsPerPage + 1 : hotPostCount + postsPerPage + 1;
-  const postsSkip    = context.query.page ? ( parseInt( context.query.page ) - 1 ) * postsPerPage + ( context.query.tagID ? 0 : hotPostCount ) : 0;
+  const postsTake    = hotPostCount + postsPerPage + 1;
 
   try {
     const {data} = await client.query({
       query: gql`
         query {
-          posts(take: ${postsTake}, skip: ${postsSkip}, orderBy: {createdAt: Desc}${postsByTagID}) {
+          posts(take: ${postsTake}, orderBy: {createdAt: Desc}${postsByTagID}) {
             id
             title
             content
