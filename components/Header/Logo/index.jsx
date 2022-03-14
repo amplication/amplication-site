@@ -21,7 +21,7 @@ const Logo = () => {
 
   return (
     <div>
-      <Link href='/blog'>
+      <Link href='/'>
         <a className='flex justify-center items-center'>
           {
             isMobile

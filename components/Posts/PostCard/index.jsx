@@ -11,12 +11,15 @@ const PostCard = (props) => {
   if (Object.keys(post).length) {
     return (
       <Link href={helpers.getPostSlug(post.title, post.id)} passHref>
-        <a className="text-white transition-colors text-ellipsis display-block laptop:mb-[61px]">
-          <div className={'border border-solid border-dark-black-70 laptop:border-transparent laptop:border-transparent h-full hover:shadow-hover-post laptop:hover:border laptop:hover:border-dark-black-70 rounded-2xl pb-6 ' + props.className ?? ''} >
-            <Thumbnail
-              src={ helpers.isValidUrl( post.featuredImage ) ? post.featuredImage : '' }
-              alt={ post.title }
-            />
+        <a className="text-white transition-colors text-ellipsis display-block laptop:mb-[61px] group">
+          <div className={'overflow-hidden border border-solid border-dark-black-70 laptop:border-transparent laptop:border-transparent h-full hover:shadow-hover-post laptop:hover:border laptop:hover:border-dark-black-70 rounded-2xl pb-6 ' + props.className ?? ''} >
+            <div className='overflow-hidden'>
+              <Thumbnail
+                className='group-hover:scale-105 transition-all duration-1000'
+                src={ helpers.isValidUrl( post.featuredImage ) ? post.featuredImage : '' }
+                alt={ post.title }
+              />
+            </div>
             <div className="px-6 laptop:px-4">
               <Author
                 avatar={ post.author?.profileImage }
