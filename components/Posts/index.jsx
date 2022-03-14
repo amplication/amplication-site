@@ -22,19 +22,15 @@ const Posts = ({posts}) => {
 
   useEffect(() => {
     if ( Array.isArray(posts) && posts.length ) {
-      if ( typeof tagID === 'undefined' && typeof page === 'undefined' ) {
+      if (typeof tagID === 'undefined') {
         setHotPost(posts.shift());
-      } else {
-        if ( typeof tagID !== 'undefined' ) {
-          setHotPost(null);
-        }
       }
 
       if (typeof page === 'undefined') {
         setLoadMore(true);
         setPostsList(posts.splice(0, postPerPage));
       } else {
-        setPostsList([...postsList, ...posts.splice(0, postPerPage)]);
+        setPostsList(posts.splice(0, postPerPage * (typeof page === 'undefined' ? 1 : parseInt(page))));
       }
 
       if (!posts.length) {
