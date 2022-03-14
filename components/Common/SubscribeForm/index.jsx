@@ -30,6 +30,12 @@ const SubscribeForm = ({isCompactView}) => {
       boxShadow: null,
       textAlign: 'left',
       color: '#A3A8B8',
+      '&:hover': {
+        borderColor: sourceFieldError ? '#CC2C3F' : '#444B66'
+      },
+      '&:focus': {
+        borderColor: '#000000'
+      }
     }),
     menu: base => ({
       ...base,
@@ -187,6 +193,8 @@ const SubscribeForm = ({isCompactView}) => {
                   <Select
                     className='text-sm text-gray'
                     name='source'
+                    id='source'
+                    instanceId='source'
                     styles={selectCustomStyles}
                     defaultValue={{value: '', label: 'How did you hear about us'}}
                     options={sourceOptions}
