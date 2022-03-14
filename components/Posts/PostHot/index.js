@@ -30,7 +30,7 @@ const PostHot = (props) => {
               {helpers.removeMarkdown( post.content )}
             </div>
           </div>
-          <div className='w-full overflow-hidden laptop:w-1/2 rounded-2xl laptop:rounded-l-none overflow-hidden'>
+          <div className='w-full overflow-hidden laptop:w-1/2 rounded-t-2xl laptop:rounded-l-none overflow-hidden'>
             <div className='group-hover:scale-105 transition-all duration-1000'>
               <Thumbnail
                 alt={ post.title }
