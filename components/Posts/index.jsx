@@ -54,7 +54,7 @@ const Posts = ({posts}) => {
 
       <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop mt-6 laptop:mt-0 laptop:mb-10'>
         <Swiper
-          className='flex flex-col-reverse'
+          className='flex flex-col-reverse !overflow-visible'
           loop={false}
           spaceBetween={30}
           slidesPerView={3}
