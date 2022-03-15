@@ -178,7 +178,7 @@ const SubscribeForm = ({isCompactView}) => {
                 <div className={fieldContainerClasses}>
                   <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} name="EMAIL"
                          placeholder='email@example.com'
-                         className={'focus:border-purple !shadow-hidden block w-full rounded-lg font-normal border border-solid bg-purple-dark py-2 px-3 font-poppins text-sm text-white leading-input placeholder:text-gray ' + (emailFieldError ? 'border-error-red' : 'border-lite')}/>
+                         className={`focus:border-purple !shadow-hidden block w-full rounded-lg border border-solid bg-purple-dark py-2 px-3 font-poppins text-sm text-white font-normal leading-input !shadow-transparent !ring-0 placeholder:text-gray focus:outline-none ${(emailFieldError ? '!border-error-red' : '!border-lite')}`}/>
                   {emailFieldError &&
                   <span className='text-left block w-full text-xs text-error-red py-0.5 '>{fieldErrorMessage}</span>
                   }
@@ -186,7 +186,7 @@ const SubscribeForm = ({isCompactView}) => {
                 <div className={fieldContainerClasses}>
                   <input type="text" value={fullName} onChange={(e) => setFullName(e.target.value)}
                          placeholder='Full Name' name="FULLNAME"
-                         className={'focus:border-purple !shadow-hidden block w-full rounded-lg font-normal border border-solid bg-purple-dark py-2 px-3 font-poppins text-sm text-white leading-input placeholder:text-gray ' + (fullNameFieldError ? 'border-error-red' : 'border-lite')}/>
+                         className={`block w-full rounded-lg border border-solid bg-purple-dark py-2 px-3 font-poppins text-sm text-white leading-input focus:border-purple !shadow-hidden !shadow-transparent !ring-0 placeholder:text-gray focus:outline-none ${(emailFieldError ? '!border-error-red' : '!border-lite')}` }/>
                   {fullNameFieldError &&
                   <span className='text-left block w-full text-xs text-error-red py-0.5 '>{fieldErrorMessage}</span>
                   }
