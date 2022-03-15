@@ -102,7 +102,7 @@ const Post = ({posts, post}) => {
                 </div>
                 <div className='w-full pb-6 order-4'>
                   <Swiper
-                    className='flex flex-col-reverse'
+                    className='flex flex-col-reverse !overflow-visible'
                     loop={false}
                     spaceBetween={24}
                     slidesPerView={3}
