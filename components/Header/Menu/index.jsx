@@ -58,7 +58,7 @@ const Menu = () => {
             }
           </ul>
         </nav>
-        <div className='hidden laptop:inline-block'>
+        <div className='hidden laptop:inline-block ml-4'>
           <Button
             text='Login'
             backgroundColor='purpleBright'
