@@ -175,4 +175,7 @@
     .content table td {
         @apply border border-[rgba(255,255,255,0.3)] p-3;
     }
+    .content img {
+        border-radius: 16px;
+    }
 }

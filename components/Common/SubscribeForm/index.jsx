@@ -27,15 +27,16 @@ const SubscribeForm = ({isCompactView}) => {
       borderRadius: '0.5rem',
       borderColor: sourceFieldError ? '#CC2C3F' : '#444B66',
       padding: 0,
+      height: '40px',
       boxShadow: null,
       textAlign: 'left',
       color: '#A3A8B8',
       '&:hover': {
-        borderColor: sourceFieldError ? '#CC2C3F' : '#444B66'
+        borderColor: sourceFieldError ? '#CC2C3F' : '#8D64FF'
       },
       '&:focus': {
-        borderColor: '#000000'
-      }
+        borderColor: '#8D64FF'
+      },
     }),
     menu: base => ({
       ...base,
@@ -54,6 +55,7 @@ const SubscribeForm = ({isCompactView}) => {
       ...provided,
       color: '#A3A8B8',
       background: '#15192C',
+      textAlign: 'left',
       transition: 'all 0.2s ease-in-out',
       '&:hover': {
         background: '#7950ED',
@@ -134,11 +136,11 @@ const SubscribeForm = ({isCompactView}) => {
   let loaderClasses = 'w-full h-full absolute l-0 t-0 rounded-2xl transition-all opacity-50 pointer-events-none';
   loaderClasses += isWaitingForResponse ? ' bg-purple-light z-10 pointer-events-auto' : '';
 
-  let containerClasses = 'w-full px-4 py-16 max-w-[600px] mx-auto laptop:max-w-[100%] laptop:flex laptop:items-center relative';
+  let containerClasses = 'w-full px-4 py-16 laptop:py-11 max-w-[600px] mx-auto laptop:max-w-[100%] laptop:flex laptop:items-center relative';
   if (isCompactView) {
-    containerClasses += ' laptop:flex-col laptop:justify-start laptop:items-stretch laptop:px-7 laptop:pt-20 laptop:pb-[120px]';
+    containerClasses += ' laptop:flex-col laptop:justify-start laptop:items-stretch laptop:px-8 laptop:pt-20 laptop:pb-[120px]';
   } else {
-    containerClasses += '  laptop:justify-between laptop:px-16 laptop:py-14 laptop:max-w-[1436px]';
+    containerClasses += ' laptop:px-[91px] laptop:justify-between laptop:px-16 laptop:py-14 laptop:max-w-[1436px]';
   }
 
   let titleClasses = 'text-white text-lg font-poppins font-bold text-left mb-6  laptop:text-2xl ';
@@ -155,7 +157,7 @@ const SubscribeForm = ({isCompactView}) => {
 
   let fieldContainerClasses = 'mb-4';
   if (!isCompactView) {
-    fieldContainerClasses += ' laptop:w-[calc(50%-8px)] laptop:my-1';
+    fieldContainerClasses += ' laptop:w-[calc(50%-6px)] laptop:my-1.5';
   }
 
   return (
@@ -176,7 +178,7 @@ const SubscribeForm = ({isCompactView}) => {
                 <div className={fieldContainerClasses}>
                   <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} name="EMAIL"
                          placeholder='email@example.com'
-                         className={'block w-full rounded-lg border border-solid bg-purple-dark py-2 px-3 font-poppins text-sm text-white placeholder:text-gray ' + (emailFieldError ? 'border-error-red' : 'border-lite')}/>
+                         className={`focus:border-purple !shadow-hidden block w-full rounded-lg border border-solid bg-purple-dark py-2 px-3 font-poppins text-sm text-white font-normal leading-input !shadow-transparent !ring-0 placeholder:text-gray focus:outline-none ${(emailFieldError ? '!border-error-red' : '!border-lite')}`}/>
                   {emailFieldError &&
                   <span className='text-left block w-full text-xs text-error-red py-0.5 '>{fieldErrorMessage}</span>
                   }
@@ -184,14 +186,14 @@ const SubscribeForm = ({isCompactView}) => {
                 <div className={fieldContainerClasses}>
                   <input type="text" value={fullName} onChange={(e) => setFullName(e.target.value)}
                          placeholder='Full Name' name="FULLNAME"
-                         className={'block w-full rounded-lg border border-solid bg-purple-dark py-2 px-3 font-poppins text-sm text-white placeholder:text-gray ' + (fullNameFieldError ? 'border-error-red' : 'border-lite')}/>
+                         className={`block w-full rounded-lg border border-solid bg-purple-dark py-2 px-3 font-poppins text-sm text-white leading-input focus:border-purple !shadow-hidden !shadow-transparent !ring-0 placeholder:text-gray focus:outline-none ${(emailFieldError ? '!border-error-red' : '!border-lite')}` }/>
                   {fullNameFieldError &&
                   <span className='text-left block w-full text-xs text-error-red py-0.5 '>{fieldErrorMessage}</span>
                   }
                 </div>
                 <div className={fieldContainerClasses}>
                   <Select
-                    className='text-sm text-gray'
+                    className='text-sm text-gray leading-input'
                     name='source'
                     id='source'
                     instanceId='source'
@@ -205,7 +207,7 @@ const SubscribeForm = ({isCompactView}) => {
                   <span className='text-left block w-full text-xs text-error-red py-0.5'>{fieldErrorMessage}</span>
                   }
                 </div>
-                <div className={fieldContainerClasses}>
+                <div className={'mt-2 ' + fieldContainerClasses}>
                   <input type="hidden" name="b_d4caec21be60d280924827504_49d58a40fc" tabIndex="-1"/>
                   <input type="submit" value="Subscribe" name="subscribe"
                          className="w-full cursor-pointer flex justify-center items-center bg-purple-bright text-white font-poppins text-base font-normal text-center rounded py-2 px-5 hover:bg-purple-bright-hover"/>

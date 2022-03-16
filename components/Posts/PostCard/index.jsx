@@ -15,7 +15,7 @@ const PostCard = (props) => {
           <div className={'overflow-hidden border border-solid border-dark-black-70 laptop:border-transparent laptop:border-transparent h-full hover:shadow-hover-post laptop:hover:border laptop:hover:border-dark-black-70 rounded-2xl pb-6 ' + props.className ?? ''} >
             <div className='overflow-hidden'>
               <Thumbnail
-                className='group-hover:scale-105 transition-all duration-1000'
+                className='group-hover:scale-105 transition-all duration-[3000ms]'
                 src={ helpers.isValidUrl( post.featuredImage ) ? post.featuredImage : '' }
                 alt={ post.title }
               />
