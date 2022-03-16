@@ -116,7 +116,7 @@ const Posts = ({posts}) => {
 
       { ( ( loadMore || typeof page === 'undefined' ) && postsList.length >= postPerPage ) &&
         (
-          <div className='pt-6 laptop:pt-0 pb-4 laptop:pb-[68px] text-center'>
+          <div className='pt-6 laptop:pt-0 pb-4 laptop:pb-5 text-center'>
             <Link href={(tagID ? `/tags/${tagID}` : '') + `?page=${page ? parseInt(page) + 1 : 2}`} scroll={false}>
               <a
                 onClick={() => setLoader(true)}
