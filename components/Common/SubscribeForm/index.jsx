@@ -143,7 +143,7 @@ const SubscribeForm = ({isCompactView}) => {
     containerClasses += ' laptop:px-[91px] laptop:justify-between laptop:px-16 laptop:py-14 laptop:max-w-[1436px]';
   }
 
-  let titleClasses = 'text-white text-lg font-poppins font-semibold text-left mb-6  laptop:text-2xl ';
+  let titleClasses = 'text-white text-lg font-poppins font-semibold text-left mb-6 laptop:text-2xl ';
   if (isCompactView) {
     titleClasses += ' laptop:w-full';
   } else {
@@ -178,7 +178,7 @@ const SubscribeForm = ({isCompactView}) => {
                 <div className={(emailFieldError ? fieldContainerClasses : fieldContainerClasses + ' pb-5')}>
                   <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} name="EMAIL"
                          placeholder='email@example.com'
-                         className={'block w-full rounded-lg border border-solid bg-purple-dark py-2 px-3 font-poppins text-sm text-white placeholder:text-gray ' + (emailFieldError ? 'border-error-red' : 'border-lite')}/>
+                         className={'leading-input focus:border-purple !shadow-hidden block w-full rounded-lg border border-solid bg-purple-dark py-2 px-3 font-poppins text-sm text-white placeholder:text-gray ' + (emailFieldError ? 'border-error-red' : 'border-lite')}/>
                   {emailFieldError &&
                   <span className='text-left block w-full text-xs text-error-red py-0.5 '>{fieldErrorMessage}</span>
                   }
@@ -186,7 +186,7 @@ const SubscribeForm = ({isCompactView}) => {
                 <div className={(fullNameFieldError ? fieldContainerClasses : fieldContainerClasses + ' pb-5')}>
                   <input type="text" value={fullName} onChange={(e) => setFullName(e.target.value)}
                          placeholder='Full Name' name="FULLNAME"
-                         className={'block w-full rounded-lg border border-solid bg-purple-dark py-2 px-3 font-poppins text-sm text-white placeholder:text-gray ' + (fullNameFieldError ? 'border-error-red' : 'border-lite')}/>
+                         className={'leading-input focus:border-purple !shadow-hidden block w-full rounded-lg border border-solid bg-purple-dark py-2 px-3 font-poppins text-sm text-white placeholder:text-gray ' + (fullNameFieldError ? 'border-error-red' : 'border-lite')}/>
                   {fullNameFieldError &&
                   <span className='text-left block w-full text-xs text-error-red py-0.5 '>{fieldErrorMessage}</span>
                   }
