@@ -178,7 +178,6 @@
     .content img {
         border-radius: 16px;
     }
-
     .no-scrollbar {
         -ms-overflow-style: none;
         scrollbar-width: none;
