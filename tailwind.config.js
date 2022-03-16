@@ -20,6 +20,19 @@ module.exports = {
       'container-desktop-enlarged': '1920px',
     },
     extend: {
+      animation: {
+        fadeIn: 'fadeIn 0.5s ease-in-out',
+      },
+      keyframes: theme => ({
+        fadeIn: {
+          '100%': {
+            opacity: 1,
+          },
+          '0%': {
+            opacity: 0,
+          },
+        },
+      }),
       fontSize: {
         'tiny': '10px',
         'base': '15px',
