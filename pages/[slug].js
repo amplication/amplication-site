@@ -59,7 +59,7 @@ const Post = ({posts, post}) => {
           <div className='w-full laptop:max-w-[881px] flex-1 order-1'>
             { post &&
               <>
-                <Title level={1} className='text-lg font-medium text-white text-[32px] leading-[48px] mb-8' text={ post.title } />
+                <Title level={1} className='text-lg font-semibold text-white laptop:text-[32px] laptop:leading-[48px] mb-8' text={ post.title } />
                 <Tags list={ post.tags }/>
                 <Author
                   className={ 'mt-8' }

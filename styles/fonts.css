@@ -7,7 +7,17 @@
     url("../public/fonts/DMMono/DMMono-Regular.woff") format("woff"),
     url("../public/fonts/DMMono/DMMono-Regular.eot") format("opentype"),
     url("../public/fonts/DMMono/DMMono-Regular.ttf") format("truetype");
-    font-weight: normal;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "dm_mono";
+    src: url("../public/fonts/DMMono/DMMono-Medium.woff2") format("woff2"),
+    url("../public/fonts/DMMono/DMMono-Medium.woff") format("woff"),
+    url("../public/fonts/DMMono/DMMono-Medium.eot") format("opentype"),
+    url("../public/fonts/DMMono/DMMono-Medium.ttf") format("truetype");
+    font-weight: 500;
     font-style: normal;
 }
 
