@@ -22,6 +22,8 @@ module.exports = {
     extend: {
       animation: {
         fadeIn: 'fadeIn 0.5s ease-in-out',
+        appear: 'appearing 0.5s ease-in-out',
+        disappear: 'disappearing 0.5s ease-in-out'
       },
       keyframes: theme => ({
         fadeIn: {
@@ -32,6 +34,29 @@ module.exports = {
             opacity: 0,
           },
         },
+        appearing: {
+          '100%': {
+            transform: 'scale(1)',
+            opacity: 1,
+          },
+          '50%': {
+            opacity: 0,
+          },
+          '0%': {
+            transform: 'scale(0.5)',
+            opacity: 0,
+          }
+        },
+        disappearing: {
+          '100%': {
+            transform: 'scale(0.5)',
+            opacity: 0,
+          },
+          '0%': {
+            transform: 'scale(1)',
+            opacity: 1,
+          }
+        }
       }),
       fontSize: {
         'tiny': '10px',
