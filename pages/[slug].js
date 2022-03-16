@@ -56,13 +56,13 @@ const Post = ({posts, post}) => {
         </div>
 
         <main className='flex flex-col flex-wrap laptop:flex-row justify-between w-full bg-dark-black-100 font-poppins overflow-hidden p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-8 gap-8 desktop:gap-28'>
-          <div className='w-full laptop:max-w-[881px] flex-1 order-1'>
+          <div className='w-full laptop:max-w-[881px] flex-1 order-1 flex flex-col laptop:block'>
             { post &&
               <>
-                <Title level={1} className='text-lg font-medium text-white text-[32px] leading-[48px] mb-8' text={ post.title } />
-                <Tags list={ post.tags }/>
+                <Title level={1} className='order-1 text-lg font-medium text-white text-[32px] leading-[48px] laptop:mt-8 laptop:mb-8' text={ post.title } />
+                <Tags list={ post.tags } className='order-3' />
                 <Author
-                  className={ 'mt-8' }
+                  className={ 'order-2 mt-4 laptop:mt-8' }
                   avatar={ post.author?.profileImage }
                   name={ post.author?.firstName + ' ' + post.author?.lastName }
                   date={ post.createdAt }
@@ -70,12 +70,12 @@ const Post = ({posts, post}) => {
                 />
                 <Thumbnail
                   objectFit='initial'
-                  className={ 'my-8 rounded-2xl !aspect-auto' }
+                  className={ 'order-4 my-8 rounded-2xl !aspect-auto' }
                   src={ helpers.isValidUrl( post.featuredImage ) ? post.featuredImage : null }
                   alt={ post.title }
                 />
                 <div
-                  className='content text-base text-white leading-6 mt-2'
+                  className='font-normal order-5 content text-sm laptop:text-lg text-white leading-[21px] laptop:leading-[27px] mt-2'
                   dangerouslySetInnerHTML={{
                     __html: new showdown.Converter({
                       tables: true,
@@ -95,12 +95,12 @@ const Post = ({posts, post}) => {
           { Array.isArray(posts) && !!posts.length &&
             (
               <>
-                <div className='w-full order-3'>
-                  <Title level={2} className='text-2xl laptop:text-[32px] leading-9 laptop:leading-[48px] font-semibold text-white mb-[-8px] laptop:mb-[-16px] mt-[60px]'>
-                    Related Posts<span className='text-[#53DBEE]'>.</span>
-                  </Title>
-                </div>
-                <div className='w-full pb-6 order-4'>
+                <div className='w-full pt-4 pb-6 laptop:py-16 desktop:pt-0 order-4'>
+                  <div className='w-full mb-6 laptop:mb-8'>
+                    <Title level={2} className='text-2xl laptop:text-[32px] leading-9 laptop:leading-[48px] font-semibold text-white'>
+                      Related Posts<span className='text-[#53DBEE]'>.</span>
+                    </Title>
+                  </div>
                   <Swiper
                     className='flex flex-col-reverse !overflow-visible'
                     loop={false}
