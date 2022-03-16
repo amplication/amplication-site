@@ -12,7 +12,7 @@ const PostHot = (props) => {
     return (
       <Link href={helpers.getPostSlug(post.title, post.id)} passHref>
         <div className='flex flex-col-reverse relative rounded-2xl cursor-pointer overflow-hidden bg-light-blue shadow-hot-post laptop:flex-row laptop:mb-[100px] animate-fadeIn group border border-transparent transition-all duration-1000 hover:border-lite'>
-          <div className='absolute top-0 left-0 ml-6 laptop:ml-8 bg-[#8DD9B9] text rounded-bl-lg rounded-br-lg w-[91px] py-2 laptop:py-[6px] text-center text-sm font-poppins font-semibold text-dark-black-100'>
+          <div className='absolute top-0 left-0 ml-6 laptop:ml-8 bg-[#8DD9B9] text rounded-bl-lg rounded-br-lg w-[91px] py-2 laptop:py-[6px] text-center text-sm font-poppins font-semibold text-dark-100'>
             Hot News
           </div>
           <div className='w-full flex justify-center flex-col py-[30px] px-6 laptop:w-1/2 laptop:px-8 laptop:py-0'>
@@ -22,19 +22,19 @@ const PostHot = (props) => {
               name={ post.author?.firstName + ' ' + post.author?.lastName }
               date={ post.createdAt }
             />
-            <Tags list={post.tags} className='mt-6' />
-            <Title level={2} className="text-lg leading-[27px] laptop:text-2xl laptop:leading-9 font-medium my-6">
-              <span className="text-white hover:text-blue-700 transition-colors">{ post.title }</span>
+            <Tags list={post.tags} className='!mt-6' />
+            <Title level={2} className="text-lg text-white leading-[27px] laptop:text-2xl laptop:leading-9 font-medium my-6">
+              <span className="text-white">{ post.title }</span>
             </Title>
             <div className="text-[15px] text-white line-clamp-2 laptop:text-base leading-6">
               {helpers.removeMarkdown( post.content )}
             </div>
           </div>
-          <div className='w-full overflow-hidden laptop:w-1/2 rounded-t-2xl laptop:rounded-l-none overflow-hidden'>
-            <div className='group-hover:scale-105 transition-all duration-1000'>
+          <div className='w-full overflow-hidden laptop:w-1/2 rounded-t-2xl laptop:rounded-l-none overflow-hidden laptop:min-h-[360px]'>
+            <div className='group-hover:scale-105 transition-all duration-[2000ms] laptop:h-full'>
               <Thumbnail
                 alt={ post.title }
-                className='aspect-hot-normal !rounded-l-none laptop:aspect-hot'
+                className='aspect-hot-normal !rounded-l-none laptop:aspect-hot laptop:h-full'
                 src={ helpers.isValidUrl( post.featuredImage ) ? post.featuredImage : '' }
               />
             </div>

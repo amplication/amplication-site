@@ -19,11 +19,14 @@ import 'swiper/css/pagination';
 import PropTypes from 'prop-types';
 
 const Post = ({posts, post}) => {
+  const rawPostContent = helpers.removeMarkdown(post.content);
+
   return (
     <>
       <DocumentHead
-        pageTitle='some'
-        pageDescription='some'
+        pageTitle={post.title}
+        pageDescription={rawPostContent.substring(0, 150)}
+        pageImage={(helpers.isValidUrl( post.featuredImage ) ? post.featuredImage : '')}
       />
 
       <div className='page min-h-screen flex flex-col justify-start justify-items-stretch overflow-hidden pt-[65px] laptop:pt-0 bg-purple-dark'>
@@ -82,7 +85,6 @@ const Post = ({posts, post}) => {
                     }).makeHtml( post.content )
                   }}
                 >
-
                 </div>
               </>
             }

@@ -27,15 +27,16 @@ const SubscribeForm = ({isCompactView}) => {
       borderRadius: '0.5rem',
       borderColor: sourceFieldError ? '#CC2C3F' : '#444B66',
       padding: 0,
+      height: '40px',
       boxShadow: null,
       textAlign: 'left',
       color: '#A3A8B8',
       '&:hover': {
-        borderColor: sourceFieldError ? '#CC2C3F' : '#444B66'
+        borderColor: sourceFieldError ? '#CC2C3F' : '#8D64FF'
       },
       '&:focus': {
-        borderColor: '#000000'
-      }
+        borderColor: '#8D64FF'
+      },
     }),
     menu: base => ({
       ...base,
@@ -54,6 +55,7 @@ const SubscribeForm = ({isCompactView}) => {
       ...provided,
       color: '#A3A8B8',
       background: '#15192C',
+      textAlign: 'left',
       transition: 'all 0.2s ease-in-out',
       '&:hover': {
         background: '#7950ED',
@@ -134,11 +136,11 @@ const SubscribeForm = ({isCompactView}) => {
   let loaderClasses = 'w-full h-full absolute l-0 t-0 rounded-2xl transition-all opacity-50 pointer-events-none';
   loaderClasses += isWaitingForResponse ? ' bg-purple-light z-10 pointer-events-auto' : '';
 
-  let containerClasses = 'w-full px-4 py-16 max-w-[600px] mx-auto laptop:max-w-[100%] laptop:flex laptop:items-center relative';
+  let containerClasses = 'w-full px-4 py-16 laptop:py-11 max-w-[600px] mx-auto laptop:max-w-[100%] laptop:flex laptop:items-center relative';
   if (isCompactView) {
-    containerClasses += ' laptop:flex-col laptop:justify-start laptop:items-stretch laptop:px-7 laptop:pt-20 laptop:pb-[120px]';
+    containerClasses += ' laptop:flex-col laptop:justify-start laptop:items-stretch laptop:px-8 laptop:pt-20 laptop:pb-[120px]';
   } else {
-    containerClasses += '  laptop:justify-between laptop:px-16 laptop:py-14 laptop:max-w-[1436px]';
+    containerClasses += ' laptop:px-[91px] laptop:justify-between laptop:px-16 laptop:py-14 laptop:max-w-[1436px]';
   }
 
   let titleClasses = 'text-white text-lg font-poppins font-semibold text-left mb-6  laptop:text-2xl ';

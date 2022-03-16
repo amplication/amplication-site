@@ -53,14 +53,17 @@ module.exports = {
         'light-turquoise': '#41CADD',
         'lite': '#444B66',
         'footer': '#fff3',
+        'purple': '#8D64FF',
       },
       boxShadow: {
+        'hidden': 'initial',
         'btn': '0px 8px 20px 0px rgba(19, 22, 36, 0.24)',
         'hover-post': '0px 28px 32px -14px rgba(9, 11, 20, .5)',
         'hot-post': '0px 44px 48px -24px rgba(9, 11, 20, 0.3)',
       },
       lineHeight: {
         'tag': '1.2',
+        'input': '1.375rem',
       },
       colors: {
         'light-blue': '#22273C',
