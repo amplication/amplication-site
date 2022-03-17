@@ -32,7 +32,7 @@ const Post = ({posts, post}) => {
       <div className='page min-h-screen flex flex-col justify-start justify-items-stretch overflow-hidden pt-[65px] laptop:pt-0 bg-purple-dark'>
         <Header/>
 
-        <div className='w-full p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop mt-16 laptop:mt-12'>
+        <div className='w-full p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop mt-8 laptop:mt-12'>
           <nav>
             <ul className='flex justify-start items-center flex-wrap'>
               <li className='text-white inline-block mr-1'>
@@ -78,7 +78,7 @@ const Post = ({posts, post}) => {
                   alt={ post.title }
                 />
                 <div
-                  className='font-normal order-5 content text-sm laptop:text-lg text-white leading-[21px] laptop:leading-[27px] mt-2'
+                  className='font-normal order-5 content text-sm laptop:text-lg text-white leading-[21px] laptop:leading-[27px] laptop:mt-2'
                   dangerouslySetInnerHTML={{
                     __html: new showdown.Converter({
                       tables: true,
@@ -97,7 +97,7 @@ const Post = ({posts, post}) => {
           { Array.isArray(posts) && !!posts.length &&
             (
               <>
-                <div className='w-full pt-4 pb-6 laptop:py-16 desktop:pt-0 order-4'>
+                <div className='w-full pt-4 pb-4 laptop:py-16 desktop:pt-0 order-4'>
                   <div className='w-full mb-6 laptop:mb-8'>
                     <Title level={2} className='text-2xl laptop:text-[32px] leading-9 laptop:leading-[48px] font-semibold text-white'>
                       Related Posts<span className='text-[#53DBEE]'>.</span>

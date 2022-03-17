@@ -25,14 +25,14 @@ const SubscribeForm = ({isCompactView}) => {
       ...base,
       background: '#15192C',
       borderRadius: '0.5rem',
-      borderColor: sourceFieldError ? '#CC2C3F' : '#444B66',
+      borderColor: sourceFieldError ? '#F85B6E' : '#444B66',
       padding: 0,
       height: '40px',
       boxShadow: null,
       textAlign: 'left',
       color: '#A3A8B8',
       '&:hover': {
-        borderColor: sourceFieldError ? '#CC2C3F' : '#8D64FF'
+        borderColor: sourceFieldError ? '#F85B6E' : '#8D64FF'
       },
       '&:focus': {
         borderColor: '#8D64FF'
@@ -178,17 +178,17 @@ const SubscribeForm = ({isCompactView}) => {
                 <div className={(emailFieldError ? fieldContainerClasses : fieldContainerClasses + ' pb-5')}>
                   <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} name="EMAIL"
                          placeholder='email@example.com'
-                         className={'block w-full rounded-lg border border-solid bg-purple-dark py-2 px-3 font-poppins text-sm text-white placeholder:text-gray ' + (emailFieldError ? 'border-error-red' : 'border-lite')}/>
+                         className={`block w-full rounded-lg border border-solid bg-purple-dark py-2 px-3 font-poppins text-sm text-white placeholder:text-gray ${(emailFieldError ? '' : 'hover:border-purple')} ${(emailFieldError ? 'border-pink' : 'border-lite')}`}/>
                   {emailFieldError &&
-                  <span className='text-left block w-full text-xs text-error-red py-0.5 '>{fieldErrorMessage}</span>
+                  <span className='text-left block w-full text-xs text-pink py-0.5 '>{fieldErrorMessage}</span>
                   }
                 </div>
                 <div className={(fullNameFieldError ? fieldContainerClasses : fieldContainerClasses + ' pb-5')}>
                   <input type="text" value={fullName} onChange={(e) => setFullName(e.target.value)}
                          placeholder='Full Name' name="FULLNAME"
-                         className={'block w-full rounded-lg border border-solid bg-purple-dark py-2 px-3 font-poppins text-sm text-white placeholder:text-gray ' + (fullNameFieldError ? 'border-error-red' : 'border-lite')}/>
+                         className={`block w-full rounded-lg border border-solid bg-purple-dark py-2 px-3 font-poppins text-sm text-white placeholder:text-gray ${(fullNameFieldError ? '' : 'hover:border-purple')} ${(fullNameFieldError ? 'border-pink' : 'border-lite')}`}/>
                   {fullNameFieldError &&
-                  <span className='text-left block w-full text-xs text-error-red py-0.5 '>{fieldErrorMessage}</span>
+                  <span className='text-left block w-full text-xs text-pink py-0.5 '>{fieldErrorMessage}</span>
                   }
                 </div>
                 <div className={(sourceFieldError ? fieldContainerClasses : fieldContainerClasses + ' pb-5')}>
@@ -204,7 +204,7 @@ const SubscribeForm = ({isCompactView}) => {
                     isSearchable={false}
                   />
                   {sourceFieldError &&
-                  <span className='text-left block w-full text-xs text-error-red py-0.5'>{fieldErrorMessage}</span>
+                  <span className='text-left block w-full text-xs text-pink py-0.5'>{fieldErrorMessage}</span>
                   }
                 </div>
                 <div className={(isCompactView ? fieldContainerClasses + ' laptop:mt-2' : fieldContainerClasses)}>
@@ -213,7 +213,7 @@ const SubscribeForm = ({isCompactView}) => {
                          className="w-full cursor-pointer flex justify-center items-center bg-purple-bright text-white font-poppins font-normal text-center rounded py-2 px-5 mt-2 laptop:mt-0 hover:bg-purple-bright-hover"/>
                 </div>
                 {formSuccess === false &&
-                <div className='w-full laptop:my-1 text-left text-xs text-error-red py-1.5' dangerouslySetInnerHTML={{__html: afterFormSubmitMessage}}></div>
+                <div className='w-full laptop:my-1 text-left text-xs text-pink py-1.5' dangerouslySetInnerHTML={{__html: afterFormSubmitMessage}}></div>
                 }
               </form>
             </>
