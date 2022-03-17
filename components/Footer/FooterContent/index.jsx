@@ -4,7 +4,7 @@ import SocialList from "../../Common/SocialList";
 
 const FooterContent = () => {
   return (
-    <div className='w-full mt-9 laptop:flex laptop:justify-end laptop:items-center laptop:py-28 laptop:my-0 relative'>
+    <div className='w-full mt-14 laptop:flex laptop:justify-end laptop:items-center laptop:pt-[100px] laptop:pb-[120px] laptop:my-0 relative'>
 
       {/*Footer Main Text*/}
       <FooterText />

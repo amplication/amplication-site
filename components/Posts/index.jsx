@@ -46,13 +46,13 @@ const Posts = ({posts}) => {
     <>
       { hotPost &&
         (
-          <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop col-span-3'>
+          <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop mb-6 laptop:m-container-desktop laptop:p-container-desktop col-span-3'>
             <PostHot data={hotPost} />
           </div>
         )
       }
 
-      <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop mt-6 laptop:mt-0 laptop:mb-10'>
+      <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop laptop:mt-0 laptop:mb-10'>
         <Swiper
           className='flex flex-col-reverse !overflow-visible'
           loop={false}
@@ -102,9 +102,9 @@ const Posts = ({posts}) => {
         </Swiper>
       </div>
 
-      <div className={'w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-6 laptop:pt-12 laptop:pb-0 grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-7.5'}>
+      <div className={'w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-7 laptop:pt-12 laptop:pb-0 grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-7.5'}>
 
-        <div className='col-span-1 tablet:col-span-2 laptop:col-span-3 text-white text-center py-6 laptop:pb-[61px] laptop:pt-0' key='subscribe'>
+        <div className='col-span-1 tablet:col-span-2 laptop:col-span-3 text-white text-center py-7 laptop:pb-[61px] laptop:pt-0' key='subscribe'>
           <SubscribeForm />
         </div>
         {
@@ -116,7 +116,7 @@ const Posts = ({posts}) => {
 
       { ( ( loadMore || typeof page === 'undefined' ) && postsList.length >= postPerPage ) &&
         (
-          <div className='pt-6 laptop:pt-0 pb-4 laptop:pb-5 text-center'>
+          <div className='pt-5 pb-4 laptop:pb-10 laptop:pt-7 text-center'>
             <Link href={(tagID ? `/tags/${tagID}` : '') + `?page=${page ? parseInt(page) + 1 : 2}`} scroll={false}>
               <a
                 onClick={() => setLoader(true)}
