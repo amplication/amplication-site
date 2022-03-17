@@ -49,7 +49,8 @@ const SubscribeForm = ({isCompactView}) => {
       ...base,
       padding: 0,
       background: '#15192C',
-      color: '#A3A8B8'
+      color: '#A3A8B8',
+      borderRadius: '0.5rem',
     }),
     option: (provided, state) => ({
       ...provided,
@@ -165,8 +166,8 @@ const SubscribeForm = ({isCompactView}) => {
   }
 
   return (
-    <div className='w-full rounded-2xl bg-purple-light bg-form-pattern-1-mobile bg-no-repeat bg-right-top laptop:bg-form-pattern-1-desktop laptop:bg-[length:auto_100%] laptop:min-h-[208px] transition-all'>
-      <div className='w-full rounded-2xl bg-form-pattern-2-mobile bg-no-repeat bg-left-bottom laptop:bg-form-pattern-2-desktop relative'>
+    <div className={`w-full rounded-2xl bg-purple-light bg-no-repeat bg-right-top laptop:min-h-[208px] transition-all bg-form-pattern-1-mobile ${(isCompactView ? '' : 'laptop:bg-form-pattern-1-desktop laptop:bg-[length:auto_100%]')}`}>
+      <div className={`w-full rounded-2xl  bg-no-repeat bg-left-bottom relative bg-form-pattern-2-mobile ${(isCompactView ? '' : 'laptop:bg-form-pattern-2-desktop' )}`}>
         <div className='bg-noise'>
           <div className={loaderClasses}></div>
           <div className={containerClasses}>
@@ -195,7 +196,7 @@ const SubscribeForm = ({isCompactView}) => {
                   <span className='text-left block w-full text-xs text-pink py-0.5 '>{fieldErrorMessage}</span>
                   }
                 </div>
-                <div className={(sourceFieldError ? fieldContainerClasses : fieldContainerClasses + ' pb-5 laptop:pb-0')}>
+                <div className={(sourceFieldError ? fieldContainerClasses + ' pb-2' : fieldContainerClasses + ' pb-7')}>
                   <Select
                     className='text-sm text-gray'
                     name='source'
@@ -211,10 +212,10 @@ const SubscribeForm = ({isCompactView}) => {
                   <span className='text-left block w-full text-xs text-pink py-0.5'>{fieldErrorMessage}</span>
                   }
                 </div>
-                <div className={(isCompactView ? fieldContainerClasses + ' laptop:mt-2' : fieldContainerClasses)}>
+                <div className={(isCompactView ? fieldContainerClasses + ' laptop:mt-0' : fieldContainerClasses)}>
                   <input type="hidden" name="b_d4caec21be60d280924827504_49d58a40fc" tabIndex="-1"/>
                   <input type="submit" value="Subscribe" name="subscribe"
-                         className="w-full cursor-pointer flex justify-center items-center bg-purple-bright text-white font-poppins font-normal text-center rounded py-2 px-5 mt-2 laptop:mt-0 hover:bg-purple-bright-hover"/>
+                         className="w-full cursor-pointer flex justify-center items-center bg-purple-bright text-white font-poppins font-normal text-center transition-all duration-300 rounded py-2 px-5 mt-2 laptop:mt-0 hover:bg-purple-bright-hover"/>
                 </div>
                 {formSuccess === false &&
                 <div className='w-full laptop:my-1 text-left text-xs text-pink py-1.5' dangerouslySetInnerHTML={{__html: afterFormSubmitMessage}}></div>

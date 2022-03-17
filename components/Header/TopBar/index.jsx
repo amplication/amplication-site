@@ -12,7 +12,7 @@ const TopBar = () => {
                 fill="#F5B82E"/>
             </svg>
           </span>
-          <span className='font-dmmono text-white text-xs leading-tight'>
+          <span className='font-dmmono text-white text-xs leading-tight pt-1'>
             Amplication is open source. Star our GitHub repo!
           </span>
           <span className='inline-block mx-1.5'>
