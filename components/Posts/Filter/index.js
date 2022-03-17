@@ -19,8 +19,8 @@ const Filter = ({tags}) => {
   }
 
   return (
-    <div className='no-scrollbar overflow-x-auto overflow-hidden relative flex flex-row flex-nowrap w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop text-lg !pb-9 !pt-6'>
-      <Link href={'/'}>
+    <div className='no-scrollbar overflow-x-auto overflow-hidden relative flex flex-row flex-nowrap w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop text-lg pb-9 pt-6 laptop:py-12'>
+      <Link href={'/'} passHref>
         <span
           onClick={() => setQueryTagID()}
           data-before='All'
@@ -31,7 +31,7 @@ const Filter = ({tags}) => {
       { tags.map(tag => {
         if ( !!tag.posts.length ) {
           return (
-            <Link href={`/tags/${tag.id}`} key={tag.id}>
+            <Link href={`/tags/${tag.id}`} key={tag.id} passHref>
               <span
                 onClick={() => setQueryTagID(tag.id)}
                 data-before={tag.name}
