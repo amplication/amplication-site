@@ -13,7 +13,7 @@ const Home = ({posts, tags}) => {
   return (
     <>
       <DocumentHead
-        pageTitle="some"
+        pageTitle="Amplication's Blog"
         pageDescription="some"
       />
 
