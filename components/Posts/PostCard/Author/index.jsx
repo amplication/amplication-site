@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Author = (props) => {
   return (
-    <div className={'flex items-center flex-row mt-6 ' + props.className ?? ''}>
+    <div className={'flex items-center flex-row mt-6 ' + (props.className !== 'undefined' ? props.className : '')}>
       <span className={'w-8 h-8 rounded-full overflow-hidden relative ' + ( props.large ? 'laptop:w-[50px] laptop:h-[50px]' : '' )}>
         <Image
           src={props.avatar}

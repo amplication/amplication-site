@@ -125,7 +125,11 @@ const SubscribeForm = ({isCompactView}) => {
         setAfterFormSubmitMessage(('msg' in data ? data.msg : 'Something is wrong'));
         setFormSuccess(false);
       } else {
-        setAfterFormSubmitMessage(data.msg);
+        if(data.result === 'success') {
+          setAfterFormSubmitMessage('Thank you for signing up for text messages!');
+        } else {
+          setAfterFormSubmitMessage(data.msg);
+        }
         setFormSuccess(true);
       }
 
@@ -136,18 +140,18 @@ const SubscribeForm = ({isCompactView}) => {
   let loaderClasses = 'w-full h-full absolute l-0 t-0 rounded-2xl transition-all opacity-50 pointer-events-none';
   loaderClasses += isWaitingForResponse ? ' bg-purple-light z-10 pointer-events-auto' : '';
 
-  let containerClasses = 'w-full px-4 py-16 laptop:py-11 max-w-[600px] mx-auto laptop:max-w-[100%] laptop:flex laptop:items-center relative';
+  let containerClasses = 'w-full px-4 py-16 laptop:py-[54px] max-w-[600px] mx-auto laptop:max-w-[100%] laptop:flex laptop:items-center relative laptop:min-h-[208px]';
   if (isCompactView) {
     containerClasses += ' laptop:flex-col laptop:justify-start laptop:items-stretch laptop:px-8 laptop:pt-20 laptop:pb-[120px]';
   } else {
     containerClasses += ' laptop:px-[91px] laptop:justify-between laptop:px-16 laptop:py-14 laptop:max-w-[1436px]';
   }
 
-  let titleClasses = 'text-white text-lg font-poppins font-semibold text-left mb-6  laptop:text-2xl ';
+  let titleClasses = 'text-white text-lg font-poppins font-semibold text-left mb-6 laptop:text-2xl ';
   if (isCompactView) {
     titleClasses += ' laptop:w-full';
   } else {
-    titleClasses += ' laptop:w-[calc(50%-20px)] laptop:mr-5 laptop:grow laptop:m-0 laptop:mb-5';
+    titleClasses += ' laptop:w-[calc(50%-20px)] laptop:mr-5 laptop:grow laptop:m-0';
   }
 
   let formClasses = 'w-full flex flex-col justify-start items-stretch';
@@ -161,7 +165,7 @@ const SubscribeForm = ({isCompactView}) => {
   }
 
   return (
-    <div className='w-full rounded-2xl bg-purple-light bg-form-pattern-1-mobile bg-no-repeat bg-right-top laptop:bg-form-pattern-1-desktop transition-all'>
+    <div className='w-full rounded-2xl bg-purple-light bg-form-pattern-1-mobile bg-no-repeat bg-right-top laptop:bg-form-pattern-1-desktop laptop:bg-[length:auto_100%] laptop:min-h-[208px] transition-all'>
       <div className='w-full rounded-2xl bg-form-pattern-2-mobile bg-no-repeat bg-left-bottom laptop:bg-form-pattern-2-desktop relative'>
         <div className='bg-noise'>
           <div className={loaderClasses}></div>
@@ -178,7 +182,7 @@ const SubscribeForm = ({isCompactView}) => {
                 <div className={(emailFieldError ? fieldContainerClasses : fieldContainerClasses + ' pb-5')}>
                   <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} name="EMAIL"
                          placeholder='email@example.com'
-                         className={`block w-full rounded-lg border border-solid bg-purple-dark py-2 px-3 font-poppins text-sm text-white placeholder:text-gray ${(emailFieldError ? '' : 'hover:border-purple')} ${(emailFieldError ? 'border-pink' : 'border-lite')}`}/>
+                         className={`leading-input focus:border-purple !shadow-hidden block w-full rounded-lg border border-solid bg-purple-dark py-2 px-3 font-poppins text-sm text-white placeholder:text-gray ${(emailFieldError ? '' : 'hover:border-purple')} ${(emailFieldError ? 'border-pink' : 'border-lite')}`}/>
                   {emailFieldError &&
                   <span className='text-left block w-full text-xs text-pink py-0.5 '>{fieldErrorMessage}</span>
                   }
@@ -186,12 +190,12 @@ const SubscribeForm = ({isCompactView}) => {
                 <div className={(fullNameFieldError ? fieldContainerClasses : fieldContainerClasses + ' pb-5')}>
                   <input type="text" value={fullName} onChange={(e) => setFullName(e.target.value)}
                          placeholder='Full Name' name="FULLNAME"
-                         className={`block w-full rounded-lg border border-solid bg-purple-dark py-2 px-3 font-poppins text-sm text-white placeholder:text-gray ${(fullNameFieldError ? '' : 'hover:border-purple')} ${(fullNameFieldError ? 'border-pink' : 'border-lite')}`}/>
+                         className={`leading-input focus:border-purple !shadow-hidden block w-full rounded-lg border border-solid bg-purple-dark py-2 px-3 font-poppins text-sm text-white placeholder:text-gray ${(fullNameFieldError ? '' : 'hover:border-purple')} ${(fullNameFieldError ? 'border-pink' : 'border-lite')}}/>
                   {fullNameFieldError &&
                   <span className='text-left block w-full text-xs text-pink py-0.5 '>{fieldErrorMessage}</span>
                   }
                 </div>
-                <div className={(sourceFieldError ? fieldContainerClasses : fieldContainerClasses + ' pb-5')}>
+                <div className={(sourceFieldError ? fieldContainerClasses : fieldContainerClasses + ' pb-5 laptop:pb-0')}>
                   <Select
                     className='text-sm text-gray'
                     name='source'
