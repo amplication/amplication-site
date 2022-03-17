@@ -8,9 +8,9 @@ const FooterMenu = () => {
       </p>
       <ul className='w-full flex flex-col justify-start items-center'>
         <li className='mb-1'>
-          <Link href='mailto:amplication@gmail.com'>
+          <Link href={`mailto:${process.env.NEXT_PUBLIC_MAIL}`}>
             <a className='text-gray laptop:text-lg hover:text-purple-bright-hover'>
-              contact@amplication.com
+              {process.env.NEXT_PUBLIC_MAIL}
             </a>
           </Link>
         </li>
