@@ -125,7 +125,11 @@ const SubscribeForm = ({isCompactView}) => {
         setAfterFormSubmitMessage(('msg' in data ? data.msg : 'Something is wrong'));
         setFormSuccess(false);
       } else {
-        setAfterFormSubmitMessage(data.msg);
+        if(data.result === 'success') {
+          setAfterFormSubmitMessage('Thank you for signing up for text messages!');
+        } else {
+          setAfterFormSubmitMessage(data.msg);
+        }
         setFormSuccess(true);
       }
 
@@ -136,7 +140,7 @@ const SubscribeForm = ({isCompactView}) => {
   let loaderClasses = 'w-full h-full absolute l-0 t-0 rounded-2xl transition-all opacity-50 pointer-events-none';
   loaderClasses += isWaitingForResponse ? ' bg-purple-light z-10 pointer-events-auto' : '';
 
-  let containerClasses = 'w-full px-4 py-16 laptop:py-11 max-w-[600px] mx-auto laptop:max-w-[100%] laptop:flex laptop:items-center relative';
+  let containerClasses = 'w-full px-4 py-16 laptop:py-[54px] max-w-[600px] mx-auto laptop:max-w-[100%] laptop:flex laptop:items-center relative laptop:min-h-[208px]';
   if (isCompactView) {
     containerClasses += ' laptop:flex-col laptop:justify-start laptop:items-stretch laptop:px-8 laptop:pt-20 laptop:pb-[120px]';
   } else {
@@ -147,7 +151,7 @@ const SubscribeForm = ({isCompactView}) => {
   if (isCompactView) {
     titleClasses += ' laptop:w-full';
   } else {
-    titleClasses += ' laptop:w-[calc(50%-20px)] laptop:mr-5 laptop:grow laptop:m-0 laptop:mb-5';
+    titleClasses += ' laptop:w-[calc(50%-20px)] laptop:mr-5 laptop:grow laptop:m-0';
   }
 
   let formClasses = 'w-full flex flex-col justify-start items-stretch';
@@ -161,7 +165,7 @@ const SubscribeForm = ({isCompactView}) => {
   }
 
   return (
-    <div className='w-full rounded-2xl bg-purple-light bg-form-pattern-1-mobile bg-no-repeat bg-right-top laptop:bg-form-pattern-1-desktop transition-all'>
+    <div className='w-full rounded-2xl bg-purple-light bg-form-pattern-1-mobile bg-no-repeat bg-right-top laptop:bg-form-pattern-1-desktop laptop:bg-[length:auto_100%] laptop:min-h-[208px] transition-all'>
       <div className='w-full rounded-2xl bg-form-pattern-2-mobile bg-no-repeat bg-left-bottom laptop:bg-form-pattern-2-desktop relative'>
         <div className='bg-noise'>
           <div className={loaderClasses}></div>
@@ -191,7 +195,7 @@ const SubscribeForm = ({isCompactView}) => {
                   <span className='text-left block w-full text-xs text-error-red py-0.5 '>{fieldErrorMessage}</span>
                   }
                 </div>
-                <div className={(sourceFieldError ? fieldContainerClasses : fieldContainerClasses + ' pb-5')}>
+                <div className={(sourceFieldError ? fieldContainerClasses : fieldContainerClasses + ' pb-5 laptop:pb-0')}>
                   <Select
                     className='text-sm text-gray'
                     name='source'
