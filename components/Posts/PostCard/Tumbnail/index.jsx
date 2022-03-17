@@ -3,13 +3,13 @@ import Image from 'next/image';
 
 const Thumbnail = (props) => {
   return (
-    <div className={'rounded-t-2xl overflow-hidden aspect-thumbnail-normal laptop:aspect-thumbnail ' + props.className ?? ''}>
+    <div className={'rounded-t-2xl overflow-hidden aspect-thumbnail-normal laptop:aspect-thumbnail ' + (typeof props.className !== 'undefined' ? props.className : '')}>
       <span className='w-full h-full pb-[52%] block relative overflow-hidden bg-purple-bright'>
         <Image
           alt={props.alt || ''}
-          src={props.src && props.src.trim() !== '' ? props.src.trim() : 'https://placehold.co/476x250?text=amplication'}
+          src={props.src && props.src.trim() !== '' ? props.src.trim() : 'https://placehold.co/476x300?text=amplication'}
           layout='fill'
-          objectFit={props.objectFit ?? 'cover'}
+          objectFit={props.objectFit ?? 'initial'}
           objectPosition='center'
         />
       </span>
