@@ -4,12 +4,14 @@ import Posts from '../../components/Posts';
 import Filter from '../../components/Posts/Filter';
 import Footer from '../../components/Footer';
 import Background from '../../components/Background';
-import helpers from '../../helpers';
 import PropTypes from 'prop-types';
 import client from '../../services';
 import {gql} from '@apollo/client';
+import helpers from '../../helpers';
 
-const TagsPage = ({posts, tags, query}) => {
+const TagsPage = (props) => {
+  let {posts, tags} = props;
+
   return (
     <>
       <DocumentHead
@@ -24,9 +26,9 @@ const TagsPage = ({posts, tags, query}) => {
           { (Array.isArray(tags) && !!tags.length) && <Filter tags={tags} /> }
           { (Array.isArray(posts) && !!posts.length) && <Posts posts={posts} /> }
           { (!Array.isArray(posts) || !posts.length) &&
-          <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-12 text-white text-center !pb-12'>
-            Posts not found
-          </div>
+            <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-12 text-white text-center !pb-12'>
+              Posts not found
+            </div>
           }
         </main>
 
@@ -38,10 +40,11 @@ const TagsPage = ({posts, tags, query}) => {
 }
 
 export const getServerSideProps = async (context) => {
-  const hotPostCount = 1;
-  const postsPerPage = helpers.getPostPerPage() * ( context.query.page ? parseInt( context.query.page ) : 1 );
-  const postsByTagID = context.query.tagID ? `, where: {tags: {some: {id: {equals: "${context.query.tagID}"}}}}, ` : '';
-  const postsTake    = hotPostCount + postsPerPage + 1;
+  const postsPerPage = helpers.getPostPerPage() * ( context.params.page ? parseInt( context.params.page ) : 1 );
+  const postsTake    = postsPerPage + 1;
+  const postsByTagID = context.params.tagID
+    ? `, where: {tags: {some: {id: {equals: "${ context.params.tagID }"}}}}, `
+    : '';
 
   try {
     const {data} = await client.query({
@@ -72,26 +75,25 @@ export const getServerSideProps = async (context) => {
             }
           }
         }
-      `
+      `,
     });
+
     return {
       props: {
-        posts: data?.posts,
-        tags: data?.tags,
-        query: context.query,
-      },
+        posts: data.posts ? data.posts : null,
+        tags: data.tags ? data.tags : null,
+      }
     };
   } catch (e) {
-    console.error(e)
+    console.error(e);
   }
 
   return {
     props: {
       posts: null,
       tags: null,
-      query: null,
     },
-  }
+  };
 };
 
 TagsPage.propTypes = {
