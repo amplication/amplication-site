@@ -143,7 +143,12 @@ const SubscribeForm = ({isCompactView}) => {
 
   let containerClasses = 'w-full px-4 py-16 laptop:py-[54px] max-w-[600px] mx-auto laptop:max-w-[100%] laptop:flex laptop:items-center relative laptop:min-h-[208px]';
   if (isCompactView) {
-    containerClasses += ' laptop:flex-col laptop:justify-start laptop:items-stretch laptop:px-8 laptop:pt-20 laptop:pb-[120px]';
+    containerClasses += ' laptop:flex-col laptop:justify-start laptop:items-stretch laptop:px-8';
+    if (formSuccess) {
+      containerClasses += ' laptop:py-20';
+    } else {
+      containerClasses += ' laptop:pt-20 laptop:pb-[120px]';
+    }
   } else {
     containerClasses += ' laptop:px-[91px] laptop:justify-between laptop:px-16 laptop:py-14 laptop:max-w-[1436px]';
   }
