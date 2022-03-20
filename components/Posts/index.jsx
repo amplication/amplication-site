@@ -29,7 +29,12 @@ const Posts = ({posts}) => {
 
       if (typeof page === 'undefined') {
         setLoadMore(true);
-        setPostsList(posts.splice(0, postPerPage));
+
+        if (posts.length > 9) {
+          setPostsList(posts.splice(0, postPerPage));
+        } else {
+          setPostsList(posts);
+        }
       } else {
         setPostsList(posts.splice(0, postPerPage * (typeof page === 'undefined' ? 1 : parseInt(page))));
       }
