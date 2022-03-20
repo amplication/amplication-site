@@ -22,7 +22,7 @@ const TagsPage = (props) => {
       <div className='page bg-dark-black-100 min-h-screen flex flex-col justify-start justify-items-stretch overflow-hidden pt-[65px] laptop:pt-0 bg-purple-dark relative'>
         <Header/>
 
-        <main className="w-full font-poppins z-10">
+        <main className="w-full font-poppins z-10 mb-12 laptop:mb-[100px]">
           { (Array.isArray(tags) && !!tags.length) && <Filter tags={tags} /> }
           { (Array.isArray(posts) && !!posts.length) && <Posts posts={posts} /> }
           { (!Array.isArray(posts) || !posts.length) &&
