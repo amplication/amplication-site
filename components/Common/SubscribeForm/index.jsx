@@ -160,7 +160,7 @@ const SubscribeForm = ({isCompactView}) => {
     formClasses += ' laptop:max-w-[50%] laptop:w-[572px] laptop:flex-row laptop:flex-wrap laptop:items-start laptop:justify-between';
   }
 
-  let fieldContainerClasses = 'my-0';
+  let fieldContainerClasses = 'relative my-0';
   if (!isCompactView) {
     fieldContainerClasses += ' laptop:w-[calc(50%-8px)] laptop:my-0';
   }
@@ -181,17 +181,37 @@ const SubscribeForm = ({isCompactView}) => {
               </h2>
               <form className={formClasses} onSubmit={(e) => submitSubscriptionForm(e)}>
                 <div className={(emailFieldError ? fieldContainerClasses : fieldContainerClasses + ' pb-5')}>
-                  <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} name="EMAIL"
+                  <div className='relative'>
+                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} name="EMAIL"
                          placeholder='email@example.com'
-                         className={`leading-input focus:border-purple !shadow-hidden block w-full rounded-lg border border-solid bg-purple-dark py-2 px-3 font-poppins text-sm text-white placeholder:text-gray ${(emailFieldError ? '' : 'hover:border-purple')} ${(emailFieldError ? 'border-pink' : 'border-lite')}`}/>
+                         className={`leading-input focus:border-purple !shadow-hidden block w-full rounded-lg border border-solid bg-purple-dark py-2 pl-3 pr-8 font-poppins text-sm text-white placeholder:text-gray ${(emailFieldError ? '' : 'hover:border-purple')} ${(emailFieldError ? 'border-pink' : 'border-lite')}`}/>
+                    {email &&
+                    <span
+                      className='absolute	right-4 top-[50%] translate-y-[-50%] cursor-pointer text-sm animate-fadeIn text-white'
+                      onClick={(e) => setEmail('')}
+                    >
+                        ✕
+                    </span>
+                    }
+                  </div>
                   {emailFieldError &&
                   <span className='text-left block w-full text-xs text-pink py-0.5 '>{fieldErrorMessage}</span>
                   }
                 </div>
                 <div className={(fullNameFieldError ? fieldContainerClasses : fieldContainerClasses + ' pb-5')}>
+                  <div className='relative'>
                   <input type="text" value={fullName} onChange={(e) => setFullName(e.target.value)}
                          placeholder='Full Name' name="FULLNAME"
-                         className={`leading-input focus:border-purple !shadow-hidden block w-full rounded-lg border border-solid bg-purple-dark py-2 px-3 font-poppins text-sm text-white placeholder:text-gray ${(fullNameFieldError ? '' : 'hover:border-purple')} ${(fullNameFieldError ? 'border-pink' : 'border-lite')}`}/>
+                         className={`leading-input focus:border-purple !shadow-hidden block w-full rounded-lg border border-solid bg-purple-dark py-2 pl-3 pr-8 font-poppins text-sm text-white placeholder:text-gray ${(fullNameFieldError ? '' : 'hover:border-purple')} ${(fullNameFieldError ? 'border-pink' : 'border-lite')}`}/>
+                    {fullName &&
+                    <span
+                      className='absolute	right-4 top-[50%] translate-y-[-50%] cursor-pointer text-sm animate-fadeIn text-white'
+                      onClick={(e) => setFullName('')}
+                    >
+                        ✕
+                    </span>
+                    }
+                  </div>
                   {fullNameFieldError &&
                   <span className='text-left block w-full text-xs text-pink py-0.5 '>{fieldErrorMessage}</span>
                   }
