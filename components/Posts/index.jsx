@@ -8,6 +8,7 @@ import helpers from '../../helpers';
 import PropTypes from 'prop-types';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import Skeleton from "./Skeleton";
 
 const Posts = ({posts}) => {
   const [hotPost, setHotPost] = useState(null);
@@ -112,9 +113,16 @@ const Posts = ({posts}) => {
             return <PostCard data={ post } key={ post.id }/>
           })
         }
+
+        {(loader) &&
+          <Skeleton
+            postPerPage = { postPerPage }
+          />
+        }
+
       </div>
 
-      { ( ( loadMore || typeof page === 'undefined' ) && postsList.length >= postPerPage ) &&
+      { ( ( loadMore || typeof page === 'undefined' ) && postsList.length >= postPerPage && !loader ) &&
         (
           <div className='pt-12 pb-0 laptop:pb-0 laptop:pt-[75px] text-center'>
             <Link href={(tagID ? `/tags/${tagID}` : '') + `?page=${page ? parseInt(page) + 1 : 2}`} scroll={false}>
@@ -128,6 +136,7 @@ const Posts = ({posts}) => {
           </div>
         )
       }
+
     </>
   )
 }
