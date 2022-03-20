@@ -185,4 +185,75 @@
     .no-scrollbar::-webkit-scrollbar {
         display: none;
     }
+
+    /* Skeleton Animation */
+    .shining-base-element {
+        background-size: 700px;
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0.5) 0px, rgba(255, 255, 255, 0.6) 40px, rgba(255, 255, 255, 0.5) 80px);
+        animation: shine-base 2s infinite ease-out;
+    }
+    .shining-avatar-element {
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0.5) 0px, rgba(255, 255, 255, 0.6) 40px, rgba(255, 255, 255, 0.5) 80px);
+        background-size: 700px;
+        animation: shine-avatar 2s infinite ease-out;
+    }
+    .shining-postavatar-element {
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0.5) 0px, rgba(255, 255, 255, 0.6) 40px, rgba(255, 255, 255, 0.5) 80px);
+        background-size: 700px;
+        animation: shine-postavatar 2s infinite ease-out;
+    }
+    .shining-tag-element {
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0.5) 0px, rgba(255, 255, 255, 0.6) 40px, rgba(255, 255, 255, 0.5) 80px);
+        background-size: 700px;
+        animation: shine-base 2s infinite ease-out;
+    }
+    .shining-tag-element:nth-of-type(2) {
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0.5) 0px, rgba(255, 255, 255, 0.6) 40px, rgba(255, 255, 255, 0.5) 80px);
+        background-size: 700px;
+        animation: shine-second-tag 2s infinite ease-out;
+    }
+
+    @keyframes shine-base {
+        0% {
+            background-position: -100px
+        }
+        40%, 100% {
+            background-position: 500px;
+        }
+    }
+
+
+    @keyframes shine-avatar {
+        0% {
+            background-position: calc( -100px + 44px);
+        }
+        40%, 100% {
+            background-position: calc(500px + 44px);
+        }
+    }
+
+    @keyframes shine-postavatar {
+        0% {
+            background-position: calc( -100px - 44px);
+        }
+        40%, 100% {
+            background-position: calc(500px - 44px);
+        }
+    }
+
+    @keyframes shine-second-tag {
+        0% {
+            background-position: calc( -100px - 70px);
+        }
+        40%, 100% {
+            background-position: calc(500px - 70px);
+        }
+    }
+    .overflow-fix {
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+    }
 }
+

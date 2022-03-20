@@ -6,9 +6,9 @@ const SocialList = () => {
       <p className='font-poppins font-medium text-white text-center text-sm mb-3 laptop:text-lg laptop:text-left laptop:mb-6'>
         Follow us
       </p>
-      <ul className='flex justify-center items-center flex-wrap laptop:justify-start'>
+      <ul className='flex justify-center items-center flex-wrap laptop:justify-start gap-7'>
         {/*Github*/}
-        <li className='m-3 laptop:ml-0 laptop:mt-0 laptop:mr-7 laptop:mb-7'>
+        <li className='m-3 laptop:m-0 laptop:flex'>
           <Link href={process.env.NEXT_PUBLIC_GITHUB_LINK}>
             <a className='inline-block transition-opacity hover:opacity-50'>
               <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -18,7 +18,7 @@ const SocialList = () => {
           </Link>
         </li>
         {/*LinkedIn*/}
-        <li className='m-3 laptop:ml-0 laptop:mt-0 laptop:mr-7 laptop:mb-7'>
+        <li className='m-3 laptop:m-0 laptop:flex'>
           <Link href={process.env.NEXT_PUBLIC_LINKEDIN_LINK}>
             <a className='inline-block transition-opacity hover:opacity-50'>
               <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -28,7 +28,7 @@ const SocialList = () => {
           </Link>
         </li>
         {/*Twitter*/}
-        <li className='m-3 laptop:ml-0 laptop:mt-0 laptop:mr-7 laptop:mb-7'>
+        <li className='m-3 laptop:m-0 laptop:flex'>
           <Link href={process.env.NEXT_PUBLIC_TWITTER_LINK}>
             <a className='inline-block transition-opacity hover:opacity-50'>
               <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">

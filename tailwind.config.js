@@ -23,7 +23,7 @@ module.exports = {
       animation: {
         fadeIn: 'fadeIn 0.5s ease-in-out',
         appear: 'appearing 0.5s ease-in-out',
-        disappear: 'disappearing 0.5s ease-in-out'
+        disappear: 'disappearing 0.5s ease-in-out',
       },
       keyframes: theme => ({
         fadeIn: {
