@@ -31,7 +31,7 @@ const PostHot = (props) => {
             </div>
           </div>
           <div className='w-full overflow-hidden laptop:w-1/2 rounded-t-2xl laptop:rounded-l-none overflow-hidden laptop:min-h-[360px]'>
-            <div className='group-hover:scale-105 transition-all duration-[2000ms] laptop:h-full'>
+            <div className='laptop:h-full'>
               <Thumbnail
                 alt={ post.title }
                 className='aspect-hot-normal !rounded-l-none laptop:aspect-hot laptop:h-full'
