@@ -15,6 +15,7 @@ const Posts = ({posts}) => {
   const [postsList, setPostsList] = useState([]);
   const [loadMore, setLoadMore] = useState(true);
   const [loader, setLoader] = useState(false);
+  const [skeletonCount, setSkeletonCount] = useState(1);
 
   const postPerPage = helpers.getPostPerPage();
 
@@ -23,10 +24,14 @@ const Posts = ({posts}) => {
 
   useEffect(() => {
     if ( Array.isArray(posts) && posts.length ) {
+      let skeletonsCount = posts.length - postPerPage * (typeof page === 'undefined' ? 1 : parseInt(page));
+      skeletonsCount += (typeof tagID === 'undefined') ? -1 : 0;
+      skeletonsCount = skeletonsCount < 0 ? 0 : skeletonsCount;
+      setSkeletonCount(skeletonsCount);
+
       if (typeof tagID === 'undefined') {
         setHotPost(posts.shift());
       }
-
       if (typeof page === 'undefined') {
         setLoadMore(true);
 
@@ -43,6 +48,7 @@ const Posts = ({posts}) => {
         setLoadMore(false);
       }
     } else {
+      setSkeletonCount(0);
       setPostsList([]);
     }
     setLoader(false);
@@ -119,9 +125,9 @@ const Posts = ({posts}) => {
           })
         }
 
-        {(loader) &&
+        {(loader && skeletonCount) &&
           <Skeleton
-            postPerPage = { postPerPage }
+            postPerPage = { skeletonCount }
           />
         }
 

@@ -9,7 +9,7 @@ const SubscribeForm = ({isCompactView}) => {
   const [emailFieldError, setEmailFieldError] = useState(false);
   const [fullName, setFullName] = useState('');
   const [fullNameFieldError, setFullNameFieldError] = useState(false);
-  const [source, setSource] = useState('Other');
+  const [source, setSource] = useState('');
   const [sourceFieldError, setSourceFieldError] = useState(false);
   const [formSuccess, setFormSuccess] = useState(null);
   const [isWaitingForResponse, setIsWaitingForResponse] = useState(false);
@@ -88,7 +88,7 @@ const SubscribeForm = ({isCompactView}) => {
     } else {
       setFullNameFieldError(false);
     }
-    if (!source.value) {
+    if (!source) {
       isValid = false;
       setSourceFieldError(true);
     } else {
@@ -222,19 +222,21 @@ const SubscribeForm = ({isCompactView}) => {
                   }
                 </div>
                 <div className={(sourceFieldError ? fieldContainerClasses + ' pb-2' : fieldContainerClasses + ' pb-7')}>
-                  <Select
-                    className='text-sm text-gray'
-                    name='source'
-                    id='source'
-                    instanceId='source'
-                    styles={selectCustomStyles}
-                    defaultValue={{value: '', label: 'How did you hear about us'}}
-                    options={sourceOptions}
-                    onChange={setSource}
-                    isSearchable={false}
-                  />
+                  <div className='relative'>
+                    <input type="text" value={source} onChange={(e) => setSource(e.target.value)}
+                           placeholder='How did you hear about us' name="source"
+                           className={`leading-input focus:border-purple !shadow-hidden block w-full rounded-lg border border-solid bg-purple-dark py-2 pl-3 pr-8 font-poppins text-sm text-white placeholder:text-gray ${(sourceFieldError ? '' : 'hover:border-purple')} ${(sourceFieldError ? 'border-pink' : 'border-lite')}`}/>
+                    {source &&
+                    <span
+                      className='absolute	right-4 top-[50%] translate-y-[-50%] cursor-pointer text-sm animate-fadeIn text-white'
+                      onClick={(e) => setSource('')}
+                    >
+                        ✕
+                    </span>
+                    }
+                  </div>
                   {sourceFieldError &&
-                  <span className='text-left block w-full text-xs text-pink py-0.5'>{fieldErrorMessage}</span>
+                  <span className='text-left block w-full text-xs text-pink py-0.5 '>{fieldErrorMessage}</span>
                   }
                 </div>
                 <div className={(isCompactView ? fieldContainerClasses + ' laptop:mt-0' : fieldContainerClasses)}>

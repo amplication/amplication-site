@@ -14,7 +14,7 @@ const errorPage = () => {
           pageDescription="Page Not found"
         />
 
-        <div className='page relative min-h-screen flex flex-col justify-start justify-items-stretch overflow-hidden pt-[65px] laptop:pt-0 bg-purple-dark'>
+        <div className='page relative min-h-screen flex flex-col justify-start justify-items-stretch overflow-hidden pt-[65px] laptop:pt-[143px] bg-purple-dark'>
           <div className='block absolute w-[85%] aspect-square bottom-0 left-0 translate-x-[-50%] translate-y-[50%] rounded-[50%] bg-pink-bright opacity-20 blur-[200px] laptop:blur-[500px] z-10 pointer-events-none'></div>
           <Header/>
 
