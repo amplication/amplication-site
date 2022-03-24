@@ -17,10 +17,11 @@ import Sidebar from '../components/Sidebar';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import PropTypes from 'prop-types';
+import errorPage from "./404";
 
 const Post = ({posts, post}) => {
   if ( ! post) {
-    return <></>;
+    return errorPage();
   }
 
   const rawPostContent = helpers.removeMarkdown(post.content);
