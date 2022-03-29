@@ -9182,7 +9182,7 @@ body {
     background-position: right bottom;
     background-repeat: no-repeat;
     background-size: cover;
-    height: calc(30vh);
+    height: calc(90vh - 60px);
 }
 @media (max-width: 991.98px) {
     .amplication-base .page-hero {
@@ -9322,6 +9322,9 @@ body {
     padding-bottom: 15vh;
     background-color: #15192c;
     overflow: hidden;
+}
+.amplication-base section.background-transparent {
+    background-color: transparent;
 }
 .amplication-base section .sub-title {
     margin-top: 32px;
@@ -10664,7 +10667,7 @@ body {
 .amplication-base .team-members .team-member__info {
     margin-top: -30px;
     background-color: #15192c;
-    width: calc(30%);
+    width: calc(100% - 70px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -10673,10 +10676,11 @@ body {
     border-radius: 8px;
     white-space: nowrap;
     line-height: 1;
+    z-index: 1;
 }
 @media (max-width: 991.98px) {
     .amplication-base .team-members .team-member__info {
-        width: calc(80%);
+        width: calc(100% - 20px);
     }
 }
 .amplication-base .team-members .team-member__name {
