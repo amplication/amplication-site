@@ -16,12 +16,16 @@ const HeroBlock = () => {
               </div>
             </div>
             <div className="hero-bg col-12 col-lg-6">
-              <video autoPlay loop muted playsInline>
-                {/*<source*/}
-                {/*  src={'../../../../public/videos/amplication-team.mp4'}*/}
-                {/*  //src="./assets/videos/amplication-team.mp4"*/}
-                {/*  type="video/mp4"*/}
-                {/*/>*/}
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+              >
+                <source
+                  src={'videos/amplication-team.mp4'}
+                  type="video/mp4"
+                />
                 <Image
                   src={teamVideoPlaceholder}
                   alt={''}
