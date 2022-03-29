@@ -7,7 +7,7 @@ const Roadmap = () => {
             className="row align-items-center justify-content-center justify-content-md-start mb-4 text-white"
           >
             <h2 className="h2 text-left col-12">
-              What's next? <br/>Great things are coming.
+              What&apos;s next? <br/>Great things are coming.
             </h2>
           </div>
           <div className="row d-flex justify-content-between align-items-stretch">

@@ -28,7 +28,7 @@ const AboutUs = () => {
                   Our vision is to create one platform which will empower
                   professional developers in creating business applications and
                   extend platform capabilities, with the open&#8209;source
-                  community's power of collaboration & transparency.
+                  community&apos;s power of collaboration & transparency.
                 </div>
               </div>
             </div>
