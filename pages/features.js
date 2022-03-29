@@ -260,6 +260,7 @@ const Features = () => {
                 content={feature.content}
                 buttons={feature.buttons}
                 isComingSoon={feature.isComingSoon}
+                key={feature.id}
               />
             )
           })}

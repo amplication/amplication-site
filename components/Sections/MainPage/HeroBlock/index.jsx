@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import VideoIcon from '../../../../public/images/video.svg';
 
 const HeroBlock = () => {
@@ -37,27 +38,48 @@ const HeroBlock = () => {
                     </div>
                   </div>
                   <div className="buttons-wrapper d-flex mb-4 align-items-center justify-content-start mt-4">
-                    <a href="https://app.amplication.com" className="btn btn-primary btn-lg col-sm-12 col-md-6 mb-4">
-                      Get Started
-                    </a>
+                    <Link
+                      href={'https://app.amplication.com'}
+                      passHref={true}
+                    >
+                      <a className="btn btn-primary btn-lg col-sm-12 col-md-6 mb-4">
+                        Get Started
+                      </a>
+                    </Link>
                     <div className="spacer"></div>
-                    <a href="https://discord.gg/Z2CG3rUFnu" target="_blank" className="btn btn-outline-secondary btn-lg col-sm-12 col-md-6 mb-4 text-black80">
-                      <span className="social-link discord social-white"> </span>
-                      Join Discord
-                    </a>
+                    <Link
+                      href={'https://discord.gg/Z2CG3rUFnu'}
+                      passHref={true}
+                    >
+                      <a target="_blank" className="btn btn-outline-secondary btn-lg col-sm-12 col-md-6 mb-4 text-black80" rel="noreferrer">
+                        <span className="social-link discord social-white"> </span>
+                        Join Discord
+                      </a>
+                    </Link>
 
                     <div className="spacer"></div>
-                    <a href="https://docs.amplication.com/docs/getting-started" className="d-lg-none btn btn-outline-secondary btn-lg col-sm-12 col-md-6 mb-4 text-black80">
-                      Documentation
-                    </a>
+                    <Link
+                      href={'https://docs.amplication.com/docs/getting-started'}
+                      passHref={true}
+                    >
+                      <a className="d-lg-none btn btn-outline-secondary btn-lg col-sm-12 col-md-6 mb-4 text-black80">
+                        Documentation
+                      </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="video">
-                  <a href="https://www.youtube.com/watch?v=wCJ2jF1IU7U" data-lity>
-                    <Image
-                      src={VideoIcon}
-                    />
-                  </a>
+                  <Link
+                    href={'https://www.youtube.com/watch?v=wCJ2jF1IU7U'}
+                    passHref={true}
+                  >
+                    <a data-lity={true}>
+                      <Image
+                        src={VideoIcon}
+                        alt={''}
+                      />
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>

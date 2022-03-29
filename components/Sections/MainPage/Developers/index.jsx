@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Developers = () => {
   return(
     <>
@@ -30,9 +32,14 @@ const Developers = () => {
                 </li>
               </ul>
               <div className="spacer"></div>
-              <a href="https://app.amplication.com" className="btn btn-primary btn-lg">
-                Get Started
-              </a>
+              <Link
+                href={'https://app.amplication.com'}
+                passHref={true}
+              >
+                <a className="btn btn-primary btn-lg">
+                  Get Started
+                </a>
+              </Link>
             </div>
 
             <div className="type-card">
@@ -65,9 +72,14 @@ const Developers = () => {
                 </li>
               </ul>
               <div className="spacer"></div>
-              <a href="https://app.amplication.com" className="btn btn-primary btn-lg">
-                Get Started
-              </a>
+              <Link
+                href={'https://app.amplication.com'}
+                passHref={true}
+              >
+                <a className="btn btn-primary btn-lg">
+                  Get Started
+                </a>
+              </Link>
             </div>
           </div>
         </div>

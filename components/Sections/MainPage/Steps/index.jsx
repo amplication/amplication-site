@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import DeployIcon from '../../../../public/images/steps/deploy.svg';
 import DataModelsIcon from '../../../../public/images/steps/data-models.svg';
 import RolesIcon from '../../../../public/images/steps/roles.svg';
@@ -7,11 +8,6 @@ import AdminUiIcon from '../../../../public/images/steps/admin-ui.svg';
 import ConnectIcon from '../../../../public/images/steps/connect.svg';
 
 const Steps = () => {
-  const handleTabs = function(event) {
-    event.preventDefault();
-
-    console.log(123);
-  }
   return (
     <>
       <section className="page-steps">
@@ -28,7 +24,7 @@ const Steps = () => {
               </div>
               <div className="feature-description">
                 Define data entities and role&#8209;based access through
-                Amplication's UI or CLI, and Amplication will auto&#8209;generate
+                Amplication&apos;s UI or CLI, and Amplication will auto&#8209;generate
                 your database, an Admin UI, and API.
               </div>
             </div>
@@ -39,29 +35,36 @@ const Steps = () => {
             >
               <ul className="nav nav-tabs feature-images-tabs" role="tablist">
                 <li className="nav-item" role="presentation">
-                  <a
-                    className="nav-link active"
-                    id="data-models-tab"
-                    data-toggle="tab"
-                    href="#data-models"
-                    role="tab"
-                    aria-controls="data-models"
-                    aria-selected="true"
-                    onClick={(event) => handleTabs(event)}
-                  >Data models</a
+                  <Link
+                    href={'#data-models'}
+                    passHref={true}
                   >
+                    <a
+                      className="nav-link active"
+                      id="data-models-tab"
+                      data-toggle="tab"
+                      role="tab"
+                      aria-controls="data-models"
+                      aria-selected="true"
+                    >Data models</a
+                    >
+                  </Link>
                 </li>
                 <li className="nav-item" role="presentation">
-                  <a
-                    className="nav-link"
-                    id="roles-tab"
-                    data-toggle="tab"
-                    href="#roles"
-                    role="tab"
-                    aria-controls="roles"
-                    aria-selected="false"
-                  >Roles</a
+                  <Link
+                    href={'#roles'}
+                    passHref={true}
                   >
+                    <a
+                      className="nav-link"
+                      id="roles-tab"
+                      data-toggle="tab"
+                      role="tab"
+                      aria-controls="roles"
+                      aria-selected="false"
+                    >Roles</a
+                    >
+                  </Link>
                 </li>
               </ul>
               <div className="tab-content">

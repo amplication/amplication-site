@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import PropTypes from 'prop-types';
 
 const FeatureItem = ({id, icon, image, iconClass, title, content, buttons, isComingSoon}) => {
@@ -31,10 +32,16 @@ const FeatureItem = ({id, icon, image, iconClass, title, content, buttons, isCom
                 <div className="buttons-wrapper d-flex mb-4 align-items-center justify-content-start mt-4">
                   {buttons.map((button, index) => {
                     return (
-                      <a href={(button.url ?? '')} className={(button.buttonClass ?? '')} key={index}>
-                        <span className={(button.iconClass ?? '')}> </span>
-                        {(button.title ?? '')}
-                      </a>
+                      <Link
+                        href={(button.url ?? '')}
+                        passHref={true}
+                        key={index}
+                      >
+                        <a className={(button.buttonClass ?? '')}>
+                          <span className={(button.iconClass ?? '')}> </span>
+                          {(button.title ?? '')}
+                        </a>
+                      </Link>
                     )
                   })}
                 </div>
