@@ -69,7 +69,7 @@ const PricesTable = () => {
             <div className="col-12 col-md-8 offset-md-2">
               <h1 className="main-title">Public Beta users</h1>
               <h3 className="h3">
-                While we're in Beta Amplication is free to use. In the future,
+                While we`&quot;re in Beta Amplication is free to use. In the future,
                 we will offer a free community plan and additional paid business
                 plans.
               </h3>
