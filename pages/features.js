@@ -32,6 +32,7 @@ import syncGithubImage from '/public/images/features-page/sync_with_github.svg';
 const Features = () => {
   const features = [
     {
+      id: 'graphql',
       icon: GraphQLIcon,
       image: GraphQLImage,
       iconClass: 'feature-page-icon first-color',
@@ -44,8 +45,10 @@ const Features = () => {
         '                the features that shipped with it. Easily grow and customize your\n' +
         '                GraphQL API with your business and connect to it from any GraphQL\n' +
         '                client.',
+      buttons: [],
     },
     {
+      id: 'restapi',
       icon: RestIcon,
       image: RestImage,
       iconClass: 'feature-page-icon',
@@ -56,9 +59,11 @@ const Features = () => {
         '              <br /><br />\n' +
         '              The API is generated with authentication and authorization of your\n' +
         '              choice already baked-in. The REST API is built with strict RESTful\n' +
-        '              conventions and can be easily extended and customized.'
+        '              conventions and can be easily extended and customized.',
+      buttons: [],
     },
     {
+      id: 'identity-permissions',
       icon: IdentityIcon,
       image: IdentityImage,
       iconClass: 'feature-page-icon third-color',
@@ -75,8 +80,10 @@ const Features = () => {
         '              Choose one or more of the built-in authentication providers, and\n' +
         '              get your generated app with built-in support both on server-side\n' +
         '              and client-side.',
+      buttons: [],
     },
     {
+      id: 'admin-ui',
       icon: AdminIcon,
       image: AdminImage,
       iconClass: 'feature-page-icon first-color',
@@ -89,8 +96,10 @@ const Features = () => {
         '              already has all the boilerplate and foundation for your client,\n' +
         '              including - routing and navigation, authentication, permissions,\n' +
         '              menu, breadcrumbs, error handling, and much more.',
+      buttons: [],
     },
     {
+      id: 'code-generation',
       icon: CodeGenerationIcon,
       image: CodeGenerationImage,
       iconClass: 'feature-page-icon',
@@ -102,6 +111,7 @@ const Features = () => {
         '              application for the back-end and React application for the client.\n' +
         '              The applications are generated with high standard TypeScript that\n' +
         '              you can easily customize and make your own.',
+      buttons: [],
     },
     {
       id: 'custom-code',
@@ -153,6 +163,20 @@ const Features = () => {
         '              <br /><br />\n' +
         '              Join us in building the next generation of development tools.\n' +
         '              <br /><span><b>Any contribution counts.</b></span>',
+      buttons: [
+        {
+          title: 'GitHub',
+          url: 'https://github.com/amplication/amplication',
+          buttonClass: 'btn btn-outline-secondary',
+          iconClass: 'social-link github social-white'
+        },
+        {
+          title: 'Join our community',
+          url: 'https://discord.gg/Z2CG3rUFnu',
+          buttonClass: 'btn btn-primary ml-4',
+          iconClass: 'social-link discord social-white'
+        }
+      ],
     },
     {
       id: 'integration-webhooks',
@@ -165,6 +189,8 @@ const Features = () => {
         '              model, you can custom code and integrate it with any external app.\n' +
         '              You can also use webhooks to trigger external apps based on events\n' +
         '              or database change update.',
+      buttons: [],
+      isComingSoon: true,
     },
     {
       id: 'version-control',
@@ -176,6 +202,7 @@ const Features = () => {
         '              visually see any app change and how it\'s being reflected in the\n' +
         '              generated app code. The app developer has the option to cancel\n' +
         '              commits or roll back to previous versions of the app at any time.',
+      buttons: [],
     },
     {
       id: 'sync-with-github',
@@ -202,9 +229,11 @@ const Features = () => {
         '                <li>\n' +
         '                  Use GitHub as version control to track changes and roll back\n' +
         '                </li>\n' +
-        '              </ul>'
+        '              </ul>',
+      buttons: [],
     }
   ];
+
   return (
     <>
       <DocumentHead
@@ -220,7 +249,7 @@ const Features = () => {
 
         <main className="w-full font-poppins z-10 mb-12 laptop:mb-[100px] amplication-base">
 
-          {features.map((feature) => {
+          {features.map((feature, index) => {
             return (
               <FeatureItem
                 id={feature.id}
@@ -229,6 +258,8 @@ const Features = () => {
                 iconClass={feature.iconClass}
                 title={feature.title}
                 content={feature.content}
+                buttons={feature.buttons}
+                isComingSoon={feature.isComingSoon}
               />
             )
           })}
