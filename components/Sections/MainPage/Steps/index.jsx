@@ -1,0 +1,174 @@
+import Image from "next/image";
+import DeployIcon from '../../../../public/images/steps/deploy.svg';
+import DataModelsIcon from '../../../../public/images/steps/data-models.svg';
+import RolesIcon from '../../../../public/images/steps/roles.svg';
+import SyncWithGithubIcon from '../../../../public/images/steps/sync_with_github.svg';
+import AdminUiIcon from '../../../../public/images/steps/admin-ui.svg';
+import ConnectIcon from '../../../../public/images/steps/connect.svg';
+
+const Steps = () => {
+  const handleTabs = function(event) {
+    event.preventDefault();
+
+    console.log(123);
+  }
+  return (
+    <>
+      <section className="page-steps">
+        <div className="container-custom">
+          <div className="row align-items-center justify-content-center mb-4">
+            <h2 className="h2 text-center">How does it work?</h2>
+          </div>
+
+          <div className="row feature d-flex justify-content-between align-items-center">
+            <div className="col-sm-12 col-md-6 pr-3">
+              <div className="bracket-box">
+                <span>Design</span>
+                models & roles
+              </div>
+              <div className="feature-description">
+                Define data entities and role&#8209;based access through
+                Amplication's UI or CLI, and Amplication will auto&#8209;generate
+                your database, an Admin UI, and API.
+              </div>
+            </div>
+            <div
+              className="col-sm-12 col-md-6"
+              data-aos="fade-up-left"
+              style={{height: '620px'}}
+            >
+              <ul className="nav nav-tabs feature-images-tabs" role="tablist">
+                <li className="nav-item" role="presentation">
+                  <a
+                    className="nav-link active"
+                    id="data-models-tab"
+                    data-toggle="tab"
+                    href="#data-models"
+                    role="tab"
+                    aria-controls="data-models"
+                    aria-selected="true"
+                    onClick={(event) => handleTabs(event)}
+                  >Data models</a
+                  >
+                </li>
+                <li className="nav-item" role="presentation">
+                  <a
+                    className="nav-link"
+                    id="roles-tab"
+                    data-toggle="tab"
+                    href="#roles"
+                    role="tab"
+                    aria-controls="roles"
+                    aria-selected="false"
+                  >Roles</a
+                  >
+                </li>
+              </ul>
+              <div className="tab-content">
+                <div
+                  className="tab-pane active fade show"
+                  id="data-models"
+                  role="tabpanel"
+                  aria-labelledby="data-models-tab"
+                >
+                  <Image
+                    src={DataModelsIcon}
+                    alt={'data model design'}
+                  />
+                </div>
+                <div
+                  className="tab-pane fade"
+                  id="roles"
+                  role="tabpanel"
+                  aria-labelledby="roles-tab"
+                >
+                  <Image
+                    src={RolesIcon}
+                    alt={'assign roles'}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="row feature d-flex justify-content-between align-items-center">
+            <div className="col-sm-12 col-md-6 pr-3 order-md-2 pr-md-3 pl-lg-5">
+              <div className="bracket-box">
+                <span>Deploy</span> your app in one click
+              </div>
+              <div className="feature-description">
+                Deploy your app to the Amplication cloud, or get a Docker
+                container to deploy elsewhere.
+              </div>
+            </div>
+            <div className="col-sm-12 col-md-6" data-aos="fade-up-right">
+              <Image
+                src={DeployIcon}
+                alt={'one click app deployment'}
+              />
+            </div>
+          </div>
+          <div
+            className="row feature d-flex justify-content-between align-items-center"
+          >
+            <div className="col-sm-12 col-md-6 pr-3">
+              <div className="bracket-box">
+                <span>Sync</span> your app with GitHub
+              </div>
+              <div className="feature-description">
+                Amplication syncs your app code into Node.js format to your GitHub
+                repository so you can keep developing and custom code your app
+                using your favorite IDE and the skills you have already mastered.
+              </div>
+            </div>
+            <div className="col-sm-12 col-md-6" data-aos="fade-up-left">
+              <Image
+                src={SyncWithGithubIcon}
+                alt={'github sync'}
+              />
+            </div>
+          </div>
+          <div
+            className="row feature d-flex justify-content-between align-items-center"
+          >
+            <div className="col-sm-12 col-md-6 pr-3 order-md-2 pr-md-3 pl-lg-5">
+              <div className="bracket-box">
+                <span>Access</span> your app
+              </div>
+              <div className="feature-description">
+                Our auto-generated admin UI based on your data model schema
+                enables you to access your data with ease.
+              </div>
+            </div>
+            <div className="col-sm-12 col-md-6" data-aos="fade-up-left">
+              <Image
+                src={AdminUiIcon}
+                alt={'admin ui'}
+              />
+            </div>
+          </div>
+          <div
+            className="row feature d-flex justify-content-between align-items-center"
+          >
+            <div className="col-sm-12 col-md-6 pr-3">
+              <div className="bracket-box no-bottom-margin"><span>Connect</span></div>
+              <div className="bracket-box">your code using REST or GraphQL</div>
+              <div className="feature-description">
+                Start working with your API from any REST or GraphQL client
+                (React, Angular, Vue, Flutter, iOS, Android, Go, Node.js, Python
+                and more).
+              </div>
+            </div>
+            <div className="col-sm-12 col-md-6" data-aos="fade-up-left">
+              <Image
+                src={ConnectIcon}
+                alt={'rest api'}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  )
+}
+
+export default Steps

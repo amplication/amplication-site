@@ -1,0 +1,40 @@
+@font-face {
+    font-family: "amplicationicon";
+    src: url("../../public/fonts/amplication/amplicationicon.eot");
+    src: url("../../public/fonts/amplication/amplicationicon.eot")
+    format("embedded-opentype"),
+    url("../../public/fonts/amplication/amplicationicon.ttf") format("truetype"),
+    url("../../public/fonts/amplication/amplicationicon.woff") format("woff"),
+    url("../../public/fonts/amplication/amplicationicon.svg#amplicationicon")
+    format("svg");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+.amp-icon {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: "amplicationicon" !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    font-size: 20px;
+    display: inline-block;
+
+    /* Enable Ligatures ================ */
+    letter-spacing: 0;
+    -webkit-font-feature-settings: "liga";
+    -moz-font-feature-settings: "liga=1";
+    -moz-font-feature-settings: "liga";
+    -ms-font-feature-settings: "liga" 1;
+    font-feature-settings: "liga";
+    -webkit-font-variant-ligatures: discretionary-ligatures;
+    font-variant-ligatures: discretionary-ligatures;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
