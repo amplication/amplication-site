@@ -5,8 +5,8 @@ import { useEffect } from "react";
 import 'aos/dist/aos.css';
 import AOS from "aos";
 import Typed from 'typed.js';
-import dynamic from 'next/dynamic';
-import { createPopper } from '@popperjs/core';
+// import dynamic from 'next/dynamic';
+// import { createPopper } from '@popperjs/core';
 
 function Amplication({ Component, pageProps }) {
   useEffect(() => {
