@@ -8,6 +8,7 @@ import {useState} from 'react';
 const Menu = () => {
   const [isMobileMenuOpened, setIsMobileMenuOpened] = useState(false);
   const router = useRouter();
+
   const menuItems = [
     {
       title: 'Docs',
