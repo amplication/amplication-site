@@ -6,12 +6,12 @@ const PriceItem = ({name, price, description, features}) => {
       <div className="pricing-plan">
         <div className="pricing-plan__title" dangerouslySetInnerHTML={{__html: name}}></div>
         <div className="pricing-plan__price" dangerouslySetInnerHTML={{__html: price}}></div>
-        <div className="pricing-plan__description" dangerouslySetInnerHTML={{__html: description}}></div>
+        <div className="pricing-plan__description text-base text-white" dangerouslySetInnerHTML={{__html: description}}></div>
         {(features.length > 0) &&
           <ul className="pricing-plan__features">
             {features.map((feature, index) => {
               return (
-                <li className="pricing-plan__feature" key={index} dangerouslySetInnerHTML={{__html: feature}}></li>
+                <li className="pricing-plan__feature text-base text-white" key={index} dangerouslySetInnerHTML={{__html: feature}}></li>
               )
             })}
           </ul>

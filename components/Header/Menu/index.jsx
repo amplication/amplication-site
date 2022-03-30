@@ -48,7 +48,7 @@ const Menu = () => {
     },
     {
       title: 'Roadmap',
-      href: './#roadmap',
+      href: '#roadmap',
       target: '_self',
       isActive: false,
     },

@@ -17,16 +17,16 @@ const Developers = () => {
               </div>
 
               <ul className="type-list">
-                <li>Use Amplication UI or CLI to create your app</li>
-                <li>
+                <li className={'text-base text-white'}>Use Amplication UI or CLI to create your app</li>
+                <li className={'text-base text-white'}>
                   Design data models and create REST & GraphQL APIs
                   without&nbsp;coding.
                 </li>
-                <li>
+                <li className={'text-base text-white'}>
                   No need for server-side development skills since Amplication
                   auto-generates back-end&nbsp;code.
                 </li>
-                <li>
+                <li className={'text-base text-white'}>
                   You can focus entirely on developing your next
                   great&nbsp;app&nbsp;😎
                 </li>
@@ -48,25 +48,25 @@ const Developers = () => {
                 developer
               </div>
               <ul className="type-list">
-                <li>
+                <li className={'text-base text-white'}>
                   Amplication auto-generates an app based on
                   TypeScript&nbsp;and&nbsp;Node.js.
                 </li>
-                <li>
+                <li className={'text-base text-white'}>
                   Generated apps include NestJS, Prisma, REST & GraphQL API, a
                   React admin UI, logging, authentication
                   and&nbsp;authorization.
                 </li>
-                <li>
+                <li className={'text-base text-white'}>
                   Safely customize your generated app Node.js code using your
                   favorite IDE.
                 </li>
-                <li>
+                <li className={'text-base text-white'}>
                   Decide whether to download the app within a Docker container
                   that’s ready for deployment or to deploy to the
                   Amplication&nbsp;cloud.
                 </li>
-                <li>
+                <li className={'text-base text-white'}>
                   At any point you’re free to download the source code and
                   continue development elsewhere.
                 </li>

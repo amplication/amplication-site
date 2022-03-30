@@ -17,7 +17,7 @@ const GetList = () => {
   return (
     <>
       <section className="bg-transparent">
-        <div className="container-custom">
+        <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop ">
           <div className="row align-items-center justify-content-center mb-4">
             <h2 className="h2 text-center">What do you get?</h2>
           </div>

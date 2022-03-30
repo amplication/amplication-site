@@ -6,7 +6,7 @@ const FeatureItem = ({id, icon, image, iconClass, title, content, buttons, isCom
   return (
     <>
       <section id={id} className="features-page-feature" key={id}>
-        <div className="container-custom">
+        <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
           <div
             className="row d-flex justify-content-between align-items-center feature-page-card"
           >
@@ -27,7 +27,7 @@ const FeatureItem = ({id, icon, image, iconClass, title, content, buttons, isCom
               <div className="feature-title">
                 {title}
               </div>
-              <div className="feature-page-description" dangerouslySetInnerHTML={{__html: content}}></div>
+              <div className="feature-page-description text-base text-white" dangerouslySetInnerHTML={{__html: content}}></div>
               {(buttons.length > 0) &&
                 <div className="buttons-wrapper d-flex mb-4 align-items-center justify-content-start mt-4">
                   {buttons.map((button, index) => {
@@ -53,7 +53,7 @@ const FeatureItem = ({id, icon, image, iconClass, title, content, buttons, isCom
                   src={image}
                   alt={title}
                   width={300}
-                  height={300}
+                  height={320}
                   objectFit={'contain'}
                 />
               }

@@ -6,21 +6,20 @@ const HeroBlock = () => {
   return (
     <>
       <section className="page-welcome">
-        <div className="container-fluid">
+        <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
           <div className="row align-items-center">
             <div className="col-12 text-center">
               <div className="header-and-video">
                 <div>
                   <div className="animated-header">
                     <h1 className="main-title">
-                  <span className="animated-header__fixed-text">
-                    Instantly generate
-                  </span>
-                      <span id="animated-header-typed" className="animated-header__animated-text"></span>
-
                       <span className="animated-header__fixed-text">
-                      Just code what matters.
-                    </span>
+                        Instantly generate
+                      </span>
+                      <span id="animated-header-typed" className="animated-header__animated-text"></span>
+                      <span className="animated-header__fixed-text">
+                        Just code what matters.
+                      </span>
                     </h1>
                     <div id="animated-header-content" style={{display: 'none'}}>
                       <span>GraphQL API.</span>
@@ -56,7 +55,6 @@ const HeroBlock = () => {
                         Join Discord
                       </a>
                     </Link>
-
                     <div className="spacer"></div>
                     <Link
                       href={'https://docs.amplication.com/docs/getting-started'}

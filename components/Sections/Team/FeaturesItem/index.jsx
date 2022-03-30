@@ -17,7 +17,7 @@ const FeatureItem = ({image, alt, title, content, linkUrl, linkText}) => {
         }
         <div className="team-action-panel__content">
           <div className="team-action-panel__title" dangerouslySetInnerHTML={{__html: title}}></div>
-          <div className="team-action-panel__description" dangerouslySetInnerHTML={{__html: content}}></div>
+          <div className="team-action-panel__description text-base text-white" dangerouslySetInnerHTML={{__html: content}}></div>
           {(linkText && linkUrl) &&
             <Link
               href={linkUrl}
