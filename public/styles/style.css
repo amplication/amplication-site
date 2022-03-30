@@ -9208,7 +9208,7 @@ body {
     position: absolute;
     right: 50px;
     height: 70vh;
-    max-height: calc(10vh);
+    max-height: calc(70vh - 60px);
     margin-top: 10vh;
     margin-bottom: 10vh;
     background-image: url(../images/bg/community.png);
