@@ -15,7 +15,6 @@ const BottomBar = () => {
           }
         })
         .then( data => {
-          console.log(data.name)
           if ( typeof data !== 'undefined' && data.name) {
             setVersion(data.name);
           }
