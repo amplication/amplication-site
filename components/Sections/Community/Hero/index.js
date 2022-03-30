@@ -8,7 +8,7 @@ const Hero = () => {
         <div className='row d-flex align-items-end align-items-lg-center'>
           <div className='col-12 col-lg-7'>
             <div className='hero-header'>
-              <Title level={1} className='main-title'>We're better together.</Title>
+              <Title level={1} className='main-title'>We&apos;re better together.</Title>
 
               <Title level={3} className='h3 line-clamp-0'>
                 Join us in building the next generation of development tools.
