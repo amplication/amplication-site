@@ -2,7 +2,7 @@ const Roadmap = () => {
   return (
     <>
       <section className="page-roadmap" id="roadmap">
-        <div className="container-custom">
+        <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
           <div
             className="row align-items-center justify-content-center justify-content-md-start mb-4 text-white"
           >

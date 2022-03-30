@@ -64,7 +64,7 @@ const PricesTable = () => {
   return (
     <>
       <section className="page-2 bg-dark">
-        <div className="container-custom">
+        <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
           <div className="row d-flex align-items-end align-items-md-center">
             <div className="col-12 col-md-8 offset-md-2">
               <h1 className="main-title">Public Beta users</h1>

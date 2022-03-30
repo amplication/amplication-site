@@ -7,43 +7,56 @@ import {useState} from 'react';
 
 const Menu = () => {
   const [isMobileMenuOpened, setIsMobileMenuOpened] = useState(false);
-  const router = useRouter();
+  const { asPath } = useRouter();
 
   const menuItems = [
     {
       title: 'Docs',
-      href: '/docs',
+      href: 'https://docs.amplication.com/docs/getting-started/',
+      target: '_blank',
       isActive: false,
     },
     {
       title: 'Features',
       href: '/features',
-      isActive: false,
+      target: '_self',
+      isActive: Boolean(asPath === '/features'),
     },
     {
       title: 'Pricing',
       href: '/pricing',
-      isActive: false,
+      target: '_self',
+      isActive: Boolean(asPath === '/pricing'),
     },
     {
       title: 'Community',
       href: '/community',
-      isActive: false,
+      target: '_self',
+      isActive: Boolean(asPath === '/community'),
+    },
+    {
+      title: 'Team',
+      href: '/team',
+      target: '_self',
+      isActive: Boolean(asPath === '/team'),
     },
     {
       title: 'Careers',
-      href: '/careers',
+      href: 'https://amplication.breezy.hr/',
+      target: '_blank',
       isActive: false,
     },
     {
       title: 'Roadmap',
-      href: '/roadmap',
+      href: '#roadmap',
+      target: '_self',
       isActive: false,
     },
     {
       title: 'Blog',
       href: '/blog',
-      isActive: router.pathname !== '/404',
+      target: '_self',
+      isActive: Boolean(asPath.includes('/tags') || asPath.includes('/blog')),
     },
   ];
 
@@ -69,7 +82,7 @@ const Menu = () => {
               return (
                 <li key={index.toString()} className={menuItemClasses}>
                   <Link href={item.href}>
-                    <a className={`text-xl py-3 inline-block laptop:text-base laptop:p-1 ${(item.isActive ? 'text-white' : 'text-[#A3A8B8]')}`}>
+                    <a className={`text-xl py-3 inline-block laptop:text-base laptop:p-1 ${(item.isActive ? 'text-white' : 'text-[#A3A8B8]')}`} target={item.target}>
                       {item.title}
                     </a>
                   </Link>

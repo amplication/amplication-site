@@ -40,7 +40,7 @@ const Features = () => {
                       />
                     }
                   </span>
-                  <span dangerouslySetInnerHTML={{__html: item.content}}></span>
+                  <span className={'text-base text-white leading-6'} dangerouslySetInnerHTML={{__html: item.content}}></span>
                 </div>
               )
             })}

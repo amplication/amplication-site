@@ -1,23 +1,23 @@
-import DocumentHead from '../components/Common/DocumentHead';
-import client from '../services';
-import helpers from '../helpers';
+import DocumentHead from '../../components/Common/DocumentHead';
+import client from '../../services';
+import helpers from '../../helpers';
 import {gql} from '@apollo/client';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import Thumbnail from '../components/Posts/PostCard/Tumbnail';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import Thumbnail from '../../components/Posts/PostCard/Tumbnail';
 import Link from 'next/link';
-import Author from '../components/Posts/PostCard/Author';
-import Tags from '../components/Posts/PostCard/Tags';
-import Title from '../components/Posts/PostCard/Title';
+import Author from '../../components/Posts/PostCard/Author';
+import Tags from '../../components/Posts/PostCard/Tags';
+import Title from '../../components/Posts/PostCard/Title';
 import showdown from 'showdown';
-import PostCard from '../components/Posts/PostCard';
+import PostCard from '../../components/Posts/PostCard';
 import {Pagination} from 'swiper';
 import {Swiper, SwiperSlide} from 'swiper/react';
-import Sidebar from '../components/Sidebar';
+import Sidebar from '../../components/Sidebar';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import PropTypes from 'prop-types';
-import errorPage from "./404";
+import errorPage from "../404";
 
 const Post = ({posts, post}) => {
   if ( ! post) {

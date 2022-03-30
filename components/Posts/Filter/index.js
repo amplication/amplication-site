@@ -10,7 +10,7 @@ const Filter = ({tags}) => {
 
   return (
     <div className='no-scrollbar overflow-x-auto overflow-hidden relative flex flex-row flex-nowrap w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop text-lg !pb-9 !pt-6'>
-      <Link href="/" passHref>
+      <Link href="/blog" passHref>
         <a
           data-before='All'
           className={'after:absolute after:left-0 after:right-0 after:bottom-0 after:rounded after:h-1 after:bg-transparent hover:after:bg-light-turquoise relative ' + tagClass + ( tagID === undefined ? ' before:font-bold after:bg-light-turquoise' : ' before:font-normal' )}>

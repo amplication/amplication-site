@@ -11,7 +11,7 @@ const Steps = () => {
   return (
     <>
       <section className="page-steps">
-        <div className="container-custom">
+        <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
           <div className="row align-items-center justify-content-center mb-4">
             <h2 className="h2 text-center">How does it work?</h2>
           </div>
@@ -22,7 +22,7 @@ const Steps = () => {
                 <span>Design</span>
                 models & roles
               </div>
-              <div className="feature-description">
+              <div className="feature-description text-base text-white">
                 Define data entities and role&#8209;based access through
                 Amplication&apos;s UI or CLI, and Amplication will auto&#8209;generate
                 your database, an Admin UI, and API.
@@ -98,7 +98,7 @@ const Steps = () => {
               <div className="bracket-box">
                 <span>Deploy</span> your app in one click
               </div>
-              <div className="feature-description">
+              <div className="feature-description text-base text-white">
                 Deploy your app to the Amplication cloud, or get a Docker
                 container to deploy elsewhere.
               </div>
@@ -117,7 +117,7 @@ const Steps = () => {
               <div className="bracket-box">
                 <span>Sync</span> your app with GitHub
               </div>
-              <div className="feature-description">
+              <div className="feature-description text-base text-white">
                 Amplication syncs your app code into Node.js format to your GitHub
                 repository so you can keep developing and custom code your app
                 using your favorite IDE and the skills you have already mastered.
@@ -137,7 +137,7 @@ const Steps = () => {
               <div className="bracket-box">
                 <span>Access</span> your app
               </div>
-              <div className="feature-description">
+              <div className="feature-description text-base text-white">
                 Our auto-generated admin UI based on your data model schema
                 enables you to access your data with ease.
               </div>
@@ -155,7 +155,7 @@ const Steps = () => {
             <div className="col-sm-12 col-md-6 pr-3">
               <div className="bracket-box no-bottom-margin"><span>Connect</span></div>
               <div className="bracket-box">your code using REST or GraphQL</div>
-              <div className="feature-description">
+              <div className="feature-description text-base text-white">
                 Start working with your API from any REST or GraphQL client
                 (React, Angular, Vue, Flutter, iOS, Android, Go, Node.js, Python
                 and more).
