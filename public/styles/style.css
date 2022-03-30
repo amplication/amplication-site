@@ -9374,7 +9374,7 @@ body {
 }
 .amplication-base section.page-welcome .header-and-video .video {
     margin-top: 70px;
-    width: 500px;
+    max-width: 500px;
     overflow: visible;
 }
 @media (max-width: 767.98px) {
@@ -9460,7 +9460,7 @@ body {
 }
 .amplication-base section.page-roadmap {
     padding-top: 15vh;
-    background: linear-gradient(180deg,#22273c 0%,#15192c 100%);
+    background: linear-gradient(180deg,#22273c 0%, rgba(21, 25, 44, 0) 100%);
 }
 .amplication-base section.page-about {
     padding-bottom: 5vh;
@@ -9581,6 +9581,8 @@ body {
     margin: auto;
     color: #ffffff;
     text-decoration: none;
+    font-size: 1rem;
+    line-height: 1.5rem;
 }
 .amplication-base .feature-card .feature-card-text:hover {
     text-decoration: none;
@@ -9711,6 +9713,8 @@ body {
     width: 100%;
     margin: 0;
     margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
 }
 .amplication-base .roadmap-box .roadmap-list .done {
     opacity: 0.5;
@@ -10493,10 +10497,14 @@ body {
     background-color: #22273c;
     text-align: left;
     border: 1px solid #373d57;
+    border-right-width: 0;
     padding: 1rem;
     flex: 1;
     min-width: 200px;
     box-shadow: 0 2px 20px rgba(11,11,22,0.18);
+}
+.amplication-base .pricing-page .pricing-plan:last-of-type {
+    border-right-width: 1px;
 }
 .amplication-base .pricing-page .pricing-plan:first-child {
     border-top-left-radius: 8px;
@@ -10510,6 +10518,7 @@ body {
     .amplication-base .pricing-page .pricing-plan {
         border-radius: 8px;
         margin-bottom: 2rem;
+        border-right-width: 1px;
     }
 }
 .amplication-base .pricing-page .pricing-plan__title {
@@ -10657,7 +10666,7 @@ body {
 }
 @media (max-width: 1199.98px) {
     .amplication-base .team-members .team-member {
-        width: calc(20%);
+        width: calc(50% - 30px);
     }
 }
 .amplication-base .team-members .team-member img {
