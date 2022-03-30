@@ -45,7 +45,7 @@ function Amplication({ Component, pageProps }) {
         require('../public/styles/style.css');
       }
     }
-  }, []);
+  }, [isBlogPage]);
 
 
 
@@ -53,6 +53,7 @@ function Amplication({ Component, pageProps }) {
     <ApolloProvider client={client}>
       {/*Facebook Pixel*/}
       <Script
+        id={'facebook-pixel'}
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
@@ -60,19 +61,22 @@ function Amplication({ Component, pageProps }) {
           `,
         }}
       />
-      <Image
-        className={'hidden'}
-        width={1}
-        height={1}
-        src={'https://www.facebook.com/tr?id=694076677979309&ev=PageView&noscript=1'}
-      />
+      {/*<Image*/}
+      {/*  className={'hidden'}*/}
+      {/*  width={'1px'}*/}
+      {/*  height={'1px'}*/}
+      {/*  alt={''}*/}
+      {/*  src={'https://www.facebook.com/tr?id=694076677979309&ev=PageView&noscript=1'}*/}
+      {/*/>*/}
       {/*Google Tag Manager*/}
       <Script
+        id={'gtag'}
         strategy="afterInteractive"
         async
         src="https://www.googletagmanager.com/gtag/js?id=AW-455018710"
       />
       <Script
+        id={'gtag-manager'}
         strategy={'afterInteractive'}
         dangerouslySetInnerHTML={{
           __html: `
@@ -82,6 +86,7 @@ function Amplication({ Component, pageProps }) {
       />
       {/*Hotjar Tracking Code*/}
       <Script
+        id={'hotjar'}
         strategy={'afterInteractive'}
         dangerouslySetInnerHTML={{
           __html: `

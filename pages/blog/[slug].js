@@ -37,7 +37,7 @@ const Post = ({posts, post}) => {
       />
 
       <div
-        className="page min-h-screen flex flex-col justify-start justify-items-stretch overflow-hidden pt-[65px] laptop:pt-[143px] bg-purple-dark">
+        className="page min-h-screen flex flex-col justify-start justify-items-stretch overflow-hidden pt-[65px] laptop:pt-[110px] bg-purple-dark">
         <Header/>
 
         <div

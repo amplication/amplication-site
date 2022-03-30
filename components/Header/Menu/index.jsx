@@ -48,7 +48,7 @@ const Menu = () => {
     },
     {
       title: 'Roadmap',
-      href: '#roadmap',
+      href: '/#roadmap',
       target: '_self',
       isActive: false,
     },
@@ -75,13 +75,19 @@ const Menu = () => {
             {menuItems.map((item, index) => {
               let menuItemClasses = 'menu__item laptop:px-4 relative';
               if (item.isActive) {
-                menuItemClasses += ' laptop:before:absolute laptop:before:block laptop:before:content-[attr(data-before)] laptop:before:w-full laptop:before:h-1 laptop:before:bg-purple-bright laptop:before:left-0 laptop:before:bottom-[-12px] laptop:before:rounded-t';
+                menuItemClasses += ' laptop:before:absolute laptop:before:block laptop:before:content-[attr(data-before)] laptop:before:w-full laptop:before:h-1 laptop:before:bg-purple-bright laptop:before:left-0 laptop:before:bottom-[-14px] laptop:before:rounded-t';
               } else {
                 menuItemClasses += '';
               }
               return (
                 <li key={index.toString()} className={menuItemClasses}>
-                  <Link href={item.href}>
+                  <Link
+                    // href={{
+                    //   pathname: item.href,
+                    //   //hash: 'roadmap'
+                    // }}
+                    href={item.href}
+                  >
                     <a className={`text-xl py-3 inline-block laptop:text-base laptop:p-1 ${(item.isActive ? 'text-white' : 'text-[#A3A8B8]')}`} target={item.target}>
                       {item.title}
                     </a>
