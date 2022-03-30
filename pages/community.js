@@ -47,7 +47,9 @@ const Community = () => {
                     </a>
                   </div>
                 </div>
-                <div className="hero-bg col-12 offset-lg-1 col-lg-4"></div>
+                <div className="hero-bg col-12 offset-lg-1 col-lg-4">
+
+                </div>
               </div>
             </div>
           </section>
@@ -228,21 +230,21 @@ const Community = () => {
                           className="social-link twitter"
                           href="https://twitter.com/amplication"
                           target="_blank"
-                          alt="Amplication on Twitter"
+                          title="Amplication on Twitter"
                         >
                         </a>
                         <a
                           className="social-link facebook"
                           href="https://www.facebook.com/amplicationcom/"
                           target="_blank"
-                          alt="Amplication on Facebook"
+                          title="Amplication on Facebook"
                         >
                         </a>
                         <a
                           className="social-link linkedin"
                           href="https://www.linkedin.com/company/amplication"
                           target="_blank"
-                          alt="Amplication on LinkedIn"
+                          title="Amplication on LinkedIn"
                         >
                         </a>
                       </div>
