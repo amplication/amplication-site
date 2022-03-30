@@ -5,8 +5,8 @@ import { useEffect } from "react";
 import 'aos/dist/aos.css';
 import AOS from "aos";
 import Typed from 'typed.js';
-import dynamic from 'next/dynamic';
-import { createPopper } from '@popperjs/core';
+// import dynamic from 'next/dynamic';
+// import { createPopper } from '@popperjs/core';
 
 function Amplication({ Component, pageProps }) {
   useEffect(() => {
@@ -33,7 +33,7 @@ function Amplication({ Component, pageProps }) {
     // Run code on client-side only : ensure document is here
     if (typeof document !== undefined) {
       // load JS bootstrap dependency
-      require('bootstrap/dist/js/bootstrap')
+      //require('bootstrap/dist/js/bootstrap')
     }
   }, []);
 
