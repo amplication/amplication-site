@@ -17,7 +17,7 @@ const Home = ({posts, tags}) => {
         pageDescription="some"
       />
 
-      <div className='page bg-dark-black-100 min-h-screen flex flex-col justify-start justify-items-stretch overflow-hidden pt-[60px] laptop:pt-[143px] bg-purple-dark relative'>
+      <div className='page bg-dark-black-100 min-h-screen flex flex-col justify-start justify-items-stretch overflow-hidden pt-[60px] laptop:pt-[110px] bg-purple-dark relative'>
         <Header/>
 
         <main className="w-full font-poppins z-10 mb-12 laptop:mb-[100px]">
