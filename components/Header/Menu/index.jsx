@@ -81,13 +81,7 @@ const Menu = () => {
               }
               return (
                 <li key={index.toString()} className={menuItemClasses}>
-                  <Link
-                    // href={{
-                    //   pathname: item.href,
-                    //   //hash: 'roadmap'
-                    // }}
-                    href={item.href}
-                  >
+                  <Link href={item.href}>
                     <a className={`text-xl py-3 inline-block laptop:text-base laptop:p-1 ${(item.isActive ? 'text-white' : 'text-[#A3A8B8]')}`} target={item.target}>
                       {item.title}
                     </a>
