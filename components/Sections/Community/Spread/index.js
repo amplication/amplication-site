@@ -24,7 +24,7 @@ const Spread = () => {
                 us on GitHub
               </div>
               <div className='description description-box-black10'>
-                Checkout our repository on GitHub and don't forget to star us.
+                Checkout our repository on GitHub and don&apos;t forget to star us.
               </div>
               <div className='actions'>
                 <Link href='https://github.com/amplication/amplication'>
