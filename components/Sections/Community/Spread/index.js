@@ -7,7 +7,7 @@ import ImgSocial from '../../../../public/images/community/social.svg';
 const Spread = () => {
   return (
     <section className='bg-transparent'>
-      <div className='container-custom'>
+      <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop'>
         <div className='text-center align-items-center justify-content-center mb-5'>
           <Title level={2} className='h2'>Spread the word</Title>
           <div className='row'>
@@ -23,7 +23,7 @@ const Spread = () => {
                 <span>Star</span>
                 us on GitHub
               </div>
-              <div className='description description-box-black10'>
+              <div className='description description-box-black10 text-base text-white'>
                 Checkout our repository on GitHub and don&apos;t forget to star us.
               </div>
               <div className='actions'>
@@ -40,7 +40,7 @@ const Spread = () => {
                 <span>Follow</span>
                 us on social media
               </div>
-              <div className='description description-box-black10'>
+              <div className='description description-box-black10 text-base text-white'>
                 Get the latest updates and news on Twitter and Facebook.
                 Retweets, shares, and likes will help us
                 spread&nbsp;the&nbsp;word.
