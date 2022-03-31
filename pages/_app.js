@@ -61,6 +61,7 @@ function Amplication({ Component, pageProps }) {
           `,
         }}
       />
+
       {/*<Image*/}
       {/*  className={'hidden'}*/}
       {/*  width={'1px'}*/}
