@@ -9,8 +9,30 @@ import AboutUs from "../components/Sections/MainPage/AboutUs";
 import GetList from "../components/Sections/MainPage/GetList";
 import Steps from '../components/Sections/MainPage/Steps';
 import Roadmap from "../components/Sections/MainPage/Roadmap";
+import { Router, useRouter } from "next/router";
+import { useEffect } from "react";
 
 const Home = () => {
+  //const router = useRouter();
+
+  // useEffect(() => {
+  //   const urlSearchParams = new URLSearchParams(window.location.search);
+  //   const params = Object.fromEntries(urlSearchParams.entries());
+  //   if ('scrollto' in params && params.scrollto) {
+  //     router.push('', undefined, { shallow: true });
+  //     setTimeout(()=> {
+  //       const elementToScroll = document.getElementById(params.scrollto);
+  //       if (!elementToScroll) {
+  //         return;
+  //       }
+  //       window.scrollTo({
+  //           top: elementToScroll.offsetTop,
+  //           behavior: "smooth"
+  //       });
+  //     }, 0)
+  //   }
+  // }, []);
+
   return (
     <>
       <DocumentHead

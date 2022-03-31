@@ -6,8 +6,26 @@ import RolesIcon from '../../../../public/images/steps/roles.svg';
 import SyncWithGithubIcon from '../../../../public/images/steps/sync_with_github.svg';
 import AdminUiIcon from '../../../../public/images/steps/admin-ui.svg';
 import ConnectIcon from '../../../../public/images/steps/connect.svg';
+import {useEffect, useState} from 'react';
+import { useRouter, Router } from "next/router";
 
 const Steps = () => {
+  const router = useRouter();
+  const [activeTab, setActiveTab] = useState('data-models');
+  const [fadingState, setFadingState] = useState(true);
+  const animationDelay = 100;
+
+  const tabHandler = function(event, value) {
+    event.preventDefault();
+
+    setFadingState(false);
+    setActiveTab(value);
+    setTimeout(fading, animationDelay);
+  }
+  const fading = function() {
+    setFadingState(true);
+  }
+
   return (
     <>
       <section className="page-steps">
@@ -40,10 +58,8 @@ const Steps = () => {
                     passHref={true}
                   >
                     <a
-                      className="nav-link active"
-                      id="data-models-tab"
-                      data-toggle="tab"
-                      role="tab"
+                      className={`nav-link ${(activeTab === 'data-models' ? 'active' : '')}`}
+                      onClick={(e) => {tabHandler(e, 'data-models')}}
                       aria-controls="data-models"
                       aria-selected="true"
                     >Data models</a
@@ -56,10 +72,8 @@ const Steps = () => {
                     passHref={true}
                   >
                     <a
-                      className="nav-link"
-                      id="roles-tab"
-                      data-toggle="tab"
-                      role="tab"
+                      className={`nav-link ${(activeTab === 'roles' ? 'active' : '')}`}
+                      onClick={(e) => {tabHandler(e,'roles')}}
                       aria-controls="roles"
                       aria-selected="false"
                     >Roles</a
@@ -69,7 +83,7 @@ const Steps = () => {
               </ul>
               <div className="tab-content">
                 <div
-                  className="tab-pane active fade show"
+                  className={`tab-pane fade ${(activeTab === 'data-models' ? 'active' : '')} ${((fadingState && activeTab === 'data-models') ? 'show' : '')}`}
                   id="data-models"
                   role="tabpanel"
                   aria-labelledby="data-models-tab"
@@ -80,7 +94,7 @@ const Steps = () => {
                   />
                 </div>
                 <div
-                  className="tab-pane fade"
+                  className={`tab-pane fade ${(activeTab === 'roles' ? 'active' : '')} ${((fadingState && activeTab === 'roles') ? 'show' : '')}`}
                   id="roles"
                   role="tabpanel"
                   aria-labelledby="roles-tab"
