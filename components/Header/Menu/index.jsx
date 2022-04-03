@@ -117,7 +117,7 @@ const Menu = () => {
             backgroundColor='purpleBright'
             hoverBackgroundColor='purpleBrightHover'
             isLink={true}
-            href={process.env.NEXT_PUBLIC_SITE}
+            href={'https://app.amplication.com/'}
             />
         </div>
       </div>

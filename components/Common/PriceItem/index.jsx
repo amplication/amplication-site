@@ -1,6 +1,11 @@
 import PropTypes from 'prop-types';
 
-const PriceItem = ({name, price, description, features}) => {
+const PriceItem = ({name, price, description, features, withButton}) => {
+  const clickHandler = (event) => {
+    event.preventDefault();
+
+    //Intercom('show');
+  }
   return (
     <>
       <div className="pricing-plan">
@@ -16,6 +21,14 @@ const PriceItem = ({name, price, description, features}) => {
             })}
           </ul>
         }
+        {withButton &&
+          <button
+            className={'bg-purple-bright flex justify-center items-center text-white font-poppins font-normal text-center mt-4 rounded py-2 px-5 laptop:px-8 laptop:font-medium transition-all duration-300'}
+            onClick={(event) => clickHandler(event)}
+          >
+            Get in Touch
+          </button>
+        }
       </div>
     </>
   )
@@ -26,6 +39,7 @@ PriceItem.propTypes = {
   price: PropTypes.string,
   description: PropTypes.string,
   features: PropTypes.array,
+  withButton: PropTypes.bool,
 };
 
 PriceItem.defaultProps = {
@@ -33,6 +47,7 @@ PriceItem.defaultProps = {
   price: '',
   description: '',
   features: [],
+  withButton: false
 };
 
 export default PriceItem

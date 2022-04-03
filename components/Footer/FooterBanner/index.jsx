@@ -17,7 +17,7 @@ const FooterBanner = () => {
             isAlignFull={false}
             backgroundColor='purpleDark'
             isLink={true}
-            href='https://amplication.com'
+            href='https://app.amplication.com/'
           />
         </div>
       </div>
