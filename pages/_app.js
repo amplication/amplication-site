@@ -61,15 +61,6 @@ function Amplication({ Component, pageProps }) {
           `,
         }}
       />
-
-      {/*<Image*/}
-      {/*  className={'hidden'}*/}
-      {/*  width={'1px'}*/}
-      {/*  height={'1px'}*/}
-      {/*  alt={''}*/}
-      {/*  src={'https://www.facebook.com/tr?id=694076677979309&ev=PageView&noscript=1'}*/}
-      {/*/>*/}
-      {/*Google Tag Manager*/}
       <Script
         id={'gtag'}
         strategy="afterInteractive"
@@ -92,6 +83,35 @@ function Amplication({ Component, pageProps }) {
         dangerouslySetInnerHTML={{
           __html: `
             !function(t,h,e,j,s,n){t.hj=t.hj||function(){(t.hj.q=t.hj.q||[]).push(arguments)},t._hjSettings={hjid:2379815,hjsv:6},s=h.getElementsByTagName("head")[0],(n=h.createElement("script")).async=1,n.src="https://static.hotjar.com/c/hotjar-"+t._hjSettings.hjid+".js?sv="+t._hjSettings.hjsv,s.appendChild(n)}(window,document);
+          `,
+        }}
+      />
+      <Script
+        id={'gtag'}
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            gtag('config', 'G-8PE8KXZY6J', {'code_branch': 'master'});
+          `,
+        }}
+      />
+      <Script
+        id={'gtag2'}
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.intercomSettings = {
+              app_id: "rtlni1hg"
+            };
+          `,
+        }}
+      />
+      <Script
+        id={'intercom'}
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/rtlni1hg';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
           `,
         }}
       />
