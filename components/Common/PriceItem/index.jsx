@@ -4,7 +4,11 @@ const PriceItem = ({name, price, description, features, withButton}) => {
   const clickHandler = (event) => {
     event.preventDefault();
 
-    //Intercom('show');
+    try {
+      Intercom('show');
+    } catch (err) {
+      console.log(err);
+    }
   }
   return (
     <>
