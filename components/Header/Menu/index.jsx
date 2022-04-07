@@ -12,49 +12,66 @@ const Menu = () => {
   const menuItems = [
     {
       title: 'Docs',
-      href: 'https://docs.amplication.com/docs/getting-started/',
+      href: {
+        pathname: 'https://docs.amplication.com/docs/getting-started/',
+      },
       target: '_blank',
       isActive: false,
     },
     {
       title: 'Features',
-      href: '/features',
+      href: {
+        pathname: '/features',
+      },
       target: '_self',
       isActive: Boolean(asPath === '/features'),
     },
     {
       title: 'Pricing',
-      href: '/pricing',
+      href: {
+        pathname: '/pricing',
+      },
       target: '_self',
       isActive: Boolean(asPath === '/pricing'),
     },
     {
       title: 'Community',
-      href: '/community',
+      href: {
+        pathname: '/community',
+      },
       target: '_self',
       isActive: Boolean(asPath === '/community'),
     },
     {
       title: 'Team',
-      href: '/team',
+      href: {
+        pathname: '/team',
+      },
       target: '_self',
       isActive: Boolean(asPath === '/team'),
     },
     {
       title: 'Careers',
-      href: 'https://amplication.breezy.hr/',
+      href: {
+        pathname: 'https://amplication.breezy.hr/',
+      },
       target: '_blank',
       isActive: false,
     },
     {
       title: 'Roadmap',
-      href: '#roadmap',
+      href: {
+        pathname: '/',
+        hash: 'roadmap',
+      },
       target: '_self',
       isActive: false,
     },
     {
       title: 'Blog',
-      href: '/blog',
+      href: {
+        pathname: '/blog',
+      },
       target: '_self',
       isActive: Boolean(asPath.includes('/tags') || asPath.includes('/blog')),
     },
@@ -75,13 +92,15 @@ const Menu = () => {
             {menuItems.map((item, index) => {
               let menuItemClasses = 'menu__item laptop:px-4 relative';
               if (item.isActive) {
-                menuItemClasses += ' laptop:before:absolute laptop:before:block laptop:before:content-[attr(data-before)] laptop:before:w-full laptop:before:h-1 laptop:before:bg-purple-bright laptop:before:left-0 laptop:before:bottom-[-12px] laptop:before:rounded-t';
+                menuItemClasses += ' laptop:before:absolute laptop:before:block laptop:before:content-[attr(data-before)] laptop:before:w-full laptop:before:h-1 laptop:before:bg-purple-bright laptop:before:left-0 laptop:before:bottom-[-14px] laptop:before:rounded-t';
               } else {
                 menuItemClasses += '';
               }
               return (
                 <li key={index.toString()} className={menuItemClasses}>
-                  <Link href={item.href}>
+                  <Link
+                    href={item.href}
+                  >
                     <a className={`text-xl py-3 inline-block laptop:text-base laptop:p-1 ${(item.isActive ? 'text-white' : 'text-[#A3A8B8]')}`} target={item.target}>
                       {item.title}
                     </a>
@@ -98,7 +117,7 @@ const Menu = () => {
             backgroundColor='purpleBright'
             hoverBackgroundColor='purpleBrightHover'
             isLink={true}
-            href={process.env.NEXT_PUBLIC_SITE}
+            href={'https://app.amplication.com/'}
             />
         </div>
       </div>

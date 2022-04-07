@@ -9,7 +9,7 @@ import ImgPullRequest from '../../../../public/images/community/pull-request.svg
 const Contribute = () => {
   return (
     <section className=''>
-      <div className='container-custom'>
+      <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop'>
         <div className='row align-items-center justify-content-center mb-5'>
           <Title level={2} className='h2 text-center'>Contribute to Amplication</Title>
         </div>
@@ -32,7 +32,7 @@ const Contribute = () => {
                   <span>Submit</span>
                   a feature request
                 </div>
-                <div className='description-box-black10'>
+                <div className='description-box-black10 text-base text-white'>
                   Help improve Amplication by submitting your ideas.
                 </div>
                 <Link href='https://github.com/amplication/amplication/issues/new?assignees=&labels=type%3A%20feature%20request&template=feature_request.md&title='>
@@ -60,7 +60,7 @@ const Contribute = () => {
                   <span>Create</span>
                   a bug report
                 </div>
-                <div className='description-box-black10'>
+                <div className='description-box-black10 text-base text-white'>
                   If you see an error message or run into an issue, please
                   report it so we can make this platform the best it can be!
                 </div>
@@ -89,7 +89,7 @@ const Contribute = () => {
                   <span>Write</span>
                   and update the docs
                 </div>
-                <div className='description-box-black10'>
+                <div className='description-box-black10 text-base text-white'>
                   Help us write, edit, and improve the docs.<br/>
                   Our docs are a work in progress, so be sure to check it from
                   time to time for new articles.
@@ -119,7 +119,7 @@ const Contribute = () => {
                   <span>Send</span>
                   a pull request
                 </div>
-                <div className='description-box-black10'>
+                <div className='description-box-black10 text-base text-white'>
                   Want to create a new feature or improve existing
                   functionality? <br/>PRs are welcomed and encouraged.
                 </div>

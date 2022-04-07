@@ -97,7 +97,7 @@
     }
 
     body::-webkit-scrollbar-track {
-        @apply bg-gray;
+        @apply bg-purple-dark;
     }
 
     body::-webkit-scrollbar-thumb {

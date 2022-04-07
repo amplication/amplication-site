@@ -8,7 +8,7 @@ import ImgDocs from '../../../../public/images/community/docs.svg';
 const Support = () => {
   return (
     <section className='bg-transparent'>
-      <div className='container-custom'>
+      <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop'>
         <div className='text-center align-items-center justify-content-center mb-5'>
           <Title level={2} className='h2'>Get support</Title>
           <div className='row'>
@@ -24,7 +24,7 @@ const Support = () => {
                 <span>Chat</span>
                 with us
               </div>
-              <div className='description'>
+              <div className='description text-base text-white'>
                 Join our Discord channel and chat with other Amplication
                 users, contributors and maintainers who would love to give a
                 hand where&nbsp;needed.
@@ -43,7 +43,7 @@ const Support = () => {
                 <span>Report</span>
                 an issue
               </div>
-              <div className='description'>
+              <div className='description text-base text-white'>
                 If you encounter an issue, please report it. Others may have
                 the same&nbsp;issue.
               </div>
@@ -61,7 +61,7 @@ const Support = () => {
                 <span>Read</span>
                 the docs
               </div>
-              <div className='description'>
+              <div className='description text-base text-white'>
                 Our docs are a work in progress, and you can always find
                 new&nbsp;articles.
               </div>

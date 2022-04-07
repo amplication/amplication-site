@@ -1,4 +1,19 @@
+import {useEffect, useState} from "react";
+
 const Background = () => {
+  const [bottomBlockClasses, setBottomBlockClasses] = useState('hidden laptop:block absolute w-[604px] h-[736px] z-0');
+  const [bottomBlockSecondClasses, setBottomBlockSecondClasses] = useState('hidden laptop:block absolute w-[383px] h-[2133px] right-0 z-0');
+
+  useEffect(() => {
+    if (window.location.hash) {
+      setBottomBlockClasses(bottomBlockClasses + ' bottom-0');
+      setBottomBlockSecondClasses(bottomBlockSecondClasses + ' bottom-0');
+    } else {
+      setBottomBlockClasses(bottomBlockClasses + ' bottom-[-5%]');
+      setBottomBlockSecondClasses(bottomBlockSecondClasses + ' bottom-[-5%]');
+    }
+  }, [])
+
   return (
     <>
       <div className="hidden laptop:block absolute w-[2047px] h-[2358px] top-[10%] z-0">
@@ -43,7 +58,7 @@ const Background = () => {
           </defs>
         </svg>
       </div>
-      <div className="hidden laptop:block absolute w-[383px] h-[2133px] bottom-[-5%] right-0 z-0">
+      <div className={bottomBlockSecondClasses}>
         <svg width="383" height="2133" viewBox="0 0 383 2133" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g filter="url(#filter0_f_494_3732)">
             <ellipse cx="1158.54" cy="1283.72" rx="958.54" ry="1083.72" fill="#F7AA50" fillOpacity="0.3"/>
@@ -57,7 +72,7 @@ const Background = () => {
           </defs>
         </svg>
       </div>
-      <div className="hidden laptop:block absolute w-[604px] h-[736px] bottom-0 z-0">
+      <div className={bottomBlockClasses}>
         <svg width="604" height="736" viewBox="0 0 604 736" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g filter="url(#filter0_f_494_3733)">
             <ellipse cx="-153.997" cy="831.263" rx="565.003" ry="638.788" fill="#F85B6E" fillOpacity="0.15"/>

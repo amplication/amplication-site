@@ -16,6 +16,7 @@ const PricesTable = () => {
         '5 Deployments to sandbox per day',
         'Github integration with public repos',
       ],
+      withButton: false,
     },
     {
       name: 'Pro',
@@ -30,6 +31,7 @@ const PricesTable = () => {
         '50 Deployments to sandbox per day',
         'Github integration with private repos',
       ],
+      withButton: false,
     },
     {
       name: 'Business',
@@ -45,6 +47,7 @@ const PricesTable = () => {
         'Continuous Integration to private cloud',
         'Dedicated solutions architect',
       ],
+      withButton: false,
     },
     {
       name: 'Enterprise',
@@ -58,6 +61,7 @@ const PricesTable = () => {
         'Unlimited deployments to sandbox per day',
         'Enterprise support and SLA',
       ],
+      withButton: true,
     },
   ];
 
@@ -100,6 +104,7 @@ const PricesTable = () => {
                         price={item.price}
                         description={item.description}
                         features={item.features}
+                        withButton={item.withButton}
                       />
                     )
                   })}
