@@ -273,11 +273,12 @@ export async function getStaticPaths() {
 }
 
 Post.propTypes = {
-  post: PropTypes.object.isRequired,
+  post: PropTypes.object,
   posts: PropTypes.array,
 };
 
 Post.defaultProps = {
+  post: {},
   posts: [],
 };
 
