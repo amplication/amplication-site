@@ -4,7 +4,7 @@ import Link from 'next/link';
 const Hero = () => {
   return (
     <section className='page-hero bg-page-hero !-mt-8'>
-      <div className='container-custom'>
+      <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop'>
         <div className='row d-flex align-items-end align-items-lg-center'>
           <div className='col-12 col-lg-7'>
             <div className='hero-header'>
