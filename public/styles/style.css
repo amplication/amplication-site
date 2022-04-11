@@ -9352,7 +9352,6 @@ body {
     }
 }
 .amplication-base section.page-welcome {
-    min-height: 50vh;
     background-position: top left;
     background-repeat: no-repeat;
     background-size: cover;

@@ -135,22 +135,22 @@
     }
 
     .content h1 {
-        @apply block w-full text-3xl my-3;
+        @apply block w-full font-semibold text-3xl my-3;
     }
     .content h2 {
-        @apply block w-full text-2xl my-3.5;
+        @apply block w-full font-semibold text-2xl my-3.5;
     }
     .content h3 {
-        @apply block w-full text-lg my-4;
+        @apply block w-full font-semibold text-lg my-4;
     }
     .content h4 {
-        @apply block w-full text-base my-5;
+        @apply block w-full font-semibold text-base my-5;
     }
     .content h5 {
-        @apply block w-full text-sm my-6;
+        @apply block w-full font-semibold text-sm my-6;
     }
     .content h6 {
-        @apply block w-full text-xs my-7;
+        @apply block w-full font-semibold text-xs my-7;
     }
     .content ul {
         @apply list-disc pl-4;
