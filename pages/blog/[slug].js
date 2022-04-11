@@ -95,7 +95,7 @@ const Post = ({posts, post}) => {
                   alt={ post.title }
                 />
                 <div
-                  className="font-normal order-5 content text-sm laptop:text-lg text-white leading-[21px] laptop:leading-[27px] mt-2"
+                  className="font-normal order-5 content text-base text-white mt-2"
                   dangerouslySetInnerHTML={ {
                     __html: new showdown.Converter({
                       tables: true,
