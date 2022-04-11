@@ -41,8 +41,8 @@ const Steps = () => {
                 models & roles
               </div>
               <div className="feature-description text-base text-white">
-                Define data entities and role&#8209;based access through
-                Amplication&apos;s UI or CLI, and Amplication will auto&#8209;generate
+                Define data entities and role-based access through
+                Amplication&apos;s UI or CLI, and Amplication will auto-generate
                 your database, an Admin UI, and API.
               </div>
             </div>

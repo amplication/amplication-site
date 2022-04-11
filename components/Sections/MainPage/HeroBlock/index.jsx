@@ -10,7 +10,7 @@ const HeroBlock = () => {
           <div className="row align-items-center">
             <div className="col-12 text-center">
               <div className="header-and-video">
-                <div>
+                <div className='content-block'>
                   <div className="animated-header">
                     <h1 className="main-title">
                       <span className="animated-header__fixed-text">
@@ -29,9 +29,9 @@ const HeroBlock = () => {
                       <span>Admin UI.</span>
                       <span>Logging.</span>
                     </div>
-                    <div className="explainer">
-                      Amplication is an
-                      <span className="highlight">open&#8209;source</span> development
+                    <div className="explainer text-base text-white">
+                      Amplication is an&nbsp;
+                      <span className="highlight">open-source</span> development
                       tool. It helps you develop quality Node.js applications
                       without spending time on repetitive coding&nbsp;tasks.
                     </div>

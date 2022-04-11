@@ -39,7 +39,6 @@ const Post = ({posts, post}) => {
       <div
         className="page min-h-screen flex flex-col justify-start justify-items-stretch overflow-hidden pt-[65px] laptop:pt-[110px] bg-purple-dark">
         <Header/>
-
         <div
           className="w-full p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop mt-16 laptop:mt-12">
           <nav>

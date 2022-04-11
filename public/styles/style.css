@@ -2479,6 +2479,16 @@ body {
 .amplication-base .show > .btn-dark.dropdown-toggle:focus {
     box-shadow: 0 0 0 0.2rem rgba(56,60,76,0.5);
 }
+.amplication-base .btn-transparent {
+    color: #ffffff;
+    border-color: #ffffff;
+    background-color: transparent;
+}
+.amplication-base .btn-transparent:hover {
+    /*color: #ffffff;*/
+    background-color: #ffffff;
+    /*border-color: #7950ed;*/
+}
 .amplication-base .btn-outline-primary {
     color: #7950ed;
     border-color: #7950ed;
@@ -9084,13 +9094,10 @@ body {
 .amplication-base .animated-header .explainer {
     font-weight: 400;
     text-align: left;
-    font-size: 1.2rem;
     position: relative;
     max-width: 800px;
-    color: #b7bac7;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    line-height: 1.7;
 }
 .amplication-base .animated-header .explainer .highlight {
     color: #41cadd;
@@ -9305,9 +9312,8 @@ body {
     }
 }
 .amplication-base h3.h3 {
-    font-size: 1.3rem;
-    line-height: 2.1rem;
-    color: #b7bac7;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
     font-weight: normal;
 }
 @media (max-width: 1199.98px) {
@@ -9317,9 +9323,8 @@ body {
     }
 }
 .amplication-base section {
-    min-height: 100vh;
-    padding-top: 10vh;
-    padding-bottom: 15vh;
+    padding-top: 250px;
+    padding-bottom: 250px;
     background-color: #15192c;
     overflow: hidden;
 }
@@ -9366,16 +9371,26 @@ body {
 .amplication-base section.page-welcome .header-and-video {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+}
+.amplication-base .header-and-video .content-block {
+    max-width: 45%;
+}
+.amplication-base .header-and-video .video {
+    max-width: 45%;
+    margin-top: 70px;
+    overflow: visible;
 }
 @media (max-width: 1199.98px) {
     .amplication-base section.page-welcome .header-and-video {
         display: block;
     }
-}
-.amplication-base section.page-welcome .header-and-video .video {
-    margin-top: 70px;
-    max-width: 500px;
-    overflow: visible;
+    .amplication-base .header-and-video .content-block {
+        max-width: 100%;
+    }
+    .amplication-base .header-and-video .video {
+        max-width: 100%;
+    }
 }
 @media (max-width: 767.98px) {
     .amplication-base section.page-welcome .header-and-video .video {
@@ -9573,16 +9588,11 @@ body {
     text-decoration: none;
 }
 .amplication-base .feature-card .feature-card-text {
-    margin-top: 1rem;
     font-weight: 500;
     padding-bottom: 1rem;
-    height: 3rem;
     max-width: 10rem;
     margin: auto;
-    color: #ffffff;
     text-decoration: none;
-    font-size: 1rem;
-    line-height: 1.5rem;
 }
 .amplication-base .feature-card .feature-card-text:hover {
     text-decoration: none;
@@ -9713,8 +9723,6 @@ body {
     width: 100%;
     margin: 0;
     margin-bottom: 1rem;
-    font-size: 1rem;
-    line-height: 1.5rem;
 }
 .amplication-base .roadmap-box .roadmap-list .done {
     opacity: 0.5;
@@ -9756,10 +9764,6 @@ body {
     width: 100%;
     margin-top: 4rem;
 }
-.amplication-base .feature .feature-description {
-    font-size: 1rem;
-    color: #a3a8b8;
-}
 @media (max-width: 1199.98px) {
     .amplication-base .feature .feature-description {
         text-align: left;
@@ -9776,7 +9780,6 @@ body {
 @media (min-width: 992px) {
     .amplication-base .feature .feature-description {
         max-width: 460px;
-        font-size: 1.1rem;
     }
 }
 .amplication-base .btn {
@@ -9911,9 +9914,10 @@ body {
 }
 .amplication-base .bracket-box span {
     color: #41cadd;
-    font-size: 1.2rem;
+    font-size: inherit;
+    line-height: inherit;
     margin-right: 0.6rem;
-    margin-top: 0.2rem;
+    margin-top: 0;
 }
 .amplication-base .bracket-box span:before {
     content: "<";
@@ -10273,16 +10277,11 @@ body {
 .amplication-base .btn-outline-primary:hover {
     background-color: #5e2de9;
 }
-.amplication-base .description-box-black10 {
-    color: #a3a8b8;
-    line-height: 1.9rem;
-}
 .amplication-base .features-page-feature:nth-of-type(even) {
     background-color: #22273c;
 }
 .amplication-base .features-page-feature .feature-page-card {
     display: flex;
-    margin-top: 100px;
 }
 .amplication-base .features-page-feature .feature-page-card .feature-card-header {
     display: flex;
@@ -10345,8 +10344,6 @@ body {
     color: #41cadd;
 }
 .amplication-base .features-page-feature .feature-page-card .feature-page-description {
-    font-size: 1.2rem;
-    color: #a3a8b8;
     max-width: none;
 }
 .amplication-base .features-page-feature .feature-page-card .feature-page-description ul {
@@ -10354,10 +10351,6 @@ body {
     line-height: 2rem;
     margin-left: -1.6rem;
     padding-left: 40px;
-}
-.amplication-base .features-page-feature .feature-page-card .feature-page-description span {
-    color: #d3d4dc;
-    line-height: 4rem;
 }
 .amplication-base .features-page-feature .feature-page-card .feature-image {
     display: flex;
@@ -10372,7 +10365,6 @@ body {
 }
 .amplication-base .features-page-feature .feature-page-card {
     display: flex;
-    margin-top: 100px;
 }
 .amplication-base .features-page-feature .feature-page-card .feature-card-header {
     display: flex;
@@ -10435,8 +10427,6 @@ body {
     color: #41cadd;
 }
 .amplication-base .features-page-feature .feature-page-card .feature-page-description {
-    font-size: 1.2rem;
-    color: #a3a8b8;
     max-width: none;
 }
 .amplication-base .features-page-feature .feature-page-card .feature-page-description ul {
@@ -10445,8 +10435,10 @@ body {
     margin-left: -1.6rem;
 }
 .amplication-base .features-page-feature .feature-page-card .feature-page-description span {
-    color: #d3d4dc;
-    line-height: 4rem;
+    font-size: inherit;
+    line-height: inherit;
+    display: inline-block;
+    margin: 1rem 0;
 }
 .amplication-base .features-page-feature .feature-page-card .feature-image {
     display: flex;
@@ -10467,7 +10459,7 @@ body {
     text-align: center;
 }
 .amplication-base .pricing-page .container-pricing {
-    max-width: 90vw;
+    /*max-width: 90vw;*/
 }
 .amplication-base .pricing-page section.page-2,
 .amplication-base .pricing-page section.page-3,
@@ -10498,7 +10490,7 @@ body {
     text-align: left;
     border: 1px solid #373d57;
     border-right-width: 0;
-    padding: 1rem;
+    padding: 32px 24px 40px;
     flex: 1;
     min-width: 200px;
     box-shadow: 0 2px 20px rgba(11,11,22,0.18);
@@ -10522,40 +10514,46 @@ body {
     }
 }
 .amplication-base .pricing-page .pricing-plan__title {
-    font-size: 18px;
+    font-size: 1.5rem;
+    font-weight: 600;
     height: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 .amplication-base .pricing-page .pricing-plan__price {
     font-weight: 600;
-    font-size: 24px;
+    font-size: 2.5rem;
     white-space: nowrap;
-    height: 3rem;
 }
 .amplication-base .pricing-page .pricing-plan__instead {
     margin-left: 0.5rem;
-    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
     color: #686f8c;
     text-decoration: line-through;
 }
 .amplication-base .pricing-page .pricing-plan__description {
-    font-size: 12px;
-    height: 5rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    color: #686F8C;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 .amplication-base .pricing-page .pricing-plan__features {
-    margin: 0;
+    margin: 1.5rem 0 0 0;
     padding: 0;
 }
 .amplication-base .pricing-page .pricing-plan__feature {
-    font-size: 14px;
-    color: #a3a8b8;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: #ffffff;
     overflow: hidden;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
+}
+.amplication-base .pricing-page .pricing-plan__feature:last-of-type {
+    margin-bottom: 0;
 }
 .amplication-base .pricing-page .pricing-plan .check {
     position: relative;
@@ -10573,14 +10571,11 @@ body {
     background-image: none;
 }
 .amplication-base .team-page.page-hero .hero-header {
-    margin-left: 24px;
+    /*margin-left: 24px;*/
 }
 .amplication-base .team-page.page-hero .hero-header h1 {
-    font-size: 4rem;
     font-weight: 600;
-}
-.amplication-base .team-page.page-hero .hero-header h1 {
-    font-size: 4rem;
+    font-size: 4.375rem;
 }
 @media (max-width: 1440px) {
     .amplication-base .team-page.page-hero .hero-header h1 {
@@ -10681,7 +10676,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 14px 40px;
+    padding: 14px 30px;
     border-radius: 8px;
     white-space: nowrap;
     line-height: 1;
@@ -10701,10 +10696,12 @@ body {
 .amplication-base .team-members .team-member__title {
     color: #41cadd;
     font-size: 1rem;
+    line-height: 1.250rem;
     margin-bottom: 12px;
 }
 .amplication-base .team-members .team-member__links a {
     display: inline-block;
+    margin: 0 3px;
 }
 .amplication-base .team-members .team-member__links a span {
     display: inline-block;
@@ -10727,9 +10724,15 @@ body {
 }
 .amplication-base .team-members .team-member__name {
     font-size: 1.2rem;
+    width: 100%;
+    text-align: center;
+    white-space: normal;
 }
 .amplication-base .team-members .team-member__title {
     font-size: 1rem;
+    width: 100%;
+    text-align: center;
+    white-space: normal;
 }
 @media (max-width: 991.98px) {
     .amplication-base .team-members .team-member__name {

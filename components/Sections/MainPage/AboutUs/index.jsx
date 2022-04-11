@@ -7,9 +7,9 @@ const AboutUs = () => {
             <h2 className="h2 text-center">Who are we?</h2>
             <div className="row">
               <h3 className="h3 col-12 col-lg-8 offset-lg-2 pr-4 pl-4 text-lg text-white">
-                We are a group of creators who love open&#8209;source and
-                low&#8209;code. We believe that low&#8209;code application
-                development will evolve into a modern&#8209;day
+                We are a group of creators who love open-source and
+                low-code. We believe that low-code application
+                development will evolve into a modern-day
                 programming&nbsp;language.
               </h3>
             </div>
@@ -27,7 +27,7 @@ const AboutUs = () => {
                 <div className={'text-base text-white'}>
                   Our vision is to create one platform which will empower
                   professional developers in creating business applications and
-                  extend platform capabilities, with the open&#8209;source
+                  extend platform capabilities, with the open-source
                   community&apos;s power of collaboration & transparency.
                 </div>
               </div>
@@ -42,22 +42,22 @@ const AboutUs = () => {
                   As our platform is open source, we are looking to create an
                   ecosystem around the project, where you - the professional
                   developers, will always have the freedom to fork and maintain
-                  the platform yourselves, with no vendor lock&#8209;in.
+                  the platform yourselves, with no vendor lock-in.
                 </div>
               </div>
             </div>
             <div className="col-md-12 mb-4">
               <div className="about-wrapper-2">
-                <h2 className="h2">Low&#8209;Code 💜 Open&#8209;Source</h2>
+                <h2 className="h2">Low-Code 💜 <br></br>Open-Source</h2>
                 <div className="">
                   <div className="about-box">
                     <div className="bracket-box">
                       <span>Why</span>
-                      open&#8209;source
+                      open-source
                     </div>
                     <div className={'text-base text-white'}>
-                      We believe low&#8209;code and open&#8209;source should go
-                      hand&#8209;in&#8209;hand. Amplication builds the next
+                      We believe low-code and open-source should go
+                      hand-in-hand. Amplication builds the next
                       generation of development tools with the help of the
                       community, for the community.
                     </div>

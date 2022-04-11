@@ -36,7 +36,7 @@ const GetList = () => {
                     src={OpenSourceIcon}
                     alt={'open source'}
                   />
-                  <div className="feature-card-text">Open&#8209;source project</div>
+                  <div className="feature-card-text text-base text-white">Open-source project</div>
                 </a>
               </Link>
               <Link
@@ -52,7 +52,7 @@ const GetList = () => {
                     src={CodeGeneratorIcon}
                     alt={'code generator'}
                   />
-                  <div className="feature-card-text">
+                  <div className="feature-card-text text-base text-white">
                     TypeScript & Node.js source&nbsp;code
                   </div>
                 </a>
@@ -70,7 +70,7 @@ const GetList = () => {
                     src={SyncWithGithubIcon}
                     alt={'Sync with GitHub'}
                   />
-                  <div className="feature-card-text">Sync with GitHub</div>
+                  <div className="feature-card-text text-base text-white">Sync with GitHub</div>
                 </a>
               </Link>
               <Link
@@ -86,7 +86,7 @@ const GetList = () => {
                     src={VersionControlIcon}
                     alt={'version control'}
                   />
-                  <div className="feature-card-text">Version control</div>
+                  <div className="feature-card-text text-base text-white">Version control</div>
                 </a>
               </Link>
               <Link
@@ -102,7 +102,7 @@ const GetList = () => {
                     src={CustomCodeIcon}
                     alt={'custom code'}
                   />
-                  <div className="feature-card-text">Custom Code</div>
+                  <div className="feature-card-text text-base text-white">Custom Code</div>
                 </a>
               </Link>
               <Link
@@ -118,7 +118,7 @@ const GetList = () => {
                     src={VendorLockIcon}
                     alt={'vendor lock'}
                   />
-                  <div className="feature-card-text">
+                  <div className="feature-card-text text-base text-white">
                     Freedom to continue on your&nbsp;own
                   </div>
                 </a>
@@ -136,7 +136,7 @@ const GetList = () => {
                     src={DockerContainersIcon}
                     alt={'docker container'}
                   />
-                  <div className="feature-card-text">
+                  <div className="feature-card-text text-base text-white">
                     Docker ready to be&nbsp;deployed
                   </div>
                 </a>
@@ -154,8 +154,8 @@ const GetList = () => {
                     src={RolesIcon}
                     alt={'role based access control'}
                   />
-                  <div className="feature-card-text">
-                    Role&#8209;based access&nbsp;control
+                  <div className="feature-card-text text-base text-white">
+                    Role-based access&nbsp;control
                   </div>
                 </a>
               </Link>
@@ -172,7 +172,7 @@ const GetList = () => {
                     src={AdminUiIcon}
                     alt={'admin ui cms'}
                   />
-                  <div className="feature-card-text">React Admin UI</div>
+                  <div className="feature-card-text text-base text-white">React Admin UI</div>
                 </a>
               </Link>
               <Link
@@ -188,7 +188,7 @@ const GetList = () => {
                     src={SecurityAndPerformanceIcon}
                     alt={'security and performance'}
                   />
-                  <div className="feature-card-text">Security & performance</div>
+                  <div className="feature-card-text text-base text-white">Security & performance</div>
                 </a>
               </Link>
               <Link
@@ -204,7 +204,7 @@ const GetList = () => {
                     src={CloudAgnosticIcon}
                     alt={'cloud agnostic'}
                   />
-                  <div className="feature-card-text">Cloud agnostic</div>
+                  <div className="feature-card-text text-base text-white">Cloud agnostic</div>
                 </a>
               </Link>
               <Link
@@ -220,7 +220,7 @@ const GetList = () => {
                     src={CommandLineInterfaceIcon}
                     alt={'cloud agnostic'}
                   />
-                  <div className="feature-card-text">Command Line Interface</div>
+                  <div className="feature-card-text text-base text-white">Command Line Interface</div>
                 </a>
               </Link>
             </div>

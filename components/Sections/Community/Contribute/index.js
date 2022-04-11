@@ -36,7 +36,7 @@ const Contribute = () => {
                   Help improve Amplication by submitting your ideas.
                 </div>
                 <Link href='https://github.com/amplication/amplication/issues/new?assignees=&labels=type%3A%20feature%20request&template=feature_request.md&title='>
-                  <a target='_blank' className='btn btn-outline-secondary'>
+                  <a target='_blank' className='btn btn-transparent'>
                     Submit feature request
                   </a>
                 </Link>
@@ -65,7 +65,7 @@ const Contribute = () => {
                   report it so we can make this platform the best it can be!
                 </div>
                 <Link href='https://github.com/amplication/amplication/issues/new?assignees=&labels=type%3A%20bug&template=bug_report.md&title='>
-                  <a target='_blank' className='btn btn-outline-secondary'>
+                  <a target='_blank' className='btn btn-transparent'>
                     Create bug report
                   </a>
                 </Link>
@@ -95,7 +95,7 @@ const Contribute = () => {
                   time to time for new articles.
                 </div>
                 <Link href='https://docs.amplication.com/'>
-                  <a target='_blank' className='btn btn-outline-secondary'>
+                  <a target='_blank' className='btn btn-transparent'>
                     See the docs
                   </a>
                 </Link>
@@ -124,7 +124,7 @@ const Contribute = () => {
                   functionality? <br/>PRs are welcomed and encouraged.
                 </div>
                 <Link href='https://github.com/amplication/amplication/blob/master/CONTRIBUTING.md'>
-                  <a target='_blank' className='btn btn-outline-secondary'>
+                  <a target='_blank' className='btn btn-transparent'>
                     Learn how to contribute
                   </a>
                 </Link>
