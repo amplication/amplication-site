@@ -99,7 +99,7 @@ const Post = ({posts, post}) => {
                   dangerouslySetInnerHTML={ {
                     __html: new showdown.Converter({
                       tables: true,
-                    }).makeHtml(post.content),
+                    }).makeHtml(post.content.replace("‑", '-')),
                   } }
                 >
                 </div>
