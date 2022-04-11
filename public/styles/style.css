@@ -9323,8 +9323,8 @@ body {
     }
 }
 .amplication-base section {
-    padding-top: 250px;
-    padding-bottom: 250px;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
     background-color: #15192c;
     overflow: hidden;
 }
@@ -9356,7 +9356,7 @@ body {
     background-position: top left;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-bottom: 90px;
+    padding-bottom: 3rem;
 }
 @media (min-width: 992px) {
     .amplication-base section.page-welcome .container-fluid,
