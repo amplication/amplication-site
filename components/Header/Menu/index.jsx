@@ -111,6 +111,24 @@ const Menu = () => {
             }
           </ul>
         </nav>
+        <div className='mt-auto py-8 laptop:hidden'>
+          <div className='w-full menu__item pt-12 flex flex-col justify-end items-stretch border-t border-[rgba(255,255,255,0.2)]'>
+            <div className='w-full'>
+              <p className='font-poppins font-medium text-white text-center text-base mb-6 laptop:text-lg laptop:text-left laptop:mb-6'>
+                Contact us
+              </p>
+              <ul className='w-full flex flex-col justify-start items-center'>
+                <li className='mb-1'>
+                  <Link href={`mailto:${process.env.NEXT_PUBLIC_MAIL}`}>
+                    <a className='text-gray laptop:text-lg hover:text-purple-bright-hover'>
+                      {process.env.NEXT_PUBLIC_MAIL}
+                    </a>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
         <div className='hidden laptop:inline-block ml-4'>
           <Button
             text='Login'

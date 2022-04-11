@@ -60,7 +60,7 @@ module.exports = {
       }),
       fontSize: {
         'tiny': '10px',
-        'base': ['16px', '24px'],
+        'base': ['15px', '1.4rem'],
       },
       gap: {
         '7.5': '1.875rem',

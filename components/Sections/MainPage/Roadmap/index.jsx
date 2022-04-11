@@ -15,13 +15,13 @@ const Roadmap = () => {
               <div className="roadmap-box">
                 <div className="roadmap-title">Integration</div>
                 <ul className="roadmap-list">
-                  <li className="done">GraphQL API</li>
-                  <li className="done">REST API</li>
-                  <li>Connectors library</li>
-                  <li>Custom connectors</li>
-                  <li>SMS</li>
-                  <li>E&#8209;mail</li>
-                  <li>Push notifications</li>
+                  <li className="text-base done">GraphQL API</li>
+                  <li className="text-base done">REST API</li>
+                  <li className='text-base text-white'>Connectors library</li>
+                  <li className='text-base text-white'>Custom connectors</li>
+                  <li className='text-base text-white'>SMS</li>
+                  <li className='text-base text-white'>E-mail</li>
+                  <li className='text-base text-white'>Push notifications</li>
                 </ul>
               </div>
             </div>
@@ -30,11 +30,11 @@ const Roadmap = () => {
               <div className="roadmap-box">
                 <div className="roadmap-title">Database</div>
                 <ul className="roadmap-list">
-                  <li className="done">Design data model</li>
-                  <li>Connect to your own database</li>
-                  <li>Import schema from existing database</li>
-                  <li>Use multiple data sources</li>
-                  <li>More data types</li>
+                  <li className="text-base done">Design data model</li>
+                  <li className='text-base text-white'>Connect to your own database</li>
+                  <li className='text-base text-white'>Import schema from existing database</li>
+                  <li className='text-base text-white'>Use multiple data sources</li>
+                  <li className='text-base text-white'>More data types</li>
                 </ul>
               </div>
             </div>
@@ -42,11 +42,11 @@ const Roadmap = () => {
               <div className="roadmap-box">
                 <div className="roadmap-title">Business Logic</div>
                 <ul className="roadmap-list">
-                  <li className="done">Roles and Permissions</li>
-                  <li>Decision tables</li>
-                  <li>Expressions</li>
-                  <li>Condition builders</li>
-                  <li>Visual flow editors for custom logic</li>
+                  <li className="text-base done">Roles and Permissions</li>
+                  <li className='text-base text-white'>Decision tables</li>
+                  <li className='text-base text-white'>Expressions</li>
+                  <li className='text-base text-white'>Condition builders</li>
+                  <li className='text-base text-white'>Visual flow editors for custom logic</li>
                 </ul>
               </div>
             </div>
@@ -54,11 +54,11 @@ const Roadmap = () => {
               <div className="roadmap-box">
                 <div className="roadmap-title">Framework</div>
                 <ul className="roadmap-list">
-                  <li>Testing</li>
-                  <li>IAM and SSO</li>
-                  <li>Logging and auditing</li>
-                  <li>Performance, monitoring, and scaling</li>
-                  <li>Debugging</li>
+                  <li className='text-base text-white'>Testing</li>
+                  <li className='text-base text-white'>IAM and SSO</li>
+                  <li className='text-base text-white'>Logging and auditing</li>
+                  <li className='text-base text-white'>Performance, monitoring, and scaling</li>
+                  <li className='text-base text-white'>Debugging</li>
                 </ul>
               </div>
             </div>
@@ -66,10 +66,10 @@ const Roadmap = () => {
               <div className="roadmap-box">
                 <div className="roadmap-title">Front-end</div>
                 <ul className="roadmap-list">
-                  <li className="done">Auto-generated Admin UI</li>
-                  <li>Canvas pages</li>
-                  <li>Built&#8209;in component library</li>
-                  <li>Fully custom clients</li>
+                  <li className="text-base done">Auto-generated Admin UI</li>
+                  <li className='text-base text-white'>Canvas pages</li>
+                  <li className='text-base text-white'>Built-in component library</li>
+                  <li className='text-base text-white'>Fully custom clients</li>
                 </ul>
               </div>
             </div>
@@ -77,9 +77,9 @@ const Roadmap = () => {
               <div className="roadmap-box">
                 <div className="roadmap-title">More</div>
                 <ul className="roadmap-list">
-                  <li>Collaboration</li>
-                  <li className="done">Custom code with TS</li>
-                  <li>Integration with DevOps tools and services</li>
+                  <li className='text-base text-white'>Collaboration</li>
+                  <li className="text-base done">Custom code with TS</li>
+                  <li className='text-base text-white'>Integration with DevOps tools and services</li>
                 </ul>
               </div>
             </div>

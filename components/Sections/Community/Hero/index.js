@@ -10,8 +10,8 @@ const Hero = () => {
             <div className='hero-header'>
               <Title level={1} className='main-title'>We&apos;re better together.</Title>
 
-              <Title level={3} className='h3 line-clamp-0'>
-                Join us in building the next generation of development tools.
+              <Title level={3} className='h3 text-white my-4 line-clamp-0'>
+                Join us in building the next generation of development tools.<br></br>
                 Any contribution counts.
               </Title>
               <Link href='https://github.com/amplication/amplication'>

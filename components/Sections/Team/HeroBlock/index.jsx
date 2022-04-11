@@ -5,7 +5,7 @@ const HeroBlock = () => {
   return (
     <>
       <section className="page-hero team-page background-transparent">
-        <div className="container-fluid">
+        <div className="w-full container-desktop-enlarged">
           <div className="row d-flex align-items-end align-items-lg-center">
             <div className="col-12 col-lg-6">
               <div className="hero-header">

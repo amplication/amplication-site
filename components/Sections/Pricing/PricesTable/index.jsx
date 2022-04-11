@@ -72,12 +72,12 @@ const PricesTable = () => {
           <div className="row d-flex align-items-end align-items-md-center">
             <div className="col-12 col-md-8 offset-md-2">
               <h1 className="main-title">Public Beta users</h1>
-              <h3 className="h3">
+              <h3 className="h3 text-white">
                 While we`&quot;re in Beta Amplication is free to use. In the future,
                 we will offer a free community plan and additional paid business
                 plans.
               </h3>
-              <h3 className="h3">
+              <h3 className="h3 text-white">
                 Although Amplication is currently in Beta, your generated apps
                 are production-ready. Every app generated using Amplication
                 platform contains stable, documented, secured, and supported
