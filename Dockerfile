@@ -4,15 +4,13 @@ ARG ALPINE_VERSION=alpine3.14
 FROM node:$NODE_VERSION-$ALPINE_VERSION AS deps
 WORKDIR /app
 COPY package.json ./
-RUN yarn install --frozen-lockfile
+RUN npm install
 
 FROM node:$NODE_VERSION-$ALPINE_VERSION AS build
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-RUN yarn build
-RUN rm -rf node_modules
-RUN yarn install --production --frozen-lockfile --ignore-scripts --prefer-offline
+RUN npm run build
 
 FROM node:$NODE_VERSION-$ALPINE_VERSION
 WORKDIR /app
@@ -26,4 +24,4 @@ COPY --from=build --chown=amp:amp /app/.next ./.next
 COPY --from=build --chown=amp:amp /app/next.config.js  ./
 USER amp
 EXPOSE 3000
-CMD [ "yarn", "start" ]
+CMD [ "npm", "run start" ]
