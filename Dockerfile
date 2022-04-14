@@ -24,4 +24,4 @@ COPY --from=build --chown=amp:amp /app/.next ./.next
 COPY --from=build --chown=amp:amp /app/next.config.js  ./
 USER amp
 EXPOSE 3000
-CMD [ "npm", "run" "start" ]
+CMD [ "npm", "run", "start" ]
