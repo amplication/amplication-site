@@ -8,7 +8,7 @@ const Features = () => {
     {
       title: 'Database',
       icon: databaseIcon,
-      content: 'Easily create data models and&nbsp;configure role&#8209;based\n' +
+      content: 'Easily create data models and&nbsp;configure role-based\n' +
         '              access&nbsp;control with a simple and intuitive UI or CLI',
     },
     {
@@ -40,7 +40,7 @@ const Features = () => {
                       />
                     }
                   </span>
-                  <span className={'text-base text-white leading-6'} dangerouslySetInnerHTML={{__html: item.content}}></span>
+                  <span className={'text-base text-white'} dangerouslySetInnerHTML={{__html: item.content}}></span>
                 </div>
               )
             })}

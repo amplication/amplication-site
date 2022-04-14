@@ -139,7 +139,7 @@ const Posts = ({posts}) => {
             <Link href={(tagID ? `/tags/${tagID}` : '') + `?page=${page ? parseInt(page) + 1 : 2}`} scroll={false}>
               <a
                 onClick={() => setLoader(true)}
-                className={'w-[118px] inline-block py-2 px-4 rounded transition-all duration-300 text-white bg-dark-black-70 hover:bg-purple' + (loader ? ' loader' : '')}
+                className={'w-[118px] inline-block py-2 px-4 rounded transition-all duration-300 text-center text-white bg-dark-black-70 hover:bg-purple' + (loader ? ' loader' : '')}
               >
                 Load More
               </a>

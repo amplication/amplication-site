@@ -39,7 +39,6 @@ const Post = ({posts, post}) => {
       <div
         className="page min-h-screen flex flex-col justify-start justify-items-stretch overflow-hidden pt-[65px] laptop:pt-[110px] bg-purple-dark">
         <Header/>
-
         <div
           className="w-full p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop mt-16 laptop:mt-12">
           <nav>
@@ -96,11 +95,11 @@ const Post = ({posts, post}) => {
                   alt={ post.title }
                 />
                 <div
-                  className="font-normal order-5 content text-sm laptop:text-lg text-white leading-[21px] laptop:leading-[27px] mt-2"
+                  className="font-normal order-5 content text-base text-white mt-2"
                   dangerouslySetInnerHTML={ {
                     __html: new showdown.Converter({
                       tables: true,
-                    }).makeHtml(post.content),
+                    }).makeHtml(post.content.replace("‑", '-')),
                   } }
                 >
                 </div>
@@ -235,7 +234,7 @@ export const getStaticProps = async (context) => {
         posts: posts ? posts.data.posts : null,
         post: data?.post,
       },
-      revalidate: 3600,
+      revalidate: 60,
     };
   } catch (e) {
     console.error(e);
@@ -246,6 +245,7 @@ export const getStaticProps = async (context) => {
       posts: null,
       post: null,
     },
+    revalidate: 60,
   };
 };
 
@@ -273,11 +273,12 @@ export async function getStaticPaths() {
 }
 
 Post.propTypes = {
-  post: PropTypes.object.isRequired,
+  post: PropTypes.object,
   posts: PropTypes.array,
 };
 
 Post.defaultProps = {
+  post: {},
   posts: [],
 };
 

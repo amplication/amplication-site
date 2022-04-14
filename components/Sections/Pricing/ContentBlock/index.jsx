@@ -9,7 +9,7 @@ const ContentBlock = ({title, blockClass, content}) => {
             <div className="col-12 col-md-8 offset-md-2">
               <h1 className="main-title" dangerouslySetInnerHTML={{__html: title}}></h1>
 
-              <h3 className="h3" dangerouslySetInnerHTML={{__html: content}}></h3>
+              <h3 className="h3 text-white" dangerouslySetInnerHTML={{__html: content}}></h3>
             </div>
           </div>
         </div>

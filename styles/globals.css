@@ -16,18 +16,18 @@
     }
 
     .menu {
-        transition: all 0.4s ease-in-out;
+        transition: opacity 0.4s ease-in-out;
         max-height: calc(100vh - 60px);
         height: calc(100vh - 60px);
-        @apply absolute w-full top-[calc(100%+1px)] z-10 overflow-y-auto bg-purple-dark container-desktop-enlarged pt-5 pb-7 laptop:flex laptop:justify-end laptop:items-center laptop:static laptop:inset-auto laptop:h-auto laptop:p-0;
+        @apply absolute w-full top-[calc(100%+1px)] z-10 left-0 overflow-y-auto bg-purple-dark container-desktop-enlarged pt-5 pb-7 flex flex-col justify-start items-stretch laptop:flex laptop:flex-row laptop:justify-end laptop:items-center laptop:static laptop:inset-auto laptop:h-auto laptop:p-0;
     }
 
     .menu--closed {
-        @apply left-full laptop:inset-auto;
+        @apply opacity-0 pointer-events-none laptop:opacity-100 laptop:pointer-events-auto;
     }
 
     .menu--opened {
-        @apply left-0 laptop:inset-auto;
+        @apply opacity-100 pointer-events-auto laptop:opacity-100;
     }
 
     .burger-menu {
@@ -135,22 +135,22 @@
     }
 
     .content h1 {
-        @apply block w-full text-3xl my-3;
+        @apply block w-full font-semibold text-3xl my-3;
     }
     .content h2 {
-        @apply block w-full text-2xl my-3.5;
+        @apply block w-full font-semibold text-2xl my-3.5;
     }
     .content h3 {
-        @apply block w-full text-lg my-4;
+        @apply block w-full font-semibold text-lg my-4;
     }
     .content h4 {
-        @apply block w-full text-base my-5;
+        @apply block w-full font-semibold text-base my-5;
     }
     .content h5 {
-        @apply block w-full text-sm my-6;
+        @apply block w-full font-semibold text-sm my-6;
     }
     .content h6 {
-        @apply block w-full text-xs my-7;
+        @apply block w-full font-semibold text-xs my-7;
     }
     .content ul {
         @apply list-disc pl-4;
