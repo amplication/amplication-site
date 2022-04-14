@@ -3,7 +3,7 @@ ARG ALPINE_VERSION=alpine3.14
 
 FROM node:$NODE_VERSION-$ALPINE_VERSION AS deps
 WORKDIR /app
-COPY package.json yarn.lock ./
+COPY package.json ./
 RUN yarn install --frozen-lockfile
 
 FROM node:$NODE_VERSION-$ALPINE_VERSION AS build
@@ -19,7 +19,7 @@ WORKDIR /app
 ENV NODE_ENV=production
 RUN addgroup -g 1001 -S amp
 RUN adduser -S amp -u 1001
-COPY --from=build --chown=amp:amp /app/package.json /app/yarn.lock ./
+COPY --from=build --chown=amp:amp /app/package.json ./
 COPY --from=build --chown=amp:amp /app/node_modules ./node_modules
 COPY --from=build --chown=amp:amp /app/public ./public
 COPY --from=build --chown=amp:amp /app/.next ./.next
