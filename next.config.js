@@ -9,8 +9,8 @@ const nextConfig = {
       'placehold.co',
       'media.sproutsocial.com',
       'static-assets.amplication.com',
-      'static-assets.amplication.com.s3.amazonaws.com.',
       'static-assets.amplication.com.s3.amazonaws.com',
+      'static-assets.amplication.com.s3.amazonaws.com.',
       '*.s3.amazonaws.com',
       's3.amazonaws.com',
       'www.facebook.com'
