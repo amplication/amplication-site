@@ -2,7 +2,20 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+First of all, it should be mentioned that there two possible modes: production and development.
+
+### Production Mode
+In order to run the server for production mode these commands have to be executed:
+
+```bash
+npm run build #(or yarn build)
+npm run start #(or yarn start)
+```
+After the first command all the static pages will be save as json and html files as cache files.
+The second command starts the server, which is usually [http://localhost:3001](http://localhost:3001)
+
+### Development Mode
+For starting the development server:
 
 ```bash
 npm run dev
@@ -13,6 +26,8 @@ yarn dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+
+NOTE: there is no Next.js cache functionality for development mode.
 
 [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 

@@ -239,7 +239,7 @@ export const getStaticProps = async (context) => {
         posts: posts ? posts.data.posts : null,
         post: data?.post,
       },
-      revalidate: 60,
+      revalidate: 30,
     };
   } catch (e) {
     console.error(e);
@@ -250,7 +250,7 @@ export const getStaticProps = async (context) => {
       posts: null,
       post: null,
     },
-    revalidate: 60,
+    revalidate: 30,
   };
 };
 
