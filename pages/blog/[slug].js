@@ -89,7 +89,7 @@ const Post = ({ posts, post }) => {
                 />
                 <Thumbnail
                   objectFit="initial"
-                  className={"order-4 my-8 rounded-2xl !aspect-auto"}
+                  className={"order-4 mt-8 mb-16 rounded-2xl !aspect-auto"}
                   src={
                     helpers.isValidUrl(post.featuredImage)
                       ? post.featuredImage
@@ -97,7 +97,7 @@ const Post = ({ posts, post }) => {
                   }
                   alt={post.title}
                 />
-                <div className="font-normal order-5 content text-base text-white mt-2">
+                <div className="font-normal order-5 blog-content text-base text-white">
                   <ReactMarkdown
                     remarkPlugins={[remarkGfm]}
                     rehypePlugins={[rehypeRaw, rehypeHighlight]}
