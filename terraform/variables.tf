@@ -25,3 +25,18 @@ variable "cloud_run_max_replica" {
 variable "external_blog_server_url" {
   type  = string
 }
+
+variable "container_concurrency" {
+  type    = number
+  default = 0
+}
+
+variable "cpu" {
+  type  = string
+  default = "1"
+}
+
+variable "memory" {
+  type  = string
+  default = "512Mi"
+}

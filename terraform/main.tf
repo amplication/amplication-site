@@ -11,11 +11,22 @@ resource "google_cloud_run_service" "service" {
 
   template {
     spec {
+      container_concurrency  = var.container_concurrency
       containers {
         image = var.image
         env {
           name  = "NEXT_PUBLIC_API_URL"
           value = var.external_blog_server_url
+        }
+        resources {
+          limits   = {
+            cpu    = var.cpu
+            memory = var.memory
+          }
+          requests = {
+            cpu    = var.cpu
+            memory = var.memory
+          }
         }
       }
     }
