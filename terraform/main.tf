@@ -19,6 +19,10 @@ resource "google_cloud_run_service" "service" {
           value = var.external_blog_server_url
         }
         resources {
+          limits   = {
+            cpu    = var.cpu
+            memory = var.memory
+          }
           requests = {
             cpu    = var.cpu
             memory = var.memory
