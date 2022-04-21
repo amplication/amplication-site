@@ -33,8 +33,9 @@ resource "google_cloud_run_service" "service" {
 
     metadata {
       annotations = {
-        "autoscaling.knative.dev/minScale" = var.cloud_run_min_replica
-        "autoscaling.knative.dev/maxScale" = var.cloud_run_max_replica
+        "autoscaling.knative.dev/minScale"  = var.cloud_run_min_replica
+        "autoscaling.knative.dev/maxScale"  = var.cloud_run_max_replica
+        "run.googleapis.com/cpu-throttling" =  var.cpuallocation == "request" ? "true" : "false"
       }
     }
   }
