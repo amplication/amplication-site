@@ -6,4 +6,4 @@ cloud_run_max_replica    = 5
 external_blog_server_url = "https://blog-api.amplication.com/graphql"
 container_concurrency    = 1000
 cpu                      = "4"
-memory                   = "512Mi"
+memory                   = "2Gi"
