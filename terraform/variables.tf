@@ -25,3 +25,8 @@ variable "cloud_run_max_replica" {
 variable "external_blog_server_url" {
   type  = string
 }
+
+variable "container_concurrency" {
+  type    = number
+  default = 0
+}
