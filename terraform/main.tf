@@ -44,6 +44,7 @@ resource "google_cloud_run_service" "service" {
     percent         = 100
     latest_revision = true
   }
+  autogenerate_revision_name = true
 }
 
 resource "google_cloud_run_service_iam_member" "run_all_users" {
