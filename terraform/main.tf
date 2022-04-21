@@ -17,6 +17,12 @@ resource "google_cloud_run_service" "service" {
           name  = "NEXT_PUBLIC_API_URL"
           value = var.external_blog_server_url
         }
+        resources {
+          requests {
+            cpu    = var.cpu
+            memory = var.memory
+          }
+        }
         container_concurrency  = var.container_concurrency
       }
     }

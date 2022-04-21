@@ -30,3 +30,11 @@ variable "container_concurrency" {
   type    = number
   default = 0
 }
+
+variable "cpu" {
+  type  = string
+}
+
+variable "memory" {
+  type  = string
+}
