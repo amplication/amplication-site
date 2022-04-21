@@ -33,8 +33,10 @@ variable "container_concurrency" {
 
 variable "cpu" {
   type  = string
+  default = "1"
 }
 
 variable "memory" {
   type  = string
+  default = "512Mi"
 }
