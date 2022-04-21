@@ -11,6 +11,7 @@ resource "google_cloud_run_service" "service" {
 
   template {
     spec {
+      container_concurrency  = var.container_concurrency
       containers {
         image = var.image
         env {
@@ -18,12 +19,11 @@ resource "google_cloud_run_service" "service" {
           value = var.external_blog_server_url
         }
         resources {
-          requests {
+          requests = {
             cpu    = var.cpu
             memory = var.memory
           }
         }
-        container_concurrency  = var.container_concurrency
       }
     }
 
