@@ -13,7 +13,7 @@ export default async function handler(req, res) {
   const body = JSON.parse(req.body);
 
   if (!body.EMAIL || !body.NAME || !body.SOURCE) return res.end();
-  const nameArr = body.NAME.split(' ');
+  const nameArr = String(body.NAME).split(' ');
   try {
     await hubspotClient.crm.contacts.basicApi.create({
       properties: {

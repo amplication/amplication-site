@@ -113,7 +113,6 @@ const SubscribeForm = ({isCompactView}) => {
         body: JSON.stringify(body)
       });
       const data = await response.json();
-      console.log(data)
       if (data.result !== "success" || ! 'result' in data) {
         setAfterFormSubmitMessage(('msg' in data ? data.msg : 'Something went wrong'));
         setFormSuccess(false);
