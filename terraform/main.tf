@@ -101,21 +101,14 @@ module "lb-http" {
 
 resource "google_compute_url_map" "urlmap" {
   name        = var.lb_name
-  default_url_redirect {
-    host_redirect = "*"
-    strip_query = false
-    redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
-  }
+  default_service = module.lb-http.backend_services
   host_rule {
     hosts        = ["*"]
     path_matcher = "allpaths"
   }
   path_matcher {
     name = "allpaths"
-    default_url_redirect {
-      host_redirect = "*"
-      strip_query = false
-    }
+    default_service = module.lb-http.backend_services
     path_rule {
       paths   = ["/"]
       url_redirect {
