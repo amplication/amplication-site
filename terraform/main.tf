@@ -110,13 +110,14 @@ resource "google_compute_url_map" "urlmap" {
   }
   path_matcher {
     name = "allpaths"
+    default_url_redirect {
+      host_redirect = "*"
+      strip_query = false
+    }
     path_rule {
       paths   = ["/"]
       url_redirect {
         host_redirect = "*"
-        https_redirect = false
-        path_redirect = "/"
-        redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
         strip_query = false
       }
     }
