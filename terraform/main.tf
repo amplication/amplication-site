@@ -101,14 +101,14 @@ module "lb-http" {
 
 resource "google_compute_url_map" "urlmap" {
   name        = var.lb_name
-  default_service = module.lb-http.backend_services.id
+  default_service = google_compute_backend_service.blog.id
   host_rule {
     hosts        = ["*"]
     path_matcher = "allpaths"
   }
   path_matcher {
     name = "allpaths"
-    default_service = module.lb-http.backend_services.id
+    default_service = google_compute_backend_service.blog.id
     path_rule {
       paths   = ["/"]
       url_redirect {
@@ -134,5 +134,21 @@ resource "google_compute_url_map" "urlmap" {
         strip_query = true
       }
     }
+  }
+}
+resource "google_compute_backend_service" "blog" {
+  name        = "blog"
+  port_name   = "http"
+  protocol    = "HTTP"
+  timeout_sec = 10
+
+  health_checks = [google_compute_health_check.blog.id]
+  load_balancing_scheme = "INTERNAL_SELF_MANAGED"
+}
+
+resource "google_compute_health_check" "blog" {
+  name               = "health-check"
+  http_health_check {
+    port = 80
   }
 }
