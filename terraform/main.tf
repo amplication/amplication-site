@@ -101,14 +101,14 @@ module "lb-http" {
 
 resource "google_compute_url_map" "urlmap" {
   name        = var.lb_name
-  default_service = module.lb-http.backend_services
+  default_service = module.lb-http.backend_services.id
   host_rule {
     hosts        = ["*"]
     path_matcher = "allpaths"
   }
   path_matcher {
     name = "allpaths"
-    default_service = module.lb-http.backend_services
+    default_service = module.lb-http.backend_services.id
     path_rule {
       paths   = ["/"]
       url_redirect {
