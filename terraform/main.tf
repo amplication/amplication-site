@@ -93,6 +93,8 @@ module "lb-http" {
         enable = false
         sample_rate = null
       }
+      create_url_map = false
+      url_map = [google_compute_url_map.urlmap.name]
     }
   }
 }
