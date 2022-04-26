@@ -98,7 +98,7 @@ module "lb-http" {
 }
 
 resource "google_compute_url_map" "urlmap" {
-  name        = "${var.lb_name}-urlmap"
+  name        = "urlmap-${var.lb_name}"
   default_url_redirect {
     host_redirect = "*"
     strip_query = false
