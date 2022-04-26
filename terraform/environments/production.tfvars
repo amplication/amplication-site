@@ -8,4 +8,4 @@ container_concurrency    = 1000
 cpu                      = "4"
 memory                   = "2Gi"
 cpu_allocation           = "allways"
-lb_name                  = "lb_amplication"
+lb_name                  = "lb-blog"
