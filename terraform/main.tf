@@ -70,8 +70,6 @@ module "lb-http" {
   project           = var.project_id
   name              = var.lb_name
 
-  ssl                             = true
-  managed_ssl_certificate_domains = null
   https_redirect                  = true
   backends = {
     default = {
