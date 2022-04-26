@@ -71,6 +71,8 @@ module "lb-http" {
   name              = var.lb_name
 
   https_redirect                  = false
+  create_url_map                  = false
+  url_map                         = [google_compute_url_map.urlmap.name]
   backends = {
     default = {
       description                     = null
@@ -93,14 +95,12 @@ module "lb-http" {
         enable = false
         sample_rate = null
       }
-      create_url_map = false
-      url_map = [google_compute_url_map.urlmap.name]
     }
   }
 }
 
 resource "google_compute_url_map" "urlmap" {
-  name        = "urlmap-${var.lb_name}"
+  name        = var.lb_name
   default_url_redirect {
     host_redirect = "*"
     strip_query = false
