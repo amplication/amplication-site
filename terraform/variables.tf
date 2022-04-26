@@ -10,6 +10,13 @@ variable "region" {
   type  = string
 }
 
+
+variable "lb_name" {
+  description = "Name for the load balancer forwarding rule and prefix for supporting resources."
+  type        = string
+  default     = "lb-test"
+}
+
 variable "image" {
   type  = string
 }

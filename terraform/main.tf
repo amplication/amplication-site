@@ -47,9 +47,98 @@ resource "google_cloud_run_service" "service" {
   autogenerate_revision_name = true
 }
 
+resource "google_compute_region_network_endpoint_group" "cloudrun_neg" {
+  name                  = "blog-neg"
+  network_endpoint_type = "SERVERLESS"
+  region                = var.region
+  cloud_run {
+    service = google_cloud_run_service.service.name
+  }
+}
+
 resource "google_cloud_run_service_iam_member" "run_all_users" {
   service  = google_cloud_run_service.service.name
   location = google_cloud_run_service.service.location
   role     = "roles/run.invoker"
   member   = "allUsers"
+}
+
+module "lb-http" {
+  source            = "GoogleCloudPlatform/lb-http/google//modules/serverless_negs"
+  version           = "~> 6.2.0"
+
+  project           = var.project_id
+  name              = var.lb_name
+
+  ssl                             = true
+  managed_ssl_certificate_domains = null
+  https_redirect                  = true
+  backends = {
+    default = {
+      description                     = null
+      groups = [
+        {
+          group = google_compute_region_network_endpoint_group.cloudrun_neg.id
+        }
+      ]
+      enable_cdn                      = false
+      custom_request_headers          = null
+      custom_response_headers         = null
+      security_policy                 = null
+
+      iap_config = {
+        enable               = false
+        oauth2_client_id     = ""
+        oauth2_client_secret = ""
+      }
+      log_config = {
+        enable = false
+        sample_rate = null
+      }
+    }
+  }
+}
+
+resource "google_compute_url_map" "urlmap" {
+  name        = "${var.lb_name}-urlmap"
+  default_url_redirect {
+    host_redirect = "*"
+    strip_query = false
+    redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
+  }
+  host_rule {
+    hosts        = ["*"]
+    path_matcher = "allpaths"
+  }
+  path_matcher {
+    name = "allpaths"
+    path_rule {
+      paths   = ["/"]
+      url_redirect {
+        host_redirect = "*"
+        https_redirect = false
+        path_redirect = "/"
+        redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
+        strip_query = false
+      }
+    }
+    path_rule {
+      paths   = ["/jobs"]
+      url_redirect {
+        host_redirect = "amplication.breezy.hr"
+        https_redirect = true
+        redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
+        strip_query = true
+      }
+    }
+    path_rule {
+      paths   = ["/discord"]
+      url_redirect {
+        host_redirect = "discord.gg/KSJCZ24vj2"
+        https_redirect = true
+        redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
+        strip_query = true
+      }
+    }
+  }
 }
