@@ -72,7 +72,7 @@ module "lb-http" {
 
   https_redirect                  = false
   create_url_map                  = false
-  url_map                         = [google_compute_url_map.urlmap.name]
+  url_map                         = google_compute_url_map.urlmap.name
   backends = {
     default = {
       description                     = null
