@@ -45,3 +45,8 @@ variable "cpu_allocation" {
   type  = string
   default = "request"
 }
+
+variable "hubspot_api_key" {
+  type  = string
+  default = ""
+}
