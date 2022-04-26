@@ -70,7 +70,7 @@ module "lb-http" {
   project           = var.project_id
   name              = var.lb_name
 
-  https_redirect                  = true
+  https_redirect                  = false
   backends = {
     default = {
       description                     = null
