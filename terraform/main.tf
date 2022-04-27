@@ -73,7 +73,7 @@ locals {
 }
 
 output "bobo" {
-  value = module.lb-http.backend_services[local.default_backend_name].self_link
+  value = module.lb-http.backend_services[local.default_backend_name]
   sensitive = true
 }
 
