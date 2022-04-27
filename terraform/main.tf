@@ -69,7 +69,7 @@ resource "google_cloud_run_service_iam_member" "run_all_users" {
 }
 
 output "bobo" {
-  value = module.lb-http.backend_services.name
+  value = module.lb-http.backend_services[id]
   sensitive = true
 }
 
