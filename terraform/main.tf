@@ -68,15 +68,6 @@ resource "google_cloud_run_service_iam_member" "run_all_users" {
   member   = "allUsers"
 }
 
-# locals {
-#   default_backend_name = module.lb-http.backend_services[keys(module.lb-http.backend_services)[0]].self_link
-# }
-
-# output "bobo" {
-#   value = module.lb-http.backend_services[local.default_backend_name]
-#   sensitive = true
-# }
-
 module "lb-http" {
   source            = "GoogleCloudPlatform/lb-http/google//modules/serverless_negs"
   version           = "~> 6.2.0"
@@ -127,13 +118,6 @@ resource "google_compute_url_map" "urlmap" {
    name = "allpaths"
    default_service = module.lb-http.backend_services[keys(module.lb-http.backend_services)[0]].self_link
 
-   path_rule {
-     paths   = ["/"]
-     url_redirect {
-       host_redirect = "*"
-       strip_query = false
-     }
-   }
    path_rule {
      paths   = ["/jobs"]
      url_redirect {
