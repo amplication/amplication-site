@@ -4,6 +4,11 @@ provider "google" {
   region      = var.region
 }
 
+provider "google-beta" {
+  project     = var.project_id
+  region      = var.region
+}
+
 # Cloud Run
 resource "google_cloud_run_service" "service" {
   name = "amplication-blog-${var.environment}"
@@ -74,7 +79,7 @@ module "lb-http" {
   create_url_map                  = false
   url_map                         = google_compute_url_map.urlmap.name
   backends = {
-    default = {
+    blog = {
       description                     = null
       groups = [
         {
@@ -101,14 +106,14 @@ module "lb-http" {
 
 resource "google_compute_url_map" "urlmap" {
   name        = var.lb_name
-  default_service = google_compute_backend_service.blog.id
+  default_service = google_compute_backend_service.blog[keys(var.backends)[0]].self_link
   host_rule {
     hosts        = ["*"]
     path_matcher = "allpaths"
   }
   path_matcher {
     name = "allpaths"
-    default_service = google_compute_backend_service.blog.id
+    default_service = google_compute_backend_service.blog[keys(var.backends)[0]].self_link
     path_rule {
       paths   = ["/"]
       url_redirect {
@@ -136,12 +141,45 @@ resource "google_compute_url_map" "urlmap" {
     }
   }
 }
-resource "google_compute_backend_service" "blog" {
-  name        = "blog-backend-service"
-  port_name   = "http"
-  protocol    = "HTTP"
 
-  backend {
-    group = google_compute_region_network_endpoint_group.cloudrun_neg.id
+resource "google_compute_backend_service" "blog" {
+  provider = google-beta
+  for_each = var.backends
+
+  project = var.project_id
+  name    = "${var.lb_name}-backend-${each.key}"
+
+  description                     = lookup(each.value, "description", null)
+  connection_draining_timeout_sec = lookup(each.value, "connection_draining_timeout_sec", null)
+  enable_cdn                      = lookup(each.value, "enable_cdn", false)
+  custom_request_headers          = lookup(each.value, "custom_request_headers", [])
+  custom_response_headers         = lookup(each.value, "custom_response_headers", [])
+
+  # To achieve a null backend security_policy, set each.value.security_policy to "" (empty string), otherwise, it fallsback to var.security_policy.
+  security_policy = lookup(each.value, "security_policy") == "" ? null : (lookup(each.value, "security_policy") == null ? var.security_policy : each.value.security_policy)
+
+  dynamic "backend" {
+    for_each = toset(each.value["groups"])
+    content {
+      description = lookup(backend.value, "description", null)
+      group       = lookup(backend.value, "group")
+
+    }
+  }
+
+  dynamic "log_config" {
+    for_each = lookup(lookup(each.value, "log_config", {}), "enable", true) ? [1] : []
+    content {
+      enable      = lookup(lookup(each.value, "log_config", {}), "enable", true)
+      sample_rate = lookup(lookup(each.value, "log_config", {}), "sample_rate", "1.0")
+    }
+  }
+
+  dynamic "iap" {
+    for_each = lookup(lookup(each.value, "iap_config", {}), "enable", false) ? [1] : []
+    content {
+      oauth2_client_id     = lookup(lookup(each.value, "iap_config", {}), "oauth2_client_id", "")
+      oauth2_client_secret = lookup(lookup(each.value, "iap_config", {}), "oauth2_client_secret", "")
+    }
   }
 }
