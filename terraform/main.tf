@@ -68,10 +68,10 @@ resource "google_cloud_run_service_iam_member" "run_all_users" {
   member   = "allUsers"
 }
 
-# output "bobo" {
-#   value = module.lb-http.backend_services[id]
-#   sensitive = true
-# }
+#  output "bobo" {
+#    value = module.lb-http.backend_services[id]
+#    sensitive = true
+#  }
 
 module "lb-http" {
   source            = "GoogleCloudPlatform/lb-http/google//modules/serverless_negs"
@@ -80,7 +80,8 @@ module "lb-http" {
   project           = var.project_id
   name              = var.lb_name
 
-  https_redirect                  = true
+  create_address                  = false
+  https_redirect                  = false
   # create_url_map                  = false
   # url_map                         = google_compute_url_map.urlmap.name
   backends = {
