@@ -70,6 +70,7 @@ resource "google_cloud_run_service_iam_member" "run_all_users" {
 
 output "bobo" {
   value = module.lb-http.backend_services
+  sensitive = true
 }
 
 module "lb-http" {
@@ -145,42 +146,6 @@ module "lb-http" {
 #       }
 #     }
 #   }
-# }
-
-
-# resource "google_compute_backend_service" "blog" {
-#   provider = google-beta
-#   for_each = var.backends
-
-#   project = var.project_id
-#   name    = "${var.lb_name}-backend"
-
-#   description                     = lookup(each.value, "description", null)
-#   connection_draining_timeout_sec = lookup(each.value, "connection_draining_timeout_sec", null)
-#   enable_cdn                      = lookup(each.value, "enable_cdn", false)
-#   custom_request_headers          = lookup(each.value, "custom_request_headers", [])
-#   custom_response_headers         = lookup(each.value, "custom_response_headers", [])
-
-#   # To achieve a null backend security_policy, set each.value.security_policy to "" (empty string), otherwise, it fallsback to var.security_policy.
-#   security_policy = lookup(each.value, "security_policy") == "" ? null : (lookup(each.value, "security_policy") == null ? var.security_policy : each.value.security_policy)
-
-#   backend {
-#     group = google_compute_region_network_endpoint_group.cloudrun_neg.id
-#   }
-
-#   log_config {
-#     enable      = false
-#     sample_rate = null
-#   }
-
-#   iap {
-#     oauth2_client_id     = ""
-#     oauth2_client_secret = ""
-#   }
-
-#   depends_on = [
-#     google_compute_health_check.default
-#   ]
 # }
 
 
