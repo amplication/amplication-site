@@ -22,13 +22,13 @@ jobs:
           registry: gcr.io
           username: _json_key
           password: ${{ secrets.GOOGLE_CREDENTIALS }}
-      # - name: Build and push amplication/blog Docker image
-      #   uses: docker/build-push-action@v2
-      #   with:
-      #     pull: true
-      #     push: true
-      #     tags: |
-      #       gcr.io/amplication/blog:${{ github.sha }}
+      - name: Build and push amplication/blog Docker image
+        uses: docker/build-push-action@v2
+        with:
+          pull: true
+          push: true
+          tags: |
+            gcr.io/amplication/blog:${{ github.sha }}
       - uses: hashicorp/setup-terraform@v1
         with:
           terraform_wrapper: false
