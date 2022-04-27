@@ -144,6 +144,10 @@ resource "google_compute_backend_service" "blog" {
 
   health_checks = [google_compute_health_check.blog.id]
   load_balancing_scheme = "INTERNAL_SELF_MANAGED"
+
+  backend {
+    group = google_compute_region_network_endpoint_group.cloudrun_neg.id
+  }
 }
 
 resource "google_compute_health_check" "blog" {
