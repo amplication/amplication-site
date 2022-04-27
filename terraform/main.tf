@@ -68,13 +68,13 @@ resource "google_cloud_run_service_iam_member" "run_all_users" {
   member   = "allUsers"
 }
 
-# locals {
-#   default_backend_name = module.lb-http.backend_services
-# }
+locals {
+  default_backend_name = module.lb-http.backend_services["lb-blog-backend-default"]
+}
 
 output "bobo" {
-  value = module.lb-http.backend_services.self_link
-  sensitive = false
+  value = module.lb-http.backend_services[local.default_backend_name].self_link
+  sensitive = true
 }
 
 module "lb-http" {

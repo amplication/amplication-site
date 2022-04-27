@@ -56,3 +56,8 @@ variable "domain" {
   description = "Domain name to run the load balancer on. Used if `ssl` is `true`."
   type        = string
 }
+
+variable "backend_service" {
+  type = string
+  default = "lb-blog-backend-default"
+}
