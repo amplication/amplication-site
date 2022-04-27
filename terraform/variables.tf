@@ -66,6 +66,22 @@ variable "backends" {
     custom_request_headers  = list(string)
     custom_response_headers = list(string)
 
+    timeout_sec                     = number
+    connection_draining_timeout_sec = number
+    session_affinity                = string
+    affinity_cookie_ttl_sec         = number
+
+    health_check = object({
+      check_interval_sec  = number
+      timeout_sec         = number
+      healthy_threshold   = number
+      unhealthy_threshold = number
+      request_path        = string
+      port                = number
+      host                = string
+      logging             = bool
+    })
+
     log_config = object({
       enable      = bool
       sample_rate = number
@@ -91,41 +107,8 @@ variable "backends" {
       oauth2_client_secret = string
     })
   }))
-  default = {
-    "key" = {
-      custom_request_headers = null
-      custom_response_headers = null
-      description = null
-      enable_cdn = false
-      groups = [ {
-        balancing_mode = null
-        capacity_scaler = null
-        description = null
-        group = ""
-        max_connections = null
-        max_connections_per_endpoint = null
-        max_connections_per_instance = null
-        max_rate = null
-        max_rate_per_endpoint = null
-        max_rate_per_instance = null
-        max_utilization = null
-      } ]
-      iap_config = {
-        enable = false
-        oauth2_client_id = ""
-        oauth2_client_secret = ""
-      }
-      log_config = {
-        enable = false
-        sample_rate = null
-      }
-      port = 80
-      port_name = "Http"
-      protocol = "HTTP"
-      security_policy = null
-    }
-  }
 }
+
 variable "security_policy" {
   description = "The resource URL for the security policy to associate with the backend service"
   type        = string
