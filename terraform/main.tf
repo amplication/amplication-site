@@ -68,14 +68,14 @@ resource "google_cloud_run_service_iam_member" "run_all_users" {
   member   = "allUsers"
 }
 
-locals {
-  default_backend_name = module.lb-http.backend_services.self_link
-}
-
-# output "bobo" {
-#   value = module.lb-http.backend_services[local.default_backend_name].self_link
-#   sensitive = true
+# locals {
+#   default_backend_name = module.lb-http.backend_services
 # }
+
+output "bobo" {
+  value = module.lb-http.backend_services.self_link
+  sensitive = false
+}
 
 module "lb-http" {
   source            = "GoogleCloudPlatform/lb-http/google//modules/serverless_negs"
@@ -86,8 +86,8 @@ module "lb-http" {
 
   create_address                  = false
   https_redirect                  = false
-  create_url_map                  = false
-  url_map                         = google_compute_url_map.urlmap.name
+#  create_url_map                  = false
+#  url_map                         = google_compute_url_map.urlmap.name
   backends = {
     default = {
       description                     = null
@@ -114,44 +114,44 @@ module "lb-http" {
   }
 }
 
-resource "google_compute_url_map" "urlmap" {
-  name        = var.lb_name
-  default_service = module.lb-http.backend_services[local.default_backend_name].self_link
-  host_rule {
-    hosts        = ["*"]
-    path_matcher = "allpaths"
-  }
-  path_matcher {
-    name = "allpaths"
-    default_service = module.lb-http.backend_services[local.default_backend_name].self_link
-
-    path_rule {
-      paths   = ["/"]
-      url_redirect {
-        host_redirect = "*"
-        strip_query = false
-      }
-    }
-    path_rule {
-      paths   = ["/jobs"]
-      url_redirect {
-        host_redirect = "amplication.breezy.hr"
-        https_redirect = true
-        redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
-        strip_query = true
-      }
-    }
-    path_rule {
-      paths   = ["/discord"]
-      url_redirect {
-        host_redirect = "discord.gg/KSJCZ24vj2"
-        https_redirect = true
-        redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
-        strip_query = true
-      }
-    }
-  }
-}
+#resource "google_compute_url_map" "urlmap" {
+#  name        = var.lb_name
+#  default_service = module.lb-http.backend_services[local.default_backend_name].self_link
+#  host_rule {
+#    hosts        = ["*"]
+#    path_matcher = "allpaths"
+#  }
+#  path_matcher {
+#    name = "allpaths"
+#    default_service = module.lb-http.backend_services[local.default_backend_name].self_link
+#
+#    path_rule {
+#      paths   = ["/"]
+#      url_redirect {
+#        host_redirect = "*"
+#        strip_query = false
+#      }
+#    }
+#    path_rule {
+#      paths   = ["/jobs"]
+#      url_redirect {
+#        host_redirect = "amplication.breezy.hr"
+#        https_redirect = true
+#        redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
+#        strip_query = true
+#      }
+#    }
+#    path_rule {
+#      paths   = ["/discord"]
+#      url_redirect {
+#        host_redirect = "discord.gg/KSJCZ24vj2"
+#        https_redirect = true
+#        redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
+#        strip_query = true
+#      }
+#    }
+#  }
+#}
 
 
 
