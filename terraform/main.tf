@@ -137,22 +137,12 @@ resource "google_compute_url_map" "urlmap" {
   }
 }
 resource "google_compute_backend_service" "blog" {
-  name        = "blog"
+  name        = "blog-backend-service"
   port_name   = "http"
   protocol    = "HTTP"
   timeout_sec = 10
 
-  health_checks = [google_compute_health_check.blog.id]
-  load_balancing_scheme = "INTERNAL_SELF_MANAGED"
-
   backend {
     group = google_compute_region_network_endpoint_group.cloudrun_neg.id
-  }
-}
-
-resource "google_compute_health_check" "blog" {
-  name               = "health-check"
-  http_health_check {
-    port = 80
   }
 }
