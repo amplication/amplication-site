@@ -84,6 +84,8 @@ module "lb-http" {
   project           = var.project_id
   name              = var.lb_name
 
+  ssl                             = true
+  managed_ssl_certificate_domains = [var.domain]
   create_address                  = false
   https_redirect                  = false
   create_url_map                  = false
