@@ -69,7 +69,7 @@ resource "google_cloud_run_service_iam_member" "run_all_users" {
 }
 
 locals {
-  default_backend_name = module.lb-http.backend_services
+  default_backend_name = module.lb-http.backend_services.self_link
 }
 
 # output "bobo" {
