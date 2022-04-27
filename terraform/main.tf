@@ -69,7 +69,7 @@ resource "google_cloud_run_service_iam_member" "run_all_users" {
 }
 
 locals {
-  default_backend_name = module.lb-http.backend_services[keys(module.lb-http.backend_services)[0]].self_link
+  default_backend_name = module.lb-http.backend_services[keys(module.lb-http.backend_services)[0]]
 }
 
 # output "bobo" {
@@ -116,14 +116,14 @@ module "lb-http" {
 
 resource "google_compute_url_map" "urlmap" {
  name        = var.lb_name
- default_service = module.lb-http.backend_services[local.default_backend_name]
+ default_service = module.lb-http.backend_services[local.default_backend_name].self_link
  host_rule {
    hosts        = ["*"]
    path_matcher = "allpaths"
  }
  path_matcher {
    name = "allpaths"
-   default_service = module.lb-http.backend_services[local.default_backend_name]
+   default_service = module.lb-http.backend_services[local.default_backend_name].self_link
 
    path_rule {
      paths   = ["/"]
