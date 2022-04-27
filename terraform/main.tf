@@ -68,6 +68,10 @@ resource "google_cloud_run_service_iam_member" "run_all_users" {
   member   = "allUsers"
 }
 
+output "bobo" {
+  value = module.lb-http.backend_services
+}
+
 module "lb-http" {
   source            = "GoogleCloudPlatform/lb-http/google//modules/serverless_negs"
   version           = "~> 6.2.0"
@@ -76,10 +80,10 @@ module "lb-http" {
   name              = var.lb_name
 
   https_redirect                  = false
-  create_url_map                  = false
-  url_map                         = google_compute_url_map.urlmap.name
+  # create_url_map                  = false
+  # url_map                         = google_compute_url_map.urlmap.name
   backends = {
-    blog = {
+    default = {
       description                     = null
       groups = [
         {
@@ -104,82 +108,80 @@ module "lb-http" {
   }
 }
 
-resource "google_compute_url_map" "urlmap" {
-  name        = var.lb_name
-  default_service = google_compute_backend_service.blog[keys(var.backends)[0]].self_link
-  host_rule {
-    hosts        = ["*"]
-    path_matcher = "allpaths"
-  }
-  path_matcher {
-    name = "allpaths"
-    default_service = google_compute_backend_service.blog[keys(var.backends)[0]].self_link
-    path_rule {
-      paths   = ["/"]
-      url_redirect {
-        host_redirect = "*"
-        strip_query = false
-      }
-    }
-    path_rule {
-      paths   = ["/jobs"]
-      url_redirect {
-        host_redirect = "amplication.breezy.hr"
-        https_redirect = true
-        redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
-        strip_query = true
-      }
-    }
-    path_rule {
-      paths   = ["/discord"]
-      url_redirect {
-        host_redirect = "discord.gg/KSJCZ24vj2"
-        https_redirect = true
-        redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
-        strip_query = true
-      }
-    }
-  }
-}
+# resource "google_compute_url_map" "urlmap" {
+#   name        = var.lb_name
+#   default_service = module.lb-http.backend_services
+#   host_rule {
+#     hosts        = ["*"]
+#     path_matcher = "allpaths"
+#   }
+#   path_matcher {
+#     name = "allpaths"
+#     default_service = module.lb-http.backend_services
 
-resource "google_compute_backend_service" "blog" {
-  provider = google-beta
-  for_each = var.backends
+#     path_rule {
+#       paths   = ["/"]
+#       url_redirect {
+#         host_redirect = "*"
+#         strip_query = false
+#       }
+#     }
+#     path_rule {
+#       paths   = ["/jobs"]
+#       url_redirect {
+#         host_redirect = "amplication.breezy.hr"
+#         https_redirect = true
+#         redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
+#         strip_query = true
+#       }
+#     }
+#     path_rule {
+#       paths   = ["/discord"]
+#       url_redirect {
+#         host_redirect = "discord.gg/KSJCZ24vj2"
+#         https_redirect = true
+#         redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
+#         strip_query = true
+#       }
+#     }
+#   }
+# }
 
-  project = var.project_id
-  name    = "${var.lb_name}-backend-${each.key}"
 
-  description                     = lookup(each.value, "description", null)
-  connection_draining_timeout_sec = lookup(each.value, "connection_draining_timeout_sec", null)
-  enable_cdn                      = lookup(each.value, "enable_cdn", false)
-  custom_request_headers          = lookup(each.value, "custom_request_headers", [])
-  custom_response_headers         = lookup(each.value, "custom_response_headers", [])
+# resource "google_compute_backend_service" "blog" {
+#   provider = google-beta
+#   for_each = var.backends
 
-  # To achieve a null backend security_policy, set each.value.security_policy to "" (empty string), otherwise, it fallsback to var.security_policy.
-  security_policy = lookup(each.value, "security_policy") == "" ? null : (lookup(each.value, "security_policy") == null ? var.security_policy : each.value.security_policy)
+#   project = var.project_id
+#   name    = "${var.lb_name}-backend"
 
-  dynamic "backend" {
-    for_each = toset(each.value["groups"])
-    content {
-      description = lookup(backend.value, "description", null)
-      group       = lookup(backend.value, "group")
+#   description                     = lookup(each.value, "description", null)
+#   connection_draining_timeout_sec = lookup(each.value, "connection_draining_timeout_sec", null)
+#   enable_cdn                      = lookup(each.value, "enable_cdn", false)
+#   custom_request_headers          = lookup(each.value, "custom_request_headers", [])
+#   custom_response_headers         = lookup(each.value, "custom_response_headers", [])
 
-    }
-  }
+#   # To achieve a null backend security_policy, set each.value.security_policy to "" (empty string), otherwise, it fallsback to var.security_policy.
+#   security_policy = lookup(each.value, "security_policy") == "" ? null : (lookup(each.value, "security_policy") == null ? var.security_policy : each.value.security_policy)
 
-  dynamic "log_config" {
-    for_each = lookup(lookup(each.value, "log_config", {}), "enable", true) ? [1] : []
-    content {
-      enable      = lookup(lookup(each.value, "log_config", {}), "enable", true)
-      sample_rate = lookup(lookup(each.value, "log_config", {}), "sample_rate", "1.0")
-    }
-  }
+#   backend {
+#     group = google_compute_region_network_endpoint_group.cloudrun_neg.id
+#   }
 
-  dynamic "iap" {
-    for_each = lookup(lookup(each.value, "iap_config", {}), "enable", false) ? [1] : []
-    content {
-      oauth2_client_id     = lookup(lookup(each.value, "iap_config", {}), "oauth2_client_id", "")
-      oauth2_client_secret = lookup(lookup(each.value, "iap_config", {}), "oauth2_client_secret", "")
-    }
-  }
-}
+#   log_config {
+#     enable      = false
+#     sample_rate = null
+#   }
+
+#   iap {
+#     oauth2_client_id     = ""
+#     oauth2_client_secret = ""
+#   }
+
+#   depends_on = [
+#     google_compute_health_check.default
+#   ]
+# }
+
+
+
