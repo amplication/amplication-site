@@ -68,10 +68,14 @@ resource "google_cloud_run_service_iam_member" "run_all_users" {
   member   = "allUsers"
 }
 
-#  output "bobo" {
-#    value = module.lb-http.backend_services[id]
-#    sensitive = true
-#  }
+locals {
+  default_backend_name = module.lb-http.backend_services
+}
+
+output "bobo" {
+  value = module.lb-http.backend_services[local.default_backend_name].self_link
+  sensitive = true
+}
 
 module "lb-http" {
   source            = "GoogleCloudPlatform/lb-http/google//modules/serverless_negs"
