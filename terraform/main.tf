@@ -136,13 +136,13 @@ resource "google_compute_url_map" "urlmap" {
     }
   }
 }
-resource "google_compute_backend_service" "blog" {
-  name        = "blog-backend-service"
-  port_name   = "http"
-  protocol    = "HTTP"
-  timeout_sec = 10
+# resource "google_compute_backend_service" "blog" {
+#   name        = "blog-backend-service"
+#   port_name   = "http"
+#   protocol    = "HTTP"
+#   timeout_sec = 10
 
-  backend {
-    group = google_compute_region_network_endpoint_group.cloudrun_neg.id
-  }
-}
+#   backend {
+#     group = google_compute_region_network_endpoint_group.cloudrun_neg.id
+#   }
+# }
