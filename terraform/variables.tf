@@ -107,6 +107,54 @@ variable "backends" {
       oauth2_client_secret = string
     })
   }))
+  default = {
+    "key" = {
+      affinity_cookie_ttl_sec = null
+      connection_draining_timeout_sec = null
+      custom_request_headers = null
+      custom_response_headers = null
+      description = null
+      enable_cdn = false
+      groups = [ {
+        balancing_mode = null
+        capacity_scaler = null
+        description = null
+        group = null
+        max_connections = null
+        max_connections_per_endpoint = null
+        max_connections_per_instance = null
+        max_rate = null
+        max_rate_per_endpoint = null
+        max_rate_per_instance = null
+        max_utilization = null
+      } ]
+      health_check = {
+        check_interval_sec = null
+        healthy_threshold = null
+        host = "*"
+        logging = false
+        port = 80
+        request_path = "/"
+        timeout_sec = 1
+        unhealthy_threshold = null
+      }
+      iap_config = {
+        enable = false
+        oauth2_client_id = ""
+        oauth2_client_secret = ""
+      }
+      log_config = {
+        enable = false
+        sample_rate = 1
+      }
+      port = 80
+      port_name = "Http"
+      protocol = "HTTP"
+      security_policy = null
+      session_affinity = null
+      timeout_sec = null
+    }
+  }
 }
 
 variable "security_policy" {
