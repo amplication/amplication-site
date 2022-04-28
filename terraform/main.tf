@@ -78,6 +78,7 @@ module "lb-http" {
   ssl                             = true
   managed_ssl_certificate_domains = [var.domain]
   create_url_map                  = false
+  https_redirect                  = true
   url_map                         = google_compute_url_map.urlmap.name
   backends = {
     default = {
