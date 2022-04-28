@@ -62,3 +62,7 @@ variable "hubspot_api_key" {
   type  = string
   default = ""
 }
+
+variable "neg_name" {
+  type  = string
+}
