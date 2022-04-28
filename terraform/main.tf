@@ -53,7 +53,7 @@ resource "google_cloud_run_service" "service" {
 }
 
 resource "google_compute_region_network_endpoint_group" "cloudrun_neg" {
-  name                  = "blog-neg"
+  name                  = "blog-neg-${var.environment}"
   network_endpoint_type = "SERVERLESS"
   region                = var.region
   cloud_run {
