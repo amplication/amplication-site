@@ -1,14 +1,13 @@
 import {useState} from 'react';
 import Select from 'react-select';
-import jsonp from 'jsonp';
 import PropTypes from "prop-types";
 
 const SubscribeForm = ({isCompactView}) => {
   const fieldErrorMessage = 'This field is required';
   const [email, setEmail] = useState('');
   const [emailFieldError, setEmailFieldError] = useState(false);
-  const [fullName, setFullName] = useState('');
-  const [fullNameFieldError, setFullNameFieldError] = useState(false);
+  const [name, setName] = useState('');
+  const [nameFieldError, setNameFieldError] = useState(false);
   const [source, setSource] = useState('');
   const [sourceFieldError, setSourceFieldError] = useState(false);
   const [formSuccess, setFormSuccess] = useState(null);
@@ -82,11 +81,11 @@ const SubscribeForm = ({isCompactView}) => {
     } else {
       setEmailFieldError(false);
     }
-    if (!fullName) {
+    if (!name) {
       isValid = false;
-      setFullNameFieldError(true);
+      setNameFieldError(true);
     } else {
-      setFullNameFieldError(false);
+      setNameFieldError(false);
     }
     if (!source) {
       isValid = false;
@@ -101,41 +100,32 @@ const SubscribeForm = ({isCompactView}) => {
     setAfterFormSubmitMessage('');
     setFormSuccess(null);
 
-    let host = 'https://dev.us5.list-manage.com/subscribe/post-json?';
-    let data = {
-      u: process.env.NEXT_PUBLIC_MAILCHIMP_SUBSCRIBE_FORM_U,
-      id: process.env.NEXT_PUBLIC_MAILCHIMP_ID,
-      c: process.env.NEXT_PUBLIC_MAILCHIMP_SUBSCRIBE_FORM_C,
+    const host = '/api/subscribe';
+    const body = {
       EMAIL: email,
-      FNAME: fullName,
-      SOURCE: source.value,
-      b_cc391beefd07bdde0f03f8e95_39a8feead1: '',
-      subscribe: 'Subscribe',
-      _: process.env.NEXT_PUBLIC_MAILCHIMP_SUBSCRIBE_FORM_,
+      NAME: name,
+      SOURCE: source,
     };
-    host += new URLSearchParams(data).toString();
 
-    jsonp(host, {
-      param: 'c'
-    }, function (err, data) {
-      if (err) {
-        console.log('err', err);
-        setAfterFormSubmitMessage('Something is wrong');
-        setFormSuccess(false);
-      } else if (data.result !== "success" || ! 'result' in data) {
-        setAfterFormSubmitMessage(('msg' in data ? data.msg : 'Something is wrong'));
+    try {
+      const response = await fetch(host, {
+        method: 'POST',
+        body: JSON.stringify(body)
+      });
+      const data = await response.json();
+      if (data.result !== "success" || ! 'result' in data) {
+        setAfterFormSubmitMessage(('msg' in data ? data.msg : 'Something went wrong'));
         setFormSuccess(false);
       } else {
-        if(data.result === 'success') {
-          setAfterFormSubmitMessage('Thank you for signing up for text messages!');
-        } else {
-          setAfterFormSubmitMessage(data.msg);
-        }
+        setAfterFormSubmitMessage('Thank you for signing up for our mailing list!');
         setFormSuccess(true);
       }
-
-      setIsWaitingForResponse(false);
-    });
+    } catch (e) {
+      console.log('err', e);
+      setAfterFormSubmitMessage('Something went wrong');
+      setFormSuccess(false);
+    }
+    setIsWaitingForResponse(false);
   }
 
   let loaderClasses = 'w-full h-full absolute l-0 t-0 rounded-2xl transition-all opacity-50 pointer-events-none';
@@ -203,21 +193,21 @@ const SubscribeForm = ({isCompactView}) => {
                   <span className='text-left block w-full text-xs text-pink py-0.5 '>{fieldErrorMessage}</span>
                   }
                 </div>
-                <div className={(fullNameFieldError ? fieldContainerClasses : fieldContainerClasses + ' pb-5')}>
+                <div className={(nameFieldError ? fieldContainerClasses : fieldContainerClasses + ' pb-5')}>
                   <div className='relative'>
-                  <input type="text" value={fullName} onChange={(e) => setFullName(e.target.value)}
-                         placeholder='Full Name' name="FULLNAME"
-                         className={`leading-input focus:border-purple !shadow-hidden block w-full rounded-lg border border-solid bg-purple-dark py-2 pl-3 pr-8 font-poppins text-sm text-white placeholder:text-gray ${(fullNameFieldError ? '' : 'hover:border-purple')} ${(fullNameFieldError ? 'border-pink' : 'border-lite')}`}/>
-                    {fullName &&
+                  <input type="text" value={name} onChange={(e) => setName(e.target.value)}
+                         placeholder='Name' name="NAME"
+                         className={`leading-input focus:border-purple !shadow-hidden block w-full rounded-lg border border-solid bg-purple-dark py-2 pl-3 pr-8 font-poppins text-sm text-white placeholder:text-gray ${(nameFieldError ? '' : 'hover:border-purple')} ${(nameFieldError ? 'border-pink' : 'border-lite')}`}/>
+                    {name &&
                     <span
                       className='absolute	right-4 top-[50%] translate-y-[-50%] cursor-pointer text-sm animate-fadeIn text-white'
-                      onClick={(e) => setFullName('')}
+                      onClick={(e) => setName('')}
                     >
                         ✕
                     </span>
                     }
                   </div>
-                  {fullNameFieldError &&
+                  {nameFieldError &&
                   <span className='text-left block w-full text-xs text-pink py-0.5 '>{fieldErrorMessage}</span>
                   }
                 </div>

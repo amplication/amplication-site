@@ -42,4 +42,6 @@ jobs:
         env:
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
           TF_VAR_image: gcr.io/amplication/blog:${{ github.sha }}
+          TF_VAR_hubspot_api_key: ${{ secrets[format('{0}_hubspot_api_key', github.event.inputs.environment)] }}
+
         working-directory: terraform

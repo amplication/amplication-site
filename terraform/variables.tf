@@ -57,3 +57,8 @@ variable "domain" {
   description = "Domain name to run the load balancer on. Used if `ssl` is `true`."
   type        = string
 }
+
+variable "hubspot_api_key" {
+  type  = string
+  default = ""
+}

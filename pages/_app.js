@@ -147,6 +147,8 @@ function Amplication({ Component, pageProps }) {
           `,
         }}
       />
+      {/* Prevents HubSpot from loading form collector */}
+      <hs id={"CollectedForms-25691669"} />
       <Script
         id={"hs-script-loader"}
         strategy="afterInteractive"
