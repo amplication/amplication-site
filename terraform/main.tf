@@ -82,6 +82,8 @@ module "lb-http" {
   ssl                             = true
   managed_ssl_certificate_domains = [var.domain]
   create_url_map                  = false
+  https_redirect                  = true
+  # certificate                     = "new-cert-1234"
   url_map                         = google_compute_url_map.urlmap.name
   backends = {
     default = {
@@ -124,7 +126,7 @@ resource "google_compute_url_map" "urlmap" {
      paths   = ["/jobs"]
      url_redirect {
        host_redirect = "amplication.breezy.hr"
-       https_redirect = true
+      #  https_redirect = true
        redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
        strip_query = true
      }
@@ -133,7 +135,7 @@ resource "google_compute_url_map" "urlmap" {
      paths   = ["/discord"]
      url_redirect {
        host_redirect = "discord.gg/KSJCZ24vj2"
-       https_redirect = true
+      #  https_redirect = true
        redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
        strip_query = true
      }
