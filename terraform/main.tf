@@ -80,10 +80,10 @@ module "lb-http" {
   name              = var.lb_name
 
   ssl                             = true
-  managed_ssl_certificate_domains = [var.domain]
+  # managed_ssl_certificate_domains = [var.domain]
   create_url_map                  = false
   https_redirect                  = true
-  # certificate                     = "new-cert-1234"
+  certificate                     = "new-cert-1234"
   url_map                         = google_compute_url_map.urlmap.name
   backends = {
     default = {
