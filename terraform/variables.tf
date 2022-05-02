@@ -10,6 +10,13 @@ variable "region" {
   type  = string
 }
 
+
+variable "lb_name" {
+  description = "Name for the load balancer forwarding rule and prefix for supporting resources."
+  type        = string
+  default     = "lb-test"
+}
+
 variable "image" {
   type  = string
 }
@@ -46,7 +53,16 @@ variable "cpu_allocation" {
   default = "request"
 }
 
+variable "domain" {
+  description = "Domain name to run the load balancer on. Used if `ssl` is `true`."
+  type        = string
+}
+
 variable "hubspot_api_key" {
   type  = string
   default = ""
+}
+
+variable "neg_name" {
+  type  = string
 }

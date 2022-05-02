@@ -8,3 +8,6 @@ container_concurrency    = 1000
 cpu                      = "4"
 memory                   = "2Gi"
 cpu_allocation           = "allways"
+lb_name                  = "lb-blog"
+domain                   = "amplication.com"
+neg_name                 = "blog-neg"
