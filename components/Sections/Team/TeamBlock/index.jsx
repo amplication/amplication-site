@@ -10,6 +10,9 @@ import sauravJain from '../../../../public/images/team/saurav-jain.png';
 import alexBass from '../../../../public/images/team/alex-bass.png';
 import amitBarletz from '../../../../public/images/team/amit-barletz.png';
 import ofekGabay from '../../../../public/images/team/ofek-gabay.png';
+import michaelSolati from '../../../../public/images/team/michael-solati.png';
+import eugineTseitlin from '../../../../public/images/team/eugene-tseitlin.png';
+
 import talkWithUs from '../../../../public/images/icons/talk-with-with-team.svg';
 import joinUs from '../../../../public/images/icons/join-the-team.svg';
 
@@ -113,6 +116,40 @@ const TeamBlock = () => {
         },
         {
           href: 'https://twitter.com/MosheForman',
+          iconClass: 'twitter',
+        },
+      ]
+    },
+    {
+      name: 'Eugene Tseitlin',
+      position: 'Sr. Technical Writer',
+      image: eugineTseitlin,
+      links: [
+        {
+          href: 'https://www.linkedin.com/in/eugene-tseitlin-72b81aa7/',
+          iconClass: 'linkedin',
+        },
+        {
+          href: 'https://github.com/EugeneTseitlin',
+          iconClass: 'github',
+        },
+      ]
+    },
+    {
+      name: 'Michael Solati',
+      position: 'Developer Advocate',
+      image: michaelSolati,
+      links: [
+        {
+          href: 'https://www.linkedin.com/in/michaelsolati/',
+          iconClass: 'linkedin',
+        },
+        {
+          href: 'https://github.com/MichaelSolati',
+          iconClass: 'github',
+        },
+        {
+          href: 'https://twitter.com/MichaelSolati',
           iconClass: 'twitter',
         },
       ]
