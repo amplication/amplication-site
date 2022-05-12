@@ -122,7 +122,7 @@ const TeamBlock = () => {
     },
     {
       name: 'Eugene Tseitlin',
-      position: 'Sr. Full Stack Developer',
+      position: 'Sr. Full-stack Eng.',
       image: eugineTseitlin,
       links: [
         {
