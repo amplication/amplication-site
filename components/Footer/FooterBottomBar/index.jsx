@@ -10,7 +10,7 @@ const FooterBottomBar = () => {
           </p>
         </li>
         <li className="flex-col flex laptop:flex-row gap-4 justify-end py-3.5 laptop:py-8">
-          <Link href="/terms-and-conditions">
+          <Link href="/terms">
             <a className="text-xs text-gray font-poppins underline laptop:text-base hover:text-purple-bright-hover">
               Terms & Conditions
             </a>
