@@ -1,17 +1,22 @@
-import Link from "next/link";
+import Link from "next/link"
 
 const FooterBottomBar = () => {
   return (
-    <div className='w-full relative border border-solid border-purple-light laptop:border-footer border-l-0 border-r-0 border-b-0'>
-      <ul className='w-full flex justify-start items-center'>
-        <li className='w-1/2 py-3.5 laptop:py-8'>
-          <p className='text-white text-xs text-gray font-poppins laptop:text-base'>
+    <div className="text-center w-full mb-14 relative border border-solid border-purple-light laptop:border-footer border-l-0 border-r-0 border-b-0">
+      <ul className="w-full laptop:flex laptop:justify-between items-center">
+        <li className="py-3.5 laptop:py-8">
+          <p className="text-xs text-gray font-poppins laptop:text-base">
             {`©${new Date().getFullYear()} amplication`}
           </p>
         </li>
-        <li className='w-1/2 text-right py-3.5 laptop:py-8'>
-          <Link href={ `${process.env.NEXT_PUBLIC_SITE}/privacy-policy` }>
-            <a className='text-white text-xs text-gray font-poppins underline laptop:text-base hover:text-purple-bright-hover'>
+        <li className="flex-col flex laptop:flex-row gap-4 justify-end py-3.5 laptop:py-8">
+          <Link href="/terms-and-conditions">
+            <a className="text-xs text-gray font-poppins underline laptop:text-base hover:text-purple-bright-hover">
+              Terms & Conditions
+            </a>
+          </Link>
+          <Link href="/privacy-policy">
+            <a className="text-xs text-gray font-poppins underline laptop:text-base hover:text-purple-bright-hover">
               Privacy Policy
             </a>
           </Link>
