@@ -66,7 +66,7 @@ const PrivacyPolicy = () => {
 
                 <p>
                   This Usage Data may include information such as your
-                  computer's Internet Protocol address (e.g. IP address),
+                  computer&apos;s Internet Protocol address (e.g. IP address),
                   browser type, browser version, the pages of our Service that
                   you visit, the time and date of your visit, the time spent on
                   those pages, unique device identifiers and other diagnostic
@@ -172,14 +172,14 @@ const PrivacyPolicy = () => {
                 <p>
                   Our Service may contain links to other sites that are not
                   operated by us. If you click on a third party link, you will
-                  be directed to that third party's site. We strongly advise you
-                  to review the Privacy Policy of every site you visit. We have
-                  no control over and assume no responsibility for the content,
-                  privacy policies or practices of any third party sites or
-                  services.
+                  be directed to that third party&apos;s site. We strongly
+                  advise you to review the Privacy Policy of every site you
+                  visit. We have no control over and assume no responsibility
+                  for the content, privacy policies or practices of any third
+                  party sites or services.
                 </p>
 
-                <h3>Children's Privacy</h3>
+                <h3>Children&apos;s Privacy</h3>
                 <p>
                   Our Service does not address anyone under the age of 18
                   (&quot;Children&quot;). We do not knowingly collect personally
