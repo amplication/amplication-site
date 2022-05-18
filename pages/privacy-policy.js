@@ -1,7 +1,7 @@
-import DocumentHead from "../components/Common/DocumentHead"
-import Header from "../components/Header"
-import Footer from "../components/Footer"
-import Background from "../components/Background"
+import DocumentHead from '../components/Common/DocumentHead';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import Background from '../components/Background';
 
 const PrivacyPolicy = () => {
   return (
@@ -18,17 +18,17 @@ const PrivacyPolicy = () => {
         <Header />
 
         <main className="w-full font-poppins z-10 mb-12 laptop:mb-[100px] amplication-base circles-bg">
-          <section class="pt-4 pt-md-11 home-background">
-            <div class="container mx-auto">
-              <div class="row align-items-center justify-content-center mb-4 bg-image-policy-header">
-                <h2 class="h2 text-center">Privacy Policy</h2>
+          <section className="pt-4 pt-md-11 home-background">
+            <div className="container mx-auto">
+              <div className="row align-items-center justify-content-center mb-4 bg-image-policy-header">
+                <h2 className="h2 text-center">Privacy Policy</h2>
               </div>
 
-              <div class="p-4 row d-flex justify-content-between align-items-stretch policy-content-align">
+              <div className="p-4 row d-flex justify-content-between align-items-stretch policy-content-align">
                 <p>
-                  Amplication ("us", "we", or "our") operates the
-                  https://amplication.com website and
-                  https://app.amplication.com (the "Service").
+                  Amplication (&quot;us&quot;, &quot;we&quot;, or
+                  &quot;our&quot;) operates the https://amplication.com website
+                  and https://app.amplication.com (the &quot;Service&quot;).
                 </p>
 
                 <p>
@@ -52,16 +52,16 @@ const PrivacyPolicy = () => {
                 <p>
                   While using our Service, we may ask you to provide us with
                   certain personally identifiable information that can be used
-                  to contact or identify you ("Personal Data"). Personally
-                  identifiable information may include, but is not limited to:
-                  Cookies and Usage Data
+                  to contact or identify you (&quot;Personal Data&quot;).
+                  Personally identifiable information may include, but is not
+                  limited to: Cookies and Usage Data
                 </p>
 
                 <h3>Usage Data</h3>
                 <p>
                   We may also collect information that your browser sends
                   whenever you visit our Service or when you access the Service
-                  by or through a mobile device ("Usage Data").
+                  by or through a mobile device (&quot;Usage Data&quot;).
                 </p>
 
                 <p>
@@ -160,12 +160,12 @@ const PrivacyPolicy = () => {
                 <h3>Service Providers</h3>
                 <p>
                   We may employ third party companies and individuals to
-                  facilitate our Service ("Service Providers"), to provide the
-                  Service on our behalf, to perform Service-related services or
-                  to assist us in analyzing how our Service is used. These third
-                  parties have access to your Personal Data only to perform
-                  these tasks on our behalf and are obligated not to disclose or
-                  use it for any other purpose.
+                  facilitate our Service (&quot;Service Providers&quot;), to
+                  provide the Service on our behalf, to perform Service-related
+                  services or to assist us in analyzing how our Service is used.
+                  These third parties have access to your Personal Data only to
+                  perform these tasks on our behalf and are obligated not to
+                  disclose or use it for any other purpose.
                 </p>
 
                 <h3>Links To Other Sites</h3>
@@ -182,7 +182,7 @@ const PrivacyPolicy = () => {
                 <h3>Children's Privacy</h3>
                 <p>
                   Our Service does not address anyone under the age of 18
-                  ("Children"). We do not knowingly collect personally
+                  (&quot;Children&quot;). We do not knowingly collect personally
                   identifiable information from anyone under the age of 18. If
                   you are a parent or guardian and you are aware that your
                   Children has provided us with Personal Data, please contact
@@ -197,8 +197,8 @@ const PrivacyPolicy = () => {
                   notify you of any changes by posting the new Privacy Policy on
                   this page. We will let you know via email and/or a prominent
                   notice on our Service, prior to the change becoming effective
-                  and update the "effective date" at the top of this Privacy
-                  Policy.
+                  and update the &quot;effective date&quot; at the top of this
+                  Privacy Policy.
                 </p>
 
                 <p>
@@ -215,7 +215,7 @@ const PrivacyPolicy = () => {
         <Background />
       </div>
     </>
-  )
-}
+  );
+};
 
-export default PrivacyPolicy
+export default PrivacyPolicy;
