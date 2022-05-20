@@ -132,7 +132,8 @@ resource "google_compute_url_map" "urlmap" {
    path_rule {
      paths   = ["/discord"]
      url_redirect {
-       host_redirect = "discord.gg/KSJCZ24vj2"
+       host_redirect = "discord.gg"
+       path_redirect = "/KSJCZ24vj2"
        https_redirect = true
        redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
        strip_query = true
