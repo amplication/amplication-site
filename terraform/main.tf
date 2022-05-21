@@ -80,7 +80,7 @@ module "lb-http" {
   name    = var.lb_name
 
   ssl                             = true
-  managed_ssl_certificate_domains = [var.domain]
+  managed_ssl_certificate_domains = [var.domain, "www.${var.domain}"]
   create_url_map                  = false
   url_map                         = google_compute_url_map.urlmap.name
   backends = {
@@ -145,14 +145,14 @@ resource "google_compute_url_map" "urlmap" {
 
   host_rule {
     description  = "remove www. prefixes"
-    hosts        = ["www.${var.domain_public}"]
+    hosts        = ["www.${var.domain}"]
     path_matcher = "public-nowww"
   }
 
   path_matcher {
     name = "public-nowww"
     default_url_redirect {
-      host_redirect  = var.domain_public
+      host_redirect  = var.domain
       strip_query    = false
       https_redirect = true
     }

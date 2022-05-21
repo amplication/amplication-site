@@ -66,7 +66,3 @@ variable "hubspot_api_key" {
 variable "neg_name" {
   type = string
 }
-
-variable "domain_public" {
-  type = string
-}
