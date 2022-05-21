@@ -26,9 +26,9 @@ const Logo = () => {
           {
             isMobile
             ?
-            <Image src={logoMobileImage} alt='Amplication Blog' />
+            <Image src={logoMobileImage} alt='Amplication' />
             :
-            <Image src={logoDesktopImage} alt='Amplication Blog' />
+            <Image src={logoDesktopImage} alt='Amplication' />
           }
         </a>
       </Link>
