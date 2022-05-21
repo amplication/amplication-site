@@ -1,13 +1,13 @@
 variable "environment" {
-  type  = string
+  type = string
 }
 
 variable "project_id" {
-  type  = string
+  type = string
 }
 
 variable "region" {
-  type  = string
+  type = string
 }
 
 
@@ -18,19 +18,19 @@ variable "lb_name" {
 }
 
 variable "image" {
-  type  = string
+  type = string
 }
 
 variable "cloud_run_min_replica" {
-  type  = number
+  type = number
 }
 
 variable "cloud_run_max_replica" {
-  type  = number
+  type = number
 }
 
 variable "external_blog_server_url" {
-  type  = string
+  type = string
 }
 
 variable "container_concurrency" {
@@ -39,17 +39,17 @@ variable "container_concurrency" {
 }
 
 variable "cpu" {
-  type  = string
+  type    = string
   default = "1"
 }
 
 variable "memory" {
-  type  = string
+  type    = string
   default = "512Mi"
 }
 
 variable "cpu_allocation" {
-  type  = string
+  type    = string
   default = "request"
 }
 
@@ -59,10 +59,14 @@ variable "domain" {
 }
 
 variable "hubspot_api_key" {
-  type  = string
+  type    = string
   default = ""
 }
 
 variable "neg_name" {
-  type  = string
+  type = string
+}
+
+variable "domain_public" {
+  type = string
 }

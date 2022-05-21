@@ -1,22 +1,22 @@
 
 provider "google" {
-  project     = var.project_id
-  region      = var.region
+  project = var.project_id
+  region  = var.region
 }
 
 provider "google-beta" {
-  project     = var.project_id
-  region      = var.region
+  project = var.project_id
+  region  = var.region
 }
 
 # Cloud Run
 resource "google_cloud_run_service" "service" {
-  name = "amplication-blog-${var.environment}"
+  name     = "amplication-blog-${var.environment}"
   location = var.region
 
   template {
     spec {
-      container_concurrency  = var.container_concurrency
+      container_concurrency = var.container_concurrency
       containers {
         image = var.image
         env {
@@ -28,7 +28,7 @@ resource "google_cloud_run_service" "service" {
           value = var.hubspot_api_key
         }
         resources {
-          limits   = {
+          limits = {
             cpu    = var.cpu
             memory = var.memory
           }
@@ -44,7 +44,7 @@ resource "google_cloud_run_service" "service" {
       annotations = {
         "autoscaling.knative.dev/minScale"  = var.cloud_run_min_replica
         "autoscaling.knative.dev/maxScale"  = var.cloud_run_max_replica
-        "run.googleapis.com/cpu-throttling" =  var.cpu_allocation == "request" ? "true" : "false"
+        "run.googleapis.com/cpu-throttling" = var.cpu_allocation == "request" ? "true" : "false"
       }
     }
   }
@@ -73,11 +73,11 @@ resource "google_cloud_run_service_iam_member" "run_all_users" {
 }
 
 module "lb-http" {
-  source            = "GoogleCloudPlatform/lb-http/google//modules/serverless_negs"
-  version           = "~> 6.2.0"
+  source  = "GoogleCloudPlatform/lb-http/google//modules/serverless_negs"
+  version = "~> 6.2.0"
 
-  project           = var.project_id
-  name              = var.lb_name
+  project = var.project_id
+  name    = var.lb_name
 
   ssl                             = true
   managed_ssl_certificate_domains = [var.domain]
@@ -85,16 +85,16 @@ module "lb-http" {
   url_map                         = google_compute_url_map.urlmap.name
   backends = {
     default = {
-      description                     = null
+      description = null
       groups = [
         {
           group = google_compute_region_network_endpoint_group.cloudrun_neg.id
         }
       ]
-      enable_cdn                      = false
-      custom_request_headers          = null
-      custom_response_headers         = null
-      security_policy                 = null
+      enable_cdn              = false
+      custom_request_headers  = null
+      custom_response_headers = null
+      security_policy         = null
 
       iap_config = {
         enable               = false
@@ -102,7 +102,7 @@ module "lb-http" {
         oauth2_client_secret = ""
       }
       log_config = {
-        enable = false
+        enable      = false
         sample_rate = null
       }
     }
@@ -110,36 +110,53 @@ module "lb-http" {
 }
 
 resource "google_compute_url_map" "urlmap" {
- name        = var.lb_name
- default_service = module.lb-http.backend_services[keys(module.lb-http.backend_services)[0]].self_link
- host_rule {
-   hosts        = ["*"]
-   path_matcher = "allpaths"
- }
- path_matcher {
-   name = "allpaths"
-   default_service = module.lb-http.backend_services[keys(module.lb-http.backend_services)[0]].self_link
+  name            = var.lb_name
+  default_service = module.lb-http.backend_services[keys(module.lb-http.backend_services)[0]].self_link
+  host_rule {
+    hosts        = ["*"]
+    path_matcher = "allpaths"
+  }
 
-   path_rule {
-     paths   = ["/jobs"]
-     url_redirect {
-       host_redirect = "amplication.breezy.hr"
-       https_redirect = true
-       redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
-       strip_query = true
-     }
-   }
-   path_rule {
-     paths   = ["/discord"]
-     url_redirect {
-       host_redirect = "discord.gg"
-       path_redirect = "/KSJCZ24vj2"
-       https_redirect = true
-       redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
-       strip_query = true
-     }
-   }
- }
+
+  path_matcher {
+    name            = "allpaths"
+    default_service = module.lb-http.backend_services[keys(module.lb-http.backend_services)[0]].self_link
+
+    path_rule {
+      paths = ["/jobs"]
+      url_redirect {
+        host_redirect          = "amplication.breezy.hr"
+        https_redirect         = true
+        redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
+        strip_query            = true
+      }
+    }
+    path_rule {
+      paths = ["/discord"]
+      url_redirect {
+        host_redirect          = "discord.gg"
+        path_redirect          = "/KSJCZ24vj2"
+        https_redirect         = true
+        redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
+        strip_query            = true
+      }
+    }
+  }
+
+  host_rule {
+    description  = "remove www. prefixes"
+    hosts        = ["www.${var.domain_public}"]
+    path_matcher = "public-nowww"
+  }
+
+  path_matcher {
+    name = "public-nowww"
+    default_url_redirect {
+      host_redirect  = var.domain_public
+      strip_query    = false
+      https_redirect = true
+    }
+  }
 }
 
 
