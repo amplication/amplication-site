@@ -1,7 +1,7 @@
-import DocumentHead from '../components/Common/DocumentHead';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import Background from '../components/Background';
+import DocumentHead from "../components/Common/DocumentHead";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Background from "../components/Background";
 
 const Terms = () => {
   return (
@@ -120,17 +120,17 @@ const Terms = () => {
                 <h3>Disclaimer</h3>
                 <p>
                   Your use of the Website is at your sole risk. The Website is
-                  provided on an "AS IS" and "AS AVAILABLE" basis. The Website
-                  is provided without warranties of any kind, whether express or
-                  implied, including, but not limited to, implied warranties of
-                  merchantability, fitness for a particular purpose,
-                  non-infringement or course of performance. AMPLICATION its
-                  subsidiaries, affiliates, and its licensors do not warrant
-                  that a) the Website will function uninterrupted, secure or
-                  available at any particular time or location; b) any errors or
-                  defects will be corrected; c) the Website is free of viruses
-                  or other harmful components; or d) the results of using the
-                  Website will meet your requirements.
+                  provided on an &quot;AS IS&quot; and &quot;AS AVAILABLE&quot;
+                  basis. The Website is provided without warranties of any kind,
+                  whether express or implied, including, but not limited to,
+                  implied warranties of merchantability, fitness for a
+                  particular purpose, non-infringement or course of performance.
+                  AMPLICATION its subsidiaries, affiliates, and its licensors do
+                  not warrant that a) the Website will function uninterrupted,
+                  secure or available at any particular time or location; b) any
+                  errors or defects will be corrected; c) the Website is free of
+                  viruses or other harmful components; or d) the results of
+                  using the Website will meet your requirements.
                 </p>
                 <h3>Governing Law</h3>
                 <p>
