@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://amplication.com
+
+# Sitemaps
+Sitemap: https://amplication.com/sitemap.xml
