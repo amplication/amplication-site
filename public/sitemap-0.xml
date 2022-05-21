@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url><loc>https://amplication.com</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-05-21T06:36:42.229Z</lastmod></url>
+<url><loc>https://amplication.com/blog</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-05-21T06:36:42.229Z</lastmod></url>
+<url><loc>https://amplication.com/community</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-05-21T06:36:42.229Z</lastmod></url>
+<url><loc>https://amplication.com/features</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-05-21T06:36:42.229Z</lastmod></url>
+<url><loc>https://amplication.com/pricing</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-05-21T06:36:42.229Z</lastmod></url>
+<url><loc>https://amplication.com/privacy-policy</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-05-21T06:36:42.229Z</lastmod></url>
+<url><loc>https://amplication.com/team</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-05-21T06:36:42.230Z</lastmod></url>
+<url><loc>https://amplication.com/blog/amplication-release-0.12.7---good-code-and-public-endpoints-cl32wn61z360401s6xbxznyil</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-05-21T06:36:42.230Z</lastmod></url>
+<url><loc>https://amplication.com/blog/jwt-authentication---what-is-it-and-how-do-you-use-it-with-amplication%3F-cl13ovhku011801s6636zn2u3</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-05-21T06:36:42.230Z</lastmod></url>
+<url><loc>https://amplication.com/blog/build-a-node.js-graphql-api-with-nestjs-and-prisma-ckza2vfrg006801s6me2i2syc</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-05-21T06:36:42.230Z</lastmod></url>
+<url><loc>https://amplication.com/blog/7-key-differences-between-graphql-and-rest-apis-ckza1akvu042701s6jzrjovs5</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-05-21T06:36:42.230Z</lastmod></url>
+<url><loc>https://amplication.com/blog/introducing-amplication:-the-open-source-development-tool-ckza1a8p0029801s6ly4lbuh5</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-05-21T06:36:42.230Z</lastmod></url>
+</urlset>
