@@ -3,7 +3,7 @@ import SubscribeForm from "../Common/SubscribeForm";
 
 const Sidebar = () => {
   return (
-    <div className='laptop:pt-32 flex flex-col justify-start items-stretch w-full'>
+    <div className='laptop:pt-32 medium:sticky medium:top-0 flex flex-col justify-start items-stretch w-full'>
       <div className='w-full laptop:mb-16 order-2 laptop:order-1'>
         <SharingBlock />
       </div>
