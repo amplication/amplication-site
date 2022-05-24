@@ -12,10 +12,10 @@ module.exports = {
     screens: {
       'tablet': '640px',
       'laptop': '992px',
+      'medium': '1200px',
       'max-medium': {
         max: '1199px'
       },
-      'medium': '1200px',
       'desktop': '1280px',
       'large': '1440px',
       'extra_large': '1920px',
