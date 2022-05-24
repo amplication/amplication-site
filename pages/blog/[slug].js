@@ -40,7 +40,7 @@ const Post = ({ posts, post }) => {
         }
       />
 
-      <div className="page min-h-screen flex flex-col justify-start justify-items-stretch overflow-hidden pt-[65px] laptop:pt-[110px] bg-purple-dark">
+      <div className="page min-h-screen flex flex-col justify-start justify-items-stretch max-medium:overflow-hidden pt-[65px] laptop:pt-[110px] bg-purple-dark">
         <Header />
         <div className="w-full p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop mt-16 laptop:mt-12">
           <nav>
@@ -70,8 +70,8 @@ const Post = ({ posts, post }) => {
           </nav>
         </div>
 
-        <main className="flex flex-col flex-wrap laptop:flex-row justify-between w-full bg-dark-black-100 font-poppins overflow-hidden p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-8 gap-8 desktop:gap-28">
-          <div className="w-full laptop:max-w-[881px] flex-1 order-1 flex flex-col laptop:block">
+        <main className="flex flex-col flex-wrap laptop:flex-row justify-between w-full bg-dark-black-100 font-poppins max-medium:overflow-hidden p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-8 gap-8 desktop:gap-28">
+          <div className="w-full large:max-w-[881px] medium:max-w-[740px] flex-1 order-1 flex flex-col laptop:block">
             {post && (
               <>
                 <Title
@@ -109,7 +109,7 @@ const Post = ({ posts, post }) => {
             )}
           </div>
 
-          <aside className="w-full laptop:w-[425px] order-9 laptop:order-2">
+          <aside className="w-full laptop:w-[425px] laptop:flex-1 order-9 laptop:order-2">
             <Sidebar />
           </aside>
 
