@@ -71,7 +71,7 @@ const Post = ({ posts, post }) => {
         </div>
 
         <main className="flex flex-col flex-wrap laptop:flex-row justify-between w-full bg-dark-black-100 font-poppins max-medium:overflow-hidden p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-8 gap-8 desktop:gap-28">
-          <div className="w-full large:max-w-[881px] medium:max-w-[740px] flex-1 order-1 flex flex-col laptop:block">
+          <div className="w-full large:min-w-[881px] large:max-w-[881px] medium:max-w-[740px] flex-1 order-1 flex flex-col laptop:block">
             {post && (
               <>
                 <Title
