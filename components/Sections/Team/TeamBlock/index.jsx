@@ -12,6 +12,7 @@ import amitBarletz from '../../../../public/images/team/amit-barletz.png';
 import ofekGabay from '../../../../public/images/team/ofek-gabay.png';
 import michaelSolati from '../../../../public/images/team/michael-solati.png';
 import eugineTseitlin from '../../../../public/images/team/eugene-tseitlin.png';
+import shimiBar from '../../../../public/images/team/shimi.png';
 
 import talkWithUs from '../../../../public/images/icons/talk-with-with-team.svg';
 import joinUs from '../../../../public/images/icons/join-the-team.svg';
@@ -97,6 +98,20 @@ const TeamBlock = () => {
         },
         {
           href: 'https://github.com/morhag90',
+          iconClass: 'github',
+        },
+      ]
+    },{
+      name: 'Shimi Bar',
+      position: 'Sr. Full-stack Eng.',
+      image: shimiBar,
+      links: [
+        {
+          href: 'https://www.linkedin.com/in/shimibar/',
+          iconClass: 'linkedin',
+        },
+        {
+          href: 'https://github.com/barshimi',
           iconClass: 'github',
         },
       ]
