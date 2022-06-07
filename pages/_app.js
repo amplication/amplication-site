@@ -81,21 +81,6 @@ function Amplication({ Component, pageProps }) {
           `,
         }}
       />
-      <Script
-        id={"gtag"}
-        strategy="afterInteractive"
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=AW-455018710"
-      />
-      <Script
-        id={"gtag-manager"}
-        strategy={"afterInteractive"}
-        dangerouslySetInnerHTML={{
-          __html: `
-            function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","AW-455018710");
-          `,
-        }}
-      />
       {/*Hotjar Tracking Code*/}
       <Script
         id={"hotjar"}
@@ -103,15 +88,6 @@ function Amplication({ Component, pageProps }) {
         dangerouslySetInnerHTML={{
           __html: `
             !function(t,h,e,j,s,n){t.hj=t.hj||function(){(t.hj.q=t.hj.q||[]).push(arguments)},t._hjSettings={hjid:2379815,hjsv:6},s=h.getElementsByTagName("head")[0],(n=h.createElement("script")).async=1,n.src="https://static.hotjar.com/c/hotjar-"+t._hjSettings.hjid+".js?sv="+t._hjSettings.hjsv,s.appendChild(n)}(window,document);
-          `,
-        }}
-      />
-      <Script
-        id={"gtag"}
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            gtag('config', 'G-8PE8KXZY6J', {'code_branch': 'master'});
           `,
         }}
       />
