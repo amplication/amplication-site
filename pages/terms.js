@@ -157,7 +157,7 @@ const Terms = () => {
                 whatsoever, including commercialization, sale, distribution
                  or the right to make Modifications. 
                 </p>
-                <p>For clarity, the License does not apply to use of the Software's
+                <p>For clarity, the License does not apply to use of the Software&lsquo;s
                   &quot;core&quot; component, which is licensed under Apache 2.0, 
                   and accessible at https://github.com/amplication/amplication.</p>
                 <h3><b>3. LICENSE RESTRICTIONS. </b></h3>
@@ -203,7 +203,7 @@ const Terms = () => {
                    odification, data exfiltration, data ransom or 
                    data destruction; (xiv) use the Software in connection 
                    with any stress test, competitive benchmarking or analysis, 
-                   or otherwise publish or disclose, without Amplication's 
+                   or otherwise publish or disclose, without Amplication&lsquo;s 
                    prior express written approval, any the results of such 
                    activities or other performance data of the foregoing; 
                    and/or (xv) combine the Source Available Code with any 
@@ -296,7 +296,7 @@ const Terms = () => {
                     written request submitted by You to us for exercising 
                     any rights You may have under such license terms and 
                     conditions (but We make no commitment on how quickly 
-                    We will comply). The &quot;<b>Site</b>&quot; means Amplication's 
+                    We will comply). The &quot;<b>Site</b>&quot; means Amplication&lsquo;s 
                     official website and/or its Software repositories.
                 </p>
                 <h3><b>8. OWNERSHIP; FEEDBACK </b></h3>
@@ -450,7 +450,7 @@ const Terms = () => {
                  reserves the right, at any time thereafter, to take 
                  over full or partial control of the defense and/or
                   settlement of the Indemnity Claim, and in such cases 
-                  You agree to reasonably cooperate with Amplication's 
+                  You agree to reasonably cooperate with Amplication&lsquo;s 
                   defense counsel and activities at Your own cost and 
                   expense; and (b) You shall not settle any Indemnity 
                   Claim, or admit to any liability thereunder, without 
@@ -462,7 +462,7 @@ const Terms = () => {
                 and/or settlement of an Indemnity Claim, You agree to 
                 indemnify and hold harmless the Indemnitee(s) for and 
                 against: (A) any costs and expenses (including reasonable 
-                attorneys' fees) incurred by the Indemnitee(s) in the 
+                attorneys&lsquo; fees) incurred by the Indemnitee(s) in the 
                 defense of the Indemnity Claim; and (b) any amounts 
                 awarded against, or imposed upon, the Indemnitee(s) 
                 under such Indemnity Claim, or otherwise paid in 
@@ -493,7 +493,7 @@ const Terms = () => {
               <p>
                 13.3 <u>Termination for Convenience by Customer.</u> Each 
                 Party may, at any time, terminate this Agreement for 
-                convenience upon seven (7) days' prior written notice 
+                convenience upon seven (7) days&lsquo; prior written notice 
                 to the other Party. For such purpose, Your notice to 
                 Amplication must be sent to: contact@amplication.com. 
                 If You are dissatisfied with the Software, or You 
@@ -539,7 +539,7 @@ const Terms = () => {
             forum objections to such courts. Notwithstanding the 
             foregoing, Amplication may seek equitable relief in any 
             court of competent jurisdiction. EXCEPT TO SEEK EQUITABLE 
-            RELIEF, OR TO OTHERWISE PROTECT OR ENFORCE A PARTY'S 
+            RELIEF, OR TO OTHERWISE PROTECT OR ENFORCE A PARTY&lsquo;S 
             INTELLECTUAL PROPERTY RIGHTS OR LICENSE RIGHTS OR 
             OBLIGATIONS, NO ACTION, REGARDLESS OF FORM, UNDER 
             THIS AGREEMENT MAY BE BROUGHT BY EITHER PARTY MORE 
@@ -549,8 +549,8 @@ const Terms = () => {
             PERMANENTLY BARRED. Any claims or damages that 
             You may have against Amplication shall only be 
             enforceable against Amplication, and not any 
-            other entity (such as Amplication's Affiliates 
-            or licensors) or Amplication's officers, 
+            other entity (such as Amplication&lsquo;s Affiliates 
+            or licensors) or Amplication&lsquo;s officers, 
             directors, representatives, employees, or agents.
             </p>
             <h3><b>16. <u>GENERAL</u></b></h3>
@@ -604,7 +604,7 @@ const Terms = () => {
               or obligation to You. This Agreement is personal to 
               You, and You shall not assign (or in any other way 
               transfer) this Agreement (or any of its obligations 
-              or rights hereunder) without Amplication's prior 
+              or rights hereunder) without Amplication&lsquo;s prior 
               express written consent. Any prohibited assignment 
               shall be null and void. Subject to the foregoing, 
               this Agreement shall bind and inure to the benefit 
@@ -664,7 +664,7 @@ const Terms = () => {
             <p>
               16.8  <u>No Third Party Beneficiaries.</u> Except as may be 
               expressly provided otherwise in this Agreement (such as 
-              Amplication's Affiliates, and licensors, and Indemnitees), 
+              Amplication&lsquo;s Affiliates, and licensors, and Indemnitees), 
               there shall be no third-party beneficiaries of, or under, 
               this Agreement, and no third party shall be entitled to 
               enforce any of these terms and conditions.
@@ -677,7 +677,7 @@ const Terms = () => {
               DFAR Section 227.7202 and FAR Section 12.212, 
               as applicable. If Customer is an agency, department, 
               employee or other entity of the United States 
-              Government, then Customer's access to and use of 
+              Government, then Customer&lsquo;s access to and use of 
               the Software shall be subject solely to the terms 
               and conditions of this Agreement.
             </p>
@@ -689,10 +689,10 @@ const Terms = () => {
             with Your use of the Software. &quot;Export Control 
             Laws&quot; means all applicable export and 
             re-export control laws applicable to Licensee 
-            and/or Amplication, as well as the United States' Export 
+            and/or Amplication, as well as the United States&lsquo; Export 
             Administration Regulations (EAR) maintained by the US 
             Department of Commerce, trade and economic sanctions 
-            maintained by the US Treasury Department's Office of 
+            maintained by the US Treasury Department&lsquo;s Office of 
             Foreign Assets Control, and the International Traffic 
             in Arms Regulations (ITAR) maintained by the US Department 
             of State..</p>
