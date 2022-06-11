@@ -11,6 +11,7 @@ import Script from "next/script";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import * as analytics from "../lib/analytics";
+import { DefaultSeo } from "next-seo";
 
 function Amplication({ Component, pageProps }) {
   const { asPath } = useRouter();
@@ -19,6 +20,10 @@ function Amplication({ Component, pageProps }) {
   );
 
   const router = useRouter();
+
+  const canonicalUrl = (
+    process.env.NEXT_PUBLIC_SITE + (router.asPath === "/" ? "" : router.asPath)
+  ).split("?")[0];
 
   useEffect(() => {
     const handleRouteChange = (url) => {
@@ -157,6 +162,8 @@ function Amplication({ Component, pageProps }) {
           style={{ display: "none", visibility: "hidden" }}
         ></iframe>
       </noscript>
+
+      <DefaultSeo canonical={canonicalUrl} />
 
       <Component {...pageProps} />
     </ApolloProvider>
