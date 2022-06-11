@@ -19,6 +19,7 @@ const TagsPage = (props) => {
         description="Amplication is an open-source development tool. It helps you develop
           quality Node.js applications without spending time on repetitive
           coding tasks."
+        canonical={`${process.env.NEXT_PUBLIC_SITE}/blog`}
       />
 
       <div className="page bg-dark-black-100 min-h-screen flex flex-col justify-start justify-items-stretch overflow-hidden pt-[65px] laptop:pt-[110px] bg-purple-dark relative">
