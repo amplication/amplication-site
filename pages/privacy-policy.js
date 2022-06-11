@@ -1,17 +1,16 @@
-import DocumentHead from '../components/Common/DocumentHead';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import Background from '../components/Background';
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Background from "../components/Background";
+import { NextSeo } from "next-seo";
 
 const PrivacyPolicy = () => {
   return (
     <>
-      <DocumentHead
-        pageTitle="Amplication - Generate Node.js apps, just code what matters"
-        pageDescription="Amplication is an open-source development tool. It helps you develop
+      <NextSeo
+        title="Amplication - Generate Node.js apps, just code what matters"
+        description="Amplication is an open-source development tool. It helps you develop
           quality Node.js applications without spending time on repetitive
           coding tasks."
-        includeAssets={true}
       />
 
       <div className="page min-h-screen flex flex-col justify-start justify-items-stretch overflow-hidden pt-[60px] laptop:pt-[110px] bg-purple-dark relative">
