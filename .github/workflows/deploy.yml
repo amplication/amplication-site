@@ -22,7 +22,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 120
-    if: {{ github.event.inputs.env_action == 'Apply' }}
+    if: "${{ github.event.inputs.env_action == 'Apply' }}"
     steps:
       - uses: actions/checkout@v2
       - name: Login to GCR
@@ -56,7 +56,7 @@ jobs:
         working-directory: terraform
   destroy:
     runs-on: ubuntu-latest
-    if: {{ github.event.inputs.env_action == 'Destroy' }}
+    if: "${{ github.event.inputs.env_action == 'Destroy' }}"
     steps:
       - uses: actions/checkout@v2
       - name: Login to GCR
