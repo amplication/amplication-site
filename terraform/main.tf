@@ -82,7 +82,7 @@ module "lb-http" {
   ssl                             = true
   managed_ssl_certificate_domains = [var.domain, "www.${var.domain}"]
   create_url_map                  = false
-  http_forward                    = false
+  https_redirect                  = true
   url_map                         = google_compute_url_map.urlmap.name
   backends = {
     default = {
@@ -117,7 +117,6 @@ resource "google_compute_url_map" "urlmap" {
     hosts        = ["*"]
     path_matcher = "allpaths"
   }
-
 
   path_matcher {
     name            = "allpaths"
