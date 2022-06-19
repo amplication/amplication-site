@@ -22,7 +22,7 @@ const TeamBlock = () => {
   const members = [
     {
       name: 'Ariel Weinberger',
-      position: 'VP, R&D',
+      position: 'VP R&D',
       image: arielWeinberger,
       links: [
         {
