@@ -13,6 +13,7 @@ import ofekGabay from '../../../../public/images/team/ofek-gabay.png';
 import michaelSolati from '../../../../public/images/team/michael-solati.png';
 import eugineTseitlin from '../../../../public/images/team/eugene-tseitlin.png';
 import shimiBar from '../../../../public/images/team/shimi.png';
+import arielWeinberger from '../../../../public/images/team/ariel.png';
 
 import talkWithUs from '../../../../public/images/icons/talk-with-with-team.svg';
 import joinUs from '../../../../public/images/icons/join-the-team.svg';
@@ -20,6 +21,24 @@ import joinUs from '../../../../public/images/icons/join-the-team.svg';
 const TeamBlock = () => {
   const members = [
     {
+      name: 'Ariel Weinberger',
+      position: 'VP, R&D',
+      image: arielWeinberger,
+      links: [
+        {
+          href: 'https://www.linkedin.com/in/arielweinberger/',
+          iconClass: 'linkedin',
+        },
+        {
+          href: 'https://github.com/arielweinberger',
+          iconClass: 'github',
+        },
+        {
+          href: 'https://twitter.com/arielweinberger',
+          iconClass: 'twitter',
+        }
+      ]
+    },{
       name: 'Matan Shidlov',
       position: 'VP of Engineering',
       image: matanShidlov,
