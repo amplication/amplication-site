@@ -76,7 +76,7 @@ resource "google_cloud_run_service_iam_member" "run_all_users" {
 resource "google_compute_global_forwarding_rule" "http" {
   project = var.project_id
   name       = var.lb_name
-  target     = google_compute_target_http_proxy.default[0].self_link
+  target     = google_compute_target_http_proxy.default.self_link
   ip_address = join("", google_compute_global_address.default.*.address)
   port_range = "80"
 }
@@ -84,7 +84,7 @@ resource "google_compute_global_forwarding_rule" "http" {
 resource "google_compute_global_forwarding_rule" "https" {
   project    = var.project_id
   name       = "${var.lb_name}-https"
-  target     = google_compute_target_https_proxy.default[0].self_link
+  target     = google_compute_target_https_proxy.default.self_link
   ip_address = join("", google_compute_global_address.default.*.address)
   port_range = "443"
 }
@@ -94,7 +94,6 @@ resource "google_compute_global_address" "default" {
   name       = "${var.lb_name}-address"
   ip_version = "IPV4"
 }
-
 ### IPv4 block ###
 
 # HTTP proxy when http forwarding is true
