@@ -72,41 +72,59 @@ resource "google_cloud_run_service_iam_member" "run_all_users" {
   member   = "allUsers"
 }
 
-module "lb-http" {
-  source  = "GoogleCloudPlatform/lb-http/google//modules/serverless_negs"
-  version = "~> 6.2.0"
-
+### IPv4 block ###
+resource "google_compute_global_forwarding_rule" "http" {
   project = var.project_id
-  name    = var.lb_name
+  name       = var.lb_name
+  target     = google_compute_target_http_proxy.default[0].self_link
+  ip_address = join("", google_compute_global_address.default.*.address)
+  port_range = "80"
+}
 
-  ssl                             = true
-  managed_ssl_certificate_domains = [var.domain, "www.${var.domain}"]
-  create_url_map                  = false
-  https_redirect                  = true
-  url_map                         = google_compute_url_map.urlmap.name
-  backends = {
-    default = {
-      description = null
-      groups = [
-        {
-          group = google_compute_region_network_endpoint_group.cloudrun_neg.id
-        }
-      ]
-      enable_cdn              = false
-      custom_request_headers  = null
-      custom_response_headers = null
-      security_policy         = null
+resource "google_compute_global_forwarding_rule" "https" {
+  project    = var.project_id
+  name       = "${var.lb_name}-https"
+  target     = google_compute_target_https_proxy.default[0].self_link
+  ip_address = join("", google_compute_global_address.default.*.address)
+  port_range = "443"
+}
 
-      iap_config = {
-        enable               = false
-        oauth2_client_id     = ""
-        oauth2_client_secret = ""
-      }
-      log_config = {
-        enable      = false
-        sample_rate = null
-      }
-    }
+resource "google_compute_global_address" "default" {
+  project    = var.project_id
+  name       = "${var.lb_name}-address"
+  ip_version = "IPV4"
+}
+
+### IPv4 block ###
+
+# HTTP proxy when http forwarding is true
+resource "google_compute_target_http_proxy" "default" {
+  project = var.project_id
+  name    = "${var.lb_name}-http-proxy"
+  url_map = join("", google_compute_url_map.https_redirect.*.self_link)
+}
+
+# HTTPS proxy when ssl is true
+resource "google_compute_target_https_proxy" "default" {
+  project = var.project_id
+  name    = "${var.lb_name}-https-proxy"
+  url_map = google_compute_url_map.urlmap.name
+
+  ssl_certificates = compact(concat(google_compute_managed_ssl_certificate.default.*.self_link, ), )
+  quic_override    = "NONE"
+}
+
+resource "google_compute_managed_ssl_certificate" "default" {
+  provider = google-beta
+  project  = var.project_id
+  name     = "${var.lb_name}-cert"
+
+  lifecycle {
+    create_before_destroy = true
+  }
+
+  managed {
+    domains = [var.domain, "www.${var.domain}"]
   }
 }
 
@@ -168,5 +186,47 @@ resource "google_compute_url_map" "urlmap" {
   }
 }
 
+resource "google_compute_url_map" "https_redirect" {
+  project = var.project_id
+  name    = "${var.lb_name}-amplication-https-redirect"
+  default_url_redirect {
+    https_redirect         = true
+    redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
+    strip_query            = false
+  }
+}
 
+module "lb-http" {
+  source  = "GoogleCloudPlatform/lb-http/google//modules/serverless_negs"
+  version = "~> 6.2.0"
 
+  project = var.project_id
+  name    = var.lb_name
+
+  create_url_map                  = false
+  url_map                         = google_compute_url_map.urlmap.name
+  backends = {
+    default = {
+      description = null
+      groups = [
+        {
+          group = google_compute_region_network_endpoint_group.cloudrun_neg.id
+        }
+      ]
+      enable_cdn              = false
+      custom_request_headers  = null
+      custom_response_headers = null
+      security_policy         = null
+
+      iap_config = {
+        enable               = false
+        oauth2_client_id     = ""
+        oauth2_client_secret = ""
+      }
+      log_config = {
+        enable      = false
+        sample_rate = null
+      }
+    }
+  }
+}
