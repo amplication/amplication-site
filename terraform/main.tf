@@ -168,7 +168,7 @@ resource "google_compute_url_map" "urlmap" {
   }
 }
 
-resource "google_compute_global_forwarding_rule" "http" {
+resource "google_compute_global_forwarding_rule" "http-rule" {
   project    = var.project_id
   name       = var.lb_name
   target     = google_compute_target_http_proxy.http_target.self_link
@@ -180,10 +180,10 @@ resource "google_compute_global_forwarding_rule" "http" {
 resource "google_compute_target_http_proxy" "http_target" {
   project = var.project_id
   name    = "${var.lb_name}-http-proxy-target"
-  url_map = google_compute_url_map.https_redirect.self_link
+  url_map = google_compute_url_map.https_redirect-target.self_link
 }
 
-resource "google_compute_url_map" "https_redirect" {
+resource "google_compute_url_map" "https_redirect-target" {
   project = var.project_id
   name    = "${var.lb_name}-https-redirect"
   default_url_redirect {
