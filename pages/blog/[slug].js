@@ -1,4 +1,3 @@
-import DocumentHead from "../../components/Common/DocumentHead";
 import client from "../../services";
 import helpers from "../../helpers";
 import { gql } from "@apollo/client";
@@ -22,6 +21,7 @@ import rehypeHighlight from "rehype-highlight";
 import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
 import "highlight.js/styles/github-dark-dimmed.css";
+import { NextSeo } from "next-seo";
 
 const Post = ({ posts, post }) => {
   if (!post) {
@@ -32,9 +32,9 @@ const Post = ({ posts, post }) => {
 
   return (
     <>
-      <DocumentHead
-        pageTitle={post.title}
-        pageDescription={rawPostContent.substring(0, 150)}
+      <NextSeo
+        title={post.title}
+        description={rawPostContent.substring(0, 150)}
         pageImage={
           helpers.isValidUrl(post.featuredImage) ? post.featuredImage : ""
         }
