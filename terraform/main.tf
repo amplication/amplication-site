@@ -185,7 +185,7 @@ resource "google_compute_target_http_proxy" "http_target" {
 
 resource "google_compute_url_map" "https_redirect-target" {
   project = var.project_id
-  name    = "${var.lb_name}-https-redirect"
+  name    = "${var.lb_name}-amplication-https-redirect"
   default_url_redirect {
     https_redirect         = true
     redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
