@@ -1,10 +1,6 @@
 const Roadmap = () => {
   const mystyle = {
-    color:" #41cadd",
-    fontSize: "inherit",
-    lineHeight: "inherit",
-    marginRight: "0.6rem",
-    marginTop: "0",
+    color:" #A787FF"
   };
   return (
     <>
@@ -13,13 +9,13 @@ const Roadmap = () => {
           <div
             className="row align-items-center justify-content-center justify-content-md-start mb-4 text-white"
           >
-            <h2 className="h2 text-left col-12">
+            <h2 className="roadmap-heading">
        
-              What&apos;s next? <br/>Great things coming down the <span style={mystyle}>road&lt;map&gt;</span>
+              What&apos;s next? <br/>Great things coming down the <span style={mystyle}>&lt;roadmap&gt;</span>
             </h2>
-            <h3 className="h3 text-white">
+            <h2 className="roadmap-paragraph">
             While we continuously work alongside our community to make Amplication Community Edition better,<br/> we are extending its capabilities into Enterprise Edition to meet the requirements and standards<br/> of large-scale organizations and enterprises. 
-            </h3>
+            </h2>
           </div>
           <div className="row d-flex justify-content-between align-items-stretch">
             <div className="col-sm-12 col-md-6 col-lg-4">
@@ -96,8 +92,9 @@ const Roadmap = () => {
                 </ul>
               </div>
             </div>
+          </div><br/><div  className="roadmap-link">
+          Want to dive into features? Check out our <a className="official-roadmap-link" href="https://docs.amplication.com/docs/about/roadmap"> official public roadmap</a> to learn more. 
           </div>
-          Want to dive into features? Check out our <a href="https://docs.amplication.com/docs/about/roadmap">official public roadmap</a> to learn more. 
         </div>
       </section>
     </>
