@@ -9692,37 +9692,32 @@ body {
 }
 
 .amplication-base .roadmap-heading {
-    width: 1448px;
-    height: 168px;
+
     
     font-family: 'Poppins';
     font-style: normal;
-    font-weight: 700;
-    font-size: 56px;
-    line-height: 84px;
+    font-weight: 600;
+    font-size: 3.5rem;
+    line-height: 5rem;
     align-items: center;
     }
     .amplication-base .roadmap-paragraph {
-    width: 1448px;
-    height: 108px;
+   
         
     font-family: 'Poppins';
     font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 36px;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 2.25rem;
     display: flex;
     align-items: center;
     }
 .amplication-base .roadmap-link {
 
-/* Main Font/H2 Semi - 24px */
-
 font-family: 'Poppins';
 font-style: normal;
-font-weight: 500;
-font-size: 24px;
-line-height: 36px;
+font-size: 1.5rem;
+line-height: 2.25rem;
 }
 .amplication-base .roadmap-box .roadmap-title {
     display: flex;
@@ -9731,8 +9726,8 @@ line-height: 36px;
     justify-content: stretch;
     font-family: "Poppins";  
     font-style: normal;
-    font-size: 18px;
-    line-height: 27px;
+    font-size: 1.125rem;
+    line-height: 1.65rem;
     color: #A787FF;
     margin-bottom: 1rem;
     padding: 0.25rem 0.5rem;
@@ -9771,7 +9766,7 @@ line-height: 36px;
 }
 .amplication-base .roadmap-box .roadmap-list .done {
     opacity: 0.5;
-    color: #686F8C;
+    color: #80869D;
     text-decoration: line-through;
 }
 .amplication-base section.auto-height {
