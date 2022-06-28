@@ -9697,7 +9697,7 @@ body {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 600;
-    font-size: 3.5rem;
+    font-size: calc(1.325rem + 0.9vw);
     line-height: 5rem;
     align-items: center;
     }
@@ -9707,7 +9707,7 @@ body {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    font-size: 1.5rem;
+    font-size: 1.125rem;
     line-height: 2.25rem;
     display: flex;
     align-items: center;
@@ -9716,8 +9716,10 @@ body {
 
 font-family: 'Poppins';
 font-style: normal;
-font-size: 1.5rem;
+font-size: 1.125rem;
 line-height: 2.25rem;
+font-weight: 400;
+
 }
 .amplication-base .roadmap-box .roadmap-title {
     display: flex;
@@ -9766,7 +9768,7 @@ line-height: 2.25rem;
 }
 .amplication-base .roadmap-box .roadmap-list .done {
     opacity: 0.5;
-    color: #80869D;
+    color: #A3A8B8;
     text-decoration: line-through;
 }
 .amplication-base section.auto-height {
