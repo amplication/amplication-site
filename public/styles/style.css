@@ -9690,14 +9690,47 @@ body {
     margin-top: 8rem;
     margin-bottom: 6rem;
 }
+
+.amplication-base .roadmap-heading {
+
+    
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: calc(1.325rem + 0.9vw);
+    line-height: 5rem;
+    align-items: center;
+    }
+    .amplication-base .roadmap-paragraph {
+   
+        
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 2.25rem;
+    display: flex;
+    align-items: center;
+    }
+.amplication-base .roadmap-link {
+
+font-family: 'Poppins';
+font-style: normal;
+font-size: 1.125rem;
+line-height: 2.25rem;
+font-weight: 400;
+
+}
 .amplication-base .roadmap-box .roadmap-title {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    text-align: right;
     justify-content: stretch;
-    font-family: "DM Mono", monospace;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: #41cadd;
+    font-family: "Poppins";  
+    font-style: normal;
+    font-size: 1.125rem;
+    line-height: 1.65rem;
+    color: #A787FF;
     margin-bottom: 1rem;
     padding: 0.25rem 0.5rem;
     display: inline-block;
@@ -9716,6 +9749,11 @@ body {
     align-items: flex-start;
     justify-content: flex-start;
     flex-wrap: wrap;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
     margin-bottom: 1rem;
     margin-left: 3rem;
     margin-right: 3rem;
@@ -9730,6 +9768,7 @@ body {
 }
 .amplication-base .roadmap-box .roadmap-list .done {
     opacity: 0.5;
+    color: #A3A8B8;
     text-decoration: line-through;
 }
 .amplication-base section.auto-height {
@@ -9823,6 +9862,10 @@ body {
 }
 .amplication-base .btn-outline-secondary:hover {
     background-color: #444b66;
+}
+.amplication-base .official-roadmap-link {
+    color: #41cadd;
+    text-decoration: underline;
 }
 .amplication-base .social-link {
     background-color: #a3a8b8;
