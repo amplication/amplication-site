@@ -110,10 +110,18 @@ module "lb-http" {
   }
 }
 
+locals {
+  paths = toset([
+    "getting-started",
+    "sync-with-github",
+    "deploy",
+    "cli",
+  ])
+}
+
 resource "google_compute_url_map" "urlmap" {
   name            = var.lb_name
   default_service = module.lb-http.backend_services[keys(module.lb-http.backend_services)[0]].self_link
-  for_each = toset( ["getting-started", "sync-with-github", "deploy", "cli"] )
   
   host_rule {
     hosts        = ["*"]
@@ -174,13 +182,16 @@ resource "google_compute_url_map" "urlmap" {
       redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
     }
     
-    path_rule {
-      paths = ["/${each.key}"]
-      url_redirect {
-        host_redirect  = "docs.amplication.com"
-        https_redirect         = true
-        redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
-        strip_query            = true
+    dynamic path_rule {
+      for_each = local.paths
+      content {
+        paths = ["/${path_rule.key}"]
+        url_redirect {
+          host_redirect  = "docs.amplication.com"
+          https_redirect         = true
+          redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
+          strip_query            = true
+        }
       }
     }
   }
