@@ -110,12 +110,15 @@ module "lb-http" {
   }
 }
 
+locals {
+  for_each = toset(var.paths)
+  path     = each.key
+}
+
 resource "google_compute_url_map" "urlmap" {
   name            = var.lb_name
   default_service = module.lb-http.backend_services[keys(module.lb-http.backend_services)[0]].self_link
-  for_each        = toset(var.paths)
-  docs_path        = each.key
-  
+
   host_rule {
     hosts        = ["*"]
     path_matcher = "allpaths"
@@ -176,7 +179,7 @@ resource "google_compute_url_map" "urlmap" {
     }
     
     path_rule {
-      paths = ["/${var.docs_path}"]
+      paths = ["/${local.path}"]
       url_redirect {
         host_redirect  = "docs.amplication.com"
         https_redirect         = true

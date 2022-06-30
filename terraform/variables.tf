@@ -70,4 +70,3 @@ variable "paths" {
   type    = list(string)
   default = ["getting-started", "sync-with-github", "deploy", "cli"]
 }
-variable "docs_path" {}
