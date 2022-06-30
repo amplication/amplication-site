@@ -114,7 +114,7 @@ resource "google_compute_url_map" "urlmap" {
   name            = var.lb_name
   default_service = module.lb-http.backend_services[keys(module.lb-http.backend_services)[0]].self_link
   for_each        = toset(var.paths)
-  doc_path        = each.key
+  docs_path        = each.key
   
   host_rule {
     hosts        = ["*"]
