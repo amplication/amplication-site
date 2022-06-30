@@ -113,6 +113,8 @@ module "lb-http" {
 resource "google_compute_url_map" "urlmap" {
   name            = var.lb_name
   default_service = module.lb-http.backend_services[keys(module.lb-http.backend_services)[0]].self_link
+  for_each = toset(var.docs_paths)
+  
   host_rule {
     hosts        = ["*"]
     path_matcher = "allpaths"
@@ -141,15 +143,6 @@ resource "google_compute_url_map" "urlmap" {
         strip_query            = true
       }
     }
-    path_rule {
-      paths = ["/docs"]
-      url_redirect {
-        host_redirect          = "docs.amplication.com"
-        https_redirect         = true
-        redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
-        strip_query            = true
-      }
-    }
   }
 
   host_rule {
@@ -164,6 +157,31 @@ resource "google_compute_url_map" "urlmap" {
       host_redirect  = var.domain
       strip_query    = false
       https_redirect = true
+    }
+  }
+
+  host_rule {
+    hosts        = ["${var.domain}/docs"]
+    path_matcher = "docs-paths"
+  }
+
+  path_matcher {
+    name            = "docs-paths"
+    default_url_redirect {
+      host_redirect  = "docs.amplication.com"
+      strip_query    = true
+      https_redirect = true
+      redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
+    }
+    
+    path_rule {
+      paths = ["/${each.key}"]
+      url_redirect {
+        host_redirect  = "docs.amplication.com"
+        https_redirect         = true
+        redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
+        strip_query            = true
+      }
     }
   }
 }
