@@ -113,7 +113,7 @@ module "lb-http" {
 resource "google_compute_url_map" "urlmap" {
   name            = var.lb_name
   default_service = module.lb-http.backend_services[keys(module.lb-http.backend_services)[0]].self_link
-  for_each = toset(var.paths)
+  for_each = toset( ["getting-started", "sync-with-github", "deploy", "cli"] )
   
   host_rule {
     hosts        = ["*"]

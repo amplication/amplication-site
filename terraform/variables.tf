@@ -66,7 +66,3 @@ variable "hubspot_api_key" {
 variable "neg_name" {
   type = string
 }
-variable "paths" {
-  type    = list(string)
-  default = ["getting-started", "sync-with-github", "deploy", "cli"]
-}
