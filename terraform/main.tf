@@ -168,7 +168,7 @@ resource "google_compute_url_map" "urlmap" {
         paths = ["/docs/${path_rule.key}"]
         url_redirect {
           host_redirect          = "docs.amplication.com"
-          path_redirect          = "/${path_rule.key}"
+          path_redirect          = "/docs/${path_rule.key}"
           https_redirect         = true
           redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
           strip_query            = true
