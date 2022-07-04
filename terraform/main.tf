@@ -162,18 +162,20 @@ resource "google_compute_url_map" "urlmap" {
       }
     }
 
-    path_rule {
-      paths = ["/docs/*"]
-      url_redirect {
-        host_redirect          = "docs.amplication.com"
-        path_redirect          = "/*"
-        https_redirect         = true
-        redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
-        strip_query            = true
+    dynamic path_rule {
+      for_each = local.paths
+      content {
+        paths = ["/docs/${path_rule.key}"]
+        url_redirect {
+          host_redirect          = "docs.amplication.com"
+          path_redirect          = "/${path_rule.key}"
+          https_redirect         = true
+          redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
+          strip_query            = true
+        }
       }
     }
   }
-
   host_rule {
     description  = "remove www. prefixes"
     hosts        = ["www.${var.domain}"]
@@ -188,35 +190,6 @@ resource "google_compute_url_map" "urlmap" {
       https_redirect = true
     }
   }
-
-  # host_rule {
-  #   hosts        = ["${var.domain}/docs"]
-  #   path_matcher = "docs-paths"
-  # }
-
-  # path_matcher {
-  #   name            = "docs-paths"
-  #   default_url_redirect {
-  #     host_redirect  = "docs.amplication.com"
-  #     strip_query    = true
-  #     https_redirect = true
-  #     redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
-  #   }
-    
-  #   dynamic path_rule {
-  #     for_each = local.paths
-  #     content {
-  #       paths = ["/${path_rule.key}"]
-  #       url_redirect {
-  #         host_redirect  = "docs.amplication.com"
-  #         path_redirect          = "/${path_rule.key}"
-  #         https_redirect         = true
-  #         redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
-  #         strip_query            = true
-  #       }
-  #     }
-  #   }
-  # }
 }
 
 # resource "google_compute_global_forwarding_rule" "http-rule" {
