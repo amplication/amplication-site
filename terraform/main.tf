@@ -189,10 +189,10 @@ resource "google_compute_url_map" "urlmap" {
     }
   }
 
-  host_rule {
-    hosts        = ["${var.domain}/docs"]
-    path_matcher = "docs-paths"
-  }
+  # host_rule {
+  #   hosts        = ["${var.domain}/docs"]
+  #   path_matcher = "docs-paths"
+  # }
 
   # path_matcher {
   #   name            = "docs-paths"
