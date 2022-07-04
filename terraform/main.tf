@@ -81,7 +81,7 @@ module "lb-http" {
 
   ssl                             = true
   managed_ssl_certificate_domains = [var.domain, "www.${var.domain}"]
-  http_forward                    = false
+  http_forward                    = true
   create_url_map                  = false
   url_map                         = google_compute_url_map.urlmap.name
   backends = {
@@ -151,6 +151,27 @@ resource "google_compute_url_map" "urlmap" {
         strip_query            = true
       }
     }
+
+    path_rule {
+      paths = ["/docs"]
+      url_redirect {
+        host_redirect          = "docs.amplication.com"
+        https_redirect         = true
+        redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
+        strip_query            = true
+      }
+    }
+
+    path_rule {
+      paths = ["/docs/*"]
+      url_redirect {
+        host_redirect          = "docs.amplication.com"
+        path_redirect          = "/*"
+        https_redirect         = true
+        redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
+        strip_query            = true
+      }
+    }
   }
 
   host_rule {
@@ -173,52 +194,52 @@ resource "google_compute_url_map" "urlmap" {
     path_matcher = "docs-paths"
   }
 
-  path_matcher {
-    name            = "docs-paths"
-    default_url_redirect {
-      host_redirect  = "docs.amplication.com"
-      strip_query    = true
-      https_redirect = true
-      redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
-    }
+  # path_matcher {
+  #   name            = "docs-paths"
+  #   default_url_redirect {
+  #     host_redirect  = "docs.amplication.com"
+  #     strip_query    = true
+  #     https_redirect = true
+  #     redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
+  #   }
     
-    dynamic path_rule {
-      for_each = local.paths
-      content {
-        paths = ["/${path_rule.key}"]
-        url_redirect {
-          host_redirect  = "docs.amplication.com"
-          path_redirect          = "/${path_rule.key}"
-          https_redirect         = true
-          redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
-          strip_query            = true
-        }
-      }
-    }
-  }
+  #   dynamic path_rule {
+  #     for_each = local.paths
+  #     content {
+  #       paths = ["/${path_rule.key}"]
+  #       url_redirect {
+  #         host_redirect  = "docs.amplication.com"
+  #         path_redirect          = "/${path_rule.key}"
+  #         https_redirect         = true
+  #         redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
+  #         strip_query            = true
+  #       }
+  #     }
+  #   }
+  # }
 }
 
-resource "google_compute_global_forwarding_rule" "http-rule" {
-  project    = var.project_id
-  name       = var.lb_name
-  target     = google_compute_target_http_proxy.http_target.self_link
-  ip_address = module.lb-http.external_ip
-  port_range = "80"
-}
+# resource "google_compute_global_forwarding_rule" "http-rule" {
+#   project    = var.project_id
+#   name       = var.lb_name
+#   target     = google_compute_target_http_proxy.http_target.self_link
+#   ip_address = module.lb-http.external_ip
+#   port_range = "80"
+# }
 
-# HTTP proxy when http forwarding is true
-resource "google_compute_target_http_proxy" "http_target" {
-  project = var.project_id
-  name    = "${var.lb_name}-http-proxy-target"
-  url_map = google_compute_url_map.https_redirect-target.self_link
-}
+# # HTTP proxy when http forwarding is true
+# resource "google_compute_target_http_proxy" "http_target" {
+#   project = var.project_id
+#   name    = "${var.lb_name}-http-proxy-target"
+#   url_map = google_compute_url_map.https_redirect-target.self_link
+# }
 
-resource "google_compute_url_map" "https_redirect-target" {
-  project = var.project_id
-  name    = "${var.lb_name}-amplication-https-redirect"
-  default_url_redirect {
-    https_redirect         = true
-    redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
-    strip_query            = false
-  }
-}
+# resource "google_compute_url_map" "https_redirect-target" {
+#   project = var.project_id
+#   name    = "${var.lb_name}-amplication-https-redirect"
+#   default_url_redirect {
+#     https_redirect         = true
+#     redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
+#     strip_query            = false
+#   }
+# }
