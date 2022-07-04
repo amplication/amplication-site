@@ -81,7 +81,7 @@ module "lb-http" {
 
   ssl                             = true
   managed_ssl_certificate_domains = [var.domain, "www.${var.domain}"]
-  http_forward                    = true
+  http_forward                    = false
   create_url_map                  = false
   url_map                         = google_compute_url_map.urlmap.name
   backends = {
@@ -162,19 +162,19 @@ resource "google_compute_url_map" "urlmap" {
       }
     }
 
-    dynamic path_rule {
-      for_each = local.paths
-      content {
-        paths = ["/docs/${path_rule.key}"]
-        url_redirect {
-          host_redirect          = "docs.amplication.com"
-          path_redirect          = "/docs/${path_rule.key}"
-          https_redirect         = true
-          redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
-          strip_query            = true
-        }
-      }
-    }
+    # dynamic path_rule {
+    #   for_each = local.paths
+    #   content {
+    #     paths = ["/docs/${path_rule.key}"]
+    #     url_redirect {
+    #       host_redirect          = "docs.amplication.com"
+    #       path_redirect          = "/docs/${path_rule.key}"
+    #       https_redirect         = true
+    #       redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
+    #       strip_query            = true
+    #     }
+    #   }
+    # }
   }
   host_rule {
     description  = "remove www. prefixes"
