@@ -153,6 +153,16 @@ resource "google_compute_url_map" "urlmap" {
     }
 
     path_rule {
+      paths = ["/docs"]
+      url_redirect {
+        host_redirect          = "docs.amplication.com"
+        https_redirect         = true
+        redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
+        strip_query            = false
+      }
+    }
+      
+    path_rule {
       paths = ["/docs/*"]
       url_redirect {
         host_redirect          = "docs.amplication.com"
