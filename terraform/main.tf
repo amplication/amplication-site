@@ -80,7 +80,7 @@ module "lb-http" {
   name    = var.lb_name
 
   ssl                             = true
-  managed_ssl_certificate_domains = [var.domain, "www.${var.domain}"]
+  managed_ssl_certificate_domains = [var.domain]
   http_forward                    = false
   create_url_map                  = false
   url_map                         = google_compute_url_map.urlmap.name
@@ -176,20 +176,20 @@ resource "google_compute_url_map" "urlmap" {
       }
     }
   }
-  host_rule {
-    description  = "remove www. prefixes"
-    hosts        = ["www.${var.domain}"]
-    path_matcher = "public-nowww"
-  }
+  # host_rule {
+  #   description  = "remove www. prefixes"
+  #   hosts        = ["www.${var.domain}"]
+  #   path_matcher = "public-nowww"
+  # }
 
-  path_matcher {
-    name = "public-nowww"
-    default_url_redirect {
-      host_redirect  = var.domain
-      strip_query    = false
-      https_redirect = true
-    }
-  }
+  # path_matcher {
+  #   name = "public-nowww"
+  #   default_url_redirect {
+  #     host_redirect  = var.domain
+  #     strip_query    = false
+  #     https_redirect = true
+  #   }
+  # }
 }
 
 resource "google_compute_global_forwarding_rule" "http-rule" {
