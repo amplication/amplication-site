@@ -156,7 +156,7 @@ resource "google_compute_url_map" "urlmap" {
       paths = ["/docs"]
       url_redirect {
         host_redirect          = "docs.amplication.com"
-        https_redirect         = true
+        https_redirect         = false
         redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
         strip_query            = false
       }
@@ -166,7 +166,7 @@ resource "google_compute_url_map" "urlmap" {
       paths = ["/docs/*"]
       url_redirect {
         host_redirect          = "docs.amplication.com"
-        https_redirect         = true
+        https_redirect         = false
         redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
         strip_query            = false
       }
