@@ -30,9 +30,6 @@ const PostCard = (props) => {
               <Title level={2} className="text-lg font-medium mt-4">
                 { post.title }
               </Title>
-              <div className="hidden text-base text-white leading-6 mt-2 laptop:line-clamp-2">
-                {helpers.removeMarkdown( post.content )}
-              </div>
             </div>
           </div>
         </a>
