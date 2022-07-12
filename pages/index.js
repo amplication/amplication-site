@@ -17,9 +17,7 @@ const Home = () => {
     <>
       <NextSeo
         title="Amplication - Generate Node.js apps, just code what matters"
-        description="Amplication is an open‑source development tool. It helps you develop
-          quality Node.js applications without spending time on repetitive
-          coding tasks."
+        description="Amplication is the most flexible open-source platform for Node.js app development. We enable developers to auto-generate production-ready backend in minutes. Design models \and roles, deploy your app, connect with REST or GraphQL API, sync with GitHub. You own the code."
       />
 
       <div className="page bg-dark-black-100 min-h-screen flex flex-col justify-start justify-items-stretch overflow-hidden pt-[60px] laptop:pt-[143px] bg-purple-dark relative">
