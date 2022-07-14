@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <>
       <NextSeo
-        title="Amplication -1111 Generate Node.js apps, just code what matters"
+        title="Amplication - Generate Node.js apps, just code what matters"
         description="Amplication is an open‑source development tool. It helps you develop
           quality Node.js applications without spending time on repetitive
           coding tasks."
