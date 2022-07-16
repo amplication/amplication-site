@@ -56,7 +56,6 @@ export const getServerSideProps = async (context) => {
           posts(take: ${postsTake}, orderBy: {createdAt: Desc}${postsByTagID}) {
             id
             title
-            content
             featuredImage
             tags {
               id

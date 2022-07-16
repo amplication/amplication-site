@@ -216,7 +216,6 @@ export const getStaticProps = async (context) => {
             posts(take: 3, orderBy: {createdAt: Desc}, where: {id: {not: "${data.post.id}"} ${tags}}) {
               id
               title
-              content
               featuredImage
               tags {
                 id
