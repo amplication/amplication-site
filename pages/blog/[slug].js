@@ -50,6 +50,11 @@ const Post = ({ posts, post }) => {
           ],
           site_name: "Amplication Blog",
         }}
+        twitter={{
+          handle: "@amplication",
+          site: "amplication.com",
+          cardType: "summary_large_image",
+        }}
       />
 
       <div className="page min-h-screen flex flex-col justify-start justify-items-stretch max-medium:overflow-hidden pt-[65px] laptop:pt-[110px] bg-purple-dark">
