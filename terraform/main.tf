@@ -110,15 +110,6 @@ module "lb-http" {
   }
 }
 
-locals {
-  paths = toset([
-    "getting-started",
-    "sync-with-github",
-    "deploy",
-    "cli",
-  ])
-}
-
 resource "google_compute_url_map" "urlmap" {
   name            = var.lb_name
   default_service = module.lb-http.backend_services[keys(module.lb-http.backend_services)[0]].self_link
@@ -171,7 +162,6 @@ resource "google_compute_url_map" "urlmap" {
         strip_query            = false
       }
     }
-
   }
   host_rule {
     description  = "remove www. prefixes"
