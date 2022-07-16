@@ -38,6 +38,18 @@ const Post = ({ posts, post }) => {
         pageImage={
           helpers.isValidUrl(post.featuredImage) ? post.featuredImage : ""
         }
+        openGraph={{
+          url: helpers.getPostSlug(post.title, post.id),
+          title: post.title,
+          description: rawPostContent.substring(0, 150),
+          images: [
+            {
+              url: post.featuredImage,
+              alt: post.title,
+            },
+          ],
+          site_name: "Amplication Blog",
+        }}
       />
 
       <div className="page min-h-screen flex flex-col justify-start justify-items-stretch max-medium:overflow-hidden pt-[65px] laptop:pt-[110px] bg-purple-dark">
