@@ -285,7 +285,7 @@ const TeamBlock = () => {
         '                  the team',
       content: 'We are a small, dedicated team, revolutionizing the speed and\n' +
         '                  ease of cloud development for professional developers',
-      linkUrl: 'https://amplication.breezy.hr/',
+      linkUrl: 'https://amplication.com/jobs',
       linkText: 'Come work with us',
     },
   ];
