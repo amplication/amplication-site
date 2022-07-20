@@ -19,7 +19,7 @@ const GetList = () => {
       <section className="bg-transparent">
         <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop ">
           <div className="row align-items-center justify-content-center mb-4">
-            <h2 className="h2 text-center">What do you get?</h2>
+            <h2 className="h2 text-center">What do you get from Amplication?</h2>
           </div>
           <div className="features">
             <div className="col-12 pt-4 row d-flex justify-content-between align-items-start" id="features">

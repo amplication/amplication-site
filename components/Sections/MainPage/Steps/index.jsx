@@ -31,7 +31,7 @@ const Steps = () => {
       <section className="page-steps">
         <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
           <div className="row align-items-center justify-content-center mb-4">
-            <h2 className="h2 text-center">How does it work?</h2>
+            <h2 className="h2 text-center">How Amplication backend developmet platform works?</h2>
           </div>
 
           <div className="row feature d-flex justify-content-between align-items-center">
