@@ -4,14 +4,14 @@ const AboutUs = () => {
       <section className="page-about bg-transparent">
         <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
           <div className="mb-4 text-center">
-            <h2 className="h2 text-center">Who are we?</h2>
+            <h2 className="h2 text-center">Helping developers building better and faster</h2>
             <div className="row">
-              <h3 className="h3 col-12 col-lg-8 offset-lg-2 pr-4 pl-4 text-lg text-white">
+              <p className="h3 col-12 col-lg-8 offset-lg-2 pr-4 pl-4 text-lg text-white">
                 We are a group of creators who love open-source and
                 low-code. We believe that low-code application
                 development will evolve into a modern-day
                 programming&nbsp;language.
-              </h3>
+              </p>
             </div>
           </div>
 
@@ -25,9 +25,9 @@ const AboutUs = () => {
                   we do
                 </div>
                 <div className={'text-base text-white'}>
-                  Our vision is to create one platform which will empower
-                  professional developers in creating business applications and
-                  extend platform capabilities, with the open-source
+                  Our vision is to create one platform for node js app development
+                  that will empower professional developers in creating business
+                  applications and extend platform capabilities, with the open-source
                   community&apos;s power of collaboration & transparency.
                 </div>
               </div>
