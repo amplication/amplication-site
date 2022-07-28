@@ -35,7 +35,7 @@ const Features = () => {
       icon: GraphQLIcon,
       image: GraphQLImage,
       iconClass: "feature-page-icon first-color",
-      title: "GraphQL",
+      title: "Instant GraphQL",
       content:
         "Amplication generates production-ready, self-documenting GraphQL\n" +
         "                API for all your data models. The API is generated with\n" +
@@ -80,8 +80,8 @@ const Features = () => {
         "              APIs including response filtering on specific fields.\n" +
         "              <br /><br />\n" +
         "              Choose one or more of the built-in authentication providers, and\n" +
-        "              get your generated app with built-in support both on server-side\n" +
-        "              and client-side.",
+        "              get your generated Node.js app with built-in support both on \n" +
+        "              server-side and client-side.",
       buttons: [],
     },
     {
@@ -89,7 +89,7 @@ const Features = () => {
       icon: AdminIcon,
       image: AdminImage,
       iconClass: "feature-page-icon first-color",
-      title: "Admin UI",
+      title: "React Admin UI",
       content:
         "Start working with your application in minutes. Amplication\n" +
         "              generates a React client with ready-made forms for creating and\n" +
@@ -106,15 +106,15 @@ const Features = () => {
       icon: CodeGenerationIcon,
       image: CodeGenerationImage,
       iconClass: "feature-page-icon",
-      title: "Code Generation",
+      title: "Node.js Code Generation",
       content:
         "Save time on boilerplate and repetitive tasks with low-code but\n" +
         "              keep working on your core business logic with pro-code.\n" +
         "              <br /><br />\n" +
-        "              Amplication generates human-readable and human-editable node.js\n" +
-        "              application for the back-end and React application for the client.\n" +
-        "              The applications are generated with high standard TypeScript that\n" +
-        "              you can easily customize and make your own.",
+        "              Amplication is a Node.js backend development platform.\n" +
+        "              It generates human-readable and human-editable Node.js.\n" +
+        "              applications for the backend and a React application \n" +
+        "              for the client.",
       buttons: [],
     },
     {
@@ -148,7 +148,7 @@ const Features = () => {
       icon: DeploymentIcon,
       image: DeploymentImage,
       iconClass: "feature-page-icon",
-      title: "Deployment",
+      title: "Application Deployment",
       content:
         "When working with Amplication, all your committed changes are\n" +
         "              continuously deployed to a sandbox environment on the Amplication\n" +
@@ -168,9 +168,8 @@ const Features = () => {
       content:
         "Amplication is an open-source project built for developers by the\n" +
         "              open-source community.\n" +
-        "              <br /><br />\n" +
         "              Join us in building the next generation of development tools.\n" +
-        "              <br /><span><b>Any contribution counts.</b></span>",
+        "              <span><b>Any contribution counts.</span>",
       buttons: [
         {
           title: "GitHub",
@@ -191,10 +190,10 @@ const Features = () => {
       icon: integrationIcon,
       image: integrationImage,
       iconClass: "feature-page-icon first-color",
-      title: "Integration & Webhooks",
+      title: "Custom Code & Webhooks Integration",
       content:
         "Integration with any external service is available through custom\n" +
-        "              code or webhooks. Once you generate your app based on your data\n" +
+        "              code or webhooks. Once you generate your Node/js app based on your data\n" +
         "              model, you can custom code and integrate it with any external app.\n" +
         "              You can also use webhooks to trigger external apps based on events\n" +
         "              or database change update.",
@@ -206,7 +205,7 @@ const Features = () => {
       icon: versionControlIcon,
       image: versionControlImage,
       iconClass: "feature-page-icon",
-      title: "Version Control",
+      title: "Application Version Control",
       content:
         "Amplication has version control built-in which enables you to\n" +
         "              visually see any app change and how it's being reflected in the\n" +
@@ -219,7 +218,7 @@ const Features = () => {
       icon: syncGithubIcon,
       image: syncGithubImage,
       iconClass: "feature-page-icon third-color",
-      title: "Sync with Github",
+      title: "GitHub Sync",
       content:
         "Amplication can push the code of your app to a GitHub repository.\n" +
         "              Every app developed on Amplication platform is translated to a\n" +
@@ -248,10 +247,8 @@ const Features = () => {
   return (
     <>
       <NextSeo
-        title="Amplication - Generate Node.js apps, just code what matters"
-        description="Amplication is an open‑source development tool. It helps you develop
-        quality Node.js applications without spending time on repetitive
-        coding tasks."
+        title="Node.js Backend Development Platform | Amplication"
+        description="Amplication is the most flexible open-source backend development platform for Node.js applications. Design models and roles, deploy your app, connect with REST or GraphQL API, sync with GitHub. Built for developers, by developers."
       />
 
       <div className="page bg-dark-black-100 min-h-screen flex flex-col justify-start justify-items-stretch overflow-hidden pt-[60px] laptop:pt-[110px] bg-purple-dark relative">
