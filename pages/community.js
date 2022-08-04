@@ -26,8 +26,8 @@ const Community = () => {
 
           <div className="bg-gradient-community">
             <CommunitySpread />
-            <CommunitySupport />
             <CommunityChampions />
+            <CommunitySupport />
           </div>
         </main>
 
