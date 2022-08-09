@@ -83,10 +83,11 @@ const PricesTable = () => {
                 platform contains stable, documented, secured, and supported
                 production-ready open-source components & packages. Your app is
                 stable, scalable, and production-ready you can deploy and rely
-                on. Read more about the generated app and its stack
+                on. Read more about the generated app and its stack 
                 <Link href={'https://docs.amplication.com/docs/getting-started/'}>
-                  <a> here</a>
+                  <a>here</a>
                 </Link>
+                .
               </h3>
             </div>
           </div>
