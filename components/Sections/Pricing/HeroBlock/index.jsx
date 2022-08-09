@@ -10,7 +10,7 @@ const HeroBlock = () => {
               <h3 className="h3 text-white">
                 Amplication is an open-source project built by developers for
                 developers. Our main objective is to provide a free lifetime
-                `&#34;community developer license`&#34; to every developer around the
+                &#34;community developer license&#34; to every developer around the
                 world.
               </h3>
             </div>
