@@ -17,7 +17,7 @@ const Developers = () => {
               </div>
 
               <ul className="type-list">
-                <li className={'text-base text-white'}>Use Amplication UI or CLI to create your app</li>
+                <li className={'text-base text-white'}>Use Amplication UI or CLI to create your Node.JS app</li>
                 <li className={'text-base text-white'}>
                   Design data models and create REST & GraphQL APIs
                   without&nbsp;coding.

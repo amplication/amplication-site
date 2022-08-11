@@ -48,7 +48,7 @@ const AboutUs = () => {
             </div>
             <div className="col-md-12 mb-4">
               <div className="about-wrapper-2">
-                <h2 className="h2">Low-Code 💜 <br></br>Open-Source</h2>
+                <h2 className="h2">App Development 💜 <br></br>Open-Source</h2>
                 <div className="">
                   <div className="about-box">
                     <div className="bracket-box">
