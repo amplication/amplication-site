@@ -33,10 +33,8 @@ const Team = () => {
   return (
     <>
       <NextSeo
-        title="Amplication - Generate Node.js apps, just code what matters"
-        description="Amplication is an open‑source development tool. It helps you develop
-          quality Node.js applications without spending time on repetitive
-          coding tasks."
+        title="Most flexible backend developent platform | Pricing | Amplciation"
+        description="Amplication is an open-source platform built by developers for developers. We provide forever-free community developer license alongside flexible enterprise plans"
       />
 
       <div className="page bg-dark-black-100 min-h-screen flex flex-col justify-start justify-items-stretch overflow-hidden pt-[60px] laptop:pt-[110px] bg-purple-dark relative">
