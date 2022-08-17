@@ -73,7 +73,7 @@ const PricesTable = () => {
             <div className="col-12 col-md-8 offset-md-2">
               <h1 className="main-title">Public Beta users</h1>
               <h3 className="h3 text-white">
-                While we`&quot;re in Beta Amplication is free to use. In the future,
+                While we&apos;re in Beta Amplication is free to use. In the future,
                 we will offer a free community plan and additional paid business
                 plans.
               </h3>
@@ -83,10 +83,11 @@ const PricesTable = () => {
                 platform contains stable, documented, secured, and supported
                 production-ready open-source components & packages. Your app is
                 stable, scalable, and production-ready you can deploy and rely
-                on. Read more about the generated app and its stack
+                on. Read more about the generated app and its stack 
                 <Link href={'https://docs.amplication.com/docs/getting-started/'}>
-                  <a> here</a>
+                  <a>here</a>
                 </Link>
+                .
               </h3>
             </div>
           </div>
