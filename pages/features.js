@@ -111,8 +111,8 @@ const Features = () => {
         "Save time on boilerplate and repetitive tasks with low-code but\n" +
         "              keep working on your core business logic with pro-code.\n" +
         "              <br /><br />\n" +
-        "              Amplication is a Node.js backend development platform.\n" +
-        "              It generates human-readable and human-editable Node.js.\n" +
+        "              Amplication is a Node.JS backend development platform.\n" +
+        "              It generates human-readable and human-editable Node.JS.\n" +
         "              applications for the backend and a React application \n" +
         "              for the client.",
       buttons: [],
@@ -141,7 +141,7 @@ const Features = () => {
         "              Command Line Interface (CLI). Actions available in our data model\n" +
         "              app designer GUI version are also available through our CLI. Using\n" +
         "              Amplication CLI you can execute pre-defined long scripts which can\n" +
-        "              be used as templates and as an import-export mechanism",
+        "              be used as templates and as an import-export mechanism.",
     },
     {
       id: "deployment",
@@ -205,7 +205,7 @@ const Features = () => {
       icon: versionControlIcon,
       image: versionControlImage,
       iconClass: "feature-page-icon",
-      title: "Application Version Control",
+      title: "Version Control",
       content:
         "Amplication has version control built-in which enables you to\n" +
         "              visually see any app change and how it's being reflected in the\n" +
@@ -248,7 +248,7 @@ const Features = () => {
     <>
       <NextSeo
         title="Node.js Backend Development Platform | Amplication"
-        description="Amplication is the most flexible open-source backend development platform for Node.js applications. Design models and roles, deploy your app, connect with REST or GraphQL API, sync with GitHub. Built for developers, by developers."
+        description="Amplication is the most flexible open-source backend development platform for Node.JS applications. Design models and roles, deploy your app, connect with REST or GraphQL API, sync with GitHub. Built for developers, by developers."
       />
 
       <div className="page bg-dark-black-100 min-h-screen flex flex-col justify-start justify-items-stretch overflow-hidden pt-[60px] laptop:pt-[110px] bg-purple-dark relative">

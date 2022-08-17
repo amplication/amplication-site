@@ -30,10 +30,10 @@ const HeroBlock = () => {
                       <span>Logging.</span>
                     </div>
                     <div className="explainer text-base text-white">
-                      Amplication is an&nbsp;
+                      Amplication is a&nbsp;
                       <span className="highlight">flexible open-source Node.js app</span> development
-                      tool. It helps you build production-ready Node.js applications
-                      without wasting time on repetitive&nbsp;coding.
+                      tool. It helps you build production-ready Node.js backend
+                      without wasting time on repetative&nbsp;coding.
                     </div>
                   </div>
                   <div className="buttons-wrapper d-flex mb-4 align-items-center justify-content-start mt-4">

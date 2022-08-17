@@ -110,7 +110,7 @@ const Steps = () => {
           <div className="row feature d-flex justify-content-between align-items-center">
             <div className="col-sm-12 col-md-6 pr-3 order-md-2 pr-md-3 pl-lg-5">
               <div className="bracket-box">
-                <span>Deploy</span> your Node.js app in one click
+                <span>Deploy</span> your app
               </div>
               <div className="feature-description text-base text-white">
                 Deploy your app to the Amplication cloud, or get a Docker

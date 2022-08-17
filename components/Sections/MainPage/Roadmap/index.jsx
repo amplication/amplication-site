@@ -13,9 +13,9 @@ const Roadmap = () => {
        
               What&apos;s next? <br/>Great things coming down the <span style={mystyle}>&lt;roadmap&gt;</span>
             </h2>
-            <h2 className="roadmap-paragraph">
+            <p className="roadmap-paragraph">
             While we continuously work alongside our community to make Amplication Community Edition better,<br/> we are extending its capabilities into Enterprise Edition to meet the requirements and standards<br/> of large-scale organizations and enterprises. 
-            </h2>
+            </p>
           </div>
           <div className="row d-flex justify-content-between align-items-stretch">
             <div className="col-sm-12 col-md-6 col-lg-4">
