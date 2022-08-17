@@ -93,7 +93,7 @@ const Roadmap = () => {
               </div>
             </div>
           </div><br/><div  className="roadmap-link">
-          Want to dive into features? Check out our <a className="official-roadmap-link" href="https://docs.amplication.com/docs/about/roadmap"> official public roadmap</a> to learn more. 
+          Want to dive into features? Check out our <a className="official-roadmap-link" href="https://docs.amplication.com/docs/about/roadmap/"> official public roadmap</a> to learn more. 
           </div>
         </div>
       </section>

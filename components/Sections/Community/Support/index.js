@@ -66,7 +66,7 @@ const Support = () => {
                 new&nbsp;articles.
               </div>
               <div className='actions'>
-                <Link href='https://docs.amplication.com/docs/getting-started'>
+                <Link href='https://docs.amplication.com/docs/getting-started/'>
                   <a target='_blank' className='btn btn-primary'>
                     Read the docs
                   </a>
