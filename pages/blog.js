@@ -14,9 +14,7 @@ const Home = ({ posts, tags }) => {
     <>
       <NextSeo
         title="Amplication's Blog"
-        description="Amplication is an open‑source development tool. It helps you develop
-        quality Node.js applications without spending time on repetitive
-        coding tasks."
+        description="Boost your knowledge and step up your game with top storys on backend development, Node.js and open-source from the Amplication team."
       />
 
       <div className="page bg-dark-black-100 min-h-screen flex flex-col justify-start justify-items-stretch overflow-hidden pt-[60px] laptop:pt-[110px] bg-purple-dark relative">

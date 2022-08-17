@@ -9,10 +9,8 @@ const Team = () => {
   return (
     <>
       <NextSeo
-        title="Amplication - Generate Node.js apps, just code what matters"
-        description="Amplication is an open‑source development tool. It helps you develop
-          quality Node.js applications without spending time on repetitive
-          coding tasks."
+        title="Meet the Team | Amplication"
+        description="Meet the team behind Amplication! The open-source development tool that allows you to build production-ready Node.js applications in minutes.  Click here to learn more."
       />
 
       <div className="page bg-dark-black-100 min-h-screen flex flex-col justify-start justify-items-stretch overflow-hidden pt-[60px] laptop:pt-[110px] bg-purple-dark relative">
