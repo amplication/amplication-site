@@ -84,7 +84,7 @@ const PricesTable = () => {
                 production-ready open-source components & packages. Your app is
                 stable, scalable, and production-ready you can deploy and rely
                 on. Read more about the generated app and its stack
-                <Link href={'https://docs.amplication.com/docs/getting-started'}>
+                <Link href={'https://docs.amplication.com/docs/getting-started/'}>
                   <a> here</a>
                 </Link>
               </h3>

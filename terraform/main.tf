@@ -110,15 +110,6 @@ module "lb-http" {
   }
 }
 
-locals {
-  paths = toset([
-    "getting-started",
-    "sync-with-github",
-    "deploy",
-    "cli",
-  ])
-}
-
 resource "google_compute_url_map" "urlmap" {
   name            = var.lb_name
   default_service = module.lb-http.backend_services[keys(module.lb-http.backend_services)[0]].self_link
@@ -156,7 +147,7 @@ resource "google_compute_url_map" "urlmap" {
       paths = ["/docs"]
       url_redirect {
         host_redirect          = "docs.amplication.com"
-        https_redirect         = true
+        https_redirect         = false
         redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
         strip_query            = false
       }
@@ -166,12 +157,11 @@ resource "google_compute_url_map" "urlmap" {
       paths = ["/docs/*"]
       url_redirect {
         host_redirect          = "docs.amplication.com"
-        https_redirect         = true
+        https_redirect         = false
         redirect_response_code = "MOVED_PERMANENTLY_DEFAULT"
         strip_query            = false
       }
     }
-
   }
   host_rule {
     description  = "remove www. prefixes"
