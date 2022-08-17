@@ -171,9 +171,9 @@ const SubscribeForm = ({isCompactView}) => {
             }
             {!formSuccess &&
             <>
-              <h2 className={titleClasses}>
+              <div className={titleClasses}>
                 Sign up to stay up-to-date with our latest developments. We promise not to spam you.
-              </h2>
+              </div>
               <form className={formClasses} onSubmit={(e) => submitSubscriptionForm(e)}>
                 <div className={(emailFieldError ? fieldContainerClasses : fieldContainerClasses + ' pb-5')}>
                   <div className='relative'>

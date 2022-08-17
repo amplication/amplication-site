@@ -27,7 +27,7 @@ const PostCard = (props) => {
                 date={ post.createdAt }
               />
               <Tags list={post.tags}/>
-              <Title level={2} className="text-lg font-medium mt-4">
+              <Title className="text-lg font-medium mt-4">
                 { post.title }
               </Title>
             </div>

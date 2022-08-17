@@ -16,7 +16,7 @@ Title.propTypes = {
 };
 
 Title.defaultProps = {
-  level: 2,
+  level: null,
   text: '',
 }
 
