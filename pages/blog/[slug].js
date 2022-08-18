@@ -135,7 +135,6 @@ const Post = ({ posts, post }) => {
               <div className="w-full pt-4 pb-6 laptop:py-16 desktop:pt-0 order-4">
                 <div className="w-full mb-6 laptop:mb-8">
                   <Title
-                    level={2}
                     className="text-2xl laptop:text-[32px] leading-9 laptop:leading-[48px] font-semibold text-white"
                   >
                     Related Posts<span className="text-[#53DBEE]">.</span>

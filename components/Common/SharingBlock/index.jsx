@@ -10,9 +10,9 @@ const SharingBlock = () => {
 
   return (
     <div className='w-full'>
-      <h4 className='w-full text-white text-2xl font-poppins font-semibold text-left mb-4'>
+      <div className='w-full text-white text-2xl font-poppins font-semibold text-left mb-4'>
         Share this post.
-      </h4>
+      </div>
       <ul className='w-full flex justify-start items-center flex-wrap gap-2.5'>
         <li className='flex justify-center items-center transition-opacity hover:opacity-50'>
           <LinkedinShareButton
