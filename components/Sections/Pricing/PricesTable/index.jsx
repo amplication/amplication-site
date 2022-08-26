@@ -1,7 +1,10 @@
 import Link from "next/link";
 import PriceItem from "../../../Common/PriceItem";
-
 const PricesTable = () => {
+  const mystyle = {
+    color:"#A787FF"
+  };
+  
   const priceItems = [
     {
       name: 'Community',
@@ -67,26 +70,16 @@ const PricesTable = () => {
 
   return (
     <>
-      <section className="page-2 bg-dark">
+      <section className="page-2">
         <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
           <div className="row d-flex align-items-end align-items-md-center">
-            <div className="col-12 col-md-8 offset-md-2">
-              <h1 className="main-title">Public Beta users</h1>
+            <div className="col-12">
+              <h1 className="main-title-price">Accelerate your backend development.<br/><span style={mystyle}>Start FREE </span></h1>
+              <h2 className="h2 text-white">
+              Production-ready Node.js applications
+              </h2>
               <h3 className="h3 text-white">
-                While we`&quot;re in Beta Amplication is free to use. In the future,
-                we will offer a free community plan and additional paid business
-                plans.
-              </h3>
-              <h3 className="h3 text-white">
-                Although Amplication is currently in Beta, your generated apps
-                are production-ready. Every app generated using Amplication
-                platform contains stable, documented, secured, and supported
-                production-ready open-source components & packages. Your app is
-                stable, scalable, and production-ready you can deploy and rely
-                on. Read more about the generated app and its stack
-                <Link href={'https://docs.amplication.com/docs/getting-started/'}>
-                  <a> here</a>
-                </Link>
+              Amplication is the most flexible open-source backend development platform, built by developers for developers. We provide a lifetime value, at no cost, with our Community and Free Cloud editions.
               </h3>
             </div>
           </div>
@@ -113,6 +106,31 @@ const PricesTable = () => {
             </div>
           </div>
         }
+{/*         
+        {(features.length > 0) &&
+        
+          <div className="row">
+            <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
+          <div className="row align-items-center justify-content-center mb-1 ">
+            <div className="team-action-panels">
+              {features.map((feature, index) => {
+                return (
+                  
+                  <FeatureItem
+                    key={index}
+                    image={feature.image}
+                    alt={feature.alt}
+                    title={feature.title}
+                    content={feature.content}
+                    linkUrl={feature.linkUrl}
+                    linkText={feature.linkText}
+                  />
+                )
+              })}
+            </div>
+          </div></div></div>
+        } */}
+        
       </section>
     </>
   )

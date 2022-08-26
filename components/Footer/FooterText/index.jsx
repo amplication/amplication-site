@@ -1,11 +1,40 @@
-const FooterText = () => {
+import FooterBanner from "../FooterBanner";
+import FooterBottomBar from "../FooterBottomBar";
+import FooterContent from "../FooterContent";
+import PropTypes from "prop-types";
+
+const Footer = ({compactView, isBlog}) => {
   return (
-    <div className='w-full text-center mb-14 px-2 laptop:shrink-0 laptop:w-2/5 laptop:p-0 laptop:max-w-lg laptop:mr-auto laptop:my-0'>
-      <p className='font-poppins font-semibold text-3xl text-white text-center laptop:text-6xl laptop:text-left'>
-        We would <span className='text-turquoise laptop:font-dmmono laptop:font-medium'>love</span> to hear from you.
-      </p>
-    </div>
+    <>
+      <footer className='w-full mt-auto relative overflow-hidden z-10 laptop:mt-0'>
+        <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop'>
+
+          {!compactView &&
+            <>
+              {/*Banner*/}
+              {/* <FooterBanner/> */}
+
+              {/*Footer Main Content*/}
+              <FooterContent/>
+            </>
+          }
+
+          {/*Footer Bottom Bar*/}
+          <FooterBottomBar/>
+        </div>
+      </footer>
+    </>
   )
 }
 
-export default FooterText
+Footer.propTypes = {
+  compactView: PropTypes.bool,
+  isBlog: PropTypes.bool,
+};
+
+Footer.defaultProps = {
+  isLink: false,
+  isBlog: false
+};
+
+export default Footer
