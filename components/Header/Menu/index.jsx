@@ -101,7 +101,7 @@ const Menu = () => {
                   <Link
                     href={item.href}
                   >
-                    <a className={`text-xl py-3 inline-block laptop:text-base laptop:p-1 ${(item.isActive ? 'text-white' : 'text-[#A3A8B8]')}`} target={item.target}>
+                    <a className={`text-xl py-3 inline-block hover:text-white laptop:text-base laptop:p-1 ${(item.isActive ? 'text-white' : 'text-[#A3A8B8]')}`} target={item.target} >
                       {item.title}
                     </a>
                   </Link>
