@@ -41,9 +41,12 @@
   "devDependencies": {
     "@tailwindcss/forms": "^0.4.0",
     "@tailwindcss/line-clamp": "^0.3.1",
+    "@types/markdown-it": "^12.2.3",
     "autoprefixer": "^10.4.2",
     "eslint": "8.9.0",
     "eslint-config-next": "12.1.0",
+    "feed": "^4.2.2",
+    "markdown-it": "^13.0.1",
     "postcss": "^8.4.6",
     "prop-types": "^15.8.1",
     "sharp": "^0.30.3",
