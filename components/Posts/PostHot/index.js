@@ -8,6 +8,9 @@ import PropTypes from "prop-types";
 
 const PostHot = (props) => {
   const post = props.data;
+  const abridgedContent = helpers
+    .removeMarkdown(post?.content ?? "")
+    .substring(0, 200);
   if (Object.keys(post).length) {
     return (
       <Link href={helpers.getPostSlug(post.title, post.id)} passHref>
@@ -29,6 +32,11 @@ const PostHot = (props) => {
             >
               <span className="text-white">{post.title}</span>
             </Title>
+            {abridgedContent.length ? (
+              <div className="text-[15px] text-white line-clamp-2 laptop:text-base leading-6">
+                {abridgedContent}
+              </div>
+            ) : null}
           </div>
           <div className="w-full overflow-hidden laptop:w-1/2 rounded-t-2xl laptop:rounded-l-none overflow-hidden laptop:min-h-[360px]">
             <div className="laptop:h-full">
