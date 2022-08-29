@@ -18,23 +18,13 @@ export const getServerSideProps = async (context) => {
             featuredImage
             content
             tags {
-              id
               name
             }
             author {
-              id
               firstName
               lastName
-              profileImage
             }
             createdAt
-          }
-          tags {
-            id
-            name
-            posts(take: 1) {
-              id
-            }
           }
         }
       `,
