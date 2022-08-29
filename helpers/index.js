@@ -11,7 +11,11 @@ const helpers = {
 
     return url.protocol === 'http:' || url.protocol === 'https:';
   },
-
+  /**
+   * @param {string} string 
+   * @param {{[key: string]: boolean}} options 
+   * @returns {string}
+   */
   removeMarkdown: ( string, options ) => {
     options = options || {
       stripListLeaders: true,

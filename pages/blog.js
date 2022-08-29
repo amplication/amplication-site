@@ -55,6 +55,7 @@ export const getServerSideProps = async (context) => {
             id
             title
             featuredImage
+            content
             tags {
               id
               name
