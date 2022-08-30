@@ -9070,6 +9070,12 @@ body {
     text-align: left;
     font-size: 3rem;
 }
+.amplication-base section .main-title.pricing {
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 3.75rem;
+    text-align: left;
+}
 @media (max-width: 991.98px) {
     .amplication-base .animated-header .main-title {
         font-size: 3rem !important;
@@ -9077,7 +9083,7 @@ body {
 }
 @media (max-width: 767.98px) {
     .amplication-base .animated-header .main-title {
-        font-size: 2rem !important;
+        font-size: 1.5rem !important;
         line-height: 1.5;
     }
 }
@@ -10509,24 +10515,26 @@ font-weight: 400;
     margin-top: 2rem;
 }
 .amplication-base .pricing-page section.page-1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    text-align: left;
+    padding-top: 20vh;
+    padding-bottom: 5vh;
 }
-.amplication-base .pricing-page .container-pricing {
-    /*max-width: 90vw;*/
+@media (max-width: 991.98px) {
+    .amplication-base .pricing-page section.page-1 {
+        padding-top: 15vh !important;
+    }
+}
+@media (max-width: 767.98px) {
+    .amplication-base .pricing-page section.page-1 {
+        padding-top: 10vh !important;
+    }
 }
 .amplication-base .pricing-page section.page-2,
 .amplication-base .pricing-page section.page-3,
 .amplication-base .pricing-page section.page-4 {
     text-align: center;
-    padding-top: 15vh;
-    padding-bottom: 15vh;
-}
-.amplication-base .pricing-page section.page-3,
-.amplication-base .pricing-page section.page-4 {
-    min-height: 0;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
 }
 .amplication-base .pricing-page .pricing-plans {
     display: flex;

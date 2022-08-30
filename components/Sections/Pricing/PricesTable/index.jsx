@@ -67,31 +67,7 @@ const PricesTable = () => {
 
   return (
     <>
-      <section className="page-2 bg-dark">
-        <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
-          <div className="row d-flex align-items-end align-items-md-center">
-            <div className="col-12 col-md-8 offset-md-2">
-              <h1 className="main-title">Public Beta users</h1>
-              <h3 className="h3 text-white">
-                While we&apos;re in Beta Amplication is free to use. In the future,
-                we will offer a free community plan and additional paid business
-                plans.
-              </h3>
-              <h3 className="h3 text-white">
-                Although Amplication is currently in Beta, your generated apps
-                are production-ready. Every app generated using Amplication
-                platform contains stable, documented, secured, and supported
-                production-ready open-source components & packages. Your app is
-                stable, scalable, and production-ready you can deploy and rely
-                on. Read more about the generated app and its stack 
-                <Link href={'https://docs.amplication.com/docs/getting-started/'}>
-                  <a>here</a>
-                </Link>
-                .
-              </h3>
-            </div>
-          </div>
-        </div>
+      <section className="bg-transparent page-2">
         {(priceItems.length > 0) &&
           <div className="container-custom container-pricing">
             <div className="row d-flex align-items-end align-items-md-center">
