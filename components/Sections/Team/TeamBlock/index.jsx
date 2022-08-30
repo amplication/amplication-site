@@ -14,6 +14,7 @@ import michaelSolati from '../../../../public/images/team/michael-solati.png';
 import eugineTseitlin from '../../../../public/images/team/eugene-tseitlin.png';
 import shimiBar from '../../../../public/images/team/shimi.png';
 import arielWeinberger from '../../../../public/images/team/ariel.png';
+import toddFeinroth from '../../../../public/images/team/todd.png'
 
 import talkWithUs from '../../../../public/images/icons/talk-with-with-team.svg';
 import joinUs from '../../../../public/images/icons/join-the-team.svg';
@@ -35,6 +36,22 @@ const TeamBlock = () => {
         },
         {
           href: 'https://twitter.com/arielweinberger',
+          iconClass: 'twitter',
+        }
+      ]
+    },
+    {
+      name: 'Todd Feinroth',
+      position: 'VP Sales',
+      image: toddFeinroth,
+      links: [
+        {
+          href: 'https://www.linkedin.com/in/todd-feinroth-76a065168/',
+          iconClass: 'linkedin',
+        },
+        
+        {
+          href: 'https://twitter.com/sailsmantf',
           iconClass: 'twitter',
         }
       ]
