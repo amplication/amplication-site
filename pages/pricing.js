@@ -29,7 +29,7 @@ const Pricing = () => {
             <CTA />
           </div>
         </main>
-        <Footer />
+        <Footer hideBanner/>
         <Background />
       </div>
     </>
