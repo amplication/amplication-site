@@ -60,6 +60,7 @@ const PricesTable = () => {
         text: "Try for free",
         href: "https://app.amplication.com/",
       },
+      partial: true,
     },
     {
       name: "Enterprise",
@@ -76,9 +77,9 @@ const PricesTable = () => {
   return (
     <>
       <section className="bg-transparent page-2">
-        {plans.length > 0 && (
-          <div className="container-custom">
-            <div className="row d-flex">
+        <div className="container-custom">
+          <div className="row d-flex">
+            <div className="d-none d-lg-block">
               <table>
                 <thead>
                   <tr>
@@ -129,8 +130,59 @@ const PricesTable = () => {
                 <p className="text-left">* Partial</p>
               </div>
             </div>
+
+            <div className="d-lg-none">
+              {plans.map((plan, i) => (
+                <div key={i}>
+                  <table>
+                    <thead>
+                      <tr>
+                        <td></td>
+                        <td className={plan.className}>
+                          <h3>{plan.name}</h3>
+                          <p>{plan.description}</p>
+                          <PricesTableCTA cta={plan.cta} />
+                        </td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {features.map((feature, o) => (
+                        <tr key={o}>
+                          <td>
+                            {Array.isArray(feature) ? (
+                              feature.map((str, u) => (
+                                <p className="m-0" key={u}>
+                                  {str}
+                                </p>
+                              ))
+                            ) : (
+                              <p className="m-0">{feature}</p>
+                            )}
+                          </td>
+                          <td className={plan.className}>{plan.features[o]}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <td></td>
+                        <td className={plan.className}>
+                          <PricesTableCTA cta={plan.cta} />
+                        </td>
+                      </tr>
+                    </tfoot>
+                  </table>
+                  {plan.partial && (
+                    <div className="mt-4">
+                      <p className="text-left">* Partial</p>
+                    </div>
+                  )}
+                  <br />
+                </div>
+              ))}
+            </div>
           </div>
-        )}
+        </div>
       </section>
     </>
   );
