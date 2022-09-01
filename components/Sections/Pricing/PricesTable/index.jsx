@@ -1,98 +1,139 @@
-import Link from "next/link";
-import PriceItem from "../../../Common/PriceItem";
+import Button from "../../../Common/Button";
+
+const PricesTableCTA = ({ cta }) => {
+  return cta.href ? (
+    <Button
+      text={cta.text}
+      backgroundColor="purpleBright"
+      hoverBackgroundColor="purpleBrightHover"
+      isLink={true}
+      isAlignFull={true}
+      href={cta.href}
+    />
+  ) : (
+    <Button
+      text={cta.text}
+      backgroundColor="purpleBright"
+      hoverBackgroundColor="purpleBrightHover"
+      isLink={false}
+      isAlignFull={true}
+      onClick={cta.onClick}
+    />
+  );
+};
 
 const PricesTable = () => {
-  const priceItems = [
+  const features = [
+    [
+      "Core backend functionality:",
+      "- Database",
+      "- Roles & permissions",
+      "- GraphQL & REST APIs",
+      "- Admin UI",
+      "- Docker",
+      "- Custom code",
+    ],
+    "Self managed/ on-prem",
+    "Private plugins",
+    "Continuous sync with GitHub",
+    "CI & Git bot",
+    "Audit logs",
+    "SSO",
+    "2FA (two-factor authentication)",
+    "Support",
+  ];
+  const plans = [
     {
-      name: 'Community',
-      price: 'Free!',
-      description: 'Great for open-source projects, and free for lifetime',
-      features: [
-        'Generate and own your code',
-        'Unlimited public apps',
-        '2 Developers',
-        '3 Roles',
-        '1 Sandbox environment',
-        '5 Deployments to sandbox per day',
-        'Github integration with public repos',
-      ],
-      withButton: false,
+      name: "Community",
+      description: "Perfect for open-source projects",
+      features: ["✅", "✅", "✅", "-", "-", "-", "-", "-", "Community"],
+      cta: {
+        text: "Try for free",
+        href: "https://app.amplication.com/",
+      },
     },
     {
-      name: 'Pro',
-      price: `$0 <span class="pricing-plan__instead"> $40 /month </span>`,
-      description: 'Awesome for individuals and small teams',
-      features: [
-        'Everything in Community plan',
-        '5 Private apps',
-        '4 Developers',
-        '3 Roles per app',
-        '3 Sandbox environments',
-        '50 Deployments to sandbox per day',
-        'Github integration with private repos',
-      ],
-      withButton: false,
+      name: "Free Cloud",
+      description: "Awesome for individuals and small teams",
+      features: ["✅", "-", "-", "✅", "✅*", "-", "-", "-", "Community"],
+      cta: {
+        text: "Try for free",
+        href: "https://app.amplication.com/",
+      },
     },
     {
-      name: 'Business',
-      price: `$0 <span class="pricing-plan__instead"> $199 /month </span>`,
-      description: 'Perfect for small businesses and larger teams',
-      features: [
-        'Everything in Pro plan',
-        '10 Private apps',
-        '10 Developers',
-        '10 Roles per app',
-        '5 Sandbox environments',
-        '250 Deployments to sandbox per day',
-        'Continuous Integration to private cloud',
-        'Dedicated solutions architect',
-      ],
-      withButton: false,
-    },
-    {
-      name: 'Enterprise',
-      price: `Let's talk`,
-      description: 'Price customized based on your needs',
-      features: [
-        'Unlimited Private apps',
-        'Unlimited developers',
-        'Unlimited Roles',
-        'Unlimited sandbox environments',
-        'Unlimited deployments to sandbox per day',
-        'Enterprise support and SLA',
-      ],
-      withButton: true,
+      name: "Enterprise",
+      className: "bg-black80",
+      description: "Perfect for open-source projects",
+      features: ["✅", "✅", "✅", "✅", "✅", "✅", "✅", "✅", "Enterprise "],
+      cta: {
+        text: "Contact Us",
+        onClick: () => Intercom("show"),
+      },
     },
   ];
 
   return (
     <>
       <section className="bg-transparent page-2">
-        {(priceItems.length > 0) &&
-          <div className="container-custom container-pricing">
-            <div className="row d-flex align-items-end align-items-md-center">
-              <div className="col-12">
-                <div className="pricing-plans">
-                  {priceItems.map((item, index) => {
-                    return (
-                      <PriceItem
-                        key={index}
-                        name={item.name}
-                        price={item.price}
-                        description={item.description}
-                        features={item.features}
-                        withButton={item.withButton}
-                      />
-                    )
-                  })}
-                </div>
+        {plans.length > 0 && (
+          <div className="container-custom">
+            <div className="row d-flex">
+              <table>
+                <thead>
+                  <tr>
+                    <td></td>
+                    {plans.map((plan, i) => (
+                      <td key={i} className={plan.className}>
+                        <h3>{plan.name}</h3>
+                        <p>{plan.description}</p>
+                        <PricesTableCTA cta={plan.cta} />
+                      </td>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {features.map((feature, i) => (
+                    <tr key={i}>
+                      <td>
+                        {Array.isArray(feature) ? (
+                          feature.map((str, o) => (
+                            <p className="m-0" key={o}>
+                              {str}
+                            </p>
+                          ))
+                        ) : (
+                          <p className="m-0">{feature}</p>
+                        )}
+                      </td>
+                      {plans.map((plan, o) => (
+                        <td key={o} className={plan.className}>
+                          {plan.features[i]}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td></td>
+                    {plans.map((plan, i) => (
+                      <td key={i} className={plan.className}>
+                        <PricesTableCTA cta={plan.cta} />
+                      </td>
+                    ))}
+                  </tr>
+                </tfoot>
+              </table>
+              <div className="mt-4">
+                <p className="text-left">* Partial</p>
               </div>
             </div>
           </div>
-        }
+        )}
       </section>
     </>
-  )
-}
+  );
+};
 
-export default PricesTable
+export default PricesTable;
