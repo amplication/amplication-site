@@ -194,7 +194,7 @@ const Features = () => {
       content:
         "Integration with any external service is available through custom\n" +
         "              code or webhooks. Once you generate your Node.js app based on your data\n" +
-        "              model, you can custom code and integrate it with any external app.\n" +
+        "              model, you can add custom code and integrate it with any external app.\n" +
         "              You can also use webhooks to trigger external apps based on events\n" +
         "              or database change update.",
       buttons: [],
