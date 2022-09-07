@@ -1,5 +1,4 @@
-name: Deploy Enviroment
-
+name: Deploy Manually
 on:
   push:
     branches:
@@ -9,19 +8,19 @@ on:
       environment:
         type: choice
         description: Select the environment
-        default: 'staging'
+        default: "staging"
         required: true
         options:
-        - staging
-        - production
+          - staging
+          - production
       env_action:
         type: choice
         description: Apply / Destroy env
         default: Apply
         required: true
-        options: 
-        - Apply
-        - Destroy
+        options:
+          - Apply
+          - Destroy
 
 jobs:
   deploy:
@@ -83,7 +82,5 @@ jobs:
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
           TF_VAR_image: gcr.io/amplication/blog:${{ github.sha }}
           TF_VAR_hubspot_api_key: ${{ secrets[format('{0}_hubspot_api_key', github.event.inputs.environment)] }}
-        
+
         working-directory: terraform
-
-
