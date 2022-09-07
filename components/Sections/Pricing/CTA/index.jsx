@@ -1,63 +1,85 @@
 import Title from "../../../Posts/PostCard/Title";
 import Link from "next/link";
-import Image from "next/image";
-import ImgChat from "../../../../public/images/community/chat.svg";
-import ImgDocs from "../../../../public/images/community/docs.svg";
+import Image from "next/future/image";
+import ImgDiscord from "../../../../public/images/pricing/discord.svg";
+import ImgDocs from "../../../../public/images/pricing/docs.svg";
+
+const panelStyleOverride = { flexDirection: "row" };
+const imageDivOverride = {
+  alignItems: "center",
+  display: "flex",
+  justifyContent: "center",
+  marginRight: "48px",
+};
+const contentDivOverride = {
+  flex: 1,
+  textAlign: "left",
+};
 
 const Footer = () => {
   return (
     <section className="bg-transparent page-2">
       <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
         <div className="align-items-center justify-content-center mb-5">
-          <Title level={2} className="h2">
-            We&apos;re in public beta and free to use
-          </Title>
-          <div>
-            The public beta version of Amplication provides everything you need
-            to build production-ready services.
-          </div>
-          <div>
-            Our investment in scale, reliability, and robustness ensures all the
-            services created with Amplication meet the requirements and
-            standards of large organizations and enterprises. Read more about
-            the generated app and its stack here.
+          <div className="text-left">
+            <Title level={2} className="h2">
+              We&apos;re in public beta and free to use
+            </Title>
+            <p>
+              The public beta version of Amplication provides everything you
+              need to build production-ready services.
+            </p>
+            <p>
+              Our investment in scale, reliability, and robustness ensures all
+              the services created with Amplication meet the requirements and
+              standards of large organizations and enterprises. Read more about
+              the generated app and its stack here.
+            </p>
           </div>
           <div className="action-panel-list support">
-            <div className="panel">
-              <Image src={ImgChat} alt="Chat" />
-              <div className="bracket-box">
-                <span>Chat</span>
-                with us
+            <div className="panel" style={panelStyleOverride}>
+              <div style={imageDivOverride}>
+                <Image src={ImgDiscord} alt="Discord" layout="fill" />
               </div>
-              <div className="description text-base text-white">
-                Join our Discord channel and chat with other Amplication users,
-                contributors and maintainers who would love to give a hand
-                where&nbsp;needed.
-              </div>
-              <div className="actions">
-                <Link href="https://discord.gg/Z2CG3rUFnu">
-                  <a target="_blank" className="btn btn-primary">
-                    Join our Discord channel
-                  </a>
-                </Link>
+              <div style={contentDivOverride}>
+                <div className="bracket-box">
+                  <span>Join</span>
+                  the community
+                </div>
+                <div className="description text-base text-white">
+                  Join our Discord channel and talk with other Amplication
+                  users, contributors, maintainers and our team.
+                </div>
+                <div className="actions">
+                  <Link href="https://discord.gg/Z2CG3rUFnu">
+                    <a target="_blank" className="btn btn-primary">
+                      Join now
+                    </a>
+                  </Link>
+                </div>
               </div>
             </div>
-            <div className="panel">
-              <Image src={ImgDocs} alt="Docs" />
-              <div className="bracket-box">
-                <span>Read</span>
-                the docs
+            <div className="panel" style={panelStyleOverride}>
+              <div style={imageDivOverride}>
+                <Image src={ImgDocs} alt="Docs" layout="fill" />
               </div>
-              <div className="description text-base text-white">
-                Our docs are a work in progress, and you can always find
-                new&nbsp;articles.
-              </div>
-              <div className="actions">
-                <Link href="https://docs.amplication.com/docs/getting-started/">
-                  <a target="_blank" className="btn btn-primary">
-                    Read the docs
-                  </a>
-                </Link>
+              <div style={contentDivOverride}>
+                <div className="bracket-box">
+                  <span>Read</span>
+                  our docs
+                </div>
+                <div className="description text-base text-white">
+                  Our docs are a work in progress, and you can always find Visit
+                  our documentation site to learn more about Amplication, how to
+                  get started and the generated apps.
+                </div>
+                <div className="actions">
+                  <Link href="https://docs.amplication.com/docs/getting-started/">
+                    <a target="_blank" className="btn btn-primary">
+                      Read docs
+                    </a>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

@@ -1,11 +1,15 @@
 import Button from "../../../Common/Button";
+import Image from "next/image";
+import greenItemCheck from "../../../../public/images/green-item-check.svg";
+import dash from "../../../../public/images/dash.svg";
+import ImgOpenSourceDown from "../../../../public/images/pricing/open-source-down.svg";
+import ImgOpenSourceLeft from "../../../../public/images/pricing/open-source-left.svg";
 
 const PricesTableCTA = ({ cta }) => {
   return cta.href ? (
     <Button
       text={cta.text}
-      backgroundColor="purpleBright"
-      hoverBackgroundColor="purpleBrightHover"
+      className="outline-button"
       isLink={true}
       isAlignFull={true}
       href={cta.href}
@@ -20,6 +24,23 @@ const PricesTableCTA = ({ cta }) => {
       onClick={cta.onClick}
     />
   );
+};
+
+const PricesFeatures = ({ content }) => {
+  switch (content) {
+    case "✅":
+      return <Image src={greenItemCheck} alt="Green Checkmark" />;
+    case "✅*":
+      return (
+        <>
+          <Image src={greenItemCheck} alt="Green Checkmark" /> <span>*</span>
+        </>
+      );
+    case "-":
+      return <Image src={dash} alt="Dash" />;
+    default:
+      return content;
+  }
 };
 
 const PricesTable = () => {
@@ -45,6 +66,7 @@ const PricesTable = () => {
   const plans = [
     {
       name: "Community",
+      oss: true,
       description: "Perfect for open-source projects",
       features: ["✅", "✅", "✅", "-", "-", "-", "-", "-", "Community"],
       cta: {
@@ -66,7 +88,7 @@ const PricesTable = () => {
       name: "Enterprise",
       className: "bg-black80",
       description: "Perfect for open-source projects",
-      features: ["✅", "✅", "✅", "✅", "✅", "✅", "✅", "✅", "Enterprise "],
+      features: ["✅", "✅", "✅", "✅", "✅", "✅", "✅", "✅", "Enterprise"],
       cta: {
         text: "Contact Us",
         onClick: () => Intercom("show"),
@@ -86,7 +108,18 @@ const PricesTable = () => {
                     <td></td>
                     {plans.map((plan, i) => (
                       <td key={i} className={plan.className}>
-                        <h3>{plan.name}</h3>
+                        <h3>
+                          {plan.name}
+                          {plan.oss && (
+                            <>
+                              &nbsp;
+                              <Image
+                                src={ImgOpenSourceLeft}
+                                alt="Open Source"
+                              />
+                            </>
+                          )}
+                        </h3>
                         <p>{plan.description}</p>
                         <PricesTableCTA cta={plan.cta} />
                       </td>
@@ -109,7 +142,7 @@ const PricesTable = () => {
                       </td>
                       {plans.map((plan, o) => (
                         <td key={o} className={plan.className}>
-                          {plan.features[i]}
+                          <PricesFeatures content={plan.features[i]} />
                         </td>
                       ))}
                     </tr>
@@ -139,6 +172,9 @@ const PricesTable = () => {
                       <tr>
                         <td></td>
                         <td className={plan.className}>
+                          {plan.oss && (
+                            <Image src={ImgOpenSourceDown} alt="Open Source" />
+                          )}
                           <h3>{plan.name}</h3>
                           <p>{plan.description}</p>
                           <PricesTableCTA cta={plan.cta} />
@@ -159,7 +195,9 @@ const PricesTable = () => {
                               <p className="m-0">{feature}</p>
                             )}
                           </td>
-                          <td className={plan.className}>{plan.features[o]}</td>
+                          <td className={plan.className}>
+                            <PricesFeatures content={plan.features[o]} />
+                          </td>
                         </tr>
                       ))}
                     </tbody>
