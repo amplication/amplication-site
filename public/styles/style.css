@@ -118,8 +118,6 @@ thead h6 {
 .amplication-base h4,
 .amplication-base h5,
 .amplication-base h6 {
-  align-items: center;
-  display: flex;
   margin-top: 0;
   margin-bottom: 0.5rem;
 }
@@ -11255,4 +11253,9 @@ thead h6 {
 
 .outline-button:hover {
   text-decoration: none !important;
+}
+
+.inline-content {
+  align-items: center;
+  display: flex;
 }

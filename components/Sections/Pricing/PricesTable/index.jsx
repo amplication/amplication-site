@@ -108,7 +108,7 @@ const PricesTable = () => {
                     <td></td>
                     {plans.map((plan, i) => (
                       <td key={i} className={plan.className}>
-                        <h3>
+                        <h3 className="inline-content">
                           {plan.name}
                           {plan.oss && (
                             <>
