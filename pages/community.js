@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 import CommunityHero from "../components/Sections/Community/Hero";
+import CommunityChampions from "../components/Sections/Community/Champions";
 import CommunityContribute from "../components/Sections/Community/Contribute";
 import CommunitySupport from "../components/Sections/Community/Support";
 import CommunitySpread from "../components/Sections/Community/Spread";
@@ -25,6 +26,7 @@ const Community = () => {
 
           <div className="bg-gradient-community">
             <CommunitySpread />
+            <CommunityChampions />
             <CommunitySupport />
           </div>
         </main>

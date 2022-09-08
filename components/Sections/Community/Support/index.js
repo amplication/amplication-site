@@ -7,7 +7,7 @@ import ImgDocs from '../../../../public/images/community/docs.svg';
 
 const Support = () => {
   return (
-    <section className=''>
+    <section className='bg-transparent'>
       <div className='w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop'>
         <div className='text-center align-items-center justify-content-center mb-5'>
           <Title level={2} className='h2'>Get support</Title>

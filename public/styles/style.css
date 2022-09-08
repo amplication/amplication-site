@@ -10211,6 +10211,7 @@ font-weight: 400;
     justify-content: stretch;
     align-items: stretch;
     margin-top: 4rem;
+    flex-wrap: wrap;
 }
 .amplication-base .action-panel-list .panel {
     flex: 1;
@@ -10229,24 +10230,30 @@ font-weight: 400;
 .amplication-base .action-panel-list .panel .actions {
     margin-top: 2rem;
 }
-.amplication-base .action-panel-list.build-community {
+.amplication-base .action-panel-list.build-community,
+.amplication-base .action-panel-list.champions {
     padding: 1rem 3rem;
 }
 @media (max-width: 991.98px) {
-    .amplication-base .action-panel-list.build-community {
+    .amplication-base .action-panel-list.build-community,
+    .amplication-base .action-panel-list.champions {
         padding: 0;
     }
-    .amplication-base .action-panel-list.build-community .panel {
+    .amplication-base .action-panel-list.build-community .panel,
+    .amplication-base .action-panel-list.champions .panel {
         padding: 0;
     }
-    .amplication-base .action-panel-list.build-community .panel:before {
+    .amplication-base .action-panel-list.build-community .panel:before,
+    .amplication-base .action-panel-list.champions .panel:before {
         display: none;
     }
 }
-.amplication-base .action-panel-list.build-community .panel {
+.amplication-base .action-panel-list.build-community .panel,
+.amplication-base .action-panel-list.champions .panel {
     position: relative;
 }
-.amplication-base .action-panel-list.build-community .panel:before {
+.amplication-base .action-panel-list.build-community .panel:before,
+.amplication-base .action-panel-list.champions .panel:before {
     content: "";
     position: absolute;
     top: 4rem;
@@ -10254,10 +10261,12 @@ font-weight: 400;
     right: 0;
     border-right: 1px solid #444b66;
 }
-.amplication-base .action-panel-list.build-community .panel:last-child {
+.amplication-base .action-panel-list.build-community .panel:last-child,
+.amplication-base .action-panel-list.champions .panel:last-child {
     border-right: none;
 }
-.amplication-base .action-panel-list.build-community .panel:last-child:before {
+.amplication-base .action-panel-list.build-community .panel:last-child:before,
+.amplication-base .action-panel-list.champions .panel:last-child:before {
     display: none;
 }
 .amplication-base .action-panel-list.support .panel {
