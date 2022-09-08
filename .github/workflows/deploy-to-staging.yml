@@ -1,12 +1,20 @@
 name: Deploy to Staging
 on:
-  push:
-    branches:
-      - stage
+  workflow_dispatch:
+    inputs:
+      env_action:
+        type: choice
+        description: Apply / Destroy env
+        default: Apply
+        required: true
+        options:
+          - Apply
+          - Destroy
 jobs:
   deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 120
+    if: "${{ github.event.inputs.env_action == 'Apply' }}"
     steps:
       - uses: actions/checkout@v2
       - name: Login to GCR
@@ -36,4 +44,31 @@ jobs:
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
           TF_VAR_image: gcr.io/amplication/blog:${{ github.sha }}
           TF_VAR_hubspot_api_key: ${{ secrets[format('{0}_hubspot_api_key', 'staging')] }}
+        working-directory: terraform
+  destroy:
+    runs-on: ubuntu-latest
+    if: "${{ github.event.inputs.env_action == 'Destroy' }}"
+    steps:
+      - uses: actions/checkout@v2
+      - name: Login to GCR
+        uses: docker/login-action@v1
+        with:
+          registry: gcr.io
+          username: _json_key
+          password: ${{ secrets.GOOGLE_CREDENTIALS }}
+      - uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_wrapper: false
+      - name: Terraform Init
+        run: terraform init -backend-config="prefix=amplication-blog/staging"
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+        working-directory: terraform
+      - name: Terraform destroy
+        run: terraform destroy -auto-approve -input=false --var-file=environments/staging.tfvars
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+          TF_VAR_image: gcr.io/amplication/blog:${{ github.sha }}
+          TF_VAR_hubspot_api_key: ${{ secrets[format('{0}_hubspot_api_key', 'staging')] }}
+
         working-directory: terraform
