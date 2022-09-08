@@ -25,7 +25,7 @@ const Roadmap = () => {
                   <li className="text-base done">GraphQL API</li>
                   <li className="text-base done">REST API</li>
                   <li className='text-base done'>React Admin UI</li>
-                  <li className='text-base text-white'>Subscrptions</li>
+                  <li className='text-base text-white'>Subscriptions</li>
                   <li className='text-base text-white'>Websockets</li>
                 </ul>
               </div>
