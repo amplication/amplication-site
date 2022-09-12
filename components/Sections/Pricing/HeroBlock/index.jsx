@@ -20,9 +20,10 @@ const HeroBlock = () => {
               </h2>
               <h3 className="h3 text-white">
                 Amplication is the most flexible open-source backend development
-                platform, built by developers for developers. We provide a
-                lifetime value, at no cost, with our Community and Free Cloud
-                editions.
+                platform, built by developers for developers.
+                <br />
+                We provide a lifetime value, at no cost, with our Community and
+                Free Cloud editions.
               </h3>
             </div>
           </div>

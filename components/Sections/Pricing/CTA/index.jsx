@@ -12,9 +12,13 @@ const imageDivOverride = {
   marginRight: "48px",
 };
 const contentDivOverride = {
+  height: "100%",
   flex: 1,
   textAlign: "left",
+  display: "flex",
+  flexDirection: "column",
 };
+const spacer = { flex: 1 };
 
 const Footer = () => {
   return (
@@ -50,6 +54,8 @@ const Footer = () => {
                   Join our Discord channel and talk with other Amplication
                   users, contributors, maintainers and our team.
                 </div>
+
+                <div style={spacer}></div>
                 <div className="actions">
                   <Link href="https://discord.gg/Z2CG3rUFnu">
                     <a target="_blank" className="btn btn-primary">
@@ -73,6 +79,8 @@ const Footer = () => {
                   our documentation site to learn more about Amplication, how to
                   get started and the generated apps.
                 </div>
+
+                <div style={spacer}></div>
                 <div className="actions">
                   <Link href="https://docs.amplication.com/docs/getting-started/">
                     <a target="_blank" className="btn btn-primary">

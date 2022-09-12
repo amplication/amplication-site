@@ -90,11 +90,6 @@ th {
   padding: 24px;
 }
 
-thead td,
-thead td * {
-  vertical-align: top;
-}
-
 thead h1,
 thead h2,
 thead h3,

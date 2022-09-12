@@ -5,6 +5,14 @@ import dash from "../../../../public/images/dash.svg";
 import ImgOpenSourceDown from "../../../../public/images/pricing/open-source-down.svg";
 import ImgOpenSourceLeft from "../../../../public/images/pricing/open-source-left.svg";
 
+const parentStyle = { height: "inherit", margin: "24px" };
+const childStyle = {
+  height: "100%",
+  display: "flex",
+  flexDirection: "column",
+};
+const spacer = { flex: 1 };
+
 const PricesTableCTA = ({ cta }) => {
   return cta.href ? (
     <Button
@@ -104,24 +112,31 @@ const PricesTable = () => {
             <div className="d-none d-lg-block">
               <table>
                 <thead>
-                  <tr>
+                  <tr height="1">
                     <td></td>
                     {plans.map((plan, i) => (
-                      <td key={i} className={plan.className}>
-                        <h3 className="inline-content">
-                          {plan.name}
-                          {plan.oss && (
-                            <>
-                              &nbsp;
-                              <Image
-                                src={ImgOpenSourceLeft}
-                                alt="Open Source"
-                              />
-                            </>
-                          )}
-                        </h3>
-                        <p>{plan.description}</p>
-                        <PricesTableCTA cta={plan.cta} />
+                      <td
+                        key={i}
+                        className={plan.className}
+                        style={parentStyle}
+                      >
+                        <div style={childStyle}>
+                          <h3 className="inline-content">
+                            {plan.name}
+                            {plan.oss && (
+                              <>
+                                &nbsp;
+                                <Image
+                                  src={ImgOpenSourceLeft}
+                                  alt="Open Source"
+                                />
+                              </>
+                            )}
+                          </h3>
+                          <p>{plan.description}</p>
+                          <span style={spacer}></span>
+                          <PricesTableCTA cta={plan.cta} />
+                        </div>
                       </td>
                     ))}
                   </tr>
