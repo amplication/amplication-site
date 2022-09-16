@@ -60,6 +60,7 @@ const PricesTable = () => {
       "- GraphQL & REST APIs",
       "- Admin UI",
       "- Docker",
+      "- Plugins",
       "- Custom code",
     ],
     "Self managed/ on-prem",
@@ -85,7 +86,7 @@ const PricesTable = () => {
     {
       name: "Free Cloud",
       description: "Awesome for individuals and small teams",
-      features: ["✅", "-", "-", "✅", "✅*", "-", "-", "-", "Community"],
+      features: ["✅", "-", "-", "✅", "-", "-", "-", "-", "Community"],
       cta: {
         text: "Try for free",
         href: "https://app.amplication.com/",
@@ -94,7 +95,7 @@ const PricesTable = () => {
     },
     {
       name: "Enterprise",
-      className: "bg-black80",
+      className: "highlight",
       description: "Perfect for open-source projects",
       features: ["✅", "✅", "✅", "✅", "✅", "✅", "✅", "✅", "Enterprise"],
       cta: {
@@ -106,11 +107,11 @@ const PricesTable = () => {
 
   return (
     <>
-      <section className="bg-transparent page-2">
-        <div className="container-custom">
+      <section className="bg-transparent ">
+        <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
           <div className="row d-flex">
-            <div className="d-none d-lg-block">
-              <table>
+            <div className="d-none d-lg-block col-12">
+              <table className="pricing-table">
                 <thead>
                   <tr height="1">
                     <td></td>
@@ -124,13 +125,13 @@ const PricesTable = () => {
                           <h3 className="inline-content">
                             {plan.name}
                             {plan.oss && (
-                              <>
-                                &nbsp;
+                              <span className="open-source-bubble">
                                 <Image
+                                  w
                                   src={ImgOpenSourceLeft}
                                   alt="Open Source"
                                 />
-                              </>
+                              </span>
                             )}
                           </h3>
                           <p>{plan.description}</p>
@@ -179,10 +180,10 @@ const PricesTable = () => {
               </div>
             </div>
 
-            <div className="d-lg-none">
+            <div className="d-lg-none col-12">
               {plans.map((plan, i) => (
                 <div key={i}>
-                  <table>
+                  <table className="pricing-table">
                     <thead>
                       <tr>
                         <td></td>

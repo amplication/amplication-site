@@ -27,17 +27,18 @@ const Footer = () => {
         <div className="align-items-center justify-content-center mb-5">
           <div className="text-left">
             <Title level={2} className="h2">
-              We&apos;re in public beta and free to use
+              Build mission critical services with any architecture at any scale
             </Title>
             <p>
-              The public beta version of Amplication provides everything you
-              need to build production-ready services.
-            </p>
-            <p>
-              Our investment in scale, reliability, and robustness ensures all
-              the services created with Amplication meet the requirements and
-              standards of large organizations and enterprises. Read more about
-              the generated app and its stack here.
+              Amplication backend development platform provides everything you
+              need to build production-ready services. Our investment in scale,
+              reliability, and robustness, ensures all the services created with
+              Amplication meet the requirements and standards of large
+              organizations and enterprises. Read more about the generated app
+              and its stack{" "}
+              <Link href="https://docs.amplication.com/docs/getting-started">
+                here
+              </Link>
             </p>
           </div>
           <div className="action-panel-list support">

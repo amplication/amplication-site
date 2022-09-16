@@ -74,29 +74,60 @@ body {
   background-color: var(--white);
 }
 
-table {
-  background-color: var(--black60);
-  border-collapse: separate;
-  border: 0.5px solid var(--black60);
-  border-radius: 8px;
-  table-layout: fixed;
-  text-align: left;
-  width: 100%;
+.pricing-table{
+width: 100%;
+
 }
 
-td,
-th {
-  background-color: var(--black90);
-  padding: 24px;
+.pricing-table td {
+  padding: 1rem 1.5rem;
+
+  height: 5rem;
+  position: relative;
+  width: 25%;
+  min-width: 235px;
+  vertical-align: middle;
 }
 
-thead h1,
-thead h2,
-thead h3,
-thead h4,
-thead h5,
-thead h6 {
-  margin-top: 1rem !important;
+.pricing-table td:before {
+  position: absolute;
+  top:0;
+  left: 0;
+  bottom: -1px;
+  right:-1px;
+  content:"";
+  display: block;
+  border: 1px solid var(--black60);
+  background: var(--black90);
+  z-index: -1;
+}
+
+
+.pricing-table td.highlight:before {
+  background-color: var(--black80);
+}
+
+.pricing-table thead td:first-child:before {
+  border-top-left-radius: 8px;;
+}
+
+.pricing-table thead td:last-child:before {
+  border-top-right-radius: 8px;;
+}
+
+.pricing-table tfoot tr:last-child td:first-child:before {
+  border-bottom-left-radius: 8px;;
+}
+
+.pricing-table tfoot  tr:last-child td:last-child:before {
+  border-bottom-right-radius: 8px;;
+}
+
+
+.pricing-table .open-source-bubble {
+    min-width: 100px;
+    margin-left: 0.75rem;
+
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
