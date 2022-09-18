@@ -27,6 +27,10 @@ resource "google_cloud_run_service" "service" {
           name  = "NEXT_PRIVATE_HUBSPOT_API_KEY"
           value = var.hubspot_api_key
         }
+        env {
+          name  = "NEXT_PRIVATE_BLOG_SERVER_URL"
+          value = var.external_blog_server_url
+        }
         resources {
           limits = {
             cpu    = var.cpu
