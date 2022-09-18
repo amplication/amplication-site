@@ -96,7 +96,7 @@ const PricesTable = () => {
     {
       name: "Enterprise",
       className: "highlight",
-      description: "Perfect for open-source projects",
+      description: "Tailored plans for your needs",
       features: ["✅", "✅", "✅", "✅", "✅", "✅", "✅", "✅", "Enterprise"],
       cta: {
         text: "Contact Us",
@@ -128,7 +128,7 @@ const PricesTable = () => {
                               <span className="open-source-bubble">
                                 <Image
                                   w
-                                  src={ImgOpenSourceLeft}
+                                  src={ImgOpenSourceDown}
                                   alt="Open Source"
                                 />
                               </span>
@@ -189,7 +189,12 @@ const PricesTable = () => {
                         <td></td>
                         <td className={plan.className}>
                           {plan.oss && (
-                            <Image src={ImgOpenSourceDown} alt="Open Source" />
+                            <span className="open-source-bubble">
+                              <Image
+                                src={ImgOpenSourceDown}
+                                alt="Open Source"
+                              />
+                            </span>
                           )}
                           <h3>{plan.name}</h3>
                           <p>{plan.description}</p>

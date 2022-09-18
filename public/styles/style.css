@@ -85,7 +85,7 @@ width: 100%;
   height: 5rem;
   position: relative;
   width: 25%;
-  min-width: 235px;
+  /* min-width: 235px; */
   vertical-align: middle;
 }
 
