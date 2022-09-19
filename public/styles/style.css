@@ -131,7 +131,11 @@ body {
   }
 
   .pricing-table thead .chip {
+    border-radius: 4px;
+    font-size: 8px;
+    line-height: 12px;
     margin: 0;
+    padding: 3px 6px;
   }
 
   .pricing-table thead h3 {
