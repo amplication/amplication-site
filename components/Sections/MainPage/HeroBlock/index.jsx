@@ -24,6 +24,7 @@ const HeroBlock = () => {
                     <div id="animated-header-content" style={{display: 'none'}}>
                       <span>GraphQL API.</span>
                       <span>REST API.</span>
+                      <span>Microservices.</span>
                       <span>Authentication.</span>
                       <span>Authorization.</span>
                       <span>Admin UI.</span>
