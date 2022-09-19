@@ -1,11 +1,9 @@
 import Button from "../../../Common/Button";
+import Chip from "../../../Common/Chip";
 import Image from "next/image";
 import greenItemCheck from "../../../../public/images/green-item-check.svg";
 import dash from "../../../../public/images/dash.svg";
-import ImgOpenSourceDown from "../../../../public/images/pricing/open-source-down.svg";
-import ImgOpenSourceLeft from "../../../../public/images/pricing/open-source-left.svg";
 
-const parentStyle = { height: "inherit", margin: "24px" };
 const childStyle = {
   height: "100%",
   display: "flex",
@@ -91,7 +89,6 @@ const PricesTable = () => {
         text: "Try for free",
         href: "https://app.amplication.com/",
       },
-      partial: true,
     },
     {
       name: "Enterprise",
@@ -107,7 +104,7 @@ const PricesTable = () => {
 
   return (
     <>
-      <section className="bg-transparent ">
+      <section className="bg-transparent">
         <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
           <div className="row d-flex">
             <div className="d-none d-lg-block col-12">
@@ -119,20 +116,11 @@ const PricesTable = () => {
                       <td
                         key={i}
                         className={plan.className}
-                        style={parentStyle}
                       >
                         <div style={childStyle}>
                           <h3 className="inline-content">
                             {plan.name}
-                            {plan.oss && (
-                              <span className="open-source-bubble">
-                                <Image
-                                  w
-                                  src={ImgOpenSourceDown}
-                                  alt="Open Source"
-                                />
-                              </span>
-                            )}
+                            {plan.oss && <Chip>open-source</Chip>}
                           </h3>
                           <p>{plan.description}</p>
                           <span style={spacer}></span>
@@ -175,9 +163,6 @@ const PricesTable = () => {
                   </tr>
                 </tfoot>
               </table>
-              <div className="mt-4">
-                <p className="text-left">* Partial</p>
-              </div>
             </div>
 
             <div className="d-lg-none col-12">
@@ -188,14 +173,7 @@ const PricesTable = () => {
                       <tr>
                         <td></td>
                         <td className={plan.className}>
-                          {plan.oss && (
-                            <span className="open-source-bubble">
-                              <Image
-                                src={ImgOpenSourceDown}
-                                alt="Open Source"
-                              />
-                            </span>
-                          )}
+                          {plan.oss && <Chip>open-source</Chip>}
                           <h3>{plan.name}</h3>
                           <p>{plan.description}</p>
                           <PricesTableCTA cta={plan.cta} />
@@ -231,11 +209,6 @@ const PricesTable = () => {
                       </tr>
                     </tfoot>
                   </table>
-                  {plan.partial && (
-                    <div className="mt-4">
-                      <p className="text-left">* Partial</p>
-                    </div>
-                  )}
                   <br />
                 </div>
               ))}

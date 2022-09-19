@@ -1,5 +1,5 @@
 import TeamMember from "../../../Common/TeamMember";
-import FeatureItem from '../../../Sections/Team/FeaturesItem';
+import FeatureItem from '../../../Common/FeatureItem';
 import matanShidlov from '../../../../public/images/team/matan-shidlov.png';
 import innaBell from '../../../../public/images/team/inna-bell.png';
 import yuvalHanaz from '../../../../public/images/team/yuval-hazaz.png';
@@ -333,7 +333,7 @@ const TeamBlock = () => {
           }
           {(features.length > 0) &&
             <div className="row">
-              <div className="team-action-panels">
+              <div className="feature-items">
                 {features.map((feature, index) => {
                   return (
                     <FeatureItem

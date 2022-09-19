@@ -1,28 +1,33 @@
 import Title from "../../../Posts/PostCard/Title";
+import FeatureItem from "../../../Common/FeatureItem";
 import Link from "next/link";
-import Image from "next/future/image";
 import ImgDiscord from "../../../../public/images/pricing/discord.svg";
 import ImgDocs from "../../../../public/images/pricing/docs.svg";
 
-const panelStyleOverride = { flexDirection: "row" };
-const imageDivOverride = {
-  alignItems: "center",
-  display: "flex",
-  justifyContent: "center",
-  marginRight: "48px",
-};
-const contentDivOverride = {
-  height: "100%",
-  flex: 1,
-  textAlign: "left",
-  display: "flex",
-  flexDirection: "column",
-};
-const spacer = { flex: 1 };
+const features = [
+  {
+    image: ImgDiscord,
+    alt: "Discord",
+    title: "<span>Join</span> the community",
+    content:
+      "Join our Discord channel and talk with other Amplication users, contributors, maintainers and our team.",
+    linkUrl: "https://amplication.com/discord",
+    linkText: "Join now",
+  },
+  {
+    image: ImgDocs,
+    alt: "Docs",
+    title: "<span>Read</span> our docs",
+    content:
+      "Visit our documentation site to learn more about Amplication, how to get started and the generated apps.",
+    linkUrl: "https://docs.amplication.com/docs/getting-started/",
+    linkText: "Read docs",
+  },
+];
 
 const Footer = () => {
   return (
-    <section className="bg-transparent page-2">
+    <section className="bg-transparent">
       <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
         <div className="align-items-center justify-content-center mb-5">
           <div className="text-left">
@@ -41,58 +46,26 @@ const Footer = () => {
               </Link>
             </p>
           </div>
-          <div className="action-panel-list support">
-            <div className="panel" style={panelStyleOverride}>
-              <div style={imageDivOverride}>
-                <Image src={ImgDiscord} alt="Discord" layout="fill" />
-              </div>
-              <div style={contentDivOverride}>
-                <div className="bracket-box">
-                  <span>Join</span>
-                  the community
-                </div>
-                <div className="description text-base text-white">
-                  Join our Discord channel and talk with other Amplication
-                  users, contributors, maintainers and our team.
-                </div>
-
-                <div style={spacer}></div>
-                <div className="actions">
-                  <Link href="https://discord.gg/Z2CG3rUFnu">
-                    <a target="_blank" className="btn btn-primary">
-                      Join now
-                    </a>
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className="panel" style={panelStyleOverride}>
-              <div style={imageDivOverride}>
-                <Image src={ImgDocs} alt="Docs" layout="fill" />
-              </div>
-              <div style={contentDivOverride}>
-                <div className="bracket-box">
-                  <span>Read</span>
-                  our docs
-                </div>
-                <div className="description text-base text-white">
-                  Our docs are a work in progress, and you can always find Visit
-                  our documentation site to learn more about Amplication, how to
-                  get started and the generated apps.
-                </div>
-
-                <div style={spacer}></div>
-                <div className="actions">
-                  <Link href="https://docs.amplication.com/docs/getting-started/">
-                    <a target="_blank" className="btn btn-primary">
-                      Read docs
-                    </a>
-                  </Link>
-                </div>
-              </div>
+        </div>
+        {features.length > 0 && (
+          <div className="row">
+            <div className="feature-items">
+              {features.map((feature, index) => {
+                return (
+                  <FeatureItem
+                    key={index}
+                    image={feature.image}
+                    alt={feature.alt}
+                    title={feature.title}
+                    content={feature.content}
+                    linkUrl={feature.linkUrl}
+                    linkText={feature.linkText}
+                  />
+                );
+              })}
             </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );
