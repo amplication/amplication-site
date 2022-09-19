@@ -40,7 +40,7 @@ const HeroBlock = () => {
                       <span className="highlight">
                         flexible open-source Node.js app
                       </span>{" "}
-                      development tool. It helps you build production-ready
+                      development platform. It helps you build production-ready
                       Node.js backend without wasting time on
                       repetitive&nbsp;coding.
                     </div>
