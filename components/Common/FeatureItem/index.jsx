@@ -5,9 +5,9 @@ import Link from "next/link";
 const FeatureItem = ({image, alt, title, content, linkUrl, linkText}) => {
   return (
     <>
-      <div className="team-action-panel">
+      <div className="feature-item">
         {image.src &&
-          <span className={'team-action-panel__icon'}>
+          <span className={'feature-item__icon'}>
             <Image
               layout="fixed"
               src={image}
@@ -15,9 +15,9 @@ const FeatureItem = ({image, alt, title, content, linkUrl, linkText}) => {
             />
           </span>
         }
-        <div className="team-action-panel__content">
-          <div className="team-action-panel__title" dangerouslySetInnerHTML={{__html: title}}></div>
-          <div className="team-action-panel__description text-base" dangerouslySetInnerHTML={{__html: content}}></div>
+        <div className="feature-item__content">
+          <div className="feature-item__title" dangerouslySetInnerHTML={{__html: title}}></div>
+          <div className="feature-item__description text-base" dangerouslySetInnerHTML={{__html: content}}></div>
           {(linkText && linkUrl) &&
             <Link
               href={linkUrl}
