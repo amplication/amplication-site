@@ -11,6 +11,19 @@ const HeroBlock = () => {
             <div className="col-12 text-center">
               <div className="header-and-video">
                 <div className="content-block">
+                  <a
+                    href="https://www.producthunt.com/posts/amplication-1-0?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-amplication-1-0"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <img
+                      src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=360187&theme=neutral"
+                      alt="Amplication 1.0 - Instantly generate enterprise-grade Node.js applications | Product Hunt"
+                      style={{ width: 250, height: 54 }}
+                      width={250}
+                      height={54}
+                    />
+                  </a>
                   <div className="animated-header">
                     <h1 className="main-title">
                       <span className="animated-header__fixed-text">
