@@ -14,6 +14,7 @@ const HeroBlock = () => {
                   <a
                     href="https://www.producthunt.com/posts/amplication-1-0?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-amplication-1-0"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     <img
                       src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=360187&theme=neutral"
