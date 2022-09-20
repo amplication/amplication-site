@@ -15,6 +15,7 @@ import eugineTseitlin from '../../../../public/images/team/eugene-tseitlin.png';
 import shimiBar from '../../../../public/images/team/shimi.png';
 import arielWeinberger from '../../../../public/images/team/ariel.png';
 import toddFeinroth from '../../../../public/images/team/todd.png'
+import erezGreenberg from '../../../../public/images/team/erez.png'
 
 import talkWithUs from '../../../../public/images/icons/talk-with-with-team.svg';
 import joinUs from '../../../../public/images/icons/join-the-team.svg';
@@ -68,6 +69,21 @@ const TeamBlock = () => {
         {
           href: 'https://twitter.com/InnaBell_',
           iconClass: 'twitter',
+        }
+      ]
+    },
+    {
+      name: 'Erez Greenberg',
+      position: 'Head of Product',
+      image: erezGreenberg,
+      links: [
+        {
+          href: 'https://www.linkedin.com/in/erez-greenberg-35263a20/',
+          iconClass: 'linkedin',
+        },
+        {
+          href: 'https://github.com/GreenMachine01/',
+          iconClass: 'github',
         }
       ]
     },
