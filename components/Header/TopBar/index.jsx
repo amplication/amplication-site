@@ -3,12 +3,9 @@ import Link from "next/link";
 const TopBar = () => {
   return (
     <div className="w-full bg-light-blue laptop:mb-[-1px]">
-      <Link
-        href="https://www.producthunt.com/posts/amplication-1-0"
-        // {process.env.NEXT_PUBLIC_GITHUB_LINK} passHref
-      >
+      <Link href={process.env.NEXT_PUBLIC_GITHUB_LINK} passHref>
         <a className="w-full hidden laptop:flex justify-center items-center max-w-container m-container p-container py-3 laptop:py-4 cursor-pointer hover:opacity-50 transition-opacity duration-300">
-          {/* <span className="inline-block mx-1.5">
+          <span className="inline-block mx-1.5">
             <svg
               width="16"
               height="15"
@@ -21,12 +18,11 @@ const TopBar = () => {
                 fill="#F5B82E"
               />
             </svg>
-          </span> */}
-          <span className="font-dmmono text-white text-xs leading-tight pt-1">
-            We are live on Product Hunt, join us and show your love 💜
-            {/* Amplication is open source. Star our GitHub repo! */}
           </span>
-          {/* <span className="inline-block mx-1.5">
+          <span className="font-dmmono text-white text-xs leading-tight pt-1">
+            Amplication is open source. Star our GitHub repo!
+          </span>
+          <span className="inline-block mx-1.5">
             <svg
               width="16"
               height="16"
@@ -39,7 +35,7 @@ const TopBar = () => {
                 fill="white"
               />
             </svg>
-          </span> */}
+          </span>
         </a>
       </Link>
     </div>

@@ -31,9 +31,9 @@ const Footer = () => {
       <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
         <div className="align-items-center justify-content-center mb-5">
           <div className="text-left">
-            <Title level={2} className="h2">
+            <h2 className="text-white">
               Build mission critical services with any architecture at any scale
-            </Title>
+            </h2>
             <p>
               Amplication backend development platform provides everything you
               need to build production-ready services. Our investment in scale,
