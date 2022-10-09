@@ -17,7 +17,8 @@ const Roadmap = () => {
               Amplication Community Edition better,
               <br /> we are extending its capabilities into Enterprise Edition
               to meet the requirements and standards
-              <br /> of large-scale organizations and enterprises.
+              <br className="hidden laptop:block" /> of large-scale
+              organizations and enterprises.
             </p>
           </div>
           <div className="row d-flex justify-content-between align-items-stretch">
