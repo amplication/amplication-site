@@ -74,7 +74,7 @@ body {
   background-color: var(--white);
 }
 
-.pricing-table{
+.pricing-table {
   width: 100%;
 }
 
@@ -88,17 +88,16 @@ body {
 
 .pricing-table td:before {
   position: absolute;
-  top:0;
+  top: 0;
   left: 0;
   bottom: -1px;
-  right:-1px;
-  content:"";
+  right: -1px;
+  content: "";
   display: block;
   border: 1px solid var(--black60);
   background: var(--black90);
   z-index: -1;
 }
-
 
 .pricing-table td.highlight:before {
   background-color: var(--black80);
@@ -10058,6 +10057,11 @@ body {
   line-height: 5rem;
   align-items: center;
 }
+@media (max-width: 450px) {
+  .amplication-base .roadmap-heading {
+    line-height: 3rem;
+  }
+}
 .amplication-base .roadmap-paragraph {
   font-family: "Poppins";
   font-style: normal;
@@ -10561,11 +10565,11 @@ body {
   }
 }
 .amplication-base .action-panel-list {
-    display: flex;
-    justify-content: stretch;
-    align-items: stretch;
-    margin-top: 4rem;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+  margin-top: 4rem;
+  flex-wrap: wrap;
 }
 .amplication-base .action-panel-list .panel {
   flex: 1;
@@ -10586,42 +10590,42 @@ body {
 }
 .amplication-base .action-panel-list.build-community,
 .amplication-base .action-panel-list.champions {
-    padding: 1rem 3rem;
+  padding: 1rem 3rem;
 }
 @media (max-width: 991.98px) {
-    .amplication-base .action-panel-list.build-community,
-    .amplication-base .action-panel-list.champions {
-        padding: 0;
-    }
-    .amplication-base .action-panel-list.build-community .panel,
-    .amplication-base .action-panel-list.champions .panel {
-        padding: 0;
-    }
-    .amplication-base .action-panel-list.build-community .panel:before,
-    .amplication-base .action-panel-list.champions .panel:before {
-        display: none;
-    }
+  .amplication-base .action-panel-list.build-community,
+  .amplication-base .action-panel-list.champions {
+    padding: 0;
+  }
+  .amplication-base .action-panel-list.build-community .panel,
+  .amplication-base .action-panel-list.champions .panel {
+    padding: 0;
+  }
+  .amplication-base .action-panel-list.build-community .panel:before,
+  .amplication-base .action-panel-list.champions .panel:before {
+    display: none;
+  }
 }
 .amplication-base .action-panel-list.build-community .panel,
 .amplication-base .action-panel-list.champions .panel {
-    position: relative;
+  position: relative;
 }
 .amplication-base .action-panel-list.build-community .panel:before,
 .amplication-base .action-panel-list.champions .panel:before {
-    content: "";
-    position: absolute;
-    top: 4rem;
-    bottom: 4rem;
-    right: 0;
-    border-right: 1px solid var(--black60);
+  content: "";
+  position: absolute;
+  top: 4rem;
+  bottom: 4rem;
+  right: 0;
+  border-right: 1px solid var(--black60);
 }
 .amplication-base .action-panel-list.build-community .panel:last-child,
 .amplication-base .action-panel-list.champions .panel:last-child {
-    border-right: none;
+  border-right: none;
 }
 .amplication-base .action-panel-list.build-community .panel:last-child:before,
 .amplication-base .action-panel-list.champions .panel:last-child:before {
-    display: none;
+  display: none;
 }
 .amplication-base .action-panel-list.support .panel {
   background-color: var(--black90);
