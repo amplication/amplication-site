@@ -20,6 +20,17 @@ const Home = () => {
         description="Amplication is the most flexible open-source platform for Node.js app development. 
         We enable developers to auto-generate production-ready backend in minutes. Design modelsand roles,
          deploy your app, connect with REST or GraphQL API, sync with GitHub. You own the code."
+        openGraph={{
+          type: 'website',
+          images: [
+            {
+              url: 'https://user-images.githubusercontent.com/53312820/190913686-02c7deb1-da2f-41b8-aa31-065e00f6155c.png',
+            }
+          ],
+        }}
+        twitter={{
+          cardType: 'summary_large_image',
+        }}
       />
 
       <div className="page bg-dark-black-100 min-h-screen flex flex-col justify-start justify-items-stretch overflow-hidden pt-[60px] laptop:pt-[143px] bg-purple-dark relative">
