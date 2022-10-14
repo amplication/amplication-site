@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import Posts from "../components/Posts";
 import Filter from "../components/Posts/Filter";
 import { NextSeo } from "next-seo";
-import Layout from "../layouts";
+import { MainLayout } from "../layouts";
 
 const Home = ({ posts, tags }) => {
   return (
@@ -98,6 +98,6 @@ Home.defaultProps = {
 };
 
 Home.getLayout = function getLayout(page) {
-  return <Layout>{page}</Layout>;
+  return <MainLayout>{page}</MainLayout>;
 };
 export default Home;

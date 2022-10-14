@@ -2,7 +2,7 @@ import Image from "next/image";
 import PageNotFoundIcon from "../public/images/404.png";
 import Link from "next/link";
 import { NextSeo } from "next-seo";
-import Layout from "../layouts";
+import { MainLayout } from "../layouts";
 
 const errorPage = () => {
   return (
@@ -34,9 +34,9 @@ const errorPage = () => {
 };
 errorPage.getLayout = function getLayout(page) {
   return (
-    <Layout footerCompactView hideBackground>
+    <MainLayout footerCompactView hideBackground>
       {page}
-    </Layout>
+    </MainLayout>
   );
 };
 export default errorPage;

@@ -1,5 +1,5 @@
 import { NextSeo } from "next-seo";
-import Layout from "../layouts";
+import {MainLayout} from "../layouts";
 
 const PrivacyPolicy = () => {
   return (
@@ -205,7 +205,7 @@ const PrivacyPolicy = () => {
   );
 };
 PrivacyPolicy.getLayout = function getLayout(page) {
-  return <Layout>{page}</Layout>;
+  return <MainLayout>{page}</MainLayout>;
 };
 
 export default PrivacyPolicy;

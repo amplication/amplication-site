@@ -1,5 +1,5 @@
 import { NextSeo } from "next-seo";
-import Layout from "../layouts";
+import { MainLayout } from "../layouts";
 
 const Terms = () => {
   return (
@@ -725,6 +725,6 @@ const Terms = () => {
   );
 };
 Terms.getLayout = function getLayout(page) {
-  return <Layout>{page}</Layout>;
+  return <MainLayout>{page}</MainLayout>;
 };
 export default Terms;

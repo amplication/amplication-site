@@ -8,7 +8,7 @@ import Roadmap from "../components/Sections/MainPage/Roadmap";
 import { Router, useRouter } from "next/router";
 import { useEffect } from "react";
 import { NextSeo } from "next-seo";
-import Layout from "../layouts";
+import { MainLayout } from "../layouts";
 
 const Home = () => {
   return (
@@ -48,6 +48,10 @@ const Home = () => {
   );
 };
 Home.getLayout = function getLayout(page) {
-  return <Layout>{page}</Layout>;
+  return (
+    <MainLayout paddingTopClasses="pt-[60px] laptop:pt-[143px]">
+      {page}
+    </MainLayout>
+  );
 };
 export default Home;

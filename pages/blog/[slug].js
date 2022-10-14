@@ -20,7 +20,7 @@ import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
 import "highlight.js/styles/github-dark-dimmed.css";
 import { NextSeo } from "next-seo";
-import Layout from "../../layouts";
+import { MainLayout } from "../../layouts";
 
 const Post = ({ posts, post }) => {
   if (!post) {
@@ -292,6 +292,6 @@ Post.defaultProps = {
   posts: [],
 };
 Post.getLayout = function getLayout(page) {
-  return <Layout hideBackground>{page}</Layout>;
+  return <MainLayout hideBackground>{page}</MainLayout>;
 };
 export default Post;

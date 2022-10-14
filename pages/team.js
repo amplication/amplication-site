@@ -1,7 +1,7 @@
 import HeroBlock from "../components/Sections/Team/HeroBlock";
 import TeamBlock from "../components/Sections/Team/TeamBlock";
 import { NextSeo } from "next-seo";
-import Layout from "../layouts";
+import { MainLayout } from "../layouts";
 
 const Team = () => {
   return (
@@ -22,6 +22,6 @@ const Team = () => {
   );
 };
 Team.getLayout = function getLayout(page) {
-  return <Layout>{page}</Layout>;
+  return <MainLayout>{page}</MainLayout>;
 };
 export default Team;

@@ -24,7 +24,7 @@ import versionControlImage from "/public/images/features-page/version_control.sv
 import syncGithubIcon from "/public/images/features-page/icons/github.svg";
 import syncGithubImage from "/public/images/features-page/sync_with_github.svg";
 import { NextSeo } from "next-seo";
-import Layout from "../layouts";
+import {MainLayout} from "../layouts";
 
 const Features = () => {
   const features = [
@@ -270,6 +270,6 @@ const Features = () => {
   );
 };
 Features.getLayout = function getLayout(page) {
-  return <Layout>{page}</Layout>;
+  return <MainLayout>{page}</MainLayout>;
 };
 export default Features;

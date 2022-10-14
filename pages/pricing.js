@@ -2,7 +2,7 @@ import HeroBlock from "../components/Sections/Pricing/HeroBlock";
 import PricesTable from "../components/Sections/Pricing/PricesTable";
 import CTA from "../components/Sections/Pricing/CTA";
 import { NextSeo } from "next-seo";
-import Layout from "../layouts";
+import { MainLayout } from "../layouts";
 
 const Pricing = () => {
   return (
@@ -28,6 +28,6 @@ const Pricing = () => {
   );
 };
 Pricing.getLayout = function getLayout(page) {
-  return <Layout hideFooterBanner>{page}</Layout>;
+  return <MainLayout hideFooterBanner>{page}</MainLayout>;
 };
 export default Pricing;
