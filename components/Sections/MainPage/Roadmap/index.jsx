@@ -6,7 +6,7 @@ const Roadmap = () => {
     <>
       <section className="page-roadmap" id="roadmap">
         <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
-          <div className="row align-items-center justify-content-center justify-content-md-start mb-4 text-white">
+          <div className="row m-container p-container align-items-center justify-content-center justify-content-md-start mb-4 text-white">
             <h2 className="roadmap-heading">
               What&apos;s next? <br />
               Great things coming down the{" "}
@@ -17,7 +17,8 @@ const Roadmap = () => {
               Amplication Community Edition better,
               <br /> we are extending its capabilities into Enterprise Edition
               to meet the requirements and standards
-              <br /> of large-scale organizations and enterprises.
+              <br className="hidden laptop:block" /> of large-scale
+              organizations and enterprises.
             </p>
           </div>
           <div className="row d-flex justify-content-between align-items-stretch">
