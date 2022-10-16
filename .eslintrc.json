@@ -6,9 +6,13 @@
   ],
   "rules": {
     "node/no-unpublished-import": 0,
+    "node/no-unpublished-require": 0,
     "node/no-unsupported-features/es-syntax": 0
   },
   "parserOptions": {
     "sourceType": "module"
+  },
+  "env": {
+    "browser": true
   }
 }

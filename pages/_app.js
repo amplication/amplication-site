@@ -7,7 +7,6 @@ import {useRouter} from 'next/router';
 import {DefaultSeo} from 'next-seo';
 import PropTypes from 'prop-types';
 import {useEffect} from 'react';
-import Typed from 'typed.js';
 
 import '../styles/globals.css';
 import client from '../services/index';
@@ -47,24 +46,8 @@ function Amplication({Component, pageProps}) {
       duration: 1000,
     });
 
-    // // Typing letter animation
-    // const typingAnimations = document.querySelectorAll(
-    //   '#animated-header-typed'
-    // );
-    // if (typingAnimations.length) {
-    //   let typed = new Typed('#animated-header-typed', {
-    //     stringsElement: '#animated-header-content',
-    //     typeSpeed: 60,
-    //     backSpeed: 20,
-    //     backDelay: 1700,
-    //     startDelay: 0,
-    //     smartBackspace: false,
-    //     loop: true,
-    //   });
-    // }
-
     // Run code on client-side only : ensure document is here
-    if (typeof document !== undefined) {
+    if (typeof document !== 'undefined') {
       require('bootstrap/dist/js/bootstrap');
       require('lity/dist/lity.min.js');
       require('lity/dist/lity.min.css');
@@ -174,7 +157,7 @@ function Amplication({Component, pageProps}) {
 }
 
 Amplication.propTypes = {
-  Component: PropTypes.Component,
+  Component: PropTypes.func,
   pageProps: PropTypes.pageProps,
 };
 export default Amplication;
