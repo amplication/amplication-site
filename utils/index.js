@@ -1,3 +1,1 @@
-import { concatClassnames } from "./concatClassnames";
-
-export { concatClassnames };
+import * from "./concatClassnames";
