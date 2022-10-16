@@ -1,8 +1,8 @@
-import Image from "next/image";
-import PageNotFoundIcon from "../public/images/404.png";
-import Link from "next/link";
-import { NextSeo } from "next-seo";
-import { MainLayout } from "../layouts";
+import Image from 'next/image';
+import PageNotFoundIcon from '../public/images/404.png';
+import Link from 'next/link';
+import {NextSeo} from 'next-seo';
+import {MainLayout} from '../layouts';
 
 const errorPage = () => {
   return (
@@ -18,7 +18,7 @@ const errorPage = () => {
             <h3 className="w-full text-lg text-white text-center mb-4">
               <strong className="block w-full font-extrabold">
                 You broke the internet, again!
-              </strong>{" "}
+              </strong>{' '}
               not really, that was kim k.
             </h3>
             <Link href="/">

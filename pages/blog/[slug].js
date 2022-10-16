@@ -1,28 +1,32 @@
-import client from "../../services";
-import helpers from "../../helpers";
-import { gql } from "@apollo/client";
-import Thumbnail from "../../components/Posts/PostCard/Tumbnail";
-import Link from "next/link";
-import Author from "../../components/Posts/PostCard/Author";
-import Tags from "../../components/Posts/PostCard/Tags";
-import Title from "../../components/Posts/PostCard/Title";
-import PostCard from "../../components/Posts/PostCard";
-import { Pagination } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import Sidebar from "../../components/Sidebar";
-import "swiper/css";
-import "swiper/css/pagination";
-import PropTypes from "prop-types";
-import errorPage from "../404";
-import ReactMarkdown from "react-markdown";
-import rehypeHighlight from "rehype-highlight";
-import rehypeRaw from "rehype-raw";
-import remarkGfm from "remark-gfm";
-import "highlight.js/styles/github-dark-dimmed.css";
-import { NextSeo } from "next-seo";
-import { MainLayout } from "../../layouts";
+import {gql} from '@apollo/client';
+// eslint-disable-next-line node/no-extraneous-import
+import 'highlight.js/styles/github-dark-dimmed.css';
+import Link from 'next/link';
+import {NextSeo} from 'next-seo';
+import PropTypes from 'prop-types';
+import ReactMarkdown from 'react-markdown';
+import rehypeHighlight from 'rehype-highlight';
+import rehypeRaw from 'rehype-raw';
+import remarkGfm from 'remark-gfm';
+import {Pagination} from 'swiper';
+// eslint-disable-next-line node/no-missing-import
+import 'swiper/css';
+// eslint-disable-next-line node/no-missing-import
+import 'swiper/css/pagination';
+import {Swiper, SwiperSlide} from 'swiper/react';
 
-const Post = ({ posts, post }) => {
+import client from '../../services';
+import helpers from '../../helpers';
+import Thumbnail from '../../components/Posts/PostCard/Tumbnail';
+import Author from '../../components/Posts/PostCard/Author';
+import Tags from '../../components/Posts/PostCard/Tags';
+import Title from '../../components/Posts/PostCard/Title';
+import PostCard from '../../components/Posts/PostCard';
+import Sidebar from '../../components/Sidebar';
+import errorPage from '../404';
+import {MainLayout} from '../../layouts';
+
+const Post = ({posts, post}) => {
   if (!post) {
     return errorPage();
   }
@@ -35,7 +39,7 @@ const Post = ({ posts, post }) => {
         title={post.title}
         description={rawPostContent.substring(0, 150)}
         pageImage={
-          helpers.isValidUrl(post.featuredImage) ? post.featuredImage : ""
+          helpers.isValidUrl(post.featuredImage) ? post.featuredImage : ''
         }
         noindex={!!post.draft}
         nofollow={!!post.draft}
@@ -49,12 +53,12 @@ const Post = ({ posts, post }) => {
               alt: post.title,
             },
           ],
-          site_name: "Amplication Blog",
+          site_name: 'Amplication Blog',
         }}
         twitter={{
-          handle: "@amplication",
-          site: "amplication.com",
-          cardType: "summary_large_image",
+          handle: '@amplication',
+          site: 'amplication.com',
+          cardType: 'summary_large_image',
         }}
       />
 
@@ -66,7 +70,7 @@ const Post = ({ posts, post }) => {
                 <a className="text-white font-poppins font-medium text-sm hover:text-purple-bright-hover">
                   Home
                 </a>
-              </Link>{" "}
+              </Link>{' '}
               /
             </li>
             <li className="text-white inline-block mr-1">
@@ -74,7 +78,7 @@ const Post = ({ posts, post }) => {
                 <a className="text-white font-poppins font-medium text-sm hover:text-purple-bright-hover">
                   Blog
                 </a>
-              </Link>{" "}
+              </Link>{' '}
               /
             </li>
             <li className="text-turquoise inline-block">
@@ -97,15 +101,15 @@ const Post = ({ posts, post }) => {
               />
               <Tags list={post.tags} className="order-3" />
               <Author
-                className={"order-2 mt-4 laptop:mt-8"}
+                className={'order-2 mt-4 laptop:mt-8'}
                 avatar={post.author?.profileImage}
-                name={post.author?.firstName + " " + post.author?.lastName}
+                name={post.author?.firstName + ' ' + post.author?.lastName}
                 date={post.createdAt}
                 large={true}
               />
               <Thumbnail
                 objectFit="initial"
-                className={"order-4 mt-8 mb-16 rounded-2xl !aspect-auto"}
+                className={'order-4 mt-8 mb-16 rounded-2xl !aspect-auto'}
                 src={
                   helpers.isValidUrl(post.featuredImage)
                     ? post.featuredImage
@@ -156,9 +160,10 @@ const Post = ({ posts, post }) => {
                 modules={[Pagination]}
                 pagination={{
                   clickable: true,
-                  clickableClass: `swiper-pagination-clickable !relative pt-4`,
-                  bulletClass: `swiper-pagination-bullet !bg-white`,
-                  bulletActiveClass: `swiper-pagination-bullet-active relative top-[1px] !bg-secondary-turquoise !w-2.5 !h-2.5`,
+                  clickableClass: 'swiper-pagination-clickable !relative pt-4',
+                  bulletClass: 'swiper-pagination-bullet !bg-white',
+                  bulletActiveClass:
+                    'swiper-pagination-bullet-active relative top-[1px] !bg-secondary-turquoise !w-2.5 !h-2.5',
                 }}
               >
                 {posts.map((post, i) => {
@@ -181,9 +186,9 @@ const Post = ({ posts, post }) => {
   );
 };
 
-export const getStaticProps = async (context) => {
+export const getStaticProps = async context => {
   try {
-    const { data } = await client.query({
+    const {data} = await client.query({
       query: gql`
         query {
           posts(where: {slug: {equals: "${context.params.slug}"}}) {
@@ -215,11 +220,11 @@ export const getStaticProps = async (context) => {
       const tags =
         post.tags && post.tags.length
           ? `, tags: {some: {id: {in: ["${post.tags
-              .map((tag) => {
+              .map(tag => {
                 return tag.id;
               })
               .join('" ,"')}"]}}}`
-          : "";
+          : '';
 
       posts = await client.query({
         query: gql`
@@ -265,10 +270,10 @@ export const getStaticProps = async (context) => {
 };
 
 export async function getStaticPaths() {
-  const { data } = await client.query({
+  const {data} = await client.query({
     query: gql`
       query {
-        posts(take: 1000, orderBy: { createdAt: Desc }) {
+        posts(take: 1000, orderBy: {createdAt: Desc}) {
           slug
           title
         }
@@ -276,13 +281,13 @@ export async function getStaticPaths() {
     `,
   });
 
-  const paths = data.posts.map((post) => ({
+  const paths = data.posts.map(post => ({
     params: {
       slug: post.slug,
     },
   }));
 
-  return { paths, fallback: "blocking" };
+  return {paths, fallback: 'blocking'};
 }
 
 Post.propTypes = {

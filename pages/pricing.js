@@ -1,8 +1,8 @@
-import HeroBlock from "../components/Sections/Pricing/HeroBlock";
-import PricesTable from "../components/Sections/Pricing/PricesTable";
-import CTA from "../components/Sections/Pricing/CTA";
-import { NextSeo } from "next-seo";
-import { MainLayout } from "../layouts";
+import HeroBlock from '../components/Sections/Pricing/HeroBlock';
+import PricesTable from '../components/Sections/Pricing/PricesTable';
+import CTA from '../components/Sections/Pricing/CTA';
+import {NextSeo} from 'next-seo';
+import {MainLayout} from '../layouts';
 
 const Pricing = () => {
   return (

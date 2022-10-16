@@ -1,9 +1,9 @@
-import FooterBanner from "./FooterBanner";
-import FooterBottomBar from "./FooterBottomBar";
-import FooterContent from "./FooterContent";
-import PropTypes from "prop-types";
+import FooterBanner from './FooterBanner';
+import FooterBottomBar from './FooterBottomBar';
+import FooterContent from './FooterContent';
+import PropTypes from 'prop-types';
 
-const Footer = ({ compactView, isBlog, hideBanner }) => {
+const Footer = ({compactView, hideBanner}) => {
   return (
     <>
       <footer className="w-full mt-auto relative overflow-hidden z-10 laptop:mt-0">
@@ -28,13 +28,11 @@ const Footer = ({ compactView, isBlog, hideBanner }) => {
 
 Footer.propTypes = {
   compactView: PropTypes.bool,
-  isBlog: PropTypes.bool,
   hideBanner: PropTypes.bool,
 };
 
 Footer.defaultProps = {
   isLink: false,
-  isBlog: false,
   hideBanner: false,
 };
 

@@ -1,15 +1,15 @@
-import Author from "../PostCard/Author";
-import Tags from "../PostCard/Tags";
-import Title from "../PostCard/Title";
-import Thumbnail from "../PostCard/Tumbnail";
-import helpers from "../../../helpers";
-import Link from "next/link";
-import PropTypes from "prop-types";
+import Author from '../PostCard/Author';
+import Tags from '../PostCard/Tags';
+import Title from '../PostCard/Title';
+import Thumbnail from '../PostCard/Tumbnail';
+import helpers from '../../../helpers';
+import Link from 'next/link';
+import PropTypes from 'prop-types';
 
-const PostHot = (props) => {
+const PostHot = props => {
   const post = props.data;
   const abridgedContent = helpers
-    .removeMarkdown(post?.content ?? "")
+    .removeMarkdown(post?.content ?? '')
     .substring(0, 200);
   if (Object.keys(post).length) {
     return (
@@ -22,7 +22,7 @@ const PostHot = (props) => {
             <Author
               className="!mt-0"
               avatar={post.author?.profileImage}
-              name={post.author?.firstName + " " + post.author?.lastName}
+              name={post.author?.firstName + ' ' + post.author?.lastName}
               date={post.createdAt}
             />
             <Tags list={post.tags} className="!mt-6" />
@@ -46,7 +46,7 @@ const PostHot = (props) => {
                 src={
                   helpers.isValidUrl(post.featuredImage)
                     ? post.featuredImage
-                    : ""
+                    : ''
                 }
               />
             </div>

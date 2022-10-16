@@ -1,17 +1,18 @@
-import Button from "../../../Common/Button";
-import Chip from "../../../Common/Chip";
-import Image from "next/image";
-import greenItemCheck from "../../../../public/images/green-item-check.svg";
-import dash from "../../../../public/images/dash.svg";
+import Image from 'next/image';
+import PropTypes from 'prop-types';
+import Button from '../../../Common/Button';
+import Chip from '../../../Common/Chip';
+import greenItemCheck from '../../../../public/images/green-item-check.svg';
+import dash from '../../../../public/images/dash.svg';
 
 const childStyle = {
-  height: "100%",
-  display: "flex",
-  flexDirection: "column",
+  height: '100%',
+  display: 'flex',
+  flexDirection: 'column',
 };
-const spacer = { flex: 1 };
+const spacer = {flex: 1};
 
-const PricesTableCTA = ({ cta }) => {
+const PricesTableCTA = ({cta}) => {
   return cta.href ? (
     <Button
       text={cta.text}
@@ -32,72 +33,80 @@ const PricesTableCTA = ({ cta }) => {
   );
 };
 
-const PricesFeatures = ({ content }) => {
+PricesTableCTA.propTypes = {
+  cta: PropTypes.any,
+};
+
+const PricesFeatures = ({content}) => {
   switch (content) {
-    case "✅":
+    case '✅':
       return <Image src={greenItemCheck} alt="Green Checkmark" />;
-    case "✅*":
+    case '✅*':
       return (
         <>
           <Image src={greenItemCheck} alt="Green Checkmark" /> <span>*</span>
         </>
       );
-    case "-":
+    case '-':
       return <Image src={dash} alt="Dash" />;
     default:
       return content;
   }
 };
 
+PricesFeatures.propTypes = {
+  content: PropTypes.any,
+};
+
 const PricesTable = () => {
   const features = [
     [
-      "Core backend functionality:",
-      "- Database",
-      "- Roles & permissions",
-      "- GraphQL & REST APIs",
-      "- Admin UI",
-      "- Docker",
-      "- Plugins",
-      "- Custom code",
+      'Core backend functionality:',
+      '- Database',
+      '- Roles & permissions',
+      '- GraphQL & REST APIs',
+      '- Admin UI',
+      '- Docker',
+      '- Plugins',
+      '- Custom code',
     ],
-    "Self managed/ on-prem",
-    "Private plugins",
-    "Continuous sync with GitHub",
-    "CI & Git bot",
-    "Audit logs",
-    "SSO",
-    "2FA (two-factor authentication)",
-    "Support",
+    'Self managed/ on-prem',
+    'Private plugins',
+    'Continuous sync with GitHub',
+    'CI & Git bot',
+    'Audit logs',
+    'SSO',
+    '2FA (two-factor authentication)',
+    'Support',
   ];
   const plans = [
     {
-      name: "Community",
+      name: 'Community',
       oss: true,
-      description: "Perfect for open-source projects",
-      features: ["✅", "✅", "✅", "-", "-", "-", "-", "-", "Community"],
+      description: 'Perfect for open-source projects',
+      features: ['✅', '✅', '✅', '-', '-', '-', '-', '-', 'Community'],
       cta: {
-        text: "Try for free",
-        href: "https://app.amplication.com/",
+        text: 'Try for free',
+        href: 'https://app.amplication.com/',
       },
     },
     {
-      name: "Free Cloud",
-      description: "Awesome for individuals and small teams",
-      features: ["✅", "-", "-", "✅", "-", "-", "-", "-", "Community"],
+      name: 'Free Cloud',
+      description: 'Awesome for individuals and small teams',
+      features: ['✅', '-', '-', '✅', '-', '-', '-', '-', 'Community'],
       cta: {
-        text: "Try for free",
-        href: "https://app.amplication.com/",
+        text: 'Try for free',
+        href: 'https://app.amplication.com/',
       },
     },
     {
-      name: "Enterprise",
-      className: "highlight",
-      description: "Tailored plans for your needs",
-      features: ["✅", "✅", "✅", "✅", "✅", "✅", "✅", "✅", "Enterprise"],
+      name: 'Enterprise',
+      className: 'highlight',
+      description: 'Tailored plans for your needs',
+      features: ['✅', '✅', '✅', '✅', '✅', '✅', '✅', '✅', 'Enterprise'],
       cta: {
-        text: "Contact Us",
-        onClick: () => Intercom("show"),
+        text: 'Contact Us',
+        onClick: () => Intercom('show'),
       },
     },
   ];
@@ -113,10 +122,7 @@ const PricesTable = () => {
                   <tr height="1">
                     <td></td>
                     {plans.map((plan, i) => (
-                      <td
-                        key={i}
-                        className={plan.className}
-                      >
+                      <td key={i} className={plan.className}>
                         <div style={childStyle}>
                           <h3 className="inline-content">
                             {plan.name}

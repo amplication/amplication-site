@@ -1,1 +1,1 @@
-export * from "./concatClassnames";
+export * from './concatClassnames';
