@@ -157,7 +157,7 @@ function Amplication({Component, pageProps}) {
 }
 
 Amplication.propTypes = {
-  Component: PropTypes.func,
+  Component: PropTypes.any,
   pageProps: PropTypes.pageProps,
 };
 export default Amplication;

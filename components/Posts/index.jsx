@@ -1,13 +1,15 @@
+import Link from 'next/link';
+import {useRouter} from 'next/router';
+import PropTypes from 'prop-types';
+import {useEffect, useState} from 'react';
+import {Swiper, SwiperSlide} from 'swiper/react';
+// eslint-disable-next-line node/no-missing-import
+import 'swiper/css';
+
 import PostCard from './PostCard';
 import SubscribeForm from '../Common/SubscribeForm';
 import PostHot from './PostHot';
-import Link from 'next/link';
-import {useRouter} from 'next/router';
-import {useEffect, useState} from 'react';
 import helpers from '../../helpers';
-import PropTypes from 'prop-types';
-import {Swiper, SwiperSlide} from 'swiper/react';
-import 'swiper/css';
 import Skeleton from './Skeleton';
 
 const Posts = ({posts}) => {

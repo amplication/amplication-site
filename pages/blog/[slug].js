@@ -1,25 +1,29 @@
-import client from '../../services';
-import helpers from '../../helpers';
 import {gql} from '@apollo/client';
-import Thumbnail from '../../components/Posts/PostCard/Tumbnail';
+// eslint-disable-next-line node/no-extraneous-import
+import 'highlight.js/styles/github-dark-dimmed.css';
 import Link from 'next/link';
-import Author from '../../components/Posts/PostCard/Author';
-import Tags from '../../components/Posts/PostCard/Tags';
-import Title from '../../components/Posts/PostCard/Title';
-import PostCard from '../../components/Posts/PostCard';
-import {Pagination} from 'swiper';
-import {Swiper, SwiperSlide} from 'swiper/react';
-import Sidebar from '../../components/Sidebar';
-import 'swiper/css';
-import 'swiper/css/pagination';
+import {NextSeo} from 'next-seo';
 import PropTypes from 'prop-types';
-import errorPage from '../404';
 import ReactMarkdown from 'react-markdown';
 import rehypeHighlight from 'rehype-highlight';
 import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
-import 'highlight.js/styles/github-dark-dimmed.css';
-import {NextSeo} from 'next-seo';
+import {Pagination} from 'swiper';
+// eslint-disable-next-line node/no-missing-import
+import 'swiper/css';
+// eslint-disable-next-line node/no-missing-import
+import 'swiper/css/pagination';
+import {Swiper, SwiperSlide} from 'swiper/react';
+
+import client from '../../services';
+import helpers from '../../helpers';
+import Thumbnail from '../../components/Posts/PostCard/Tumbnail';
+import Author from '../../components/Posts/PostCard/Author';
+import Tags from '../../components/Posts/PostCard/Tags';
+import Title from '../../components/Posts/PostCard/Title';
+import PostCard from '../../components/Posts/PostCard';
+import Sidebar from '../../components/Sidebar';
+import errorPage from '../404';
 import {MainLayout} from '../../layouts';
 
 const Post = ({posts, post}) => {

@@ -46,6 +46,7 @@ const PostCard = props => {
 };
 
 PostCard.propTypes = {
+  className: PropTypes.string,
   data: PropTypes.object.isRequired,
 };
 
