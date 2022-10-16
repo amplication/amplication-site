@@ -1,3 +1,1 @@
-import MainLayout from './main'
-
-export { MainLayout }
+export * from './main';
