@@ -165,10 +165,10 @@ const Post = ({ posts, post }) => {
                   return (
                     <SwiperSlide
                       className="!h-auto"
-                      key={post.id}
+                      key={post.slug}
                       virtualIndex={i}
                     >
-                      <PostCard data={post} key={post.id} />
+                      <PostCard data={post} key={post.slug} />
                     </SwiperSlide>
                   );
                 })}
@@ -194,8 +194,9 @@ export const getStaticProps = async (context) => {
             title
             featuredImage
             tags {
-              slug
+              id
               name
+              slug
             }
             author {
               id
@@ -268,7 +269,7 @@ export async function getStaticPaths() {
     query: gql`
       query {
         posts(take: 1000, orderBy: { createdAt: Desc }) {
-          id
+          slug
           title
         }
       }
@@ -277,7 +278,7 @@ export async function getStaticPaths() {
 
   const paths = data.posts.map((post) => ({
     params: {
-      slug: `${post.title}`.split(" ").join("-").toLowerCase(),
+      slug: post.slug,
     },
   }));
 

@@ -18,7 +18,7 @@ const TagsPage = (props) => {
         description="Amplication is an open-source development tool. It helps you develop
           quality Node.js applications without spending time on repetitive
           coding tasks."
-        canonical={`${process.env.NEXT_PUBLIC_SITE}/tags/${tag.slug}`}
+        canonical={`${process.env.NEXT_PUBLIC_SITE}/blog`}
       />
       <main className="w-full font-poppins z-10 mb-12 laptop:mb-[100px] laptop:pt-10">
         {Array.isArray(tags) && !!tags.length && <Filter tags={tags} />}
