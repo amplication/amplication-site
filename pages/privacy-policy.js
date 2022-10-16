@@ -1,5 +1,5 @@
-import { NextSeo } from "next-seo";
-import {MainLayout} from "../layouts";
+import {NextSeo} from 'next-seo';
+import {MainLayout} from '../layouts';
 
 const PrivacyPolicy = () => {
   return (

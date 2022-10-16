@@ -1,15 +1,15 @@
-import { gql } from "@apollo/client";
-import client from "../../../services";
-import generateRSS from "../../../lib/rss";
+import {gql} from '@apollo/client';
+import client from '../../../services';
+import generateRSS from '../../../lib/rss';
 
 const TagsFeed = () => {};
 
-export const getServerSideProps = async (context) => {
+export const getServerSideProps = async context => {
   const postsTake = 10;
   let posts = [];
   let title = "Amplication's Blog";
   try {
-    const { data } = await client.query({
+    const {data} = await client.query({
       query: gql`
         query {
           posts(
@@ -43,23 +43,23 @@ export const getServerSideProps = async (context) => {
 
     const tagName = data.tags.pop().name;
     posts = data.posts;
-    title =  tagName ? tagName + " | " + title : title;
+    title = tagName ? tagName + ' | ' + title : title;
   } catch (e) {
     console.error(e);
   }
 
-  context.res.setHeader("Content-Type", "text/xml");
+  context.res.setHeader('Content-Type', 'text/xml');
   context.res.write(
     generateRSS({
       title,
       description:
-        "Boost your knowledge and step up your game with top storys on backend development, Node.js and open-source from the Amplication team.",
+        'Boost your knowledge and step up your game with top storys on backend development, Node.js and open-source from the Amplication team.',
       path: `tags/${context.params.tagSlug}/feed`,
       posts,
     })
   );
   context.res.end();
-  return { props: {} };
+  return {props: {}};
 };
 
 export default TagsFeed;

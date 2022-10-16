@@ -1,5 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
 import OpenSourceIcon from '../../../../public/images/features/open_source_icon.svg';
 import CodeGeneratorIcon from '../../../../public/images/features/Code_Generator_icon.svg';
 import SyncWithGithubIcon from '../../../../public/images/features/sync_with_github.svg';
@@ -19,166 +19,124 @@ const GetList = () => {
       <section className="bg-transparent">
         <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop ">
           <div className="row align-items-center justify-content-center mb-4">
-            <h2 className="h2 text-center">What do you get from Amplication?</h2>
+            <h2 className="h2 text-center">
+              What do you get from Amplication?
+            </h2>
           </div>
           <div className="features">
-            <div className="col-12 pt-4 row d-flex justify-content-between align-items-start" id="features">
-              <Link
-                href={'/features#open-source'}
-                passHref={true}
-              >
+            <div
+              className="col-12 pt-4 row d-flex justify-content-between align-items-start"
+              id="features"
+            >
+              <Link href={'/features#open-source'} passHref={true}>
                 <a
                   className="feature-card"
                   data-aos-delay="50"
                   data-aos-anchor="#features"
                 >
-                  <Image
-                    src={OpenSourceIcon}
-                    alt={'open source'}
-                  />
-                  <div className="feature-card-text text-base text-white">Open-source project</div>
+                  <Image src={OpenSourceIcon} alt={'open source'} />
+                  <div className="feature-card-text text-base text-white">
+                    Open-source project
+                  </div>
                 </a>
               </Link>
-              <Link
-                href={'/features#custom-code'}
-                passHref={true}
-              >
+              <Link href={'/features#custom-code'} passHref={true}>
                 <a
                   className="feature-card"
                   data-aos-delay="100"
                   data-aos-anchor="#features"
                 >
-                  <Image
-                    src={CodeGeneratorIcon}
-                    alt={'code generator'}
-                  />
+                  <Image src={CodeGeneratorIcon} alt={'code generator'} />
                   <div className="feature-card-text text-base text-white">
                     TypeScript & Node.js source&nbsp;code
                   </div>
                 </a>
               </Link>
-              <Link
-                href={'/features#sync-with-github'}
-                passHref={true}
-              >
+              <Link href={'/features#sync-with-github'} passHref={true}>
                 <a
                   className="feature-card"
                   data-aos-delay="150"
                   data-aos-anchor="#features"
                 >
-                  <Image
-                    src={SyncWithGithubIcon}
-                    alt={'Sync with GitHub'}
-                  />
-                  <div className="feature-card-text text-base text-white">Sync with GitHub</div>
+                  <Image src={SyncWithGithubIcon} alt={'Sync with GitHub'} />
+                  <div className="feature-card-text text-base text-white">
+                    Sync with GitHub
+                  </div>
                 </a>
               </Link>
-              <Link
-                href={'/features#version-control'}
-                passHref={true}
-              >
+              <Link href={'/features#version-control'} passHref={true}>
                 <a
                   className="feature-card"
                   data-aos-delay="200"
                   data-aos-anchor="#features"
                 >
-                  <Image
-                    src={VersionControlIcon}
-                    alt={'version control'}
-                  />
-                  <div className="feature-card-text text-base text-white">Version control</div>
+                  <Image src={VersionControlIcon} alt={'version control'} />
+                  <div className="feature-card-text text-base text-white">
+                    Version control
+                  </div>
                 </a>
               </Link>
-              <Link
-                href={'/features#custom-code'}
-                passHref={true}
-              >
+              <Link href={'/features#custom-code'} passHref={true}>
                 <a
                   className="feature-card"
                   data-aos-delay="250"
                   data-aos-anchor="#features"
                 >
-                  <Image
-                    src={CustomCodeIcon}
-                    alt={'custom code'}
-                  />
-                  <div className="feature-card-text text-base text-white">Custom Code</div>
+                  <Image src={CustomCodeIcon} alt={'custom code'} />
+                  <div className="feature-card-text text-base text-white">
+                    Custom Code
+                  </div>
                 </a>
               </Link>
-              <Link
-                href={'/features#code-generation'}
-                passHref={true}
-              >
+              <Link href={'/features#code-generation'} passHref={true}>
                 <a
                   className="feature-card"
                   data-aos-delay="300"
                   data-aos-anchor="#features"
                 >
-                  <Image
-                    src={VendorLockIcon}
-                    alt={'vendor lock'}
-                  />
+                  <Image src={VendorLockIcon} alt={'vendor lock'} />
                   <div className="feature-card-text text-base text-white">
                     Freedom to continue on your&nbsp;own
                   </div>
                 </a>
               </Link>
-              <Link
-                href={'/features#deployment'}
-                passHref={true}
-              >
+              <Link href={'/features#deployment'} passHref={true}>
                 <a
                   className="feature-card"
                   data-aos-delay="350"
                   data-aos-anchor="#features"
                 >
-                  <Image
-                    src={DockerContainersIcon}
-                    alt={'docker container'}
-                  />
+                  <Image src={DockerContainersIcon} alt={'docker container'} />
                   <div className="feature-card-text text-base text-white">
                     Docker ready to be&nbsp;deployed
                   </div>
                 </a>
               </Link>
-              <Link
-                href={'/features#identity-permissions'}
-                passHref={true}
-              >
+              <Link href={'/features#identity-permissions'} passHref={true}>
                 <a
                   className="feature-card"
                   data-aos-delay="400"
                   data-aos-anchor="#features"
                 >
-                  <Image
-                    src={RolesIcon}
-                    alt={'role based access control'}
-                  />
+                  <Image src={RolesIcon} alt={'role based access control'} />
                   <div className="feature-card-text text-base text-white">
                     Role-based access&nbsp;control
                   </div>
                 </a>
               </Link>
-              <Link
-                href={'/features#admin-ui'}
-                passHref={true}
-              >
+              <Link href={'/features#admin-ui'} passHref={true}>
                 <a
                   className="feature-card"
                   data-aos-delay="450"
                   data-aos-anchor="#features"
                 >
-                  <Image
-                    src={AdminUiIcon}
-                    alt={'admin ui cms'}
-                  />
-                  <div className="feature-card-text text-base text-white">React Admin UI</div>
+                  <Image src={AdminUiIcon} alt={'admin ui cms'} />
+                  <div className="feature-card-text text-base text-white">
+                    React Admin UI
+                  </div>
                 </a>
               </Link>
-              <Link
-                href={'/features#identity-permissions'}
-                passHref={true}
-              >
+              <Link href={'/features#identity-permissions'} passHref={true}>
                 <a
                   className="feature-card"
                   data-aos-delay="500"
@@ -188,29 +146,24 @@ const GetList = () => {
                     src={SecurityAndPerformanceIcon}
                     alt={'security and performance'}
                   />
-                  <div className="feature-card-text text-base text-white">Security & performance</div>
+                  <div className="feature-card-text text-base text-white">
+                    Security & performance
+                  </div>
                 </a>
               </Link>
-              <Link
-                href={'/features#deployment'}
-                passHref={true}
-              >
+              <Link href={'/features#deployment'} passHref={true}>
                 <a
                   className="feature-card"
                   data-aos-delay="550"
                   data-aos-anchor="#features"
                 >
-                  <Image
-                    src={CloudAgnosticIcon}
-                    alt={'cloud agnostic'}
-                  />
-                  <div className="feature-card-text text-base text-white">Cloud agnostic</div>
+                  <Image src={CloudAgnosticIcon} alt={'cloud agnostic'} />
+                  <div className="feature-card-text text-base text-white">
+                    Cloud agnostic
+                  </div>
                 </a>
               </Link>
-              <Link
-                href={'/features#cli'}
-                passHref={true}
-              >
+              <Link href={'/features#cli'} passHref={true}>
                 <a
                   className="feature-card"
                   data-aos-delay="600"
@@ -220,7 +173,9 @@ const GetList = () => {
                     src={CommandLineInterfaceIcon}
                     alt={'cloud agnostic'}
                   />
-                  <div className="feature-card-text text-base text-white">Command Line Interface</div>
+                  <div className="feature-card-text text-base text-white">
+                    Command Line Interface
+                  </div>
                 </a>
               </Link>
             </div>
@@ -228,7 +183,7 @@ const GetList = () => {
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default GetList
+export default GetList;

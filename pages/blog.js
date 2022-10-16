@@ -1,13 +1,13 @@
-import client from "../services";
-import { gql } from "@apollo/client";
-import helpers from "../helpers";
-import PropTypes from "prop-types";
-import Posts from "../components/Posts";
-import Filter from "../components/Posts/Filter";
-import { NextSeo } from "next-seo";
-import { MainLayout } from "../layouts";
+import client from '../services';
+import {gql} from '@apollo/client';
+import helpers from '../helpers';
+import PropTypes from 'prop-types';
+import Posts from '../components/Posts';
+import Filter from '../components/Posts/Filter';
+import {NextSeo} from 'next-seo';
+import {MainLayout} from '../layouts';
 
-const Home = ({ posts, tags }) => {
+const Home = ({posts, tags}) => {
   return (
     <>
       <NextSeo
@@ -28,7 +28,7 @@ const Home = ({ posts, tags }) => {
   );
 };
 
-export const getServerSideProps = async (context) => {
+export const getServerSideProps = async context => {
   const hotPostCount = 1;
   const postsPerPage =
     helpers.getPostPerPage() *
@@ -37,7 +37,7 @@ export const getServerSideProps = async (context) => {
   const postsTake = hotPostCount + 2 * postsPerPage;
 
   try {
-    const { data } = await client.query({
+    const {data} = await client.query({
       query: gql`
         query {
           posts(

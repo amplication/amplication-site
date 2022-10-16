@@ -1,5 +1,4 @@
 const helpers = {
-
   isValidUrl: string => {
     let url;
 
@@ -12,11 +11,11 @@ const helpers = {
     return url.protocol === 'http:' || url.protocol === 'https:';
   },
   /**
-   * @param {string} string 
-   * @param {{[key: string]: boolean}} options 
+   * @param {string} string
+   * @param {{[key: string]: boolean}} options
    * @returns {string}
    */
-  removeMarkdown: ( string, options ) => {
+  removeMarkdown: (string, options) => {
     options = options || {
       stripListLeaders: true,
       listUnicodeChar: true,
@@ -28,9 +27,11 @@ const helpers = {
     try {
       if (options.stripListLeaders) {
         if (options.listUnicodeChar)
-          string = string.replace(/^([\s\t]*)([\*\-\+]|\d+\.)\s+/gm, options.listUnicodeChar + ' $1');
-        else
-          string = string.replace(/^([\s\t]*)([\*\-\+]|\d+\.)\s+/gm, '$1');
+          string = string.replace(
+            /^([\s\t]*)([\*\-\+]|\d+\.)\s+/gm,
+            options.listUnicodeChar + ' $1'
+          );
+        else string = string.replace(/^([\s\t]*)([\*\-\+]|\d+\.)\s+/gm, '$1');
       }
       if (options.gfm) {
         string = string
@@ -54,7 +55,10 @@ const helpers = {
         .replace(/\[\^.+?\](\: .*?$)?/g, '')
         .replace(/\s{0,2}\[.*?\]: .*?$/g, '')
         // Remove images
-        .replace(/\!\[(.*?)\][\[\(].*?[\]\)]/g, options.useImgAltText ? '$1' : '')
+        .replace(
+          /\!\[(.*?)\][\[\(].*?[\]\)]/g,
+          options.useImgAltText ? '$1' : ''
+        )
         // Remove inline links
         .replace(/\[(.*?)\][\[\(].*?[\]\)]/g, '$1')
         // Remove blockquotes
@@ -62,7 +66,10 @@ const helpers = {
         // Remove reference-style links?
         .replace(/^\s{1,2}\[(.*?)\]: (\S+)( ".*?")?\s*$/g, '')
         // Remove atx-style headers
-        .replace(/^(\n)?\s{0,}#{1,6}\s+| {0,}(\n)?\s{0,}#{0,} {0,}(\n)?\s{0,}$/gm, '$1$2$3')
+        .replace(
+          /^(\n)?\s{0,}#{1,6}\s+| {0,}(\n)?\s{0,}#{0,} {0,}(\n)?\s{0,}$/gm,
+          '$1$2$3'
+        )
         // Remove emphasis (repeat the line to remove double emphasis)
         .replace(/([\*_]{1,3})(\S.*?\S{0,1})\1/g, '$2')
         .replace(/([\*_]{1,3})(\S.*?\S{0,1})\1/g, '$2')
@@ -74,18 +81,20 @@ const helpers = {
         .replace(/\n{2,}/g, '\n\n')
         // Remove double spaces
         .replace(/\s+/g, ' ');
-    } catch(e) {
+    } catch (e) {
       console.error(e);
     }
     return string;
   },
 
-  getPostSlug: (slug) => `/blog/${slug}`,
+  getPostSlug: slug => `/blog/${slug}`,
 
-  getPostDate: ( date ) => {
-    let d = new Date( date || 'Dec 27, 2022' );
+  getPostDate: date => {
+    let d = new Date(date || 'Dec 27, 2022');
 
-    return `${d.toLocaleString('en-US', { month: 'long' }).substring(0, 3)} ${d.getDate()}, ${d.getFullYear()}`;
+    return `${d
+      .toLocaleString('en-US', {month: 'long'})
+      .substring(0, 3)} ${d.getDate()}, ${d.getFullYear()}`;
   },
 
   getPostPerPage: () => {

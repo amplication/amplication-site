@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image';
 import databaseIcon from '../../../../public/images/database.svg';
 import githubIcon from '../../../../public/images/github.svg';
 import dockerIcon from '../../../../public/images/docker.svg';
@@ -8,21 +8,24 @@ const Features = () => {
     {
       title: 'Database',
       icon: databaseIcon,
-      content: 'Easily create data models and&nbsp;configure role-based\n' +
+      content:
+        'Easily create data models and&nbsp;configure role-based\n' +
         '              access&nbsp;control with a simple and intuitive UI or CLI',
     },
     {
       title: 'GitHub',
       icon: githubIcon,
-      content: 'Continuously push the generated application to your GitHub\n' +
-        '              repository'
+      content:
+        'Continuously push the generated application to your GitHub\n' +
+        '              repository',
     },
     {
       title: 'Docker',
       icon: dockerIcon,
-      content: 'Get a Docker container with your database, a Node.js application\n' +
+      content:
+        'Get a Docker container with your database, a Node.js application\n' +
         '              and a React client',
-    }
+    },
   ];
   return (
     <>
@@ -33,22 +36,22 @@ const Features = () => {
               return (
                 <div className="solution-card" key={index}>
                   <span className="solution-icon">
-                    {item.icon &&
-                      <Image
-                        src={item.icon}
-                        alt={item.title ?? ''}
-                      />
-                    }
+                    {item.icon && (
+                      <Image src={item.icon} alt={item.title ?? ''} />
+                    )}
                   </span>
-                  <span className={'text-base text-white'} dangerouslySetInnerHTML={{__html: item.content}}></span>
+                  <span
+                    className={'text-base text-white'}
+                    dangerouslySetInnerHTML={{__html: item.content}}
+                  ></span>
                 </div>
-              )
+              );
             })}
           </div>
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default Features
+export default Features;

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image';
 import teamVideoPlaceholder from '../../../../public/images/bg/team-video-placeholder.png';
 
 const HeroBlock = () => {
@@ -16,27 +16,16 @@ const HeroBlock = () => {
               </div>
             </div>
             <div className="hero-bg col-12 col-lg-6">
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-              >
-                <source
-                  src={'videos/amplication-team.mp4'}
-                  type="video/mp4"
-                />
-                <Image
-                  src={teamVideoPlaceholder}
-                  alt={''}
-                />
+              <video autoPlay loop muted playsInline>
+                <source src={'videos/amplication-team.mp4'} type="video/mp4" />
+                <Image src={teamVideoPlaceholder} alt={''} />
               </video>
             </div>
           </div>
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default HeroBlock
+export default HeroBlock;

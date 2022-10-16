@@ -1,14 +1,12 @@
-import HeroBlock from "../components/Sections/MainPage/HeroBlock";
-import Features from "../components/Sections/MainPage/Features";
-import Developers from "../components/Sections/MainPage/Developers";
-import AboutUs from "../components/Sections/MainPage/AboutUs";
-import GetList from "../components/Sections/MainPage/GetList";
-import Steps from "../components/Sections/MainPage/Steps";
-import Roadmap from "../components/Sections/MainPage/Roadmap";
-import { Router, useRouter } from "next/router";
-import { useEffect } from "react";
-import { NextSeo } from "next-seo";
-import { MainLayout } from "../layouts";
+import HeroBlock from '../components/Sections/MainPage/HeroBlock';
+import Features from '../components/Sections/MainPage/Features';
+import Developers from '../components/Sections/MainPage/Developers';
+import AboutUs from '../components/Sections/MainPage/AboutUs';
+import GetList from '../components/Sections/MainPage/GetList';
+import Steps from '../components/Sections/MainPage/Steps';
+import Roadmap from '../components/Sections/MainPage/Roadmap';
+import {NextSeo} from 'next-seo';
+import {MainLayout} from '../layouts';
 
 const Home = () => {
   return (
@@ -23,7 +21,7 @@ const Home = () => {
           images: [
             {
               url: 'https://user-images.githubusercontent.com/53312820/190913686-02c7deb1-da2f-41b8-aa31-065e00f6155c.png',
-            }
+            },
           ],
         }}
         twitter={{

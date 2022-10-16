@@ -1,5 +1,5 @@
-import { NextSeo } from "next-seo";
-import { MainLayout } from "../layouts";
+import {NextSeo} from 'next-seo';
+import {MainLayout} from '../layouts';
 
 const Terms = () => {
   return (
@@ -164,7 +164,7 @@ const Terms = () => {
                 non-transferable license, during the Term, to access, install
                 and use the Software, download the Source Available Code (in
                 whole but not in part) , solely for Your own internal business
-                or personal use, all as further specified herein (the{" "}
+                or personal use, all as further specified herein (the{' '}
                 <b>&quot;License</b>&quot;). You agree to use the Software in
                 accordance with such documentation. Further, You must only
                 install the Software on a device that you own or control. For
@@ -279,7 +279,7 @@ const Terms = () => {
               </h3>
               <p>
                 Amplication may provide in the future specific paid features,
-                tools, modules, or functionality of the Software (collectively{" "}
+                tools, modules, or functionality of the Software (collectively{' '}
                 <b>&quot;Features</b>&quot;). Access to such Features and/or
                 receiving additional License metric volume, if applicable,
                 during the Term (collectively, &quot;Additional Services&quot;)

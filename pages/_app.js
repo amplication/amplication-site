@@ -1,82 +1,81 @@
-import "../styles/globals.css";
-import { ApolloProvider } from "@apollo/client";
-import Head from "next/head";
-import client from "../services/index";
-import { useEffect } from "react";
-import "aos/dist/aos.css";
-import AOS from "aos";
-import Typed from "typed.js";
-import dynamic from "next/dynamic";
-import { createPopper } from "@popperjs/core";
-import Script from "next/script";
-import Image from "next/image";
-import { useRouter } from "next/router";
-import * as analytics from "../lib/analytics";
-import { DefaultSeo } from "next-seo";
+import {ApolloProvider} from '@apollo/client';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import Head from 'next/head';
+import Script from 'next/script';
+import {useRouter} from 'next/router';
+import {DefaultSeo} from 'next-seo';
+import PropTypes from 'prop-types';
+import {useEffect} from 'react';
+import Typed from 'typed.js';
 
-function Amplication({ Component, pageProps }) {
-  const { asPath } = useRouter();
+import '../styles/globals.css';
+import client from '../services/index';
+import * as analytics from '../lib/analytics';
+
+function Amplication({Component, pageProps}) {
+  const {asPath} = useRouter();
   const isBlogPage = Boolean(
-    asPath.includes("/blog") || asPath.includes("/tags")
+    asPath.includes('/blog') || asPath.includes('/tags')
   );
 
   const router = useRouter();
 
   const canonicalUrl = (
-    process.env.NEXT_PUBLIC_SITE + (router.asPath === "/" ? "" : router.asPath)
-  ).split("?")[0];
+    process.env.NEXT_PUBLIC_SITE + (router.asPath === '/' ? '' : router.asPath)
+  ).split('?')[0];
 
   useEffect(() => {
-    const handleRouteChange = (url) => {
-      analytics.page(url, { url });
+    const handleRouteChange = url => {
+      analytics.page(url, {url});
     };
     //When the component is mounted, subscribe to router changes
     //and log those page views
-    router.events.on("routeChangeComplete", handleRouteChange);
+    router.events.on('routeChangeComplete', handleRouteChange);
 
     // If the component is unmounted, unsubscribe
     // from the event with the `off` method
     return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
+      router.events.off('routeChangeComplete', handleRouteChange);
     };
   }, [router.events]);
 
   useEffect(() => {
     // Scroll effects
     AOS.init({
-      easing: "ease-out-back",
+      easing: 'ease-out-back',
       duration: 1000,
     });
 
-    // Typing letter animation
-    const typingAnimations = document.querySelectorAll(
-      "#animated-header-typed"
-    );
-    if (typingAnimations.length) {
-      let typed = new Typed("#animated-header-typed", {
-        stringsElement: "#animated-header-content",
-        typeSpeed: 60,
-        backSpeed: 20,
-        backDelay: 1700,
-        startDelay: 0,
-        smartBackspace: false,
-        loop: true,
-      });
-    }
+    // // Typing letter animation
+    // const typingAnimations = document.querySelectorAll(
+    //   '#animated-header-typed'
+    // );
+    // if (typingAnimations.length) {
+    //   let typed = new Typed('#animated-header-typed', {
+    //     stringsElement: '#animated-header-content',
+    //     typeSpeed: 60,
+    //     backSpeed: 20,
+    //     backDelay: 1700,
+    //     startDelay: 0,
+    //     smartBackspace: false,
+    //     loop: true,
+    //   });
+    // }
 
     // Run code on client-side only : ensure document is here
     if (typeof document !== undefined) {
-      require("bootstrap/dist/js/bootstrap");
-      require("lity/dist/lity.min.js");
-      require("lity/dist/lity.min.css");
+      require('bootstrap/dist/js/bootstrap');
+      require('lity/dist/lity.min.js');
+      require('lity/dist/lity.min.css');
       if (!isBlogPage) {
-        require("../public/styles/style.css");
+        require('../public/styles/style.css');
       }
     }
   }, [isBlogPage]);
 
   // Use the layout defined at the page level, if available
-  const getLayout = Component.getLayout || ((page) => page);
+  const getLayout = Component.getLayout || (page => page);
 
   return (
     <>
@@ -86,7 +85,7 @@ function Amplication({ Component, pageProps }) {
       <ApolloProvider client={client}>
         {/*Facebook Pixel*/}
         <Script
-          id={"facebook-pixel"}
+          id={'facebook-pixel'}
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
@@ -96,8 +95,8 @@ function Amplication({ Component, pageProps }) {
         />
         {/*Hotjar Tracking Code*/}
         <Script
-          id={"hotjar"}
-          strategy={"afterInteractive"}
+          id={'hotjar'}
+          strategy={'afterInteractive'}
           dangerouslySetInnerHTML={{
             __html: `
             !function(t,h,e,j,s,n){t.hj=t.hj||function(){(t.hj.q=t.hj.q||[]).push(arguments)},t._hjSettings={hjid:2379815,hjsv:6},s=h.getElementsByTagName("head")[0],(n=h.createElement("script")).async=1,n.src="https://static.hotjar.com/c/hotjar-"+t._hjSettings.hjid+".js?sv="+t._hjSettings.hjsv,s.appendChild(n)}(window,document);
@@ -105,7 +104,7 @@ function Amplication({ Component, pageProps }) {
           }}
         />
         <Script
-          id={"intercomSettings"}
+          id={'intercomSettings'}
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
@@ -116,7 +115,7 @@ function Amplication({ Component, pageProps }) {
           }}
         />
         <Script
-          id={"intercom"}
+          id={'intercom'}
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
@@ -125,7 +124,7 @@ function Amplication({ Component, pageProps }) {
           }}
         />
         <Script
-          id={"segment"}
+          id={'segment'}
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
@@ -137,16 +136,16 @@ function Amplication({ Component, pageProps }) {
           }}
         />
         {/* Prevents HubSpot from loading form collector */}
-        <hs id={"CollectedForms-25691669"} />
+        <hs id={'CollectedForms-25691669'} />
         {/* HubSpot */}
         <Script
-          id={"hs-script-loader"}
+          id={'hs-script-loader'}
           strategy="afterInteractive"
           src="//js-eu1.hs-scripts.com/25691669.js"
         />
         {/* Google Tag Manager */}
         <Script
-          id={"gtm"}
+          id={'gtm'}
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
@@ -164,7 +163,7 @@ function Amplication({ Component, pageProps }) {
             src="https://www.googletagmanager.com/ns.html?id=GTM-TQF7HCF"
             height="0"
             width="0"
-            style={{ display: "none", visibility: "hidden" }}
+            style={{display: 'none', visibility: 'hidden'}}
           ></iframe>
         </noscript>
         <DefaultSeo canonical={canonicalUrl} />
@@ -174,4 +173,8 @@ function Amplication({ Component, pageProps }) {
   );
 }
 
+Amplication.propTypes = {
+  Component: PropTypes.Component,
+  pageProps: PropTypes.pageProps,
+};
 export default Amplication;
