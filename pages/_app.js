@@ -75,6 +75,9 @@ function Amplication({ Component, pageProps }) {
     }
   }, [isBlogPage]);
 
+  // Use the layout defined at the page level, if available
+  const getLayout = Component.getLayout || ((page) => page);
+
   return (
     <>
       <Head>
@@ -133,7 +136,6 @@ function Amplication({ Component, pageProps }) {
           `,
           }}
         />
-
         {/* Prevents HubSpot from loading form collector */}
         <hs id={"CollectedForms-25691669"} />
         {/* HubSpot */}
@@ -142,7 +144,6 @@ function Amplication({ Component, pageProps }) {
           strategy="afterInteractive"
           src="//js-eu1.hs-scripts.com/25691669.js"
         />
-
         {/* Google Tag Manager */}
         <Script
           id={"gtm"}
@@ -157,7 +158,6 @@ function Amplication({ Component, pageProps }) {
           `,
           }}
         />
-
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
@@ -167,10 +167,8 @@ function Amplication({ Component, pageProps }) {
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
-
         <DefaultSeo canonical={canonicalUrl} />
-
-        <Component {...pageProps} />
+        {getLayout(<Component {...pageProps} />)}
       </ApolloProvider>
     </>
   );

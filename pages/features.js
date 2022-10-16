@@ -1,6 +1,3 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import Background from "../components/Background";
 import FeatureItem from "../components/Sections/Features/FeatureItem";
 import GraphQLIcon from "/public/images/features-page/icons/nenu_graphql_icon.svg";
 import GraphQLImage from "/public/images/features-page/graphql.svg";
@@ -27,6 +24,7 @@ import versionControlImage from "/public/images/features-page/version_control.sv
 import syncGithubIcon from "/public/images/features-page/icons/github.svg";
 import syncGithubImage from "/public/images/features-page/sync_with_github.svg";
 import { NextSeo } from "next-seo";
+import {MainLayout} from "../layouts";
 
 const Features = () => {
   const features = [
@@ -251,32 +249,27 @@ const Features = () => {
         description="Amplication is the most flexible open-source backend development platform for Node.JS applications. Design models and roles, deploy your app, connect with REST or GraphQL API, sync with GitHub. Built for developers, by developers."
       />
 
-      <div className="page bg-dark-black-100 min-h-screen flex flex-col justify-start justify-items-stretch overflow-hidden pt-[60px] laptop:pt-[110px] bg-purple-dark relative">
-        <Header />
-
-        <main className="w-full font-poppins z-10 mb-12 laptop:mb-[100px] amplication-base">
-          {features.map((feature, index) => {
-            return (
-              <FeatureItem
-                id={feature.id}
-                icon={feature.icon}
-                image={feature.image}
-                iconClass={feature.iconClass}
-                title={feature.title}
-                content={feature.content}
-                buttons={feature.buttons}
-                isComingSoon={feature.isComingSoon}
-                key={feature.id}
-              />
-            );
-          })}
-        </main>
-
-        <Footer />
-        <Background />
-      </div>
+      <main className="w-full font-poppins z-10 mb-12 laptop:mb-[100px] amplication-base">
+        {features.map((feature, index) => {
+          return (
+            <FeatureItem
+              id={feature.id}
+              icon={feature.icon}
+              image={feature.image}
+              iconClass={feature.iconClass}
+              title={feature.title}
+              content={feature.content}
+              buttons={feature.buttons}
+              isComingSoon={feature.isComingSoon}
+              key={feature.id}
+            />
+          );
+        })}
+      </main>
     </>
   );
 };
-
+Features.getLayout = function getLayout(page) {
+  return <MainLayout>{page}</MainLayout>;
+};
 export default Features;
