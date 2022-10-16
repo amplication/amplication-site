@@ -1,7 +1,7 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 const Developers = () => {
-  return(
+  return (
     <>
       <section className="page-developers bg-transparent">
         <div className="container-custom">
@@ -17,7 +17,9 @@ const Developers = () => {
               </div>
 
               <ul className="type-list">
-                <li className={'text-base text-white'}>Use Amplication UI or CLI to create your Node.JS app</li>
+                <li className={'text-base text-white'}>
+                  Use Amplication UI or CLI to create your Node.JS app
+                </li>
                 <li className={'text-base text-white'}>
                   Design data models and create REST & GraphQL APIs
                   without&nbsp;coding.
@@ -32,13 +34,8 @@ const Developers = () => {
                 </li>
               </ul>
               <div className="spacer"></div>
-              <Link
-                href={'https://app.amplication.com'}
-                passHref={true}
-              >
-                <a className="btn btn-primary btn-lg">
-                  Get Started
-                </a>
+              <Link href={'https://app.amplication.com'} passHref={true}>
+                <a className="btn btn-primary btn-lg">Get Started</a>
               </Link>
             </div>
 
@@ -72,20 +69,15 @@ const Developers = () => {
                 </li>
               </ul>
               <div className="spacer"></div>
-              <Link
-                href={'https://app.amplication.com'}
-                passHref={true}
-              >
-                <a className="btn btn-primary btn-lg">
-                  Get Started
-                </a>
+              <Link href={'https://app.amplication.com'} passHref={true}>
+                <a className="btn btn-primary btn-lg">Get Started</a>
               </Link>
             </div>
           </div>
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default Developers
+export default Developers;

@@ -1,1 +1,1 @@
-export const concatClassnames = (...classnames) => classnames.join(" ");
+export const concatClassnames = (...classnames) => classnames.join(' ');

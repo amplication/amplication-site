@@ -1,4 +1,4 @@
-import Link from "next/link"
+import Link from 'next/link';
 
 const FooterBottomBar = () => {
   return (
@@ -23,7 +23,7 @@ const FooterBottomBar = () => {
         </li>
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default FooterBottomBar
+export default FooterBottomBar;

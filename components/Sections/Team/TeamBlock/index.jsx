@@ -1,4 +1,4 @@
-import TeamMember from "../../../Common/TeamMember";
+import TeamMember from '../../../Common/TeamMember';
 import FeatureItem from '../../../Common/FeatureItem';
 import matanShidlov from '../../../../public/images/team/matan-shidlov.png';
 import innaBell from '../../../../public/images/team/inna-bell.png';
@@ -14,8 +14,8 @@ import michaelSolati from '../../../../public/images/team/michael-solati.png';
 import eugineTseitlin from '../../../../public/images/team/eugene-tseitlin.png';
 import shimiBar from '../../../../public/images/team/shimi.png';
 import arielWeinberger from '../../../../public/images/team/ariel.png';
-import toddFeinroth from '../../../../public/images/team/todd.png'
-import erezGreenberg from '../../../../public/images/team/erez.png'
+import toddFeinroth from '../../../../public/images/team/todd.png';
+import erezGreenberg from '../../../../public/images/team/erez.png';
 
 import talkWithUs from '../../../../public/images/icons/talk-with-with-team.svg';
 import joinUs from '../../../../public/images/icons/join-the-team.svg';
@@ -38,8 +38,8 @@ const TeamBlock = () => {
         {
           href: 'https://twitter.com/arielweinberger',
           iconClass: 'twitter',
-        }
-      ]
+        },
+      ],
     },
     {
       name: 'Todd Feinroth',
@@ -50,12 +50,12 @@ const TeamBlock = () => {
           href: 'https://www.linkedin.com/in/todd-feinroth-76a065168/',
           iconClass: 'linkedin',
         },
-        
+
         {
           href: 'https://twitter.com/sailsmantf',
           iconClass: 'twitter',
-        }
-      ]
+        },
+      ],
     },
     {
       name: 'Inna Bell',
@@ -69,8 +69,8 @@ const TeamBlock = () => {
         {
           href: 'https://twitter.com/InnaBell_',
           iconClass: 'twitter',
-        }
-      ]
+        },
+      ],
     },
     {
       name: 'Erez Greenberg',
@@ -84,8 +84,8 @@ const TeamBlock = () => {
         {
           href: 'https://github.com/GreenMachine01/',
           iconClass: 'github',
-        }
-      ]
+        },
+      ],
     },
     {
       name: 'Yuval Hazaz',
@@ -103,8 +103,8 @@ const TeamBlock = () => {
         {
           href: 'https://twitter.com/Yuvalhazaz1',
           iconClass: 'twitter',
-        }
-      ]
+        },
+      ],
     },
     {
       name: 'Vika Goncharuk',
@@ -119,7 +119,7 @@ const TeamBlock = () => {
           href: 'https://github.com/VikaGon',
           iconClass: 'github',
         },
-      ]
+      ],
     },
     {
       name: 'Matan Shidlov',
@@ -137,8 +137,8 @@ const TeamBlock = () => {
         {
           href: 'https://twitter.com/MShidlov',
           iconClass: 'twitter',
-        }
-      ]
+        },
+      ],
     },
     {
       name: 'Mor Hagbi',
@@ -153,8 +153,9 @@ const TeamBlock = () => {
           href: 'https://github.com/morhag90',
           iconClass: 'github',
         },
-      ]
-    },{
+      ],
+    },
+    {
       name: 'Shimi Bar',
       position: 'Sr. Full-stack Eng.',
       image: shimiBar,
@@ -167,7 +168,7 @@ const TeamBlock = () => {
           href: 'https://github.com/barshimi',
           iconClass: 'github',
         },
-      ]
+      ],
     },
     {
       name: 'Moshe Forman',
@@ -186,7 +187,7 @@ const TeamBlock = () => {
           href: 'https://twitter.com/MosheForman',
           iconClass: 'twitter',
         },
-      ]
+      ],
     },
     {
       name: 'Eugene Tseitlin',
@@ -201,7 +202,7 @@ const TeamBlock = () => {
           href: 'https://github.com/EugeneTseitlin',
           iconClass: 'github',
         },
-      ]
+      ],
     },
     {
       name: 'Michael Solati',
@@ -220,7 +221,7 @@ const TeamBlock = () => {
           href: 'https://twitter.com/MichaelSolati',
           iconClass: 'twitter',
         },
-      ]
+      ],
     },
     {
       name: 'Saurav Jain',
@@ -239,7 +240,7 @@ const TeamBlock = () => {
           href: 'https://twitter.com/Sauain',
           iconClass: 'twitter',
         },
-      ]
+      ],
     },
     {
       name: 'Alex Bass',
@@ -258,7 +259,7 @@ const TeamBlock = () => {
           href: 'https://twitter.com/kipibass86',
           iconClass: 'twitter',
         },
-      ]
+      ],
     },
     {
       name: 'Amit Barletz',
@@ -277,7 +278,7 @@ const TeamBlock = () => {
           href: 'https://twitter.com/BarletzA52',
           iconClass: 'twitter',
         },
-      ]
+      ],
     },
     {
       name: 'Ofek Gabay',
@@ -296,7 +297,7 @@ const TeamBlock = () => {
           href: 'https://twitter.com/OfekGabay1',
           iconClass: 'twitter',
         },
-      ]
+      ],
     },
   ];
 
@@ -304,9 +305,9 @@ const TeamBlock = () => {
     {
       image: talkWithUs,
       alt: 'Talk with us',
-      title: '<span>Talk</span>\n' +
-        '                  with the team',
-      content: 'Join Amplication\'s Discord channel and chat with the team. Ask\n' +
+      title: '<span>Talk</span>\n' + '                  with the team',
+      content:
+        "Join Amplication's Discord channel and chat with the team. Ask\n" +
         '                  about anything, we would love to help',
       linkUrl: 'https://amplication.com/discord',
       linkText: 'Chat now',
@@ -314,9 +315,9 @@ const TeamBlock = () => {
     {
       image: joinUs,
       alt: 'Join us',
-      title: '<span>Join</span>\n' +
-        '                  the team',
-      content: 'We are a small, dedicated team, revolutionizing the speed and\n' +
+      title: '<span>Join</span>\n' + '                  the team',
+      content:
+        'We are a small, dedicated team, revolutionizing the speed and\n' +
         '                  ease of cloud development for professional developers',
       linkUrl: 'https://amplication.com/jobs',
       linkText: 'Come work with us',
@@ -330,7 +331,7 @@ const TeamBlock = () => {
           <div className="row align-items-center justify-content-center mb-1">
             <h2 className="h2 text-center">Meet The Team</h2>
           </div>
-          {(members.length > 0) &&
+          {members.length > 0 && (
             <div className="row">
               <div className="team-members">
                 {members.map((member, index) => {
@@ -342,12 +343,12 @@ const TeamBlock = () => {
                       image={member.image}
                       links={member.links}
                     />
-                  )
+                  );
                 })}
               </div>
             </div>
-          }
-          {(features.length > 0) &&
+          )}
+          {features.length > 0 && (
             <div className="row">
               <div className="feature-items">
                 {features.map((feature, index) => {
@@ -361,15 +362,15 @@ const TeamBlock = () => {
                       linkUrl={feature.linkUrl}
                       linkText={feature.linkText}
                     />
-                  )
+                  );
                 })}
               </div>
             </div>
-          }
+          )}
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default TeamBlock
+export default TeamBlock;

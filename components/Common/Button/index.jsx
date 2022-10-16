@@ -1,11 +1,11 @@
-import PropTypes from "prop-types";
-import Link from "next/link";
+import PropTypes from 'prop-types';
+import Link from 'next/link';
 
 // Background Colors
 const ButtonColorsConfig = {
-  purpleDark: "bg-purple-dark hover:bg-purple-bright-hover",
-  purpleBright: "bg-purple-bright",
-  purpleBrightHover: "hover:bg-purple-bright-hover",
+  purpleDark: 'bg-purple-dark hover:bg-purple-bright-hover',
+  purpleBright: 'bg-purple-bright',
+  purpleBrightHover: 'hover:bg-purple-bright-hover',
 };
 
 const Button = ({
@@ -19,8 +19,8 @@ const Button = ({
   className,
 }) => {
   let classes =
-    "flex justify-center items-center text-white font-poppins font-normal text-center rounded py-2 px-3 laptop:px-8 laptop:font-medium transition-all duration-300";
-  classes += `${isAlignFull ? " w-full" : ""}`;
+    'flex justify-center items-center text-white font-poppins font-normal text-center rounded py-2 px-3 laptop:px-8 laptop:font-medium transition-all duration-300';
+  classes += `${isAlignFull ? ' w-full' : ''}`;
   classes += ` ${ButtonColorsConfig[backgroundColor]}`;
   classes += ` ${ButtonColorsConfig[hoverBackgroundColor]}`;
   classes += ` ${className}`;
@@ -47,14 +47,16 @@ Button.propTypes = {
   isLink: PropTypes.bool,
   href: PropTypes.string,
   onClick: PropTypes.func,
+  className: PropTypes.string,
 };
 
 Button.defaultProps = {
   isAlignFull: false,
-  backgroundColor: "purpleDark",
+  backgroundColor: 'purpleDark',
   isLink: false,
-  href: "",
+  href: '',
   onClick: undefined,
+  className: undefined,
 };
 
 export default Button;

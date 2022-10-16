@@ -8,7 +8,10 @@
     "postbuild": "next-sitemap",
     "start": "next start",
     "stage": "next start -p 3001",
-    "lint": "next lint"
+    "lint": "gts lint"
+  },
+  "engines": {
+    "node": ">=16.0.0 <17"
   },
   "dependencies": {
     "@apollo/client": "^3.6.9",
@@ -39,17 +42,23 @@
     "typed.js": "^2.0.12"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.19.1",
+    "@babel/preset-react": "^7.18.6",
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@types/markdown-it": "^12.2.3",
+    "@types/node": "^14.11.2",
     "autoprefixer": "^10.4.8",
-    "eslint": "8.23.0",
+    "eslint": "^8.23.0",
     "eslint-config-next": "12.2.5",
+    "eslint-plugin-react": "^7.31.10",
     "feed": "^4.2.2",
+    "gts": "^3.1.0",
     "markdown-it": "^13.0.1",
     "postcss": "^8.4.16",
     "prop-types": "^15.8.1",
     "sharp": "^0.31.0",
-    "tailwindcss": "^3.1.8"
+    "tailwindcss": "^3.1.8",
+    "typescript": "^4.0.3"
   }
 }

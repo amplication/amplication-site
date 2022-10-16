@@ -4,37 +4,40 @@ const BottomBar = () => {
   const [version, setVersion] = useState(null);
 
   useEffect(() => {
-    if ( !version ) {
-      fetch( 'https://api.github.com/repos/amplication/amplication/releases/latest',
+    if (!version) {
+      fetch(
+        'https://api.github.com/repos/amplication/amplication/releases/latest',
         {
           method: 'GET',
-        })
-        .then( response => {
+        }
+      )
+        .then(response => {
           if (response.ok) {
             return response.json();
           }
         })
-        .then( data => {
-          if ( typeof data !== 'undefined' && data.name) {
+        .then(data => {
+          if (typeof data !== 'undefined' && data.name) {
             setVersion(data.name);
           }
         })
-        .catch( error => {
+        .catch(error => {
           console.log(error);
-        })
+        });
     }
   }, []);
 
   return (
-    version &&
-    <div className='w-full'>
-      <div className='w-full container-desktop-enlarged'>
-        <span className='text-white font-ubuntumono text-xs text-center laptop:text-base py-2 px-4 laptop:py-2 bg-purple-bright inline-block rounded-b'>
-          {version}
-        </span>
+    version && (
+      <div className="w-full">
+        <div className="w-full container-desktop-enlarged">
+          <span className="text-white font-ubuntumono text-xs text-center laptop:text-base py-2 px-4 laptop:py-2 bg-purple-bright inline-block rounded-b">
+            {version}
+          </span>
+        </div>
       </div>
-    </div>
-  )
-}
+    )
+  );
+};
 
 export default BottomBar;

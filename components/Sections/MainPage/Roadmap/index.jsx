@@ -1,6 +1,6 @@
 const Roadmap = () => {
   const mystyle = {
-    color: " #A787FF",
+    color: ' #A787FF',
   };
   return (
     <>
@@ -9,7 +9,7 @@ const Roadmap = () => {
           <div className="row m-container p-container align-items-center justify-content-center justify-content-md-start mb-4 text-white">
             <h2 className="roadmap-heading">
               What&apos;s next? <br />
-              Great things coming down the{" "}
+              Great things coming down the{' '}
               <span style={mystyle}>&lt;roadmap&gt;</span>
             </h2>
             <p className="roadmap-paragraph">
@@ -83,7 +83,7 @@ const Roadmap = () => {
                   </li>
                 </ul>
               </div>
-            </div>{" "}
+            </div>{' '}
             <div className="col-sm-12 col-md-6 col-lg-4">
               <div className="roadmap-box">
                 <div className="roadmap-title">Git &amp; Custom Code</div>
@@ -118,14 +118,14 @@ const Roadmap = () => {
           </div>
           <br />
           <div className="roadmap-link">
-            Want to dive into features? Check out our{" "}
+            Want to dive into features? Check out our{' '}
             <a
               className="official-roadmap-link"
               href="https://docs.amplication.com/docs/about/roadmap/"
             >
-              {" "}
+              {' '}
               official public roadmap
-            </a>{" "}
+            </a>{' '}
             to learn more.
           </div>
         </div>
