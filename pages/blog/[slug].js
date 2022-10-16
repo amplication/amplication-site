@@ -37,6 +37,8 @@ const Post = ({ posts, post }) => {
         pageImage={
           helpers.isValidUrl(post.featuredImage) ? post.featuredImage : ""
         }
+        noindex={!!post.draft}
+        nofollow={!!post.draft}
         openGraph={{
           url: helpers.getPostSlug(post.slug),
           title: post.title,
@@ -180,18 +182,19 @@ const Post = ({ posts, post }) => {
 };
 
 export const getStaticProps = async (context) => {
-  console.log(context.params.slug);
   try {
     const { data } = await client.query({
       query: gql`
         query {
           posts(where: {slug: {equals: "${context.params.slug}"}}) {
+            createdAt
+            content
+            draft
             slug
             title
-            content
             featuredImage
             tags {
-              id
+              slug
               name
             }
             author {
@@ -200,7 +203,6 @@ export const getStaticProps = async (context) => {
               lastName
               profileImage
             }
-            createdAt
           }
         }
       `,
@@ -226,8 +228,8 @@ export const getStaticProps = async (context) => {
               title
               featuredImage
               tags {
-                id
                 name
+                slug
               }
               author {
                 id

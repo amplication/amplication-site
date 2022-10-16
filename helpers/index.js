@@ -80,10 +80,6 @@ const helpers = {
     return string;
   },
 
-  getPostID: ( slug ) => {
-    return slug.split('-').pop();
-  },
-
   getPostSlug: (slug) => `/blog/${slug}`,
 
   getPostDate: ( date ) => {

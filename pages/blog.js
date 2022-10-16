@@ -63,8 +63,8 @@ export const getServerSideProps = async (context) => {
           }
           tags {
             name
-            posts(take: 1) {
-              id
+            posts(take: 1, where: {draft: {not: true}}) {
+              slug
             }
             slug
           }
