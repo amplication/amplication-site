@@ -105,8 +105,8 @@ const Posts = ({posts}) => {
           {
             postsList.slice(0, 3).map((post, i) => {
               return (
-                <SwiperSlide className='!h-auto' key={ post.id } virtualIndex={i}>
-                  <PostCard data={ post } key={ post.id } />
+                <SwiperSlide className='!h-auto' key={ post.slug } virtualIndex={i}>
+                  <PostCard data={ post } key={ post.slug } />
                 </SwiperSlide>
               )
             })
@@ -121,7 +121,7 @@ const Posts = ({posts}) => {
         </div>
         {
           postsList.slice(3, ( postPerPage * ( typeof page !== 'undefined' ? parseInt(page) + 1 : 2 ) )).map((post) => {
-            return <PostCard data={ post } key={ post.id }/>
+            return <PostCard data={ post } key={ post.slug }/>
           })
         }
 

@@ -15,9 +15,12 @@ export const getServerSideProps = async (context) => {
           posts(
             take: ${postsTake},
             orderBy: {createdAt: Desc},
-            where: {tags: {some: {slug: {equals: "${context.params.tagSlug}"}}}}
+            where: {
+              draft: {not: true},
+              tags: {some: {slug: {equals: "${context.params.tagSlug}"}}}
+            }
           ) {
-            id
+            slug
             title
             featuredImage
             content

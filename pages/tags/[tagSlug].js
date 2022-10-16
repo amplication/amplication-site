@@ -8,12 +8,13 @@ import { NextSeo } from "next-seo";
 import { MainLayout } from "../../layouts";
 
 const TagsPage = (props) => {
-  let { posts, tags } = props;
+  let { posts, tags, tag } = props;
+  const title = `${tag.name} | Amplication's Blog`;
 
   return (
     <>
       <NextSeo
-        title="Amplication - Generate Node.js apps, just code what matters"
+        title={title}
         description="Amplication is an open-source development tool. It helps you develop
           quality Node.js applications without spending time on repetitive
           coding tasks."
@@ -37,16 +38,20 @@ export const getServerSideProps = async (context) => {
     helpers.getPostPerPage() *
     (context.params.page ? parseInt(context.params.page) : 1);
   const postsTake = postsPerPage + 1;
-  const postsByTagSlug = context.params.tagSlug
-    ? `, where: {tags: {some: {slug: {equals: "${context.params.tagSlug}"}}}}, `
-    : "";
 
   try {
     const { data } = await client.query({
       query: gql`
         query {
-          posts(take: ${postsTake}, orderBy: {createdAt: Desc}${postsByTagSlug}) {
-            id
+          posts(
+            take: ${postsTake},
+            orderBy: {createdAt: Desc},
+            where: {
+              draft: {not: true},
+              tags: {some: {slug: {equals: "${context.params.tagSlug}"}}}
+            }
+          ) {
+            slug
             title
             featuredImage
             tags {
@@ -63,7 +68,7 @@ export const getServerSideProps = async (context) => {
           }
           tags {
             name
-            posts(take: 1) {
+            posts(take: 1, where: {draft: {not: true}}) {
               id
             }
             slug
@@ -72,10 +77,18 @@ export const getServerSideProps = async (context) => {
       `,
     });
 
+    const tag = data.tags.find((t) => t.slug === context.params.tagSlug);
+    if (!tag) {
+      return {
+        notFound: true,
+      };
+    }
+
     return {
       props: {
         posts: data.posts ? data.posts : null,
         tags: data.tags ? data.tags : null,
+        tag,
       },
     };
   } catch (e) {
@@ -85,6 +98,7 @@ export const getServerSideProps = async (context) => {
   return {
     props: {
       posts: null,
+      tag: null,
       tags: null,
     },
   };
@@ -92,11 +106,13 @@ export const getServerSideProps = async (context) => {
 
 TagsPage.propTypes = {
   posts: PropTypes.array,
+  tag: PropTypes.object,
   tags: PropTypes.array,
 };
 
 TagsPage.defaultProps = {
   posts: [],
+  tag: null,
   tags: [],
 };
 TagsPage.getLayout = function getLayout(page) {

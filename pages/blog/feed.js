@@ -12,8 +12,8 @@ export const getServerSideProps = async (context) => {
     const { data } = await client.query({
       query: gql`
         query {
-          posts(take: ${postsTake}, orderBy: {createdAt: Desc}) {
-            id
+          posts(take: ${postsTake}, orderBy: {createdAt: Desc}, where: {draft: {not: true}}) {
+            slug
             title
             featuredImage
             content
