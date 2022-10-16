@@ -15,7 +15,7 @@ export const getServerSideProps = async (context) => {
           posts(
             take: ${postsTake},
             orderBy: {createdAt: Desc},
-            where: {tags: {some: {id: {equals: "${context.params.tagID}"}}}}
+            where: {tags: {some: {slug: {equals: "${context.params.tagSlug}"}}}}
           ) {
             id
             title
@@ -23,6 +23,7 @@ export const getServerSideProps = async (context) => {
             content
             tags {
               name
+              slug
             }
             author {
               firstName
@@ -30,15 +31,16 @@ export const getServerSideProps = async (context) => {
             }
             createdAt
           }
-          tag(where: { id: "${context.params.tagID}" }) {
+          tags(where: {slug: {equals: "${context.params.tagSlug}"}}) {
             name
           }
         }
       `,
     });
 
+    const tagName = data.tags.pop().name;
     posts = data.posts;
-    title = data.tag.name + " | " + title;
+    title =  tagName ? tagName + " | " + title : title;
   } catch (e) {
     console.error(e);
   }
@@ -49,7 +51,7 @@ export const getServerSideProps = async (context) => {
       title,
       description:
         "Boost your knowledge and step up your game with top storys on backend development, Node.js and open-source from the Amplication team.",
-      path: `tags/${context.params.tagID}/feed`,
+      path: `tags/${context.params.tagSlug}/feed`,
       posts,
     })
   );

@@ -33,8 +33,8 @@ export const getServerSideProps = async (context) => {
   const postsPerPage =
     helpers.getPostPerPage() *
     (context.query.page ? parseInt(context.query.page) : 1);
-  const postsByTagID = context.query.tagID
-    ? `, where: {tags: {some: {id: {equals: "${context.query.tagID}"}}}}, `
+  const postsByTagSlug = context.query.tagSlug
+    ? `, where: {tags: {some: {tag: {equals: "${context.query.tagSlug}"}}}}, `
     : "";
   const postsTake = hotPostCount + 2 * postsPerPage;
 
@@ -42,14 +42,14 @@ export const getServerSideProps = async (context) => {
     const { data } = await client.query({
       query: gql`
         query {
-          posts(take: ${postsTake}, orderBy: {createdAt: Desc}${postsByTagID}) {
+          posts(take: ${postsTake}, orderBy: {createdAt: Desc}${postsByTagSlug}) {
             id
             title
             featuredImage
             content
             tags {
-              id
               name
+              slug
             }
             author {
               id
@@ -60,11 +60,11 @@ export const getServerSideProps = async (context) => {
             createdAt
           }
           tags {
-            id
             name
             posts(take: 1) {
               id
             }
+            slug
           }
         }
       `,
