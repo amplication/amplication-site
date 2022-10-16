@@ -156,9 +156,10 @@ const Post = ({posts, post}) => {
                 modules={[Pagination]}
                 pagination={{
                   clickable: true,
-                  clickableClass: `swiper-pagination-clickable !relative pt-4`,
-                  bulletClass: `swiper-pagination-bullet !bg-white`,
-                  bulletActiveClass: `swiper-pagination-bullet-active relative top-[1px] !bg-secondary-turquoise !w-2.5 !h-2.5`,
+                  clickableClass: 'swiper-pagination-clickable !relative pt-4',
+                  bulletClass: 'swiper-pagination-bullet !bg-white',
+                  bulletActiveClass:
+                    'swiper-pagination-bullet-active relative top-[1px] !bg-secondary-turquoise !w-2.5 !h-2.5',
                 }}
               >
                 {posts.map((post, i) => {

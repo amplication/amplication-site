@@ -1,12 +1,10 @@
 import PropTypes from 'prop-types';
 import Image from 'next/image';
-import {useEffect, useState} from 'react';
+import {useState} from 'react';
 
 const Thumbnail = props => {
   const [src, setSrc] = useState('');
-  const updateImageState = e => {
-    setSrc(props.src);
-  };
+  const updateImageState = () => setSrc(props.src);
 
   return (
     <div
@@ -48,6 +46,7 @@ Thumbnail.propTypes = {
   src: PropTypes.string,
   alt: PropTypes.string,
   objectFit: PropTypes.string,
+  className: PropTypes.string,
 };
 
 Thumbnail.defaultProps = {

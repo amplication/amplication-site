@@ -262,7 +262,7 @@ const Terms = () => {
                 support, but shall not be under any obligation to do so. Such
                 Updates and technical support will be supplied according to
                 whatever then-current internal policies We may have in place,
-                and some Updates may in any event be limited, suspended or
+                and some Updates may in any event be limited, suspended or
                 restricted by geography, volume, duration or any other criteria
                 decided by Amplication in its sole discretion. Some Updates may
                 include automatic updating or upgrading without any notice or

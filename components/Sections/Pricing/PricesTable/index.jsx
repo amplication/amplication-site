@@ -33,6 +33,10 @@ const PricesTableCTA = ({cta}) => {
   );
 };
 
+PricesTableCTA.propTypes = {
+  cta: PropTypes.any,
+};
+
 const PricesFeatures = ({content}) => {
   switch (content) {
     case '✅':
@@ -48,6 +52,10 @@ const PricesFeatures = ({content}) => {
     default:
       return content;
   }
+};
+
+PricesFeatures.propTypes = {
+  content: PropTypes.any,
 };
 
 const PricesTable = () => {
@@ -216,10 +224,6 @@ const PricesTable = () => {
       </section>
     </>
   );
-};
-
-PricesTable.propTypes = {
-  content: PropTypes.any,
 };
 
 export default PricesTable;

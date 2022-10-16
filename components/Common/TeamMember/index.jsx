@@ -34,6 +34,7 @@ TeamMember.propTypes = {
   position: PropTypes.string,
   image: PropTypes.object,
   buttons: PropTypes.array,
+  links: PropTypes.array,
 };
 
 TeamMember.defaultProps = {
@@ -41,6 +42,7 @@ TeamMember.defaultProps = {
   position: '',
   image: {},
   buttons: [],
+  links: [],
 };
 
 export default TeamMember;

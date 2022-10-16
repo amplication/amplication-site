@@ -170,7 +170,7 @@ const SubscribeForm = ({isCompactView}) => {
                       {email && (
                         <span
                           className="absolute	right-4 top-[50%] translate-y-[-50%] cursor-pointer text-sm animate-fadeIn text-white"
-                          onClick={e => setEmail('')}
+                          onClick={() => setEmail('')}
                         >
                           ✕
                         </span>
@@ -203,7 +203,7 @@ const SubscribeForm = ({isCompactView}) => {
                       {name && (
                         <span
                           className="absolute	right-4 top-[50%] translate-y-[-50%] cursor-pointer text-sm animate-fadeIn text-white"
-                          onClick={e => setName('')}
+                          onClick={() => setName('')}
                         >
                           ✕
                         </span>
@@ -236,7 +236,7 @@ const SubscribeForm = ({isCompactView}) => {
                       {source && (
                         <span
                           className="absolute	right-4 top-[50%] translate-y-[-50%] cursor-pointer text-sm animate-fadeIn text-white"
-                          onClick={e => setSource('')}
+                          onClick={() => setSource('')}
                         >
                           ✕
                         </span>

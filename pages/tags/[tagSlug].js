@@ -8,7 +8,7 @@ import {NextSeo} from 'next-seo';
 import {MainLayout} from '../../layouts';
 
 const TagsPage = props => {
-  let {posts, tags, tag} = props;
+  const {posts, tags, tag} = props;
   const title = `${tag.name} | Amplication's Blog`;
 
   return (

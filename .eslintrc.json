@@ -4,15 +4,31 @@
     "plugin:react/recommended",
     "plugin:react/jsx-runtime"
   ],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "requireConfigFile": false,
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "babelOptions": {
+      "presets": ["@babel/preset-react"]
+    }
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "globals": {
+    "Intercom": true
+  },
   "rules": {
     "node/no-unpublished-import": 0,
     "node/no-unpublished-require": 0,
     "node/no-unsupported-features/es-syntax": 0
   },
-  "parserOptions": {
-    "sourceType": "module"
-  },
-  "env": {
-    "browser": true
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }

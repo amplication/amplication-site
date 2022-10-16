@@ -1,3 +1,4 @@
+/* eslint no-useless-escape: 0 */
 const helpers = {
   isValidUrl: string => {
     let url;
@@ -90,7 +91,7 @@ const helpers = {
   getPostSlug: slug => `/blog/${slug}`,
 
   getPostDate: date => {
-    let d = new Date(date || 'Dec 27, 2022');
+    const d = new Date(date || 'Dec 27, 2022');
 
     return `${d
       .toLocaleString('en-US', {month: 'long'})
