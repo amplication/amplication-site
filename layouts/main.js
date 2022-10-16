@@ -41,4 +41,4 @@ MainLayout.defaultProps = {
   paddingTopClasses: "pt-[60px] laptop:pt-[110px]",
 };
 
-export default MainLayout;
+export { MainLayout };
