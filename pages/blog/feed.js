@@ -19,6 +19,7 @@ export const getServerSideProps = async (context) => {
             content
             tags {
               name
+              slug
             }
             author {
               firstName
