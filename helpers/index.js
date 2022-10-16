@@ -84,14 +84,7 @@ const helpers = {
     return slug.split('-').pop();
   },
 
-  getPostSlug: ( postTitle, postID ) => {
-    return `/blog/${postTitle}-${postID}`
-      .replace('?', '')
-      .replace('#', '')
-      .split(' ')
-      .join('-')
-      .toLowerCase();
-  },
+  getPostSlug: (slug) => `/blog/${slug}`,
 
   getPostDate: ( date ) => {
     let d = new Date( date || 'Dec 27, 2022' );

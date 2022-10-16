@@ -38,7 +38,7 @@ const Post = ({ posts, post }) => {
           helpers.isValidUrl(post.featuredImage) ? post.featuredImage : ""
         }
         openGraph={{
-          url: helpers.getPostSlug(post.title, post.id),
+          url: helpers.getPostSlug(post.slug),
           title: post.title,
           description: rawPostContent.substring(0, 150),
           images: [
@@ -180,13 +180,13 @@ const Post = ({ posts, post }) => {
 };
 
 export const getStaticProps = async (context) => {
-  const postID = helpers.getPostID(context.params ? context.params.slug : "");
+  console.log(context.params.slug);
   try {
     const { data } = await client.query({
       query: gql`
         query {
-          post(where: {id: "${postID}"}) {
-            id
+          posts(where: {slug: {equals: "${context.params.slug}"}}) {
+            slug
             title
             content
             featuredImage
@@ -205,13 +205,13 @@ export const getStaticProps = async (context) => {
         }
       `,
     });
-
+    const post = data.posts?.pop();
     let posts = null;
 
-    if (data && data.post && data.post.id) {
+    if (post && post.slug) {
       const tags =
-        data && data.post && data.post.tags && data.post.tags.length
-          ? `, tags: {some: {id: {in: ["${data.post.tags
+        post.tags && post.tags.length
+          ? `, tags: {some: {id: {in: ["${post.tags
               .map((tag) => {
                 return tag.id;
               })
@@ -221,8 +221,8 @@ export const getStaticProps = async (context) => {
       posts = await client.query({
         query: gql`
           query {
-            posts(take: 3, orderBy: {createdAt: Desc}, where: {id: {not: "${data.post.id}"} ${tags}}) {
-              id
+            posts(take: 3, orderBy: {createdAt: Desc}, where: {slug: {not: "${post.slug}"} ${tags}}) {
+              slug
               title
               featuredImage
               tags {
@@ -244,7 +244,7 @@ export const getStaticProps = async (context) => {
     return {
       props: {
         posts: posts ? posts.data.posts : null,
-        post: data?.post,
+        post,
       },
       revalidate: 30,
     };
@@ -275,7 +275,7 @@ export async function getStaticPaths() {
 
   const paths = data.posts.map((post) => ({
     params: {
-      slug: `${post.title}-${post.id}`.split(" ").join("-").toLowerCase(),
+      slug: `${post.title}`.split(" ").join("-").toLowerCase(),
     },
   }));
 

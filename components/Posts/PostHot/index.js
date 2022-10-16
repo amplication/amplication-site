@@ -13,7 +13,7 @@ const PostHot = (props) => {
     .substring(0, 200);
   if (Object.keys(post).length) {
     return (
-      <Link href={helpers.getPostSlug(post.title, post.id)} passHref>
+      <Link href={helpers.getPostSlug(post.slug)} passHref>
         <div className="flex flex-col-reverse relative rounded-2xl cursor-pointer overflow-hidden bg-light-blue shadow-hot-post laptop:flex-row laptop:mb-[100px] group border border-transparent transition-all duration-1000 hover:border-lite">
           <div className="absolute top-0 left-0 ml-6 laptop:ml-8 bg-[#8DD9B9] text rounded-bl-lg rounded-br-lg w-[91px] py-2 laptop:py-[6px] text-center text-sm font-poppins font-semibold text-dark-100">
             Hot News
