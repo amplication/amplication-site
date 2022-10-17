@@ -88,6 +88,12 @@ const helpers = {
     return string;
   },
 
+  /**
+   * @param {string} path
+   * @returns {string}
+   */
+  getCanonical: path => new URL(path, process.env.NEXT_PUBLIC_SITE).toString(),
+
   getPostSlug: slug => `/blog/${slug}`,
 
   getPostDate: date => {

@@ -1,14 +1,14 @@
 import {NextSeo} from 'next-seo';
+import helpers from '../helpers';
 import {MainLayout} from '../layouts';
 
 const PrivacyPolicy = () => {
   return (
     <>
       <NextSeo
-        title="Amplication - Generate Node.js apps, just code what matters"
-        description="Amplication is an open-source development tool. It helps you develop
-          quality Node.js applications without spending time on repetitive
-          coding tasks."
+        title="Privacy Policy | Amplication"
+        description="Please read the terms and conditions for using Amplication's service. By downloading, installing, accessing, or using our software you agree to these terms."
+        canonical={helpers.getCanonical('privacy-policy')}
       />
 
       <main className="w-full font-poppins z-10 mb-12 laptop:mb-[100px] amplication-base circles-bg">
