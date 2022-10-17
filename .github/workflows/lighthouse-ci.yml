@@ -1,4 +1,4 @@
-name: Test CI
+name: Lighthouse CI
 on:
   push:
     branches:
@@ -14,7 +14,9 @@ jobs:
           fetch-depth: 1
       - name: Install dependencies
         run: npm i
-      - name: Lint site
-        run: npm run lint
       - name: Build site
         run: npm run build
+      - name: Run Lighthouse CI
+        run: npm run lhci
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
