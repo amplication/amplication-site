@@ -1,14 +1,14 @@
 import {NextSeo} from 'next-seo';
+import helpers from '../helpers';
 import {MainLayout} from '../layouts';
 
 const Terms = () => {
   return (
     <>
       <NextSeo
-        title="Amplication - Generate Node.js apps, just code what matters"
-        description="Amplication is an open-source development tool. It helps you develop
-          quality Node.js applications without spending time on repetitive
-          coding tasks."
+        title="Terms & Conditions | Amplication"
+        description="Amplications Terms and Conditions. Please read the terms of use for our website. By accessing or using Amplications website, ​you agree to these terms."
+        canonical={helpers.getCanonical('terms')}
       />
 
       <main className="w-full font-poppins z-10 mb-12 laptop:mb-[100px] amplication-base circles-bg">
