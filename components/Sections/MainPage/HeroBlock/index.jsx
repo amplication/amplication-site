@@ -1,6 +1,6 @@
-import Image from "next/image";
-import Link from "next/link";
-import VideoIcon from "../../../../public/images/video.svg";
+import Image from 'next/image';
+import Link from 'next/link';
+import VideoIcon from '../../../../public/images/video.svg';
 
 const HeroBlock = () => {
   return (
@@ -24,10 +24,7 @@ const HeroBlock = () => {
                         Just code what matters.
                       </span>
                     </h1>
-                    <div
-                      id="animated-header-content"
-                      style={{ display: "none" }}
-                    >
+                    <div id="animated-header-content" style={{display: 'none'}}>
                       <span>Microservices.</span>
                       <span>GraphQL API.</span>
                       <span>REST API.</span>
@@ -39,21 +36,21 @@ const HeroBlock = () => {
                       Amplication is a&nbsp;
                       <span className="highlight">
                         flexible open-source Node.js app
-                      </span>{" "}
+                      </span>{' '}
                       development platform. It helps you build production-ready
                       Node.js backend without wasting time on
                       repetitive&nbsp;coding.
                     </div>
                   </div>
                   <div className="buttons-wrapper d-flex mb-4 align-items-center justify-content-start mt-4">
-                    <Link href={"https://app.amplication.com"} passHref={true}>
+                    <Link href={'https://app.amplication.com'} passHref={true}>
                       <a className="btn btn-primary btn-lg col-sm-12 col-md-6 mb-4">
                         Get Started
                       </a>
                     </Link>
                     <div className="spacer"></div>
                     <Link
-                      href={"https://discord.gg/Z2CG3rUFnu"}
+                      href={'https://discord.gg/Z2CG3rUFnu'}
                       passHref={true}
                     >
                       <a
@@ -62,14 +59,14 @@ const HeroBlock = () => {
                         rel="noreferrer"
                       >
                         <span className="social-link discord social-white">
-                          {" "}
+                          {' '}
                         </span>
                         Join Discord
                       </a>
                     </Link>
                     <div className="spacer"></div>
                     <Link
-                      href={"https://docs.amplication.com/docs/getting-started"}
+                      href={'https://docs.amplication.com/docs/getting-started'}
                       passHref={true}
                     >
                       <a className="d-lg-none btn btn-outline-secondary btn-lg col-sm-12 col-md-6 mb-4 text-black80">
@@ -80,11 +77,11 @@ const HeroBlock = () => {
                 </div>
                 <div className="video">
                   <Link
-                    href={"https://www.youtube.com/watch?v=wCJ2jF1IU7U"}
+                    href={'https://www.youtube.com/watch?v=wCJ2jF1IU7U'}
                     passHref={true}
                   >
                     <a data-lity={true}>
-                      <Image src={VideoIcon} alt={""} />
+                      <Image src={VideoIcon} alt={''} />
                     </a>
                   </Link>
                 </div>

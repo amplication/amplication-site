@@ -1,14 +1,14 @@
-import { NextSeo } from "next-seo";
-import { MainLayout } from "../layouts";
+import {NextSeo} from 'next-seo';
+import helpers from '../helpers';
+import {MainLayout} from '../layouts';
 
 const Terms = () => {
   return (
     <>
       <NextSeo
-        title="Amplication - Generate Node.js apps, just code what matters"
-        description="Amplication is an open-source development tool. It helps you develop
-          quality Node.js applications without spending time on repetitive
-          coding tasks."
+        title="Terms & Conditions | Amplication"
+        description="Amplications Terms and Conditions. Please read the terms of use for our website. By accessing or using Amplications website, ​you agree to these terms."
+        canonical={helpers.getCanonical('terms')}
       />
 
       <main className="w-full font-poppins z-10 mb-12 laptop:mb-[100px] amplication-base circles-bg">
@@ -164,7 +164,7 @@ const Terms = () => {
                 non-transferable license, during the Term, to access, install
                 and use the Software, download the Source Available Code (in
                 whole but not in part) , solely for Your own internal business
-                or personal use, all as further specified herein (the{" "}
+                or personal use, all as further specified herein (the{' '}
                 <b>&quot;License</b>&quot;). You agree to use the Software in
                 accordance with such documentation. Further, You must only
                 install the Software on a device that you own or control. For
@@ -262,7 +262,7 @@ const Terms = () => {
                 support, but shall not be under any obligation to do so. Such
                 Updates and technical support will be supplied according to
                 whatever then-current internal policies We may have in place,
-                and some Updates may in any event be limited, suspended or
+                and some Updates may in any event be limited, suspended or
                 restricted by geography, volume, duration or any other criteria
                 decided by Amplication in its sole discretion. Some Updates may
                 include automatic updating or upgrading without any notice or
@@ -279,7 +279,7 @@ const Terms = () => {
               </h3>
               <p>
                 Amplication may provide in the future specific paid features,
-                tools, modules, or functionality of the Software (collectively{" "}
+                tools, modules, or functionality of the Software (collectively{' '}
                 <b>&quot;Features</b>&quot;). Access to such Features and/or
                 receiving additional License metric volume, if applicable,
                 during the Term (collectively, &quot;Additional Services&quot;)

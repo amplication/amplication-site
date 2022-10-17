@@ -1,6 +1,6 @@
 const HeroBlock = () => {
   const mystyle = {
-    color: "#A787FF",
+    color: '#A787FF',
   };
 
   return (

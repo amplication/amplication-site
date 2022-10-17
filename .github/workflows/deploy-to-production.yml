@@ -3,8 +3,8 @@ on:
   workflow_dispatch:
   workflow_run:
     workflows: ["Test CI"]
-    types:
-      - completed
+    types: [completed]
+    branches: [main]
 jobs:
   deploy:
     runs-on: ubuntu-latest

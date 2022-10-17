@@ -1,28 +1,32 @@
-import client from "../../services";
-import helpers from "../../helpers";
-import { gql } from "@apollo/client";
-import Thumbnail from "../../components/Posts/PostCard/Tumbnail";
-import Link from "next/link";
-import Author from "../../components/Posts/PostCard/Author";
-import Tags from "../../components/Posts/PostCard/Tags";
-import Title from "../../components/Posts/PostCard/Title";
-import PostCard from "../../components/Posts/PostCard";
-import { Pagination } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import Sidebar from "../../components/Sidebar";
-import "swiper/css";
-import "swiper/css/pagination";
-import PropTypes from "prop-types";
-import errorPage from "../404";
-import ReactMarkdown from "react-markdown";
-import rehypeHighlight from "rehype-highlight";
-import rehypeRaw from "rehype-raw";
-import remarkGfm from "remark-gfm";
-import "highlight.js/styles/github-dark-dimmed.css";
-import { NextSeo } from "next-seo";
-import { MainLayout } from "../../layouts";
+import {gql} from '@apollo/client';
+// eslint-disable-next-line node/no-extraneous-import
+import 'highlight.js/styles/github-dark-dimmed.css';
+import Link from 'next/link';
+import {NextSeo} from 'next-seo';
+import PropTypes from 'prop-types';
+import ReactMarkdown from 'react-markdown';
+import rehypeHighlight from 'rehype-highlight';
+import rehypeRaw from 'rehype-raw';
+import remarkGfm from 'remark-gfm';
+import {Pagination} from 'swiper';
+// eslint-disable-next-line node/no-missing-import
+import 'swiper/css';
+// eslint-disable-next-line node/no-missing-import
+import 'swiper/css/pagination';
+import {Swiper, SwiperSlide} from 'swiper/react';
 
-const Post = ({ posts, post }) => {
+import client from '../../services';
+import helpers from '../../helpers';
+import Thumbnail from '../../components/Posts/PostCard/Tumbnail';
+import Author from '../../components/Posts/PostCard/Author';
+import Tags from '../../components/Posts/PostCard/Tags';
+import Title from '../../components/Posts/PostCard/Title';
+import PostCard from '../../components/Posts/PostCard';
+import Sidebar from '../../components/Sidebar';
+import errorPage from '../404';
+import {MainLayout} from '../../layouts';
+
+const Post = ({posts, post}) => {
   if (!post) {
     return errorPage();
   }
@@ -35,10 +39,12 @@ const Post = ({ posts, post }) => {
         title={post.title}
         description={rawPostContent.substring(0, 150)}
         pageImage={
-          helpers.isValidUrl(post.featuredImage) ? post.featuredImage : ""
+          helpers.isValidUrl(post.featuredImage) ? post.featuredImage : ''
         }
+        noindex={!!post.draft}
+        nofollow={!!post.draft}
         openGraph={{
-          url: helpers.getPostSlug(post.title, post.id),
+          url: helpers.getPostSlug(post.slug),
           title: post.title,
           description: rawPostContent.substring(0, 150),
           images: [
@@ -47,13 +53,14 @@ const Post = ({ posts, post }) => {
               alt: post.title,
             },
           ],
-          site_name: "Amplication Blog",
+          site_name: 'Amplication Blog',
         }}
         twitter={{
-          handle: "@amplication",
-          site: "amplication.com",
-          cardType: "summary_large_image",
+          handle: '@amplication',
+          site: 'amplication.com',
+          cardType: 'summary_large_image',
         }}
+        canonical={helpers.getCanonical(helpers.getPostSlug(post.slug))}
       />
 
       <div className="w-full p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop mt-16 laptop:mt-12">
@@ -64,7 +71,7 @@ const Post = ({ posts, post }) => {
                 <a className="text-white font-poppins font-medium text-sm hover:text-purple-bright-hover">
                   Home
                 </a>
-              </Link>{" "}
+              </Link>{' '}
               /
             </li>
             <li className="text-white inline-block mr-1">
@@ -72,7 +79,7 @@ const Post = ({ posts, post }) => {
                 <a className="text-white font-poppins font-medium text-sm hover:text-purple-bright-hover">
                   Blog
                 </a>
-              </Link>{" "}
+              </Link>{' '}
               /
             </li>
             <li className="text-turquoise inline-block">
@@ -95,15 +102,15 @@ const Post = ({ posts, post }) => {
               />
               <Tags list={post.tags} className="order-3" />
               <Author
-                className={"order-2 mt-4 laptop:mt-8"}
+                className={'order-2 mt-4 laptop:mt-8'}
                 avatar={post.author?.profileImage}
-                name={post.author?.firstName + " " + post.author?.lastName}
+                name={post.author?.firstName + ' ' + post.author?.lastName}
                 date={post.createdAt}
                 large={true}
               />
               <Thumbnail
                 objectFit="initial"
-                className={"order-4 mt-8 mb-16 rounded-2xl !aspect-auto"}
+                className={'order-4 mt-8 mb-16 rounded-2xl !aspect-auto'}
                 src={
                   helpers.isValidUrl(post.featuredImage)
                     ? post.featuredImage
@@ -154,19 +161,20 @@ const Post = ({ posts, post }) => {
                 modules={[Pagination]}
                 pagination={{
                   clickable: true,
-                  clickableClass: `swiper-pagination-clickable !relative pt-4`,
-                  bulletClass: `swiper-pagination-bullet !bg-white`,
-                  bulletActiveClass: `swiper-pagination-bullet-active relative top-[1px] !bg-secondary-turquoise !w-2.5 !h-2.5`,
+                  clickableClass: 'swiper-pagination-clickable !relative pt-4',
+                  bulletClass: 'swiper-pagination-bullet !bg-white',
+                  bulletActiveClass:
+                    'swiper-pagination-bullet-active relative top-[1px] !bg-secondary-turquoise !w-2.5 !h-2.5',
                 }}
               >
                 {posts.map((post, i) => {
                   return (
                     <SwiperSlide
                       className="!h-auto"
-                      key={post.id}
+                      key={post.slug}
                       virtualIndex={i}
                     >
-                      <PostCard data={post} key={post.id} />
+                      <PostCard data={post} key={post.slug} />
                     </SwiperSlide>
                   );
                 })}
@@ -179,20 +187,22 @@ const Post = ({ posts, post }) => {
   );
 };
 
-export const getStaticProps = async (context) => {
-  const postID = helpers.getPostID(context.params ? context.params.slug : "");
+export const getStaticProps = async context => {
   try {
-    const { data } = await client.query({
+    const {data} = await client.query({
       query: gql`
         query {
-          post(where: {id: "${postID}"}) {
-            id
-            title
+          posts(where: {slug: {equals: "${context.params.slug}"}}) {
+            createdAt
             content
+            draft
+            slug
+            title
             featuredImage
             tags {
               id
               name
+              slug
             }
             author {
               id
@@ -200,34 +210,33 @@ export const getStaticProps = async (context) => {
               lastName
               profileImage
             }
-            createdAt
           }
         }
       `,
     });
-
+    const post = data.posts?.pop();
     let posts = null;
 
-    if (data && data.post && data.post.id) {
+    if (post && post.slug) {
       const tags =
-        data && data.post && data.post.tags && data.post.tags.length
-          ? `, tags: {some: {id: {in: ["${data.post.tags
-              .map((tag) => {
+        post.tags && post.tags.length
+          ? `, tags: {some: {id: {in: ["${post.tags
+              .map(tag => {
                 return tag.id;
               })
               .join('" ,"')}"]}}}`
-          : "";
+          : '';
 
       posts = await client.query({
         query: gql`
           query {
-            posts(take: 3, orderBy: {createdAt: Desc}, where: {id: {not: "${data.post.id}"} ${tags}}) {
-              id
+            posts(take: 3, orderBy: {createdAt: Desc}, where: {slug: {not: "${post.slug}"} ${tags}}) {
+              slug
               title
               featuredImage
               tags {
-                id
                 name
+                slug
               }
               author {
                 id
@@ -244,7 +253,7 @@ export const getStaticProps = async (context) => {
     return {
       props: {
         posts: posts ? posts.data.posts : null,
-        post: data?.post,
+        post,
       },
       revalidate: 30,
     };
@@ -262,24 +271,24 @@ export const getStaticProps = async (context) => {
 };
 
 export async function getStaticPaths() {
-  const { data } = await client.query({
+  const {data} = await client.query({
     query: gql`
       query {
-        posts(take: 1000, orderBy: { createdAt: Desc }) {
-          id
+        posts(take: 1000, orderBy: {createdAt: Desc}) {
+          slug
           title
         }
       }
     `,
   });
 
-  const paths = data.posts.map((post) => ({
+  const paths = data.posts.map(post => ({
     params: {
-      slug: `${post.title}-${post.id}`.split(" ").join("-").toLowerCase(),
+      slug: post.slug,
     },
   }));
 
-  return { paths, fallback: "blocking" };
+  return {paths, fallback: 'blocking'};
 }
 
 Post.propTypes = {
