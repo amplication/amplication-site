@@ -25,6 +25,7 @@ import syncGithubIcon from '../public/images/features-page/icons/github.svg';
 import syncGithubImage from '../public/images/features-page/sync_with_github.svg';
 import {NextSeo} from 'next-seo';
 import {MainLayout} from '../layouts';
+import helpers from '../helpers';
 
 const Features = () => {
   const features = [
@@ -247,6 +248,7 @@ const Features = () => {
       <NextSeo
         title="GraphQL API Feature for Backend API Development | Amplication"
         description="Amplication is the most flexible open-source backend development platform for Node.JS applications. Design models and roles, deploy your app, connect with REST or GraphQL API, sync with GitHub. Built for developers, by developers."
+        canonical={helpers.getCanonical('features')}
       />
 
       <main className="w-full font-poppins z-10 mb-12 laptop:mb-[100px] amplication-base">

@@ -7,6 +7,7 @@ import Steps from '../components/Sections/MainPage/Steps';
 import Roadmap from '../components/Sections/MainPage/Roadmap';
 import {NextSeo} from 'next-seo';
 import {MainLayout} from '../layouts';
+import helpers from '../helpers';
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
         description="Amplication is the most flexible open-source platform for Node.js app development.
         We enable developers to auto-generate production-ready backend in minutes. Design modelsand roles,
          deploy your app, connect with REST or GraphQL API, sync with GitHub. You own the code."
+        canonical={helpers.getCanonical('/')}
         openGraph={{
           type: 'website',
           images: [

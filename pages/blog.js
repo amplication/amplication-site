@@ -12,7 +12,8 @@ const Home = ({posts, tags}) => {
     <>
       <NextSeo
         title="Amplication's Blog"
-        description="Boost your knowledge and step up your game with top storys on backend development, Node.js and open-source from the Amplication team."
+        description="Boost your knowledge and step up your game with top stories on backend development, Node.js and open-source from the Amplication team."
+        canonical={helpers.getCanonical('blog')}
       />
 
       <main className="w-full font-poppins z-10 mb-12 laptop:mb-[100px] laptop:pt-10">
