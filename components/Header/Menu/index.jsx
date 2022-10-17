@@ -114,6 +114,7 @@ const Menu = () => {
                         item.isActive ? 'text-white' : 'text-[#A3A8B8]'
                       }`}
                       target={item.target}
+                      onClick={() => setIsMobileMenuOpened(!isMobileMenuOpened)}
                     >
                       {item.title}
                     </a>
