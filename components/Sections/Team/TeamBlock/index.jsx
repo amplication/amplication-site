@@ -1,6 +1,5 @@
 import TeamMember from '../../../Common/TeamMember';
 import FeatureItem from '../../../Common/FeatureItem';
-import matanShidlov from '../../../../public/images/team/matan-shidlov.png';
 import innaBell from '../../../../public/images/team/inna-bell.png';
 import yuvalHanaz from '../../../../public/images/team/yuval-hazaz.png';
 import vikaGoncharuk from '../../../../public/images/team/vika-goncharuk.png';
@@ -123,7 +122,7 @@ const TeamBlock = () => {
     },
     {
       name: 'Mor Hagbi',
-      position: 'Sr. Full-stack Eng.',
+      position: 'Sr. Full Stack Engineer',
       image: morHagbi,
       links: [
         {
@@ -138,7 +137,7 @@ const TeamBlock = () => {
     },
     {
       name: 'Shimi Bar',
-      position: 'Sr. Full-stack Eng.',
+      position: 'Sr. Full Stack Engineer',
       image: shimiBar,
       links: [
         {
@@ -172,7 +171,7 @@ const TeamBlock = () => {
     },
     {
       name: 'Eugene Tseitlin',
-      position: 'Sr. Full-stack Eng.',
+      position: 'Sr. Full Stack Engineer',
       image: eugineTseitlin,
       links: [
         {
@@ -244,7 +243,7 @@ const TeamBlock = () => {
     },
     {
       name: 'Amit Barletz',
-      position: 'Full-Stack Eng.',
+      position: 'Full Stack Engineer',
       image: amitBarletz,
       links: [
         {
@@ -263,7 +262,7 @@ const TeamBlock = () => {
     },
     {
       name: 'Ofek Gabay',
-      position: 'Full-Stack Eng.',
+      position: 'Full Stack Engineer',
       image: ofekGabay,
       links: [
         {
