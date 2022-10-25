@@ -15,6 +15,7 @@ import eugineTseitlin from '../../../../public/images/team/eugene-tseitlin.png';
 import shimiBar from '../../../../public/images/team/shimi.png';
 import arielWeinberger from '../../../../public/images/team/ariel.png';
 import toddFeinroth from '../../../../public/images/team/todd.png'
+import tomerNaim from '../../../../public/images/team/tomer.png'
 
 import talkWithUs from '../../../../public/images/icons/talk-with-with-team.svg';
 import joinUs from '../../../../public/images/icons/join-the-team.svg';
@@ -86,6 +87,25 @@ const TeamBlock = () => {
         },
         {
           href: 'https://twitter.com/Yuvalhazaz1',
+          iconClass: 'twitter',
+        }
+      ]
+    },
+    {
+      name: 'Tomer naim',
+      position: 'Marketing Manager, Digital and Growth',
+      image: tomerNaim,
+      links: [
+        {
+          href: 'https://www.linkedin.com/in/tomernaim/',
+          iconClass: 'linkedin',
+        },
+        {
+          href: 'https://github.com/tnaim',
+          iconClass: 'github',
+        },
+        {
+          href: 'https://twitter.com/tomernaim',
           iconClass: 'twitter',
         }
       ]
