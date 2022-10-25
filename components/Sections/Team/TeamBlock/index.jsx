@@ -122,25 +122,6 @@ const TeamBlock = () => {
       ],
     },
     {
-      name: 'Matan Shidlov',
-      position: 'Chief Architect',
-      image: matanShidlov,
-      links: [
-        {
-          href: 'https://www.linkedin.com/in/matanshidlov/',
-          iconClass: 'linkedin',
-        },
-        {
-          href: 'https://github.com/mshidlov',
-          iconClass: 'github',
-        },
-        {
-          href: 'https://twitter.com/MShidlov',
-          iconClass: 'twitter',
-        },
-      ],
-    },
-    {
       name: 'Mor Hagbi',
       position: 'Sr. Full-stack Eng.',
       image: morHagbi,
