@@ -1,11 +1,14 @@
 name: Deploy to Production
 on:
-  push:
-    branches:
-      - prod
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Test CI"]
+    types: [completed]
+    branches: [main]
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
     timeout-minutes: 120
     steps:
       - uses: actions/checkout@v2

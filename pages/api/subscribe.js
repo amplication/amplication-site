@@ -1,9 +1,10 @@
-import * as http from 'http';
 import * as hubspot from '@hubspot/api-client';
 
-const hubspotClient = new hubspot.Client({ apiKey: process.env.NEXT_PRIVATE_HUBSPOT_API_KEY });
+const hubspotClient = new hubspot.Client({
+  apiKey: process.env.NEXT_PRIVATE_HUBSPOT_API_KEY,
+});
+
 /**
- *
  * @param {http.IncomingMessage} req
  * @param {http.ServerResponse} res
  */
@@ -20,13 +21,13 @@ export default async function handler(req, res) {
         firstname: nameArr.shift(),
         lastname: nameArr.join(' '),
         email: body.EMAIL,
-        reportedsource: body.SOURCE
-      }
+        reportedsource: body.SOURCE,
+      },
     });
     res.end(JSON.stringify({result: 'success'}));
-  }
-  catch(e) {
-    if (e.body.category === 'CONFLICT') return res.end(JSON.stringify({result: 'success'}));
+  } catch (e) {
+    if (e.body.category === 'CONFLICT')
+      return res.end(JSON.stringify({result: 'success'}));
     console.warn(e);
     res.end();
   }

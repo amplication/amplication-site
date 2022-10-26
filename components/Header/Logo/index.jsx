@@ -17,23 +17,21 @@ const Logo = () => {
       setIsMobile(window.innerWidth < 992);
     });
     setIsMobile(window.innerWidth < 992);
-  }, [])
+  }, []);
 
   return (
     <div>
-      <Link href='/'>
-        <a className='flex justify-center items-center'>
-          {
-            isMobile
-            ?
-            <Image src={logoMobileImage} alt='Amplication' />
-            :
-            <Image src={logoDesktopImage} alt='Amplication' />
-          }
+      <Link href="/">
+        <a className="flex justify-center items-center">
+          {isMobile ? (
+            <Image src={logoMobileImage} alt="Amplication" />
+          ) : (
+            <Image src={logoDesktopImage} alt="Amplication" />
+          )}
         </a>
       </Link>
     </div>
-  )
-}
+  );
+};
 
-export default Logo
+export default Logo;
