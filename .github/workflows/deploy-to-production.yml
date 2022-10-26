@@ -2,7 +2,7 @@ name: Deploy to Production
 on:
   workflow_dispatch:
   workflow_run:
-    workflows: ["Test CI"]
+    workflows: ["Tests"]
     types: [completed]
     branches: [main]
 jobs:
