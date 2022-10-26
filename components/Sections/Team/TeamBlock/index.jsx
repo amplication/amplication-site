@@ -122,8 +122,8 @@ const TeamBlock = () => {
         {
           href: 'https://twitter.com/tomernaim',
           iconClass: 'twitter',
-        }
-      ]
+        },
+      ],
     },
     {
       name: 'Vika Goncharuk',
