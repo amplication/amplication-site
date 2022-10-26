@@ -5,7 +5,7 @@ on:
       - main
   pull_request:
 jobs:
-  tests:
+  lighthouse:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
