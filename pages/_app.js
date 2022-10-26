@@ -19,6 +19,8 @@ function Amplication({Component, pageProps}) {
     asPath.includes('/blog') || asPath.includes('/tags')
   );
 
+  const isHomePage = Boolean(asPath === '/');
+
   const router = useRouter();
 
   const canonicalUrl = (
@@ -50,7 +52,7 @@ function Amplication({Component, pageProps}) {
     const typingAnimations = document.querySelectorAll(
       '#animated-header-typed'
     );
-    if (typingAnimations.length) {
+    if (typingAnimations.length && isHomePage) {
       new Typed('#animated-header-typed', {
         stringsElement: '#animated-header-content',
         typeSpeed: 60,
@@ -71,7 +73,7 @@ function Amplication({Component, pageProps}) {
         require('../public/styles/style.css');
       }
     }
-  }, [isBlogPage]);
+  }, [isBlogPage, isHomePage]);
 
   // Use the layout defined at the page level, if available
   const getLayout = Component.getLayout || (page => page);
