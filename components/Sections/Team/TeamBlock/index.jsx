@@ -1,6 +1,5 @@
 import TeamMember from '../../../Common/TeamMember';
 import FeatureItem from '../../../Common/FeatureItem';
-import matanShidlov from '../../../../public/images/team/matan-shidlov.png';
 import innaBell from '../../../../public/images/team/inna-bell.png';
 import yuvalHanaz from '../../../../public/images/team/yuval-hazaz.png';
 import vikaGoncharuk from '../../../../public/images/team/vika-goncharuk.png';
@@ -14,6 +13,7 @@ import michaelSolati from '../../../../public/images/team/michael-solati.png';
 import eugineTseitlin from '../../../../public/images/team/eugene-tseitlin.png';
 import shimiBar from '../../../../public/images/team/shimi.png';
 import arielWeinberger from '../../../../public/images/team/ariel.png';
+import tomerNaim from '../../../../public/images/team/tomer.png';
 import toddFeinroth from '../../../../public/images/team/todd.png';
 import erezGreenberg from '../../../../public/images/team/erez.png';
 
@@ -107,6 +107,25 @@ const TeamBlock = () => {
       ],
     },
     {
+      name: 'Tomer Naim',
+      position: 'Marketing Manager, Digital and Growth',
+      image: tomerNaim,
+      links: [
+        {
+          href: 'https://www.linkedin.com/in/tomernaim/',
+          iconClass: 'linkedin',
+        },
+        {
+          href: 'https://github.com/tnaim',
+          iconClass: 'github',
+        },
+        {
+          href: 'https://twitter.com/tomernaim',
+          iconClass: 'twitter',
+        },
+      ],
+    },
+    {
       name: 'Vika Goncharuk',
       position: 'Office Manager',
       image: vikaGoncharuk,
@@ -122,27 +141,8 @@ const TeamBlock = () => {
       ],
     },
     {
-      name: 'Matan Shidlov',
-      position: 'Chief Architect',
-      image: matanShidlov,
-      links: [
-        {
-          href: 'https://www.linkedin.com/in/matanshidlov/',
-          iconClass: 'linkedin',
-        },
-        {
-          href: 'https://github.com/mshidlov',
-          iconClass: 'github',
-        },
-        {
-          href: 'https://twitter.com/MShidlov',
-          iconClass: 'twitter',
-        },
-      ],
-    },
-    {
       name: 'Mor Hagbi',
-      position: 'Sr. Full-stack Eng.',
+      position: 'Sr. Full Stack Engineer',
       image: morHagbi,
       links: [
         {
@@ -157,7 +157,7 @@ const TeamBlock = () => {
     },
     {
       name: 'Shimi Bar',
-      position: 'Sr. Full-stack Eng.',
+      position: 'Sr. Full Stack Engineer',
       image: shimiBar,
       links: [
         {
@@ -191,7 +191,7 @@ const TeamBlock = () => {
     },
     {
       name: 'Eugene Tseitlin',
-      position: 'Sr. Full-stack Eng.',
+      position: 'Sr. Full Stack Engineer',
       image: eugineTseitlin,
       links: [
         {
@@ -263,7 +263,7 @@ const TeamBlock = () => {
     },
     {
       name: 'Amit Barletz',
-      position: 'Full-Stack Eng.',
+      position: 'Full Stack Engineer',
       image: amitBarletz,
       links: [
         {
@@ -282,7 +282,7 @@ const TeamBlock = () => {
     },
     {
       name: 'Ofek Gabay',
-      position: 'Full-Stack Eng.',
+      position: 'Full Stack Engineer',
       image: ofekGabay,
       links: [
         {
