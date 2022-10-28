@@ -6,7 +6,7 @@ const Roadmap = () => {
     <>
       <section className="page-roadmap" id="roadmap">
         <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
-          <div className="row m-container p-container align-items-center justify-content-center justify-content-md-start mb-4 text-white">
+          <div className="row m-container p-container align-items-center mb-4 text-white">
             <h2 className="roadmap-heading">
               What&apos;s next? <br />
               Great things coming down the{' '}
