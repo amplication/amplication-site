@@ -107,7 +107,7 @@ const TeamBlock = () => {
       ],
     },
     {
-      name: 'Tomer naim',
+      name: 'Tomer Naim',
       position: 'Marketing Manager, Digital and Growth',
       image: tomerNaim,
       links: [
