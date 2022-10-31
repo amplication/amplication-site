@@ -5,25 +5,24 @@ const Tags = (props) => {
     return (
       <div className={'mt-4 text-tiny text-white flex flex-row flex-wrap gap-y-3 ' + (props.className !== 'undefined' ? props.className : '')}>
         {props.list.map(tag => {
-          return (<span className='py-1 px-2 bg-light-blue rounded-full border border-solid border-lite mr-1.5 leading-tag font-medium' key={tag.id}>{tag.name}</span>)
-        })}
-      </div>
+          return (<span className='py-1 px-2 bg-light-blue rounded-full border border-solid border-lite mr-1.5 leading-tag font-medium' key={tag.id}>{tag.name}</span>
     )
   } else {
     return (
       <div className={'mt-4 text-tiny text-white flex flex-row flex-wrap gap-col-3 ' + (props.className !== 'undefined' ? props.className : '')}>
         <span className='py-1 px-2 bg-light-blue rounded-full border border-solid border-lite mr-1.5 leading-tag'>Other</span>
       </div>
-    )
+    );
   }
-}
+};
 
 Tags.propTypes = {
   list: PropTypes.array,
+  className: PropTypes.string,
 };
 
 Tags.defaultProps = {
   list: [],
-}
+};
 
-export default Tags
+export default Tags;

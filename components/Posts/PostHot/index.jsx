@@ -1,19 +1,19 @@
-import Author from "../PostCard/Author";
-import Tags from "../PostCard/Tags";
-import Title from "../PostCard/Title";
-import Thumbnail from "../PostCard/Tumbnail";
-import helpers from "../../../helpers";
-import Link from "next/link";
-import PropTypes from "prop-types";
+import Author from '../PostCard/Author';
+import Tags from '../PostCard/Tags';
+import Title from '../PostCard/Title';
+import Thumbnail from '../PostCard/Tumbnail';
+import helpers from '../../../helpers';
+import Link from 'next/link';
+import PropTypes from 'prop-types';
 
-const PostHot = (props) => {
+const PostHot = props => {
   const post = props.data;
   const abridgedContent = helpers
-    .removeMarkdown(post?.content ?? "")
+    .removeMarkdown(post?.content ?? '')
     .substring(0, 200);
   if (Object.keys(post).length) {
     return (
-      <Link href={helpers.getPostSlug(post.title, post.id)} passHref>
+      <Link href={helpers.getPostSlug(post.slug)} passHref>
         <div className="flex flex-col-reverse relative rounded-2xl cursor-pointer overflow-hidden bg-light-blue shadow-hot-post laptop:flex-row laptop:mb-[100px] group border border-transparent transition-all duration-1000 hover:border-lite">
           <div className="absolute top-0 left-0 ml-6 laptop:ml-8 bg-[#8DD9B9] text rounded-bl-lg rounded-br-lg w-[91px] py-2 laptop:py-[6px] text-center text-sm font-poppins font-semibold text-dark-100">
             Hot News
@@ -22,7 +22,7 @@ const PostHot = (props) => {
             <Author
               className="!mt-0"
               avatar={post.author?.profileImage}
-              name={post.author?.firstName + " " + post.author?.lastName}
+              name={post.author?.firstName + ' ' + post.author?.lastName}
               date={post.createdAt}
             />
             <Tags list={post.tags} className="!mt-6" />
@@ -46,7 +46,7 @@ const PostHot = (props) => {
                 src={
                   helpers.isValidUrl(post.featuredImage)
                     ? post.featuredImage
-                    : ""
+                    : ''
                 }
               />
             </div>

@@ -1,10 +1,11 @@
-name: Test CI
+name: Lighthouse CI
 on:
   push:
     branches:
       - main
+  pull_request:
 jobs:
-  tests:
+  lighthouse:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -15,3 +16,7 @@ jobs:
         run: npm i
       - name: Build site
         run: npm run build
+      - name: Run Lighthouse CI
+        run: npm run lhci
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}

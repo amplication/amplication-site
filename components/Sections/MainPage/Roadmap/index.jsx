@@ -1,15 +1,15 @@
 const Roadmap = () => {
   const mystyle = {
-    color: " #A787FF",
+    color: ' #A787FF',
   };
   return (
     <>
       <section className="page-roadmap" id="roadmap">
         <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
-          <div className="row align-items-center justify-content-center justify-content-md-start mb-4 text-white">
+          <div className="row m-container p-container align-items-center mb-4 text-white">
             <h2 className="roadmap-heading">
               What&apos;s next? <br />
-              Great things coming down the{" "}
+              Great things coming down the{' '}
               <span style={mystyle}>&lt;roadmap&gt;</span>
             </h2>
             <p className="roadmap-paragraph">
@@ -17,7 +17,8 @@ const Roadmap = () => {
               Amplication Community Edition better,
               <br /> we are extending its capabilities into Enterprise Edition
               to meet the requirements and standards
-              <br /> of large-scale organizations and enterprises.
+              <br className="hidden laptop:block" /> of large-scale
+              organizations and enterprises.
             </p>
           </div>
           <div className="row d-flex justify-content-between align-items-stretch">
@@ -82,7 +83,7 @@ const Roadmap = () => {
                   </li>
                 </ul>
               </div>
-            </div>{" "}
+            </div>{' '}
             <div className="col-sm-12 col-md-6 col-lg-4">
               <div className="roadmap-box">
                 <div className="roadmap-title">Git &amp; Custom Code</div>
@@ -117,14 +118,14 @@ const Roadmap = () => {
           </div>
           <br />
           <div className="roadmap-link">
-            Want to dive into features? Check out our{" "}
+            Want to dive into features? Check out our{' '}
             <a
               className="official-roadmap-link"
               href="https://docs.amplication.com/docs/about/roadmap/"
             >
-              {" "}
+              {' '}
               official public roadmap
-            </a>{" "}
+            </a>{' '}
             to learn more.
           </div>
         </div>
