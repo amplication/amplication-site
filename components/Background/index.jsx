@@ -1,6 +1,9 @@
 import {useEffect, useState} from 'react';
+import {useRouter} from 'next/router';
 
 const Background = () => {
+  const router = useRouter();
+
   const [bottomBlockClasses, setBottomBlockClasses] = useState(
     'hidden laptop:block absolute w-[604px] h-[736px] z-0'
   );
@@ -9,6 +12,21 @@ const Background = () => {
   );
 
   useEffect(() => {
+    function hashChange(url) {
+      if (url === '/#roadmap') {
+        setBottomBlockClasses(bottomBlockClasses + ' bottom-0');
+        setBottomBlockSecondClasses(bottomBlockSecondClasses + ' bottom-0');
+      } else {
+        setBottomBlockClasses(bottomBlockClasses + ' bottom-[-5%]');
+        setBottomBlockSecondClasses(bottomBlockSecondClasses + ' bottom-[-5%]');
+      }
+    }
+
+    function routeChange() {
+      setBottomBlockClasses(bottomBlockClasses + ' bottom-[-5%]');
+      setBottomBlockSecondClasses(bottomBlockSecondClasses + ' bottom-[-5%]');
+    }
+
     if (window.location.hash) {
       setBottomBlockClasses(bottomBlockClasses + ' bottom-0');
       setBottomBlockSecondClasses(bottomBlockSecondClasses + ' bottom-0');
@@ -16,6 +34,13 @@ const Background = () => {
       setBottomBlockClasses(bottomBlockClasses + ' bottom-[-5%]');
       setBottomBlockSecondClasses(bottomBlockSecondClasses + ' bottom-[-5%]');
     }
+
+    router.events.on('hashChangeStart', hashChange);
+    router.events.on('routeChangeStart', routeChange);
+    return () => {
+      router.events.off('hashChangeStart', hashChange);
+      router.events.off('routeChangeStart', routeChange);
+    };
   }, []);
 
   return (
