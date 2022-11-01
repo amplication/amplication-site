@@ -13,7 +13,7 @@ const Tags = props => {
           return (
             <span
               className="py-1 px-2 bg-light-blue rounded-full border border-solid border-lite mr-1.5 leading-tag font-medium"
-              key={tag.id}
+              key={tag.slug}
             >
               {tag.name}
             </span>
