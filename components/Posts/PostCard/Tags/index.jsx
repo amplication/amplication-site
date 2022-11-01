@@ -5,7 +5,7 @@ const Tags = props => {
     return (
       <div
         className={
-          'mt-4 text-tiny text-white flex flex-row ' +
+          'mt-4 text-tiny text-white flex flex-row flex-wrap gap-y-3 ' +
           (props.className !== 'undefined' ? props.className : '')
         }
       >
@@ -25,7 +25,7 @@ const Tags = props => {
     return (
       <div
         className={
-          'mt-4 text-tiny text-white flex flex-row ' +
+          'mt-4 text-tiny text-white flex flex-row flex-wrap gap-col-3 ' +
           (props.className !== 'undefined' ? props.className : '')
         }
       >
