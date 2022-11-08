@@ -16,7 +16,7 @@ const nextConfig = {
       'www.facebook.com',
     ],
   },
-  experimental: {images: {allowFutureImage: true}},
+  experimental: {images: {allowFutureImage: true}, optimizeCss: true},
   async redirects() {
     return [
       {
