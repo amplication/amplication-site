@@ -31,13 +31,14 @@ const Post = ({posts, post}) => {
     return errorPage();
   }
 
-  const rawPostContent = helpers.removeMarkdown(post.content);
-
+  const title = post.metaTitle || post.title;
+  const description =
+    post.metaDescription || helpers.removeMarkdown(post.content);
   return (
     <>
       <NextSeo
-        title={post.title}
-        description={rawPostContent.substring(0, 150)}
+        title={title}
+        description={description}
         pageImage={
           helpers.isValidUrl(post.featuredImage) ? post.featuredImage : ''
         }
@@ -45,8 +46,8 @@ const Post = ({posts, post}) => {
         nofollow={!!post.draft}
         openGraph={{
           url: helpers.getPostSlug(post.slug),
-          title: post.title,
-          description: rawPostContent.substring(0, 150),
+          title,
+          description,
           images: [
             {
               url: post.featuredImage,
@@ -196,9 +197,11 @@ export const getStaticProps = async context => {
             createdAt
             content
             draft
+            featuredImage
+            metaDescription
+            metaTitle
             slug
             title
-            featuredImage
             tags {
               id
               name

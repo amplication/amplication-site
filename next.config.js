@@ -66,6 +66,13 @@ const nextConfig = {
       },
       {
         source:
+          '/blog/why-you-should-choose-nestjs-as-your-backend-framework-cl56jih1t164901s6aowneplb',
+        destination:
+          '/blog/why-choose-nestjs-as-your-backend-framework-amplication',
+        permanent: true,
+      },
+      {
+        source:
           '/blog/why-choose-nestjs-as-your-backend-framework---amplication--cl56jih1t164901s6aowneplb',
         destination:
           '/blog/why-choose-nestjs-as-your-backend-framework-amplication',
