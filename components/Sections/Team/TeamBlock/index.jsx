@@ -16,6 +16,7 @@ import arielWeinberger from '../../../../public/images/team/ariel.png';
 import tomerNaim from '../../../../public/images/team/tomer.png';
 import toddFeinroth from '../../../../public/images/team/todd.png';
 import erezGreenberg from '../../../../public/images/team/erez.png';
+import danieleIasella from '../../../../public/images/team/daniele.png';
 
 import talkWithUs from '../../../../public/images/icons/talk-with-with-team.svg';
 import joinUs from '../../../../public/images/icons/join-the-team.svg';
@@ -121,6 +122,25 @@ const TeamBlock = () => {
         },
         {
           href: 'https://twitter.com/tomernaim',
+          iconClass: 'twitter',
+        },
+      ],
+    },
+    {
+      name: 'Daniele Iasella',
+      position: 'Principal Engineer',
+      image: danieleIasella,
+      links: [
+        {
+          href: 'https://www.linkedin.com/in/danieleiasella/',
+          iconClass: 'linkedin',
+        },
+        {
+          href: 'https://github.com/overbit',
+          iconClass: 'github',
+        },
+        {
+          href: 'https://twitter.com/ov3rbit',
           iconClass: 'twitter',
         },
       ],
