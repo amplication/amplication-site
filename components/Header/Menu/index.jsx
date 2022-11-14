@@ -17,6 +17,14 @@ const Menu = () => {
       isActive: false,
     },
     {
+      title: 'Enterprise',
+      href: {
+        pathname: '/enterprise',
+      },
+      target: '_self',
+      isActive: Boolean(asPath === '/enterprise'),
+    },
+    {
       title: 'Features',
       href: {
         pathname: '/features',
