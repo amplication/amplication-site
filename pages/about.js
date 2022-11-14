@@ -29,25 +29,15 @@ const Home = () => {
           cardType: 'summary_large_image',
         }}
       />
-
       <main className="w-full font-poppins z-10 mb-12 laptop:mb-[100px] amplication-base">
-
         <HeroBlock />
-
           <div className="bg-gradient">
-
             <Steps />
-
             <LowCode />
-
             <LogoList />
-
             <UsersList />
-
             <StartNow />
-
           </div>
-
       </main>
     </>
   );
