@@ -23,7 +23,6 @@ const Features = () => {
     },
     {
       image: enterprise2,
-      iconClass: 'feature-page-icon',
       title: 'Keep your best practices and conventions or adopt industry standards',
       content:
         'Using a community-driven plugin system, your team has full control over the flavor of the generated code, including security, privacy, standards, and best practices.<br />\n' +
@@ -33,7 +32,6 @@ const Features = () => {
     },
     {
       image: enterprise3,
-      iconClass: 'feature-page-icon',
       title: 'Build your product with no limits at any scale',
       content:
         'You build something unique, so use the creativity of your team to make a difference.<br />\n' +
@@ -43,7 +41,6 @@ const Features = () => {
     },
     {
       image: enterprise4,
-      iconClass: 'feature-page-icon',
       title: 'Limitless architecture',
       content:
         'Whether you build a single service or a microservices architecture, Amplication allows you to build at any scale.<br />\n' +
@@ -53,7 +50,6 @@ const Features = () => {
     },
     {
       image: enterprise5,
-      iconClass: 'feature-page-icon',
       title: 'Extend existing projects or start from scratch',
       content:
         'Whether you want to break the monolith, extend an existing product with new services, or start from scratch - Amplication got your back{end}.<br />\n' +
