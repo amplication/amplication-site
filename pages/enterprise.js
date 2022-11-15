@@ -68,7 +68,6 @@ const Features = () => {
 
       <main className="w-full font-poppins z-10 !mb-0 laptop:mb-[100px] amplication-base">
         <HeroBlock />
-
         <Slider />
 
         {features.map((feature, i) => {
