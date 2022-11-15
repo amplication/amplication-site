@@ -1,3 +1,8 @@
+import HeroBlock from '../components/Sections/Enterprise/HeroBlock';
+import Slider from '../components/Sections/Enterprise/Slider';
+import Facts from '../components/Sections/Enterprise/Facts';
+import StartNow from '../components/Sections/About/StartNow';
+
 import enterprise1 from '../public/images/enterprise/enterprise-1.svg';
 import enterprise2 from '../public/images/enterprise/enterprise-2.svg';
 import enterprise3 from '../public/images/enterprise/enterprise-3.svg';
@@ -6,7 +11,6 @@ import enterprise5 from '../public/images/enterprise/enterprise-5.svg';
 import {NextSeo} from 'next-seo';
 import {MainLayout} from '../layouts';
 import helpers from '../helpers';
-import Link from "next/link";
 import Image from "next/image";
 
 const Features = () => {
@@ -62,11 +66,19 @@ const Features = () => {
         canonical={helpers.getCanonical('features')}
       />
 
-      <main className="w-full font-poppins z-10 mb-12 laptop:mb-[100px] amplication-base">
+      <main className="w-full font-poppins z-10 !mb-0 laptop:mb-[100px] amplication-base">
+        <HeroBlock />
+        <Slider />
+
         {features.map((feature, i) => {
           return (
-            <section className="features-page-feature !py-24">
+            <section className="features-page-feature !py-24" key={i}>
               <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
+                { i === 0 &&
+                  (
+                    <h2 className="!text-[56px] text-center !leading-[84px] !font-bold !mb-12">Let your teams write critical business logic instead of managing redundant infrastructure code.</h2>
+                  )
+                }
                 <div className={(i % 2 !== 0 ? 'flex-row-reverse ' : '') + "row d-flex justify-content-between align-items-center feature-page-card"}>
                   <div className="col-sm-12 col-md-6 pr-3">
                     <div className="feature-title">{feature.title}</div>
@@ -82,11 +94,24 @@ const Features = () => {
             </section>
           );
         })}
+
+        <Facts />
+        <StartNow
+          title='Build faster, with no limits'
+          linkPrimary={{
+            href: 'https://discord.gg/Z2CG3rUFnu',
+            title: 'Get started'
+          }}
+          linkSecondary={{
+            href: 'https://discord.gg/Z2CG3rUFnu',
+            title: 'Contact us',
+          }}
+        />
       </main>
     </>
   );
 };
 Features.getLayout = function getLayout(page) {
-  return <MainLayout hideFooterBanner={true} hideBackground={true}>{page}</MainLayout>;
+  return <MainLayout footerClass='bg-light-blue' hideFooterBanner={true} hideBackground={true}>{page}</MainLayout>;
 };
 export default Features;

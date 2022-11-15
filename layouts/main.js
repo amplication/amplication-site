@@ -9,6 +9,7 @@ const MainLayout = ({
   hideBackground,
   hideFooterBanner,
   footerCompactView,
+  footerClass,
   paddingTopClasses,
 }) => {
   return (
@@ -20,7 +21,7 @@ const MainLayout = ({
     >
       <Header />
       {children}
-      <Footer compactView={footerCompactView} hideBanner={hideFooterBanner} />
+      <Footer customClass={footerClass} compactView={footerCompactView} hideBanner={hideFooterBanner} />
       {!hideBackground && <Background />}
     </div>
   );
@@ -31,6 +32,7 @@ MainLayout.propTypes = {
   hideBackground: PropTypes.bool,
   hideFooterBanner: PropTypes.bool,
   footerCompactView: PropTypes.bool,
+  footerClass: PropTypes.string,
   paddingTopClasses: PropTypes.string,
 };
 
@@ -38,6 +40,7 @@ MainLayout.defaultProps = {
   hideBackground: false,
   hideFooterBanner: false,
   footerCompactView: false,
+  footerClass: '',
   paddingTopClasses: 'pt-[60px] laptop:pt-[110px]',
 };
 
