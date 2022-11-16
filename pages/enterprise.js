@@ -72,17 +72,17 @@ const Features = () => {
 
         {features.map((feature, i) => {
           return (
-            <section className="features-page-feature !py-24" key={i}>
+            <section className="features-page-feature !py-16 desktop:!py-24" key={i}>
               <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
                 { i === 0 &&
                   (
-                    <h2 className="!text-[42px] desktop:!text-[56px] text-center !leading-[42px] desktop:!leading-[56px] desktop:!leading-[76px] !font-bold !mb-12">Let your teams write critical business logic instead of managing redundant infrastructure code.</h2>
+                    <h2 className="h2 text-center !mb-12">Let your teams write critical business logic instead of managing redundant infrastructure code.</h2>
                   )
                 }
                 <div className={(i % 2 !== 0 ? 'flex-row-reverse ' : '') + "row d-flex justify-content-between align-items-center feature-page-card py-6"}>
-                  <div className={(i % 2 !== 0 ? '!px-9 ' : '') + 'col-sm-12 col-md-6 pt-16 pr-3'}>
-                    <div className="!text-[32px] !leading-[48px] font-bold pb-3">{feature.title}</div>
-                    <div className="text-lg text-white !leading-[27px] max-w-[690px]" dangerouslySetInnerHTML={{__html: feature.content}}></div>
+                  <div className={(i % 2 !== 0 ? 'desktop:!px-9 ' : '') + 'col-sm-12 col-md-6 pb-16 desktop:pb-0 desktop:pt-16 pr-3'}>
+                    <div className="!text-[24px] desktop:!text-[32px] !leading-[36px] desktop:!leading-[48px] font-bold pb-3">{feature.title}</div>
+                    <div className="text-sm desktop:text-lg text-white desktop:!leading-[27px] max-w-[690px]" dangerouslySetInnerHTML={{__html: feature.content}}></div>
                   </div>
                   <div className="col-sm-12 col-md-6 feature-image" data-aos="fade-up-left">
                     {feature.image && (

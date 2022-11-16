@@ -1,6 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
-import DataModelsIcon from '../../../../public/images/steps/data-models.svg';
 import Step1 from '../../../../public/images/steps/step-1.svg';
 import Step2 from '../../../../public/images/steps/step-2.svg';
 import Step3 from '../../../../public/images/steps/step-3.svg';

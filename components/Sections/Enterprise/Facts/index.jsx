@@ -30,7 +30,7 @@ const Facts = () => {
             {facts.map((fact, i) => {
               return (
                 <div className="col-sm-6 col-md-4" key={i}>
-                  <div className="rounded-lg border-[1px] border-dark-black-70 h-[180px] desktop:h-[250px] flex flex-column align-items-center justify-content-center mb-7 px-4">
+                  <div className="rounded-lg border-[1px] border-dark-black-70 h-[160px] desktop:h-[250px] flex flex-column align-items-center justify-content-center !mb-4 desktop:!mb-7 px-4">
                     <div className="text-3xl laptop:text-4xl desktop:text-[56px] leading-10 desktop:leading-[84px] font-bold text-center" style={{color: '#A787FF'}}>{fact.title}</div>
                     <div className="text-lg text-white text-center max-w-[360px]">{fact.description}</div>
                   </div>
