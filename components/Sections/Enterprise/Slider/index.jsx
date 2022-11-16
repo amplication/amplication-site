@@ -12,7 +12,7 @@ const Slider = () => {
         <>
             <section className="features-page-feature !pt-24 !pb-20">
                 <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
-                    <h2 className="!text-[56px] text-center !leading-[84px] !font-bold">Empowering developers from leading companies</h2>
+                    <h2 className="!text-[42px] desktop:!text-[56px] text-center !leading-[56px] desktop:!leading-[84px] !font-bold">Empowering developers from leading companies</h2>
                     <div className="mt-2 px-14 flex align-items-center">
                         <div className="flex justify-content-center py-4 min-w-[197px] w-[14.2857%]">
                             <Image src={Logo1} alt="pull request" />

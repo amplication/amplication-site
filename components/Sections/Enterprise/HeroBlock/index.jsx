@@ -17,7 +17,7 @@ const HeroBlock = () => {
               <div className="header-and-video">
                 <div className="content-block flex flex-column justify-content-center">
                   <div className="animated-header !mt-14">
-                    <h1 className="!text-[56px] text-left !leading-[72px] font-bold">
+                    <h1 className="!text-[42px] desktop:!text-[56px] text-left !leading-[56px] desktop:!leading-[72px] font-bold">
                       <span className="animated-header__fixed-text">
                         Build microservices <br /> 20x faster.
                       </span>
@@ -60,7 +60,6 @@ const HeroBlock = () => {
                       <Image src={Person5} alt={''} />
                     </div>
                   </div>
-
                   <div className="z-10 left-[20px] top-[50px] relative" data-aos="zoom-in" data-aos-delay="200">
                     <Image src={Screenshot} alt={''} />
                   </div>

@@ -76,7 +76,7 @@ const Features = () => {
               <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
                 { i === 0 &&
                   (
-                    <h2 className="!text-[56px] text-center !leading-[76px] !font-bold !mb-12">Let your teams write critical business logic instead of managing redundant infrastructure code.</h2>
+                    <h2 className="!text-[42px] desktop:!text-[56px] text-center !leading-[42px] desktop:!leading-[56px] desktop:!leading-[76px] !font-bold !mb-12">Let your teams write critical business logic instead of managing redundant infrastructure code.</h2>
                   )
                 }
                 <div className={(i % 2 !== 0 ? 'flex-row-reverse ' : '') + "row d-flex justify-content-between align-items-center feature-page-card py-6"}>
