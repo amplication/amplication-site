@@ -36,6 +36,12 @@ const HeroBlock = () => {
                         Get started
                       </a>
                     </Link>
+                    <Button
+                      text="Login"
+                      backgroundColor="purpleBright"
+                      hoverBackgroundColor="purpleBrightHover"
+                      isLink={false}
+                    />
                     <button className="btn btn-outline-light btn-sm !text-lg !h-10 ml-2" onClick={() => Intercom('show')}>
                       Contact us
                     </button>
