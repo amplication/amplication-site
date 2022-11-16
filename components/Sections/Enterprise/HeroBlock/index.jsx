@@ -6,6 +6,7 @@ import Person2 from '../../../../public/images/persons/person-2.png';
 import Person3 from '../../../../public/images/persons/person-3.png';
 import Person4 from '../../../../public/images/persons/person-4.png';
 import Person5 from '../../../../public/images/persons/person-5.png';
+import Button from "../../../Common/Button";
 
 const HeroBlock = () => {
   return (
@@ -30,16 +31,14 @@ const HeroBlock = () => {
                     </div>
                   </div>
                   <div className="buttons-wrapper d-flex mt-4 align-items-center justify-content-start">
-                    <Link href={'https://discord.gg/Z2CG3rUFnu'} passHref={true} >
+                    <Link href={'https://app.amplication.com/'} passHref={true} >
                       <a target="_blank" className="btn btn-primary btn-sm !text-lg !h-10 mr-2" rel="noreferrer">
                         Get started
                       </a>
                     </Link>
-                    <Link href={'https://discord.gg/Z2CG3rUFnu'} passHref={true} >
-                      <a target="_blank" className="btn btn-outline-light btn-sm !text-lg !h-10 ml-2" rel="noreferrer">
-                        Contact us
-                      </a>
-                    </Link>
+                    <button className="btn btn-outline-light btn-sm !text-lg !h-10 ml-2" onClick={() => Intercom('show')}>
+                      Contact us
+                    </button>
                   </div>
                 </div>
                 <div className="relative !max-w-[55%]">
