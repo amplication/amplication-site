@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PropTypes from "prop-types";
+import Button from "../../../Common/Button";
 
 const StartNow = ({
   title,
@@ -14,15 +15,18 @@ const StartNow = ({
           { linkPrimary.href &&
               (
                 <Link href={linkPrimary.href} passHref={true} >
-                  <a target="_blank" className="btn btn-primary btn-sm w-[182px] !h-10 mr-3" rel="noreferrer">{linkPrimary.title}</a>
+                  <a target="_blank" className="btn btn-primary btn-sm !text-lg !h-10 mr-2 w-full max-w-[180px]" rel="noreferrer">{linkPrimary.title}</a>
                 </Link>
               )
           }
-          { linkSecondary.href &&
+          { linkSecondary.title &&
             (
-              <Link href={linkSecondary.href} passHref={true} >
-                <a target="_blank" className="btn btn-outline-secondary btn-sm w-[182px] !h-10 ml-3 text-black80" rel="noreferrer">{linkSecondary.title}</a>
-              </Link>
+              <Button
+                text={linkSecondary.title}
+                className="outline-button !text-lg !h-10 ml-2 w-full max-w-[180px]"
+                isLink={false}
+                onClick={() => Intercom('show')}
+              />
             )
           }
         </div>
@@ -44,7 +48,6 @@ StartNow.defaultProps = {
     title: 'View careers'
   },
   linkSecondary: {
-    href: 'https://discord.gg/Z2CG3rUFnu',
     title: 'Join community'
   },
 };

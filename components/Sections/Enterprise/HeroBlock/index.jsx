@@ -11,12 +11,12 @@ import Button from "../../../Common/Button";
 const HeroBlock = () => {
   return (
     <>
-      <section className="page-welcome !pt-36 !pb-[13rem]">
+      <section className="page-welcome !py-8 desktop:!pt-36 desktop:!pb-[13rem] !overflow-visible">
         <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
           <div className="row align-items-center">
             <div className="col-12 text-center">
               <div className="header-and-video">
-                <div className="content-block flex flex-column justify-content-center">
+                <div className="content-block flex flex-column justify-content-center mb-20 laptop:mb-0">
                   <div className="animated-header !mt-14">
                     <h1 className="!text-[42px] desktop:!text-[56px] text-left !leading-[56px] desktop:!leading-[72px] font-bold">
                       <span className="block font-bold">
@@ -30,24 +30,21 @@ const HeroBlock = () => {
                       Amplication is changing the way backend services are built and delivered. We help you build backend services with the highest standards, consistency, and scalability across your organization.
                     </div>
                   </div>
-                  <div className="buttons-wrapper d-flex mt-4 align-items-center justify-content-start">
+                  <div className="d-flex mt-4 align-items-center justify-content-center justify-content-lg-start">
                     <Link href={'https://app.amplication.com/'} passHref={true} >
-                      <a target="_blank" className="btn btn-primary btn-sm !text-lg !h-10 mr-2" rel="noreferrer">
+                      <a target="_blank" className="btn btn-primary btn-sm !text-lg !h-10 mr-2 w-full max-w-[180px]" rel="noreferrer">
                         Get started
                       </a>
                     </Link>
                     <Button
-                      text="Login"
-                      backgroundColor="purpleBright"
-                      hoverBackgroundColor="purpleBrightHover"
+                      text="Contact us"
+                      className="outline-button !text-lg !h-10 ml-2 w-full max-w-[180px]"
                       isLink={false}
+                      onClick={() => Intercom('show')}
                     />
-                    <button className="btn btn-outline-light btn-sm !text-lg !h-10 ml-2" onClick={() => Intercom('show')}>
-                      Contact us
-                    </button>
                   </div>
                 </div>
-                <div className="relative !max-w-[55%]">
+                <div className="relative !max-w-[80%] h-[66vw] mx-auto laptop:!max-w-[55%] laptop:h-auto">
                   <div className="absolute top-0 left-0 right-0 bottom-0">
                     <div className="backdrop-filter backdrop-blur-sm p-[17px] border-[1px] bg-white/10 border-white/20 rounded-full w-[120px] h-[120px] absolute top-[-8%] left-[-12%] z-20" data-aos="zoom-in" data-aos-delay="0">
                       <Image src={Person1} alt={''} />
@@ -65,7 +62,7 @@ const HeroBlock = () => {
                       <Image src={Person5} alt={''} />
                     </div>
                   </div>
-                  <div className="z-10 left-[20px] top-[50px] relative" data-aos="zoom-in" data-aos-delay="200">
+                  <div className="z-10 laptop:left-[20px] top-[50px] relative" data-aos="zoom-in" data-aos-delay="200">
                     <Image src={Screenshot} alt={''} />
                   </div>
                 </div>

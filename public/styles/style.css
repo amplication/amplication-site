@@ -11325,3 +11325,12 @@ body {
   padding: 4px 8px;
   white-space: nowrap;
 }
+
+.amplication-base .logotypes {
+  flex-wrap: nowrap !important;
+}
+@media (max-width: 992px)  {
+  .amplication-base .logotypes {
+    flex-wrap: wrap !important;
+  }
+}
