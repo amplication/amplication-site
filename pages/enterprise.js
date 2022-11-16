@@ -94,7 +94,6 @@ const Features = () => {
             </section>
           );
         })}
-
         <StartNow
           title='Build faster, with no limits'
           linkPrimary={{
