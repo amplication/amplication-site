@@ -31,12 +31,12 @@ const HeroBlock = () => {
                   </div>
                   <div className="buttons-wrapper d-flex mt-4 align-items-center justify-content-start">
                     <Link href={'https://discord.gg/Z2CG3rUFnu'} passHref={true} >
-                      <a target="_blank" className="btn btn-primary btn-sm !text-lg !max-w-[126px] !h-10 mr-2" rel="noreferrer">
+                      <a target="_blank" className="btn btn-primary btn-sm !text-lg !h-10 mr-2" rel="noreferrer">
                         Get started
                       </a>
                     </Link>
                     <Link href={'https://discord.gg/Z2CG3rUFnu'} passHref={true} >
-                      <a target="_blank" className="btn btn-outline-light btn-sm !text-lg !max-w-[126px] !h-10 ml-2" rel="noreferrer">
+                      <a target="_blank" className="btn btn-outline-light btn-sm !text-lg !h-10 ml-2" rel="noreferrer">
                         Contact us
                       </a>
                     </Link>
