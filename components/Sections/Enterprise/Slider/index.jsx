@@ -14,25 +14,25 @@ const Slider = () => {
                 <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
                     <h2 className="!text-[56px] text-center !leading-[84px] !font-bold">Empowering developers from leading companies</h2>
                     <div className="mt-2 px-14 flex align-items-center">
-                        <div className="flex justify-content-center py-4 w-[14.2857%]">
+                        <div className="flex justify-content-center py-4 min-w-[197px] w-[14.2857%]">
                             <Image src={Logo1} alt="pull request" />
                         </div>
-                        <div className="flex justify-content-center py-4 w-[14.2857%]">
+                        <div className="flex justify-content-center py-4 min-w-[197px] w-[14.2857%]">
                             <Image src={Logo2} alt="pull request" />
                         </div>
-                        <div className="flex justify-content-center py-4 w-[14.2857%]">
+                        <div className="flex justify-content-center py-4 min-w-[197px] w-[14.2857%]">
                             <Image src={Logo3} alt="pull request" />
                         </div>
-                        <div className="flex justify-content-center py-4 w-[14.2857%]">
+                        <div className="flex justify-content-center py-4 min-w-[197px] w-[14.2857%]">
                             <Image src={Logo4} alt="pull request" />
                         </div>
-                        <div className="flex justify-content-center py-4 w-[14.2857%]">
+                        <div className="flex justify-content-center py-4 min-w-[197px] w-[14.2857%]">
                             <Image src={Logo5} alt="pull request" />
                         </div>
-                        <div className="flex justify-content-center py-4 w-[14.2857%]">
+                        <div className="flex justify-content-center py-4 min-w-[197px] w-[14.2857%]">
                             <Image src={Logo6} alt="pull request" />
                         </div>
-                        <div className="flex justify-content-center py-4 w-[14.2857%]">
+                        <div className="flex justify-content-center py-4 min-w-[197px] w-[14.2857%]">
                             <Image src={Logo7} alt="pull request" />
                         </div>
                     </div>

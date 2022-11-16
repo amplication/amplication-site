@@ -19,10 +19,9 @@ const Features = () => {
       image: enterprise1,
       title: 'Write business value from day 0',
       content:
-        'Amplication generates a fully extendable and customizable code base for all the application infrastructure, so your team can focus on moving the needle. (/ on making an impact/ on delivering value).<br />\n' +
-        'The generated code is created with well-known technology, so your team does not need to learn anything new. Nothing in the generated code is proprietary to Amplication - we adopt industry best practices, so your team can use their existing knowledge and skillset.<br />\n' +
-        'The generated code can include anything from data schema management, API endpoints (GraphQL or REST API), queues and message brokers, storage, IaC and deployment, roles and permissions, database connections, microservices communication, integrations, logging, exception handling, admin UI and more.<br />\n' +
-        'Shift left anything that can be automated and ensure your code is scalable, secure, and performant. Prevent knowledge gaps and losing knowledge with employee turnover.\n',
+        'Amplication generates a fully extendable and customizable code base for all the application infrastructure, so your team can focus on moving the needle.' +
+        'The generated code is created with well-known technology, so your team does not need to learn anything new. We adopt industry best practices, so your team can use their existing knowledge and skillset.' +
+        'The generated code can include anything from data schema management, API endpoints (GraphQL or REST API), queues and message brokers, storage, IaC and deployment, roles and permissions, database connections, microservices communication, integrations, logging, exception handling, admin UI and more.',
       buttons: [],
     },
     {
@@ -80,14 +79,14 @@ const Features = () => {
                     <h2 className="!text-[56px] text-center !leading-[76px] !font-bold !mb-12">Let your teams write critical business logic instead of managing redundant infrastructure code.</h2>
                   )
                 }
-                <div className={(i % 2 !== 0 ? 'flex-row-reverse ' : '') + "row d-flex justify-content-between align-items-center feature-page-card"}>
-                  <div className="col-sm-12 col-md-6 pr-3">
-                    <div className="!text-[32px] !leading-[48px]">{feature.title}</div>
-                    <div className="feature-page-description text-base text-white" dangerouslySetInnerHTML={{__html: feature.content}}></div>
+                <div className={(i % 2 !== 0 ? 'flex-row-reverse ' : '') + "row d-flex justify-content-between align-items-center feature-page-card py-6"}>
+                  <div className={(i % 2 !== 0 ? '!px-9 ' : '') + 'col-sm-12 col-md-6 pt-16 pr-3'}>
+                    <div className="!text-[32px] !leading-[48px] font-bold pb-3">{feature.title}</div>
+                    <div className="text-lg text-white !leading-[27px] max-w-[690px]" dangerouslySetInnerHTML={{__html: feature.content}}></div>
                   </div>
                   <div className="col-sm-12 col-md-6 feature-image" data-aos="fade-up-left">
                     {feature.image && (
-                      <Image className="max-w-[710px]" src={feature.image} alt={feature.title} objectFit={'contain'} />
+                      <Image className="!left-4 !top-6 max-w-[710px]" src={feature.image} alt={feature.title} objectFit={'contain'} />
                     )}
                   </div>
                 </div>

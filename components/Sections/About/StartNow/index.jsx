@@ -8,8 +8,8 @@ const StartNow = ({
 }) => {
   return (
     <>
-      <section className="background-transparent w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop !py-28">
-        <h2 className="main-title text-center mx-auto !mb-12 !text-[50px] max-w-[960px]">{title}</h2>
+      <section className="background-transparent w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop !py-36">
+        <h2 className="main-title text-center mx-auto !mb-10 !text-[56px] !leading-[84px] font-bold max-w-[960px]">{title}</h2>
         <div className="d-flex justify-content-center align-items-center">
           { linkPrimary.href &&
               (
