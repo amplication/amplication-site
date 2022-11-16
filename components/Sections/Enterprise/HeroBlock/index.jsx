@@ -18,10 +18,10 @@ const HeroBlock = () => {
                 <div className="content-block flex flex-column justify-content-center">
                   <div className="animated-header !mt-14">
                     <h1 className="!text-[42px] desktop:!text-[56px] text-left !leading-[56px] desktop:!leading-[72px] font-bold">
-                      <span className="animated-header__fixed-text">
+                      <span className="block font-bold">
                         Build microservices <br /> 20x faster.
                       </span>
-                      <span className="animated-header__fixed-text text-[34px] leading-[60px] font-bold">
+                      <span className="block text-[34px] leading-[60px] font-bold">
                         Reliably. Securely. Consistently.
                       </span>
                     </h1>
