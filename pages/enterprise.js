@@ -68,6 +68,7 @@ const Features = () => {
 
       <main className="w-full font-poppins z-10 !mb-0 laptop:mb-[100px] amplication-base">
         <HeroBlock />
+        <Facts />
         <Slider />
 
         {features.map((feature, i) => {
@@ -76,12 +77,12 @@ const Features = () => {
               <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
                 { i === 0 &&
                   (
-                    <h2 className="!text-[56px] text-center !leading-[84px] !font-bold !mb-12">Let your teams write critical business logic instead of managing redundant infrastructure code.</h2>
+                    <h2 className="!text-[56px] text-center !leading-[76px] !font-bold !mb-12">Let your teams write critical business logic instead of managing redundant infrastructure code.</h2>
                   )
                 }
                 <div className={(i % 2 !== 0 ? 'flex-row-reverse ' : '') + "row d-flex justify-content-between align-items-center feature-page-card"}>
                   <div className="col-sm-12 col-md-6 pr-3">
-                    <div className="feature-title">{feature.title}</div>
+                    <div className="!text-[32px] !leading-[48px]">{feature.title}</div>
                     <div className="feature-page-description text-base text-white" dangerouslySetInnerHTML={{__html: feature.content}}></div>
                   </div>
                   <div className="col-sm-12 col-md-6 feature-image" data-aos="fade-up-left">
@@ -95,7 +96,6 @@ const Features = () => {
           );
         })}
 
-        <Facts />
         <StartNow
           title='Build faster, with no limits'
           linkPrimary={{

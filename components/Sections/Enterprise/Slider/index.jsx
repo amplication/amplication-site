@@ -1,24 +1,45 @@
+import Logo1 from '../../../../public/images/logotypes/logo-1.svg';
+import Logo2 from '../../../../public/images/logotypes/logo-2.svg';
+import Logo3 from '../../../../public/images/logotypes/logo-3.svg';
+import Logo4 from '../../../../public/images/logotypes/logo-4.svg';
+import Logo5 from '../../../../public/images/logotypes/logo-5.svg';
+import Logo6 from '../../../../public/images/logotypes/logo-6.svg';
+import Logo7 from '../../../../public/images/logotypes/logo-7.svg';
+import Image from 'next/image';
+
 const Slider = () => {
-  return (
-    <>
-      <section className="features-page-feature !py-24">
-        <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
-          <h2 className="!text-[56px] text-center !leading-[84px] !font-bold">Empowering developers from leading companies</h2>
-          <div className="mt-16 flex align-items-center">
-            {[...Array(7)].map((x, i) =>
-              <div className="flex justify-content-center py-4 w-[14.2857%]">
-                <svg width="159" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g fill="#fff">
-                    <path d="M52.5 17.7c.4-.4 1-1.2.9-2.5-.1-2.8-2.8-3-4.6-3.3-2.3-.3-2.6-.5-2.7-1.2 0-.8 1.2-1.3 2.3-1.2 2 0 3.8.7 3.8.7l.7-2.2c-.1 0-2.1-.6-4.5-.7-2.4 0-4.6 1-4.6 3.5 0 2.9 2.9 3.2 4.7 3.4 2 .3 2.6.5 2.7 1.1 0 .5 0 1.7-3 1.5-1.9-.1-3.6-1-3.6-1l-1 2c.1 0 2.2 1 4.7 1.1 1.2 0 3 0 4.2-1.2Zm8.4 1.2c2.2 0 4.4-.9 4.4-.9l-.6-2s-2 .8-3.7.8c-2.3 0-3.4-1.5-3.4-2.8h8.3v-1.4c0-.4 0-5.3-5.1-5.3-4.7 0-5.6 4-5.6 5.7 0 1.6.5 6 5.7 6Zm2.7-7h-6s.3-2.4 3.2-2.4c3 0 2.8 2.5 2.8 2.5Zm7.4 6.8v-7c0-.8 1-1.8 2-1.8h4V7.5h-3.6c-2 0-2.6 1.8-2.6 2.2l-.1-2.2h-2.2v11.2H71Zm14.8 0 3.6-11.2H87l-3 9-2.7-9h-2.5l3.4 11.2h3.6Zm10.6.2c2.2 0 4.4-.9 4.4-.9l-.6-2s-2 .8-3.7.8c-2.3 0-3.4-1.5-3.4-2.8h8.3v-1.4c0-.4 0-5.3-5.1-5.3-4.7 0-5.6 4-5.6 5.7 0 1.6.6 6 5.7 6Zm2.7-7h-6s.3-2.4 3.2-2.4c3 0 2.8 2.5 2.8 2.5Zm7.4 6.8v-7c0-.8 1-1.8 2-1.8h4V7.5h-3.6c-2 0-2.5 1.8-2.5 2.2l-.2-2.2H104v11.2h2.5Zm16.6 0v-2.3h-4.6V3h-6v2h3.6v13.7h7Zm7.3.2c2.2 0 4.4-.9 4.4-.9l-.6-2s-2 .8-3.7.8c-2.3 0-3.5-1.5-3.5-2.8h8.4v-1.4c0-.4 0-5.3-5.1-5.3-4.7 0-5.6 4-5.7 5.7 0 1.6.6 6 5.8 6Zm2.7-7h-6s.2-2.4 3.2-2.4S133 12 133 12Zm12.9 5.8c.4-.4 1-1.2.9-2.5-.2-2.8-2.9-3-4.7-3.3-2.2-.3-2.6-.5-2.6-1.2 0-.8 1.2-1.3 2.2-1.2 2 0 3.8.7 3.8.7l.7-2.2s-2-.6-4.4-.7c-2.4 0-4.7 1-4.6 3.5 0 2.9 2.8 3.2 4.7 3.4 2 .3 2.6.5 2.6 1.1 0 .5 0 1.7-2.9 1.5-2-.1-3.7-1-3.7-1l-1 2c.2 0 2.3 1 4.8 1.1 1.2 0 3 0 4.2-1.2Zm11.5 0c.4-.4 1-1.2.9-2.5-.1-2.8-2.8-3-4.6-3.3-2.3-.3-2.6-.5-2.7-1.2 0-.8 1.2-1.3 2.3-1.2 2 0 3.8.7 3.8.7l.7-2.2c-.1 0-2.1-.6-4.5-.7-2.4 0-4.6 1-4.6 3.5 0 2.9 2.9 3.2 4.7 3.4 2 .3 2.6.5 2.7 1.1 0 .5 0 1.7-3 1.5-1.9-.1-3.6-1-3.6-1l-1 2c.1 0 2.2 1 4.7 1.1 1.3 0 3 0 4.2-1.2ZM9.5 5l1.7-5H0v5h9.5Zm19.8 0V0H16.6L15 5h14.3ZM6.6 13.7l1.5-5H0v5h6.6Zm22.7 0v-5h-16l-1.4 5h17.4ZM3.5 23.1 5 18H0v5h3.5Zm25.8 0v-5h-19l-1.6 5h20.6Z"/>
-                  </g>
-                </svg>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
-    </>
-  );
+    return (
+        <>
+            <section className="features-page-feature !pt-24 !pb-20">
+                <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
+                    <h2 className="!text-[56px] text-center !leading-[84px] !font-bold">Empowering developers from leading companies</h2>
+                    <div className="mt-2 px-14 flex align-items-center">
+                        <div className="flex justify-content-center py-4 w-[14.2857%]">
+                            <Image src={Logo1} alt="pull request" />
+                        </div>
+                        <div className="flex justify-content-center py-4 w-[14.2857%]">
+                            <Image src={Logo2} alt="pull request" />
+                        </div>
+                        <div className="flex justify-content-center py-4 w-[14.2857%]">
+                            <Image src={Logo3} alt="pull request" />
+                        </div>
+                        <div className="flex justify-content-center py-4 w-[14.2857%]">
+                            <Image src={Logo4} alt="pull request" />
+                        </div>
+                        <div className="flex justify-content-center py-4 w-[14.2857%]">
+                            <Image src={Logo5} alt="pull request" />
+                        </div>
+                        <div className="flex justify-content-center py-4 w-[14.2857%]">
+                            <Image src={Logo6} alt="pull request" />
+                        </div>
+                        <div className="flex justify-content-center py-4 w-[14.2857%]">
+                            <Image src={Logo7} alt="pull request" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </>
+    );
 };
 
 export default Slider;
