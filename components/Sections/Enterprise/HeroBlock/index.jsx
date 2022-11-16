@@ -60,6 +60,7 @@ const HeroBlock = () => {
                       <Image src={Person5} alt={''} />
                     </div>
                   </div>
+
                   <div className="z-10 left-[20px] top-[50px] relative" data-aos="zoom-in" data-aos-delay="200">
                     <Image src={Screenshot} alt={''} />
                   </div>
