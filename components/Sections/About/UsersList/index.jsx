@@ -159,7 +159,7 @@ const UsersList = () => {
             users.map((user, index) => {
               return (
                 <div className="d-flex pt-4 pb-10 border-b-[1px] border-dark-black-70">
-                  <div className="min-w-[96px] h-24 p-[11px] border-[3px] bg-white/10 border-white/20 rounded-full">
+                  <div className="min-w-[96px] h-24 p-[11px] border-[3px] bg-white/10 border-white/20 rounded-full" data-aos="zoom-in" data-aos-delay="200">
                     <Image className="rounded-full" src={user.avatar} alt={''} width={67} height={67} />
                   </div>
                   <div className="d-flex flex-column pl-6">

@@ -6,7 +6,7 @@ const LowCode = () => {
         <section className="background-transparent w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
           <div className="d-flex bg-dark-black-100 justify-content-between align-items-center p-36 !rounded-lg border-[1px] border-dark-black-70">
             <div className="col-sm-12 col-md-6">
-              <h2 className="main-title !text-[50px]">For developers, &nbsp;by developers</h2>
+              <h2 className="main-title !text-[50px] max-w-[400px]">For developers, by developers</h2>
             </div>
             <div className="col-sm-12 col-md-6 pr-3">
               <div className="bracket-box">

@@ -64,15 +64,15 @@ const Menu = () => {
       target: '_blank',
       isActive: false,
     },
-    {
-      title: 'Roadmap',
-      href: {
-        pathname: '/',
-        hash: 'roadmap',
-      },
-      target: '_self',
-      isActive: false,
-    },
+    // {
+    //   title: 'Roadmap',
+    //   href: {
+    //     pathname: '/',
+    //     hash: 'roadmap',
+    //   },
+    //   target: '_self',
+    //   isActive: false,
+    // },
     {
       title: 'Blog',
       href: {
@@ -119,9 +119,9 @@ const Menu = () => {
                   <Link href={item.href}>
                     <a
                       className={`text-xl py-3 inline-block hover:text-white laptop:text-base laptop:p-1 ${
-                        item.isActive ? 'text-white' : 'text-[#A3A8B8]'
+                          ( item.isActive ? 'text-white' : 'text-[#A3A8B8]' ) + ( item.href.pathname === '/enterprise' ? ' !text-[#54DBEE] font-semibold' : '' )
                       }`}
-                      target={item.target}
+                      target={item.pathname}
                       onClick={() => setIsMobileMenuOpened(!isMobileMenuOpened)}
                     >
                       {item.title}

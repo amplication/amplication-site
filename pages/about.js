@@ -36,7 +36,15 @@ const Home = () => {
             <LowCode />
             <LogoList />
             <UsersList />
-            <StartNow />
+              <StartNow
+                linkPrimary={{
+                  href: 'https://app.amplication.com/',
+                  title: 'Get started'
+                }}
+                linkSecondary={{
+                  title: 'Join Community',
+                }}
+              />
           </div>
       </main>
     </>

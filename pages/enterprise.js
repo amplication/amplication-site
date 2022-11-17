@@ -66,7 +66,6 @@ const Features = () => {
 
       <main className="w-full font-poppins z-10 !mb-0 laptop:mb-[100px] amplication-base">
         <HeroBlock />
-        <Facts />
         <Slider />
 
         {features.map((feature, i) => {
@@ -75,11 +74,11 @@ const Features = () => {
               <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
                 { i === 0 &&
                   (
-                    <h2 className="h2 text-center !mb-12">Let your teams write critical business logic instead of managing redundant infrastructure code.</h2>
+                    <h2 className="!text-3xl laptop:!text-[56px] !leading-[40px] laptop:!leading-[68px] !font-semibold tablet:text-center !mb-12">Let your teams write critical business logic instead of managing redundant infrastructure code.</h2>
                   )
                 }
-                <div className={(i % 2 !== 0 ? 'flex-row-reverse ' : '') + "row d-flex justify-content-between align-items-center feature-page-card py-6"}>
-                  <div className={(i % 2 !== 0 ? 'desktop:!px-9 ' : '') + 'col-sm-12 col-md-6 pb-16 desktop:pb-0 desktop:pt-16 pr-3'}>
+                <div className={(i % 2 !== 0 ? 'flex-row-reverse ' : '') + "row d-flex justify-content-between align-items-center feature-page-card py-0 laptop:py-6"}>
+                  <div className={(i % 2 !== 0 ? 'desktop:!px-9 ' : '') + 'col-sm-12 col-md-6 pb-8 desktop:pb-0 desktop:pt-8 pr-3'}>
                     <div className="!text-[24px] desktop:!text-[32px] !leading-[36px] desktop:!leading-[48px] font-bold pb-3">{feature.title}</div>
                     <div className="text-sm desktop:text-lg text-white desktop:!leading-[27px] max-w-[690px]" dangerouslySetInnerHTML={{__html: feature.content}}></div>
                   </div>
@@ -93,14 +92,14 @@ const Features = () => {
             </section>
           );
         })}
+        <Facts />
         <StartNow
           title='Build faster, with no limits'
           linkPrimary={{
             href: 'https://app.amplication.com/',
             title: 'Get started'
           }}
-          linkSecondary={{
-            href: 'https://discord.gg/Z2CG3rUFnu',
+          linkOutline={{
             title: 'Contact us',
           }}
         />
