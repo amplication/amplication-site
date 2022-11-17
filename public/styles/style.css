@@ -10809,6 +10809,12 @@ body {
 .amplication-base .features-page-feature:nth-child(even) {
   background-color: var(--black90);
 }
+.amplication-base .step-section:nth-child(even) {
+  background-color: var(--dark);
+}
+.amplication-base .step-section:nth-child(odd) {
+  background-color: var(--black90);
+}
 .amplication-base .features-page-feature .feature-page-card {
   display: flex;
 }
@@ -11318,4 +11324,12 @@ body {
   margin: 4px 8px;
   padding: 4px 8px;
   white-space: nowrap;
+}
+.amplication-base .logotypes {
+  flex-wrap: nowrap !important;
+}
+@media (max-width: 992px)  {
+  .amplication-base .logotypes {
+    flex-wrap: wrap !important;
+  }
 }

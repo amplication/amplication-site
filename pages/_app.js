@@ -47,6 +47,7 @@ function Amplication({Component, pageProps}) {
     AOS.init({
       easing: 'ease-out-back',
       duration: 1000,
+      disable: router.asPath === '/enterprise' ? 'mobile' : true,
     });
 
     const typingAnimations = document.querySelectorAll(
