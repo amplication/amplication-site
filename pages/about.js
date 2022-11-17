@@ -31,28 +31,32 @@ const Home = () => {
       />
       <main className="w-full font-poppins z-10 mb-12 laptop:mb-[100px] amplication-base">
         <HeroBlock />
-          <div className="bg-gradient">
-            <Steps />
-            <LowCode />
-            <LogoList />
-            <UsersList />
-              <StartNow
-                linkPrimary={{
-                  href: 'https://app.amplication.com/',
-                  title: 'Get started'
-                }}
-                linkSecondary={{
-                  title: 'Join Community',
-                }}
-              />
-          </div>
+        <div className="bg-gradient">
+          <Steps />
+          <LowCode />
+          <LogoList />
+          <UsersList />
+          <StartNow
+            linkPrimary={{
+              href: 'https://app.amplication.com/',
+              title: 'Get started',
+            }}
+            linkSecondary={{
+              title: 'Join Community',
+            }}
+          />
+        </div>
       </main>
     </>
   );
 };
 Home.getLayout = function getLayout(page) {
   return (
-    <MainLayout paddingTopClasses="pt-[60px] laptop:pt-[143px]" hideFooterBanner={true} hideBackground={true}>
+    <MainLayout
+      paddingTopClasses="pt-[60px] laptop:pt-[143px]"
+      hideFooterBanner={true}
+      hideBackground={true}
+    >
       {page}
     </MainLayout>
   );

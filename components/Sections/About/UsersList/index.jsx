@@ -23,154 +23,173 @@ import UserAvatar21 from '../../../../public/images/users/21.png';
 
 const UsersList = () => {
   const users = [
-      {
-          avatar: UserAvatar1,
-          name: 'Dror Nahumi',
-          position: 'General Partner',
-          description: 'Norwest Venture Partners',
-      },
-      {
-          avatar: UserAvatar2,
-          name: 'Tami Bronner',
-          position: 'Partner',
-          description: 'Vertex Ventures',
-      },
-      {
-          avatar: UserAvatar3,
-          name: 'Adi Gozes ',
-          position: 'Partner',
-          description: 'Entrée Capital',
-      },
-      {
-          avatar: UserAvatar4,
-          name: 'Avishag Bohbot ',
-          position: 'Founder',
-          description: 'Velocity Venture Fund',
-      },
-      {
-          avatar: UserAvatar5,
-          name: 'Nitzan Shapira',
-          position: 'Co-founder & CEO',
-          description: 'Epsagon (acquired by Cisco)',
-      },
-      {
-          avatar: UserAvatar6,
-          name: 'Ran Ribenzaft',
-          position: 'Co-founder & CEO',
-          description: 'Epsagon (acquired by Cisco)',
-      },
-      {
-          avatar: UserAvatar7,
-          name: 'Idan Tendler',
-          position: 'Co-founder & CEO',
-          description: 'Bridgecrew (acquired by Palo Alto Networks)',
-      },
-      {
-          avatar: UserAvatar8,
-          name: 'Barak Schoster',
-          position: 'Co-founder & CEO',
-          description: 'Bridgecrew (acquired by Palo Alto Networks)',
-      },
-      {
-          avatar: UserAvatar9,
-          name: 'Scott Williamson',
-          position: 'Product Advisor',
-          description: 'ex CPO @ GitLab & VPP @ SendGrid / Twilio',
-      },
-      {
-          avatar: UserAvatar10,
-          name: 'Ran Sarig ',
-          position: 'Early stage investor',
-          description: 'ex Co-founder & CEO Datorama, a Salesforce Company',
-      },
-      {
-          avatar: UserAvatar11,
-          name: 'Raanan Raz',
-          position: 'Former VP R&D',
-          description: 'Datorama, a Salesforce Company',
-      },
-      {
-          avatar: UserAvatar12,
-          name: 'Efi Cohen',
-          position: 'Head of Salesforce Israel R&D Center',
-          description: 'Salesforce',
-      },
-      {
-          avatar: UserAvatar13,
-          name: 'Michael Matias',
-          position: 'Co-founder',
-          description: 'Stealth',
-      },
-      {
-          avatar: UserAvatar14,
-          name: 'Kfir Tishbi',
-          position: 'Co-founder & CTO',
-          description: 'Stealth',
-      },
-      {
-          avatar: UserAvatar15,
-          name: 'Guy Fighel',
-          position: 'SVP & GM',
-          description: 'New Relic',
-      },
-      {
-          avatar: UserAvatar16,
-          name: 'Alon Girmonsky ',
-          position: 'Former CEO & Co-Founder',
-          description: 'Up9',
-      },
-      {
-          avatar: UserAvatar17,
-          name: 'Maor Fridman',
-          position: 'Partner',
-          description: 'F2 Venture Capital',
-      },
-      {
-          avatar: UserAvatar18,
-          name: 'Omri Krigel',
-          position: 'Founder',
-          description: 'Secret Chord Ventures & Homeward Ventures',
-      },
-      {
-          avatar: UserAvatar19,
-          name: 'Liran Tal',
-          position: 'Director of Developer Advocacy',
-          description: 'Snyk',
-      },
-      {
-          avatar: UserAvatar20,
-          name: 'Paz Yanover',
-          position: 'VP Product',
-          description: 'Hyro, Prev. Testim',
-      },
-      {
-          avatar: UserAvatar21,
-          name: 'Victor Mota',
-          position: 'Senior Software Engineer',
-          description: 'Stripe',
-      }
+    {
+      avatar: UserAvatar1,
+      name: 'Dror Nahumi',
+      position: 'General Partner',
+      description: 'Norwest Venture Partners',
+    },
+    {
+      avatar: UserAvatar2,
+      name: 'Tami Bronner',
+      position: 'Partner',
+      description: 'Vertex Ventures',
+    },
+    {
+      avatar: UserAvatar3,
+      name: 'Adi Gozes ',
+      position: 'Partner',
+      description: 'Entrée Capital',
+    },
+    {
+      avatar: UserAvatar4,
+      name: 'Avishag Bohbot ',
+      position: 'Founder',
+      description: 'Velocity Venture Fund',
+    },
+    {
+      avatar: UserAvatar5,
+      name: 'Nitzan Shapira',
+      position: 'Co-founder & CEO',
+      description: 'Epsagon (acquired by Cisco)',
+    },
+    {
+      avatar: UserAvatar6,
+      name: 'Ran Ribenzaft',
+      position: 'Co-founder & CEO',
+      description: 'Epsagon (acquired by Cisco)',
+    },
+    {
+      avatar: UserAvatar7,
+      name: 'Idan Tendler',
+      position: 'Co-founder & CEO',
+      description: 'Bridgecrew (acquired by Palo Alto Networks)',
+    },
+    {
+      avatar: UserAvatar8,
+      name: 'Barak Schoster',
+      position: 'Co-founder & CEO',
+      description: 'Bridgecrew (acquired by Palo Alto Networks)',
+    },
+    {
+      avatar: UserAvatar9,
+      name: 'Scott Williamson',
+      position: 'Product Advisor',
+      description: 'ex CPO @ GitLab & VPP @ SendGrid / Twilio',
+    },
+    {
+      avatar: UserAvatar10,
+      name: 'Ran Sarig ',
+      position: 'Early stage investor',
+      description: 'ex Co-founder & CEO Datorama, a Salesforce Company',
+    },
+    {
+      avatar: UserAvatar11,
+      name: 'Raanan Raz',
+      position: 'Former VP R&D',
+      description: 'Datorama, a Salesforce Company',
+    },
+    {
+      avatar: UserAvatar12,
+      name: 'Efi Cohen',
+      position: 'Head of Salesforce Israel R&D Center',
+      description: 'Salesforce',
+    },
+    {
+      avatar: UserAvatar13,
+      name: 'Michael Matias',
+      position: 'Co-founder',
+      description: 'Stealth',
+    },
+    {
+      avatar: UserAvatar14,
+      name: 'Kfir Tishbi',
+      position: 'Co-founder & CTO',
+      description: 'Stealth',
+    },
+    {
+      avatar: UserAvatar15,
+      name: 'Guy Fighel',
+      position: 'SVP & GM',
+      description: 'New Relic',
+    },
+    {
+      avatar: UserAvatar16,
+      name: 'Alon Girmonsky ',
+      position: 'Former CEO & Co-Founder',
+      description: 'Up9',
+    },
+    {
+      avatar: UserAvatar17,
+      name: 'Maor Fridman',
+      position: 'Partner',
+      description: 'F2 Venture Capital',
+    },
+    {
+      avatar: UserAvatar18,
+      name: 'Omri Krigel',
+      position: 'Founder',
+      description: 'Secret Chord Ventures & Homeward Ventures',
+    },
+    {
+      avatar: UserAvatar19,
+      name: 'Liran Tal',
+      position: 'Director of Developer Advocacy',
+      description: 'Snyk',
+    },
+    {
+      avatar: UserAvatar20,
+      name: 'Paz Yanover',
+      position: 'VP Product',
+      description: 'Hyro, Prev. Testim',
+    },
+    {
+      avatar: UserAvatar21,
+      name: 'Victor Mota',
+      position: 'Senior Software Engineer',
+      description: 'Stripe',
+    },
   ];
   return (
     <>
       <section className="background-transparent w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
-        <h2 className="main-title !mb-12 !text-[50px]">Supported by tech leaders</h2>
+        <h2 className="main-title !mb-12 !text-[50px]">
+          Supported by tech leaders
+        </h2>
         <div className="grid gap-x-16 gap-y-4 grid-cols-3">
-          {
-            users.map((user, index) => {
-              return (
-                <div className="d-flex pt-4 pb-10 border-b-[1px] border-dark-black-70">
-                  <div className="min-w-[96px] h-24 p-[11px] border-[3px] bg-white/10 border-white/20 rounded-full" data-aos="zoom-in" data-aos-delay="200">
-                    <Image className="rounded-full" src={user.avatar} alt={''} width={67} height={67} />
+          {users.map((user, i) => {
+            return (
+              <div
+                className="d-flex pt-4 pb-10 border-b-[1px] border-dark-black-70"
+                key={i}
+              >
+                <div
+                  className="min-w-[96px] h-24 p-[11px] border-[3px] bg-white/10 border-white/20 rounded-full"
+                  data-aos="zoom-in"
+                  data-aos-delay="200"
+                >
+                  <Image
+                    className="rounded-full"
+                    src={user.avatar}
+                    alt={''}
+                    width={67}
+                    height={67}
+                  />
+                </div>
+                <div className="d-flex flex-column pl-6">
+                  <h4 className="text-[32px] leading-8 font-semibold mb-3">
+                    {user.name}
+                  </h4>
+                  <div className="text-gray text-lg leading-[18px]">
+                    {user.position}
                   </div>
-                  <div className="d-flex flex-column pl-6">
-                    <h4 className="text-[32px] leading-8 font-semibold mb-3">{user.name}</h4>
-                    <div className="text-gray text-lg leading-[18px]">{user.position}</div>
-                    <div className="text-lg leading-7 mt-3">{user.description}</div>
+                  <div className="text-lg leading-7 mt-3">
+                    {user.description}
                   </div>
                 </div>
-              );
-            })
-          }
+              </div>
+            );
+          })}
         </div>
       </section>
     </>

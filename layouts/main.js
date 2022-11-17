@@ -21,7 +21,11 @@ const MainLayout = ({
     >
       <Header />
       {children}
-      <Footer customClass={footerClass} compactView={footerCompactView} hideBanner={hideFooterBanner} />
+      <Footer
+        customClass={footerClass}
+        compactView={footerCompactView}
+        hideBanner={hideFooterBanner}
+      />
       {!hideBackground && <Background />}
     </div>
   );
