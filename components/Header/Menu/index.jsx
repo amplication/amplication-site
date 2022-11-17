@@ -119,7 +119,7 @@ const Menu = () => {
                   <Link href={item.href}>
                     <a
                       className={`text-xl py-3 inline-block hover:text-white laptop:text-base laptop:p-1 ${
-                          ( item.isActive ? 'text-white' : 'text-[#A3A8B8]' ) + ( item.href.pathname === '/enterprise' ? ' !text-[#54DBEE] font-semibold' : '' )
+                          ( item.isActive ? 'text-white' : 'text-[#A3A8B8]' ) + ( item.href.pathname === '/enterprise' ? ' !text-[#54DBEE] font-medium' : '' )
                       }`}
                       target={item.pathname}
                       onClick={() => setIsMobileMenuOpened(!isMobileMenuOpened)}
