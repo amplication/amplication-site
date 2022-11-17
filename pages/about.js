@@ -8,7 +8,7 @@ import {NextSeo} from 'next-seo';
 import {MainLayout} from '../layouts';
 import helpers from '../helpers';
 
-const Home = () => {
+const About = () => {
   return (
     <>
       <NextSeo
@@ -16,6 +16,8 @@ const Home = () => {
         description="Amplication is the most flexible open-source platform for Node.js app development.
         We enable developers to auto-generate production-ready backend in minutes. Design modelsand roles,
          deploy your app, connect with REST or GraphQL API, sync with GitHub. You own the code."
+        noindex={true}
+        nofollow={true}
         canonical={helpers.getCanonical('/')}
         openGraph={{
           type: 'website',
@@ -50,7 +52,7 @@ const Home = () => {
     </>
   );
 };
-Home.getLayout = function getLayout(page) {
+About.getLayout = function getLayout(page) {
   return (
     <MainLayout
       paddingTopClasses="pt-[60px] laptop:pt-[143px]"
@@ -61,4 +63,4 @@ Home.getLayout = function getLayout(page) {
     </MainLayout>
   );
 };
-export default Home;
+export default About;
