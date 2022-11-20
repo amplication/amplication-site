@@ -8,7 +8,7 @@ import {NextSeo} from 'next-seo';
 import {MainLayout} from '../layouts';
 import helpers from '../helpers';
 
-const Home = () => {
+const About = () => {
   return (
     <>
       <NextSeo
@@ -16,6 +16,8 @@ const Home = () => {
         description="Amplication is the most flexible open-source platform for Node.js app development.
         We enable developers to auto-generate production-ready backend in minutes. Design modelsand roles,
          deploy your app, connect with REST or GraphQL API, sync with GitHub. You own the code."
+        noindex={true}
+        nofollow={true}
         canonical={helpers.getCanonical('/')}
         openGraph={{
           type: 'website',
@@ -31,30 +33,34 @@ const Home = () => {
       />
       <main className="w-full font-poppins z-10 mb-12 laptop:mb-[100px] amplication-base">
         <HeroBlock />
-          <div className="bg-gradient">
-            <Steps />
-            <LowCode />
-            <LogoList />
-            <UsersList />
-              <StartNow
-                linkPrimary={{
-                  href: 'https://app.amplication.com/',
-                  title: 'Get started'
-                }}
-                linkSecondary={{
-                  title: 'Join Community',
-                }}
-              />
-          </div>
+        <div className="bg-gradient">
+          <Steps />
+          <LowCode />
+          <LogoList />
+          <UsersList />
+          <StartNow
+            linkPrimary={{
+              href: 'https://app.amplication.com/',
+              title: 'Get started',
+            }}
+            linkSecondary={{
+              title: 'Join Community',
+            }}
+          />
+        </div>
       </main>
     </>
   );
 };
-Home.getLayout = function getLayout(page) {
+About.getLayout = function getLayout(page) {
   return (
-    <MainLayout paddingTopClasses="pt-[60px] laptop:pt-[143px]" hideFooterBanner={true} hideBackground={true}>
+    <MainLayout
+      paddingTopClasses="pt-[60px] laptop:pt-[143px]"
+      hideFooterBanner={true}
+      hideBackground={true}
+    >
       {page}
     </MainLayout>
   );
 };
-export default Home;
+export default About;

@@ -11,7 +11,7 @@ import enterprise5 from '../public/images/enterprise/enterprise-5.svg';
 import {NextSeo} from 'next-seo';
 import {MainLayout} from '../layouts';
 import helpers from '../helpers';
-import Image from "next/image";
+import Image from 'next/image';
 
 const Features = () => {
   const features = [
@@ -97,10 +97,10 @@ const Features = () => {
         })}
         <Facts />
         <StartNow
-          title='Build faster, with no limits'
+          title="Build faster, with no limits"
           linkPrimary={{
             href: 'https://app.amplication.com/',
-            title: 'Get started'
+            title: 'Get started',
           }}
           linkOutline={{
             title: 'Contact us',
