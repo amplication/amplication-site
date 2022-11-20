@@ -11,7 +11,7 @@ import Button from "../../../Common/Button";
 const HeroBlock = () => {
   return (
     <>
-      <section className="page-welcome !pt-10 !pb-16 desktop:!pt-36 desktop:!pb-[13rem]">
+      <section className="page-welcome !pt-4 !pb-8 desktop:!pt-36 desktop:!pb-[13rem]">
         <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
           <div className="row align-items-center">
             <div className="col-12 text-center">
@@ -45,7 +45,7 @@ const HeroBlock = () => {
                   </div>
                 </div>
                 <div className="relative !max-w-[80%] h-[66vw] mx-auto hidden medium:block laptop:!max-w-[55%] laptop:h-auto">
-                  <div className="absolute flex items-center justify-center top-12 bottom-0 left-[-6%]" data-aos="zoom-in" data-aos-delay="200">
+                  <div className="absolute flex items-center justify-center top-16 bottom-0 left-[-5%]" data-aos="zoom-in" data-aos-delay="200">
                     <svg width="1018" height="1149" viewBox="0 0 1018 1149" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="1137.5" cy="558.5" r="590" stroke="white" strokeOpacity="0.1"/>
                       <circle cx="1140" cy="586" r="276.5" stroke="white" strokeOpacity="0.1"/>
