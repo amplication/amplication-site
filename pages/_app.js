@@ -85,6 +85,7 @@ function Amplication({Component, pageProps}) {
         <link rel="icon" href="/images/favicon.ico" />
       </Head>
       <ApolloProvider client={client}>
+        {getLayout(<Component {...pageProps} />)}
         {/*Facebook Pixel*/}
         <Script
           id={'facebook-pixel'}
@@ -94,6 +95,13 @@ function Amplication({Component, pageProps}) {
             !function(e,t,n,c,o,a,f){e.fbq||(o=e.fbq=function(){o.callMethod?o.callMethod.apply(o,arguments):o.queue.push(arguments)},e._fbq||(e._fbq=o),o.push=o,o.loaded=!0,o.version="2.0",o.queue=[],(a=t.createElement(n)).async=!0,a.src="https://connect.facebook.net/en_US/fbevents.js",(f=t.getElementsByTagName(n)[0]).parentNode.insertBefore(a,f))}(window,document,"script"),fbq("init","694076677979309"),fbq("track","PageView");
           `,
           }}
+        />
+        {/*Google Fonts*/}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Poppins:wght@400;500;600;700;800&family=Ubuntu+Mono&display=swap"
+          rel="stylesheet"
         />
         {/*Hotjar Tracking Code*/}
         <Script
@@ -169,7 +177,6 @@ function Amplication({Component, pageProps}) {
           ></iframe>
         </noscript>
         <DefaultSeo canonical={canonicalUrl} />
-        {getLayout(<Component {...pageProps} />)}
       </ApolloProvider>
     </>
   );
