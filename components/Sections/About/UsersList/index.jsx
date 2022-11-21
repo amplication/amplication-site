@@ -63,25 +63,25 @@ const UsersList = () => {
       avatar: UserAvatar7,
       name: 'Idan Tendler',
       position: 'Co-founder & CEO',
-      description: 'Bridgecrew (acquired by Palo Alto Networks)',
+      description: 'Bridgecrew<br />\n(acquired by Palo Alto Networks)',
     },
     {
       avatar: UserAvatar8,
       name: 'Barak Schoster',
       position: 'Co-founder & CEO',
-      description: 'Bridgecrew (acquired by Palo Alto Networks)',
+      description: 'Bridgecrew<br />\n(acquired by Palo Alto Networks)',
     },
     {
       avatar: UserAvatar9,
       name: 'Scott Williamson',
       position: 'Product Advisor',
-      description: 'ex CPO @ GitLab & VPP @ SendGrid / Twilio',
+      description: 'ex CPO @ GitLab & VPP<br />\n@ SendGrid / Twilio',
     },
     {
       avatar: UserAvatar10,
       name: 'Ran Sarig ',
       position: 'Early stage investor',
-      description: 'ex Co-founder & CEO Datorama, a Salesforce Company',
+      description: 'ex Co-founder & CEO Datorama,<br />\n a Salesforce Company',
     },
     {
       avatar: UserAvatar11,
@@ -152,19 +152,19 @@ const UsersList = () => {
   ];
   return (
     <>
-      <section className="background-transparent w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
-        <h2 className="main-title !mb-12 !text-[50px]">
+      <section className="background-transparent w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop desktop:!pt-[144px] !pb-8">
+        <h2 className="main-title !mb-20 !text-[50px]">
           Supported by tech leaders
         </h2>
-        <div className="grid gap-x-16 gap-y-4 grid-cols-3">
+        <div className="grid gap-x-16 gap-y-4 grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3">
           {users.map((user, i) => {
             return (
               <div
-                className="d-flex pt-4 pb-10 border-b-[1px] border-dark-black-70"
+                className="d-flex pt-2 pb-3 laptop:pt-[17px] laptop:pb-[28px] border-b-[1px] border-dark-black-70"
                 key={i}
               >
                 <div
-                  className="min-w-[96px] h-24 p-[11px] border-[3px] bg-white/10 border-white/20 rounded-full"
+                  className="w-[72px] min-w-[72px] h-[72px] laptop:min-w-[96px] laptop:h-24 p-2 laptop:p-[11px] border-[2px] laptop:border-[3px] bg-white/10 border-white/20 rounded-full"
                   data-aos="zoom-in"
                   data-aos-delay="200"
                 >
@@ -172,20 +172,14 @@ const UsersList = () => {
                     className="rounded-full"
                     src={user.avatar}
                     alt={''}
-                    width={67}
-                    height={67}
                   />
                 </div>
-                <div className="d-flex flex-column pl-6">
-                  <h4 className="text-[32px] leading-8 font-semibold mb-3">
+                <div className="d-flex flex-column pl-3 laptop:pl-8">
+                  <h4 className="!text-7 laptop:!text-[32px] laptop:!leading-8 font-semibold !mb-3">
                     {user.name}
                   </h4>
-                  <div className="text-gray text-lg leading-[18px]">
-                    {user.position}
-                  </div>
-                  <div className="text-lg leading-7 mt-3">
-                    {user.description}
-                  </div>
+                  <div className="text-base laptop:text-lg laptop:leading-[18px] text-gray" dangerouslySetInnerHTML={{__html: user.position}}></div>
+                  <div className="text-base laptop:text-lg laptop:leading-7 mt-3 min-h-[56px]" dangerouslySetInnerHTML={{__html: user.description}}></div>
                 </div>
               </div>
             );

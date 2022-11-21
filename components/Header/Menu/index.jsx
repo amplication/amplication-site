@@ -65,33 +65,33 @@ const Menu = () => {
       target: '_blank',
       isActive: false,
     },
-    // {
-    //   title: 'Roadmap',
-    //   href: {
-    //     pathname: '/',
-    //     hash: 'roadmap',
-    //   },
-    //   target: '_self',
-    //   isActive: false,
-    // },
-    // {
-    //   title: 'Company',
-    //   href: {
-    //     pathname: '/company',
-    //   },
-    //   target: '_blank',
-    //   isActive: false,
-    //   menuItems: [
-    //     {
-    //       title: 'About',
-    //       href: {
-    //         pathname: '/about',
-    //       },
-    //       target: '_self',
-    //       isActive: Boolean(asPath === '/about'),
-    //     }
-    //   ]
-    // },
+    {
+      title: 'Company',
+      href: {
+        pathname: '/company',
+      },
+      target: '_blank',
+      isActive: false,
+      menuItems: [
+        {
+          title: 'About',
+          href: {
+            pathname: '/about',
+          },
+          target: '_self',
+          isActive: Boolean(asPath === '/about'),
+        },
+        // {
+        //   title: 'Roadmap',
+        //   href: {
+        //     pathname: '/',
+        //     hash: 'roadmap',
+        //   },
+        //   target: '_self',
+        //   isActive: false,
+        // },
+      ]
+    },
     {
       title: 'Blog',
       href: {
@@ -103,7 +103,7 @@ const Menu = () => {
   ];
 
   return (
-    <div className="">
+    <>
       <div
         onClick={() => setIsMobileMenuOpened(!isMobileMenuOpened)}
         className="cursor-pointer relative w-h h-6 laptop:hidden"
@@ -129,7 +129,7 @@ const Menu = () => {
               let menuItemClasses = 'menu__item laptop:px-4 relative';
               if (item.isActive) {
                 menuItemClasses +=
-                  ' laptop:before:absolute laptop:before:block laptop:before:content-[attr(data-before)] laptop:before:w-full laptop:before:h-1 laptop:before:bg-purple-bright laptop:before:left-0 laptop:before:bottom-[-14px] laptop:before:rounded-t';
+                  ' laptop:before:absolute laptop:before:block laptop:before:content-[attr(data-before)] laptop:before:w-full laptop:before:h-1 laptop:before:bg-purple-bright laptop:before:left-0 laptop:before:bottom-0 laptop:before:rounded-t';
               } else {
                 menuItemClasses += '';
               }
@@ -138,8 +138,8 @@ const Menu = () => {
                   { !item.menuItems && (
                     <Link href={item.href}>
                       <a
-                        className={`text-xl py-3 inline-block hover:text-white laptop:text-base laptop:p-1 ${
-                            ( item.isActive ? 'text-white' : 'text-[#A3A8B8]' ) + ( item.href.pathname === '/enterprise' ? ' !text-[#54DBEE] font-medium' : '' )
+                        className={`text-xl inline-block hover:text-white laptop:text-base py-3 laptop:py-5 ${
+                          ( item.isActive ? 'text-white' : 'text-[#A3A8B8]' ) + ( item.href.pathname === '/enterprise' ? ' !text-[#54DBEE] font-medium' : '' )
                         }`}
                         target={item.pathname}
                         onClick={() => setIsMobileMenuOpened(!isMobileMenuOpened)}
@@ -151,25 +151,16 @@ const Menu = () => {
                   {
                     item.menuItems && (
                       <>
-                        <span className="text-xl text-[#A3A8B8] py-3 inline-block hover:text-white laptop:text-base laptop:p-1 cursor-pointer">
+                        <span className="text-xl text-[#A3A8B8] inline-block hover:text-white laptop:text-base laptop:p-1 py-3 laptop:py-5 cursor-pointer">
                           {item.title}
                         </span>
-                        <ul className={"absolute top-0 flex flex-col justify-start items-stretch laptop:flex-row justify:end items:center invisible pt-8 transition-all top-0" + (hoveredLink === item.href.pathname ? ' !visible top-8' : '')}>
-                          {item.menuItems.map((item, index) => {
-                            let menuItemClasses = 'menu__item laptop:px-4 relative';
-                            if (item.isActive) {
-                              menuItemClasses +=
-                                  ' laptop:before:absolute laptop:before:block laptop:before:content-[attr(data-before)] laptop:before:w-full laptop:before:h-1 laptop:before:bg-purple-bright laptop:before:left-0 laptop:before:bottom-[-14px] laptop:before:rounded-t';
-                            } else {
-                              menuItemClasses += '';
-                            }
+                        <ul className={"absolute top-0 invisible transition-all min-w-[110px] bg-purple-light rounded top-20 overflow-hidden " + (hoveredLink === item.href.pathname ? ' !visible !top-16' : '')}>
+                          {item.menuItems.map((item, i) => {
                             return (
-                              <li key={index.toString()} className={menuItemClasses}>
+                              <li key={i.toString()} className={"menu__item relative rounded" + (i !== 0 ? ' laptop:before:absolute laptop:before:block laptop:before:content-[attr(data-after)] laptop:before:w-full laptop:before:h-[1px] laptop:before:bg-light-blue laptop:before:left-0 laptop:before:top-0' : '')}>
                                 <Link href={item.href}>
                                   <a
-                                    className={`text-xl py-3 inline-block hover:text-white laptop:text-base laptop:p-1 ${
-                                        ( item.isActive ? 'text-white' : 'text-[#A3A8B8]' ) + ( item.href.pathname === '/enterprise' ? ' !text-[#54DBEE] font-medium' : '' )
-                                    }`}
+                                    className={`text-xl hover:text-white laptop:text-base block laptop:px-4 py-3 laptop:py-4 ${item.isActive ? 'text-white bg-purple-bright' : 'text-[#A3A8B8]'}`}
                                     target={item.pathname}
                                     onClick={() => setIsMobileMenuOpened(!isMobileMenuOpened)}
                                   >
@@ -216,7 +207,7 @@ const Menu = () => {
           />
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

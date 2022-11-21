@@ -17,13 +17,13 @@ const Steps = () => {
     <>
       <section className="background-transparent py-8">
         <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
-          <div className="row feature d-flex justify-content-between align-items-center">
+          <div className="row feature d-flex justify-content-between align-items-center !my-4 laptop:!my-12 desktop:pb-[224px]">
             <div className="col-sm-12 col-md-6 pr-3">
-              <div className="bracket-box" data-aos="fade-up">
+              <div className="bracket-box !text-xl desktop:!text-4xl" data-aos="fade-up">
                 <span>Who</span>we are?
               </div>
               <div
-                className="feature-description text-base text-white max-w-[542px]"
+                className="feature-description text-base desktop:text-lg text-white !max-w-[610px]"
                 data-aos="fade-up"
                 data-aos-delay="300"
               >
@@ -35,7 +35,19 @@ const Steps = () => {
                 team.
               </div>
             </div>
-            <div className="col-sm-12 col-md-6 relative h-[430px]">
+            <div className="col-sm-12 col-md-6 relative flex align-items-center pt-12 desktop:pt-0 aspect-square desktop:h-[430px]">
+              {/*<div className="absolute left-[17%] top-[12%] w-[65%]" data-aos="zoom-in" data-aos-delay="500">*/}
+              {/*  <Image src={Who1} alt={'github sync'} />*/}
+              {/*</div>*/}
+              {/*<div className="absolute left-[20%] top-[2%] w-[50%] backdrop-blur-sm" data-aos="zoom-in" data-aos-delay="700">*/}
+              {/*  <Image src={Who2} alt={'github sync'} />*/}
+              {/*</div>*/}
+              {/*<div className="absolute left-[-11%] top-[-48%] w-[134%]" data-aos="zoom-in" data-aos-delay="900">*/}
+              {/*  <Image src={Who3} alt={'github sync'} />*/}
+              {/*</div>*/}
+              {/*<div className="absolute left-[54%] top-[21%] w-[35%] backdrop-blur-sm" data-aos="zoom-in" data-aos-delay="1100">*/}
+              {/*  <Image src={Who4} alt={'github sync'} />*/}
+              {/*</div>*/}
               <div className="absolute" data-aos="zoom-in" data-aos-delay="500">
                 <Image src={Who1} alt={'github sync'} />
               </div>
@@ -45,23 +57,19 @@ const Steps = () => {
               <div className="absolute" data-aos="zoom-in" data-aos-delay="900">
                 <Image src={Who3} alt={'github sync'} />
               </div>
-              <div
-                className="absolute"
-                data-aos="zoom-in"
-                data-aos-delay="1100"
-              >
+              <div className="absolute" data-aos="zoom-in" data-aos-delay="1100">
                 <Image src={Who4} alt={'github sync'} />
               </div>
             </div>
           </div>
 
-          <div className="row feature d-flex justify-content-between align-items-center">
+          <div className="row feature d-flex justify-content-between align-items-center !my-4 laptop:!my-12 desktop:pb-[240px]">
             <div className="col-sm-12 col-md-6 pr-3">
-              <div className="bracket-box" data-aos="fade-up">
+              <div className="bracket-box !text-xl desktop:!text-4xl" data-aos="fade-up">
                 <span>What</span> we do it?
               </div>
               <div
-                className="feature-description text-base text-white max-w-[542px]"
+                className="feature-description text-base desktop:text-lg text-white !max-w-[610px]"
                 data-aos="fade-up"
                 data-aos-delay="300"
               >
@@ -72,7 +80,7 @@ const Steps = () => {
                 transparency.
               </div>
             </div>
-            <div className="col-sm-12 col-md-6 relative h-[430px]">
+            <div className="col-sm-12 col-md-6 relative flex align-items-center  pt-12 desktop:pt-0 aspect-square desktop:h-[430px]">
               <div className="absolute" data-aos="zoom-in" data-aos-delay="500">
                 <Image src={What1} alt={'github sync'} />
               </div>
@@ -92,13 +100,13 @@ const Steps = () => {
             </div>
           </div>
 
-          <div className="row feature d-flex justify-content-between align-items-center">
+          <div className="row feature d-flex justify-content-between align-items-center !my-4 laptop:!my-12 desktop:pb-[164px]">
             <div className="col-sm-12 col-md-6 pr-3">
-              <div className="bracket-box" data-aos="fade-up">
+              <div className="bracket-box !text-xl desktop:!text-4xl" data-aos="fade-up">
                 <span>Why</span> we do it?
               </div>
               <div
-                className="feature-description text-base text-white"
+                className="feature-description text-base desktop:text-lg text-white !max-w-[610px]"
                 data-aos="fade-up"
                 data-aos-delay="300"
               >
@@ -108,7 +116,7 @@ const Steps = () => {
                 the platform yourselves, with no vendor lock-in.
               </div>
             </div>
-            <div className="col-sm-12 col-md-6 relative h-[430px]">
+            <div className="col-sm-12 col-md-6 relative flex align-items-center pt-12 desktop:pt-0 aspect-square desktop:h-[430px]">
               <div className="absolute" data-aos="zoom-in" data-aos-delay="500">
                 <Image src={Why1} alt={'github sync'} />
               </div>

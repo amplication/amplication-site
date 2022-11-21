@@ -7,10 +7,10 @@ const LogoList = () => {
   return (
     <>
       <section className="background-transparent w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
-        <h2 className="main-title text-center !mb-12 !text-[50px]">
+        <h2 className="main-title text-center !mb-6 laptop:!mb-20 !text-[50px]">
           Backed by visionary global investors
         </h2>
-        <div className="d-flex">
+        <div className="d-flex !pb-12 desktop:!pb-[172px] border-b-[1px] border-dark-black-70">
           <div
             className="col-sm-4 d-flex align-items-center justify-content-center"
             data-aos="zoom-in"
