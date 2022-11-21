@@ -18,7 +18,7 @@
     transition: opacity 0.4s ease-in-out;
     max-height: calc(100vh - 60px);
     height: calc(100vh - 60px);
-    @apply absolute w-full top-[calc(100%+1px)] z-10 left-0 overflow-y-auto laptop:overflow-y-visible bg-purple-dark container-desktop-enlarged pt-5 pb-7 flex flex-col justify-start items-stretch laptop:flex laptop:flex-row laptop:justify-end laptop:items-center laptop:static laptop:inset-auto laptop:h-auto laptop:p-0;
+    @apply absolute w-full top-[calc(100%+1px)] z-10 left-0 overflow-y-auto laptop:overflow-y-visible bg-purple-dark pt-5 pb-7 flex flex-col justify-start items-stretch laptop:flex laptop:flex-row laptop:justify-end laptop:items-center laptop:static laptop:inset-auto laptop:h-auto laptop:p-0;
   }
 
   .menu--closed {

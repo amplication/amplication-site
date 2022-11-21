@@ -10,22 +10,22 @@ const LogoList = () => {
         <h2 className="main-title text-center !mb-6 laptop:!mb-20 !text-[50px]">
           Backed by visionary global investors
         </h2>
-        <div className="d-flex !pb-12 desktop:!pb-[172px] border-b-[1px] border-dark-black-70">
+        <div className="logotypes d-flex justify-evently !pb-12 desktop:!pb-[172px] border-b-[1px] border-dark-black-70">
           <div
-            className="col-sm-4 d-flex align-items-center justify-content-center"
+            className="px-0 tablet:px-4"
             data-aos="zoom-in"
           >
             <Image src={LogoNorwest} alt={''} />
           </div>
           <div
-            className="col-sm-4 d-flex align-items-center justify-content-center"
+            className="px-0 tablet:px-4"
             data-aos="zoom-in"
             data-aos-delay="200"
           >
             <Image src={LogoEntree} alt={''} />
           </div>
           <div
-            className="col-sm-4 d-flex align-items-center justify-content-center"
+            className="px-0 tablet:px-4"
             data-aos="zoom-in"
             data-aos-delay="400"
           >

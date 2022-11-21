@@ -26,6 +26,13 @@
  */
 @font-face {
     font-family: "poppins";
+    src: url("../public/fonts/poppins/poppins-v19-latin-300.woff2") format("woff2");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "poppins";
     src: url("../public/fonts/poppins/poppins-v19-latin-regular.woff2") format("woff2"),
     url("../public/fonts/poppins/poppins-v19-latin-regular.woff") format("woff"),
     url("../public/fonts/poppins/poppins-v19-latin-regular.svg") format("svg"),

@@ -39,12 +39,6 @@ const Home = () => {
           {/*Features*/}
           <Features />
 
-          {/*Developers*/}
-          <Developers />
-
-          {/*About Us*/}
-          <AboutUs />
-
           {/*What do you get block*/}
           <GetList />
         </div>

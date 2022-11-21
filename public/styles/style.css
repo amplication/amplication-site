@@ -9400,7 +9400,6 @@ body {
   align-items: flex-start;
   justify-content: space-between;
   flex-direction: column;
-  margin-top: 70px;
   line-height: 1.3;
 }
 .amplication-base .animated-header .main-title {
@@ -9440,7 +9439,7 @@ body {
   font-weight: 400;
   text-align: left;
   position: relative;
-  max-width: 800px;
+  max-width: 620px;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
@@ -9728,12 +9727,13 @@ body {
   justify-content: space-between;
 }
 .amplication-base .header-and-video .content-block {
-  max-width: 45%;
+  max-width: 48%;
 }
 .amplication-base .header-and-video .video {
-  max-width: 45%;
-  margin-top: 70px;
+  max-width: 52%;
+  margin-top: 54px;
   overflow: visible;
+  margin-left: 24px;
 }
 @media (max-width: 1199.98px) {
   .amplication-base section.page-welcome .header-and-video {
@@ -9814,7 +9814,7 @@ body {
 }
 .amplication-base section.page-welcome-solution {
   position: relative;
-  padding-top: 180px;
+  padding: 116px 0;
   min-height: 0;
 }
 @media (max-width: 767.98px) {
@@ -9823,9 +9823,6 @@ body {
     position: relative;
     min-height: 0;
   }
-}
-.amplication-base section.page-steps {
-  padding-top: 15vh;
 }
 .amplication-base section.page-roadmap {
   padding-top: 15vh;
@@ -9854,10 +9851,35 @@ body {
 @media (max-width: 1199.98px) {
   .amplication-base .solution {
     flex-direction: column;
+    flex-flow: wrap;
   }
   .amplication-base .solution .solution-card {
-    margin-bottom: 4rem;
     max-width: 750px;
+    width: 50%;
+    min-width: 50%;
+    margin: 0 0 4rem;
+  }
+}
+@media (max-width: 578px) {
+  .amplication-base .solution {
+    padding: 0 15px;
+  }
+  .amplication-base .solution .solution-card {
+    width: 100%;
+    min-width: 100%;
+    flex-direction: row !important;
+    padding: 1rem 0;
+    margin: 1rem 0;
+  }
+  .amplication-base .solution .solution-card .solution-content {
+    max-width: inherit;
+    text-align: left !important;
+    padding-left: 8px;
+    margin-top: 0 !important;
+  }
+  .amplication-base .solution .solution-card img {
+    width: 56px !important;
+    min-width: 56px !important;
   }
 }
 .amplication-base .feature-images-tabs {
@@ -9935,11 +9957,11 @@ body {
   box-sizing: border-box;
   font-size: 0.8rem;
   padding: 0.5rem;
-  margin-bottom: 1rem;
-  margin: 1rem;
+  margin: 1rem 0;
   text-align: center;
   flex: 1 0 25%;
   transition: 0.3s ease-in-out;
+  flex-direction: column;
 }
 .amplication-base .feature-card:hover {
   text-decoration: none;
@@ -9962,26 +9984,53 @@ body {
 .amplication-base .feature-card img {
   width: 100px;
 }
-@media (min-width: 768px) {
+@media (max-width: 1200px) {
   .amplication-base .feature-card {
     padding: 1rem;
-    margin: 0;
-    margin-bottom: 2rem;
+    margin: 0 0 0.6rem;
     font-size: 0.9rem;
+    flex: 1 0 33.33333%;
   }
   .amplication-base .feature-card img {
     width: 120px;
   }
   .amplication-base .feature-card .feature-card-text {
-    padding-bottom: 0rem;
+    padding-bottom: 0;
+  }
+}
+@media (max-width: 768px) {
+  .amplication-base .feature-card {
+    flex: 1 0 50%;
+    margin: 1rem 0;
+  }
+}
+@media (max-width: 578px) {
+  .amplication-base .feature-card {
+    flex: 1 0 100%;
+    margin: 1rem 0;
+    flex-direction: row;
+  }
+  .amplication-base .feature-card img {
+    width: 56px !important;
+    min-width: 56px !important;
+  }
+  .amplication-base .feature-card .feature-card-text {
+    max-width: 100% !important;
+    text-align: left;
+    margin-top: 0 !important;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .amplication-base .feature-card .feature-card-content {
+    max-width: 100% !important;
+    text-align: left;
   }
 }
 .amplication-base .about-box {
   background-color: var(--black90);
   border-radius: 0.5rem;
   box-shadow: 0px 7px 10px rgba(56, 28, 138, 0.06);
-  padding: 4rem;
-  padding-bottom: 2rem;
+  padding: 4rem 4rem 2rem;
   margin-bottom: 2rem;
   color: var(--white);
   letter-spacing: 0.5px;
@@ -10153,8 +10202,8 @@ body {
   color: #41cadd;
 }
 .amplication-base .feature {
-  margin-top: 150px;
-  margin-bottom: 150px;
+  margin-top: 100px;
+  margin-bottom: 100px;
   text-align: center;
 }
 .amplication-base .feature:last-child {
@@ -10179,7 +10228,7 @@ body {
 }
 @media (min-width: 992px) {
   .amplication-base .feature .feature-description {
-    max-width: 460px;
+    max-width: 560px;
   }
 }
 .amplication-base .btn {
@@ -10314,7 +10363,7 @@ body {
   display: flex;
   align-items: center;
   font-size: 1.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
 }
 .amplication-base .bracket-box span {
   color: #41cadd;
@@ -11299,6 +11348,18 @@ body {
   .amplication-base .feature-item__description {
     text-align: center;
     margin-bottom: 1rem;
+  }
+}
+
+.amplication-base .logotypes {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+@media (max-width: 991px) {
+  .amplication-base .logotypes {
+    flex-direction: column;
+    align-items: start;
   }
 }
 
