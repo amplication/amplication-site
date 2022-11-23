@@ -1,4 +1,3 @@
-@import url(./amplication-font.css);
 :root {
   --black60: #444b66;
   --black80: #2c3249;
@@ -9223,18 +9222,6 @@ body {
 .amplication-base nav.navbar .navbar-collapse.collapsing .navbar-toggler {
   color: var(--white);
   padding: 0.5rem;
-}
-.amplication-base
-  nav.navbar
-  .navbar-collapse.collapse.show
-  .navbar-toggler
-  .amp-icon,
-.amplication-base
-  nav.navbar
-  .navbar-collapse.collapsing
-  .navbar-toggler
-  .amp-icon {
-  font-size: 1.5rem;
 }
 .amplication-base nav.navbar .navbar-collapse.collapse.show .navbar-brand,
 .amplication-base nav.navbar .navbar-collapse.collapsing .navbar-brand {

@@ -67,7 +67,7 @@ const HeroBlock = () => {
                     </Link>
                     <div className="spacer"></div>
                     <Link
-                      href={'https://docs.amplication.com/docs/getting-started'}
+                      href={'https://docs.amplication.com/getting-started'}
                       passHref={true}
                     >
                       <a className="d-lg-none btn btn-outline-secondary btn-lg  mb-4 text-black80">

@@ -101,6 +101,13 @@ const nextConfig = {
       },
       {
         source:
+          '/blog/jwt-authentication---what-is-it-and-how-do-you-use-it-with-amplication%3F-cl13ovhku011801s6636zn2u3',
+        destination:
+          '/blog/jwt-authentication-what-is-it-and-how-do-you-use-it-with-amplication',
+        permanent: true,
+      },
+      {
+        source:
           '/blog/build-a-node.js-graphql-api-with-nestjs-and-prisma-ckza2vfrg006801s6me2i2syc',
         destination: '/blog/build-a-nodejs-graphql-api-with-nestjs-and-prisma',
         permanent: true,

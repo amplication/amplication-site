@@ -12,7 +12,7 @@ const Menu = () => {
     {
       title: 'Docs',
       href: {
-        pathname: 'https://docs.amplication.com/docs/getting-started/',
+        pathname: 'https://docs.amplication.com/getting-started/',
       },
       target: '_blank',
       isActive: false,
