@@ -13,7 +13,10 @@ import '../styles/globals.css';
 import client from '../services/index';
 import * as analytics from '../lib/analytics';
 
+import useWindowSize from '../utils/useWindowSize';
+
 function Amplication({Component, pageProps}) {
+  const { width } = useWindowSize();
   const {asPath} = useRouter();
   const isBlogPage = Boolean(
     asPath.includes('/blog') || asPath.includes('/tags')
@@ -47,7 +50,7 @@ function Amplication({Component, pageProps}) {
     AOS.init({
       easing: 'ease-out-back',
       duration: 1000,
-      disable: router.asPath === '/enterprise' ? 'mobile' : false,
+      disable: router.asPath === '/enterprise' && width !== null && width <= 640,
     });
 
     const typingAnimations = document.querySelectorAll(
@@ -74,7 +77,7 @@ function Amplication({Component, pageProps}) {
         require('../public/styles/style.css');
       }
     }
-  }, [isBlogPage, isHomePage]);
+  }, [isBlogPage, isHomePage, width]);
 
   // Use the layout defined at the page level, if available
   const getLayout = Component.getLayout || (page => page);
