@@ -7,7 +7,7 @@ import Filter from '../components/Posts/Filter';
 import {NextSeo} from 'next-seo';
 import {MainLayout} from '../layouts';
 
-const Home = ({posts, tags}) => {
+const Blog = ({posts, tags}) => {
   return (
     <>
       <NextSeo
@@ -90,17 +90,17 @@ export const getServerSideProps = async context => {
   };
 };
 
-Home.propTypes = {
+Blog.propTypes = {
   posts: PropTypes.array,
   tags: PropTypes.array,
 };
 
-Home.defaultProps = {
+Blog.defaultProps = {
   posts: [],
   tags: [],
 };
 
-Home.getLayout = function getLayout(page) {
+Blog.getLayout = function getLayout(page) {
   return <MainLayout>{page}</MainLayout>;
 };
-export default Home;
+export default Blog;
