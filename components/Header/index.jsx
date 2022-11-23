@@ -1,14 +1,19 @@
 import TopBar from './TopBar';
 import MainBar from './MainBar';
 import BottomBar from './BottomBar';
+import Link from "next/link";
 
 const Header = () => {
   return (
-    <header className="z-20 font-poppins laptop:fixed laptop:w-full laptop:top-0">
-      <TopBar />
-      <MainBar />
-      <BottomBar />
-    </header>
+    <>
+      <header className="z-20 font-poppins laptop:fixed laptop:w-full laptop:top-0 h-[150px]">
+        <div className="fixed w-full">
+          <TopBar />
+          <MainBar />
+          <BottomBar />
+        </div>
+      </header>
+    </>
   );
 };
 

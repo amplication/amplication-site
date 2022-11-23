@@ -1,6 +1,8 @@
 import {useEffect, useState} from 'react';
+import Link from 'next/link';
 
 const BottomBar = () => {
+  const [scrollY, setScrollY] = useState(0);
   const [version, setVersion] = useState(null);
 
   useEffect(() => {
@@ -25,15 +27,27 @@ const BottomBar = () => {
           console.log(error);
         });
     }
+
+    window.addEventListener('scroll', () => {
+        setScrollY(window.scrollY);
+    });
   }, []);
 
   return (
     version && (
-      <div className="w-full">
+      <div className="w-full flex">
         <div className="w-full container-desktop-enlarged">
           <span className="text-white font-ubuntumono text-xs text-center laptop:text-base py-2 px-4 laptop:py-2 bg-purple-bright inline-block rounded-b">
             {version}
           </span>
+          <Link href={'/enterprise'} passHref={true}>
+            <a
+              className="inline laptop:hidden float-right text-lg py-2 hover:text-white text-[#54DBEE] transition-all font-light relative"
+              style={{top: '-' + scrollY + 'px'}}
+            >
+              Enterprise
+            </a>
+          </Link>
         </div>
       </div>
     )

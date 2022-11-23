@@ -45,7 +45,7 @@ MainLayout.defaultProps = {
   hideFooterBanner: false,
   footerCompactView: false,
   footerClass: '',
-  paddingTopClasses: 'pt-[60px] laptop:pt-[110px]',
+  paddingTopClasses: 'laptop:pt-[110px]',
 };
 
 export {MainLayout};

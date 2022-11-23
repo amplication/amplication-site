@@ -103,7 +103,7 @@ const Menu = () => {
   ];
 
   return (
-    <div className="">
+    <>
       <div
         onClick={() => setIsMobileMenuOpened(!isMobileMenuOpened)}
         className="cursor-pointer relative w-h h-6 laptop:hidden"
@@ -216,7 +216,7 @@ const Menu = () => {
           />
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
