@@ -1,6 +1,4 @@
 import {useEffect, useState} from 'react';
-import Link from 'next/link';
-import {useRouter} from 'next/router';
 
 const BottomBar = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -32,7 +30,7 @@ const BottomBar = () => {
     }
 
     window.addEventListener('scroll', () => {
-        setScrollY(window.scrollY);
+      setScrollY(window.scrollY);
     });
   }, []);
 

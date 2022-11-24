@@ -64,8 +64,8 @@ const Features = () => {
   return (
     <>
       <NextSeo
-        title="Building Enterprise Ready Backends | Amplication"
-        description="Amplication is the most flexible open-source backend development platform for Node.JS applications. Design models and roles, deploy your app, connect with REST or GraphQL API, sync with GitHub. Built for developers, by developers."
+        title="Build Enterprise Ready Backend | Amplication"
+        description="Build microservices 20x faster. Reliably. Securely. Consistently."
         canonical={helpers.getCanonical('features')}
       />
 
@@ -75,19 +75,51 @@ const Features = () => {
 
         {features.map((feature, i) => {
           return (
-            <section className={"features-page-feature !py-10 desktop:!py-24 " + (feature.customClasses ?? '')} key={i}>
+            <section
+              className={
+                'features-page-feature !py-10 desktop:!py-24 ' +
+                (feature.customClasses ?? '')
+              }
+              key={i}
+            >
               <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
                 {i === 0 && (
-                  <h2 className="!text-3xl laptop:!text-[56px] !leading-[40px] laptop:!leading-[68px] !font-semibold tablet:text-center !mb-12">Let your teams write critical business logic instead of managing redundant infrastructure code.</h2>
+                  <h2 className="!text-3xl laptop:!text-[56px] !leading-[40px] laptop:!leading-[68px] !font-semibold tablet:text-center !mb-12">
+                    Let your teams write critical business logic instead of
+                    managing redundant infrastructure code.
+                  </h2>
                 )}
-                <div className={(i % 2 !== 0 ? 'flex-row-reverse ' : '') + "row d-flex justify-content-between align-items-center feature-page-card py-0 laptop:py-6"}>
-                  <div className={(i % 2 !== 0 ? 'desktop:!px-9 ' : '') + 'col-sm-12 col-md-6 pb-0 desktop:pt-8 pr-3'}>
-                    <div className="!text-[24px] desktop:!text-[32px] !leading-[36px] desktop:!leading-[48px] font-bold pb-3">{feature.title}</div>
-                    <div className="text-sm desktop:text-lg text-white desktop:!leading-[27px] max-w-[690px]" dangerouslySetInnerHTML={{__html: feature.content}}></div>
+                <div
+                  className={
+                    (i % 2 !== 0 ? 'flex-row-reverse ' : '') +
+                    'row d-flex justify-content-between align-items-center feature-page-card py-0 laptop:py-6'
+                  }
+                >
+                  <div
+                    className={
+                      (i % 2 !== 0 ? 'desktop:!px-9 ' : '') +
+                      'col-sm-12 col-md-6 pb-0 desktop:pt-8 pr-3'
+                    }
+                  >
+                    <div className="!text-[24px] desktop:!text-[32px] !leading-[36px] desktop:!leading-[48px] font-bold pb-3">
+                      {feature.title}
+                    </div>
+                    <div
+                      className="text-sm desktop:text-lg text-white desktop:!leading-[27px] max-w-[690px]"
+                      dangerouslySetInnerHTML={{__html: feature.content}}
+                    ></div>
                   </div>
-                  <div className="col-sm-12 col-md-6 desktop:left-4 desktop:top-6 feature-image" data-aos="fade-up-left">
+                  <div
+                    className="col-sm-12 col-md-6 desktop:left-4 desktop:top-6 feature-image"
+                    data-aos="fade-up-left"
+                  >
                     {feature.image && (
-                      <Image className="max-w-[710px] !visible" src={feature.image} alt={feature.title} objectFit={'cover'} />
+                      <Image
+                        className="max-w-[710px] !visible"
+                        src={feature.image}
+                        alt={feature.title}
+                        objectFit={'cover'}
+                      />
                     )}
                   </div>
                 </div>
