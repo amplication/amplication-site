@@ -54,7 +54,7 @@ const Home = () => {
 };
 Home.getLayout = function getLayout(page) {
   return (
-    <MainLayout paddingTopClasses="pt-[60px] laptop:pt-[143px]">
+    <MainLayout paddingTopClasses="laptop:pt-[143px]">
       {page}
     </MainLayout>
   );
