@@ -153,7 +153,7 @@ const UsersList = () => {
   return (
     <>
       <section className="background-transparent w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop desktop:!pt-[144px] !pb-8">
-        <h2 className="main-title !mb-20 !text-[50px]">
+        <h2 className="main-title !mb-20 !text-4xl large:!text-[50px]">
           Supported by tech leaders
         </h2>
         <div className="grid gap-x-16 gap-y-4 grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3">

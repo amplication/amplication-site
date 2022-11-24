@@ -30,24 +30,19 @@ const Steps = () => {
         <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
           <div className="row feature d-flex justify-content-between align-items-center">
             <div className="col-sm-12 col-md-6 pr-3">
-              <h2 className="h2 !text-[50px] max-w-[590px] !mb-14">
+              <h2 className="h2 !text-4xl large:!text-[50px] !leading-snug max-w-[480px] large:max-w-[590px] !mb-10 large:!mb-14">
                 How Amplication backend development platform works?
               </h2>
               <div className="bracket-box">
-                <span>Design</span>
-                models & roles
+                <span className="font-dmmono">Design</span> models and roles
               </div>
-              <div className="feature-description text-base text-white desktop:text-xl">
+              <div className="feature-description text-base text-white large:text-xl leading-normal">
                 Define data entities and role-based access through
                 Amplication&apos;s UI or CLI, and Amplication will auto-generate
                 your database, an Admin UI, and API.
               </div>
             </div>
-            <div
-              className="col-sm-12 col-md-6"
-              data-aos="fade-up-left"
-              style={{height: '620px'}}
-            >
+            <div className="col-sm-12 col-md-6"data-aos="fade-up-left">
               <ul className="nav nav-tabs feature-images-tabs" role="tablist">
                 <li className="nav-item" role="presentation">
                   <Link href={'#data-models'} passHref={true}>
@@ -112,9 +107,9 @@ const Steps = () => {
           <div className="row feature d-flex justify-content-between align-items-center">
             <div className="col-sm-12 col-md-6 pr-3 pr-md-3">
               <div className="bracket-box">
-                <span>Deploy</span> your app
+                <span className="font-dmmono">Deploy</span> your app
               </div>
-              <div className="feature-description text-base text-white desktop:text-xl">
+              <div className="feature-description text-base text-white large:text-xl leading-normal">
                 Deploy your app to the Amplication cloud, or get a Docker
                 container to deploy elsewhere.
               </div>
@@ -127,9 +122,9 @@ const Steps = () => {
           <div className="row feature d-flex justify-content-between align-items-center">
             <div className="col-sm-12 col-md-6 pr-3">
               <div className="bracket-box">
-                <span>Sync</span> your app with GitHub
+                <span className="font-dmmono">Sync</span> your app with GitHub
               </div>
-              <div className="feature-description text-base text-white desktop:text-xl">
+              <div className="feature-description text-base text-white large:text-xl leading-normal">
                 Amplication syncs your app code into Node.js format to your
                 GitHub repository so you can keep developing and custom code
                 your app using your favorite IDE and the skills you have already
@@ -144,9 +139,9 @@ const Steps = () => {
           <div className="row feature d-flex justify-content-between align-items-center">
             <div className="col-sm-12 col-md-6 pr-3 pr-md-3">
               <div className="bracket-box">
-                <span>Access</span> your Node.js app
+                <span className="font-dmmono">Access</span> your Node.js app
               </div>
-              <div className="feature-description text-base text-white desktop:text-xl">
+              <div className="feature-description text-base text-white large:text-xl leading-normal">
                 Our auto-generated admin UI based on your data model schema
                 enables you to access your data with ease.
               </div>
@@ -158,10 +153,10 @@ const Steps = () => {
           <div className="row feature d-flex justify-content-between align-items-center">
             <div className="col-sm-12 col-md-6 pr-3">
               <div className="bracket-box no-bottom-margin">
-                <span>Connect</span>
+                <span className="font-dmmono">Connect</span>
               </div>
               <div className="bracket-box">your code using REST or GraphQL</div>
-              <div className="feature-description text-base text-white desktop:text-xl">
+              <div className="feature-description text-base text-white large:text-xl leading-normal">
                 Start working with your API from any REST or GraphQL client
                 (React, Angular, Vue, Flutter, iOS, Android, Go, Node.js, Python
                 and more).

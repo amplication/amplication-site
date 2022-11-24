@@ -2,9 +2,9 @@ import Link from 'next/link';
 
 const TopBar = () => {
   return (
-    <div className="relative z-10 w-full bg-light-blue laptop:mb-[-1px]">
+    <div className="relative z-10 w-full bg-purple-bright laptop:mb-[-1px]">
       <Link href={process.env.NEXT_PUBLIC_GITHUB_LINK} passHref>
-        <a className="w-full flex justify-center items-center max-w-container m-container p-container py-3 laptop:py-4 cursor-pointer hover:opacity-50 transition-opacity duration-300">
+        <a className="w-full flex justify-center items-center max-w-container m-container p-container py-3 cursor-pointer hover:opacity-50 transition-opacity duration-300">
           <span className="inline-block mx-1.5">
             <svg
               width="16"
@@ -19,7 +19,7 @@ const TopBar = () => {
               />
             </svg>
           </span>
-          <span className="font-dmmono text-white text-xs leading-tight pt-1">
+          <span className="font-dmmono text-white text-xs leading-loose">
             <span className="hidden laptop:inline">Amplication is open source.</span> Star our GitHub repo!
           </span>
           <span className="inline-block mx-1.5">

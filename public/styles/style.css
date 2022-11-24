@@ -2322,7 +2322,7 @@ body {
 }
 .amplication-base .btn {
   display: inline-block;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--dark);
   text-align: center;
   vertical-align: middle;
@@ -2334,7 +2334,7 @@ body {
   line-height: 1.5;
   border-radius: 4px;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
   .amplication-base .btn {
@@ -9393,7 +9393,8 @@ body {
   margin-top: 0;
   margin-left: 0;
   text-align: left;
-  font-size: 3rem;
+  font-size: 3.125rem;
+  line-height: 1.4;
 }
 .amplication-base section .main-title.pricing {
   font-size: 3rem;
@@ -9428,7 +9429,7 @@ body {
   position: relative;
   max-width: 620px;
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 .amplication-base .animated-header .explainer .highlight {
   color: #41cadd;
@@ -9715,10 +9716,10 @@ body {
 }
 .amplication-base .header-and-video .content-block {
   max-width: 48%;
+  max-height: calc(100vh - 100px);
 }
 .amplication-base .header-and-video .video {
   max-width: 52%;
-  margin-top: 54px;
   overflow: visible;
   margin-left: 24px;
 }
@@ -9749,6 +9750,11 @@ body {
 .amplication-base section.page-welcome .main-title {
   max-width: 1024px;
 }
+@media (max-width: 1440px) {
+  .amplication-base section.page-welcome .main-title {
+    font-size: 2.5rem;
+  }
+}
 @media (max-width: 767.98px) {
   .amplication-base section.page-welcome .main-title {
     font-size: 2.5rem;
@@ -9764,18 +9770,23 @@ body {
   color: var(--primary);
 }
 .amplication-base section.page-welcome .spacer {
-  min-width: 1rem;
+  min-width: 24px;
 }
 .amplication-base section.page-welcome .btn {
   vertical-align: middle;
   white-space: nowrap;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   margin: 0;
   flex: auto;
   width: 100%;
   height: 3.5rem;
+}
+@media (max-width: 578px) {
+  .amplication-base section.page-welcome .btn {
+    justify-content: center;
+  }
 }
 .amplication-base section.page-welcome .btn .social-link {
   margin-right: 0.5rem;
@@ -9789,7 +9800,7 @@ body {
     flex-direction: row;
   }
   .amplication-base section.page-welcome .buttons-wrapper .btn {
-    max-width: 180px;
+    max-width: 182px;
     height: 2.5rem;
     flex: 1;
   }
@@ -9804,6 +9815,11 @@ body {
   padding: 116px 0;
   min-height: 0;
 }
+@media (max-width: 1440px) {
+  .amplication-base section.page-welcome-solution {
+    padding: 80px 0;
+  }
+}
 @media (max-width: 767.98px) {
   .amplication-base section.page-welcome-solution {
     padding-top: 0;
@@ -9812,12 +9828,17 @@ body {
   }
 }
 .amplication-base section.page-roadmap {
-  padding-top: 15vh;
+  padding-top: 10rem;
   background: linear-gradient(
     180deg,
     var(--black90) 0%,
     rgba(21, 25, 44, 0) 100%
   );
+}
+@media (max-width: 1440px) {
+  .amplication-base section.page-roadmap {
+    padding-top: 7rem;
+  }
 }
 .amplication-base section.page-about {
   padding-bottom: 5vh;
@@ -9879,18 +9900,25 @@ body {
 }
 .amplication-base .feature-images-tabs .nav-link,
 .amplication-base .feature-images-tabs .nav-link.active {
-  border-radius: 1rem;
+  border-radius: 10px;
   border: none;
   background: none;
-  color: #b7bac7;
-  font-size: 1rem;
-  line-height: 1;
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 1.1;
   padding: 0.5rem 1rem;
   margin-bottom: 0.75rem;
   margin-right: 0.75rem;
+  transition: all 0.3s;
+}
+@media (max-width: 1440px) {
+  .amplication-base .feature-images-tabs .nav-link,
+  .amplication-base .feature-images-tabs .nav-link.active {
+    font-size: 0.9rem;
+  }
 }
 .amplication-base .feature-images-tabs .nav-link.active {
-  background-color: #373d57;
+  background-color: #22273C;
   font-weight: 500;
 }
 .amplication-base .feature-images-tabs .nav-link:hover {
@@ -10090,22 +10118,24 @@ body {
   font-style: normal;
   font-weight: 600;
   font-size: calc(1.325rem + 0.9vw);
-  line-height: 5rem;
+  line-height: 135%;
   align-items: center;
-}
-@media (max-width: 450px) {
-  .amplication-base .roadmap-heading {
-    line-height: 3rem;
-  }
+  margin-bottom: 2rem;
 }
 .amplication-base .roadmap-paragraph {
   font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   line-height: 2.25rem;
   display: flex;
   align-items: center;
+}
+@media (max-width: 1440px) {
+  .amplication-base .roadmap-paragraph {
+    font-size: 0.9125rem;
+    line-height: 1.5rem;
+  }
 }
 .amplication-base .roadmap-link {
   font-family: "Poppins";
@@ -10115,17 +10145,15 @@ body {
   font-weight: 400;
 }
 .amplication-base .roadmap-box .roadmap-title {
-  display: flex;
   align-items: center;
   text-align: right;
   justify-content: stretch;
-  font-family: "Poppins";
   font-style: normal;
+  font-weight: 500;
   font-size: 1.125rem;
-  line-height: 1.65rem;
-  color: #a787ff;
+  line-height: 130%;
+  color: #7950ED;
   margin-bottom: 1rem;
-  padding: 0.25rem 0.5rem;
   display: inline-block;
   transform: rotate(-90deg) translate(calc(-100% + -45px), 0px);
   transform-origin: top left;
@@ -10213,13 +10241,18 @@ body {
     margin-top: 0;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1441px) {
   .amplication-base .feature .feature-description {
     max-width: 560px;
   }
 }
+@media (max-width: 1440px) {
+  .amplication-base .feature .feature-description {
+    max-width: 420px;
+  }
+}
 .amplication-base .btn {
-  font-size: 0.9rem;
+  font-size: 0.9375rem;
 }
 .amplication-base .btn:focus {
   box-shadow: none;
@@ -10258,7 +10291,14 @@ body {
 }
 .amplication-base .official-roadmap-link {
   color: #41cadd;
-  text-decoration: underline;
+}
+.amplication-base .official-roadmap-link:hover {
+  text-decoration: none;
+}
+@media (max-width: 1440px) {
+  .amplication-base .official-roadmap-link {
+    font-size: 1rem;
+  }
 }
 .amplication-base .social-link {
   background-color: #a3a8b8;
@@ -10351,6 +10391,11 @@ body {
   align-items: center;
   font-size: 1.5rem;
   margin-bottom: 1.75rem;
+}
+@media (max-width: 1440px) {
+  .amplication-base .bracket-box {
+    font-size: 1.25rem;
+  }
 }
 .amplication-base .bracket-box span {
   color: #41cadd;

@@ -36,12 +36,12 @@ const Features = () => {
               return (
                 <div className="solution-card !flex align-items-center flex-column" key={index}>
                   {item.icon && (
-                    <div className="flex justify-center">
+                    <div className="flex justify-center max-w-[96px] large:max-w-[120px]">
                       <Image objectFit="cover" src={item.icon} alt={item.title ?? ''} />
                     </div>
                   )}
                   <div
-                    className="solution-content text-base desktop:text-xl text-white text-center max-w-[270px] mt-3"
+                    className="solution-content text-base large:text-xl text-white text-center max-w-[270px] mt-2 large:mt-4 large:!leading-8"
                     dangerouslySetInnerHTML={{__html: item.content}}
                   ></div>
                 </div>

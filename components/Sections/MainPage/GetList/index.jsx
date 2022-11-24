@@ -93,8 +93,8 @@ const GetList = () => {
     <>
       <section className="bg-transparent">
         <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop ">
-          <div className="row align-items-center justify-content-center mb-14">
-            <h2 className="h2 !text-[50px] text-center">
+          <div className="row align-items-center justify-content-center mb-6 large:mb-14">
+            <h2 className="h2 !text-4xl large:!text-[50px] text-center">
               What do you get from Amplication?
             </h2>
           </div>
@@ -111,11 +111,11 @@ const GetList = () => {
                       data-aos-delay="50"
                       data-aos-anchor="#features"
                     >
-                      <div>
+                      <div className="flex justify-center max-w-[96px] large:max-w-[120px]">
                         <Image src={item.image} alt={'open source'} />
                       </div>
                       <div className="flex-auto ml-2">
-                        <div className="feature-card-text text-xl text-white leading-[25px] !font-bold !max-w-[240px] mt-2">
+                        <div className="feature-card-text text-lg large:text-xl text-white leading-[25px] !font-bold !max-w-[240px] mt-2">
                           {item.title}
                         </div>
                         <div className="feature-card-content text-base text-white font-light mt-2 max-w-[230px]">

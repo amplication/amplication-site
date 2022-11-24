@@ -18,28 +18,39 @@ const Menu = () => {
       isActive: false,
     },
     {
+      title: 'Product',
+      href: {
+        pathname: '/product',
+      },
+      target: '_blank',
+      isActive: false,
+      menuItems: [
+        {
+          title: 'Features',
+          href: {
+            pathname: '/features',
+          },
+          target: '_self',
+          isActive: Boolean(asPath === '/features'),
+        },
+        {
+          title: 'Roadmap',
+          href: {
+            pathname: '/',
+            hash: 'roadmap',
+          },
+          target: '_self',
+          isActive: false,
+        },
+      ]
+    },
+    {
       title: 'Enterprise',
       href: {
         pathname: '/enterprise',
       },
       target: '_self',
       isActive: Boolean(asPath === '/enterprise'),
-    },
-    {
-      title: 'Features',
-      href: {
-        pathname: '/features',
-      },
-      target: '_self',
-      isActive: Boolean(asPath === '/features'),
-    },
-    {
-      title: 'Pricing',
-      href: {
-        pathname: '/pricing',
-      },
-      target: '_self',
-      isActive: Boolean(asPath === '/pricing'),
     },
     {
       title: 'Community',
@@ -50,20 +61,12 @@ const Menu = () => {
       isActive: Boolean(asPath === '/community'),
     },
     {
-      title: 'Team',
+      title: 'Pricing',
       href: {
-        pathname: '/team',
+        pathname: '/pricing',
       },
       target: '_self',
-      isActive: Boolean(asPath === '/team'),
-    },
-    {
-      title: 'Careers',
-      href: {
-        pathname: 'https://amplication.breezy.hr/',
-      },
-      target: '_blank',
-      isActive: false,
+      isActive: Boolean(asPath === '/pricing'),
     },
     {
       title: 'Company',
@@ -81,15 +84,22 @@ const Menu = () => {
           target: '_self',
           isActive: Boolean(asPath === '/about'),
         },
-        // {
-        //   title: 'Roadmap',
-        //   href: {
-        //     pathname: '/',
-        //     hash: 'roadmap',
-        //   },
-        //   target: '_self',
-        //   isActive: false,
-        // },
+        {
+          title: 'Team',
+          href: {
+            pathname: '/team',
+          },
+          target: '_self',
+          isActive: Boolean(asPath === '/team'),
+        },
+        {
+          title: 'Careers',
+          href: {
+            pathname: 'https://amplication.breezy.hr/',
+          },
+          target: '_blank',
+          isActive: false,
+        },
       ]
     },
     {
@@ -138,8 +148,8 @@ const Menu = () => {
                   { !item.menuItems && (
                     <Link href={item.href}>
                       <a
-                        className={`text-xl block font-semibold laptop:font-medium laptop:inline-block hover:text-white text-center laptop:text-left border-[#353B57] border-b-[1px] laptop:border-b-0 laptop:text-base p-7 laptop:py-5 laptop:px-4 ${
-                          ( item.isActive ? 'text-white' : 'text-[#A3A8B8]' ) + ( item.href.pathname === '/enterprise' ? ' !text-[#54DBEE] font-medium' : '' )
+                        className={`text-xl block laptop:inline-block hover:text-purple-bright text-center laptop:text-left border-[#353B57] border-b-[1px] laptop:border-b-0 laptop:text-base p-7 laptop:py-5 laptop:px-2 desktop:px-[15px] ${
+                          ( item.isActive ? 'text-purple-bright' : 'text-gray' ) + ( item.href.pathname === '/enterprise' ? ' !text-[#54DBEE] font-medium' : '' )
                         }`}
                         target={item.pathname}
                         onClick={() => setIsMobileMenuOpened(!isMobileMenuOpened)}
@@ -151,21 +161,20 @@ const Menu = () => {
                   {
                     item.menuItems && (
                       <>
-                        <span className={"text-xl text-[#A3A8B8] font-semibold flex laptop:inline-flex align-items-center justify-center hover:text-white laptop:text-base p-7 laptop:p-5 cursor-pointer flex " + (hoveredLink === item.href.pathname ? ' !text-white' : 'border-[#353B57] border-b-[1px] laptop:border-b-0')}>
+                        <span className={"text-gray text-xl hover:text-purple-bright text-center laptop:text-left border-[#353B57] border-b-[1px] laptop:border-b-0 laptop:text-base p-7 laptop:py-5 laptop:px-2 desktop:px-[15px] cursor-pointer justify-center flex " + (hoveredLink === item.href.pathname ? ' !text-purple-bright' : 'border-[#353B57] border-b-[1px] laptop:border-b-0')}>
                           {item.title}
-                          <svg className={"ml-2 my-auto block transition-all" + (hoveredLink === item.href.pathname ? ' rotate-180' : '')} width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12.5 7L8.75 10.75L5 7" stroke="#A3A8B8" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          <svg className={"ml-1 my-auto block" + (hoveredLink === item.href.pathname ? ' rotate-180' : '')} width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.5 7L8.75 10.75L5 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                           </svg>
                         </span>
-                        <ul className={"laptop:absolute top-0 invisible transition-all min-w-[110px] bg-purple-light laptop:rounded laptop:top-20 h-0 overflow-hidden " + (hoveredLink === item.href.pathname ? ' !h-auto !visible laptop:left-5 laptop:!top-16' : '')}>
+                        <ul className={"laptop:absolute top-0 invisible transition-all min-w-[110px] bg-purple-light laptop:rounded laptop:top-20 h-0 overflow-hidden " + (hoveredLink === item.href.pathname ? ' !h-auto !visible laptop:!top-16' : '')}>
                           {item.menuItems.map((subItem, i) => {
                             return (
-                              <li key={i.toString()} className={"menu__item relative laptop:rounded" + (i !== 0 ? ' laptop:before:absolute laptop:before:block laptop:before:content-[attr(data-after)] laptop:before:w-full laptop:before:h-[1px] laptop:before:bg-light-blue laptop:before:left-0 laptop:before:top-0' : '')}>
+                              <li key={i.toString()} className="menu__item relative laptop:rounded">
                                 <Link href={subItem.href}>
                                   <a
-                                    className={`text-xl hover:text-white laptop:text-base text-center laptop:text-left block pb-7 laptop:p-5 bg-purple-bright laptop:bg-purple-light ${hoveredLink === item.href.pathname ? 'text-[#A3A8B8] laptop:!bg-purple-light' : 'laptop:!text-white laptop:!bg-purple-bright'}`}
+                                    className={`text-xl hover:text-white laptop:text-base text-center laptop:text-left block pb-7 laptop:p-4 !leading-snug bg-purple-bright laptop:bg-purple-light ${asPath !== subItem.href.pathname ? 'text-gray laptop:bg-purple-light' : 'laptop:!text-white laptop:!bg-purple-bright'}`}
                                     target={subItem.pathname}
-                                    onClick={() => setIsMobileMenuOpened(!isMobileMenuOpened)}
                                   >
                                     {subItem.title}
                                   </a>
@@ -200,14 +209,21 @@ const Menu = () => {
             </div>
           </div>
         </div>
-        <div className="hidden laptop:inline-block ml-4">
+        <div className="hidden laptop:flex ml-1 desktop:ml-4 align-items-center">
           <Button
-            text="Login"
+            text="Try Free"
             backgroundColor="purpleBright"
             hoverBackgroundColor="purpleBrightHover"
             isLink={true}
-            href={'https://app.amplication.com/'}
+            href="https://app.amplication.com/login"
+            className="text-[15px] h-[40px] whitespace-nowrap !px-4 desktop:!px-8"
           />
+          <Link href="https://app.amplication.com/login">
+            <a className="whitespace-nowrap text-xl block laptop:inline-block hover:text-purple-bright text-center laptop:text-left text-gray laptop:text-base py-7 laptop:py-2 ml-3 desktop:ml-8"
+            >
+              Log In
+            </a>
+          </Link>
         </div>
       </div>
     </>

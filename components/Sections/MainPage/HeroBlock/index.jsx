@@ -8,10 +8,10 @@ const HeroBlock = () => {
     <>
       <section className="page-welcome">
         <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
-          <div className="row align-items-center">
+          <div className="row align-items-center large:pt-24">
             <div className="col-12 text-center">
               <div className="header-and-video align-items-center">
-                <div className="content-block pt-20">
+                <div className="content-block">
                   <div className="animated-header">
                     <h1 className="main-title">
                       <span className="animated-header__fixed-text">
@@ -33,7 +33,7 @@ const HeroBlock = () => {
                       <span>Authorization.</span>
                       <span>Admin UI.</span>
                     </div>
-                    <div className="explainer text-base laptop:text-xl text-white !mt-10">
+                    <div className="explainer text-base laptop:text-lg large:text-xl text-white !mt-10">
                       Amplication is a&nbsp;
                       <span className="highlight">
                         flexible open-source Node.js app
@@ -43,7 +43,7 @@ const HeroBlock = () => {
                       repetitive&nbsp;coding.
                     </div>
                   </div>
-                  <div className="buttons-wrapper d-flex mb-4 align-items-center justify-content-start mt-4">
+                  <div className="buttons-wrapper d-flex align-items-center justify-content-start mt-4">
                     <Link href={'https://app.amplication.com'} passHref={true}>
                       <a className="btn btn-primary btn-lg  mb-4">
                         Get Started
@@ -65,12 +65,12 @@ const HeroBlock = () => {
                         Join Discord
                       </a>
                     </Link>
-                    <div className="spacer"></div>
+                    <div className="d-lg-none spacer"></div>
                     <Link
                       href={'https://docs.amplication.com/getting-started'}
                       passHref={true}
                     >
-                      <a className="d-lg-none btn btn-outline-secondary btn-lg  mb-4 text-black80">
+                      <a className="d-lg-none btn btn-outline-secondary btn-lg mb-4 text-black80">
                         Documentation
                       </a>
                     </Link>
@@ -79,16 +79,16 @@ const HeroBlock = () => {
                         href={'https://docs.amplication.com/docs/getting-started'}
                         passHref={true}
                     >
-                      <a className="btn btn-lg  mb-4 text-white !w-auto">
+                      <a className="btn btn-lg mb-4 text-white !w-auto !flex-none !px-0">
                         <svg className="mr-2" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M11 0C5 0 0 5 0 11.3c0 5 3.2 9.2 7.5 10.7.6 0 .8-.3.8-.6v-2C5.2 20 4.5 18 4.5 18c-.5-1.3-1.3-1.6-1.3-1.6-1-.7.1-.7.1-.7 1.1 0 1.7 1.1 1.7 1.1 1 1.8 2.6 1.3 3.2 1 0-.8.4-1.3.7-1.5-2.5-.3-5-1.3-5-5.6 0-1.2.4-2.2 1.1-3-.1-.3-.5-1.5.1-3 0 0 1-.3 3 1.1a10.3 10.3 0 0 1 5.6 0c2-1.4 3-1.1 3-1.1.6 1.5.2 2.7 0 3 .8.8 1.2 1.8 1.2 3 0 4.3-2.6 5.3-5 5.6.4.3.8 1 .8 2v3.1c0 .3.1.7.7.6 4.4-1.5 7.5-5.7 7.5-10.7C22 5 17 0 11 0Z" fill="#fff"/>
                         </svg>
-                        8.7K Star Us
+                        8.7K <span className="underline pl-2">Star Us</span>
                       </a>
                     </Link>
                   </div>
                 </div>
-                <div className="video" data-aos="zoom-in" data-aos-delay="200">
+                <div className="video flex align-items-center" data-aos="zoom-in" data-aos-delay="200">
                   <Link
                     href={'https://www.youtube.com/watch?v=wCJ2jF1IU7U'}
                     passHref={true}

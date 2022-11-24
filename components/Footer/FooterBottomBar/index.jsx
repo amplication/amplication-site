@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const FooterBottomBar = () => {
   return (
-    <div className="text-center w-full mb-14 relative border border-solid border-purple-light laptop:border-footer border-l-0 border-r-0 border-b-0">
+    <div className="text-center w-full relative border border-solid border-white/20 border-l-0 border-r-0 border-b-0">
       <ul className="w-full laptop:flex laptop:justify-between items-center">
         <li className="py-3.5 laptop:py-8">
           <p className="text-xs text-gray font-poppins laptop:text-base">

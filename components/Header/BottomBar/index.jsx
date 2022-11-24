@@ -38,22 +38,20 @@ const BottomBar = () => {
 
   return (
     version && (
-      <div className="w-full flex">
-        <div className="w-full container-desktop-enlarged">
-          <span className="text-white font-ubuntumono text-xs text-center laptop:text-base py-2 px-4 laptop:py-2 bg-purple-bright inline-block rounded-b">
-            {version}
-          </span>
-          {router.asPath !== '/enterprise' && (
-            <Link href={'/enterprise'} passHref={true}>
-              <a
-                className="inline laptop:hidden float-right text-lg py-2 hover:text-white text-[#54DBEE] transition-all font-light relative"
-                style={{top: '-' + scrollY + 'px'}}
-              >
-                Enterprise
-              </a>
-            </Link>
-          )}
-        </div>
+      <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop flex">
+        <span className="text-white !leading-snug font-ubuntumono text-xs text-center laptop:text-base py-1 w-[81px] laptop:py-2 bg-purple-bright inline-block rounded-b">
+          {version}
+        </span>
+        {router.asPath !== '/enterprise' && (
+          <Link href={'/enterprise'} passHref={true}>
+            <a
+              className="inline laptop:hidden float-right text-lg py-2 hover:text-white text-[#54DBEE] transition-all font-light relative"
+              style={{top: '-' + scrollY + 'px'}}
+            >
+              Enterprise
+            </a>
+          </Link>
+        )}
       </div>
     )
   );
