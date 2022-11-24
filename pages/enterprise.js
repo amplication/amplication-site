@@ -35,12 +35,13 @@ const Features = () => {
     },
     {
       image: enterprise2,
-      title: 'Keep your best practices and conventions or adopt industry standards',
+      title:
+        'Keep your best practices and conventions or adopt industry standards',
       customClasses: '!pb-6',
       content:
         '<p>Using a community-driven plugin system, your team has full control over the flavor of the generated code, including security, privacy, standards, and best practices.</p>' +
         '<p>Plugins can be used to control anything from the type of database to use, code conventions and format, authentication providers, connecting to CI/CD pipelines, monorepo management, build tools, and more.</p>' +
-        '<p>Your infra team can create custom plugins to keep the organization\'s current conventions, standards, and best practices and enforce usage across teams. You can easily update plugins and automatically push changes to dozen or hundreds of services in one click.</p>',
+        "<p>Your infra team can create custom plugins to keep the organization's current conventions, standards, and best practices and enforce usage across teams. You can easily update plugins and automatically push changes to dozen or hundreds of services in one click.</p>",
     },
     {
       image: enterprise3,
@@ -75,19 +76,51 @@ const Features = () => {
 
         {features.map((feature, i) => {
           return (
-            <section className={"features-page-feature !py-10 desktop:!py-24 " + (feature.customClasses ?? '')} key={i}>
+            <section
+              className={
+                'features-page-feature !py-10 desktop:!py-24 ' +
+                (feature.customClasses ?? '')
+              }
+              key={i}
+            >
               <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
                 {i === 0 && (
-                  <h2 className="!text-3xl laptop:!text-[56px] !leading-[40px] laptop:!leading-[68px] !font-semibold tablet:text-center !mb-12">Let your teams write critical business logic instead of managing redundant infrastructure code.</h2>
+                  <h2 className="!text-3xl laptop:!text-[56px] !leading-[40px] laptop:!leading-[68px] !font-semibold tablet:text-center !mb-12">
+                    Let your teams write critical business logic instead of
+                    managing redundant infrastructure code.
+                  </h2>
                 )}
-                <div className={(i % 2 !== 0 ? 'flex-row-reverse ' : '') + "row d-flex justify-content-between align-items-center feature-page-card py-0 laptop:py-6"}>
-                  <div className={(i % 2 !== 0 ? 'desktop:!px-9 ' : '') + 'col-sm-12 col-md-6 pb-0 desktop:pt-8 pr-3'}>
-                    <div className="!text-[24px] desktop:!text-[32px] !leading-[36px] desktop:!leading-[48px] font-bold pb-3">{feature.title}</div>
-                    <div className="text-sm desktop:text-lg text-white desktop:!leading-[27px] max-w-[690px]" dangerouslySetInnerHTML={{__html: feature.content}}></div>
+                <div
+                  className={
+                    (i % 2 !== 0 ? 'flex-row-reverse ' : '') +
+                    'row d-flex justify-content-between align-items-center feature-page-card py-0 laptop:py-6'
+                  }
+                >
+                  <div
+                    className={
+                      (i % 2 !== 0 ? 'desktop:!px-9 ' : '') +
+                      'col-sm-12 col-md-6 pb-0 desktop:pt-8 pr-3'
+                    }
+                  >
+                    <div className="!text-[24px] desktop:!text-[32px] !leading-[36px] desktop:!leading-[48px] font-bold pb-3">
+                      {feature.title}
+                    </div>
+                    <div
+                      className="text-sm desktop:text-lg text-white desktop:!leading-[27px] max-w-[690px]"
+                      dangerouslySetInnerHTML={{__html: feature.content}}
+                    ></div>
                   </div>
-                  <div className="col-sm-12 col-md-6 desktop:left-4 desktop:top-6 feature-image" data-aos="fade-up-left">
+                  <div
+                    className="col-sm-12 col-md-6 desktop:left-4 desktop:top-6 feature-image"
+                    data-aos="fade-up-left"
+                  >
                     {feature.image && (
-                      <Image className="max-w-[710px] !visible" src={feature.image} alt={feature.title} objectFit={'cover'} />
+                      <Image
+                        className="max-w-[710px] !visible"
+                        src={feature.image}
+                        alt={feature.title}
+                        objectFit={'cover'}
+                      />
                     )}
                   </div>
                 </div>
@@ -111,6 +144,14 @@ const Features = () => {
   );
 };
 Features.getLayout = function getLayout(page) {
-  return <MainLayout footerClass='bg-light-blue' hideFooterBanner={true} hideBackground={true}>{page}</MainLayout>;
+  return (
+    <MainLayout
+      footerClass="bg-light-blue"
+      hideFooterBanner={true}
+      hideBackground={true}
+    >
+      {page}
+    </MainLayout>
+  );
 };
 export default Features;

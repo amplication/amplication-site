@@ -32,7 +32,7 @@ const BottomBar = () => {
     }
 
     window.addEventListener('scroll', () => {
-        setScrollY(window.scrollY);
+      setScrollY(window.scrollY);
     });
   }, []);
 

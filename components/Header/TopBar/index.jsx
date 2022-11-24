@@ -20,7 +20,10 @@ const TopBar = () => {
             </svg>
           </span>
           <span className="font-dmmono text-white text-xs leading-tight pt-1">
-            <span className="hidden laptop:inline">Amplication is open source.</span> Star our GitHub repo!
+            <span className="hidden laptop:inline">
+              Amplication is open source.
+            </span>{' '}
+            Star our GitHub repo!
           </span>
           <span className="inline-block mx-1.5">
             <svg

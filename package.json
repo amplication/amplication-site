@@ -9,6 +9,7 @@
     "start": "next start",
     "stage": "next start -p 3001",
     "lint": "gts lint",
+    "fix": "gts fix",
     "lhci": "lhci autorun"
   },
   "engines": {
