@@ -5,6 +5,7 @@ import {useState} from 'react';
 
 const Menu = () => {
   const [isMobileMenuOpened, setIsMobileMenuOpened] = useState(false);
+  const [hoveredLink, setHoveredLink] = useState('');
   const {asPath} = useRouter();
 
   const menuItems = [
@@ -73,6 +74,24 @@ const Menu = () => {
     //   target: '_self',
     //   isActive: false,
     // },
+    // {
+    //   title: 'Company',
+    //   href: {
+    //     pathname: '/company',
+    //   },
+    //   target: '_blank',
+    //   isActive: false,
+    //   menuItems: [
+    //     {
+    //       title: 'About',
+    //       href: {
+    //         pathname: '/about',
+    //       },
+    //       target: '_self',
+    //       isActive: Boolean(asPath === '/about'),
+    //     }
+    //   ]
+    // },
     {
       title: 'Blog',
       href: {
@@ -84,7 +103,7 @@ const Menu = () => {
   ];
 
   return (
-    <div className="">
+    <>
       <div
         onClick={() => setIsMobileMenuOpened(!isMobileMenuOpened)}
         className="cursor-pointer relative w-h h-6 laptop:hidden"
@@ -115,21 +134,81 @@ const Menu = () => {
                 menuItemClasses += '';
               }
               return (
-                <li key={index.toString()} className={menuItemClasses}>
-                  <Link href={item.href}>
-                    <a
-                      className={`text-xl py-3 inline-block hover:text-white laptop:text-base laptop:p-1 ${
-                        (item.isActive ? 'text-white' : 'text-[#A3A8B8]') +
-                        (item.href.pathname === '/enterprise'
-                          ? ' !text-[#54DBEE] font-medium'
-                          : '')
-                      }`}
-                      target={item.pathname}
-                      onClick={() => setIsMobileMenuOpened(!isMobileMenuOpened)}
-                    >
-                      {item.title}
-                    </a>
-                  </Link>
+                <li
+                  key={index.toString()}
+                  className={menuItemClasses}
+                  onMouseEnter={() => setHoveredLink(item.href.pathname)}
+                  onMouseLeave={() => setHoveredLink('')}
+                >
+                  {!item.menuItems && (
+                    <Link href={item.href}>
+                      <a
+                        className={`text-xl py-3 inline-block hover:text-white laptop:text-base laptop:p-1 ${
+                          (item.isActive ? 'text-white' : 'text-[#A3A8B8]') +
+                          (item.href.pathname === '/enterprise'
+                            ? ' !text-[#54DBEE] font-medium'
+                            : '')
+                        }`}
+                        target={item.pathname}
+                        onClick={() =>
+                          setIsMobileMenuOpened(!isMobileMenuOpened)
+                        }
+                      >
+                        {item.title}
+                      </a>
+                    </Link>
+                  )}
+                  {item.menuItems && (
+                    <>
+                      <span className="text-xl text-[#A3A8B8] py-3 inline-block hover:text-white laptop:text-base laptop:p-1 cursor-pointer">
+                        {item.title}
+                      </span>
+                      <ul
+                        className={
+                          'absolute top-0 flex flex-col justify-start items-stretch laptop:flex-row justify:end items:center invisible pt-8 transition-all top-0' +
+                          (hoveredLink === item.href.pathname
+                            ? ' !visible top-8'
+                            : '')
+                        }
+                      >
+                        {item.menuItems.map((item, index) => {
+                          let menuItemClasses =
+                            'menu__item laptop:px-4 relative';
+                          if (item.isActive) {
+                            menuItemClasses +=
+                              ' laptop:before:absolute laptop:before:block laptop:before:content-[attr(data-before)] laptop:before:w-full laptop:before:h-1 laptop:before:bg-purple-bright laptop:before:left-0 laptop:before:bottom-[-14px] laptop:before:rounded-t';
+                          } else {
+                            menuItemClasses += '';
+                          }
+                          return (
+                            <li
+                              key={index.toString()}
+                              className={menuItemClasses}
+                            >
+                              <Link href={item.href}>
+                                <a
+                                  className={`text-xl py-3 inline-block hover:text-white laptop:text-base laptop:p-1 ${
+                                    (item.isActive
+                                      ? 'text-white'
+                                      : 'text-[#A3A8B8]') +
+                                    (item.href.pathname === '/enterprise'
+                                      ? ' !text-[#54DBEE] font-medium'
+                                      : '')
+                                  }`}
+                                  target={item.pathname}
+                                  onClick={() =>
+                                    setIsMobileMenuOpened(!isMobileMenuOpened)
+                                  }
+                                >
+                                  {item.title}
+                                </a>
+                              </Link>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </>
+                  )}
                 </li>
               );
             })}
@@ -163,7 +242,7 @@ const Menu = () => {
           />
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

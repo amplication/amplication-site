@@ -55,7 +55,7 @@ const About = () => {
 About.getLayout = function getLayout(page) {
   return (
     <MainLayout
-      paddingTopClasses="pt-[60px] laptop:pt-[143px]"
+      paddingTopClasses="laptop:pt-[143px]"
       hideFooterBanner={true}
       hideBackground={true}
     >

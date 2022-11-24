@@ -5,7 +5,7 @@ import Button from '../../../Common/Button';
 const StartNow = ({title, linkPrimary, linkOutline, linkSecondary}) => {
   return (
     <>
-      <section className="background-transparent w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop !py-20 desktop:!py-36">
+      <section className="background-transparent w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop !pt-8 !pb-10 desktop:!py-36">
         <h2 className="h2 tablet:text-center mx-auto !mb-10 max-w-[960px]">
           {title}
         </h2>
