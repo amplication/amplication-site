@@ -12,7 +12,7 @@ const Slider = () => {
     <>
       <section className="!pt-5 !pb-4 laptop:!px-14 laptop:!pt-24 laptop:!pb-20 !bg-light-blue">
         <div className="flex-grow max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
-          <h2 className="!text-3xl laptop:!text-[56px] !leading-[40px] laptop:!leading-[68px] !font-semibold tablet:text-center">
+          <h2 className="!text-3xl !text-5xl large:!text-[56px] !leading-tight !font-semibold tablet:text-center">
             Empowering developers from leading companies
           </h2>
           <div className="logotypes mt-6 desktop:px-14 flex flex-wrap flex-nowrap align-items-center">

@@ -2,11 +2,13 @@ import Link from 'next/link';
 import Button from '../../Common/Button';
 import {useRouter} from 'next/router';
 import {useState} from 'react';
+import useWindowSize from '../../../utils/useWindowSize';
 
 const Menu = () => {
   const [isMobileMenuOpened, setIsMobileMenuOpened] = useState(false);
   const [hoveredLink, setHoveredLink] = useState('');
   const {asPath} = useRouter();
+  const {width} = useWindowSize();
 
   const menuItems = [
     {
@@ -144,7 +146,25 @@ const Menu = () => {
                 menuItemClasses += '';
               }
               return (
-                <li key={index.toString()} className={(hoveredLink === item.href.pathname ? 'bg-purple-bright laptop:bg-transparent ' : '') + menuItemClasses} onClick={() => setHoveredLink(hoveredLink === '' ? item.href.pathname : '')}>
+                <li
+                  key={index.toString()}
+                  className={(hoveredLink === item.href.pathname ? 'bg-purple-bright laptop:bg-transparent ' : '') + menuItemClasses}
+                  onMouseEnter={() => {
+                    if (width > 991) {
+                      setHoveredLink(hoveredLink === '' ? item.href.pathname : '')
+                    }
+                  }}
+                  onMouseLeave={() => {
+                    if (width > 991) {
+                      setHoveredLink(hoveredLink === '' ? item.href.pathname : '')
+                    }
+                  }}
+                  onClick={() => {
+                    if (width <= 991) {
+                      setHoveredLink(hoveredLink === '' ? item.href.pathname : '')
+                    }
+                  }}
+                >
                   { !item.menuItems && (
                     <Link href={item.href}>
                       <a
@@ -161,19 +181,19 @@ const Menu = () => {
                   {
                     item.menuItems && (
                       <>
-                        <span className={"text-gray text-xl hover:text-purple-bright text-center laptop:text-left border-[#353B57] border-b-[1px] laptop:border-b-0 laptop:text-base p-7 laptop:py-5 laptop:px-2 desktop:px-[15px] cursor-pointer justify-center flex " + (hoveredLink === item.href.pathname ? ' !text-purple-bright' : 'border-[#353B57] border-b-[1px] laptop:border-b-0')}>
+                        <span className={"text-gray text-xl hover:text-purple-bright text-center laptop:text-left laptop:text-base p-7 laptop:py-5 laptop:px-2 desktop:px-[15px] cursor-pointer justify-center flex " + (hoveredLink === item.href.pathname ? ' !text-white laptop:!text-purple-bright' : 'border-[#353B57] border-b-[1px] laptop:border-b-0')}>
                           {item.title}
                           <svg className={"ml-1 my-auto block" + (hoveredLink === item.href.pathname ? ' rotate-180' : '')} width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12.5 7L8.75 10.75L5 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                           </svg>
                         </span>
-                        <ul className={"laptop:absolute top-0 invisible transition-all min-w-[110px] bg-purple-light laptop:rounded laptop:top-20 h-0 overflow-hidden " + (hoveredLink === item.href.pathname ? ' !h-auto !visible laptop:!top-16' : '')}>
+                        <ul className={"laptop:absolute top-0 invisible transition-all min-w-[110px] bg-purple-light laptop:rounded laptop:top-16 h-0 overflow-hidden " + (hoveredLink === item.href.pathname ? ' !h-auto !visible laptop:!top-[60px]' : '')}>
                           {item.menuItems.map((subItem, i) => {
                             return (
                               <li key={i.toString()} className="menu__item relative laptop:rounded">
                                 <Link href={subItem.href}>
                                   <a
-                                    className={`text-xl hover:text-white laptop:text-base text-center laptop:text-left block pb-7 laptop:p-4 !leading-snug bg-purple-bright laptop:bg-purple-light ${asPath !== subItem.href.pathname ? 'text-gray laptop:bg-purple-light' : 'laptop:!text-white laptop:!bg-purple-bright'}`}
+                                    className={`text-xl hover:text-white laptop:text-base text-center laptop:text-left block py-7 laptop:p-4 !leading-snug bg-purple-bright laptop:bg-purple-light ${asPath !== subItem.href.pathname ? 'text-white laptop:text-gray laptop:bg-purple-light' : 'laptop:!text-white laptop:!bg-purple-bright'}`}
                                     target={subItem.pathname}
                                   >
                                     {subItem.title}

@@ -152,7 +152,7 @@ const UsersList = () => {
   ];
   return (
     <>
-      <section className="background-transparent w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop desktop:!pt-[144px] !pb-8">
+      <section className="background-transparent w-full max-w-container m-container p-container large:max-w-container-desktop large:m-container-desktop large:p-container-desktop desktop:!pt-[144px] !pb-8">
         <h2 className="main-title !mb-20 !text-4xl large:!text-[50px]">
           Supported by tech leaders
         </h2>
@@ -160,11 +160,11 @@ const UsersList = () => {
           {users.map((user, i) => {
             return (
               <div
-                className="d-flex pt-2 pb-3 laptop:pt-[17px] laptop:pb-[28px] border-b-[1px] border-dark-black-70"
+                className="d-flex pt-2 pb-3 large:pt-[17px] large:pb-[28px] border-b-[1px] border-dark-black-70"
                 key={i}
               >
                 <div
-                  className="w-[72px] min-w-[72px] h-[72px] laptop:min-w-[96px] laptop:h-24 p-2 laptop:p-[11px] border-[2px] laptop:border-[3px] bg-white/10 border-white/20 rounded-full"
+                  className="w-[72px] min-w-[72px] h-[72px] large:min-w-[96px] large:h-24 p-2 large:p-[11px] border-[2px] large:border-[3px] bg-white/10 border-white/20 rounded-full"
                   data-aos="zoom-in"
                   data-aos-delay="200"
                 >
@@ -174,12 +174,12 @@ const UsersList = () => {
                     alt={''}
                   />
                 </div>
-                <div className="d-flex flex-column pl-3 laptop:pl-8">
-                  <h4 className="!text-7 laptop:!text-[32px] laptop:!leading-8 font-semibold !mb-3">
+                <div className="d-flex flex-column pl-3 large:pl-8">
+                  <h4 className="!text-7 large:!text-[32px] large:!leading-8 font-semibold !mb-3">
                     {user.name}
                   </h4>
-                  <div className="text-base laptop:text-lg laptop:leading-[18px] text-gray" dangerouslySetInnerHTML={{__html: user.position}}></div>
-                  <div className="text-base laptop:text-lg laptop:leading-7 mt-3 min-h-[56px]" dangerouslySetInnerHTML={{__html: user.description}}></div>
+                  <div className="text-base large:text-lg large:leading-[18px] text-gray" dangerouslySetInnerHTML={{__html: user.position}}></div>
+                  <div className="text-base large:text-lg large:leading-7 mt-3 min-h-[56px]" dangerouslySetInnerHTML={{__html: user.description}}></div>
                 </div>
               </div>
             );

@@ -36,13 +36,13 @@ const Steps = () => {
               <div className="bracket-box">
                 <span className="font-dmmono">Design</span> models and roles
               </div>
-              <div className="feature-description text-base text-white large:text-xl leading-normal">
+              <div className="feature-description text-white text-base laptop:text-lg large:text-xl leading-normal">
                 Define data entities and role-based access through
                 Amplication&apos;s UI or CLI, and Amplication will auto-generate
                 your database, an Admin UI, and API.
               </div>
             </div>
-            <div className="col-sm-12 col-md-6"data-aos="fade-up-left">
+            <div className="col-sm-12 col-md-6" data-aos="fade-up-left">
               <ul className="nav nav-tabs feature-images-tabs" role="tablist">
                 <li className="nav-item" role="presentation">
                   <Link href={'#data-models'} passHref={true}>
@@ -109,7 +109,7 @@ const Steps = () => {
               <div className="bracket-box">
                 <span className="font-dmmono">Deploy</span> your app
               </div>
-              <div className="feature-description text-base text-white large:text-xl leading-normal">
+              <div className="feature-description text-white text-base laptop:text-lg large:text-xl leading-normal">
                 Deploy your app to the Amplication cloud, or get a Docker
                 container to deploy elsewhere.
               </div>
@@ -124,7 +124,7 @@ const Steps = () => {
               <div className="bracket-box">
                 <span className="font-dmmono">Sync</span> your app with GitHub
               </div>
-              <div className="feature-description text-base text-white large:text-xl leading-normal">
+              <div className="feature-description text-white text-base laptop:text-lg large:text-xl leading-normal">
                 Amplication syncs your app code into Node.js format to your
                 GitHub repository so you can keep developing and custom code
                 your app using your favorite IDE and the skills you have already
@@ -141,7 +141,7 @@ const Steps = () => {
               <div className="bracket-box">
                 <span className="font-dmmono">Access</span> your Node.js app
               </div>
-              <div className="feature-description text-base text-white large:text-xl leading-normal">
+              <div className="feature-description text-white text-base laptop:text-lg large:text-xl leading-normal">
                 Our auto-generated admin UI based on your data model schema
                 enables you to access your data with ease.
               </div>
@@ -156,7 +156,7 @@ const Steps = () => {
                 <span className="font-dmmono">Connect</span>
               </div>
               <div className="bracket-box">your code using REST or GraphQL</div>
-              <div className="feature-description text-base text-white large:text-xl leading-normal">
+              <div className="feature-description text-white text-base laptop:text-lg large:text-xl leading-normal">
                 Start working with your API from any REST or GraphQL client
                 (React, Angular, Vue, Flutter, iOS, Android, Go, Node.js, Python
                 and more).

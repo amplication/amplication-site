@@ -12,20 +12,20 @@ const LogoList = () => {
         </h2>
         <div className="logotypes d-flex justify-evently !pb-12 desktop:!pb-[172px] border-b-[1px] border-dark-black-70">
           <div
-            className="px-0 tablet:px-4"
+            className="px-[0px] tablet:px-12"
             data-aos="zoom-in"
           >
             <Image src={LogoNorwest} alt={''} />
           </div>
           <div
-            className="px-0 tablet:px-4"
+            className="px-[0px] tablet:px-12"
             data-aos="zoom-in"
             data-aos-delay="200"
           >
             <Image src={LogoEntree} alt={''} />
           </div>
           <div
-            className="px-0 tablet:px-4"
+            className="px-[0px] tablet:px-12"
             data-aos="zoom-in"
             data-aos-delay="400"
           >

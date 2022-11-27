@@ -11,6 +11,7 @@ import Why1 from '../../../../public/images/about/why-1.svg';
 import Why2 from '../../../../public/images/about/why-2.svg';
 import Why3 from '../../../../public/images/about/why-3.svg';
 import Why4 from '../../../../public/images/about/why-4.svg';
+import Link from "next/link";
 
 const Steps = () => {
   return (
@@ -20,7 +21,7 @@ const Steps = () => {
           <div className="row feature d-flex justify-content-between align-items-center !my-4 laptop:!my-12 desktop:pb-[224px]">
             <div className="col-sm-12 col-md-6 pr-3">
               <div className="bracket-box !text-xl desktop:!text-4xl" data-aos="fade-up">
-                <span>Who</span>we are?
+                <span className="font-dmmono">Who</span>we are?
               </div>
               <div
                 className="feature-description text-base desktop:text-lg text-white !max-w-[610px]"
@@ -31,42 +32,44 @@ const Steps = () => {
                 low-code. Our mission is to simplify application development,
                 unlock frictionless developer experience and bring best
                 practices to any developer in any organization. We believe this
-                approach will shape the next-generation programming. Meet our
-                team.
+                approach will shape the next-generation programming. Meet our&nbsp;
+                <Link href="/team">
+                  <a target="_blank" className="text-secondary-turquoise !underline hover:text-purple-bright-hover">team</a>
+                </Link>.
               </div>
             </div>
             <div className="col-sm-12 col-md-6 relative flex align-items-center pt-12 desktop:pt-0 aspect-square desktop:h-[430px]">
-              {/*<div className="absolute left-[17%] top-[12%] w-[65%]" data-aos="zoom-in" data-aos-delay="500">*/}
-              {/*  <Image src={Who1} alt={'github sync'} />*/}
-              {/*</div>*/}
-              {/*<div className="absolute left-[20%] top-[2%] w-[50%] backdrop-blur-sm" data-aos="zoom-in" data-aos-delay="700">*/}
-              {/*  <Image src={Who2} alt={'github sync'} />*/}
-              {/*</div>*/}
-              {/*<div className="absolute left-[-11%] top-[-48%] w-[134%]" data-aos="zoom-in" data-aos-delay="900">*/}
-              {/*  <Image src={Who3} alt={'github sync'} />*/}
-              {/*</div>*/}
-              {/*<div className="absolute left-[54%] top-[21%] w-[35%] backdrop-blur-sm" data-aos="zoom-in" data-aos-delay="1100">*/}
-              {/*  <Image src={Who4} alt={'github sync'} />*/}
-              {/*</div>*/}
-              <div className="absolute" data-aos="zoom-in" data-aos-delay="500">
+              <div className="absolute left-[17%] top-[12%] w-[65%]" data-aos="zoom-in" data-aos-delay="500">
                 <Image src={Who1} alt={'github sync'} />
               </div>
-              <div className="absolute" data-aos="zoom-in" data-aos-delay="700">
+              <div className="absolute left-[20%] top-[2%] w-[50%] backdrop-blur-sm" data-aos="zoom-in" data-aos-delay="700">
                 <Image src={Who2} alt={'github sync'} />
               </div>
-              <div className="absolute" data-aos="zoom-in" data-aos-delay="900">
+              <div className="absolute left-[-11%] top-[-48%] w-[134%]" data-aos="zoom-in" data-aos-delay="900">
                 <Image src={Who3} alt={'github sync'} />
               </div>
-              <div className="absolute" data-aos="zoom-in" data-aos-delay="1100">
+              <div className="absolute left-[54%] top-[21%] w-[35%]" data-aos="zoom-in" data-aos-delay="1100">
                 <Image src={Who4} alt={'github sync'} />
               </div>
+              {/*<div className="absolute" data-aos="zoom-in" data-aos-delay="500">*/}
+              {/*  <Image src={Who1} alt={'github sync'} />*/}
+              {/*</div>*/}
+              {/*<div className="absolute" data-aos="zoom-in" data-aos-delay="700">*/}
+              {/*  <Image src={Who2} alt={'github sync'} />*/}
+              {/*</div>*/}
+              {/*<div className="absolute" data-aos="zoom-in" data-aos-delay="900">*/}
+              {/*  <Image src={Who3} alt={'github sync'} />*/}
+              {/*</div>*/}
+              {/*<div className="absolute" data-aos="zoom-in" data-aos-delay="1100">*/}
+              {/*  <Image src={Who4} alt={'github sync'} />*/}
+              {/*</div>*/}
             </div>
           </div>
 
           <div className="row feature d-flex justify-content-between align-items-center !my-4 laptop:!my-12 desktop:pb-[240px]">
             <div className="col-sm-12 col-md-6 pr-3">
               <div className="bracket-box !text-xl desktop:!text-4xl" data-aos="fade-up">
-                <span>What</span> we do it?
+                <span className="font-dmmono">What</span> we do it?
               </div>
               <div
                 className="feature-description text-base desktop:text-lg text-white !max-w-[610px]"
@@ -103,7 +106,7 @@ const Steps = () => {
           <div className="row feature d-flex justify-content-between align-items-center !my-4 laptop:!my-12 desktop:pb-[164px]">
             <div className="col-sm-12 col-md-6 pr-3">
               <div className="bracket-box !text-xl desktop:!text-4xl" data-aos="fade-up">
-                <span>Why</span> we do it?
+                <span className="font-dmmono">Why</span> we do it?
               </div>
               <div
                 className="feature-description text-base desktop:text-lg text-white !max-w-[610px]"

@@ -105,25 +105,23 @@ const GetList = () => {
             >
               {items.map((item, index) => {
                 return (
-                  <Link href={'/features#open-source'} passHref={true}>
-                    <a
-                      className="feature-card flex align-items-center"
-                      data-aos-delay="50"
-                      data-aos-anchor="#features"
-                    >
-                      <div className="flex justify-center max-w-[96px] large:max-w-[120px]">
-                        <Image src={item.image} alt={'open source'} />
+                  <div
+                    className="feature-card flex align-items-center"
+                    data-aos-delay="50"
+                    data-aos-anchor="#features"
+                  >
+                    <div className="flex justify-center max-w-[96px] large:max-w-[120px]">
+                      <Image src={item.image} alt={'open source'} />
+                    </div>
+                    <div className="flex-auto ml-2">
+                      <div className="feature-card-text text-lg large:text-xl text-white leading-[25px] !font-bold !max-w-[240px] mt-2">
+                        {item.title}
                       </div>
-                      <div className="flex-auto ml-2">
-                        <div className="feature-card-text text-lg large:text-xl text-white leading-[25px] !font-bold !max-w-[240px] mt-2">
-                          {item.title}
-                        </div>
-                        <div className="feature-card-content text-base text-white font-light mt-2 max-w-[230px]">
-                          {item.content}
-                        </div>
+                      <div className="feature-card-content text-base text-white font-light mt-2 max-w-[230px]">
+                        {item.content}
                       </div>
-                    </a>
-                  </Link>
+                    </div>
+                  </div>
                 );
               })}
             </div>

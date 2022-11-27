@@ -9714,6 +9714,11 @@ body {
   flex-direction: row;
   justify-content: space-between;
 }
+@media (min-width: 1200px) {
+  .amplication-base section.page-welcome .header-and-video {
+    max-height: calc(100vh - 400px);
+  }
+}
 .amplication-base .header-and-video .content-block {
   max-width: 48%;
   max-height: calc(100vh - 100px);
@@ -9729,8 +9734,10 @@ body {
   }
   .amplication-base .header-and-video .content-block {
     max-width: 100%;
+    max-height: initial;
   }
   .amplication-base .header-and-video .video {
+    margin-left: 0;
     max-width: 100%;
   }
 }

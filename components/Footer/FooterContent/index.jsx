@@ -1,18 +1,14 @@
 import FooterText from '../FooterText';
-import FooterMenu from '../FooterMenu';
-import SocialList from '../../Common/SocialList';
+import FooterForm from '../FooterForm';
 
 const FooterContent = () => {
   return (
-    <div className="w-full mt-14 laptop:flex laptop:justify-end laptop:items-center laptop:pt-[100px] laptop:pb-[120px] laptop:my-0 relative">
+    <div className="w-full mt-14 laptop:flex laptop:justify-end laptop:pt-[132px] laptop:pb-[160px] laptop:my-0 relative laptop:px-[9%]">
       {/*Footer Main Text*/}
       <FooterText />
 
-      {/*Footer Menu*/}
-      <FooterMenu />
-
-      {/*Footer Sharing Block*/}
-      <SocialList />
+      {/*Footer Form*/}
+      <FooterForm isCompactView={false} />
     </div>
   );
 };
