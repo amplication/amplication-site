@@ -121,7 +121,7 @@ const Roadmap = () => {
             Want to dive into features? Check out our{' '}
             <a
               className="official-roadmap-link"
-              href="https://docs.amplication.com/docs/about/roadmap/"
+              href="https://docs.amplication.com/about/roadmap/"
             >
               {' '}
               official public roadmap

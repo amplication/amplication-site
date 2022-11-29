@@ -19,7 +19,7 @@ const features = [
     title: '<span>Read</span> our docs',
     content:
       'Visit our documentation site to learn more about Amplication, how to get started and the generated apps.',
-    linkUrl: 'https://docs.amplication.com/docs/getting-started/',
+    linkUrl: 'https://docs.amplication.com/getting-started/',
     linkText: 'Read docs',
   },
 ];
@@ -40,7 +40,7 @@ const Footer = () => {
               Amplication meet the requirements and standards of large
               organizations and enterprises. Read more about the generated app
               and its stack{' '}
-              <Link href="https://docs.amplication.com/docs/getting-started">
+              <Link href="https://docs.amplication.com/getting-started">
                 here
               </Link>
             </p>

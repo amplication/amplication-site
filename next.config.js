@@ -66,6 +66,13 @@ const nextConfig = {
       },
       {
         source:
+          '/blog/why-you-should-choose-nestjs-as-your-backend-framework-cl56jih1t164901s6aowneplb',
+        destination:
+          '/blog/why-choose-nestjs-as-your-backend-framework-amplication',
+        permanent: true,
+      },
+      {
+        source:
           '/blog/why-choose-nestjs-as-your-backend-framework---amplication--cl56jih1t164901s6aowneplb',
         destination:
           '/blog/why-choose-nestjs-as-your-backend-framework-amplication',
@@ -88,6 +95,13 @@ const nextConfig = {
       {
         source:
           '/blog/jwt-authentication---what-is-it-and-how-do-you-use-it-with-amplication-cl13ovhku011801s6636zn2u3',
+        destination:
+          '/blog/jwt-authentication-what-is-it-and-how-do-you-use-it-with-amplication',
+        permanent: true,
+      },
+      {
+        source:
+          '/blog/jwt-authentication---what-is-it-and-how-do-you-use-it-with-amplication%3F-cl13ovhku011801s6636zn2u3',
         destination:
           '/blog/jwt-authentication-what-is-it-and-how-do-you-use-it-with-amplication',
         permanent: true,

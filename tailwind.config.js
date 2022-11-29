@@ -6,9 +6,9 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      dmmono: ['dm_mono'],
+      dmmono: ['DM Mono'],
       poppins: ['poppins'],
-      ubuntumono: ['ubuntu_mono'],
+      ubuntumono: ['Ubuntu Mono'],
     },
     screens: {
       tablet: '640px',

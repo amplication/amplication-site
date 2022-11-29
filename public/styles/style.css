@@ -1,4 +1,3 @@
-@import url(./amplication-font.css);
 :root {
   --black60: #444b66;
   --black80: #2c3249;
@@ -9224,18 +9223,6 @@ body {
   color: var(--white);
   padding: 0.5rem;
 }
-.amplication-base
-  nav.navbar
-  .navbar-collapse.collapse.show
-  .navbar-toggler
-  .amp-icon,
-.amplication-base
-  nav.navbar
-  .navbar-collapse.collapsing
-  .navbar-toggler
-  .amp-icon {
-  font-size: 1.5rem;
-}
 .amplication-base nav.navbar .navbar-collapse.collapse.show .navbar-brand,
 .amplication-base nav.navbar .navbar-collapse.collapsing .navbar-brand {
   margin-bottom: 2rem;
@@ -10809,6 +10796,12 @@ body {
 .amplication-base .features-page-feature:nth-child(even) {
   background-color: var(--black90);
 }
+.amplication-base .step-section:nth-child(even) {
+  background-color: var(--dark);
+}
+.amplication-base .step-section:nth-child(odd) {
+  background-color: var(--black90);
+}
 .amplication-base .features-page-feature .feature-page-card {
   display: flex;
 }
@@ -11318,4 +11311,12 @@ body {
   margin: 4px 8px;
   padding: 4px 8px;
   white-space: nowrap;
+}
+.amplication-base .logotypes {
+  flex-wrap: nowrap !important;
+}
+@media (max-width: 992px)  {
+  .amplication-base .logotypes {
+    flex-wrap: wrap !important;
+  }
 }
