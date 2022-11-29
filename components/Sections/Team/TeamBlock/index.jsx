@@ -16,6 +16,7 @@ import arielWeinberger from '../../../../public/images/team/ariel.png';
 import tomerNaim from '../../../../public/images/team/tomer.png';
 import toddFeinroth from '../../../../public/images/team/todd.png';
 import erezGreenberg from '../../../../public/images/team/erez.png';
+import leviVan from '../../../../public/images/team/levi.png';
 
 import talkWithUs from '../../../../public/images/icons/talk-with-with-team.svg';
 import joinUs from '../../../../public/images/icons/join-the-team.svg';
@@ -201,6 +202,25 @@ const TeamBlock = () => {
         {
           href: 'https://github.com/EugeneTseitlin',
           iconClass: 'github',
+        },
+      ],
+    },
+    {
+      name: 'Levi van Noort',
+      position: 'DevOps Engineer',
+      image: leviVan,
+      links: [
+        {
+          href: 'https://www.linkedin.com/in/levivannoort/',
+          iconClass: 'linkedin',
+        },
+        {
+          href: 'https://github.com/levivannoort',
+          iconClass: 'github',
+        },
+        {
+          href: 'https://twitter.com/vanNoortLevi',
+          iconClass: 'twitter',
         },
       ],
     },
