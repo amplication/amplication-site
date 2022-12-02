@@ -10,7 +10,9 @@
     "stage": "next start -p 3001",
     "lint": "gts lint",
     "fix": "gts fix",
-    "lhci": "lhci autorun"
+    "lhci": "lhci autorun",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "engines": {
     "node": ">=16.0.0 <17"
@@ -60,6 +62,8 @@
     "gts": "^3.1.0",
     "markdown-it": "^13.0.1",
     "postcss": "^8.4.16",
+    "prettier": "^2.8.0",
+    "prettier-plugin-tailwindcss": "^0.2.0",
     "prop-types": "^15.8.1",
     "sharp": "^0.31.0",
     "tailwindcss": "^3.1.8",
