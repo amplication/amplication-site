@@ -103,7 +103,7 @@ const Menu = () => {
           isActive: Boolean(asPath === '/team'),
         },
         {
-          title: 'Career',
+          title: 'Careers',
           href: {
             pathname: 'https://amplication.breezy.hr/',
           },
@@ -147,22 +147,22 @@ const Menu = () => {
           <ul className="flex flex-col justify-start items-stretch laptop:flex-row justify:end items:center">
             {menuItems.map((item, index) => {
               let menuItemClasses = 'menu__item relative';
-              if (item.isActive) {
-                menuItemClasses +=
-                  ' laptop:before:absolute laptop:before:block laptop:before:content-[attr(data-before)] laptop:before:w-full laptop:before:h-1 laptop:before:bg-purple-bright laptop:before:left-0 laptop:before:bottom-0 laptop:before:rounded-t';
-              } else {
-                menuItemClasses += '';
-              }
+              // if (item.isActive) {
+              //   menuItemClasses +=
+              //     ' laptop:before:absolute laptop:before:block laptop:before:content-[attr(data-before)] laptop:before:w-full laptop:before:h-1 laptop:before:bg-purple-bright laptop:before:left-0 laptop:before:bottom-0 laptop:before:rounded-t';
+              // } else {
+              //   menuItemClasses += '';
+              // }
               return (
                 <li
                   key={index.toString()}
                   className={(hoveredLink === item.href.pathname ? 'bg-purple-bright laptop:bg-transparent ' : '') + menuItemClasses}
-                  onMouseEnter={() => {
+                  onMouseOver={() => {
                     if (width > 991) {
                       setHoveredLink(hoveredLink === '' ? item.href.pathname : '')
                     }
                   }}
-                  onMouseLeave={() => {
+                  onMouseOut={() => {
                     if (width > 991) {
                       setHoveredLink(hoveredLink === '' ? item.href.pathname : '')
                     }
@@ -197,11 +197,12 @@ const Menu = () => {
                         </span>
                         <ul className={"laptop:absolute top-0 invisible transition-all min-w-[110px] bg-purple-light laptop:rounded laptop:top-16 h-0 overflow-hidden " + (hoveredLink === item.href.pathname ? ' !h-auto !visible laptop:!top-[60px]' : '')}>
                           {item.menuItems.map((subItem, i) => {
+                            let url = subItem.href.pathname + (subItem.href.hash ? '#' + subItem.href.hash : '');
                             return (
                               <li key={i.toString()} className="menu__item relative laptop:rounded">
                                 <Link href={subItem.href}>
                                   <a
-                                    className={`text-xl hover:text-white laptop:text-base text-center laptop:text-left block py-7 laptop:p-4 !leading-snug bg-purple-bright laptop:bg-purple-light ${asPath !== subItem.href.pathname ? 'text-white laptop:text-gray laptop:bg-purple-light' : 'laptop:!text-white laptop:!bg-purple-bright'}`}
+                                    className={`text-xl hover:text-white laptop:text-base text-center laptop:text-left block py-7 laptop:p-4 !leading-snug bg-purple-bright laptop:bg-purple-light ${asPath !== url ? 'text-white laptop:text-gray laptop:bg-purple-light' : 'laptop:!text-white laptop:!bg-purple-bright'}`}
                                     target={subItem.pathname}
                                   >
                                     {subItem.title}
