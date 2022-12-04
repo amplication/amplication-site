@@ -19,7 +19,7 @@ const Footer = ({customClass, compactView, hideBanner}) => {
               {!hideBanner && <FooterBanner />}
 
               {/*Footer Main Content*/}
-              <FooterContent />
+              {/*<FooterContent />*/}
             </>
           )}
 

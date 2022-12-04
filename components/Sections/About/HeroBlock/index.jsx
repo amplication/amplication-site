@@ -12,15 +12,15 @@ const HeroBlock = () => {
               <div className="header-and-video align-items-center">
                 <div className="content-block">
                   <div className="animated-header">
-                    <h1 className="main-title mb-0">
+                    <h1 className="main-title mb-16 laptop:mb-28">
                       <span className="animated-header__fixed-text">
                         Helping developers build better and faster
                       </span>
                     </h1>
-                    <div className="explainer text-base laptop:text-lg large:text-xl text-white !mt-8">
-                      Amplication enables developers to create services that
-                      users love simply and efficiently.
-                    </div>
+                    {/*<div className="explainer text-base laptop:text-lg large:text-xl text-white !mt-8">*/}
+                    {/*  Amplication enables developers to create services that*/}
+                    {/*  users love simply and efficiently.*/}
+                    {/*</div>*/}
                   </div>
                   <div className="buttons-wrapper d-flex align-items-center justify-content-start mt-2">
                     <Link href={'https://app.amplication.com'} passHref={true}>

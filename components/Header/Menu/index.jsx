@@ -20,6 +20,14 @@ const Menu = () => {
       isActive: false,
     },
     {
+      title: 'Enterprise',
+      href: {
+        pathname: '/enterprise',
+      },
+      target: '_self',
+      isActive: Boolean(asPath === '/enterprise'),
+    },
+    {
       title: 'Product',
       href: {
         pathname: '/product',
@@ -47,12 +55,12 @@ const Menu = () => {
       ]
     },
     {
-      title: 'Enterprise',
+      title: 'Pricing',
       href: {
-        pathname: '/enterprise',
+        pathname: '/pricing',
       },
       target: '_self',
-      isActive: Boolean(asPath === '/enterprise'),
+      isActive: Boolean(asPath === '/pricing'),
     },
     {
       title: 'Community',
@@ -63,14 +71,6 @@ const Menu = () => {
       isActive: Boolean(asPath === '/community'),
     },
     {
-      title: 'Pricing',
-      href: {
-        pathname: '/pricing',
-      },
-      target: '_self',
-      isActive: Boolean(asPath === '/pricing'),
-    },
-    {
       title: 'Company',
       href: {
         pathname: '/company',
@@ -78,6 +78,14 @@ const Menu = () => {
       target: '_blank',
       isActive: false,
       menuItems: [
+        {
+          title: 'Blog',
+          href: {
+            pathname: '/blog',
+          },
+          target: '_self',
+          isActive: Boolean(asPath.includes('/tags') || asPath.includes('/blog')),
+        },
         {
           title: 'About',
           href: {
@@ -95,7 +103,7 @@ const Menu = () => {
           isActive: Boolean(asPath === '/team'),
         },
         {
-          title: 'Careers',
+          title: 'Career',
           href: {
             pathname: 'https://amplication.breezy.hr/',
           },
@@ -105,12 +113,12 @@ const Menu = () => {
       ]
     },
     {
-      title: 'Blog',
+      title: 'Log In',
       href: {
-        pathname: '/blog',
+        pathname: '/login',
       },
       target: '_self',
-      isActive: Boolean(asPath.includes('/tags') || asPath.includes('/blog')),
+      isActive: Boolean(asPath === '/login'),
     },
   ];
 
@@ -231,19 +239,13 @@ const Menu = () => {
         </div>
         <div className="hidden laptop:flex ml-1 desktop:ml-4 align-items-center">
           <Button
-            text="Try Free"
+            text="Start Now"
             backgroundColor="purpleBright"
             hoverBackgroundColor="purpleBrightHover"
             isLink={true}
             href="https://app.amplication.com/login"
             className="text-[15px] h-[40px] whitespace-nowrap !px-4 desktop:!px-8"
           />
-          <Link href="https://app.amplication.com/login">
-            <a className="whitespace-nowrap text-xl block laptop:inline-block hover:text-purple-bright text-center laptop:text-left text-gray laptop:text-base py-7 laptop:py-2 ml-3 desktop:ml-8"
-            >
-              Log In
-            </a>
-          </Link>
         </div>
       </div>
     </>

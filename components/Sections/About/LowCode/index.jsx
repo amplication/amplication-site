@@ -3,7 +3,7 @@ import Link from 'next/link';
 const LowCode = () => {
   return (
     <>
-      <section className="background-transparent w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop desktop:!pb-[160px]">
+      <section className="background-transparent w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
         <div className="d-flex !flex-col laptop:!flex-row bg-dark-black-100 justify-content-between align-items-center medium:!py-[112px] medium:!px-40 !py-[40px] !px-[24px] !rounded-lg border-[1px] border-dark-black-70">
           <div className="col-md-12 col-lg-6">
             <h2 className="main-title !text-4xl large:!text-[50px] !leading-tight max-w-[400px]">
