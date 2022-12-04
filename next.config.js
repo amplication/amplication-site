@@ -125,6 +125,13 @@ const nextConfig = {
           '/blog/the-open-source-development-platform-introducing-amplication',
         permanent: true,
       },
+      {
+        source:
+          '/blog/introducing-amplication(:)-the-open-source-development-tool-ckza1a8p0029801s6ly4lbuh5',
+        destination:
+          '/blog/the-open-source-development-platform-introducing-amplication',
+        permanent: true,
+      },
     ];
   },
 };
