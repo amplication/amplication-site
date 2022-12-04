@@ -49,7 +49,7 @@ function Amplication({Component, pageProps}) {
     AOS.init({
       easing: 'ease-out-back',
       duration: 1000,
-      disable: true, //router.asPath === '/enterprise' && width !== null && width < 640,
+      disable: true //router.asPath === '/enterprise' && width !== null && width < 640,
     });
 
     const typingAnimations = document.querySelectorAll(
