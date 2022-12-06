@@ -147,12 +147,6 @@ const Menu = () => {
           <ul className="flex flex-col justify-start items-stretch laptop:flex-row justify:end items:center">
             {menuItems.map((item, index) => {
               let menuItemClasses = 'menu__item relative';
-              // if (item.isActive) {
-              //   menuItemClasses +=
-              //     ' laptop:before:absolute laptop:before:block laptop:before:content-[attr(data-before)] laptop:before:w-full laptop:before:h-1 laptop:before:bg-purple-bright laptop:before:left-0 laptop:before:bottom-0 laptop:before:rounded-t';
-              // } else {
-              //   menuItemClasses += '';
-              // }
               return (
                 <li
                   key={index.toString()}
