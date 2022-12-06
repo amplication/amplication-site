@@ -11,10 +11,7 @@ const LogoList = () => {
           Backed by visionary global investors
         </h2>
         <div className="logotypes d-flex justify-evently !pb-12 desktop:!pb-[172px] border-b-[1px] border-dark-black-70">
-          <div
-            className="px-[0px] tablet:px-12"
-            data-aos="zoom-in"
-          >
+          <div className="px-[0px] tablet:px-12" data-aos="zoom-in">
             <Image src={LogoNorwest} alt={''} />
           </div>
           <div

@@ -35,12 +35,13 @@ const Features = () => {
     },
     {
       image: enterprise2,
-      title: 'Keep your best practices and conventions or adopt industry standards',
+      title:
+        'Keep your best practices and conventions or adopt industry standards',
       customClasses: '!pb-6',
       content:
         '<p>Using a community-driven plugin system, your team has full control over the flavor of the generated code, including security, privacy, standards, and best practices.</p>' +
         '<p>Plugins can be used to control anything from the type of database to use, code conventions and format, authentication providers, connecting to CI/CD pipelines, monorepo management, build tools, and more.</p>' +
-        '<p>Your infra team can create custom plugins to keep the organization\'s current conventions, standards, and best practices and enforce usage across teams. You can easily update plugins and automatically push changes to dozen or hundreds of services in one click.</p>',
+        "<p>Your infra team can create custom plugins to keep the organization's current conventions, standards, and best practices and enforce usage across teams. You can easily update plugins and automatically push changes to dozen or hundreds of services in one click.</p>",
     },
     {
       image: enterprise3,
@@ -143,6 +144,14 @@ const Features = () => {
   );
 };
 Features.getLayout = function getLayout(page) {
-  return <MainLayout footerClass='bg-light-blue' hideFooterBanner={true} hideBackground={true}>{page}</MainLayout>;
+  return (
+    <MainLayout
+      footerClass="bg-light-blue"
+      hideFooterBanner={true}
+      hideBackground={true}
+    >
+      {page}
+    </MainLayout>
+  );
 };
 export default Features;

@@ -168,18 +168,20 @@ const UsersList = () => {
                   data-aos="zoom-in"
                   data-aos-delay="200"
                 >
-                  <Image
-                    className="rounded-full"
-                    src={user.avatar}
-                    alt={''}
-                  />
+                  <Image className="rounded-full" src={user.avatar} alt={''} />
                 </div>
                 <div className="d-flex flex-column pl-3 large:pl-8">
                   <h4 className="!text-7 large:!text-[32px] large:!leading-8 font-semibold !mb-3">
                     {user.name}
                   </h4>
-                  <div className="text-base large:text-lg large:leading-[18px] text-gray" dangerouslySetInnerHTML={{__html: user.position}}></div>
-                  <div className="text-base large:text-lg large:leading-7 mt-3 min-h-[56px]" dangerouslySetInnerHTML={{__html: user.description}}></div>
+                  <div
+                    className="text-base large:text-lg large:leading-[18px] text-gray"
+                    dangerouslySetInnerHTML={{__html: user.position}}
+                  ></div>
+                  <div
+                    className="text-base large:text-lg large:leading-7 mt-3 min-h-[56px]"
+                    dangerouslySetInnerHTML={{__html: user.description}}
+                  ></div>
                 </div>
               </div>
             );

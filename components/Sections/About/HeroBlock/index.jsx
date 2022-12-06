@@ -24,17 +24,15 @@ const HeroBlock = () => {
                   </div>
                   <div className="buttons-wrapper d-flex align-items-center justify-content-start mt-2">
                     <Link href={'https://app.amplication.com'} passHref={true}>
-                      <a className="btn btn-primary btn-lg">
-                        View Careers
-                      </a>
+                      <a className="btn btn-primary btn-lg">View Careers</a>
                     </Link>
                   </div>
                 </div>
                 <div className="relative align-items-center !max-w-[90%] w-full min-h-[600px] hidden medium:flex align-items-center laptop:!max-w-[56%]">
                   <div
-                      className="absolute laptop:my-auto w-[67vw] max-w-[1280px] medium:flex align-items-center"
-                      data-aos="zoom-in"
-                      data-aos-delay="200"
+                    className="absolute laptop:my-auto w-[67vw] max-w-[1280px] medium:flex align-items-center"
+                    data-aos="zoom-in"
+                    data-aos-delay="200"
                   >
                     <Image src={Screenshot3} alt={''} />
                   </div>

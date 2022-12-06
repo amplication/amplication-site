@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import Feature1 from '../../../../public/images/features/feature-icon-1.svg';
 import Feature2 from '../../../../public/images/features/feature-icon-2.svg';
 import Feature3 from '../../../../public/images/features/feature-icon-3.svg';
@@ -49,7 +48,8 @@ const GetList = () => {
       image: Feature6,
       link: '/features#code-generation',
       title: 'TypeScript & Node.js source code',
-      content: 'Automatically generated human-readable and human-editable Node.js code',
+      content:
+        'Automatically generated human-readable and human-editable Node.js code',
     },
     {
       image: Feature7,
@@ -73,21 +73,24 @@ const GetList = () => {
       image: Feature10,
       link: '/features#identity-permissions',
       title: 'Ready to deploy app',
-      content: 'Generate Docker container or use plugins to connect to CI/CD tools & cloud providers',
+      content:
+        'Generate Docker container or use plugins to connect to CI/CD tools & cloud providers',
     },
     {
       image: Feature11,
       link: '/features#deployment',
       title: 'Admin UI',
-      content: 'Automatically generated React Admin UI to create & edit your data models',
+      content:
+        'Automatically generated React Admin UI to create & edit your data models',
     },
     {
       image: Feature12,
       link: '/features#cli',
       title: 'Amplication console & CLI',
-      content: 'Fast app generation using Amplication console or Command Line Interface (CLI)',
+      content:
+        'Fast app generation using Amplication console or Command Line Interface (CLI)',
     },
-  ]
+  ];
 
   return (
     <>

@@ -52,7 +52,7 @@ const Menu = () => {
           target: '_self',
           isActive: false,
         },
-      ]
+      ],
     },
     {
       title: 'Pricing',
@@ -84,7 +84,9 @@ const Menu = () => {
             pathname: '/blog',
           },
           target: '_self',
-          isActive: Boolean(asPath.includes('/tags') || asPath.includes('/blog')),
+          isActive: Boolean(
+            asPath.includes('/tags') || asPath.includes('/blog')
+          ),
         },
         {
           title: 'About',
@@ -110,7 +112,7 @@ const Menu = () => {
           target: '_blank',
           isActive: false,
         },
-      ]
+      ],
     },
     {
       title: 'Log In',
@@ -146,69 +148,123 @@ const Menu = () => {
         <nav>
           <ul className="flex flex-col justify-start items-stretch laptop:flex-row justify:end items:center">
             {menuItems.map((item, index) => {
-              let menuItemClasses = 'menu__item relative';
+              const menuItemClasses = 'menu__item relative';
               return (
                 <li
                   key={index.toString()}
-                  className={(hoveredLink === item.href.pathname ? 'bg-purple-bright laptop:bg-transparent ' : '') + menuItemClasses}
+                  className={
+                    (hoveredLink === item.href.pathname
+                      ? 'bg-purple-bright laptop:bg-transparent '
+                      : '') + menuItemClasses
+                  }
                   onMouseOver={() => {
                     if (width > 991) {
-                      setHoveredLink(hoveredLink === '' ? item.href.pathname : '')
+                      setHoveredLink(
+                        hoveredLink === '' ? item.href.pathname : ''
+                      );
                     }
                   }}
                   onMouseOut={() => {
                     if (width > 991) {
-                      setHoveredLink(hoveredLink === '' ? item.href.pathname : '')
+                      setHoveredLink(
+                        hoveredLink === '' ? item.href.pathname : ''
+                      );
                     }
                   }}
                   onClick={() => {
                     if (width <= 991) {
-                      setHoveredLink(hoveredLink === '' ? item.href.pathname : '')
+                      setHoveredLink(
+                        hoveredLink === '' ? item.href.pathname : ''
+                      );
                     }
                   }}
                 >
-                  { !item.menuItems && (
+                  {!item.menuItems && (
                     <Link href={item.href}>
                       <a
                         className={`text-xl block laptop:inline-block hover:text-purple-bright text-center laptop:text-left border-[#353B57] border-b-[1px] laptop:border-b-0 laptop:text-base p-7 laptop:py-5 laptop:px-2 desktop:px-[15px] ${
-                          ( item.isActive ? 'text-purple-bright' : 'text-gray' ) + ( item.href.pathname === '/enterprise' ? ' !text-[#54DBEE] font-medium' : '' )
+                          (item.isActive ? 'text-purple-bright' : 'text-gray') +
+                          (item.href.pathname === '/enterprise'
+                            ? ' !text-[#54DBEE] font-medium'
+                            : '')
                         }`}
                         target={item.pathname}
-                        onClick={() => setIsMobileMenuOpened(!isMobileMenuOpened)}
+                        onClick={() =>
+                          setIsMobileMenuOpened(!isMobileMenuOpened)
+                        }
                       >
                         {item.title}
                       </a>
                     </Link>
-                  ) }
-                  {
-                    item.menuItems && (
-                      <>
-                        <span className={"text-gray text-xl hover:text-purple-bright text-center laptop:text-left laptop:text-base p-7 laptop:py-5 laptop:px-2 desktop:px-[15px] cursor-pointer justify-center flex " + (hoveredLink === item.href.pathname ? ' !text-white laptop:!text-purple-bright' : 'border-[#353B57] border-b-[1px] laptop:border-b-0')}>
-                          {item.title}
-                          <svg className={"ml-1 my-auto block" + (hoveredLink === item.href.pathname ? ' rotate-180' : '')} width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12.5 7L8.75 10.75L5 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                          </svg>
-                        </span>
-                        <ul className={"laptop:absolute top-0 invisible transition-all min-w-[110px] bg-purple-light laptop:rounded laptop:top-16 h-0 overflow-hidden " + (hoveredLink === item.href.pathname ? ' !h-auto !visible laptop:!top-[60px]' : '')}>
-                          {item.menuItems.map((subItem, i) => {
-                            let url = subItem.href.pathname + (subItem.href.hash ? '#' + subItem.href.hash : '');
-                            return (
-                              <li key={i.toString()} className="menu__item relative laptop:rounded">
-                                <Link href={subItem.href}>
-                                  <a
-                                    className={`text-xl hover:text-white laptop:text-base text-center laptop:text-left block py-7 laptop:p-4 !leading-snug bg-purple-bright laptop:bg-purple-light ${asPath !== url ? 'text-white laptop:text-gray laptop:bg-purple-light' : 'laptop:!text-white laptop:!bg-purple-bright'}`}
-                                    target={subItem.pathname}
-                                  >
-                                    {subItem.title}
-                                  </a>
-                                </Link>
-                              </li>
-                            );
-                          })}
-                        </ul>
-                      </>
-                    )
-                  }
+                  )}
+                  {item.menuItems && (
+                    <>
+                      <span
+                        className={
+                          'text-gray text-xl hover:text-purple-bright text-center laptop:text-left laptop:text-base p-7 laptop:py-5 laptop:px-2 desktop:px-[15px] cursor-pointer justify-center flex ' +
+                          (hoveredLink === item.href.pathname
+                            ? ' !text-white laptop:!text-purple-bright'
+                            : 'border-[#353B57] border-b-[1px] laptop:border-b-0')
+                        }
+                      >
+                        {item.title}
+                        <svg
+                          className={
+                            'ml-1 my-auto block' +
+                            (hoveredLink === item.href.pathname
+                              ? ' rotate-180'
+                              : '')
+                          }
+                          width="18"
+                          height="18"
+                          viewBox="0 0 18 18"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12.5 7L8.75 10.75L5 7"
+                            stroke="currentColor"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </span>
+                      <ul
+                        className={
+                          'laptop:absolute top-0 invisible transition-all min-w-[110px] bg-purple-light laptop:rounded laptop:top-16 h-0 overflow-hidden ' +
+                          (hoveredLink === item.href.pathname
+                            ? ' !h-auto !visible laptop:!top-[60px]'
+                            : '')
+                        }
+                      >
+                        {item.menuItems.map((subItem, i) => {
+                          const url =
+                            subItem.href.pathname +
+                            (subItem.href.hash ? '#' + subItem.href.hash : '');
+                          return (
+                            <li
+                              key={i.toString()}
+                              className="menu__item relative laptop:rounded"
+                            >
+                              <Link href={subItem.href}>
+                                <a
+                                  className={`text-xl hover:text-white laptop:text-base text-center laptop:text-left block py-7 laptop:p-4 !leading-snug bg-purple-bright laptop:bg-purple-light ${
+                                    asPath !== url
+                                      ? 'text-white laptop:text-gray laptop:bg-purple-light'
+                                      : 'laptop:!text-white laptop:!bg-purple-bright'
+                                  }`}
+                                  target={subItem.pathname}
+                                >
+                                  {subItem.title}
+                                </a>
+                              </Link>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </>
+                  )}
                 </li>
               );
             })}
