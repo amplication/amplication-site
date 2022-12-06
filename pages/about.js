@@ -52,6 +52,7 @@ const About = () => {
     </>
   );
 };
+
 About.getLayout = function getLayout(page) {
   return (
     <MainLayout
@@ -64,4 +65,5 @@ About.getLayout = function getLayout(page) {
     </MainLayout>
   );
 };
+
 export default About;
