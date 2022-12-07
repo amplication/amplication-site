@@ -9,7 +9,8 @@ const Features = () => {
     {
       title: 'Database',
       icon: feature1,
-      content: 'Easily generate all core BE functionality, including creation of entities & roles',
+      content:
+        'Easily generate all core BE functionality, including creation of entities & roles',
     },
     {
       title: 'GitHub',
@@ -24,7 +25,8 @@ const Features = () => {
     {
       title: 'Docker',
       icon: feature4,
-      content: 'Get a production-ready Node.js application and a Docker container to deploy anywhere',
+      content:
+        'Get a production-ready Node.js application and a Docker container to deploy anywhere',
     },
   ];
   return (
@@ -34,10 +36,17 @@ const Features = () => {
           <div className="solution">
             {features.map((item, index) => {
               return (
-                <div className="solution-card !flex align-items-center flex-column" key={index}>
+                <div
+                  className="solution-card !flex align-items-center flex-column"
+                  key={index}
+                >
                   {item.icon && (
                     <div className="flex justify-center max-w-[96px] large:max-w-[120px]">
-                      <Image objectFit="cover" src={item.icon} alt={item.title ?? ''} />
+                      <Image
+                        objectFit="cover"
+                        src={item.icon}
+                        alt={item.title ?? ''}
+                      />
                     </div>
                   )}
                   <div

@@ -10,7 +10,7 @@ const FooterForm = ({isCompactView}) => {
   const [source, setSource] = useState('');
   const [sourceFieldError, setSourceFieldError] = useState(false);
   const [formSuccess, setFormSuccess] = useState(null);
-  const [isWaitingForResponse, setIsWaitingForResponse] = useState(false);
+  const [, setIsWaitingForResponse] = useState(false);
   const [afterFormSubmitMessage, setAfterFormSubmitMessage] = useState('');
 
   const submitSubscriptionForm = async e => {
@@ -114,13 +114,13 @@ const FooterForm = ({isCompactView}) => {
                 className="absolute	right-4 top-[50%] translate-y-[-50%] cursor-pointer text-sm animate-fadeIn text-white"
                 onClick={() => setEmail('')}
               >
-              ✕
-            </span>
+                ✕
+              </span>
             )}
           </div>
           {emailFieldError && (
             <span className="text-left block w-full text-xs text-pink py-0.5 ">
-            {fieldErrorMessage}
+              {fieldErrorMessage}
             </span>
           )}
         </div>
@@ -147,13 +147,13 @@ const FooterForm = ({isCompactView}) => {
                 className="absolute	right-4 top-[50%] translate-y-[-50%] cursor-pointer text-sm animate-fadeIn text-white"
                 onClick={() => setName('')}
               >
-              ✕
-            </span>
+                ✕
+              </span>
             )}
           </div>
           {nameFieldError && (
             <span className="text-left block w-full text-xs text-pink py-0.5 ">
-            {fieldErrorMessage}
+              {fieldErrorMessage}
             </span>
           )}
         </div>
@@ -174,13 +174,13 @@ const FooterForm = ({isCompactView}) => {
                 className="absolute	right-4 top-[50%] translate-y-[-50%] cursor-pointer text-sm animate-fadeIn text-white"
                 onClick={() => setSource('')}
               >
-              ✕
-            </span>
+                ✕
+              </span>
             )}
           </div>
           {sourceFieldError && (
             <span className="text-left block w-full text-xs text-pink py-0.5 ">
-            {fieldErrorMessage}
+              {fieldErrorMessage}
             </span>
           )}
         </div>
@@ -188,7 +188,8 @@ const FooterForm = ({isCompactView}) => {
           className={
             isCompactView
               ? fieldContainerClasses + ' laptop:mt-0'
-              : fieldContainerClasses + ' flex justify-center laptop:justify-start'
+              : fieldContainerClasses +
+                ' flex justify-center laptop:justify-start'
           }
         >
           <input
@@ -215,11 +216,11 @@ const FooterForm = ({isCompactView}) => {
 };
 
 FooterForm.propTypes = {
-    isCompactView: PropTypes.bool,
+  isCompactView: PropTypes.bool,
 };
 
 FooterForm.defaultProps = {
-    isCompactView: false,
+  isCompactView: false,
 };
 
 export default FooterForm;

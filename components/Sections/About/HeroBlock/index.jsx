@@ -24,9 +24,7 @@ const HeroBlock = () => {
                   </div>
                   <div className="buttons-wrapper d-flex align-items-center justify-content-start mt-2">
                     <Link href={'https://app.amplication.com'} passHref={true}>
-                      <a className="btn btn-primary btn-lg">
-                        View Careers
-                      </a>
+                      <a className="btn btn-primary btn-lg">View Careers</a>
                     </Link>
                   </div>
                 </div>

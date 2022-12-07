@@ -86,7 +86,9 @@ const Roadmap = () => {
             </div>{' '}
             <div className="col-sm-12 col-md-6 col-lg-4">
               <div className="roadmap-box">
-                <div className="roadmap-title font-dmmono">Git &amp; Custom Code</div>
+                <div className="roadmap-title font-dmmono">
+                  Git &amp; Custom Code
+                </div>
                 <ul className="roadmap-list">
                   <li className="text-base done">Custom Code</li>
                   <li className="text-base done">Continuos sync with Git</li>

@@ -166,18 +166,20 @@ const UsersList = () => {
                 <div
                   className="w-[72px] min-w-[72px] h-[72px] large:min-w-[96px] large:h-24 p-2 large:p-[11px] border-[2px] large:border-[3px] bg-white/10 border-white/20 rounded-full"
                 >
-                  <Image
-                    className="rounded-full"
-                    src={user.avatar}
-                    alt={''}
-                  />
+                  <Image className="rounded-full" src={user.avatar} alt={''} />
                 </div>
                 <div className="d-flex flex-column pl-3 large:pl-8">
                   <h4 className="!text-7 large:!text-[32px] large:!leading-8 font-semibold !mb-3">
                     {user.name}
                   </h4>
-                  <div className="text-base large:text-lg large:leading-[18px] text-gray" dangerouslySetInnerHTML={{__html: user.position}}></div>
-                  <div className="text-base large:text-lg large:leading-7 mt-3 min-h-[56px]" dangerouslySetInnerHTML={{__html: user.description}}></div>
+                  <div
+                    className="text-base large:text-lg large:leading-[18px] text-gray"
+                    dangerouslySetInnerHTML={{__html: user.position}}
+                  ></div>
+                  <div
+                    className="text-base large:text-lg large:leading-7 mt-3 min-h-[56px]"
+                    dangerouslySetInnerHTML={{__html: user.description}}
+                  ></div>
                 </div>
               </div>
             );

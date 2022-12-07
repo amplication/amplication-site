@@ -80,39 +80,54 @@ const Steps = () => {
           {/*  </div>*/}
           {/*</div>*/}
 
-          {
-            false &&
+          {false && (
             <>
               <div className="row feature d-flex justify-content-between align-items-center !my-4 laptop:!my-12 desktop:pb-[240px]">
                 <div className="col-sm-12 col-md-6 pr-3">
-                  <div className="bracket-box !text-xl desktop:!text-4xl" data-aos="fade-up">
+                  <div
+                    className="bracket-box !text-xl desktop:!text-4xl"
+                    data-aos="fade-up"
+                  >
                     <span className="font-dmmono">What</span> we do it?
                   </div>
                   <div
-                      className="feature-description text-base desktop:text-lg text-white !max-w-[610px]"
-                      data-aos="fade-up"
-                      data-aos-delay="300"
+                    className="feature-description text-base desktop:text-lg text-white !max-w-[610px]"
+                    data-aos="fade-up"
+                    data-aos-delay="300"
                   >
-                    Our vision is to create one platform for Node.js app development
-                    that will empower professional developers in creating business
-                    applications and extend platform capabilities, with the
-                    open-source community's power of collaboration & transparency.
+                    Our vision is to create one platform for Node.js app
+                    development that will empower professional developers in
+                    creating business applications and extend platform
+                    capabilities, with the open-source community&apos;s power of
+                    collaboration & transparency.
                   </div>
                 </div>
                 <div className="col-sm-12 col-md-6 relative flex align-items-center  pt-12 desktop:pt-0 aspect-square desktop:h-[430px]">
-                  <div className="absolute" data-aos="zoom-in" data-aos-delay="500">
+                  <div
+                    className="absolute"
+                    data-aos="zoom-in"
+                    data-aos-delay="500"
+                  >
                     <Image src={What1} alt={'github sync'} />
                   </div>
-                  <div className="absolute" data-aos="zoom-in" data-aos-delay="700">
+                  <div
+                    className="absolute"
+                    data-aos="zoom-in"
+                    data-aos-delay="700"
+                  >
                     <Image src={What2} alt={'github sync'} />
                   </div>
-                  <div className="absolute" data-aos="zoom-in" data-aos-delay="900">
+                  <div
+                    className="absolute"
+                    data-aos="zoom-in"
+                    data-aos-delay="900"
+                  >
                     <Image src={What3} alt={'github sync'} />
                   </div>
                   <div
-                      className="absolute"
-                      data-aos="zoom-in"
-                      data-aos-delay="1100"
+                    className="absolute"
+                    data-aos="zoom-in"
+                    data-aos-delay="1100"
                   >
                     <Image src={What4} alt={'github sync'} />
                   </div>
@@ -121,41 +136,56 @@ const Steps = () => {
 
               <div className="row feature d-flex justify-content-between align-items-center !my-4 laptop:!my-12 desktop:pb-[164px]">
                 <div className="col-sm-12 col-md-6 pr-3">
-                  <div className="bracket-box !text-xl desktop:!text-4xl" data-aos="fade-up">
+                  <div
+                    className="bracket-box !text-xl desktop:!text-4xl"
+                    data-aos="fade-up"
+                  >
                     <span className="font-dmmono">Why</span> we do it?
                   </div>
                   <div
-                      className="feature-description text-base desktop:text-lg text-white !max-w-[610px]"
-                      data-aos="fade-up"
-                      data-aos-delay="300"
+                    className="feature-description text-base desktop:text-lg text-white !max-w-[610px]"
+                    data-aos="fade-up"
+                    data-aos-delay="300"
                   >
                     As our platform is open-source, we are looking to create an
                     ecosystem around the project, where you, the professional
-                    developers, will always have the freedom to fork and maintain
-                    the platform yourselves, with no vendor lock-in.
+                    developers, will always have the freedom to fork and
+                    maintain the platform yourselves, with no vendor lock-in.
                   </div>
                 </div>
                 <div className="col-sm-12 col-md-6 relative flex align-items-center pt-12 desktop:pt-0 aspect-square desktop:h-[430px]">
-                  <div className="absolute" data-aos="zoom-in" data-aos-delay="500">
+                  <div
+                    className="absolute"
+                    data-aos="zoom-in"
+                    data-aos-delay="500"
+                  >
                     <Image src={Why1} alt={'github sync'} />
                   </div>
-                  <div className="absolute" data-aos="zoom-in" data-aos-delay="700">
+                  <div
+                    className="absolute"
+                    data-aos="zoom-in"
+                    data-aos-delay="700"
+                  >
                     <Image src={Why2} alt={'github sync'} />
                   </div>
-                  <div className="absolute" data-aos="zoom-in" data-aos-delay="900">
+                  <div
+                    className="absolute"
+                    data-aos="zoom-in"
+                    data-aos-delay="900"
+                  >
                     <Image src={Why3} alt={'github sync'} />
                   </div>
                   <div
-                      className="absolute"
-                      data-aos="zoom-in"
-                      data-aos-delay="1100"
+                    className="absolute"
+                    data-aos="zoom-in"
+                    data-aos-delay="1100"
                   >
                     <Image src={Why4} alt={'github sync'} />
                   </div>
                 </div>
               </div>
             </>
-          }
+          )}
         </div>
       </section>
     </>
