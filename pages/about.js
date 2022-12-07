@@ -31,7 +31,7 @@ const About = () => {
           cardType: 'summary_large_image',
         }}
       />
-      <main className="w-full font-poppins z-10 mb-12 laptop:mb-0 amplication-base">
+      <main className="w-full font-poppins z-10 amplication-base">
         <HeroBlock />
         <div className="bg-gradient">
           <LogoList />

@@ -165,8 +165,6 @@ const UsersList = () => {
               >
                 <div
                   className="w-[72px] min-w-[72px] h-[72px] large:min-w-[96px] large:h-24 p-2 large:p-[11px] border-[2px] large:border-[3px] bg-white/10 border-white/20 rounded-full"
-                  data-aos="zoom-in"
-                  data-aos-delay="200"
                 >
                   <Image
                     className="rounded-full"

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Button from '../../Common/Button';
 import {useRouter} from 'next/router';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import useWindowSize from '../../../utils/useWindowSize';
 
 const Menu = () => {
@@ -63,14 +63,6 @@ const Menu = () => {
       isActive: Boolean(asPath === '/pricing'),
     },
     {
-      title: 'Community',
-      href: {
-        pathname: '/community',
-      },
-      target: '_self',
-      isActive: Boolean(asPath === '/community'),
-    },
-    {
       title: 'Company',
       href: {
         pathname: '/company',
@@ -115,12 +107,18 @@ const Menu = () => {
     {
       title: 'Log In',
       href: {
-        pathname: '/login',
+        pathname: 'https://app.amplication.com/login',
       },
       target: '_self',
-      isActive: Boolean(asPath === '/login'),
+      isActive: Boolean(asPath === 'https://app.amplication.com/login'),
     },
   ];
+
+  useEffect(() => {
+    if ( hoveredLink !== '' ) {
+      setHoveredLink(null)
+    }
+  }, [asPath]);
 
   return (
     <>
@@ -171,7 +169,7 @@ const Menu = () => {
                     <Link href={item.href}>
                       <a
                         className={`text-xl block laptop:inline-block hover:text-purple-bright text-center laptop:text-left border-[#353B57] border-b-[1px] laptop:border-b-0 laptop:text-base p-7 laptop:py-5 laptop:px-2 desktop:px-[15px] ${
-                          ( item.isActive ? 'text-purple-bright' : 'text-gray' ) + ( item.href.pathname === '/enterprise' ? ' !text-[#54DBEE] font-medium' : '' )
+                          ( item.isActive ? 'text-purple-bright' : 'text-gray' ) + ( item.href.pathname === '/enterprise' ? ' !text-white font-medium' : '' )
                         }`}
                         target={item.pathname}
                         onClick={() => setIsMobileMenuOpened(!isMobileMenuOpened)}
@@ -191,12 +189,13 @@ const Menu = () => {
                         </span>
                         <ul className={"laptop:absolute top-0 invisible transition-all min-w-[110px] bg-purple-light laptop:rounded laptop:top-16 h-0 overflow-hidden " + (hoveredLink === item.href.pathname ? ' !h-auto !visible laptop:!top-[60px]' : '')}>
                           {item.menuItems.map((subItem, i) => {
-                            let url = subItem.href.pathname + (subItem.href.hash ? '#' + subItem.href.hash : '');
+                            let url    = subItem.href.pathname + (subItem.href.hash ? '#' + subItem.href.hash : '');
+                            let custom = asPath !== url ? 'text-white laptop:text-gray laptop:bg-purple-light' : 'laptop:!text-white laptop:!bg-purple-bright';
                             return (
                               <li key={i.toString()} className="menu__item relative laptop:rounded">
                                 <Link href={subItem.href}>
                                   <a
-                                    className={`text-xl hover:text-white laptop:text-base text-center laptop:text-left block py-7 laptop:p-4 !leading-snug bg-purple-bright laptop:bg-purple-light ${asPath !== url ? 'text-white laptop:text-gray laptop:bg-purple-light' : 'laptop:!text-white laptop:!bg-purple-bright'}`}
+                                    className={"text-xl hover:text-white laptop:text-base text-center laptop:text-left block py-7 laptop:p-4 !leading-snug bg-purple-bright laptop:bg-purple-light"}
                                     target={subItem.pathname}
                                   >
                                     {subItem.title}

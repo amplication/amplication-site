@@ -105,21 +105,6 @@ const Steps = () => {
           </div>
 
           <div className="row feature d-flex justify-content-between align-items-center">
-            <div className="col-sm-12 col-md-6 pr-3 pr-md-3">
-              <div className="bracket-box">
-                <span className="font-dmmono">Deploy</span> your app
-              </div>
-              <div className="feature-description text-white text-base laptop:text-lg large:text-xl leading-normal">
-                Deploy your app to the Amplication cloud, or get a Docker
-                container to deploy elsewhere.
-              </div>
-            </div>
-            <div className="col-sm-12 col-md-6" data-aos="fade-up-right">
-              <Image src={DeployIcon} alt={'one click app deployment'} />
-            </div>
-          </div>
-
-          <div className="row feature d-flex justify-content-between align-items-center">
             <div className="col-sm-12 col-md-6 pr-3">
               <div className="bracket-box">
                 <span className="font-dmmono">Sync</span> your app with GitHub
