@@ -7,8 +7,8 @@ import useWindowSize from '../../../utils/useWindowSize';
 const Menu = () => {
   const [isMobileMenuOpened, setIsMobileMenuOpened] = useState(false);
   const [hoveredLink, setHoveredLink] = useState('');
-  const {asPath} = useRouter();
   const {width} = useWindowSize();
+  const {asPath} = useRouter();
 
   const menuItems = [
     {
