@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Button from '../../Common/Button';
 import {useRouter} from 'next/router';
-import {useState,useEffect} from 'react';
+import {useState, useEffect} from 'react';
 import useWindowSize from '../../../utils/useWindowSize';
 
 const Menu = () => {
@@ -117,8 +117,8 @@ const Menu = () => {
   ];
 
   useEffect(() => {
-    if ( hoveredLink !== '' ) {
-      setHoveredLink(null)
+    if (hoveredLink !== '') {
+      setHoveredLink(null);
     }
   }, [asPath]);
 
@@ -181,7 +181,10 @@ const Menu = () => {
                     <Link href={item.href}>
                       <a
                         className={`text-xl block laptop:inline-block hover:text-purple-bright text-center laptop:text-left border-[#353B57] border-b-[1px] laptop:border-b-0 laptop:text-base p-7 laptop:py-5 laptop:px-2 desktop:px-[15px] ${
-                          ( item.isActive ? 'text-purple-bright' : 'text-gray' ) + ( item.href.pathname === '/enterprise' ? ' !text-white font-medium' : '' )
+                          (item.isActive ? 'text-purple-bright' : 'text-gray') +
+                          (item.href.pathname === '/enterprise'
+                            ? ' !text-white font-medium'
+                            : '')
                         }`}
                         target={item.pathname}
                         onClick={() =>

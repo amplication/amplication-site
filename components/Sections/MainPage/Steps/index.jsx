@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import DeployIcon from '../../../../public/images/steps/deploy.svg';
 import DataModelsIcon from '../../../../public/images/steps/data-models.svg';
 import RolesIcon from '../../../../public/images/steps/roles.svg';
 import SyncWithGithubIcon from '../../../../public/images/steps/sync_with_github.svg';

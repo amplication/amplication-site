@@ -2,14 +2,9 @@ import Image from 'next/image';
 import LogoNorwest from '../../../../public/images/logotypes/logo-norwest.png';
 import LogoEntree from '../../../../public/images/logotypes/logo-entree-capital.png';
 import LogoVertex from '../../../../public/images/logotypes/logo-vertex.png';
-import Link from "next/link";
 
 const LogoList = () => {
-  const logos = [
-    LogoNorwest,
-    LogoEntree,
-    LogoVertex
-  ]
+  const logos = [LogoNorwest, LogoEntree, LogoVertex];
   return (
     <>
       <section className="background-transparent w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">

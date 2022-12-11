@@ -163,9 +163,7 @@ const UsersList = () => {
                 className="d-flex pt-2 pb-3 large:pt-[17px] large:pb-[28px] border-b-[1px] border-dark-black-70"
                 key={i}
               >
-                <div
-                  className="w-[72px] min-w-[72px] h-[72px] large:min-w-[96px] large:h-24 p-2 large:p-[11px] border-[2px] large:border-[3px] bg-white/10 border-white/20 rounded-full"
-                >
+                <div className="w-[72px] min-w-[72px] h-[72px] large:min-w-[96px] large:h-24 p-2 large:p-[11px] border-[2px] large:border-[3px] bg-white/10 border-white/20 rounded-full">
                   <Image className="rounded-full" src={user.avatar} alt={''} />
                 </div>
                 <div className="d-flex flex-column pl-3 large:pl-8">
