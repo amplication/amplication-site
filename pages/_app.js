@@ -19,9 +19,8 @@ function Amplication({Component, pageProps}) {
     asPath.includes('/blog') || asPath.includes('/tags')
   );
 
-  const isHomePage = Boolean(asPath === '/');
-
   const router = useRouter();
+  const isHomePage = Boolean(router.pathname === '/');
 
   const canonicalUrl = (
     process.env.NEXT_PUBLIC_SITE + (router.asPath === '/' ? '' : router.asPath)
