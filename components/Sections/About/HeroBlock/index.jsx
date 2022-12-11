@@ -17,15 +17,6 @@ const HeroBlock = () => {
                         Helping developers build better and faster
                       </span>
                     </h1>
-                    {/*<div className="explainer text-base laptop:text-lg large:text-xl text-white !mt-8">*/}
-                    {/*  Amplication enables developers to create services that*/}
-                    {/*  users love simply and efficiently.*/}
-                    {/*</div>*/}
-                  </div>
-                  <div className="buttons-wrapper d-flex align-items-center justify-content-start mt-2">
-                    <Link href={'https://app.amplication.com'} passHref={true}>
-                      <a className="btn btn-primary btn-lg">View Careers</a>
-                    </Link>
                   </div>
                 </div>
                 <div className="relative align-items-center !max-w-[90%] w-full min-h-[600px] hidden medium:flex align-items-center laptop:!max-w-[56%]">
