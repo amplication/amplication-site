@@ -18,9 +18,7 @@
     "es6": true,
     "node": true
   },
-  "globals": {
-    "Intercom": true
-  },
+  "globals": {},
   "rules": {
     "node/no-missing-import": [
       "error",
