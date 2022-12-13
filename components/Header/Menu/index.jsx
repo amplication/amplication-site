@@ -199,7 +199,7 @@ const Menu = () => {
                     <>
                       <span
                         className={
-                          'text-gray text-xl hover:text-purple-bright text-center laptop:text-left laptop:text-base p-7 laptop:py-5 laptop:px-2 desktop:px-[15px] cursor-pointer justify-center flex ' +
+                          'text-gray text-xl text-center laptop:text-left laptop:text-base p-7 laptop:py-5 laptop:px-2 desktop:px-[15px] cursor-pointer justify-center flex ' +
                           (hoveredLink === item.href.pathname
                             ? ' !text-white laptop:!text-purple-bright'
                             : 'border-[#353B57] border-b-[1px] laptop:border-b-0')
@@ -244,6 +244,11 @@ const Menu = () => {
                             <li
                               key={i.toString()}
                               className="menu__item relative laptop:rounded"
+                              onClick={() => {
+                                if (width <= 991) {
+                                  setIsMobileMenuOpened(false)
+                                }
+                              }}
                             >
                               <Link href={subItem.href}>
                                 <a

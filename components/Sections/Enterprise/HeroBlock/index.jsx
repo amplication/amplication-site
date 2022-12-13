@@ -30,14 +30,14 @@ const HeroBlock = () => {
                   </div>
                   <div className="buttons-wrapper d-flex align-items-center justify-content-start mt-2">
                     <Link href={'https://app.amplication.com'} passHref={true}>
-                      <a className="btn btn-primary btn-sm !text-lg !h-10 mr-2 w-full max-w-[180px]">
+                      <a className="btn btn-primary btn-sm !text-lg !h-10 mb-2 laptop:mr-2 w-full max-w-[180px]">
                         Get started
                       </a>
                     </Link>
                     <div className="spacer"></div>
                     <Button
                       text="Contact us"
-                      className="outline-button !text-lg !h-10 ml-2 w-full max-w-[180px]"
+                      className="outline-button !text-lg !h-10 mb-2 laptop:ml-2 w-full max-w-[180px]"
                       isLink={false}
                       onClick={() => Intercom('show')}
                     />
