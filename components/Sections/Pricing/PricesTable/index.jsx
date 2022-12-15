@@ -106,7 +106,7 @@ const PricesTable = () => {
       features: ['✅', '✅', '✅', '✅', '✅', '✅', '✅', '✅', 'Enterprise'],
       cta: {
         text: 'Contact Us',
-        onClick: () => Intercom('show'),
+        onClick: () => window.HubSpotConversations.widget.open(),
       },
     },
   ];

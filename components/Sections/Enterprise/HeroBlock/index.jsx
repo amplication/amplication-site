@@ -39,7 +39,7 @@ const HeroBlock = () => {
                       text="Contact us"
                       className="outline-button !text-lg !h-10 mb-2 laptop:ml-2 w-full max-w-[180px]"
                       isLink={false}
-                      onClick={() => Intercom('show')}
+                      onClick={() => window.HubSpotConversations.widget.open()}
                     />
                   </div>
                 </div>
