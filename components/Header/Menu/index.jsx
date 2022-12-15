@@ -181,10 +181,7 @@ const Menu = () => {
                     <Link href={item.href}>
                       <a
                         className={`text-xl block laptop:inline-block hover:text-purple-bright text-center laptop:text-left border-[#353B57] border-b-[1px] laptop:border-b-0 laptop:text-base p-7 laptop:py-5 laptop:px-2 desktop:px-[15px] ${
-                          (item.isActive ? 'text-purple-bright' : 'text-gray') +
-                          (item.href.pathname === '/enterprise'
-                            ? ' !text-white font-medium'
-                            : '')
+                          item.isActive ? 'text-purple-bright' : 'text-gray'
                         }`}
                         target={item.pathname}
                         onClick={() =>
