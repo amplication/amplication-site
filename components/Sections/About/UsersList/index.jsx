@@ -117,7 +117,7 @@ const UsersList = () => {
       avatar: UserAvatar16,
       name: 'Alon Girmonsky ',
       position: 'Former CEO & Co-Founder',
-      description: 'Up9',
+      description: 'BlazeMeter',
     },
     {
       avatar: UserAvatar17,
