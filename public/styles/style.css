@@ -8884,7 +8884,7 @@ body {
   white-space: nowrap;
 }
 .amplication-base .text-left {
-  text-align: left !important;
+  text-align: left;
 }
 .amplication-base .text-right {
   text-align: right !important;
@@ -9404,12 +9404,12 @@ body {
 }
 @media (max-width: 991.98px) {
   .amplication-base .animated-header .main-title {
-    font-size: 3rem !important;
+    font-size: 3rem;
   }
 }
 @media (max-width: 767.98px) {
   .amplication-base .animated-header .main-title {
-    font-size: 1.5rem !important;
+    font-size: 1.5rem;
     line-height: 1.5;
   }
 }
@@ -9683,12 +9683,12 @@ body {
 }
 @media (max-width: 991.98px) {
   .amplication-base section .main-title {
-    font-size: 3rem !important;
+    font-size: 3rem;
   }
 }
 @media (max-width: 767.98px) {
   .amplication-base section .main-title {
-    font-size: 2rem !important;
+    font-size: 2rem;
     line-height: 1.5;
   }
 }
