@@ -39,10 +39,9 @@ const Roadmap = () => {
                 <div className="roadmap-title">Database</div>
                 <ul className="roadmap-list">
                   <li className="text-base done">Design data model</li>
+                  <li className="text-base done">PostgreSQL</li>
                   <li className="text-base done">MySQL</li>
-                  <li className="text-base text-white">
-                    MongoDB &amp; other databases
-                  </li>
+                  <li className="text-base done">MongoDB</li>
                   <li className="text-base text-white">ERD View</li>
                   <li className="text-base text-white">
                     Connect to your own database
