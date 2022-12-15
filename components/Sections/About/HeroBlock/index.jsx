@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import Screenshot3 from '../../../../public/images/screenshots/screenshot-3.png';
 
 const HeroBlock = () => {

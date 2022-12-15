@@ -246,7 +246,7 @@ const Menu = () => {
                               className="menu__item relative laptop:rounded"
                               onClick={() => {
                                 if (width <= 991) {
-                                  setIsMobileMenuOpened(false)
+                                  setIsMobileMenuOpened(false);
                                 }
                               }}
                             >
