@@ -26,7 +26,7 @@ const StartNow = ({title, linkPrimary, linkOutline, linkSecondary}) => {
               text={linkOutline.title}
               className="outline-button !text-lg !h-10 ml-2 w-full max-w-[180px]"
               isLink={false}
-              onClick={() => Intercom('show')}
+              onClick={() => window.HubSpotConversations.widget.open()}
             />
           )}
           {linkSecondary.title && (
@@ -34,7 +34,7 @@ const StartNow = ({title, linkPrimary, linkOutline, linkSecondary}) => {
               text={linkSecondary.title}
               className="btn btn-outline-secondary !text-lg !h-10 ml-2 w-full max-w-[180px]"
               isLink={false}
-              onClick={() => Intercom('show')}
+              onClick={() => window.HubSpotConversations.widget.open()}
             />
           )}
         </div>
