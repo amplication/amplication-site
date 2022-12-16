@@ -178,7 +178,7 @@ const Features = () => {
         },
         {
           title: 'Join our community',
-          url: 'https://discord.gg/Z2CG3rUFnu',
+          url: 'https://amplication.com/discord',
           buttonClass: 'btn btn-primary ml-4',
           iconClass: 'social-link discord social-white',
         },

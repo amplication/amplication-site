@@ -35,7 +35,7 @@ const Support = () => {
                 where&nbsp;needed.
               </div>
               <div className="actions">
-                <Link href="https://discord.gg/Z2CG3rUFnu">
+                <Link href="https://amplication.com/discord">
                   <a target="_blank" className="btn btn-primary">
                     Join our Discord channel
                   </a>

@@ -65,7 +65,7 @@ const HeroBlock = () => {
                     </Link>
                     <div className="spacer"></div>
                     <Link
-                      href={'https://discord.gg/Z2CG3rUFnu'}
+                      href={'https://amplication.com/discord'}
                       passHref={true}
                     >
                       <a
