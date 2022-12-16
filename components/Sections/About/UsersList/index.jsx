@@ -20,6 +20,7 @@ import UserAvatar18 from '../../../../public/images/users/18.png';
 import UserAvatar19 from '../../../../public/images/users/19.png';
 import UserAvatar20 from '../../../../public/images/users/20.png';
 import UserAvatar21 from '../../../../public/images/users/21.png';
+import UserAvatar22 from '../../../../public/images/users/22.png';
 
 const UsersList = () => {
   const users = [
@@ -78,6 +79,12 @@ const UsersList = () => {
       description: 'ex CPO @ GitLab & VPP<br />\n@ SendGrid / Twilio',
     },
     {
+      avatar: UserAvatar22,
+      name: 'Opher Kahane',
+      position: 'Investor and Entrepreneur',
+      description: 'Various Startups',
+    },
+    {
       avatar: UserAvatar10,
       name: 'Ran Sarig ',
       position: 'Early stage investor',
@@ -92,8 +99,8 @@ const UsersList = () => {
     {
       avatar: UserAvatar12,
       name: 'Efi Cohen',
-      position: 'Head of Salesforce Israel R&D Center',
-      description: 'Salesforce',
+      position: 'Early stage investor',
+      description: 'ex Head of Salesforce Israel R&D Center',
     },
     {
       avatar: UserAvatar13,
