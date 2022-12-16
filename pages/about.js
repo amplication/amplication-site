@@ -1,9 +1,7 @@
 import HeroBlock from '../components/Sections/About/HeroBlock';
 import Steps from '../components/Sections/About/Steps';
-import LowCode from '../components/Sections/About/LowCode';
 import LogoList from '../components/Sections/About/LogoList';
 import UsersList from '../components/Sections/About/UsersList';
-import StartNow from '../components/Sections/About/StartNow';
 import {NextSeo} from 'next-seo';
 import {MainLayout} from '../layouts';
 import helpers from '../helpers';
@@ -31,31 +29,33 @@ const About = () => {
           cardType: 'summary_large_image',
         }}
       />
-      <main className="w-full font-poppins z-10 mb-12 laptop:mb-[100px] amplication-base">
+      <main className="w-full font-poppins z-10 amplication-base">
         <HeroBlock />
         <div className="bg-gradient">
-          <Steps />
-          <LowCode />
           <LogoList />
           <UsersList />
-          <StartNow
-            linkPrimary={{
-              href: 'https://app.amplication.com/',
-              title: 'Get started',
-            }}
-            linkSecondary={{
-              title: 'Join Community',
-            }}
-          />
+          <Steps />
+          {/*<LowCode />*/}
+          {/*<StartNow*/}
+          {/*  linkPrimary={{*/}
+          {/*    href: 'https://app.amplication.com/',*/}
+          {/*    title: 'Get started',*/}
+          {/*  }}*/}
+          {/*  linkSecondary={{*/}
+          {/*    title: 'Join Community',*/}
+          {/*  }}*/}
+          {/*/>*/}
         </div>
       </main>
     </>
   );
 };
+
 About.getLayout = function getLayout(page) {
   return (
     <MainLayout
       paddingTopClasses="laptop:pt-[143px]"
+      footerClass="bg-light-blue"
       hideFooterBanner={true}
       hideBackground={true}
     >
@@ -63,4 +63,5 @@ About.getLayout = function getLayout(page) {
     </MainLayout>
   );
 };
+
 export default About;

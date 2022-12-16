@@ -1,49 +1,58 @@
 import Image from 'next/image';
-import databaseIcon from '../../../../public/images/database.svg';
-import githubIcon from '../../../../public/images/github.svg';
-import dockerIcon from '../../../../public/images/docker.svg';
+import feature1 from '../../../../public/images/features/feature1.svg';
+import feature2 from '../../../../public/images/features/feature2.svg';
+import feature3 from '../../../../public/images/features/feature3.svg';
+import feature4 from '../../../../public/images/features/feature4.svg';
 
 const Features = () => {
   const features = [
     {
       title: 'Database',
-      icon: databaseIcon,
+      icon: feature1,
       content:
-        'Easily create data models and&nbsp;configure role-based\n' +
-        '              access&nbsp;control with a simple and intuitive UI or CLI',
+        'Easily generate all core BE functionality, including creation of entities & roles',
     },
     {
       title: 'GitHub',
-      icon: githubIcon,
-      content:
-        'Continuously push the generated application to your GitHub\n' +
-        '              repository',
+      icon: feature2,
+      content: 'Continuously sync the generated code to your GitHub repo ',
     },
     {
       title: 'Docker',
-      icon: dockerIcon,
+      icon: feature3,
+      content: 'Simply create microservices or monolithic architecture',
+    },
+    {
+      title: 'Docker',
+      icon: feature4,
       content:
-        'Get a Docker container with your database, a Node.js application\n' +
-        '              and a React client',
+        'Get a production-ready Node.js application and a Docker container to deploy anywhere',
     },
   ];
   return (
     <>
       <section className="page-welcome-solution bg-transparent">
-        <div className="container-custom">
+        <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
           <div className="solution">
             {features.map((item, index) => {
               return (
-                <div className="solution-card" key={index}>
-                  <span className="solution-icon">
-                    {item.icon && (
-                      <Image src={item.icon} alt={item.title ?? ''} />
-                    )}
-                  </span>
-                  <span
-                    className={'text-base text-white'}
+                <div
+                  className="solution-card !flex align-items-center flex-column"
+                  key={index}
+                >
+                  {item.icon && (
+                    <div className="flex justify-center max-w-[96px] large:max-w-[120px]">
+                      <Image
+                        objectFit="cover"
+                        src={item.icon}
+                        alt={item.title ?? ''}
+                      />
+                    </div>
+                  )}
+                  <div
+                    className="solution-content text-base large:text-xl text-white text-center max-w-[270px] mt-2 large:mt-4 large:!leading-8"
                     dangerouslySetInnerHTML={{__html: item.content}}
-                  ></span>
+                  ></div>
                 </div>
               );
             })}

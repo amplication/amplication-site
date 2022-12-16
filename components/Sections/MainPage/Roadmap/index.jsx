@@ -24,7 +24,7 @@ const Roadmap = () => {
           <div className="row d-flex justify-content-between align-items-stretch">
             <div className="col-sm-12 col-md-6 col-lg-4">
               <div className="roadmap-box">
-                <div className="roadmap-title">APIs &amp; UI</div>
+                <div className="roadmap-title font-dmmono">APIs &amp; UI</div>
                 <ul className="roadmap-list">
                   <li className="text-base done">GraphQL API</li>
                   <li className="text-base done">REST API</li>
@@ -36,7 +36,7 @@ const Roadmap = () => {
             </div>
             <div className="col-sm-12 col-md-6 col-lg-4">
               <div className="roadmap-box">
-                <div className="roadmap-title">Database</div>
+                <div className="roadmap-title font-dmmono">Database</div>
                 <ul className="roadmap-list">
                   <li className="text-base done">Design data model</li>
                   <li className="text-base done">PostgreSQL</li>
@@ -51,7 +51,7 @@ const Roadmap = () => {
             </div>
             <div className="col-sm-12 col-md-6 col-lg-4">
               <div className="roadmap-box">
-                <div className="roadmap-title">Framework</div>
+                <div className="roadmap-title font-dmmono">Framework</div>
                 <ul className="roadmap-list">
                   <li className="text-base done">Roles &amp; Permissions</li>
                   <li className="text-base done">Identity Management</li>
@@ -70,7 +70,7 @@ const Roadmap = () => {
             </div>
             <div className="col-sm-12 col-md-6 col-lg-4">
               <div className="roadmap-box">
-                <div className="roadmap-title">Microservices</div>
+                <div className="roadmap-title font-dmmono">Microservices</div>
                 <ul className="roadmap-list">
                   <li className="text-base done">Modular services</li>
                   <li className="text-base done">Queues</li>
@@ -85,7 +85,9 @@ const Roadmap = () => {
             </div>{' '}
             <div className="col-sm-12 col-md-6 col-lg-4">
               <div className="roadmap-box">
-                <div className="roadmap-title">Git &amp; Custom Code</div>
+                <div className="roadmap-title font-dmmono">
+                  Git &amp; Custom Code
+                </div>
                 <ul className="roadmap-list">
                   <li className="text-base done">Custom Code</li>
                   <li className="text-base done">Continuos sync with Git</li>
@@ -101,7 +103,7 @@ const Roadmap = () => {
             </div>
             <div className="col-sm-12 col-md-6 col-lg-4">
               <div className="roadmap-box">
-                <div className="roadmap-title">CI/CD</div>
+                <div className="roadmap-title font-dmmono">CI/CD</div>
                 <ul className="roadmap-list">
                   <li className="text-base done">Docker</li>
                   <li className="text-base text-white">Terraform</li>

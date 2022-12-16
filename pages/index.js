@@ -1,7 +1,5 @@
 import HeroBlock from '../components/Sections/MainPage/HeroBlock';
 import Features from '../components/Sections/MainPage/Features';
-import Developers from '../components/Sections/MainPage/Developers';
-import AboutUs from '../components/Sections/MainPage/AboutUs';
 import GetList from '../components/Sections/MainPage/GetList';
 import Steps from '../components/Sections/MainPage/Steps';
 import Roadmap from '../components/Sections/MainPage/Roadmap';
@@ -39,12 +37,6 @@ const Home = () => {
           {/*Features*/}
           <Features />
 
-          {/*Developers*/}
-          <Developers />
-
-          {/*About Us*/}
-          <AboutUs />
-
           {/*What do you get block*/}
           <GetList />
         </div>
@@ -59,6 +51,10 @@ const Home = () => {
   );
 };
 Home.getLayout = function getLayout(page) {
-  return <MainLayout paddingTopClasses="laptop:pt-[143px]">{page}</MainLayout>;
+  return (
+    <MainLayout paddingTopClasses="laptop:pt-[143px]" hideBackground={true}>
+      {page}
+    </MainLayout>
+  );
 };
 export default Home;

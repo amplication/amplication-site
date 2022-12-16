@@ -13,6 +13,7 @@ module.exports = {
     screens: {
       tablet: '640px',
       laptop: '992px',
+      middle: '1080px',
       medium: '1200px',
       'max-medium': {
         max: '1199px',
@@ -22,7 +23,7 @@ module.exports = {
       extra_large: '1920px',
     },
     maxWidth: {
-      'container-desktop': '1600px',
+      'container-desktop': '1712px',
       'container-desktop-enlarged': '1920px',
     },
     extend: {

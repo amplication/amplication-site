@@ -1,6 +1,5 @@
 import FooterBanner from './FooterBanner';
 import FooterBottomBar from './FooterBottomBar';
-import FooterContent from './FooterContent';
 import PropTypes from 'prop-types';
 
 const Footer = ({customClass, compactView, hideBanner}) => {
@@ -19,7 +18,7 @@ const Footer = ({customClass, compactView, hideBanner}) => {
               {!hideBanner && <FooterBanner />}
 
               {/*Footer Main Content*/}
-              <FooterContent />
+              {/*<FooterContent />*/}
             </>
           )}
 

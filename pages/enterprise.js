@@ -85,7 +85,7 @@ const Features = () => {
             >
               <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
                 {i === 0 && (
-                  <h2 className="!text-3xl laptop:!text-[56px] !leading-[40px] laptop:!leading-[68px] !font-semibold tablet:text-center !mb-12">
+                  <h2 className="!text-3xl !text-5xl large:!text-[56px] !leading-tight !font-semibold tablet:text-center !mb-12">
                     Let your teams write critical business logic instead of
                     managing redundant infrastructure code.
                   </h2>
@@ -102,11 +102,11 @@ const Features = () => {
                       'col-sm-12 col-md-6 pb-0 desktop:pt-8 pr-3'
                     }
                   >
-                    <div className="!text-[24px] desktop:!text-[32px] !leading-[36px] desktop:!leading-[48px] font-bold pb-3">
+                    <div className="!text-[24px] large:!text-[28px] !leading-snug font-bold pb-3">
                       {feature.title}
                     </div>
                     <div
-                      className="text-sm desktop:text-lg text-white desktop:!leading-[27px] max-w-[690px]"
+                      className="text-sm medium:text-base large:text-lg text-white !large max-w-[690px]"
                       dangerouslySetInnerHTML={{__html: feature.content}}
                     ></div>
                   </div>

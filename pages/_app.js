@@ -12,18 +12,15 @@ import Typed from 'typed.js';
 import '../styles/globals.css';
 import client from '../services/index';
 import * as analytics from '../lib/analytics';
-import useWindowSize from '../utils/useWindowSize';
 
 function Amplication({Component, pageProps}) {
-  const {width} = useWindowSize();
   const {asPath} = useRouter();
   const isBlogPage = Boolean(
     asPath.includes('/blog') || asPath.includes('/tags')
   );
 
-  const isHomePage = Boolean(asPath === '/');
-
   const router = useRouter();
+  const isHomePage = Boolean(router.pathname === '/');
 
   const canonicalUrl = (
     process.env.NEXT_PUBLIC_SITE + (router.asPath === '/' ? '' : router.asPath)
@@ -49,7 +46,7 @@ function Amplication({Component, pageProps}) {
     AOS.init({
       easing: 'ease-out-back',
       duration: 1000,
-      disable: router.asPath === '/enterprise' && width !== null && width < 640,
+      disable: true, //router.asPath === '/enterprise' && width !== null && width < 640,
     });
 
     const typingAnimations = document.querySelectorAll(

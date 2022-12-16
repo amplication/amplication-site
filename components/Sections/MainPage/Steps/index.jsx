@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import DeployIcon from '../../../../public/images/steps/deploy.svg';
 import DataModelsIcon from '../../../../public/images/steps/data-models.svg';
 import RolesIcon from '../../../../public/images/steps/roles.svg';
 import SyncWithGithubIcon from '../../../../public/images/steps/sync_with_github.svg';
@@ -26,31 +25,23 @@ const Steps = () => {
 
   return (
     <>
-      <section className="page-steps">
+      <section className="page-steps !pb-[200px]">
         <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
-          <div className="row align-items-center justify-content-center mb-4">
-            <h2 className="h2 text-center">
-              How Amplication backend development platform works?
-            </h2>
-          </div>
-
           <div className="row feature d-flex justify-content-between align-items-center">
             <div className="col-sm-12 col-md-6 pr-3">
+              <h2 className="h2 !text-4xl large:!text-[50px] !leading-snug max-w-[480px] large:max-w-[590px] !mb-10 large:!mb-14">
+                How Amplication backend development platform works?
+              </h2>
               <div className="bracket-box">
-                <span>Design</span>
-                models & roles
+                <span className="font-dmmono">Design</span> models and roles
               </div>
-              <div className="feature-description text-base text-white">
+              <div className="feature-description text-white text-base laptop:text-lg large:text-xl leading-normal">
                 Define data entities and role-based access through
                 Amplication&apos;s UI or CLI, and Amplication will auto-generate
                 your database, an Admin UI, and API.
               </div>
             </div>
-            <div
-              className="col-sm-12 col-md-6"
-              data-aos="fade-up-left"
-              style={{height: '620px'}}
-            >
+            <div className="col-sm-12 col-md-6" data-aos="fade-up-left">
               <ul className="nav nav-tabs feature-images-tabs" role="tablist">
                 <li className="nav-item" role="presentation">
                   <Link href={'#data-models'} passHref={true}>
@@ -111,26 +102,13 @@ const Steps = () => {
               </div>
             </div>
           </div>
-          <div className="row feature d-flex justify-content-between align-items-center">
-            <div className="col-sm-12 col-md-6 pr-3 order-md-2 pr-md-3 pl-lg-5">
-              <div className="bracket-box">
-                <span>Deploy</span> your app
-              </div>
-              <div className="feature-description text-base text-white">
-                Deploy your app to the Amplication cloud, or get a Docker
-                container to deploy elsewhere.
-              </div>
-            </div>
-            <div className="col-sm-12 col-md-6" data-aos="fade-up-right">
-              <Image src={DeployIcon} alt={'one click app deployment'} />
-            </div>
-          </div>
+
           <div className="row feature d-flex justify-content-between align-items-center">
             <div className="col-sm-12 col-md-6 pr-3">
               <div className="bracket-box">
-                <span>Sync</span> your app with GitHub
+                <span className="font-dmmono">Sync</span> your app with GitHub
               </div>
-              <div className="feature-description text-base text-white">
+              <div className="feature-description text-white text-base laptop:text-lg large:text-xl leading-normal">
                 Amplication syncs your app code into Node.js format to your
                 GitHub repository so you can keep developing and custom code
                 your app using your favorite IDE and the skills you have already
@@ -141,12 +119,13 @@ const Steps = () => {
               <Image src={SyncWithGithubIcon} alt={'github sync'} />
             </div>
           </div>
+
           <div className="row feature d-flex justify-content-between align-items-center">
-            <div className="col-sm-12 col-md-6 pr-3 order-md-2 pr-md-3 pl-lg-5">
+            <div className="col-sm-12 col-md-6 pr-3 pr-md-3">
               <div className="bracket-box">
-                <span>Access</span> your Node.js app
+                <span className="font-dmmono">Access</span> your Node.js app
               </div>
-              <div className="feature-description text-base text-white">
+              <div className="feature-description text-white text-base laptop:text-lg large:text-xl leading-normal">
                 Our auto-generated admin UI based on your data model schema
                 enables you to access your data with ease.
               </div>
@@ -158,10 +137,10 @@ const Steps = () => {
           <div className="row feature d-flex justify-content-between align-items-center">
             <div className="col-sm-12 col-md-6 pr-3">
               <div className="bracket-box no-bottom-margin">
-                <span>Connect</span>
+                <span className="font-dmmono">Connect</span>
               </div>
               <div className="bracket-box">your code using REST or GraphQL</div>
-              <div className="feature-description text-base text-white">
+              <div className="feature-description text-white text-base laptop:text-lg large:text-xl leading-normal">
                 Start working with your API from any REST or GraphQL client
                 (React, Angular, Vue, Flutter, iOS, Android, Go, Node.js, Python
                 and more).
