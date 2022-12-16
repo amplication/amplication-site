@@ -90,7 +90,7 @@ const HeroBlock = () => {
                     </Link>
                     <div className="spacer"></div>
                     <Link
-                      href={'https://github.com/amplication/amplication-site'}
+                      href={'https://github.com/amplication/amplication'}
                       passHref={true}
                     >
                       <a className="group btn btn-lg mb-4 text-white !w-auto !flex-none !px-0">
