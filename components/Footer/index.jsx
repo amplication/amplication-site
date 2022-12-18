@@ -1,8 +1,16 @@
 import FooterBanner from './FooterBanner';
+import FooterContent from './FooterContent';
 import FooterBottomBar from './FooterBottomBar';
 import PropTypes from 'prop-types';
+import {useRouter} from "next/router";
 
 const Footer = ({customClass, compactView, hideBanner}) => {
+  const router = useRouter();
+  console.log(router.asPath)
+  const showFooterContent = Boolean(
+      router.asPath === '/' || router.asPath === '/about'
+  );
+
   return (
     <>
       <footer
@@ -18,7 +26,9 @@ const Footer = ({customClass, compactView, hideBanner}) => {
               {!hideBanner && <FooterBanner />}
 
               {/*Footer Main Content*/}
-              {/*<FooterContent />*/}
+              {showFooterContent &&
+                  <FooterContent />
+              }
             </>
           )}
 

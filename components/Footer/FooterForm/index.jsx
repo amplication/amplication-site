@@ -7,6 +7,8 @@ const FooterForm = ({isCompactView}) => {
   const [emailFieldError, setEmailFieldError] = useState(false);
   const [name, setName] = useState('');
   const [nameFieldError, setNameFieldError] = useState(false);
+  const [lastName, setLastName] = useState('');
+  const [lastNameFieldError, setLastNameFieldError] = useState(false);
   const [source, setSource] = useState('');
   const [sourceFieldError, setSourceFieldError] = useState(false);
   const [formSuccess, setFormSuccess] = useState(null);
@@ -32,6 +34,12 @@ const FooterForm = ({isCompactView}) => {
     } else {
       setNameFieldError(false);
     }
+    if (!lastName) {
+      isValid = false;
+      setLastNameFieldError(true);
+    } else {
+      setLastNameFieldError(false);
+    }
     if (!source) {
       isValid = false;
       setSourceFieldError(true);
@@ -49,6 +57,7 @@ const FooterForm = ({isCompactView}) => {
     const body = {
       EMAIL: email,
       NAME: name,
+      LAST_NAME: lastName,
       SOURCE: source,
     };
 
@@ -83,60 +92,21 @@ const FooterForm = ({isCompactView}) => {
       ' laptop:flex-row laptop:flex-wrap laptop:items-start laptop:justify-between';
   }
 
-  let fieldContainerClasses = 'relative my-0';
+  let fieldContainerClasses = 'relative my-0 pb-5';
   if (!isCompactView) {
     fieldContainerClasses += ' laptop:w-[calc(50%-8px)] laptop:my-0';
   }
 
   return (
-    <div className="w-full mb-12 laptop:mb-0 laptop:max-w-[580px] laptop:mt-4 laptop:w-auto laptop:ml-3">
+    <div className="w-full mb-12 laptop:mb-0 laptop:max-w-[580px] laptop:mt-4 laptop:w-auto laptop:ml-3 relative">
       <form className={formClasses} onSubmit={e => submitSubscriptionForm(e)}>
-        <div
-          className={
-            emailFieldError
-              ? fieldContainerClasses
-              : fieldContainerClasses + ' pb-5'
-          }
-        >
-          <div className="relative">
-            <input
-              type="email"
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-              name="EMAIL"
-              placeholder="email@example.com"
-              className={`leading-input focus:border-purple !shadow-hidden block w-full rounded-lg border border-solid bg-purple-dark py-2 pl-3 pr-8 font-poppins text-sm text-white placeholder:text-gray ${
-                emailFieldError ? '' : 'hover:border-purple'
-              } ${emailFieldError ? 'border-pink' : 'border-lite'}`}
-            />
-            {email && (
-              <span
-                className="absolute	right-4 top-[50%] translate-y-[-50%] cursor-pointer text-sm animate-fadeIn text-white"
-                onClick={() => setEmail('')}
-              >
-                ✕
-              </span>
-            )}
-          </div>
-          {emailFieldError && (
-            <span className="text-left block w-full text-xs text-pink py-0.5 ">
-              {fieldErrorMessage}
-            </span>
-          )}
-        </div>
-        <div
-          className={
-            nameFieldError
-              ? fieldContainerClasses
-              : fieldContainerClasses + ' pb-5'
-          }
-        >
+        <div className={fieldContainerClasses}>
           <div className="relative">
             <input
               type="text"
               value={name}
               onChange={e => setName(e.target.value)}
-              placeholder="Name"
+              placeholder="First name*"
               name="NAME"
               className={`leading-input focus:border-purple !shadow-hidden block w-full rounded-lg border border-solid bg-purple-dark py-2 pl-3 pr-8 font-poppins text-sm text-white placeholder:text-gray ${
                 nameFieldError ? '' : 'hover:border-purple'
@@ -157,7 +127,61 @@ const FooterForm = ({isCompactView}) => {
             </span>
           )}
         </div>
-        <div className={sourceFieldError ? ' pb-2' : 'w-full pb-7'}>
+        <div className={fieldContainerClasses}>
+          <div className="relative">
+            <input
+              type="text"
+              value={lastName}
+              onChange={e => setLastName(e.target.value)}
+              placeholder="Last name*"
+              name="LAST_NAME"
+              className={`leading-input focus:border-purple !shadow-hidden block w-full rounded-lg border border-solid bg-purple-dark py-2 pl-3 pr-8 font-poppins text-sm text-white placeholder:text-gray ${
+                  lastNameFieldError ? '' : 'hover:border-purple'
+              } ${lastNameFieldError ? 'border-pink' : 'border-lite'}`}
+            />
+            {name && (
+              <span
+                className="absolute	right-4 top-[50%] translate-y-[-50%] cursor-pointer text-sm animate-fadeIn text-white"
+                onClick={() => setLastName('')}
+              >
+                ✕
+              </span>
+            )}
+          </div>
+          {lastNameFieldError && (
+              <span className="text-left block w-full text-xs text-pink py-0.5 ">
+              {fieldErrorMessage}
+            </span>
+          )}
+        </div>
+        <div className={"w-full pb-5"}>
+          <div className="relative">
+            <input
+                type="email"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+                name="EMAIL"
+                placeholder="email#example.com*"
+                className={`leading-input focus:border-purple !shadow-hidden block w-full rounded-lg border border-solid bg-purple-dark py-2 pl-3 pr-8 font-poppins text-sm text-white placeholder:text-gray ${
+                    emailFieldError ? '' : 'hover:border-purple'
+                } ${emailFieldError ? 'border-pink' : 'border-lite'}`}
+            />
+            {email && (
+                <span
+                    className="absolute	right-4 top-[50%] translate-y-[-50%] cursor-pointer text-sm animate-fadeIn text-white"
+                    onClick={() => setEmail('')}
+                >
+                ✕
+              </span>
+            )}
+          </div>
+          {emailFieldError && (
+              <span className="text-left block w-full text-xs text-pink py-0.5 ">
+              {fieldErrorMessage}
+            </span>
+          )}
+        </div>
+        <div className={"w-full pb-7"}>
           <div className="relative">
             <input
               type="text"
@@ -204,13 +228,18 @@ const FooterForm = ({isCompactView}) => {
             className="w-full cursor-pointer flex justify-center items-center bg-purple-bright text-white font-poppins font-normal text-center transition-all duration-300 rounded py-2 px-5 mt-2 laptop:mt-0 hover:bg-purple-bright-hover max-w-[182px]"
           />
         </div>
-        {formSuccess === false && (
+        {formSuccess !== false && (
           <div
             className="w-full laptop:my-1 text-left text-xs text-pink py-1.5"
             dangerouslySetInnerHTML={{__html: afterFormSubmitMessage}}
           ></div>
         )}
       </form>
+      {formSuccess === false && (
+          <h2 className="absolute inset-0 bg-purple-dark flex align-items-center justify-center w-full text-center text-white text-2xl font-bold">
+            {afterFormSubmitMessage}
+          </h2>
+      )}
     </div>
   );
 };
