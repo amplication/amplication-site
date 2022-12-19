@@ -57,7 +57,7 @@ const UsersList = () => {
     {
       avatar: UserAvatar6,
       name: 'Ran Ribenzaft',
-      position: 'Co-founder & CEO',
+      position: 'Co-founder & CTO',
       description: 'Epsagon (acquired by Cisco)',
     },
     {
@@ -69,8 +69,8 @@ const UsersList = () => {
     {
       avatar: UserAvatar8,
       name: 'Barak Schoster',
-      position: 'Co-founder & CEO',
-      description: 'Bridgecrew<br />\n(acquired by Palo Alto Networks)',
+      position: 'Venture Partner',
+      description: 'Battery Ventures',
     },
     {
       avatar: UserAvatar9,
