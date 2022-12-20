@@ -9716,7 +9716,7 @@ body {
 }
 @media (min-width: 1200px) {
   .amplication-base section.page-welcome .header-and-video {
-    max-height: calc(100vh - 400px);
+    max-height: 65vh;
   }
 }
 .amplication-base .header-and-video .content-block {
