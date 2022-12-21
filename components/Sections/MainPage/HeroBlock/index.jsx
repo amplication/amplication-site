@@ -22,7 +22,7 @@ const HeroBlock = () => {
     <>
       <section className="page-welcome">
         <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
-          <div className="row align-items-center large:pt-24">
+          <div className="row align-items-center large:pt-12">
             <div className="col-12 text-center">
               <div className="header-and-video align-items-center">
                 <div className="content-block">
