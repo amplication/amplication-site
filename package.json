@@ -40,6 +40,7 @@
     "rehype-raw": "^6.1.1",
     "remark-gfm": "^3.0.1",
     "save": "^2.5.0",
+    "slugify": "^1.6.5",
     "swiper": "^8.3.2",
     "typed.js": "^2.0.12"
   },

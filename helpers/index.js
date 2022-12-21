@@ -1,3 +1,5 @@
+import slugify from 'slugify';
+
 /* eslint no-useless-escape: 0 */
 const helpers = {
   isValidUrl: string => {
@@ -106,6 +108,27 @@ const helpers = {
 
   getPostPerPage: () => {
     return 9;
+  },
+  /**
+   * Generates slug from string
+   * @param {string} str
+   * @returns {string}
+   */
+  slugify: str =>
+    slugify(str, {
+      lower: true,
+      strict: true,
+      locale: 'en',
+    }),
+  /**
+   * Takes Markdown and demotes headings if there's a Heading level 1 (`<h1>`)
+   * @param {string} str
+   * @returns {string}
+   */
+  demoteHeadings: (str = '') => {
+    const h1Match = str.match(/^#\s/gm);
+    const hasH1 = h1Match ? h1Match.length > 0 : false;
+    return hasH1 ? str.replaceAll(/^#{1,5}\s/gm, m => '#' + m) : str;
   },
 };
 

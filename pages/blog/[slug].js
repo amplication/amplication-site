@@ -17,6 +17,7 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 
 import client from '../../services';
 import helpers from '../../helpers';
+import Header from '../../components/Posts/Header';
 import Thumbnail from '../../components/Posts/PostCard/Tumbnail';
 import Author from '../../components/Posts/PostCard/Author';
 import Tags from '../../components/Posts/PostCard/Tags';
@@ -25,6 +26,7 @@ import PostCard from '../../components/Posts/PostCard';
 import Sidebar from '../../components/Sidebar';
 import errorPage from '../404';
 import {MainLayout} from '../../layouts';
+import TOC from '../../components/Posts/TOC';
 
 const Post = ({posts, post}) => {
   if (!post) {
@@ -34,6 +36,8 @@ const Post = ({posts, post}) => {
   const title = post.metaTitle || post.title;
   const description =
     post.metaDescription || helpers.removeMarkdown(post.content);
+  const content = helpers.demoteHeadings(post.content);
+
   return (
     <>
       <NextSeo
@@ -120,11 +124,18 @@ const Post = ({posts, post}) => {
                 alt={post.title}
               />
               <div className="font-normal order-5 blog-content text-base text-white">
+                <div className="d-xl-none">
+                  <TOC markdown={content} />
+                </div>
                 <ReactMarkdown
                   remarkPlugins={[remarkGfm]}
                   rehypePlugins={[rehypeRaw, rehypeHighlight]}
+                  components={{
+                    h2: Header,
+                    h3: Header,
+                  }}
                 >
-                  {post.content}
+                  {content}
                 </ReactMarkdown>
               </div>
             </>
@@ -132,7 +143,9 @@ const Post = ({posts, post}) => {
         </div>
 
         <aside className="max-medium:w-full medium:max-w-[425px] medium:w-[32%] order-9 laptop:order-2">
-          <Sidebar />
+          <Sidebar>
+            <TOC markdown={content} open={true} />
+          </Sidebar>
         </aside>
 
         {Array.isArray(posts) && !!posts.length && (
