@@ -9716,8 +9716,8 @@ body {
 }
 @media (min-width: 1200px) {
   .amplication-base section.page-welcome {
-    padding-bottom: clamp(.1rem, 2vh, 3rem);
     padding-top: clamp(.1rem, 2vh, 3rem);
+    padding-bottom: clamp(.1rem, 2vh, 3rem);
   }
 }
 .amplication-base .header-and-video .content-block {
