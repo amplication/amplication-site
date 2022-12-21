@@ -37,7 +37,6 @@ const Post = ({posts, post}) => {
   const description =
     post.metaDescription || helpers.removeMarkdown(post.content);
   const content = helpers.demoteHeadings(post.content);
-  const toc = TOC({markdown: content});
 
   return (
     <>
@@ -125,7 +124,9 @@ const Post = ({posts, post}) => {
                 alt={post.title}
               />
               <div className="font-normal order-5 blog-content text-base text-white">
-                {toc}
+                <div className="d-xl-none">
+                  <TOC markdown={content} />
+                </div>
                 <ReactMarkdown
                   remarkPlugins={[remarkGfm]}
                   rehypePlugins={[rehypeRaw, rehypeHighlight]}
@@ -142,8 +143,9 @@ const Post = ({posts, post}) => {
         </div>
 
         <aside className="max-medium:w-full medium:max-w-[425px] medium:w-[32%] order-9 laptop:order-2">
-          {toc}
-          <Sidebar />
+          <Sidebar>
+            <TOC markdown={content} open={true} />
+          </Sidebar>
         </aside>
 
         {Array.isArray(posts) && !!posts.length && (

@@ -69,7 +69,10 @@ function Amplication({Component, pageProps}) {
       require('bootstrap/dist/js/bootstrap');
       require('lity/dist/lity.min.js');
       require('lity/dist/lity.min.css');
-      if (!isBlogPage) {
+      require('../public/styles/vars.css');
+      if (isBlogPage) {
+        require('../public/styles/blog.css');
+      } else {
         require('../public/styles/style.css');
       }
     }
