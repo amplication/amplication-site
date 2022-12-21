@@ -125,8 +125,9 @@ const helpers = {
    * @param {string} str
    * @returns {string}
    */
-  demoteHeadings: str => {
-    const hasH1 = str.match(/^#\s/gm).length > 0;
+  demoteHeadings: (str = '') => {
+    const h1Match = str.match(/^#\s/gm);
+    const hasH1 = h1Match ? h1Match.length > 0 : false;
     return hasH1 ? str.replaceAll(/^#{1,5}\s/gm, m => '#' + m) : str;
   },
 };
