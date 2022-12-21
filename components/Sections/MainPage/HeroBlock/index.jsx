@@ -114,11 +114,7 @@ const HeroBlock = () => {
                     </Link>
                   </div>
                 </div>
-                <div
-                  className="video flex align-items-center"
-                  data-aos="zoom-in"
-                  data-aos-delay="200"
-                >
+                <div className="video flex align-items-center">
                   <Link
                     href={'https://www.youtube.com/watch?v=wCJ2jF1IU7U'}
                     passHref={true}

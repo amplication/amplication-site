@@ -41,7 +41,7 @@ const Steps = () => {
                 your database, an Admin UI, and API.
               </div>
             </div>
-            <div className="col-sm-12 col-md-6" data-aos="fade-up-left">
+            <div className="col-sm-12 col-md-6">
               <ul className="nav nav-tabs feature-images-tabs" role="tablist">
                 <li className="nav-item" role="presentation">
                   <Link href={'#data-models'} passHref={true}>
@@ -115,7 +115,7 @@ const Steps = () => {
                 mastered.
               </div>
             </div>
-            <div className="col-sm-12 col-md-6" data-aos="fade-up-left">
+            <div className="col-sm-12 col-md-6">
               <Image src={SyncWithGithubIcon} alt={'github sync'} />
             </div>
           </div>
@@ -130,7 +130,7 @@ const Steps = () => {
                 enables you to access your data with ease.
               </div>
             </div>
-            <div className="col-sm-12 col-md-6" data-aos="fade-up-left">
+            <div className="col-sm-12 col-md-6">
               <Image src={AdminUiIcon} alt={'admin ui'} />
             </div>
           </div>
@@ -146,7 +146,7 @@ const Steps = () => {
                 and more).
               </div>
             </div>
-            <div className="col-sm-12 col-md-6" data-aos="fade-up-left">
+            <div className="col-sm-12 col-md-6">
               <Image src={ConnectIcon} alt={'rest api'} />
             </div>
           </div>

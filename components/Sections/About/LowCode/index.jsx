@@ -14,7 +14,7 @@ const LowCode = () => {
             <div className="bracket-box !mb-6 !text-xl desktop:!text-4xl">
               <span>Why</span> Open-source?
             </div>
-            <div className="feature-description text-sm tablet:text-base desktop:text-lg text-white desktop:w-[124%] max-w-[642px]">
+            <div className="feature-description text-sm tablet:text-base desktop:text-lg text-white large:w-[124%] max-w-[642px]">
               We believe open-source, app development and simplicity should go
               hand-in-hand. Amplication builds the next generation of
               development tools with the help of the community, for the

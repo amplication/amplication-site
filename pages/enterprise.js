@@ -110,10 +110,7 @@ const Features = () => {
                       dangerouslySetInnerHTML={{__html: feature.content}}
                     ></div>
                   </div>
-                  <div
-                    className="col-sm-12 col-md-6 desktop:left-4 desktop:top-6 feature-image"
-                    data-aos="fade-up-left"
-                  >
+                  <div className="col-sm-12 col-md-6 desktop:left-4 desktop:top-6 feature-image">
                     {feature.image && (
                       <Image
                         className="max-w-[710px] !visible"
