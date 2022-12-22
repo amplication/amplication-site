@@ -66,7 +66,6 @@ function Amplication({Component, pageProps}) {
 
     // Run code on client-side only : ensure document is here
     if (typeof document !== 'undefined') {
-      require('bootstrap/dist/js/bootstrap');
       require('lity/dist/lity.min.js');
       require('lity/dist/lity.min.css');
       require('../public/styles/vars.css');
