@@ -21,6 +21,7 @@ import UserAvatar19 from '../../../../public/images/users/19.png';
 import UserAvatar20 from '../../../../public/images/users/20.png';
 import UserAvatar21 from '../../../../public/images/users/21.png';
 import UserAvatar22 from '../../../../public/images/users/22.png';
+import UserAvatar23 from '../../../../public/images/users/23.png';
 
 const UsersList = () => {
   const users = [
@@ -41,6 +42,12 @@ const UsersList = () => {
       name: 'Adi Gozes ',
       position: 'Partner',
       description: 'Entrée Capital',
+    },
+    {
+      avatar: UserAvatar23,
+      name: 'Yanai Oron',
+      position: 'General Partner',
+      description: 'Vertex Ventures',
     },
     {
       avatar: UserAvatar4,
