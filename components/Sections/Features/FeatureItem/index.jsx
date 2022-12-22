@@ -46,10 +46,7 @@ const FeatureItem = ({
                 </div>
               )}
             </div>
-            <div
-              className="col-sm-12 col-md-5 feature-image"
-              data-aos="fade-up-left"
-            >
+            <div className="col-sm-12 col-md-5 feature-image">
               {image && (
                 <Image
                   src={image}

@@ -110,8 +110,6 @@ const GetList = () => {
                 return (
                   <div
                     className="feature-card flex align-items-center"
-                    data-aos-delay="50"
-                    data-aos-anchor="#features"
                     key={index}
                   >
                     <div className="flex justify-center max-w-[96px] large:max-w-[120px]">

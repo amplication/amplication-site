@@ -24,7 +24,7 @@ const Steps = () => {
               </Link>
             </div>
             <div className="col-md-12 col-lg-6">
-              <div className="feature-description text-sm tablet:text-base desktop:text-lg text-white desktop:w-[124%] max-w-[642px]">
+              <div className="feature-description text-sm tablet:text-base desktop:text-lg text-white large:w-[124%] max-w-[642px]">
                 We are a group of developers who loves open source. Our mission
                 is to simplify application development, unlock frictionless
                 developer experience and bring best practices to any developer
