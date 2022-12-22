@@ -13,6 +13,9 @@ module.exports = {
     screens: {
       tablet: '640px',
       laptop: '992px',
+      'max-laptop': {
+        max: '991px',
+      },
       middle: '1080px',
       medium: '1200px',
       'max-medium': {

@@ -122,6 +122,12 @@ const Menu = () => {
     }
   }, [asPath]);
 
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      setHoveredLink('');
+    });
+  }, [width]);
+
   return (
     <>
       <div
@@ -196,7 +202,7 @@ const Menu = () => {
                     <>
                       <span
                         className={
-                          'text-gray text-xl text-center laptop:text-left laptop:text-base p-7 laptop:py-5 laptop:px-2 desktop:px-[15px] cursor-pointer justify-center flex ' +
+                          'text-gray hover:text-purple-bright text-xl text-center laptop:text-left laptop:text-base p-7 laptop:py-5 laptop:px-2 desktop:px-[15px] cursor-pointer justify-center flex ' +
                           (hoveredLink === item.href.pathname
                             ? ' !text-white laptop:!text-purple-bright'
                             : 'border-[#353B57] border-b-[1px] laptop:border-b-0')
@@ -249,7 +255,7 @@ const Menu = () => {
                             >
                               <Link href={subItem.href}>
                                 <a
-                                  className={`text-xl hover:text-white laptop:text-base text-center laptop:text-left block py-7 laptop:p-4 !leading-snug bg-purple-bright laptop:bg-purple-light ${
+                                  className={`text-xl max-laptop:hover:opacity-90 hover:text-white laptop:text-base text-center laptop:text-left block py-7 laptop:p-4 !leading-snug bg-purple-bright laptop:bg-purple-light ${
                                     asPath !== url
                                       ? 'text-white laptop:text-gray laptop:bg-purple-light'
                                       : 'laptop:!text-white laptop:!bg-purple-bright'
