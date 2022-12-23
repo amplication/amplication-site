@@ -21,6 +21,8 @@
     "@popperjs/core": "^2.11.6",
     "aos": "^2.3.4",
     "graphql": "^16.6.0",
+    "iframe-resizer-react": "^1.1.0",
+    "jquery": "^3.6.1",
     "jsdom": "^19.0.0",
     "jsonp": "^0.2.1",
     "lity": "^2.4.1",

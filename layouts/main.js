@@ -1,3 +1,5 @@
+import IframeResizer from 'iframe-resizer-react';
+
 import Background from '../components/Background';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
@@ -21,11 +23,18 @@ const MainLayout = ({
     >
       <Header />
       {children}
+
+      <IframeResizer
+        src="https://embed.testimonial.to/w/amplication"
+        style={{width: '1px', minWidth: '100%'}}
+      />
+
       <Footer
         customClass={footerClass}
         compactView={footerCompactView}
         hideBanner={hideFooterBanner}
       />
+
       {!hideBackground && <Background />}
     </div>
   );
