@@ -10779,9 +10779,7 @@ body {
 .amplication-base .btn-outline-primary:hover {
   background-color: #5e2de9;
 }
-.amplication-base .features-page-feature:nth-of-type(even) {
-  background-color: var(--black90);
-}
+
 .amplication-base .features-page-feature .feature-page-card {
   display: flex;
 }
@@ -10894,8 +10892,11 @@ body {
 .amplication-base .features-page-feature .feature-page-card .feature-image img {
   max-width: 300px;
 }
-.amplication-base .features-page-feature:nth-child(even) {
+.amplication-base .features-page-feature {
   background-color: var(--black90);
+}
+.amplication-base .features-page-feature:nth-child(even) {
+  background-color: var(--dark);
 }
 .amplication-base .step-section:nth-child(even) {
   background-color: var(--dark);

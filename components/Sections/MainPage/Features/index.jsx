@@ -7,26 +7,26 @@ import feature4 from '../../../../public/images/features/feature4.svg';
 const Features = () => {
   const features = [
     {
-      title: 'Database',
-      icon: feature1,
+      title: 'Microservices',
+      icon: feature3,
       content:
-        'Easily generate all core BE functionality, including creation of entities & roles',
+        'Simply configure your architecture, with APIs, data models, database, and more',
+    },
+    {
+      title: 'Code Generation',
+      icon: feature1,
+      content: 'Automatically generate all boilerplate and infrastructure code',
     },
     {
       title: 'GitHub',
       icon: feature2,
-      content: 'Continuously sync the generated code to your GitHub repo ',
-    },
-    {
-      title: 'Docker',
-      icon: feature3,
-      content: 'Simply create microservices or monolithic architecture',
-    },
-    {
-      title: 'Docker',
-      icon: feature4,
       content:
-        'Get a production-ready Node.js application and a Docker container to deploy anywhere',
+        'Continuously get Pull Requests with the generated code to your Git repositories',
+    },
+    {
+      title: 'Customize',
+      icon: feature4,
+      content: 'Freely customize and extend the generated code',
     },
   ];
   return (

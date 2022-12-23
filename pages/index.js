@@ -1,11 +1,15 @@
-import HeroBlock from '../components/Sections/MainPage/HeroBlock';
+import {NextSeo} from 'next-seo';
+import LogoList from '../components/Sections/About/LogoList';
+import StartNow from '../components/Sections/About/StartNow';
+import EnterpriseFeatures from '../components/Sections/Enterprise/EnterpriseFeatures';
+import Facts from '../components/Sections/Enterprise/Facts';
+import HeroBlock from '../components/Sections/Enterprise/HeroBlock';
+import Slider from '../components/Sections/Enterprise/Slider';
 import Features from '../components/Sections/MainPage/Features';
 import GetList from '../components/Sections/MainPage/GetList';
-import Steps from '../components/Sections/MainPage/Steps';
 import Roadmap from '../components/Sections/MainPage/Roadmap';
-import {NextSeo} from 'next-seo';
-import {MainLayout} from '../layouts';
 import helpers from '../helpers';
+import {MainLayout} from '../layouts';
 
 const Home = () => {
   return (
@@ -29,9 +33,11 @@ const Home = () => {
         }}
       />
 
-      <main className="w-full font-poppins z-10 mb-12 laptop:mb-[100px] amplication-base">
+      <main className="w-full font-poppins  mb-12 laptop:mb-[100px] amplication-base">
         {/*Hero Block*/}
         <HeroBlock />
+        <Slider />
+        <Facts />
 
         <div className="bg-gradient">
           {/*Features*/}
@@ -40,19 +46,28 @@ const Home = () => {
           {/*What do you get block*/}
           <GetList />
         </div>
-
-        {/*Steps*/}
-        <Steps />
+        <EnterpriseFeatures />
 
         {/*Roadmap*/}
         <Roadmap />
+        <LogoList />
+        <StartNow
+          title="Build faster, with no limits"
+          linkPrimary={{
+            href: 'https://app.amplication.com/',
+            title: 'Get started',
+          }}
+          linkOutline={{
+            title: 'Contact us',
+          }}
+        />
       </main>
     </>
   );
 };
 Home.getLayout = function getLayout(page) {
   return (
-    <MainLayout paddingTopClasses="laptop:pt-[143px]" hideBackground={true}>
+    <MainLayout hideBackground={true} hideFooterBanner={true}>
       {page}
     </MainLayout>
   );
