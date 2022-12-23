@@ -1,4 +1,5 @@
 import {NextSeo} from 'next-seo';
+import Testimonials from '../components/Common/Testimonials';
 import LogoList from '../components/Sections/About/LogoList';
 import StartNow from '../components/Sections/About/StartNow';
 import EnterpriseFeatures from '../components/Sections/Enterprise/EnterpriseFeatures';
@@ -46,6 +47,7 @@ const Home = () => {
           {/*What do you get block*/}
           <GetList />
         </div>
+        <Testimonials />
         <EnterpriseFeatures />
 
         {/*Roadmap*/}
