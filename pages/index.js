@@ -38,6 +38,9 @@ const Home = () => {
         {/*Hero Block*/}
         <HeroBlock />
         <Slider />
+        <div className="bg-dark">
+          <Testimonials />
+        </div>
         <Facts />
 
         <div className="bg-gradient">
@@ -47,12 +50,13 @@ const Home = () => {
           {/*What do you get block*/}
           <GetList />
         </div>
-        <Testimonials />
         <EnterpriseFeatures />
 
         {/*Roadmap*/}
         <Roadmap />
-        <LogoList />
+        <div className="bg-light-blue">
+          <LogoList />
+        </div>
         <StartNow
           title="Build faster, with no limits"
           linkPrimary={{

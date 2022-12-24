@@ -7,11 +7,11 @@ const LogoList = () => {
   const logos = [LogoNorwest, LogoVertex, LogoEntree];
   return (
     <>
-      <section className="background-transparent w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
+      <section className=" border-b-[1px] border-dark-black-70 background-transparent !py-24 w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
         <h2 className="main-title !mb-6 text-left tablet:!text-center laptop:!mb-20 !text-4xl large:!text-[50px] max-medium:max-w-[562px] !mx-auto">
           Backed by visionary global investors
         </h2>
-        <div className="logotypes d-flex justify-evently align-items-center !pb-12 desktop:!pb-[172px] border-b-[1px] border-dark-black-70">
+        <div className="logotypes d-flex justify-evently align-items-center ">
           {logos.map((logo, index) => {
             return (
               <span className="px-[0px] tablet:px-12" key={index}>
