@@ -27,6 +27,9 @@ import {NextSeo} from 'next-seo';
 import {MainLayout} from '../layouts';
 import helpers from '../helpers';
 
+import HeroBlock from '../components/Sections/MainPage/HeroBlock';
+import Steps from '../components/Sections/MainPage/Steps';
+
 const Features = () => {
   const features = [
     {
@@ -252,6 +255,9 @@ const Features = () => {
       />
 
       <main className="w-full font-poppins z-10 mb-12 laptop:mb-[100px] amplication-base">
+        <HeroBlock />
+        {/*Steps*/}
+        <Steps />
         {features.map(feature => {
           return (
             <FeatureItem

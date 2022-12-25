@@ -11,7 +11,7 @@ const Testimonials = () => {
         </div>
         <div className="row align-items-center justify-content-center">
           <IframeResizer
-            src="https://embed.testimonial.to/carousel/all/amplication?theme=light&autoplay=off&showmore=off&one-row=on&same-height=on&one-slide=on"
+            src="https://embed.testimonial.to/carousel/all/amplication?theme=light&autoplay=off&showmore=on&one-row=on&same-height=on"
             style={{width: '1px', minWidth: '100%'}}
           />
         </div>

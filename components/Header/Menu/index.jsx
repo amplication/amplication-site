@@ -20,31 +20,21 @@ const Menu = () => {
       isActive: false,
     },
     {
-      title: 'Product',
+      title: 'Developers',
       href: {
-        pathname: '/product',
+        pathname: '/features',
       },
       target: '_blank',
       isActive: false,
-      menuItems: [
-        {
-          title: 'Features',
-          href: {
-            pathname: '/features',
-          },
-          target: '_self',
-          isActive: Boolean(asPath === '/features'),
-        },
-        {
-          title: 'Roadmap',
-          href: {
-            pathname: '/',
-            hash: 'roadmap',
-          },
-          target: '_self',
-          isActive: false,
-        },
-      ],
+    },
+    {
+      title: 'Roadmap',
+      href: {
+        pathname: '/',
+        hash: 'roadmap',
+      },
+      target: '_self',
+      isActive: false,
     },
     {
       title: 'Pricing',
