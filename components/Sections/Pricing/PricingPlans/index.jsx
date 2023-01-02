@@ -9,7 +9,7 @@ export const PricingPlans = () => {
             entitlementsTitle: plan => {
               return plan.basePlan
                 ? `Everything in ${plan.basePlan.displayName} plan, plus:`
-                : `All core backend functionality:`;
+                : 'All core backend functionality:';
             },
             planCTAButton: {
               startNew: 'Start Now',
@@ -26,7 +26,7 @@ export const PricingPlans = () => {
             },
           }}
           onPlanSelected={async ({plan}) => {
-            window.location.href = `app.amplication.com/login&plan=${plan}`;
+            window.location.href = `http://app.amplication.com/login?plan=${plan.id}`;
           }}
         />
       </StiggProvider>

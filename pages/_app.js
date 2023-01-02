@@ -11,6 +11,7 @@ import Typed from 'typed.js';
 
 import '../styles/globals.css';
 import '../styles/stigg.css';
+// eslint-disable-next-line node/no-extraneous-import
 import 'react-loading-skeleton/dist/skeleton.css';
 import client from '../services/index';
 import * as analytics from '../lib/analytics';
