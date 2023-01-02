@@ -1,6 +1,10 @@
 .stigg-wrapper  * {
   box-sizing: content-box;
 }
+
+.amplication-base .stigg-wrapper  p {
+  margin-bottom: 0;
+}
 .stigg-skeleton-loader-billing-period {
     display: none !important;
   }
