@@ -1,4 +1,3 @@
-import Background from '../components/Background';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import PropTypes from 'prop-types';
@@ -6,7 +5,6 @@ import {concatClassnames} from '../utils';
 
 const MainLayout = ({
   children,
-  hideBackground,
   hideFooterBanner,
   footerCompactView,
   footerClass,
@@ -26,14 +24,12 @@ const MainLayout = ({
         compactView={footerCompactView}
         hideBanner={hideFooterBanner}
       />
-      {!hideBackground && <Background />}
     </div>
   );
 };
 
 MainLayout.propTypes = {
   children: PropTypes.node,
-  hideBackground: PropTypes.bool,
   hideFooterBanner: PropTypes.bool,
   footerCompactView: PropTypes.bool,
   footerClass: PropTypes.string,
@@ -41,7 +37,6 @@ MainLayout.propTypes = {
 };
 
 MainLayout.defaultProps = {
-  hideBackground: false,
   hideFooterBanner: false,
   footerCompactView: false,
   footerClass: '',

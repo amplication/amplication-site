@@ -28,6 +28,6 @@ const Community = () => {
   );
 };
 Community.getLayout = function getLayout(page) {
-  return <MainLayout hideBackground>{page}</MainLayout>;
+  return <MainLayout>{page}</MainLayout>;
 };
 export default Community;
