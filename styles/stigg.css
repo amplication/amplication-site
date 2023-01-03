@@ -1,17 +1,16 @@
-.stigg-wrapper  * {
+.stigg-wrapper * {
   box-sizing: content-box;
 }
 
-.amplication-base .stigg-wrapper  p {
+.amplication-base .stigg-wrapper p {
   margin-bottom: 0;
 }
-
 
 .stigg-skeleton-loader-billing-period {
   display: none !important;
 }
 
-.stigg-skeleton-loader-plans-container div[class*="PlanOfferingSkeleton"] {
+.stigg-skeleton-loader-plans-container > div {
   max-width: 244px !important;
   min-width: 244px !important;
   padding-left: 24px !important;
@@ -61,14 +60,14 @@
 
 .stigg-plan-offering-container .stigg-plan-header::before {
   display: block;
-  content: "";
+  content: '';
   height: 18px;
   margin-bottom: 8px;
 }
 
 .stigg-current-plan .stigg-plan-header::before {
   display: block;
-  content: "Current plan";
+  content: 'Current plan';
   font-weight: 300;
   font-size: 12px;
   line-height: 18px;
@@ -103,7 +102,7 @@
   margin-top: 0 !important;
   font-size: 12px !important;
 }
-.stigg-price-text span[class*="PriceUnitSpan"] {
+.stigg-price-text span[class*='PriceUnitSpan'] {
   font-weight: 400 !important;
   font-size: 18px !important;
   line-height: 27px !important;
