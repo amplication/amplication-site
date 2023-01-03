@@ -142,11 +142,7 @@ const Features = () => {
 };
 Features.getLayout = function getLayout(page) {
   return (
-    <MainLayout
-      footerClass="bg-light-blue"
-      hideFooterBanner={true}
-      hideBackground={true}
-    >
+    <MainLayout footerClass="bg-light-blue" hideFooterBanner={true}>
       {page}
     </MainLayout>
   );
