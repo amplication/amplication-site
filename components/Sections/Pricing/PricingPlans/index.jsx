@@ -26,7 +26,13 @@ export const PricingPlans = () => {
             },
           }}
           onPlanSelected={async ({plan}) => {
-            window.location.href = `http://app.amplication.com/login?plan=${plan.id}`;
+            if (plan.id === 'plan-amplication-free') {
+              window.location.href = `http://app.amplication.com/login`;
+            } else if (plan.id === 'plan-amplication-pro') {
+              window.location.href = `http://app.amplication.com/purchase`;
+            } else {
+              window.HubSpotConversations.widget.open();
+            }
           }}
         />
       </StiggProvider>
