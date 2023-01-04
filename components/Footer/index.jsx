@@ -1,4 +1,4 @@
-import FooterBanner from './FooterBanner';
+import StartNow from '../../components/Sections/About/StartNow';
 import FooterBottomBar from './FooterBottomBar';
 import PropTypes from 'prop-types';
 
@@ -15,7 +15,20 @@ const Footer = ({customClass, compactView, hideBanner}) => {
           {!compactView && (
             <>
               {/*Banner*/}
-              {!hideBanner && <FooterBanner />}
+              {!hideBanner && (
+                <div className="amplication-base">
+                  <StartNow
+                    title="Build faster, with no limits"
+                    linkPrimary={{
+                      href: 'https://app.amplication.com/',
+                      title: 'Get started',
+                    }}
+                    linkOutline={{
+                      title: 'Contact us',
+                    }}
+                  />
+                </div>
+              )}
 
               {/*Footer Main Content*/}
               {/*<FooterContent />*/}
