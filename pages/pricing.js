@@ -1,9 +1,17 @@
 import HeroBlock from '../components/Sections/Pricing/HeroBlock';
-import PricesTable from '../components/Sections/Pricing/PricesTable';
 import CTA from '../components/Sections/Pricing/CTA';
 import {NextSeo} from 'next-seo';
 import {MainLayout} from '../layouts';
 import helpers from '../helpers';
+import dynamic from 'next/dynamic';
+
+export const PricingPlans = dynamic(
+  () =>
+    import('../components/Sections/Pricing/PricingPlans').then(
+      mod => mod.PricingPlans
+    ),
+  {ssr: false}
+);
 
 const Pricing = () => {
   return (
@@ -18,10 +26,8 @@ const Pricing = () => {
         <div className="pricing-page">
           {/*Hero Block*/}
           <HeroBlock />
-
           {/*Block with prices*/}
-          <PricesTable />
-
+          <PricingPlans />
           {/*Pricing Footer*/}
           <CTA />
         </div>

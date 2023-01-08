@@ -25,20 +25,20 @@ import joinUs from '../../../../public/images/icons/join-the-team.svg';
 const TeamBlock = () => {
   const members = [
     {
-      name: 'Ariel Weinberger',
-      position: 'VP R&D',
-      image: arielWeinberger,
+      name: 'Yuval Hazaz',
+      position: 'Founder & CEO',
+      image: yuvalHanaz,
       links: [
         {
-          href: 'https://www.linkedin.com/in/arielweinberger/',
+          href: 'https://www.linkedin.com/in/yuvalhazaz/',
           iconClass: 'linkedin',
         },
         {
-          href: 'https://github.com/arielweinberger',
+          href: 'https://github.com/yuval-hazaz',
           iconClass: 'github',
         },
         {
-          href: 'https://twitter.com/arielweinberger',
+          href: 'https://twitter.com/Yuvalhazaz1',
           iconClass: 'twitter',
         },
       ],
@@ -90,21 +90,17 @@ const TeamBlock = () => {
       ],
     },
     {
-      name: 'Yuval Hazaz',
-      position: 'Founder & CEO',
-      image: yuvalHanaz,
+      name: 'Vika Goncharuk',
+      position: 'Office Manager',
+      image: vikaGoncharuk,
       links: [
         {
-          href: 'https://www.linkedin.com/in/yuvalhazaz/',
+          href: 'https://www.linkedin.com/in/victoria-goncharuk-35504885/',
           iconClass: 'linkedin',
         },
         {
-          href: 'https://github.com/yuval-hazaz',
+          href: 'https://github.com/VikaGon',
           iconClass: 'github',
-        },
-        {
-          href: 'https://twitter.com/Yuvalhazaz1',
-          iconClass: 'twitter',
         },
       ],
     },
@@ -147,17 +143,21 @@ const TeamBlock = () => {
       ],
     },
     {
-      name: 'Vika Goncharuk',
-      position: 'Office Manager',
-      image: vikaGoncharuk,
+      name: 'Ariel Weinberger',
+      position: 'Principal Engineer',
+      image: arielWeinberger,
       links: [
         {
-          href: 'https://www.linkedin.com/in/victoria-goncharuk-35504885/',
+          href: 'https://www.linkedin.com/in/arielweinberger/',
           iconClass: 'linkedin',
         },
         {
-          href: 'https://github.com/VikaGon',
+          href: 'https://github.com/arielweinberger',
           iconClass: 'github',
+        },
+        {
+          href: 'https://twitter.com/arielweinberger',
+          iconClass: 'twitter',
         },
       ],
     },

@@ -33,10 +33,6 @@ const errorPage = () => {
   );
 };
 errorPage.getLayout = function getLayout(page) {
-  return (
-    <MainLayout footerCompactView hideBackground>
-      {page}
-    </MainLayout>
-  );
+  return <MainLayout footerCompactView>{page}</MainLayout>;
 };
 export default errorPage;
