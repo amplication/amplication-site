@@ -6138,7 +6138,7 @@ body {
   background-color: var(--black80);
 }
 .amplication-base .border {
-  border: 1px solid #dee2e6 !important;
+  border: 1px solid #dee2e6;
 }
 .amplication-base .border-top {
   border-top: 1px solid #dee2e6 !important;
@@ -9727,6 +9727,7 @@ body {
   max-width: 52%;
   overflow: visible;
   margin-left: 24px;
+  width: 52%;
 }
 @media (max-width: 1199.98px) {
   .amplication-base section.page-welcome .header-and-video {
@@ -10394,7 +10395,6 @@ body {
 }
 .amplication-base .bracket-box {
   font-weight: 500;
-  display: flex;
   align-items: center;
   font-size: 1.5rem;
   margin-bottom: 1.75rem;

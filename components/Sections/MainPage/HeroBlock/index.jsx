@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import ImageIcon from '../../../../public/images/image.svg';
+import VideoWatch from '../../../../public/images/video-watch.svg';
 import {useEffect, useState} from 'react';
 
 const HeroBlock = () => {
@@ -27,6 +27,27 @@ const HeroBlock = () => {
               <div className="header-and-video align-items-center">
                 <div className="content-block">
                   <div className="animated-header">
+                    <Link
+                      href={'https://github.com/amplication/amplication'}
+                      passHref={true}
+                    >
+                      <a className="group btn btn-lg mb-4 !text-xs !leading-5 !h-fit text-white !w-auto !flex-none !rounded-full border border-solid !border-dark-black-70 !px-5 hover:border-lite">
+                        <svg
+                          className="mr-2"
+                          width="10"
+                          height="10"
+                          viewBox="0 0 10 10"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M5 0C2.24 0 0 2.295 0 5.126c0 2.265 1.433 4.187 3.42 4.865.25.047.33-.112.33-.247V8.79c-1.39.31-1.68-.605-1.68-.605-.228-.592-.556-.75-.556-.75-.454-.318.035-.311.035-.311.502.035.766.528.766.528.446.783 1.17.557 1.455.426.045-.331.174-.558.318-.685-1.11-.13-2.278-.57-2.278-2.534 0-.56.195-1.017.515-1.376-.052-.13-.223-.651.048-1.357 0 0 .42-.137 1.376.526.398-.114.826-.17 1.251-.173.425.002.853.059 1.253.173.954-.663 1.373-.526 1.373-.526.272.706.101 1.228.05 1.357.32.359.514.816.514 1.376 0 1.969-1.17 2.403-2.283 2.53.18.158.343.47.343.949v1.406c0 .137.08.297.334.247C8.569 9.31 10 7.39 10 5.126 10 2.296 7.761 0 5 0Z"
+                            fill="#fff"
+                          />
+                        </svg>
+                        {starsCount}K <span className="pl-2">Star Us</span>
+                      </a>
+                    </Link>
                     <h1 className="main-title">
                       <span className="animated-header__fixed-text">
                         Instantly generate
@@ -65,64 +86,32 @@ const HeroBlock = () => {
                     </Link>
                     <div className="spacer"></div>
                     <Link
-                      href={'https://amplication.com/discord'}
+                      href={'https://docs.amplication.com/getting-started/'}
                       passHref={true}
                     >
                       <a
                         target="_blank"
-                        className="btn btn-outline-secondary btn-lg  mb-4 text-black80"
+                        className="btn btn-outline-light btn-lg mb-4 text-black80"
                         rel="noreferrer"
                       >
-                        <span className="social-link discord social-white">
-                          {' '}
-                        </span>
-                        Join Discord
-                      </a>
-                    </Link>
-                    <div className="d-lg-none spacer"></div>
-                    <Link
-                      href={'https://docs.amplication.com/getting-started'}
-                      passHref={true}
-                    >
-                      <a className="d-lg-none btn btn-outline-secondary btn-lg mb-4 text-black80">
                         Documentation
-                      </a>
-                    </Link>
-                    <div className="spacer"></div>
-                    <Link
-                      href={'https://github.com/amplication/amplication'}
-                      passHref={true}
-                    >
-                      <a className="group btn btn-lg mb-4 text-white !w-auto !flex-none !px-0">
-                        <svg
-                          className="mr-2"
-                          width="22"
-                          height="22"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M11 0C5 0 0 5 0 11.3c0 5 3.2 9.2 7.5 10.7.6 0 .8-.3.8-.6v-2C5.2 20 4.5 18 4.5 18c-.5-1.3-1.3-1.6-1.3-1.6-1-.7.1-.7.1-.7 1.1 0 1.7 1.1 1.7 1.1 1 1.8 2.6 1.3 3.2 1 0-.8.4-1.3.7-1.5-2.5-.3-5-1.3-5-5.6 0-1.2.4-2.2 1.1-3-.1-.3-.5-1.5.1-3 0 0 1-.3 3 1.1a10.3 10.3 0 0 1 5.6 0c2-1.4 3-1.1 3-1.1.6 1.5.2 2.7 0 3 .8.8 1.2 1.8 1.2 3 0 4.3-2.6 5.3-5 5.6.4.3.8 1 .8 2v3.1c0 .3.1.7.7.6 4.4-1.5 7.5-5.7 7.5-10.7C22 5 17 0 11 0Z"
-                            fill="#fff"
-                          />
-                        </svg>
-                        {starsCount}K{' '}
-                        <span className="underline group-hover:no-underline pl-2">
-                          Star Us
-                        </span>
                       </a>
                     </Link>
                   </div>
                 </div>
                 <div className="video flex align-items-center">
-                  <Link
-                    href={'https://www.youtube.com/watch?v=wCJ2jF1IU7U'}
-                    passHref={true}
-                  >
-                    <a data-lity={true}>
-                      <Image src={ImageIcon} alt={''} />
-                    </a>
-                  </Link>
+                  <div className="relative align-items-center !max-w-[92%] w-full min-h-[600px] hidden medium:flex align-items-center laptop:!max-w-[56%]">
+                    <div className="absolute laptop:my-auto !-mt-24 w-[90vw] max-w-[1440px] medium:flex align-items-center">
+                      <Link
+                        href={'https://www.youtube.com/watch?v=wCJ2jF1IU7U'}
+                        passHref={true}
+                      >
+                        <a data-lity={true}>
+                          <Image src={VideoWatch} alt={''} />
+                        </a>
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

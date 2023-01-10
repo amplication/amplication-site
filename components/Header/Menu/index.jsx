@@ -20,39 +20,21 @@ const Menu = () => {
       isActive: false,
     },
     {
-      title: 'Enterprise',
+      title: 'Developers',
       href: {
-        pathname: '/enterprise',
+        pathname: '/developers',
       },
       target: '_self',
-      isActive: Boolean(asPath === '/enterprise'),
+      isActive: Boolean(asPath === '/developers'),
     },
     {
-      title: 'Product',
+      title: 'Roadmap',
       href: {
-        pathname: '/product',
+        pathname: '/',
+        hash: 'roadmap',
       },
-      target: '_blank',
+      target: '_self',
       isActive: false,
-      menuItems: [
-        {
-          title: 'Features',
-          href: {
-            pathname: '/features',
-          },
-          target: '_self',
-          isActive: Boolean(asPath === '/features'),
-        },
-        {
-          title: 'Roadmap',
-          href: {
-            pathname: '/',
-            hash: 'roadmap',
-          },
-          target: '_self',
-          isActive: false,
-        },
-      ],
     },
     {
       title: 'Pricing',
@@ -103,6 +85,14 @@ const Menu = () => {
           },
           target: '_blank',
           isActive: false,
+        },
+        {
+          title: 'Features',
+          href: {
+            pathname: '/features',
+          },
+          target: '_self',
+          isActive: Boolean(asPath === '/features'),
         },
       ],
     },
