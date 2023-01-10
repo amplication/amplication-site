@@ -1,10 +1,12 @@
-const Roadmap = () => {
+import PropTypes from 'prop-types';
+
+const Roadmap = ({customClass}) => {
   const mystyle = {
     color: ' #A787FF',
   };
   return (
     <>
-      <section className="page-roadmap" id="roadmap">
+      <section className={'page-roadmap ' + customClass} id="roadmap">
         <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
           <div className="row m-container p-container align-items-center mb-4 text-white">
             <h2 className="roadmap-heading">
@@ -133,6 +135,14 @@ const Roadmap = () => {
       </section>
     </>
   );
+};
+
+Roadmap.propTypes = {
+  customClass: PropTypes.string,
+};
+
+Roadmap.defaultProps = {
+  customClass: '',
 };
 
 export default Roadmap;

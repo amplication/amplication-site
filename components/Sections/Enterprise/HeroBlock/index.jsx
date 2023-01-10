@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import Screenshot2 from '../../../../public/images/screenshots/screenshot-2.png';
-import Button from '../../../Common/Button';
+import VideoWatch from '../../../../public/images/video-watch.png';
 
 const HeroBlock = () => {
   return (
@@ -17,11 +16,11 @@ const HeroBlock = () => {
                       <span className="block font-bold">
                         Build microservices <br /> 20x faster.
                       </span>
-                      <span className="block text-[24px] desktop:text-[28px] leading-snug font-bold">
+                      <span className="block text-[28px] desktop:text-[34px] leading-snug font-bold">
                         Reliably. Securely. Consistently.
                       </span>
                     </h1>
-                    <div className="explainer text-base laptop:text-lg large:text-xl text-white !mt-8">
+                    <div className="explainer text-sm laptop:text-base large:text-lg text-white !mt-8">
                       Amplication is changing the way backend services are built
                       and delivered. We help you build backend services with the
                       highest standards, consistency, and scalability across
@@ -34,18 +33,20 @@ const HeroBlock = () => {
                         Get started
                       </a>
                     </Link>
-                    <div className="spacer"></div>
-                    <Button
-                      text="Contact us"
-                      className="outline-button !text-lg !h-10 mb-2 laptop:ml-2 w-full max-w-[180px]"
-                      isLink={false}
-                      onClick={() => window.HubSpotConversations.widget.open()}
-                    />
                   </div>
                 </div>
-                <div className="relative align-items-center !max-w-[90%] w-full min-h-[600px] hidden medium:flex align-items-center laptop:!max-w-[56%]">
-                  <div className="absolute laptop:my-auto w-[67vw] max-w-[1280px] medium:flex align-items-center">
-                    <Image src={Screenshot2} alt={''} />
+                <div className="video flex align-items-center">
+                  <div className="relative align-items-center !max-w-[92%] w-full min-h-[600px] hidden medium:flex align-items-center laptop:!max-w-[56%]">
+                    <div className="absolute laptop:my-auto !-mt-24 w-[90vw] max-w-[1440px] medium:flex align-items-center">
+                      <Link
+                        href={'https://www.youtube.com/watch?v=wCJ2jF1IU7U'}
+                        passHref={true}
+                      >
+                        <a data-lity={true}>
+                          <Image src={VideoWatch} alt={''} />
+                        </a>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>

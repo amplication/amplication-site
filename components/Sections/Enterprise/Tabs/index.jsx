@@ -254,13 +254,13 @@ const Tabs = () => {
               infrastructure code
             </h2>
             <div className="flex max-medium:!flex-col mt-20">
-              <ul className="w-[25%] max-medium:w-full flex flex-column">
+              <ul className="w-[25%] max-medium:w-full max-medium:overflow-x-scroll scrollbar-hide snap-x flex flex-column max-medium:!flex-row">
                 {features.map((feature, index) => {
                   return (
                     <li
                       className={
                         (activeTab === feature.title ? 'text-white ' : '') +
-                        'py-2 cursor-pointer font-semibold text-sm leading-5 text-[#686F8C] hover:text-white'
+                        'py-2 max-medium:pr-4 max-medium:whitespace-nowrap cursor-pointer font-semibold text-sm leading-5 text-[#686F8C] hover:text-white'
                       }
                       onClick={() => setActiveTab(feature.title)}
                       key={index}

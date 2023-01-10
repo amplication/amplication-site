@@ -45,7 +45,7 @@ const BottomBar = () => {
         {router.asPath !== '/enterprise' && (
           <Link href={'/enterprise'} passHref={true}>
             <a
-              className="inline laptop:hidden float-right text-lg py-2 hover:text-white text-[#54DBEE] transition-all font-light relative ml-auto"
+              className="hidden float-right text-lg py-2 hover:text-white text-[#54DBEE] transition-all font-light relative ml-auto"
               style={{top: '-' + scrollY + 'px'}}
             >
               Enterprise

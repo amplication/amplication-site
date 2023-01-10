@@ -25,7 +25,7 @@ const Facts = () => {
 
   return (
     <>
-      <section className="!bg-light-blue !py-10 !pb-4 laptop:!pt-36 laptop:!pb-28">
+      <section className="!bg-light-blue !py-10 !pb-4 laptop:!py-20">
         <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
           <div className="row align-items-center justify-content-center">
             {facts.map((fact, i) => {
@@ -37,7 +37,7 @@ const Facts = () => {
                   <div
                     className={
                       (i !== 0 ? 'border-l-[1px] ' : '') +
-                      'rounded-lg border-dark-black-70 min-h-[120px] desktop:min-h-[212px] flex flex-column align-items-center !p-5 laptop:!py-12 laptop:!px-10'
+                      'rounded-lg border-dark-black-70 min-h-[120px] desktop:min-h-[212px] flex flex-column align-items-center !p-5 laptop:!py-12 laptop:!px-16'
                     }
                   >
                     <div

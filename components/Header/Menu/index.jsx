@@ -86,15 +86,10 @@ const Menu = () => {
           target: '_blank',
           isActive: false,
         },
-        {
-          title: 'Features',
-          href: {
-            pathname: '/features',
-          },
-          target: '_self',
-          isActive: Boolean(asPath === '/features'),
-        },
       ],
+    },
+    {
+      title: '',
     },
     {
       title: 'Log In',
@@ -143,6 +138,17 @@ const Menu = () => {
           <ul className="flex flex-col justify-start items-stretch laptop:flex-row justify:end items:center">
             {menuItems.map((item, index) => {
               const menuItemClasses = 'menu__item relative';
+              if (item.title === '') {
+                return (
+                  <li
+                    className="py-2 mx-2 items-center hidden laptop:flex"
+                    key={index}
+                  >
+                    <span className="w-[1px] h-[34px] bg-light-blue"></span>
+                  </li>
+                );
+              }
+
               return (
                 <li
                   key={index.toString()}
@@ -291,7 +297,7 @@ const Menu = () => {
             hoverBackgroundColor="purpleBrightHover"
             isLink={true}
             href="https://app.amplication.com/login"
-            className="text-[15px] h-[40px] whitespace-nowrap !px-4 desktop:!px-8"
+            className="text-[15px] h-[40px] whitespace-nowrap !px-4"
           />
         </div>
       </div>
