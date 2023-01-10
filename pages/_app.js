@@ -23,7 +23,7 @@ function Amplication({Component, pageProps}) {
   );
 
   const router = useRouter();
-  const isHomePage = Boolean(router.pathname === '/');
+  const isDevPage = Boolean(router.pathname === '/developers');
 
   const canonicalUrl = (
     process.env.NEXT_PUBLIC_SITE + (router.asPath === '/' ? '' : router.asPath)
@@ -55,7 +55,7 @@ function Amplication({Component, pageProps}) {
     const typingAnimations = document.querySelectorAll(
       '#animated-header-typed'
     );
-    if (typingAnimations.length && isHomePage) {
+    if (typingAnimations.length && isDevPage) {
       new Typed('#animated-header-typed', {
         stringsElement: '#animated-header-content',
         typeSpeed: 60,
@@ -78,7 +78,7 @@ function Amplication({Component, pageProps}) {
         require('../public/styles/style.css');
       }
     }
-  }, [isBlogPage, isHomePage]);
+  }, [isBlogPage, isDevPage]);
 
   // Use the layout defined at the page level, if available
   const getLayout = Component.getLayout || (page => page);

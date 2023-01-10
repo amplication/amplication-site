@@ -27,9 +27,9 @@ export const PricingPlans = () => {
           }}
           onPlanSelected={async ({plan}) => {
             if (plan.id === 'plan-amplication-free') {
-              window.location.href = `https://app.amplication.com/login`;
+              window.location.href = 'https://app.amplication.com/login';
             } else if (plan.id === 'plan-amplication-pro') {
-              window.location.href = `https://app.amplication.com/purchase`;
+              window.location.href = 'https://app.amplication.com/purchase';
             } else {
               window.HubSpotConversations.widget.open();
             }

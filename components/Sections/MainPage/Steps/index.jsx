@@ -19,19 +19,20 @@ const Steps = () => {
     setActiveTab(value);
     setTimeout(fading, animationDelay);
   };
+
   const fading = function () {
     setFadingState(true);
   };
 
   return (
     <>
-      <section className="page-steps !pb-[200px]">
+      <section className="page-steps">
         <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
-          <div className="row feature d-flex justify-content-between align-items-center">
+          <div className="row feature d-flex justify-content-between align-items-center !my-12">
+            <h2 className="w-full !text-3xl !text-5xl large:!text-[56px] !leading-tight !font-semibold tablet:text-center !mb-12">
+              How Amplication backend development platform works?
+            </h2>
             <div className="col-sm-12 col-md-6 pr-3">
-              <h2 className="h2 !text-4xl large:!text-[50px] !leading-snug max-w-[480px] large:max-w-[590px] !mb-10 large:!mb-14">
-                How Amplication backend development platform works?
-              </h2>
               <div className="bracket-box">
                 <span className="font-dmmono">Design</span> models and roles
               </div>
@@ -42,7 +43,10 @@ const Steps = () => {
               </div>
             </div>
             <div className="col-sm-12 col-md-6">
-              <ul className="nav nav-tabs feature-images-tabs" role="tablist">
+              <ul
+                className="nav nav-tabs feature-images-tabs d-none"
+                role="tablist"
+              >
                 <li className="nav-item" role="presentation">
                   <Link href={'#data-models'} passHref={true}>
                     <a
@@ -102,9 +106,16 @@ const Steps = () => {
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div className="row feature d-flex justify-content-between align-items-center">
+      <section className="page-steps !bg-light-blue">
+        <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
+          <div className="row feature d-flex justify-content-between align-items-center !my-12">
             <div className="col-sm-12 col-md-6 pr-3">
+              <Image src={SyncWithGithubIcon} alt={'github sync'} />
+            </div>
+            <div className="col-sm-12 col-md-6">
               <div className="bracket-box">
                 <span className="font-dmmono">Sync</span> your app with GitHub
               </div>
@@ -115,12 +126,13 @@ const Steps = () => {
                 mastered.
               </div>
             </div>
-            <div className="col-sm-12 col-md-6">
-              <Image src={SyncWithGithubIcon} alt={'github sync'} />
-            </div>
           </div>
+        </div>
+      </section>
 
-          <div className="row feature d-flex justify-content-between align-items-center">
+      <section className="page-steps">
+        <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
+          <div className="row feature d-flex justify-content-between align-items-center !my-12">
             <div className="col-sm-12 col-md-6 pr-3 pr-md-3">
               <div className="bracket-box">
                 <span className="font-dmmono">Access</span> your Node.js app
@@ -134,20 +146,27 @@ const Steps = () => {
               <Image src={AdminUiIcon} alt={'admin ui'} />
             </div>
           </div>
-          <div className="row feature d-flex justify-content-between align-items-center">
+        </div>
+      </section>
+
+      <section className="page-steps !bg-light-blue">
+        <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
+          <div className="row feature d-flex justify-content-between align-items-center !my-12">
             <div className="col-sm-12 col-md-6 pr-3">
-              <div className="bracket-box no-bottom-margin">
-                <span className="font-dmmono">Connect</span>
+              <Image src={ConnectIcon} alt={'rest api'} />
+            </div>
+            <div className="col-sm-12 col-md-6">
+              <div className="bracket-box">
+                <span className="font-dmmono">Connect</span> your code using
+                REST or GraphQL
               </div>
-              <div className="bracket-box">your code using REST or GraphQL</div>
               <div className="feature-description text-white text-base laptop:text-lg large:text-xl leading-normal">
+                your code using REST or GraphQL
+                <br />
                 Start working with your API from any REST or GraphQL client
                 (React, Angular, Vue, Flutter, iOS, Android, Go, Node.js, Python
                 and more).
               </div>
-            </div>
-            <div className="col-sm-12 col-md-6">
-              <Image src={ConnectIcon} alt={'rest api'} />
             </div>
           </div>
         </div>
