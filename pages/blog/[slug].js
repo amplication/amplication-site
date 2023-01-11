@@ -34,9 +34,9 @@ const Post = ({posts, post}) => {
   }
 
   const title = post.metaTitle || post.title;
-  const description =
-    post.metaDescription || helpers.removeMarkdown(post.content);
-  const content = helpers.demoteHeadings(post.content);
+  const description = helpers.trimText(
+    post.metaDescription || helpers.removeMarkdown(post.content)
+  );
 
   return (
     <>
@@ -125,17 +125,18 @@ const Post = ({posts, post}) => {
               />
               <div className="font-normal order-5 blog-content text-base text-white">
                 <div className="d-xl-none">
-                  <TOC markdown={content} />
+                  <TOC markdown={post.content} />
                 </div>
                 <ReactMarkdown
                   remarkPlugins={[remarkGfm]}
                   rehypePlugins={[rehypeRaw, rehypeHighlight]}
                   components={{
+                    h1: Header,
                     h2: Header,
                     h3: Header,
                   }}
                 >
-                  {content}
+                  {post.content}
                 </ReactMarkdown>
               </div>
             </>
@@ -144,7 +145,7 @@ const Post = ({posts, post}) => {
 
         <aside className="max-medium:w-full medium:max-w-[425px] medium:w-[32%] order-9 laptop:order-2">
           <Sidebar>
-            <TOC markdown={content} open={true} />
+            <TOC markdown={post.content} open={true} />
           </Sidebar>
         </aside>
 

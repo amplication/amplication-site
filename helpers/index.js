@@ -130,6 +130,18 @@ const helpers = {
     const hasH1 = h1Match ? h1Match.length > 0 : false;
     return hasH1 ? str.replaceAll(/^#{1,5}\s/gm, m => '#' + m) : str;
   },
+  /**
+   * Trims text to defined length and adds appropriate ellipses
+   * @param {string} str
+   * @param {number} length Defaults to 160
+   * @returns {string}
+   */
+  trimText: (str, length = 160) => {
+    if (str.length > length) {
+      str = str.substring(0, length - 3) + '...';
+    }
+    return str;
+  },
 };
 
 export default helpers;
