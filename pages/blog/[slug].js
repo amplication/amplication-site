@@ -110,7 +110,7 @@ const Post = ({posts, post}) => {
                 className={'order-2 mt-4 laptop:mt-8'}
                 avatar={post.author?.profileImage}
                 name={post.author?.firstName + ' ' + post.author?.lastName}
-                date={post.createdAt}
+                date={post.publishedAt}
                 large={true}
               />
               <Thumbnail
@@ -208,7 +208,7 @@ export const getStaticProps = async context => {
       query: gql`
         query {
           posts(where: {slug: {equals: "${context.params.slug}"}}) {
-            createdAt
+            publishedAt
             content
             draft
             featuredImage
@@ -247,7 +247,7 @@ export const getStaticProps = async context => {
       posts = await client.query({
         query: gql`
           query {
-            posts(take: 3, orderBy: {createdAt: Desc}, where: {slug: {not: "${post.slug}"} ${tags}}) {
+            posts(take: 3, orderBy: {publishedAt: Desc}, where: {slug: {not: "${post.slug}"} ${tags}}) {
               slug
               title
               featuredImage
@@ -261,7 +261,7 @@ export const getStaticProps = async context => {
                 lastName
                 profileImage
               }
-              createdAt
+              publishedAt
             }
           }
         `,
@@ -291,7 +291,7 @@ export async function getStaticPaths() {
   const {data} = await client.query({
     query: gql`
       query {
-        posts(take: 1000, orderBy: {createdAt: Desc}) {
+        posts(take: 1000, orderBy: {publishedAt: Desc}) {
           slug
           title
         }
