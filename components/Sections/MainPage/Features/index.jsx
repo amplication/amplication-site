@@ -40,7 +40,7 @@ const Features = () => {
             {features.map((item, index) => {
               return (
                 <div
-                  className="solution-card !flex align-items-center p-8 flex-column !max-w-none !bg-light-blue !border-dark-black-70 rounded-lg border-solid border"
+                  className="solution-card !flex align-items-center p-8 pt-6 flex-column !max-w-none !bg-light-blue !border-dark-black-70 rounded-lg border-solid border"
                   key={index}
                 >
                   {item.icon && (
@@ -53,7 +53,7 @@ const Features = () => {
                     </div>
                   )}
                   <div
-                    className="solution-content text-base large:text-lg text-white text-center tablet:max-w-[270px] mt-2 large:mt-6 large:!leading-7"
+                    className="solution-content text-base large:text-lg text-white text-center tablet:max-w-[270px] mt-3 large:mt-6 large:!leading-7"
                     dangerouslySetInnerHTML={{__html: item.content}}
                   ></div>
                 </div>

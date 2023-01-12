@@ -5,7 +5,7 @@ import VideoWatch from '../../../../public/images/video-watch.png';
 const HeroBlock = () => {
   return (
     <>
-      <section className="page-welcome !pt-4 !pb-8 desktop:!pt-36 desktop:!pb-[13rem] !overflow-visible">
+      <section className="page-welcome !pt-4 !pb-8 large:!py-[9vh] xlg:!py-[13vh]">
         <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
           <div className="row align-items-center">
             <div className="col-12 text-center">
@@ -37,7 +37,7 @@ const HeroBlock = () => {
                 </div>
                 <div className="video flex align-items-center">
                   <div className="relative align-items-center !max-w-[92%] w-full min-h-[600px] hidden medium:flex align-items-center laptop:!max-w-[56%]">
-                    <div className="absolute laptop:my-auto !-mt-24 w-[90vw] max-w-[1440px] medium:flex align-items-center">
+                    <div className="absolute laptop:my-auto !-mt-24 w-[84vw] medium:flex align-items-center">
                       <Link
                         href={'https://www.youtube.com/watch?v=wCJ2jF1IU7U'}
                         passHref={true}

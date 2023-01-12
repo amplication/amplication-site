@@ -7316,7 +7316,7 @@ body {
 }
 .amplication-base .pr-3,
 .amplication-base .px-3 {
-  padding-right: 1rem !important;
+  padding-right: 1rem;
 }
 .amplication-base .pb-3,
 .amplication-base .py-3 {
@@ -7324,7 +7324,7 @@ body {
 }
 .amplication-base .pl-3,
 .amplication-base .px-3 {
-  padding-left: 1rem !important;
+  padding-left: 1rem;
 }
 .amplication-base .p-4 {
   padding: 1.5rem !important;
@@ -9977,7 +9977,7 @@ body {
 .amplication-base .feature-card {
   box-sizing: border-box;
   font-size: 0.8rem;
-  padding: 1rem;
+  padding: 1rem 2rem 1rem 1rem;
   border: 1px solid transparent;
   margin: 1rem 0;
   text-align: center;
@@ -9985,10 +9985,6 @@ body {
   transition: 0.3s ease-in-out;
   flex-direction: column;
   border-radius: 8px;
-}
-.amplication-base .feature-card:hover {
-  border: 1px solid #373D57;
-  box-shadow: 0 24px 24px -2.04167px rgba(11, 14, 24, 0.2);
 }
 .amplication-base .feature-card:hover .feature-card-text {
   text-decoration: none;
@@ -10126,14 +10122,14 @@ body {
   font-size: calc(1.325rem + 0.9vw);
   line-height: 135%;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .amplication-base .roadmap-paragraph {
   font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
-  font-size: 1.25rem;
-  line-height: 2.25rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
   display: flex;
   align-items: center;
 }
@@ -10156,9 +10152,9 @@ body {
   justify-content: stretch;
   font-style: normal;
   font-weight: 500;
-  font-size: 1.125rem;
+  font-size: 0.875rem;
   line-height: 130%;
-  color: #7950ED;
+  color: #A787FF;
   margin-bottom: 1rem;
   display: inline-block;
   transform: rotate(-90deg) translate(calc(-100% + -45px), 0px);
@@ -10181,8 +10177,8 @@ body {
   font-weight: 400;
   font-size: 18px;
   line-height: 27px;
-  margin-bottom: 1rem;
-  margin-left: 3rem;
+  margin-bottom: 0.25rem;
+  margin-left: 2.75rem;
   margin-right: 3rem;
   padding-left: 0;
 }
@@ -10191,7 +10187,7 @@ body {
   color: var(--white);
   width: 100%;
   margin: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 .amplication-base .roadmap-box .roadmap-list .done {
   opacity: 0.5;
@@ -11393,12 +11389,6 @@ body {
   align-items: center;
   justify-content: space-evenly;
 }
-@media (max-width: 991px) {
-  .amplication-base .logotypes {
-    flex-direction: column;
-    align-items: start;
-  }
-}
 
 .outline-button {
   border: 1px solid var(--white);
@@ -11425,9 +11415,4 @@ body {
 }
 .amplication-base .logotypes {
   flex-wrap: nowrap !important;
-}
-@media (max-width: 992px)  {
-  .amplication-base .logotypes {
-    flex-wrap: wrap !important;
-  }
 }

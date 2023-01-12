@@ -23,7 +23,7 @@ module.exports = {
       },
       desktop: '1280px',
       large: '1440px',
-      extra_large: '1920px',
+      xlg: '1920px',
     },
     maxWidth: {
       'container-desktop': '1712px',

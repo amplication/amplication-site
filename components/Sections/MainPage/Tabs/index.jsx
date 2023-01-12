@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import Image from 'next/image';
 import enterprise5 from '../../../../public/images/enterprise/enterprise-5.svg';
 import enterprise1 from '../../../../public/images/enterprise/enterprise-1.svg';
@@ -6,8 +6,22 @@ import enterprise2 from '../../../../public/images/enterprise/enterprise-2.svg';
 import enterprise3 from '../../../../public/images/enterprise/enterprise-3.svg';
 import enterprise4 from '../../../../public/images/enterprise/enterprise-4.svg';
 
+let timeout = null;
+
 const Tabs = () => {
-  const [activeTab, setActiveTab] = useState('Project Extension');
+  const [activeTab, setActiveTab] = useState(0);
+  const [autorun, setAutorun] = useState(true);
+
+  const destroyTimeout = () => clearTimeout(timeout);
+
+  useEffect(() => {
+    if (autorun) {
+      timeout = setTimeout(() => {
+        const next = activeTab + 1;
+        setActiveTab(next < features.length ? next : 0);
+      }, 5000);
+    }
+  }, [activeTab]);
 
   const features = [
     {
@@ -25,8 +39,8 @@ const Tabs = () => {
       title: 'Write business value from day 0',
       customClasses: '!pt-8',
       content:
-        '<p>Amplication generates a fully extendable and customizable code base for all the application infrastructure, so your team can focus on moving the needle.' +
-        'The generated code is created with well-known technology, so your team does not need to learn anything new. We adopt industry best practices, so your team can use their existing knowledge and skillset.</p>' +
+        '<p>Amplication generates a fully extendable and customizable code base for all the application infrastructure, so your team can focus on moving the needle.</p>' +
+        '<p>The generated code is created with well-known technology, so your team does not need to learn anything new. We adopt industry best practices, so your team can use their existing knowledge and skillset.</p>' +
         '<p>The generated code can include anything from data schema management, API endpoints (GraphQL or REST API), queues and message brokers, storage, IaC and deployment, roles and permissions, database connections, microservices communication, integrations, logging, exception handling, admin UI and more.</p>',
       buttons: [],
     },
@@ -66,21 +80,25 @@ const Tabs = () => {
     <>
       <section className="page-steps">
         <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
-          <div className="!my-12">
-            <h2 className="w-full !text-3xl !text-5xl large:!text-[56px] !leading-tight !font-semibold">
+          <div className="!my-20">
+            <h2 className="roadmap-heading">
               Let your teams write critical business logic instead of redundant
               infrastructure code
             </h2>
             <div className="flex max-medium:!flex-col mt-20">
-              <ul className="w-[25%] max-medium:w-full max-medium:overflow-x-scroll scrollbar-hide snap-x flex flex-column max-medium:!flex-row">
+              <ul className="w-[22.4%] max-medium:w-full max-medium:overflow-x-scroll scrollbar-hide snap-x flex flex-column max-medium:!flex-row">
                 {features.map((feature, index) => {
                   return (
                     <li
                       className={
-                        (activeTab === feature.tabTitle ? 'text-white ' : '') +
-                        'py-2 max-medium:pr-4 max-medium:whitespace-nowrap cursor-pointer font-semibold text-sm leading-5 text-[#686F8C] hover:text-white'
+                        (activeTab === index ? 'text-white ' : '') +
+                        'max-medium:pr-4 max-medium:whitespace-nowrap cursor-pointer font-semibold text-sm leading-7 text-[#686F8C] hover:text-white'
                       }
-                      onClick={() => setActiveTab(feature.tabTitle)}
+                      onClick={() => {
+                        destroyTimeout();
+                        setAutorun(false);
+                        setActiveTab(index);
+                      }}
                       key={index}
                     >
                       {feature.tabTitle}
@@ -94,23 +112,23 @@ const Tabs = () => {
                     <div
                       key={index}
                       className={
-                        (activeTab === feature.tabTitle
+                        (activeTab === index
                           ? '!flex justify-content-between flex-col tablet:flex-row '
                           : '') + 'hidden'
                       }
                     >
-                      <div className="relative max-w-full tablet:max-w-[50%]">
+                      <div className="relative max-w-full tablet:max-w-[44%]">
                         {feature.title && (
-                          <h4 className="!font-bold !text-2xl !leading-9 !mb-8">
+                          <h4 className="!font-bold !text-2xl !leading-9 !mb-4">
                             {feature.title}
                           </h4>
                         )}
                         <div
-                          className="w-full"
+                          className="w-full font-normal text-sm leading-[1.56em]"
                           dangerouslySetInnerHTML={{__html: feature.content}}
                         ></div>
                       </div>
-                      <div className="ml-auto w-full tablet:w-[40%] mt-12 tablet:mt-0">
+                      <div className="ml-auto w-full tablet:w-[40%] mt-12 tablet:mt-0 medium:mr-32">
                         <Image src={feature.image} alt={feature.title} />
                       </div>
                     </div>

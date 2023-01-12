@@ -4,7 +4,7 @@ import DataModelsIcon from '../../../../public/images/steps/data-models.svg';
 import RolesIcon from '../../../../public/images/steps/roles.svg';
 import SyncWithGithubIcon from '../../../../public/images/steps/sync_with_github.svg';
 import AdminUiIcon from '../../../../public/images/steps/admin-ui.svg';
-import ConnectIcon from '../../../../public/images/steps/connect.svg';
+import ConnectIcon from '../../../../public/images/steps/connect.png';
 import {useState} from 'react';
 
 const Steps = () => {

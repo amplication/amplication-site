@@ -15,7 +15,7 @@ const LogoList = () => {
           <div className="logotypes ml-auto w-full large:max-w-[46%] d-flex justify-evently align-items-center">
             {logos.map((logo, index) => {
               return (
-                <span className="px-[0px] tablet:px-10" key={index}>
+                <span className="px-3 tablet:px-10" key={index}>
                   <Image src={logo} alt={''} />
                 </span>
               );

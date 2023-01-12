@@ -1,9 +1,12 @@
-import {useState, useRef} from 'react';
+import {useRef} from 'react';
 import IframeResizer from 'iframe-resizer-react';
+import Link from 'next/link';
 
 const Testimonials = () => {
   const iframe = useRef();
-  const [showTestimonials, setShowTestimonials] = useState(false);
+
+  const testimonialLink =
+    'https://embed.testimonial.to/grid/selected/amplication/0?theme=dark&autoplay=off&showmore=on&one-row=on&same-height=off';
 
   return (
     <>
@@ -17,27 +20,20 @@ const Testimonials = () => {
               autoResize={false}
               className="transition-all"
               heightCalculationMethod="lowestElement"
-              src="https://embed.testimonial.to/grid/selected/amplication/0?theme=dark&autoplay=off&showmore=on&one-row=on&same-height=off"
+              src={testimonialLink}
               style={{width: '1px', minWidth: '100%'}}
               forwardRef={iframe}
             ></IframeResizer>
-            {!showTestimonials && (
-              <div className="absolute pt-48 inset-0 top-auto flex justify-content-center bg-[linear-gradient(180deg,_transparent_0%,_#15192c_60%,_#15192c_100%)]">
-                <div
+            <div className="absolute pt-48 inset-0 top-auto flex justify-content-center bg-[linear-gradient(180deg,_transparent_0%,_#15192c_60%,_#15192c_100%)]">
+              <Link href={testimonialLink} passHref={true}>
+                <a
+                  target="_blank"
                   className="btn btn-outline-light btn-lg mb-4 text-black80"
-                  onClick={() => {
-                    if (!showTestimonials) {
-                      iframe.current?.resize();
-                    }
-                    setShowTestimonials(!showTestimonials);
-                  }}
                 >
-                  {!showTestimonials
-                    ? 'Show all testimonials'
-                    : 'Hide testimonials'}
-                </div>
-              </div>
-            )}
+                  Show all testimonials
+                </a>
+              </Link>
+            </div>
           </div>
         </div>
       </section>

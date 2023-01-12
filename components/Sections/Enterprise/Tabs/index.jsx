@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import Image from 'next/image';
 import GraphQLIcon from '../../../../public/images/features-page/icons/nenu_graphql_icon.svg';
 import GraphQLImage from '../../../../public/images/features-page/graphql.svg';
@@ -25,8 +25,22 @@ import versionControlImage from '../../../../public/images/features-page/version
 import syncGithubIcon from '../../../../public/images/features-page/icons/github.svg';
 import syncGithubImage from '../../../../public/images/features-page/sync_with_github.svg';
 
+let timeout = null;
+
 const Tabs = () => {
-  const [activeTab, setActiveTab] = useState('Instant GraphQL');
+  const [activeTab, setActiveTab] = useState(0);
+  const [autorun, setAutorun] = useState(true);
+
+  const destroyTimeout = () => clearTimeout(timeout);
+
+  useEffect(() => {
+    if (autorun) {
+      timeout = setTimeout(() => {
+        const next = activeTab + 1;
+        setActiveTab(next < features.length ? next : 0);
+      }, 5000);
+    }
+  }, [activeTab]);
 
   const features = [
     {
@@ -34,7 +48,7 @@ const Tabs = () => {
       icon: GraphQLIcon,
       image: GraphQLImage,
       iconClass: 'feature-page-icon first-color',
-      title: 'Instant GraphQL',
+      tabTitle: 'Instant GraphQL',
       content:
         'Amplication generates production-ready, self-documenting GraphQL\n' +
         '                API for all your data models. The API is generated with\n' +
@@ -51,8 +65,8 @@ const Tabs = () => {
       icon: RestIcon,
       image: RestImage,
       iconClass: 'feature-page-icon',
-      title: 'REST API',
-      subtitle: 'REST API LONG TEXT',
+      tabTitle: 'REST API',
+      title: 'REST API LONG TEXT',
       content:
         'Easily connect to your data with any HTTP client using REST API.\n' +
         '              Amplication generates production-ready REST API, with Swagger UI\n' +
@@ -68,7 +82,7 @@ const Tabs = () => {
       icon: IdentityIcon,
       image: IdentityImage,
       iconClass: 'feature-page-icon third-color',
-      title: 'Identity & Permissions',
+      tabTitle: 'Identity & Permissions',
       content:
         'Save time on plugging in authentication and authorization to your\n' +
         '              apps. Amplication provides a role-based permission model that is\n' +
@@ -89,7 +103,7 @@ const Tabs = () => {
       icon: AdminIcon,
       image: AdminImage,
       iconClass: 'feature-page-icon first-color',
-      title: 'React Admin UI',
+      tabTitle: 'React Admin UI',
       content:
         'Start working with your application in minutes. Amplication\n' +
         '              generates a React client with ready-made forms for creating and\n' +
@@ -106,7 +120,7 @@ const Tabs = () => {
       icon: CodeGenerationIcon,
       image: CodeGenerationImage,
       iconClass: 'feature-page-icon',
-      title: 'Node.js Code Generation',
+      tabTitle: 'Node.js Code Generation',
       content:
         'Save time on boilerplate and repetitive tasks with low-code but\n' +
         '              keep working on your core business logic with pro-code.\n' +
@@ -122,7 +136,7 @@ const Tabs = () => {
       icon: CustomCodeIcon,
       image: CustomCodeImage,
       iconClass: 'feature-page-icon third-color',
-      title: 'Custom Code',
+      tabTitle: 'Custom Code',
       content:
         'Generated apps can be manually customized to support any complex\n' +
         '              logic, specs, or integration using custom code. Code components\n' +
@@ -135,7 +149,7 @@ const Tabs = () => {
       icon: CLIIcon,
       image: CLIImage,
       iconClass: 'feature-page-icon first-color',
-      title: 'Command Line Interface (CLI)',
+      tabTitle: 'Command Line Interface (CLI)',
       content:
         'Define your data model and generate apps faster using Amplication\n' +
         '              Command Line Interface (CLI). Actions available in our data model\n' +
@@ -148,7 +162,7 @@ const Tabs = () => {
       icon: DeploymentIcon,
       image: DeploymentImage,
       iconClass: 'feature-page-icon',
-      title: 'Application Deployment',
+      tabTitle: 'Application Deployment',
       content:
         'When working with Amplication, all your committed changes are\n' +
         '              continuously deployed to a sandbox environment on the Amplication\n' +
@@ -164,7 +178,7 @@ const Tabs = () => {
       icon: OpenSourceIcon,
       image: OpenSourceImage,
       iconClass: 'feature-page-icon third-color',
-      title: 'Open Source',
+      tabTitle: 'Open Source',
       content:
         'Amplication is an open-source project built for developers by the\n' +
         '              open-source community.\n' +
@@ -172,13 +186,13 @@ const Tabs = () => {
         '              <span><b>Any contribution counts.</b></span>',
       buttons: [
         {
-          title: 'GitHub',
+          tabTitle: 'GitHub',
           url: 'https://github.com/amplication/amplication',
           buttonClass: 'btn btn-outline-secondary',
           iconClass: 'social-link github social-white',
         },
         {
-          title: 'Join our community',
+          tabTitle: 'Join our community',
           url: 'https://amplication.com/discord',
           buttonClass: 'btn btn-primary ml-4',
           iconClass: 'social-link discord social-white',
@@ -190,7 +204,7 @@ const Tabs = () => {
       icon: integrationIcon,
       image: integrationImage,
       iconClass: 'feature-page-icon first-color',
-      title: 'Custom Code & Webhooks Integration',
+      tabTitle: 'Custom Code & Webhooks Integration',
       content:
         'Integration with any external service is available through custom\n' +
         '              code or webhooks. Once you generate your Node.js app based on your data\n' +
@@ -205,7 +219,7 @@ const Tabs = () => {
       icon: versionControlIcon,
       image: versionControlImage,
       iconClass: 'feature-page-icon',
-      title: 'Version Control',
+      tabTitle: 'Version Control',
       content:
         'Amplication has version control built-in which enables you to\n' +
         "              visually see any app change and how it's being reflected in the\n" +
@@ -218,7 +232,7 @@ const Tabs = () => {
       icon: syncGithubIcon,
       image: syncGithubImage,
       iconClass: 'feature-page-icon third-color',
-      title: 'GitHub Sync',
+      tabTitle: 'GitHub Sync',
       content:
         'Amplication can push the code of your app to a GitHub repository.\n' +
         '              Every app developed on Amplication platform is translated to a\n' +
@@ -245,65 +259,67 @@ const Tabs = () => {
   ];
 
   return (
-    <>
-      <section className="page-steps">
-        <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
-          <div className="!my-12">
-            <h2 className="w-full !text-3xl !text-5xl large:!text-[56px] !leading-tight !font-semibold">
-              Let your teams write critical business logic instead of redundant
-              infrastructure code
-            </h2>
-            <div className="flex max-medium:!flex-col mt-20">
-              <ul className="w-[25%] max-medium:w-full max-medium:overflow-x-scroll scrollbar-hide snap-x flex flex-column max-medium:!flex-row">
-                {features.map((feature, index) => {
-                  return (
-                    <li
-                      className={
-                        (activeTab === feature.title ? 'text-white ' : '') +
-                        'py-2 max-medium:pr-4 max-medium:whitespace-nowrap cursor-pointer font-semibold text-sm leading-5 text-[#686F8C] hover:text-white'
-                      }
-                      onClick={() => setActiveTab(feature.title)}
-                      key={index}
-                    >
-                      {feature.title}
-                    </li>
-                  );
-                })}
-              </ul>
-              <div className="tab-content w-[75%] max-medium:w-full max-medium:mt-12">
-                {features.map((feature, index) => {
-                  return (
-                    <div
-                      key={index}
-                      className={
-                        (activeTab === feature.title
-                          ? '!flex justify-content-between flex-col tablet:flex-row '
-                          : '') + 'hidden'
-                      }
-                    >
-                      <div className="relative max-w-full tablet:max-w-[50%]">
-                        {feature.subtitle && (
-                          <h4 className="!font-bold !text-2xl !leading-9 !mb-8">
-                            {feature.subtitle}
-                          </h4>
-                        )}
-                        <div
-                          className="w-full"
-                          dangerouslySetInnerHTML={{__html: feature.content}}
-                        ></div>
-                      </div>
-                      <div className="ml-auto w-full tablet:w-[40%] mt-12 tablet:mt-0">
-                        <Image src={feature.image} alt={feature.title} />
-                      </div>
+    <section className="page-steps">
+      <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
+        <div className="!my-20">
+          <h2 className="roadmap-heading">
+            Let your teams write critical business logic instead of redundant
+            infrastructure code
+          </h2>
+          <div className="flex max-medium:!flex-col mt-20">
+            <ul className="w-[22.4%] max-medium:w-full max-medium:overflow-x-scroll scrollbar-hide snap-x flex flex-column max-medium:!flex-row">
+              {features.map((feature, index) => {
+                return (
+                  <li
+                    className={
+                      (activeTab === index ? 'text-white ' : '') +
+                      'max-medium:pr-4 max-medium:whitespace-nowrap cursor-pointer font-semibold text-sm leading-7 text-[#686F8C] hover:text-white'
+                    }
+                    onClick={() => {
+                      destroyTimeout();
+                      setAutorun(false);
+                      setActiveTab(index);
+                    }}
+                    key={index}
+                  >
+                    {feature.tabTitle}
+                  </li>
+                );
+              })}
+            </ul>
+            <div className="tab-content w-[75%] max-medium:w-full max-medium:mt-12">
+              {features.map((feature, index) => {
+                return (
+                  <div
+                    key={index}
+                    className={
+                      (activeTab === index
+                        ? '!flex justify-content-between flex-col tablet:flex-row '
+                        : '') + 'hidden'
+                    }
+                  >
+                    <div className="relative max-w-full tablet:max-w-[44%]">
+                      {feature.title && (
+                        <h4 className="!font-bold !text-2xl !leading-9 !mb-4">
+                          {feature.title}
+                        </h4>
+                      )}
+                      <div
+                        className="w-full font-normal text-sm leading-[1.56em]"
+                        dangerouslySetInnerHTML={{__html: feature.content}}
+                      ></div>
                     </div>
-                  );
-                })}
-              </div>
+                    <div className="ml-auto w-full tablet:w-[40%] mt-12 tablet:mt-0 medium:mr-32">
+                      <Image src={feature.image} alt={feature.title} />
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 

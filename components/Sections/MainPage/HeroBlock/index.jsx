@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import VideoWatch from '../../../../public/images/video-watch.svg';
+import VideoWatch from '../../../../public/images/video-start.png';
 import {useEffect, useState} from 'react';
 
 const HeroBlock = () => {
@@ -20,9 +20,9 @@ const HeroBlock = () => {
 
   return (
     <>
-      <section className="page-welcome">
+      <section className="page-welcome !pt-4 !pb-8 large:!py-[9vh] xlg:!py-[13vh]">
         <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
-          <div className="row align-items-center large:pt-12">
+          <div className="row align-items-center">
             <div className="col-12 text-center">
               <div className="header-and-video align-items-center">
                 <div className="content-block">
@@ -101,7 +101,7 @@ const HeroBlock = () => {
                 </div>
                 <div className="video flex align-items-center">
                   <div className="relative align-items-center !max-w-[92%] w-full min-h-[600px] hidden medium:flex align-items-center laptop:!max-w-[56%]">
-                    <div className="absolute laptop:my-auto !-mt-24 w-[90vw] max-w-[1440px] medium:flex align-items-center">
+                    <div className="absolute laptop:my-auto !-mt-24 w-[84vw] medium:flex align-items-center">
                       <Link
                         href={'https://www.youtube.com/watch?v=wCJ2jF1IU7U'}
                         passHref={true}

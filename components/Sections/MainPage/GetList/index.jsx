@@ -95,7 +95,7 @@ const GetList = () => {
   return (
     <>
       <section className="!bg-light-blue !py-24">
-        <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop ">
+        <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
           <div className="mb-6 large:mb-14">
             <h2 className="roadmap-heading m-0">
               What do you get from Amplication?
@@ -108,11 +108,8 @@ const GetList = () => {
             >
               {items.map((item, index) => {
                 return (
-                  <div
-                    className="feature-card flex !text-left hover:bg-purple-light"
-                    key={index}
-                  >
-                    <div className="flex min-w-[60px] max-w-[60px] medium:p-2">
+                  <div className="feature-card flex !text-left" key={index}>
+                    <div className="flex min-w-[60px] max-w-[60px]">
                       <Image src={item.image} alt={'open source'} />
                     </div>
                     <div className="flex-auto ml-2">

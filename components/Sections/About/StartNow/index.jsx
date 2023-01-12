@@ -14,7 +14,7 @@ const StartNow = ({title, linkPrimary, linkOutline, linkSecondary}) => {
             <Link href={linkPrimary.href} passHref={true}>
               <a
                 target="_blank"
-                className="btn btn-primary btn-sm !text-lg !h-10 mr-2 w-full max-w-[180px]"
+                className="btn btn-primary btn-sm !text-lg !h-10 mr-2 w-full max-w-[114px] !px-0"
                 rel="noreferrer"
               >
                 {linkPrimary.title}
@@ -24,7 +24,7 @@ const StartNow = ({title, linkPrimary, linkOutline, linkSecondary}) => {
           {linkOutline.title && (
             <Button
               text={linkOutline.title}
-              className="outline-button !text-lg !h-10 ml-2 w-full max-w-[180px]"
+              className="outline-button !text-lg !h-10 ml-2 w-full max-w-[114px] !px-0"
               isLink={false}
               onClick={() => window.HubSpotConversations.widget.open()}
             />
@@ -32,7 +32,7 @@ const StartNow = ({title, linkPrimary, linkOutline, linkSecondary}) => {
           {linkSecondary.title && (
             <Button
               text={linkSecondary.title}
-              className="btn btn-outline-secondary !text-lg !h-10 ml-2 w-full max-w-[180px]"
+              className="btn btn-outline-secondary !text-lg !h-10 ml-2 w-full max-w-[114px] !px-0"
               isLink={false}
               onClick={() => window.HubSpotConversations.widget.open()}
             />
