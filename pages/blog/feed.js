@@ -12,7 +12,7 @@ export const getServerSideProps = async context => {
     const {data} = await client.query({
       query: gql`
         query {
-          posts(take: ${postsTake}, orderBy: {createdAt: Desc}, where: {draft: {not: true}}) {
+          posts(take: ${postsTake}, orderBy: {publishedAt: Desc}, where: {draft: {not: true}}) {
             slug
             title
             featuredImage
@@ -25,7 +25,7 @@ export const getServerSideProps = async context => {
               firstName
               lastName
             }
-            createdAt
+            publishedAt
           }
         }
       `,
