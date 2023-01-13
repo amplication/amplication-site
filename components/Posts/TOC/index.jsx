@@ -9,17 +9,17 @@ const TOC = props => {
   const headings = [];
   const headingsParsed = props.markdown
     .split('\n')
-    .filter(line => line.match(/^#{2,3}\s/));
+    .filter(line => line.match(/^#{1,3}\s/));
 
   for (const line of headingsParsed) {
-    const [, level, title] = line.match(/^(#{2,3})\s(.*)/);
+    const [, level, title] = line.match(/^(#{1,3})\s(.*)/);
     const heading = {
       level: level.length,
       id: helpers.slugify(title),
       title,
     };
 
-    if (heading.level === 2) {
+    if (heading.level === 1 || heading.level === 2) {
       headings.push({...heading, children: []});
     } else if (heading.level === 3 && headings.length === 0) {
       headings.push({children: [heading]});

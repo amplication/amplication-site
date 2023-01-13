@@ -43,7 +43,7 @@ export const getServerSideProps = async context => {
         query {
           posts(
             take: ${postsTake},
-            orderBy: {createdAt: Desc},
+            orderBy: {publishedAt: Desc},
             where: {draft: {not: true}}
           ) {
             author {
@@ -53,7 +53,7 @@ export const getServerSideProps = async context => {
               profileImage
             }
             content
-            createdAt
+            publishedAt
             featuredImage
             slug
             tags {

@@ -10,18 +10,18 @@
 }
 
 .toc__element {
-  margin: 0 !important;
-  padding: 0.1rem 0 !important;
+  margin: 0.1rem 0 !important;
+  padding: 0 !important;
 }
 
 .toc__element:last-child {
-  margin: 0 !important;
-  padding: 0.1rem 0 0 0 !important;
+  margin: 0.1rem 0 0 0 !important;
 }
 
 .toc__element > a {
   color: var(--white);
   text-decoration: none;
+  height: 48px;
 }
 
 .toc__element > a:hover {

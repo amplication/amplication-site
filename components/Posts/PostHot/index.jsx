@@ -23,7 +23,7 @@ const PostHot = props => {
               className="!mt-0"
               avatar={post.author?.profileImage}
               name={post.author?.firstName + ' ' + post.author?.lastName}
-              date={post.createdAt}
+              date={post.publishedAt}
             />
             <Tags list={post.tags} className="!mt-6" />
             <Title

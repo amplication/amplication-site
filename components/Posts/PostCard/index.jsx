@@ -33,7 +33,7 @@ const PostCard = props => {
               <Author
                 avatar={post.author?.profileImage}
                 name={post.author?.firstName + ' ' + post.author?.lastName}
-                date={post.createdAt}
+                date={post.publishedAt}
               />
               <Tags list={post.tags} />
               <Title className="text-lg font-medium mt-4">{post.title}</Title>
