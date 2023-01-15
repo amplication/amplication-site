@@ -55,7 +55,6 @@ const Tabs = () => {
     }
   }, [activeTab]);
 
-
   const features = [
     {
       id: 'graphql',
