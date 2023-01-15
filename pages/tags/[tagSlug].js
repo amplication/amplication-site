@@ -45,7 +45,7 @@ export const getServerSideProps = async context => {
         query {
           posts(
             take: ${postsTake},
-            orderBy: {createdAt: Desc},
+            orderBy: {publishedAt: Desc},
             where: {
               draft: {not: true},
               tags: {some: {slug: {equals: "${context.params.tagSlug}"}}}
@@ -64,7 +64,7 @@ export const getServerSideProps = async context => {
               lastName
               profileImage
             }
-            createdAt
+            publishedAt
           }
           tags {
             name
