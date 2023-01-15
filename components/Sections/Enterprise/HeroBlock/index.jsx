@@ -5,7 +5,7 @@ import VideoWatch from '../../../../public/images/video-watch.png';
 const HeroBlock = () => {
   return (
     <>
-      <section className="page-welcome !pt-4 !pb-8 large:!py-[9vh] xlg:!py-[13vh]">
+      <section className="page-welcome !pt-10 !pb-8 large:!py-[9vh] xlg:!py-[13vh]">
         <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
           <div className="row align-items-center">
             <div className="col-12 text-center">
@@ -29,7 +29,7 @@ const HeroBlock = () => {
                   </div>
                   <div className="buttons-wrapper d-flex align-items-center justify-content-start mt-2">
                     <Link href={'https://app.amplication.com'} passHref={true}>
-                      <a className="btn btn-primary btn-sm !text-lg !h-10 mb-2 laptop:mr-2 w-full max-w-[180px]">
+                      <a className="btn btn-primary btn-sm !h-[34px] mb-2 laptop:mr-2 w-full !font-normal !text-sm !max-w-[140px]">
                         Get started
                       </a>
                     </Link>

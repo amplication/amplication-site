@@ -38,7 +38,7 @@ const BottomBar = () => {
 
   return (
     version && (
-      <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop flex">
+      <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop flex !max-w-[1904px]">
         <span className="text-white !leading-[36px] font-ubuntumono text-base font-bold text-center w-[81px] h-9 bg-purple-bright rounded-b">
           {version}
         </span>

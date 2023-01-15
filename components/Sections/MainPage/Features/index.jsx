@@ -31,16 +31,16 @@ const Features = () => {
   ];
   return (
     <>
-      <section className="page-welcome-solution bg-transparent">
+      <section className="page-welcome-solution bg-transparent !py-20">
         <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
-          <h2 className="roadmap-heading !mb-12">
+          <h2 className="roadmap-heading !mb-2">
             How Amplication backend development platform works?
           </h2>
-          <div className="solution max-laptop:!mx-0 row">
+          <div className="solution max-laptop:!mx-0 !p-0 row">
             {features.map((item, index) => {
               return (
                 <div
-                  className="solution-card !flex align-items-center p-8 pt-6 flex-column !max-w-none !bg-light-blue !border-dark-black-70 rounded-lg border-solid border"
+                  className="solution-card !flex align-items-center p-8 py-6 flex-column !max-w-none !bg-light-blue !border-dark-black-70 rounded-lg border-solid border"
                   key={index}
                 >
                   {item.icon && (
@@ -53,7 +53,7 @@ const Features = () => {
                     </div>
                   )}
                   <div
-                    className="solution-content text-base large:text-lg text-white text-center tablet:max-w-[270px] mt-3 large:mt-6 large:!leading-7"
+                    className="solution-content text-base large:text-lg text-white text-center tablet:max-w-[270px] mt-[0.75rem] large:mt-3 large:!leading-7"
                     dangerouslySetInnerHTML={{__html: item.content}}
                   ></div>
                 </div>

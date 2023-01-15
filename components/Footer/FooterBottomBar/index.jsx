@@ -4,27 +4,27 @@ import youtubeIcon from '../../../public/images/icons/youtube.svg';
 
 const FooterBottomBar = () => {
   return (
-    <div className="text-center w-full relative laptop:border-t laptop:border-solid laptop:border-white/20">
+    <div className="text-center w-full relative laptop:border-t laptop:border-solid laptop:border-purple-light">
       <ul className="w-full flex flex-col laptop:flex-row laptop:justify-between items-center">
         <li className="w-full laptop:w-auto order-last laptop:order-first py-3.5 laptop:py-8">
-          <p className="text-xs text-white/50 font-poppins laptop:text-base">
+          <p className="text-xs text-white/50 font-poppins laptop:text-sm">
             {`©${new Date().getFullYear()} amplication`}
           </p>
         </li>
         <li className="border-t border-solid border-white/20 laptop:border-0 w-full laptop:w-auto order-2 laptop:order-1 flex-col flex laptop:flex-row gap-4 justify-end py-3.5 laptop:py-8">
           <Link href="/privacy-policy">
-            <a className="text-xs text-white/50 font-poppins underline laptop:text-base hover:text-purple-bright-hover">
+            <a className="text-xs text-white/50 font-poppins underline laptop:text-sm hover:text-purple-bright-hover">
               Privacy Policy
             </a>
           </Link>
           <Link href="/terms">
-            <a className="text-xs text-white/50 font-poppins underline laptop:text-base hover:text-purple-bright-hover">
+            <a className="text-xs text-white/50 font-poppins underline laptop:text-sm hover:text-purple-bright-hover">
               Terms & Conditions
             </a>
           </Link>
         </li>
         <li className="order-none laptop:order-last flex flex-col laptop:flex-row align-items-center my-4 laptop:mb-0 laptop:mt-0 laptop:w-auto">
-          <span className="mb-4 laptop:mb-0 laptop:mr-6 font-medium text-white text-center text-base laptop:text-lg laptop:text-left">
+          <span className="mb-4 laptop:mb-0 laptop:mr-6 text-xs text-white/50 font-poppins laptop:text-sm text-center laptop:text-left">
             Follow us
           </span>
           <ul className="flex justify-center align-items-center flex-wrap laptop:justify-start gap-7">

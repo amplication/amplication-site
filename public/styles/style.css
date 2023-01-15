@@ -9390,10 +9390,9 @@ body {
   line-height: 1.3;
 }
 .amplication-base .animated-header .main-title {
-  margin-top: 0;
-  margin-left: 0;
+  margin: 0;
   text-align: left;
-  font-size: 3.5rem;
+  font-size: 2.857143rem;
   line-height: 1.4;
 }
 .amplication-base section .main-title.pricing {
@@ -9401,11 +9400,6 @@ body {
   font-weight: 600;
   line-height: 3.75rem;
   text-align: left;
-}
-@media (max-width: 991.98px) {
-  .amplication-base .animated-header .main-title {
-    font-size: 3rem;
-  }
 }
 @media (max-width: 767.98px) {
   .amplication-base .animated-header .main-title {
@@ -9418,7 +9412,6 @@ body {
   font-weight: 400;
   color: #41cadd;
   display: inline-block;
-  line-height: 1;
 }
 .amplication-base .animated-header .animated-header__fixed-text {
   display: block;
@@ -9429,7 +9422,7 @@ body {
   position: relative;
   max-width: 650px;
   margin-top: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 .amplication-base .animated-header .explainer .highlight {
   color: #41cadd;
@@ -9862,6 +9855,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: stretch;
+  margin: 0 -0.5rem;
 }
 @media (max-width: 1199.98px) {
   .amplication-base .solution {
@@ -9872,7 +9866,7 @@ body {
     width: calc(50% - 1rem);
     min-width: calc(50% - 1rem);
     max-width: calc(50% - 1rem);
-    margin: 0 0.5rem 1rem;
+    margin: 1rem 0.5rem 0;
   }
 }
 @media (max-width: 578px) {
@@ -9884,7 +9878,7 @@ body {
     min-width: 100%;
     flex-direction: row !important;
     padding: 1rem;
-    margin: 1rem 0;
+    margin: 1rem 0 0;
   }
   .amplication-base .solution .solution-card .solution-content {
     max-width: auto;
@@ -9939,9 +9933,7 @@ body {
   border-radius: 4px;
   display: block;
   margin: 0 0.75rem;
-  margin-bottom: 2rem;
-  font-size: 1.2rem;
-  line-height: 1.9;
+  margin-top: 2rem;
 }
 .amplication-base .solution-card .solution-icon {
   display: block;
@@ -9977,9 +9969,9 @@ body {
 .amplication-base .feature-card {
   box-sizing: border-box;
   font-size: 0.8rem;
-  padding: 1rem 2rem 1rem 1rem;
+  padding: 2rem 0 0;
   border: 1px solid transparent;
-  margin: 1rem 0;
+  margin: 0;
   text-align: center;
   flex: 1 0 25%;
   transition: 0.3s ease-in-out;
@@ -10003,7 +9995,6 @@ body {
 }
 @media (max-width: 1200px) {
   .amplication-base .feature-card {
-    padding: 1rem;
     margin: 0 0 0.6rem;
     font-size: 0.9rem;
     flex: 1 0 33.33333%;
@@ -10118,9 +10109,9 @@ body {
 .amplication-base .roadmap-heading {
   font-family: "Poppins";
   font-style: normal;
-  font-weight: 600;
-  font-size: calc(1.325rem + 0.9vw);
-  line-height: 135%;
+  font-weight: 700;
+  font-size: calc(1.125rem + 0.85vw);
+  line-height: 150%;
   align-items: center;
   margin-bottom: 1rem;
 }
@@ -10391,7 +10382,7 @@ body {
   font-weight: 500;
   align-items: center;
   font-size: 1.5rem;
-  margin-bottom: 1.75rem;
+  margin-bottom: 1rem;
 }
 @media (max-width: 1440px) {
   .amplication-base .bracket-box {

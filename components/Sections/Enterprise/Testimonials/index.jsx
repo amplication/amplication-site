@@ -12,10 +12,10 @@ const Testimonials = () => {
     <>
       <section className="!pt-5 !pb-4 laptop:!px-14 laptop:!pt-24 laptop:!pb-20">
         <div className="flex-grow max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
-          <h2 className="!text-3xl !text-5xl large:!text-[56px] !leading-tight !font-semibold tablet:text-center">
+          <h2 className="roadmap-heading !mb-2 tablet:text-center">
             What users are saying about Amplication?
           </h2>
-          <div className="mt-16 relative pb-24">
+          <div className="mt-4 laptop:mt-16 relative pb-24">
             <IframeResizer
               autoResize={false}
               className="transition-all"
@@ -28,7 +28,7 @@ const Testimonials = () => {
               <Link href={testimonialLink} passHref={true}>
                 <a
                   target="_blank"
-                  className="btn btn-outline-light btn-lg mb-4 text-black80"
+                  className="btn btn-outline-light btn-lg mb-4 text-black80 btn-sm !h-[34px] !font-normal !text-sm"
                 >
                   Show all testimonials
                 </a>

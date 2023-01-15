@@ -8,14 +8,14 @@ const LogoList = () => {
   return (
     <>
       <section className="background-transparent w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
-        <div className="d-flex align-items-center py-12 max-medium:flex-col">
-          <h2 className="roadmap-heading m-0">
+        <div className="d-flex align-items-center py-3 max-medium:flex-col">
+          <h2 className="roadmap-heading m-0 pt-1">
             Backed by visionary global investors
           </h2>
           <div className="logotypes ml-auto w-full large:max-w-[46%] d-flex justify-evently align-items-center">
             {logos.map((logo, index) => {
               return (
-                <span className="px-3 tablet:px-10" key={index}>
+                <span className="px-6 tablet:px-10" key={index}>
                   <Image src={logo} alt={''} />
                 </span>
               );

@@ -29,14 +29,14 @@ const Steps = () => {
       <section className="page-steps">
         <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
           <div className="row feature d-flex justify-content-between align-items-center !my-12">
-            <h2 className="w-full !text-3xl !text-5xl large:!text-[56px] !leading-tight !font-semibold tablet:text-center !mb-12">
+            <h2 className="roadmap-heading text-center !mb-12 w-full">
               How Amplication backend development platform works?
             </h2>
             <div className="col-sm-12 col-md-6 pr-3">
               <div className="bracket-box">
                 <span className="font-dmmono">Design</span> models and roles
               </div>
-              <div className="feature-description text-white text-base laptop:text-lg large:text-xl leading-normal">
+              <div className="feature-description text-white text-base laptop:text-lg !leading-normal">
                 Define data entities and role-based access through
                 Amplication&apos;s UI or CLI, and Amplication will auto-generate
                 your database, an Admin UI, and API.
@@ -119,7 +119,7 @@ const Steps = () => {
               <div className="bracket-box">
                 <span className="font-dmmono">Sync</span> your app with GitHub
               </div>
-              <div className="feature-description text-white text-base laptop:text-lg large:text-xl leading-normal">
+              <div className="feature-description text-white text-base laptop:text-lg !leading-normal">
                 Amplication syncs your app code into Node.js format to your
                 GitHub repository so you can keep developing and custom code
                 your app using your favorite IDE and the skills you have already
@@ -137,7 +137,7 @@ const Steps = () => {
               <div className="bracket-box">
                 <span className="font-dmmono">Access</span> your Node.js app
               </div>
-              <div className="feature-description text-white text-base laptop:text-lg large:text-xl leading-normal">
+              <div className="feature-description text-white text-base laptop:text-lg !leading-normal">
                 Our auto-generated admin UI based on your data model schema
                 enables you to access your data with ease.
               </div>
@@ -160,7 +160,7 @@ const Steps = () => {
                 <span className="font-dmmono">Connect</span> your code using
                 REST or GraphQL
               </div>
-              <div className="feature-description text-white text-base laptop:text-lg large:text-xl leading-normal">
+              <div className="feature-description text-white text-base laptop:text-lg !leading-normal">
                 your code using REST or GraphQL
                 <br />
                 Start working with your API from any REST or GraphQL client
