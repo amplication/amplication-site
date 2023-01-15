@@ -6,7 +6,7 @@ const StartNow = ({title, linkPrimary, linkOutline, linkSecondary}) => {
   return (
     <>
       <section className="background-transparent w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop !pt-8 !pb-10 desktop:!py-20">
-        <h2 className="roadmap-heading tablet:text-center mx-auto !mb-8 max-w-[960px]">
+        <h2 className="roadmap-heading text-center mx-auto !mb-8 max-w-[960px]">
           {title}
         </h2>
         <div className="d-flex justify-content-center align-items-center">
