@@ -10,8 +10,8 @@ let timeout = null;
 
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState(0);
-  const [autorun, setAutorun]     = useState(true);
-  const [isMobile, setIsMobile]   = useState(true);
+  const [autorun, setAutorun] = useState(true);
+  const [isMobile, setIsMobile] = useState(true);
 
   const destroyTimeout = () => clearTimeout(timeout);
 
@@ -139,15 +139,28 @@ const Tabs = () => {
                         </h4>
                       )}
                       <div
-                        className={( isMobile && !opened[index] ? "max-h-[calc(4*1.53em)] text-ellipsis overflow-hidden" : "" ) + " w-full font-normal text-sm leading-[1.56em]"}
+                        className={
+                          (isMobile && !opened[index]
+                            ? 'max-h-[calc(4*1.53em)] text-ellipsis overflow-hidden'
+                            : '') +
+                          ' w-full font-normal text-sm leading-[1.56em]'
+                        }
                         dangerouslySetInnerHTML={{__html: feature.content}}
-                      >
-                      </div>
+                      ></div>
                       <span
                         onClick={() => {
-                          setOpened(opened.map((open, i) => i === index ? open === false : open))
+                          setOpened(
+                            opened.map((open, i) =>
+                              i === index ? open === false : open
+                            )
+                          );
                         }}
-                        className={( isMobile ? "flex font-normal text-sm leading-[1.56em]" : "hidden" ) + " cursor-pointer text-turquoise underline"}
+                        className={
+                          (isMobile
+                            ? 'flex font-normal text-sm leading-[1.56em]'
+                            : 'hidden') +
+                          ' cursor-pointer text-turquoise underline'
+                        }
                       >
                         Read more
                       </span>
