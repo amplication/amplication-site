@@ -14,7 +14,8 @@ const HeroBlock = () => {
                   <div className="animated-header">
                     <h1 className="main-title mb-0">
                       <span className="block font-bold">
-                        Build microservices <br /> <span className="text-[0.75em]">20x faster</span>.
+                        Build microservices <br />{' '}
+                        <span className="text-[0.75em]">20x faster</span>.
                       </span>
                       <span className="block text-[16px] tablet:text-[28px] desktop:text-[34px] leading-snug font-bold">
                         Reliably. Securely. Consistently.
