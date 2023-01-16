@@ -20,7 +20,7 @@ const HeroBlock = () => {
 
   return (
     <>
-      <section className="page-welcome !pt-10 !pb-8 large:!py-[9vh] xlg:!py-[13vh]">
+      <section className="page-welcome !pt-10 !pb-8 large:!py-[9vh] xlg:!py-[17vh]">
         <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
           <div className="row align-items-center">
             <div className="col-12 text-center">
@@ -31,7 +31,7 @@ const HeroBlock = () => {
                       href={'https://github.com/amplication/amplication'}
                       passHref={true}
                     >
-                      <a className="group btn btn-lg mb-4 !text-xs !leading-5 !font-normal !h-fit text-white !w-auto !flex-none !rounded-full border border-solid !border-dark-black-70 !px-4 !h-[34px] !max-w-[114px] hover:border-lite">
+                      <a className="group btn btn-lg mb-4 !text-xs !leading-5 !font-normal !h-fit text-white !w-auto !flex-none !rounded-full border border-solid !border-dark-black-70 !px-4 !h-[34px] hover:border-lite">
                         <svg
                           className="mr-2"
                           width="10"

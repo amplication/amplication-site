@@ -302,7 +302,7 @@ const Tabs = () => {
               );
             })}
           </ul>
-          <div className="tab-content w-[75%] max-medium:w-full mt-4 medium:mt-12">
+          <div className="tab-content w-[75%] max-medium:w-full mt-[16px] tablet:mt-0">
             {features.map((feature, index) => {
               return (
                 <div

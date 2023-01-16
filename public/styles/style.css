@@ -6454,7 +6454,7 @@ body {
   flex-direction: column-reverse !important;
 }
 .amplication-base .flex-wrap {
-  flex-wrap: wrap !important;
+  flex-wrap: wrap;
 }
 .amplication-base .flex-nowrap {
   flex-wrap: nowrap !important;
@@ -9412,6 +9412,12 @@ body {
   font-weight: 400;
   color: #41cadd;
   display: inline-block;
+  line-height: 2.4rem;
+}
+@media (max-width: 767.98px) {
+  .amplication-base .animated-header .animated-header__animated-text {
+    line-height: 2.2rem;
+  }
 }
 .amplication-base .animated-header .animated-header__fixed-text {
   display: block;
@@ -10130,6 +10136,11 @@ body {
     line-height: 1.5rem;
   }
 }
+@media (max-width: 768px) {
+  .amplication-base .roadmap-paragraph {
+    font-size: 0.75rem;
+  }
+}
 .amplication-base .roadmap-link {
   font-family: "Poppins";
   font-style: normal;
@@ -10173,12 +10184,22 @@ body {
   margin-right: 3rem;
   padding-left: 0;
 }
+@media (max-width: 768px) {
+  .amplication-base .roadmap-box .roadmap-list {
+    font-size: 0.75rem;
+  }
+}
 .amplication-base .roadmap-box .roadmap-list li {
   list-style: none;
   color: var(--white);
   width: 100%;
   margin: 0;
   margin-bottom: 1.25rem;
+}
+@media (max-width: 768px) {
+  .amplication-base .roadmap-box .roadmap-list li {
+    margin-bottom: 0.25rem;
+  }
 }
 .amplication-base .roadmap-box .roadmap-list .done {
   opacity: 0.5;
@@ -11403,7 +11424,4 @@ body {
   margin: 4px 8px;
   padding: 4px 8px;
   white-space: nowrap;
-}
-.amplication-base .logotypes {
-  flex-wrap: nowrap !important;
 }

@@ -46,7 +46,7 @@ const Facts = () => {
                     >
                       {fact.title}
                     </div>
-                    <div className="font-normal !text-base laptop:!text-lg leading-7 text-center text-white max-w-[360px]">
+                    <div className="font-normal text-[0.875rem] tablet:!text-base laptop:!text-lg leading-normal text-center text-white max-w-[360px]">
                       {fact.description}
                     </div>
                   </div>

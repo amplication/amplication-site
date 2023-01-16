@@ -25,11 +25,8 @@ const Testimonials = () => {
               forwardRef={iframe}
             ></IframeResizer>
             <div className="absolute pt-48 inset-0 top-auto flex justify-content-center bg-[linear-gradient(180deg,_transparent_0%,_#15192c_60%,_#15192c_100%)]">
-              <Link href={testimonialLink} passHref={true}>
-                <a
-                  target="_blank"
-                  className="btn btn-outline-light btn-lg mb-4 text-black80 btn-sm !h-[34px] !font-normal !text-sm"
-                >
+              <Link href="/testimonials" passHref={true}>
+                <a className="btn btn-outline-light btn-lg mb-4 text-black80 btn-sm !h-[34px] !font-normal !text-sm">
                   Show all testimonials
                 </a>
               </Link>
