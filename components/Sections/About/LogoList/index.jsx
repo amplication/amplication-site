@@ -12,11 +12,11 @@ const LogoList = () => {
           <h2 className="roadmap-heading m-0 pt-1">
             Backed by visionary global investors
           </h2>
-          <div className="logotypes ml-auto w-full large:max-w-[46%] d-flex justify-evently align-items-center flex-wrap tablet:!flex-nowrap">
+          <div className="logotypes ml-auto w-full large:max-w-[46%] d-flex justify-evently align-items-center">
             {logos.map((logo, index) => {
               return (
                 <span
-                  className="px-6 tablet:px-10 text-center w-[360px] tablet:w-auto"
+                  className="px-[0.5rem] tablet:px-6 medium:px-10 text-center w-[360px] tablet:w-auto"
                   key={index}
                 >
                   <Image src={logo} alt={''} />

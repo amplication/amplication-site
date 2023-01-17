@@ -337,7 +337,7 @@ const Tabs = () => {
                       }}
                       className={
                         (isMobile
-                          ? 'flex font-normal text-sm leading-[1.56em]'
+                          ? 'flex font-normal text-sm leading-[1.5em]'
                           : 'hidden') +
                         ' cursor-pointer text-turquoise underline'
                       }

@@ -15,9 +15,9 @@ const HeroBlock = () => {
                     <h1 className="main-title mb-0">
                       <span className="block font-bold">
                         Build microservices <br />{' '}
-                        <span className="text-[0.75em]">20x faster</span>.
+                        20x faster.
                       </span>
-                      <span className="block text-[16px] tablet:text-[28px] desktop:text-[34px] leading-snug font-bold">
+                      <span className="block text-[20px] tablet:text-[28px] desktop:text-[34px] leading-relaxed font-bold">
                         Reliably. Securely. Consistently.
                       </span>
                     </h1>
