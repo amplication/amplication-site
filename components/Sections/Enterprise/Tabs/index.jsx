@@ -79,7 +79,7 @@ const Tabs = () => {
       image: RestImage,
       iconClass: 'feature-page-icon',
       tabTitle: 'REST API',
-      title: 'REST API LONG TEXT',
+      title: 'REST API',
       content:
         'Easily connect to your data with any HTTP client using REST API.\n' +
         '              Amplication generates production-ready REST API, with Swagger UI\n' +
@@ -96,6 +96,7 @@ const Tabs = () => {
       image: IdentityImage,
       iconClass: 'feature-page-icon third-color',
       tabTitle: 'Identity & Permissions',
+      title: 'Identity & Permissions',
       content:
         'Save time on plugging in authentication and authorization to your\n' +
         '              apps. Amplication provides a role-based permission model that is\n' +
@@ -117,6 +118,7 @@ const Tabs = () => {
       image: AdminImage,
       iconClass: 'feature-page-icon first-color',
       tabTitle: 'React Admin UI',
+      title: 'React Admin UI',
       content:
         'Start working with your application in minutes. Amplication\n' +
         '              generates a React client with ready-made forms for creating and\n' +
@@ -134,6 +136,7 @@ const Tabs = () => {
       image: CodeGenerationImage,
       iconClass: 'feature-page-icon',
       tabTitle: 'Node.js Code Generation',
+      title: 'Node.js Code Generation',
       content:
         'Save time on boilerplate and repetitive tasks with low-code but\n' +
         '              keep working on your core business logic with pro-code.\n' +
@@ -150,6 +153,7 @@ const Tabs = () => {
       image: CustomCodeImage,
       iconClass: 'feature-page-icon third-color',
       tabTitle: 'Custom Code',
+      title: 'Custom Code',
       content:
         'Generated apps can be manually customized to support any complex\n' +
         '              logic, specs, or integration using custom code. Code components\n' +
@@ -163,6 +167,7 @@ const Tabs = () => {
       image: CLIImage,
       iconClass: 'feature-page-icon first-color',
       tabTitle: 'Command Line Interface (CLI)',
+      title: 'Command Line Interface (CLI)',
       content:
         'Define your data model and generate apps faster using Amplication\n' +
         '              Command Line Interface (CLI). Actions available in our data model\n' +
@@ -176,14 +181,11 @@ const Tabs = () => {
       image: DeploymentImage,
       iconClass: 'feature-page-icon',
       tabTitle: 'Application Deployment',
+      title: 'Application Deployment',
       content:
-        'When working with Amplication, all your committed changes are\n' +
-        '              continuously deployed to a sandbox environment on the Amplication\n' +
-        '              cloud so you can easily access your application for testing and\n' +
-        '              development purposes.\n' +
-        '              <br /><br />\n' +
-        '              You can also easily build a Docker container to prepare your app\n' +
-        '              for deployment. Your app is always generated with all the\n' +
+        '              You can easily build a Docker container to prepare your app\n' +
+        '              for deployment, or use plugins for other deployment options. \n' +
+        '              Your app is always generated with all the\n' +
         '              configuration and scripts needed to do so.',
     },
     {
@@ -192,6 +194,7 @@ const Tabs = () => {
       image: OpenSourceImage,
       iconClass: 'feature-page-icon third-color',
       tabTitle: 'Open Source',
+      title: 'Open Source',
       content:
         'Amplication is an open-source project built for developers by the\n' +
         '              open-source community.\n' +
@@ -218,6 +221,7 @@ const Tabs = () => {
       image: integrationImage,
       iconClass: 'feature-page-icon first-color',
       tabTitle: 'Custom Code & Webhooks Integration',
+      title: 'Custom Code & Webhooks Integration',
       content:
         'Integration with any external service is available through custom\n' +
         '              code or webhooks. Once you generate your Node.js app based on your data\n' +
@@ -233,6 +237,7 @@ const Tabs = () => {
       image: versionControlImage,
       iconClass: 'feature-page-icon',
       tabTitle: 'Version Control',
+      title: 'Version Control',
       content:
         'Amplication has version control built-in which enables you to\n' +
         "              visually see any app change and how it's being reflected in the\n" +
@@ -246,6 +251,7 @@ const Tabs = () => {
       image: syncGithubImage,
       iconClass: 'feature-page-icon third-color',
       tabTitle: 'GitHub Sync',
+      title: 'GitHub Sync',
       content:
         'Amplication can push the code of your app to a GitHub repository.\n' +
         '              Every app developed on Amplication platform is translated to a\n' +

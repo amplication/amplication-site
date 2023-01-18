@@ -41,7 +41,9 @@ const Roadmap = ({customClass}) => {
                 <div className="roadmap-title font-dmmono">Database</div>
                 <ul className="roadmap-list">
                   <li className="done">Design data model</li>
-                  <li className="text-white">MongoDB & other databases</li>
+                  <li className="done">PostgreSQL</li>
+                  <li className="done">MySQL</li>
+                  <li className="done">MongoDB</li>
                   <li className="text-white">ERD View</li>
                   <li className="text-white">Connect to your own database</li>
                 </ul>

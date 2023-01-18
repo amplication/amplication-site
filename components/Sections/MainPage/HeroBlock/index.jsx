@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import VideoWatch from '../../../../public/images/video-start.png';
+import VideoWatch from '../../../../public/images/video-watch.png';
 import {useEffect, useState} from 'react';
 
 const HeroBlock = () => {
@@ -103,7 +103,7 @@ const HeroBlock = () => {
                   <div className="relative align-items-center !max-w-[92%] w-full min-h-[600px] hidden medium:flex align-items-center laptop:!max-w-[56%]">
                     <div className="absolute laptop:my-auto !-mt-24 w-[84vw] medium:flex align-items-center">
                       <Link
-                        href={'https://www.youtube.com/watch?v=wCJ2jF1IU7U'}
+                        href={'https://www.youtube.com/watch?v=Kn5cNlUecCs'}
                         passHref={true}
                       >
                         <a data-lity={true}>

@@ -39,34 +39,12 @@ const Tabs = () => {
   const features = [
     {
       image: enterprise5,
-      tabTitle: 'Project Extension',
+      tabTitle: 'Any phase',
       title: 'Extend existing projects or start from scratch',
       customClasses: '!pb-8',
       content:
         '<p>Whether you want to break the monolith, extend an existing product with new services, or start from scratch - Amplication got your back{end}.</p>' +
         '<p>Amplication can connect to an existing monorepo and add new services alongside the existing ones, and the generated code can be extended to include the configuration, actions, and workflows to integrate with your CI/CD pipelines.</p>',
-    },
-    {
-      image: enterprise1,
-      tabTitle: 'Business value',
-      title: 'Write business value from day 0',
-      customClasses: '!pt-8',
-      content:
-        '<p>Amplication generates a fully extendable and customizable code base for all the application infrastructure, so your team can focus on moving the needle.</p>' +
-        '<p>The generated code is created with well-known technology, so your team does not need to learn anything new. We adopt industry best practices, so your team can use their existing knowledge and skillset.</p>' +
-        '<p>The generated code can include anything from data schema management, API endpoints (GraphQL or REST API), queues and message brokers, storage, IaC and deployment, roles and permissions, database connections, microservices communication, integrations, logging, exception handling, admin UI and more.</p>',
-      buttons: [],
-    },
-    {
-      image: enterprise2,
-      tabTitle: 'Keep or Adopt',
-      title:
-        'Keep your best practices and conventions or adopt industry standards',
-      customClasses: '!pb-6',
-      content:
-        '<p>Using a community-driven plugin system, your team has full control over the flavor of the generated code, including security, privacy, standards, and best practices.</p>' +
-        '<p>Plugins can be used to control anything from the type of database to use, code conventions and format, authentication providers, connecting to CI/CD pipelines, monorepo management, build tools, and more.</p>' +
-        "<p>Your infra team can create custom plugins to keep the organization's current conventions, standards, and best practices and enforce usage across teams. You can easily update plugins and automatically push changes to dozen or hundreds of services in one click.</p>",
     },
     {
       image: enterprise3,
@@ -79,13 +57,35 @@ const Tabs = () => {
     },
     {
       image: enterprise4,
-      tabTitle: 'Limitless architecture',
+      tabTitle: 'Any Architecture',
       title: 'Limitless architecture',
       customClasses: '!pb-8',
       content:
         '<p>Whether you build a single service or a microservices architecture, Amplication allows you to build at any scale.</p>' +
         '<p>Your teams can create various services, manage microservices communication, use Kafka, connect to storage, or add an API Gateway. The code is consistent, secure, and reliable across all teams.</p>' +
         '<p>Amplication can sync the generated code with a monorepo where each service goes to a different folder or sync with various repositories. You can manage dozens or hundreds of services with maximum consistency from a single source of truth and centralized management and visibility.</p>',
+    },
+    {
+      image: enterprise1,
+      tabTitle: 'Industry Standards',
+      title: 'Write business value from day 0',
+      customClasses: '!pt-8',
+      content:
+        '<p>Amplication generates a fully extendable and customizable code base for all the application infrastructure, so your team can focus on moving the needle.</p>' +
+        '<p>The generated code is created with well-known technology, so your team does not need to learn anything new. We adopt industry best practices, so your team can use their existing knowledge and skillset.</p>' +
+        '<p>The generated code can include anything from data schema management, API endpoints (GraphQL or REST API), queues and message brokers, storage, IaC and deployment, roles and permissions, database connections, microservices communication, integrations, logging, exception handling, admin UI and more.</p>',
+      buttons: [],
+    },
+    {
+      image: enterprise2,
+      tabTitle: 'Plugins',
+      title:
+        'Keep your best practices and conventions or adopt industry standards',
+      customClasses: '!pb-6',
+      content:
+        '<p>Using a community-driven plugin system, your team has full control over the flavor of the generated code, including security, privacy, standards, and best practices.</p>' +
+        '<p>Plugins can be used to control anything from the type of database to use, code conventions and format, authentication providers, connecting to CI/CD pipelines, monorepo management, build tools, and more.</p>' +
+        "<p>Your infra team can create custom plugins to keep the organization's current conventions, standards, and best practices and enforce usage across teams. You can easily update plugins and automatically push changes to dozen or hundreds of services in one click.</p>",
     },
   ];
 

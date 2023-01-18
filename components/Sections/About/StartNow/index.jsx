@@ -14,7 +14,7 @@ const StartNow = ({title, linkPrimary, linkOutline, linkSecondary}) => {
             <Link href={linkPrimary.href} passHref={true}>
               <a
                 target="_blank"
-                className="btn btn-primary btn-sm !text-sm !h-10 mr-2 w-full max-w-[104px] !px-0 !h-[34px] !font-normal"
+                className="btn btn-primary btn-sm !text-sm !h-10 mr-4 w-full max-w-[104px] !px-0 !h-[34px] !font-normal"
                 rel="noreferrer"
               >
                 {linkPrimary.title}

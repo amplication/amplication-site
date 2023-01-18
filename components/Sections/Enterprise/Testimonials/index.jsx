@@ -19,9 +19,8 @@ const Testimonials = () => {
             <IframeResizer
               autoResize={false}
               className="transition-all"
-              heightCalculationMethod="lowestElement"
               src={testimonialLink}
-              style={{width: '1px', minWidth: '100%'}}
+              style={{width: '1px', minWidth: '100%', height: '400px'}}
               forwardRef={iframe}
             ></IframeResizer>
             <div className="absolute pt-48 inset-0 top-auto flex justify-content-center bg-[linear-gradient(180deg,_transparent_0%,_#15192c_60%,_#15192c_100%)]">
