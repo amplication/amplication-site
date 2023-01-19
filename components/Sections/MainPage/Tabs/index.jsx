@@ -39,17 +39,17 @@ const Tabs = () => {
   const features = [
     {
       image: enterprise5,
-      tabTitle: 'Any phase',
+      tabTitle: 'Create or extend',
       title: 'Extend existing projects or start from scratch',
       customClasses: '!pb-8',
       content:
-        '<p>Whether you want to break the monolith, extend an existing product with new services, or start from scratch - Amplication got your back{end}.</p>' +
+        '<p>Whether you want to break the monolith, extend an existing product with new services, or start from scratch - Amplication has got your back{end}.</p>' +
         '<p>Amplication can connect to an existing monorepo and add new services alongside the existing ones, and the generated code can be extended to include the configuration, actions, and workflows to integrate with your CI/CD pipelines.</p>',
     },
     {
       image: enterprise3,
-      tabTitle: 'Any scale',
-      title: 'Build your product with no limits at any scale',
+      tabTitle: 'Customize code',
+      title: 'Create customized code using your favorite tools',
       customClasses: '!pb-8',
       content:
         '<p>You build something unique, so use the creativity of your team to make a difference. The generated code is fully customizable. Your team keeps working with their favorite IDE to extend and build on top of the generated code. Anything can be customized, and Amplication will give you all the freedom to keep making changes without losing any of the custom code.</p>' +
@@ -57,8 +57,8 @@ const Tabs = () => {
     },
     {
       image: enterprise4,
-      tabTitle: 'Any Architecture',
-      title: 'Limitless architecture',
+      tabTitle: 'Limitless Architecture ',
+      title: 'Build your architecture to any scale',
       customClasses: '!pb-8',
       content:
         '<p>Whether you build a single service or a microservices architecture, Amplication allows you to build at any scale.</p>' +
@@ -67,7 +67,7 @@ const Tabs = () => {
     },
     {
       image: enterprise1,
-      tabTitle: 'Industry Standards',
+      tabTitle: 'Boost productivity',
       title: 'Write business value from day 0',
       customClasses: '!pt-8',
       content:
@@ -78,14 +78,14 @@ const Tabs = () => {
     },
     {
       image: enterprise2,
-      tabTitle: 'Plugins',
+      tabTitle: 'Build it your way',
       title:
-        'Keep your best practices and conventions or adopt industry standards',
+        'Use plugins to support your best practices, or adopt industry standards',
       customClasses: '!pb-6',
       content:
         '<p>Using a community-driven plugin system, your team has full control over the flavor of the generated code, including security, privacy, standards, and best practices.</p>' +
         '<p>Plugins can be used to control anything from the type of database to use, code conventions and format, authentication providers, connecting to CI/CD pipelines, monorepo management, build tools, and more.</p>' +
-        "<p>Your infra team can create custom plugins to keep the organization's current conventions, standards, and best practices and enforce usage across teams. You can easily update plugins and automatically push changes to dozen or hundreds of services in one click.</p>",
+        "<p>Your infra team can create custom plugins to keep the organization's current conventions, standards, and best practices and enforce usage across teams. You can easily update plugins and automatically push changes to dozens or hundreds of services in one click.</p>",
     },
   ];
 
