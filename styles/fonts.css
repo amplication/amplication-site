@@ -21,6 +21,9 @@
     font-style: normal;
 }
 
+/**
+ * Poppins
+ */
 @font-face {
     font-family: "poppins";
     src: url("../public/fonts/poppins/poppins-v19-latin-300.woff2") format("woff2");
@@ -78,6 +81,9 @@
     font-style: normal;
 }
 
+/**
+ * Ubuntu Mono
+ */
 @font-face {
     font-family: "ubuntu_mono";
     src: url("../public/fonts/ubuntu-mono/ubuntu-mono-v14-latin-regular.woff2") format("woff2"),
