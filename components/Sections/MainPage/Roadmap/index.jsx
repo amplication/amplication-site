@@ -55,10 +55,8 @@ const Roadmap = ({customClass}) => {
                 <ul className="roadmap-list">
                   <li className="done">Roles &amp; Permissions</li>
                   <li className="done">Identity Management</li>
-                  <li className="text-white">
-                    Plugin System &amp; marketplace
-                  </li>
-                  <li className="text-white">Monorepo</li>
+                  <li className="done">Plugin System &amp; marketplace</li>
+                  <li className="done">Monorepo</li>
                   <li className="text-white">Logging &amp; auditing</li>
                   <li className="text-white">Monitoring &amp; observability</li>
                 </ul>
@@ -68,10 +66,9 @@ const Roadmap = ({customClass}) => {
               <div className="roadmap-box">
                 <div className="roadmap-title font-dmmono">Microservices</div>
                 <ul className="roadmap-list">
-                  <li className="text-white">Modular services</li>
-                  <li className="text-white">Queues</li>
+                  <li className="done">Modular services</li>
+                  <li className="done">Queues</li>
                   <li className="text-white">Other transports</li>
-                  <li className="text-white">Canvas pages</li>
                   <li className="text-white">Secrets</li>
                   <li className="text-white">Environment variables</li>
                 </ul>
@@ -86,9 +83,7 @@ const Roadmap = ({customClass}) => {
                   <li className="done">Custom Code</li>
                   <li className="done">Continuos sync with Git</li>
                   <li className="text-white">GitLab and other Git services</li>
-                  <li className="text-white">
-                    Auto merge and conflict management
-                  </li>
+                  <li className="done">Auto merge and conflict management</li>
                   <li className="text-white">Multiple branches</li>
                 </ul>
               </div>

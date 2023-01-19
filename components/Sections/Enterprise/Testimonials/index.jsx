@@ -6,7 +6,7 @@ const Testimonials = () => {
   const iframe = useRef();
 
   const testimonialLink =
-    'https://embed.testimonial.to/grid/selected/amplication/0?theme=dark&autoplay=off&showmore=on&one-row=on&same-height=off';
+    'https://embed-v2.testimonial.to/grid/selected/amplication/0?theme=dark&autoplay=off&showmore=on&one-row=on&same-height=off';
 
   return (
     <>
@@ -20,7 +20,7 @@ const Testimonials = () => {
               autoResize={false}
               className="transition-all"
               src={testimonialLink}
-              style={{width: '1px', minWidth: '100%', height: '400px'}}
+              style={{width: '1px', minWidth: '100%', minHeight: '400px'}}
               forwardRef={iframe}
             ></IframeResizer>
             <div className="absolute pt-48 inset-0 top-auto flex justify-content-center bg-[linear-gradient(180deg,_transparent_0%,_#15192c_60%,_#15192c_100%)]">

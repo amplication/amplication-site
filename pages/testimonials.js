@@ -3,7 +3,7 @@ import {MainLayout} from '../layouts';
 import IframeResizer from 'iframe-resizer-react';
 import helpers from '../helpers';
 const testimonialLink =
-  'https://embed.testimonial.to/grid/selected/amplication/0?theme=dark&autoplay=off&showmore=on&one-row=on&same-height=off';
+  'https://embed-v2.testimonial.to/grid/selected/amplication/0?theme=dark&autoplay=off&showmore=on&one-row=on&same-height=off';
 
 const Testimonials = () => {
   return (
