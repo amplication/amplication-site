@@ -10,31 +10,31 @@ import Image from 'next/image';
 const Slider = () => {
   return (
     <>
-      <section className="!pt-5 !pb-4 laptop:!px-14 laptop:!pt-24 laptop:!pb-20 !bg-light-blue">
+      <section className="!pt-5 !pb-4 laptop:!py-20 !bg-light-blue">
         <div className="flex-grow max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
-          <h2 className="!text-3xl !text-5xl large:!text-[56px] !leading-tight !font-semibold tablet:text-center">
+          <h2 className="roadmap-heading tablet:text-center">
             Empowering developers from leading companies
           </h2>
-          <div className="logotypes mt-6 desktop:px-14 flex flex-wrap flex-nowrap align-items-center">
-            <div className="flex justify-content-center laptop:py-4 flex-grow w-[50%] max-w-[50%] laptop:max-w-[196px]">
+          <div className="logotypes mt-6 flex flex-wrap align-items-center">
+            <div className="flex justify-content-center w-[25%] tablet:w-[20%] laptop:w-[14.2857%]">
               <Image src={Logo1} alt="pull request" />
             </div>
-            <div className="flex justify-content-center laptop:py-4 flex-grow w-[50%] laptop:!max-w-[196px]">
+            <div className="flex justify-content-center w-[25%] tablet:w-[20%] laptop:w-[14.2857%]">
               <Image src={Logo2} alt="pull request" />
             </div>
-            <div className="flex justify-content-center laptop:py-4 flex-grow w-[50%] laptop:!max-w-[196px]">
+            <div className="flex justify-content-center w-[25%] tablet:w-[20%] laptop:w-[14.2857%]">
               <Image src={Logo3} alt="pull request" />
             </div>
-            <div className="flex justify-content-center laptop:py-4 flex-grow w-[50%] laptop:!max-w-[196px]">
+            <div className="flex justify-content-center w-[25%] tablet:w-[20%] laptop:w-[14.2857%]">
               <Image src={Logo4} alt="pull request" />
             </div>
-            <div className="flex justify-content-center laptop:py-4 flex-grow w-[50%] laptop:!max-w-[196px]">
+            <div className="flex justify-content-center w-[25%] tablet:w-[20%] laptop:w-[14.2857%]">
               <Image src={Logo5} alt="pull request" />
             </div>
-            <div className="flex justify-content-center laptop:py-4 flex-grow w-[50%] laptop:!max-w-[196px]">
+            <div className="flex justify-content-center w-[25%] tablet:w-[20%] laptop:w-[14.2857%]">
               <Image src={Logo6} alt="pull request" />
             </div>
-            <div className="flex justify-content-center laptop:py-4 flex-grow w-[50%] laptop:!max-w-[196px]">
+            <div className="flex justify-content-center w-[25%] tablet:w-[20%] laptop:w-[14.2857%]">
               <Image src={Logo7} alt="pull request" />
             </div>
           </div>

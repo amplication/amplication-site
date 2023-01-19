@@ -12,6 +12,9 @@ module.exports = {
     },
     screens: {
       tablet: '640px',
+      'max-tablet': {
+        max: '639px',
+      },
       laptop: '992px',
       'max-laptop': {
         max: '991px',
@@ -23,7 +26,7 @@ module.exports = {
       },
       desktop: '1280px',
       large: '1440px',
-      extra_large: '1920px',
+      xlg: '1920px',
     },
     maxWidth: {
       'container-desktop': '1712px',
@@ -139,5 +142,9 @@ module.exports = {
       },
     },
   },
-  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/line-clamp')],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/line-clamp'),
+    require('tailwind-scrollbar-hide'),
+  ],
 };

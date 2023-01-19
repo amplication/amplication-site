@@ -94,32 +94,29 @@ const GetList = () => {
 
   return (
     <>
-      <section className="bg-transparent">
-        <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop ">
-          <div className="row align-items-center justify-content-center mb-6 large:mb-14">
-            <h2 className="h2 !text-4xl large:!text-[50px] text-center">
+      <section className="!bg-light-blue !py-20">
+        <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
+          <div className="mb-6 large:mb-11">
+            <h2 className="roadmap-heading m-0">
               What do you get from Amplication?
             </h2>
           </div>
-          <div className="features pb-24">
+          <div className="features">
             <div
-              className="col-12 pt-4 row d-flex justify-content-between align-items-start !w-auto !max-w-none"
+              className="d-flex flex-wrap justify-content-between align-items-start !w-auto !max-w-none"
               id="features"
             >
               {items.map((item, index) => {
                 return (
-                  <div
-                    className="feature-card flex align-items-center"
-                    key={index}
-                  >
-                    <div className="flex justify-center max-w-[96px] large:max-w-[120px]">
+                  <div className="feature-card flex !text-left" key={index}>
+                    <div className="flex min-w-[60px] max-w-[60px]">
                       <Image src={item.image} alt={'open source'} />
                     </div>
-                    <div className="flex-auto ml-2">
-                      <div className="feature-card-text text-lg large:text-xl text-white leading-[25px] !font-bold !max-w-[240px] mt-2">
+                    <div className="flex-auto">
+                      <div className="feature-card-text text-lg text-white leading-[25px] !font-semibold !max-w-full !mt-[.75rem] pb-2">
                         {item.title}
                       </div>
-                      <div className="feature-card-content text-base text-white font-light mt-2 max-w-[230px]">
+                      <div className="feature-card-content text-sm text-white font-regular max-w-[282px]">
                         {item.content}
                       </div>
                     </div>

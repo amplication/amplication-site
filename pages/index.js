@@ -1,8 +1,12 @@
-import HeroBlock from '../components/Sections/MainPage/HeroBlock';
+import HeroBlock from '../components/Sections/Enterprise/HeroBlock';
+import Slider from '../components/Sections/Enterprise/Slider';
+import Facts from '../components/Sections/Enterprise/Facts';
+import Testimonials from '../components/Sections/Enterprise/Testimonials';
 import Features from '../components/Sections/MainPage/Features';
 import GetList from '../components/Sections/MainPage/GetList';
-import Steps from '../components/Sections/MainPage/Steps';
+import Tabs from '../components/Sections/MainPage/Tabs';
 import Roadmap from '../components/Sections/MainPage/Roadmap';
+import LogoList from '../components/Sections/About/LogoList';
 import {NextSeo} from 'next-seo';
 import {MainLayout} from '../layouts';
 import helpers from '../helpers';
@@ -29,28 +33,28 @@ const Home = () => {
         }}
       />
 
-      <main className="w-full font-poppins z-10 mb-12 laptop:mb-[100px] amplication-base">
-        {/*Hero Block*/}
+      <main className="w-full font-poppins z-10 !mb-0 laptop:mb-[100px] amplication-base">
         <HeroBlock />
-
-        <div className="bg-gradient">
-          {/*Features*/}
-          <Features />
-
-          {/*What do you get block*/}
-          <GetList />
-        </div>
-
-        {/*Steps*/}
-        <Steps />
-
-        {/*Roadmap*/}
-        <Roadmap />
+        <Slider />
+        <Testimonials />
+        <Facts />
+        <Features />
+        <GetList />
+        <Tabs />
+        <Roadmap customClass="!bg-light-blue !py-24" />
+        <LogoList />
       </main>
     </>
   );
 };
 Home.getLayout = function getLayout(page) {
-  return <MainLayout paddingTopClasses="laptop:pt-[143px]">{page}</MainLayout>;
+  return (
+    <MainLayout
+      footerClass="bg-light-blue"
+      paddingTopClasses="laptop:pt-[100px]"
+    >
+      {page}
+    </MainLayout>
+  );
 };
 export default Home;

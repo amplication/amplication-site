@@ -1,21 +1,21 @@
-import HeroBlock from '../components/Sections/About/HeroBlock';
-import Steps from '../components/Sections/About/Steps';
-import LogoList from '../components/Sections/About/LogoList';
-import UsersList from '../components/Sections/About/UsersList';
+import HeroBlock from '../components/Sections/MainPage/HeroBlock';
+import Tabs from '../components/Sections/Enterprise/Tabs';
+import Steps from '../components/Sections/MainPage/Steps';
+import Testimonials from '../components/Sections/Enterprise/Testimonials';
 import {NextSeo} from 'next-seo';
 import {MainLayout} from '../layouts';
 import helpers from '../helpers';
+import Slider from '../components/Sections/Enterprise/Slider';
+import Facts from '../components/Sections/Enterprise/Facts';
 
-const About = () => {
+const Home = () => {
   return (
     <>
       <NextSeo
-        title="About Us | Amplication"
+        title="Node.js App Development: Open Source Platform | Amplication"
         description="Amplication is the most flexible open-source platform for Node.js app development.
         We enable developers to auto-generate production-ready backend in minutes. Design modelsand roles,
          deploy your app, connect with REST or GraphQL API, sync with GitHub. You own the code."
-        noindex={true}
-        nofollow={true}
         canonical={helpers.getCanonical('/')}
         openGraph={{
           type: 'website',
@@ -29,38 +29,27 @@ const About = () => {
           cardType: 'summary_large_image',
         }}
       />
+
       <main className="w-full font-poppins z-10 amplication-base">
+        {/*Hero Block*/}
         <HeroBlock />
-        <div className="bg-gradient">
-          <LogoList />
-          <UsersList />
-          <Steps />
-          {/*<LowCode />*/}
-          {/*<StartNow*/}
-          {/*  linkPrimary={{*/}
-          {/*    href: 'https://app.amplication.com/',*/}
-          {/*    title: 'Get started',*/}
-          {/*  }}*/}
-          {/*  linkSecondary={{*/}
-          {/*    title: 'Join Community',*/}
-          {/*  }}*/}
-          {/*/>*/}
-        </div>
+        <Slider />
+        <Testimonials />
+        <Facts />
+        <Steps />
+        <Tabs />
       </main>
     </>
   );
 };
-
-About.getLayout = function getLayout(page) {
+Home.getLayout = function getLayout(page) {
   return (
     <MainLayout
-      paddingTopClasses="laptop:pt-[100px]"
       footerClass="bg-light-blue"
-      hideFooterBanner={true}
+      paddingTopClasses="laptop:pt-[100px]"
     >
       {page}
     </MainLayout>
   );
 };
-
-export default About;
+export default Home;

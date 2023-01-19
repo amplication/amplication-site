@@ -34,7 +34,8 @@ const Footer = ({customClass, compactView, hideBanner}) => {
               {/*<FooterContent />*/}
             </>
           )}
-
+        </div>
+        <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop relative z-10 flex justify-between items-center relative py-6 laptop:py-0 !max-w-[1904px]">
           {/*Footer Bottom Bar*/}
           <FooterBottomBar />
         </div>

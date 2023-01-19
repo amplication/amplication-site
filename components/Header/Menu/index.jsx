@@ -20,39 +20,21 @@ const Menu = () => {
       isActive: false,
     },
     {
-      title: 'Enterprise',
+      title: 'Developers',
       href: {
-        pathname: '/enterprise',
+        pathname: '/developers',
       },
       target: '_self',
-      isActive: Boolean(asPath === '/enterprise'),
+      isActive: Boolean(asPath === '/developers'),
     },
     {
-      title: 'Product',
+      title: 'Roadmap',
       href: {
-        pathname: '/product',
+        pathname: '/',
+        hash: 'roadmap',
       },
-      target: '_blank',
+      target: '_self',
       isActive: false,
-      menuItems: [
-        {
-          title: 'Features',
-          href: {
-            pathname: '/features',
-          },
-          target: '_self',
-          isActive: Boolean(asPath === '/features'),
-        },
-        {
-          title: 'Roadmap',
-          href: {
-            pathname: '/',
-            hash: 'roadmap',
-          },
-          target: '_self',
-          isActive: false,
-        },
-      ],
     },
     {
       title: 'Pricing',
@@ -107,6 +89,9 @@ const Menu = () => {
       ],
     },
     {
+      title: '',
+    },
+    {
       title: 'Log In',
       href: {
         pathname: 'https://app.amplication.com/login',
@@ -153,6 +138,17 @@ const Menu = () => {
           <ul className="flex flex-col justify-start items-stretch laptop:flex-row justify:end items:center">
             {menuItems.map((item, index) => {
               const menuItemClasses = 'menu__item relative';
+              if (item.title === '') {
+                return (
+                  <li
+                    className="py-2 mx-2 items-center hidden laptop:flex"
+                    key={index}
+                  >
+                    <span className="w-[1px] h-[34px] bg-light-blue"></span>
+                  </li>
+                );
+              }
+
               return (
                 <li
                   key={index.toString()}
@@ -186,7 +182,7 @@ const Menu = () => {
                   {!item.menuItems && (
                     <Link href={item.href}>
                       <a
-                        className={`text-xl block laptop:inline-block hover:text-purple-bright text-center laptop:text-left border-[#353B57] border-b-[1px] laptop:border-b-0 laptop:text-base p-7 laptop:py-5 laptop:px-2 desktop:px-[15px] ${
+                        className={`text-xl block laptop:inline-block hover:text-purple-bright text-center laptop:text-left border-[#353B57] border-b-[1px] laptop:border-b-0 laptop:text-base p-7 laptop:py-6 laptop:px-2 desktop:px-[15px] ${
                           item.isActive ? 'text-purple-bright' : 'text-gray'
                         }`}
                         target={item.pathname}
@@ -202,7 +198,7 @@ const Menu = () => {
                     <>
                       <span
                         className={
-                          'text-gray hover:text-purple-bright text-xl text-center laptop:text-left laptop:text-base p-7 laptop:py-5 laptop:px-2 desktop:px-[15px] cursor-pointer justify-center flex ' +
+                          'text-gray hover:text-purple-bright text-xl text-center laptop:text-left laptop:text-base p-7 laptop:py-6 laptop:px-2 desktop:px-[15px] cursor-pointer justify-center flex ' +
                           (hoveredLink === item.href.pathname
                             ? ' !text-white laptop:!text-purple-bright'
                             : 'border-[#353B57] border-b-[1px] laptop:border-b-0')
@@ -301,7 +297,7 @@ const Menu = () => {
             hoverBackgroundColor="purpleBrightHover"
             isLink={true}
             href="https://app.amplication.com/login"
-            className="text-[15px] h-[40px] whitespace-nowrap !px-4 desktop:!px-8"
+            className="text-[15px] h-[40px] whitespace-nowrap !px-4"
           />
         </div>
       </div>

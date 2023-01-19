@@ -7,41 +7,44 @@ import feature4 from '../../../../public/images/features/feature4.svg';
 const Features = () => {
   const features = [
     {
+      title: 'Docker',
+      icon: feature3,
+      content:
+        'Simply configure your architecture, with APIs, data models, database, and more',
+    },
+    {
       title: 'Database',
       icon: feature1,
-      content:
-        'Easily generate all core BE functionality, including creation of entities & roles',
+      content: 'Automatically generate all boilerplate and infrastructure code',
     },
     {
       title: 'GitHub',
       icon: feature2,
-      content: 'Continuously sync the generated code to your GitHub repo ',
-    },
-    {
-      title: 'Docker',
-      icon: feature3,
-      content: 'Simply create microservices or monolithic architecture',
+      content:
+        'Continuously get Pull Requests with the generated code to your Git repositories',
     },
     {
       title: 'Docker',
       icon: feature4,
-      content:
-        'Get a production-ready Node.js application and a Docker container to deploy anywhere',
+      content: 'Freely customize and extend the generated code',
     },
   ];
   return (
     <>
-      <section className="page-welcome-solution bg-transparent">
+      <section className="page-welcome-solution bg-transparent !py-20">
         <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
-          <div className="solution">
+          <h2 className="roadmap-heading !mb-2">
+            How Amplication backend development platform works?
+          </h2>
+          <div className="solution max-laptop:!mx-0 !p-0 row">
             {features.map((item, index) => {
               return (
                 <div
-                  className="solution-card !flex align-items-center flex-column"
+                  className="solution-card !flex align-items-center p-8 py-6 flex-column !max-w-none !bg-light-blue !border-dark-black-70 rounded-lg border-solid border"
                   key={index}
                 >
                   {item.icon && (
-                    <div className="flex justify-center max-w-[96px] large:max-w-[120px]">
+                    <div className="flex justify-center max-w-[48px] large:max-w-[60px]">
                       <Image
                         objectFit="cover"
                         src={item.icon}
@@ -50,7 +53,7 @@ const Features = () => {
                     </div>
                   )}
                   <div
-                    className="solution-content text-base large:text-xl text-white text-center max-w-[270px] mt-2 large:mt-4 large:!leading-8"
+                    className="solution-content text-base large:text-lg text-white text-center tablet:max-w-[270px] mt-[0.75rem] large:mt-3 large:!leading-7"
                     dangerouslySetInnerHTML={{__html: item.content}}
                   ></div>
                 </div>
