@@ -4,7 +4,7 @@ import LogoEntree from '../../../../public/images/logotypes/logo-entree-capital.
 import LogoVertex from '../../../../public/images/logotypes/logo-vertex.png';
 
 const LogoList = () => {
-  const logos = [LogoNorwest, LogoEntree, LogoVertex];
+  const logos = [LogoNorwest, LogoVertex, LogoEntree];
   return (
     <>
       <section className="background-transparent w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
