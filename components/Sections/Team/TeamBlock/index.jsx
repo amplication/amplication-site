@@ -12,7 +12,6 @@ import ofekGabay from '../../../../public/images/team/ofek-gabay.png';
 import michaelSolati from '../../../../public/images/team/michael-solati.png';
 import eugineTseitlin from '../../../../public/images/team/eugene-tseitlin.png';
 import shimiBar from '../../../../public/images/team/shimi.png';
-import arielWeinberger from '../../../../public/images/team/ariel.png';
 import tomerNaim from '../../../../public/images/team/tomer.png';
 import toddFeinroth from '../../../../public/images/team/todd.png';
 import erezGreenberg from '../../../../public/images/team/erez.png';
@@ -138,25 +137,6 @@ const TeamBlock = () => {
         },
         {
           href: 'https://twitter.com/ov3rbit',
-          iconClass: 'twitter',
-        },
-      ],
-    },
-    {
-      name: 'Ariel Weinberger',
-      position: 'Principal Engineer',
-      image: arielWeinberger,
-      links: [
-        {
-          href: 'https://www.linkedin.com/in/arielweinberger/',
-          iconClass: 'linkedin',
-        },
-        {
-          href: 'https://github.com/arielweinberger',
-          iconClass: 'github',
-        },
-        {
-          href: 'https://twitter.com/arielweinberger',
           iconClass: 'twitter',
         },
       ],
