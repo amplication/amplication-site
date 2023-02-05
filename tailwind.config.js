@@ -30,6 +30,7 @@ module.exports = {
     },
     maxWidth: {
       'container-desktop': '1712px',
+      'container-desktop-blog': '1366px',
       'container-desktop-enlarged': '1920px',
     },
     extend: {

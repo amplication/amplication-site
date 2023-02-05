@@ -68,7 +68,7 @@ const Post = ({posts, post}) => {
         canonical={helpers.getCanonical(helpers.getPostSlug(post.slug))}
       />
 
-      <div className="w-full p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop mt-16 laptop:mt-12">
+      <div className="w-full p-container laptop:max-w-container-desktop-blog laptop:m-container-desktop laptop:p-container-desktop mt-16 laptop:mt-12">
         <nav>
           <ul className="flex justify-start items-center flex-wrap">
             <li className="text-white inline-block mr-1">
@@ -96,7 +96,7 @@ const Post = ({posts, post}) => {
         </nav>
       </div>
 
-      <main className="flex flex-col flex-wrap laptop:flex-row justify-between w-full bg-dark-black-100 font-poppins max-medium:overflow-hidden p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-8 gap-8 desktop:gap-28">
+      <main className="flex flex-col flex-wrap laptop:flex-row justify-between w-full bg-dark-black-100 font-poppins max-medium:overflow-hidden p-container laptop:max-w-container-desktop-blog laptop:m-container-desktop laptop:p-container-desktop py-8 gap-8 desktop:gap-28">
         <div className="max-medium:w-full medium:max-w-[881px] flex-1 order-1 flex flex-col laptop:block overflow-hidden">
           {post && (
             <>
