@@ -247,7 +247,7 @@ export const getStaticProps = async context => {
       posts = await client.query({
         query: gql`
           query {
-            posts(take: 3, orderBy: {publishedAt: Desc}, where: {slug: {not: "${post.slug}"} ${tags}}) {
+            posts(take: 3, orderBy: {publishedAt: Desc}, where: {slug: {not: "${post.slug}"}, draft: {not: true} ${tags}}) {
               slug
               title
               featuredImage
