@@ -17,6 +17,7 @@ import toddFeinroth from '../../../../public/images/team/todd.png';
 import erezGreenberg from '../../../../public/images/team/erez.png';
 import leviVan from '../../../../public/images/team/levi.png';
 import danieleIasella from '../../../../public/images/team/daniele.png';
+import brandonBaisch from '../../../../public/images/team/brandon.png';
 
 import talkWithUs from '../../../../public/images/icons/talk-with-with-team.svg';
 import joinUs from '../../../../public/images/icons/join-the-team.svg';
@@ -137,6 +138,21 @@ const TeamBlock = () => {
         },
         {
           href: 'https://twitter.com/ov3rbit',
+          iconClass: 'twitter',
+        },
+      ],
+    },
+    {
+      name: 'Brandon Baisch',
+      position: 'Customer Success Manager',
+      image: brandonBaisch,
+      links: [
+        {
+          href: 'https://www.linkedin.com/in/brandonbaisch/',
+          iconClass: 'linkedin',
+        },
+        {
+          href: 'https://twitter.com/bmbaisch',
           iconClass: 'twitter',
         },
       ],
