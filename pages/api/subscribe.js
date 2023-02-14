@@ -1,7 +1,7 @@
-import * as hubspot from '@hubspot/api-client';
+import {Client} from '@hubspot/api-client';
 
-const hubspotClient = new hubspot.Client({
-  apiKey: process.env.NEXT_PRIVATE_HUBSPOT_API_KEY,
+const hubspotClient = new Client({
+  accessToken: process.env.NEXT_PRIVATE_HUBSPOT_PAT,
 });
 
 /**
@@ -15,11 +15,14 @@ export default async function handler(req, res) {
 
   if (!body.EMAIL || !body.NAME || !body.SOURCE) return res.end();
   const nameArr = String(body.NAME).split(' ');
+  const lastname = nameArr.pop();
+  const firstname = nameArr.join(' ');
+
   try {
     await hubspotClient.crm.contacts.basicApi.create({
       properties: {
-        firstname: nameArr.shift(),
-        lastname: nameArr.join(' '),
+        firstname,
+        lastname,
         email: body.EMAIL,
         reportedsource: body.SOURCE,
       },

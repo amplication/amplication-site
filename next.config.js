@@ -134,6 +134,16 @@ const nextConfig = {
           '/blog/the-open-source-development-platform-introducing-amplication',
         permanent: true,
       },
+      {
+        source: '/enterprise',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/features',
+        destination: '/developers',
+        permanent: true,
+      },
     ];
   },
   swcMinify: true,

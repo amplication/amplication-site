@@ -86,6 +86,7 @@ module.exports = {
         container: '0 15px',
         'container-desktop': '0 56px',
         'container-desktop-enlarged': '0 34px',
+        'container-desktop-smaller': '0 128px',
       },
       borderColor: {
         'dark-black-70': '#373D57',

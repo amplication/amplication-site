@@ -37,6 +37,7 @@ const Post = ({posts, post}) => {
   const description = helpers.trimText(
     post.metaDescription || helpers.removeMarkdown(post.content)
   );
+  const headings = helpers.generateHeadings(post.content);
 
   return (
     <>
@@ -125,7 +126,7 @@ const Post = ({posts, post}) => {
               />
               <div className="font-normal order-5 blog-content text-base text-white">
                 <div className="d-xl-none">
-                  <TOC markdown={post.content} />
+                  <TOC headings={headings} />
                 </div>
                 <ReactMarkdown
                   remarkPlugins={[remarkGfm]}
@@ -144,8 +145,8 @@ const Post = ({posts, post}) => {
         </div>
 
         <aside className="max-medium:w-full medium:max-w-[425px] medium:w-[32%] order-9 laptop:order-2">
-          <Sidebar>
-            <TOC markdown={post.content} open={true} />
+          <Sidebar hideChildren={headings.length === 0}>
+            <TOC headings={headings} open={true} />
           </Sidebar>
         </aside>
 
