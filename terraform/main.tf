@@ -24,8 +24,8 @@ resource "google_cloud_run_service" "service" {
           value = var.external_blog_server_url
         }
         env {
-          name  = "NEXT_PRIVATE_HUBSPOT_API_KEY"
-          value = var.hubspot_api_key
+          name  = "NEXT_PRIVATE_HUBSPOT_PAT"
+          value = var.hubspot_pat
         }
         env {
           name  = "NEXT_PRIVATE_BLOG_SERVER_URL"

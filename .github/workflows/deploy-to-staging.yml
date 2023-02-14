@@ -43,7 +43,7 @@ jobs:
         env:
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
           TF_VAR_image: gcr.io/amplication/blog:${{ github.sha }}
-          TF_VAR_hubspot_api_key: ${{ secrets[format('{0}_hubspot_api_key', 'staging')] }}
+          TF_VAR_hubspot_pat: ${{ secrets[format('{0}_hubspot_pat', 'staging')] }}
         working-directory: terraform
   destroy:
     runs-on: ubuntu-latest
@@ -69,6 +69,6 @@ jobs:
         env:
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
           TF_VAR_image: gcr.io/amplication/blog:${{ github.sha }}
-          TF_VAR_hubspot_api_key: ${{ secrets[format('{0}_hubspot_api_key', 'staging')] }}
+          TF_VAR_hubspot_pat: ${{ secrets[format('{0}_hubspot_pat', 'staging')] }}
 
         working-directory: terraform
