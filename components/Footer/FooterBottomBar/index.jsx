@@ -102,6 +102,11 @@ const FooterBottomBar = () => {
               Terms & Conditions
             </a>
           </Link>
+          <Link href="/sla">
+            <a className="text-xs text-white/50 font-poppins underline laptop:text-sm hover:text-purple-bright-hover">
+              SLA
+            </a>
+          </Link>
         </li>
         <li className="w-full laptop:w-auto py-3.5">
           <p className="text-xs text-white/50 font-poppins laptop:text-sm">
