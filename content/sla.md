@@ -41,7 +41,7 @@ The maximum aggregate number of Financial Credits issued by Amplication to Custo
 
 ## 2. Response Times
 
-2.1 Customer will report all support issues with the Software service via Amplication support email at [support@amplication.com](C:\Users\USER\Downloads\support@amplication.com).
+2.1 Customer will report all support issues with the Software service via Amplication support email at [support@amplication.com](mailto:support@amplication.com).
 
 2.2 Amplication will make commercially reasonable efforts to respond to Customer's reporting of support incidents, according to the severity of the issue, as set out below.
 
