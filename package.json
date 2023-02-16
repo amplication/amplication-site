@@ -33,6 +33,7 @@
     "next-share": "^0.18.1",
     "next-sitemap": "^3.1.25",
     "popper.js": "^1.16.1",
+    "raw-loader": "^4.0.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-markdown": "^8.0.3",
