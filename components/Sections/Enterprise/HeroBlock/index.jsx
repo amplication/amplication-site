@@ -12,14 +12,14 @@ const HeroBlock = () => {
               <div className="header-and-video align-items-center">
                 <div className="content-block">
                   <div className="animated-header">
-                    <h1 className="main-title mb-0">
+                    <h2 className="main-title mb-0">
                       <span className="block font-bold">
                         Build microservices <br /> 20x faster.
                       </span>
                       <span className="block text-[20px] tablet:text-[28px] desktop:text-[34px] leading-relaxed font-bold">
                         Reliably. Securely. Consistently.
                       </span>
-                    </h1>
+                    </h2>
                     <div className="explainer text-sm laptop:text-base large:text-lg text-white !mt-8">
                       Amplication is changing the way backend services are built
                       and delivered. We help you build backend services with the
