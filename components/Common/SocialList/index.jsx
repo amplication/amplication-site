@@ -83,7 +83,12 @@ const SocialList = () => {
               className="inline-block transition-opacity hover:opacity-50"
               title="YouTube"
             >
-              <Image src={youtubeIcon} width={25} height={25} />
+              <Image
+                src={youtubeIcon}
+                width={25}
+                height={25}
+                alt={'YouTube Icon'}
+              />
             </a>
           </Link>
         </li>

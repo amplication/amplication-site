@@ -12,12 +12,12 @@ import ofekGabay from '../../../../public/images/team/ofek-gabay.png';
 import michaelSolati from '../../../../public/images/team/michael-solati.png';
 import eugineTseitlin from '../../../../public/images/team/eugene-tseitlin.png';
 import shimiBar from '../../../../public/images/team/shimi.png';
-import arielWeinberger from '../../../../public/images/team/ariel.png';
 import tomerNaim from '../../../../public/images/team/tomer.png';
 import toddFeinroth from '../../../../public/images/team/todd.png';
 import erezGreenberg from '../../../../public/images/team/erez.png';
 import leviVan from '../../../../public/images/team/levi.png';
 import danieleIasella from '../../../../public/images/team/daniele.png';
+import brandonBaisch from '../../../../public/images/team/brandon.png';
 
 import talkWithUs from '../../../../public/images/icons/talk-with-with-team.svg';
 import joinUs from '../../../../public/images/icons/join-the-team.svg';
@@ -143,20 +143,16 @@ const TeamBlock = () => {
       ],
     },
     {
-      name: 'Ariel Weinberger',
-      position: 'Principal Engineer',
-      image: arielWeinberger,
+      name: 'Brandon Baisch',
+      position: 'Customer Success Manager',
+      image: brandonBaisch,
       links: [
         {
-          href: 'https://www.linkedin.com/in/arielweinberger/',
+          href: 'https://www.linkedin.com/in/brandonbaisch/',
           iconClass: 'linkedin',
         },
         {
-          href: 'https://github.com/arielweinberger',
-          iconClass: 'github',
-        },
-        {
-          href: 'https://twitter.com/arielweinberger',
+          href: 'https://twitter.com/bmbaisch',
           iconClass: 'twitter',
         },
       ],

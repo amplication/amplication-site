@@ -12,6 +12,9 @@ module.exports = {
     },
     screens: {
       tablet: '640px',
+      'max-tablet': {
+        max: '639px',
+      },
       laptop: '992px',
       'max-laptop': {
         max: '991px',
@@ -23,10 +26,11 @@ module.exports = {
       },
       desktop: '1280px',
       large: '1440px',
-      extra_large: '1920px',
+      xlg: '1920px',
     },
     maxWidth: {
       'container-desktop': '1712px',
+      'container-desktop-blog': '1366px',
       'container-desktop-enlarged': '1920px',
     },
     extend: {
@@ -82,6 +86,7 @@ module.exports = {
         container: '0 15px',
         'container-desktop': '0 56px',
         'container-desktop-enlarged': '0 34px',
+        'container-desktop-smaller': '0 128px',
       },
       borderColor: {
         'dark-black-70': '#373D57',
@@ -139,5 +144,9 @@ module.exports = {
       },
     },
   },
-  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/line-clamp')],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/line-clamp'),
+    require('tailwind-scrollbar-hide'),
+  ],
 };

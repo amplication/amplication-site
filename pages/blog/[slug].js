@@ -37,6 +37,7 @@ const Post = ({posts, post}) => {
   const description = helpers.trimText(
     post.metaDescription || helpers.removeMarkdown(post.content)
   );
+  const headings = helpers.generateHeadings(post.content);
 
   return (
     <>
@@ -68,7 +69,7 @@ const Post = ({posts, post}) => {
         canonical={helpers.getCanonical(helpers.getPostSlug(post.slug))}
       />
 
-      <div className="w-full p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop mt-16 laptop:mt-12">
+      <div className="w-full p-container laptop:max-w-container-desktop-blog laptop:m-container-desktop laptop:p-container-desktop mt-16 laptop:mt-12">
         <nav>
           <ul className="flex justify-start items-center flex-wrap">
             <li className="text-white inline-block mr-1">
@@ -96,7 +97,7 @@ const Post = ({posts, post}) => {
         </nav>
       </div>
 
-      <main className="flex flex-col flex-wrap laptop:flex-row justify-between w-full bg-dark-black-100 font-poppins max-medium:overflow-hidden p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-8 gap-8 desktop:gap-28">
+      <main className="flex flex-col flex-wrap laptop:flex-row justify-between w-full bg-dark-black-100 font-poppins max-medium:overflow-hidden p-container laptop:max-w-container-desktop-blog laptop:m-container-desktop laptop:p-container-desktop py-8 gap-8 desktop:gap-28">
         <div className="max-medium:w-full medium:max-w-[881px] flex-1 order-1 flex flex-col laptop:block overflow-hidden">
           {post && (
             <>
@@ -125,7 +126,7 @@ const Post = ({posts, post}) => {
               />
               <div className="font-normal order-5 blog-content text-base text-white">
                 <div className="d-xl-none">
-                  <TOC markdown={post.content} />
+                  <TOC headings={headings} />
                 </div>
                 <ReactMarkdown
                   remarkPlugins={[remarkGfm]}
@@ -144,8 +145,8 @@ const Post = ({posts, post}) => {
         </div>
 
         <aside className="max-medium:w-full medium:max-w-[425px] medium:w-[32%] order-9 laptop:order-2">
-          <Sidebar>
-            <TOC markdown={post.content} open={true} />
+          <Sidebar hideChildren={headings.length === 0}>
+            <TOC headings={headings} open={true} />
           </Sidebar>
         </aside>
 
@@ -247,7 +248,7 @@ export const getStaticProps = async context => {
       posts = await client.query({
         query: gql`
           query {
-            posts(take: 3, orderBy: {publishedAt: Desc}, where: {slug: {not: "${post.slug}"} ${tags}}) {
+            posts(take: 3, orderBy: {publishedAt: Desc}, where: {slug: {not: "${post.slug}"}, draft: {not: true} ${tags}}) {
               slug
               title
               featuredImage

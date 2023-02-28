@@ -1,40 +1,67 @@
-import FeatureItem from '../components/Sections/Features/FeatureItem';
-import GraphQLIcon from '../public/images/features-page/icons/nenu_graphql_icon.svg';
-import GraphQLImage from '../public/images/features-page/graphql.svg';
-import RestIcon from '../public/images/features-page/icons/menu_rest_icon.svg';
-import RestImage from '../public/images/features-page/rest_api.svg';
-import IdentityIcon from '../public/images/features-page/icons/menu_identity_icon.svg';
-import IdentityImage from '../public/images/features-page/identity_permissions.svg';
-import AdminIcon from '../public/images/features-page/icons/menu_admin_ui_icon.svg';
-import AdminImage from '../public/images/features-page/admin-ui.svg';
-import CodeGenerationIcon from '../public/images/features-page/icons/menu_code_generation_icon.svg';
-import CodeGenerationImage from '../public/images/features-page/code_generation.svg';
-import CustomCodeIcon from '../public/images/features-page/icons/custom_code_icon.svg';
-import CustomCodeImage from '../public/images/features-page/custom-code.svg';
-import CLIIcon from '../public/images/features-page/icons/menu_version_control_icon.svg';
-import CLIImage from '../public/images/features-page/command-line-interface.svg';
-import DeploymentIcon from '../public/images/features-page/icons/menu_deployment_icon.svg';
-import DeploymentImage from '../public/images/features-page/deployment.svg';
-import OpenSourceIcon from '../public/images/features-page/icons/menu_open_source_icocn.svg';
-import OpenSourceImage from '../public/images/features-page/open_source.svg';
-import integrationIcon from '../public/images/features-page/icons/menu_integration_icon.svg';
-import integrationImage from '../public/images/features-page/integration_webhooks.svg';
-import versionControlIcon from '../public/images/features-page/icons/menu_version_control_icon.svg';
-import versionControlImage from '../public/images/features-page/version_control.svg';
-import syncGithubIcon from '../public/images/features-page/icons/github.svg';
-import syncGithubImage from '../public/images/features-page/sync_with_github.svg';
-import {NextSeo} from 'next-seo';
-import {MainLayout} from '../layouts';
-import helpers from '../helpers';
+import {useEffect, useState} from 'react';
+import Image from 'next/image';
+import GraphQLIcon from '../../../../public/images/features-page/icons/nenu_graphql_icon.svg';
+import GraphQLImage from '../../../../public/images/features-page/graphql.svg';
+import RestIcon from '../../../../public/images/features-page/icons/menu_rest_icon.svg';
+import RestImage from '../../../../public/images/features-page/rest_api.svg';
+import IdentityIcon from '../../../../public/images/features-page/icons/menu_identity_icon.svg';
+import IdentityImage from '../../../../public/images/features-page/identity_permissions.svg';
+import AdminIcon from '../../../../public/images/features-page/icons/menu_admin_ui_icon.svg';
+import AdminImage from '../../../../public/images/features-page/admin-ui.svg';
+import CodeGenerationIcon from '../../../../public/images/features-page/icons/menu_code_generation_icon.svg';
+import CodeGenerationImage from '../../../../public/images/features-page/code_generation.svg';
+import CustomCodeIcon from '../../../../public/images/features-page/icons/custom_code_icon.svg';
+import CustomCodeImage from '../../../../public/images/features-page/custom-code.svg';
+import CLIIcon from '../../../../public/images/features-page/icons/menu_version_control_icon.svg';
+import CLIImage from '../../../../public/images/features-page/command-line-interface.svg';
+import DeploymentIcon from '../../../../public/images/features-page/icons/menu_deployment_icon.svg';
+import DeploymentImage from '../../../../public/images/features-page/deployment.svg';
+import OpenSourceIcon from '../../../../public/images/features-page/icons/menu_open_source_icocn.svg';
+import OpenSourceImage from '../../../../public/images/features-page/open_source.svg';
+import integrationIcon from '../../../../public/images/features-page/icons/menu_integration_icon.svg';
+import integrationImage from '../../../../public/images/features-page/integration_webhooks.svg';
+import versionControlIcon from '../../../../public/images/features-page/icons/menu_version_control_icon.svg';
+import versionControlImage from '../../../../public/images/features-page/version_control.svg';
+import syncGithubIcon from '../../../../public/images/features-page/icons/github.svg';
+import syncGithubImage from '../../../../public/images/features-page/sync_with_github.svg';
 
-const Features = () => {
+let timeout = null;
+
+const Tabs = () => {
+  const [activeTab, setActiveTab] = useState(0);
+  const [autorun, setAutorun] = useState(true);
+  const [isMobile, setIsMobile] = useState(true);
+
+  const destroyTimeout = () => clearTimeout(timeout);
+
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      if (window.innerWidth < 640) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+      setIsMobile(window.innerWidth < 641);
+    });
+    setIsMobile(window.innerWidth < 641);
+  }, []);
+
+  useEffect(() => {
+    if (autorun) {
+      timeout = setTimeout(() => {
+        const next = activeTab + 1;
+        setActiveTab(next < features.length ? next : 0);
+      }, 5000);
+    }
+  }, [activeTab]);
+
   const features = [
     {
       id: 'graphql',
       icon: GraphQLIcon,
       image: GraphQLImage,
       iconClass: 'feature-page-icon first-color',
-      title: 'Instant GraphQL',
+      tabTitle: 'Instant GraphQL',
       content:
         'Amplication generates production-ready, self-documenting GraphQL\n' +
         '                API for all your data models. The API is generated with\n' +
@@ -51,6 +78,7 @@ const Features = () => {
       icon: RestIcon,
       image: RestImage,
       iconClass: 'feature-page-icon',
+      tabTitle: 'REST API',
       title: 'REST API',
       content:
         'Easily connect to your data with any HTTP client using REST API.\n' +
@@ -67,6 +95,7 @@ const Features = () => {
       icon: IdentityIcon,
       image: IdentityImage,
       iconClass: 'feature-page-icon third-color',
+      tabTitle: 'Identity & Permissions',
       title: 'Identity & Permissions',
       content:
         'Save time on plugging in authentication and authorization to your\n' +
@@ -88,6 +117,7 @@ const Features = () => {
       icon: AdminIcon,
       image: AdminImage,
       iconClass: 'feature-page-icon first-color',
+      tabTitle: 'React Admin UI',
       title: 'React Admin UI',
       content:
         'Start working with your application in minutes. Amplication\n' +
@@ -105,6 +135,7 @@ const Features = () => {
       icon: CodeGenerationIcon,
       image: CodeGenerationImage,
       iconClass: 'feature-page-icon',
+      tabTitle: 'Node.js Code Generation',
       title: 'Node.js Code Generation',
       content:
         'Save time on boilerplate and repetitive tasks with low-code but\n' +
@@ -121,6 +152,7 @@ const Features = () => {
       icon: CustomCodeIcon,
       image: CustomCodeImage,
       iconClass: 'feature-page-icon third-color',
+      tabTitle: 'Custom Code',
       title: 'Custom Code',
       content:
         'Generated apps can be manually customized to support any complex\n' +
@@ -134,6 +166,7 @@ const Features = () => {
       icon: CLIIcon,
       image: CLIImage,
       iconClass: 'feature-page-icon first-color',
+      tabTitle: 'Command Line Interface (CLI)',
       title: 'Command Line Interface (CLI)',
       content:
         'Define your data model and generate apps faster using Amplication\n' +
@@ -147,15 +180,12 @@ const Features = () => {
       icon: DeploymentIcon,
       image: DeploymentImage,
       iconClass: 'feature-page-icon',
+      tabTitle: 'Application Deployment',
       title: 'Application Deployment',
       content:
-        'When working with Amplication, all your committed changes are\n' +
-        '              continuously deployed to a sandbox environment on the Amplication\n' +
-        '              cloud so you can easily access your application for testing and\n' +
-        '              development purposes.\n' +
-        '              <br /><br />\n' +
-        '              You can also easily build a Docker container to prepare your app\n' +
-        '              for deployment. Your app is always generated with all the\n' +
+        '              You can easily build a Docker container to prepare your app\n' +
+        '              for deployment, or use plugins for other deployment options. \n' +
+        '              Your app is always generated with all the\n' +
         '              configuration and scripts needed to do so.',
     },
     {
@@ -163,21 +193,22 @@ const Features = () => {
       icon: OpenSourceIcon,
       image: OpenSourceImage,
       iconClass: 'feature-page-icon third-color',
+      tabTitle: 'Open Source',
       title: 'Open Source',
       content:
         'Amplication is an open-source project built for developers by the\n' +
         '              open-source community.\n' +
         '              Join us in building the next generation of development tools.\n' +
-        '              <span><b>Any contribution counts.</span>',
+        '              <span><b>Any contribution counts.</b></span>',
       buttons: [
         {
-          title: 'GitHub',
+          tabTitle: 'GitHub',
           url: 'https://github.com/amplication/amplication',
           buttonClass: 'btn btn-outline-secondary',
           iconClass: 'social-link github social-white',
         },
         {
-          title: 'Join our community',
+          tabTitle: 'Join our community',
           url: 'https://amplication.com/discord',
           buttonClass: 'btn btn-primary ml-4',
           iconClass: 'social-link discord social-white',
@@ -189,6 +220,7 @@ const Features = () => {
       icon: integrationIcon,
       image: integrationImage,
       iconClass: 'feature-page-icon first-color',
+      tabTitle: 'Custom Code & Webhooks Integration',
       title: 'Custom Code & Webhooks Integration',
       content:
         'Integration with any external service is available through custom\n' +
@@ -204,6 +236,7 @@ const Features = () => {
       icon: versionControlIcon,
       image: versionControlImage,
       iconClass: 'feature-page-icon',
+      tabTitle: 'Version Control',
       title: 'Version Control',
       content:
         'Amplication has version control built-in which enables you to\n' +
@@ -217,6 +250,7 @@ const Features = () => {
       icon: syncGithubIcon,
       image: syncGithubImage,
       iconClass: 'feature-page-icon third-color',
+      tabTitle: 'GitHub Sync',
       title: 'GitHub Sync',
       content:
         'Amplication can push the code of your app to a GitHub repository.\n' +
@@ -225,7 +259,7 @@ const Features = () => {
         '              your private Github repository.\n' +
         '              <br />\n' +
         '              <span>This feature allows you to:</span><br />\n' +
-        '              <ul>\n' +
+        '              <ul class="space-y-1 text-gray-500 list-disc list-inside !mt-8">\n' +
         '                <li>\n' +
         '                  Continuously push your app changes to your private repository\n' +
         '                </li>\n' +
@@ -243,35 +277,91 @@ const Features = () => {
     },
   ];
 
-  return (
-    <>
-      <NextSeo
-        title="GraphQL API Feature for Backend API Development | Amplication"
-        description="Amplication is the most flexible open-source backend development platform for Node.JS applications. Design models and roles, deploy your app, connect with REST or GraphQL API, sync with GitHub. Built for developers, by developers."
-        canonical={helpers.getCanonical('features')}
-      />
+  const [opened, setOpened] = useState(features.map(() => false));
 
-      <main className="w-full font-poppins z-10 mb-12 laptop:mb-[100px] amplication-base">
-        {features.map(feature => {
-          return (
-            <FeatureItem
-              id={feature.id}
-              icon={feature.icon}
-              image={feature.image}
-              iconClass={feature.iconClass}
-              title={feature.title}
-              content={feature.content}
-              buttons={feature.buttons}
-              isComingSoon={feature.isComingSoon}
-              key={feature.id}
-            />
-          );
-        })}
-      </main>
-    </>
+  return (
+    <section className="page-steps !py-20">
+      <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
+        <h2 className="roadmap-heading">
+          Let your teams write critical business logic instead of redundant
+          <br />
+          infrastructure code
+        </h2>
+        <div className="flex max-medium:!flex-col mt-8 laptop:mt-24">
+          <ul className="w-[22.4%] max-medium:w-full max-medium:overflow-x-scroll scrollbar-hide snap-x flex flex-column max-medium:!flex-row">
+            {features.map((feature, index) => {
+              return (
+                <li
+                  className={
+                    (activeTab === index ? 'text-white ' : '') +
+                    'max-medium:pr-4 max-medium:whitespace-nowrap cursor-pointer font-semibold text-sm leading-7 text-[#686F8C] hover:text-white'
+                  }
+                  onClick={() => {
+                    destroyTimeout();
+                    setAutorun(false);
+                    setActiveTab(index);
+                  }}
+                  key={index}
+                >
+                  {feature.tabTitle}
+                </li>
+              );
+            })}
+          </ul>
+          <div className="tab-content w-[75%] max-medium:w-full mt-[16px] tablet:mt-0">
+            {features.map((feature, index) => {
+              return (
+                <div
+                  key={index}
+                  className={
+                    (activeTab === index
+                      ? '!flex justify-content-between flex-col tablet:flex-row '
+                      : '') + 'hidden'
+                  }
+                >
+                  <div className="relative max-w-full tablet:max-w-[44%]">
+                    {feature.title && (
+                      <h4 className="!font-bold !text-2xl !leading-9 !mb-4">
+                        {feature.title}
+                      </h4>
+                    )}
+                    <div
+                      className={
+                        (isMobile && !opened[index]
+                          ? 'max-h-[calc(4*1.53em)] text-ellipsis overflow-hidden'
+                          : '') + ' w-full font-normal text-sm leading-[1.56em]'
+                      }
+                      dangerouslySetInnerHTML={{__html: feature.content}}
+                    ></div>
+                    <span
+                      onClick={() => {
+                        setOpened(
+                          opened.map((open, i) =>
+                            i === index ? open === false : open
+                          )
+                        );
+                      }}
+                      className={
+                        (isMobile
+                          ? 'flex font-normal text-sm leading-[1.5em]'
+                          : 'hidden') +
+                        ' cursor-pointer text-turquoise underline'
+                      }
+                    >
+                      Read more
+                    </span>
+                  </div>
+                  <div className="ml-auto w-full tablet:w-[40%] mt-12 tablet:mt-0 medium:mr-32">
+                    <Image src={feature.image} alt={feature.title} />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
-Features.getLayout = function getLayout(page) {
-  return <MainLayout>{page}</MainLayout>;
-};
-export default Features;
+
+export default Tabs;

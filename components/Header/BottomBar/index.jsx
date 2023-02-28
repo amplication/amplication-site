@@ -38,14 +38,14 @@ const BottomBar = () => {
 
   return (
     version && (
-      <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop flex">
+      <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop flex !max-w-[1904px]">
         <span className="text-white !leading-[36px] font-ubuntumono text-base font-bold text-center w-[81px] h-9 bg-purple-bright rounded-b">
           {version}
         </span>
         {router.asPath !== '/enterprise' && (
           <Link href={'/enterprise'} passHref={true}>
             <a
-              className="inline laptop:hidden float-right text-lg py-2 hover:text-white text-[#54DBEE] transition-all font-light relative ml-auto"
+              className="hidden float-right text-lg py-2 hover:text-white text-[#54DBEE] transition-all font-light relative ml-auto"
               style={{top: '-' + scrollY + 'px'}}
             >
               Enterprise

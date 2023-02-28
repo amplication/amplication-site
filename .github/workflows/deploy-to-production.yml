@@ -38,5 +38,5 @@ jobs:
         env:
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
           TF_VAR_image: gcr.io/amplication/blog:${{ github.sha }}
-          TF_VAR_hubspot_api_key: ${{ secrets[format('{0}_hubspot_api_key', 'production')] }}
+          TF_VAR_hubspot_pat: ${{ secrets[format('{0}_hubspot_pat', 'production')] }}
         working-directory: terraform

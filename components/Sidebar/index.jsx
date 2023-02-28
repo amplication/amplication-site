@@ -2,10 +2,14 @@ import PropTypes from 'prop-types';
 import SharingBlock from '../Common/SharingBlock';
 import SubscribeForm from '../Common/SubscribeForm';
 
-const Sidebar = ({children}) => {
+const Sidebar = ({children, hideChildren}) => {
   return (
     <div className="laptop:pt-32 flex flex-col justify-start items-stretch w-full h-full">
-      <div className="w-full laptop:mb-16 order-2 laptop:order-1 d-none d-xl-block">
+      <div
+        className={`w-full laptop:mb-16 order-2 laptop:order-1 d-none ${
+          hideChildren ? '' : 'd-xl-block'
+        }`}
+      >
         {children}
       </div>
 
@@ -21,6 +25,7 @@ const Sidebar = ({children}) => {
 
 Sidebar.propTypes = {
   children: PropTypes.element,
+  hideChildren: PropTypes.bool,
 };
 
 export default Sidebar;

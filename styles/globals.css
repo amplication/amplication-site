@@ -107,7 +107,7 @@
   }
 
   .loader::after {
-    content: "";
+    content: '';
     display: inline-block;
     vertical-align: text-bottom;
     border: 1px solid currentColor;
@@ -126,6 +126,10 @@
     to {
       transform: rotate(360deg);
     }
+  }
+
+  .blog-content * {
+    @apply text-lg font-light;
   }
 
   .blog-content h1 {
@@ -170,7 +174,7 @@
     @apply border border-[rgba(255,255,255,0.3)] p-3;
   }
   .blog-content img {
-    border-radius: 16px;
+    border-radius: 8px;
   }
 
   .blog-content pre code.hljs {

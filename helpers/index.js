@@ -1,5 +1,7 @@
 import slugify from 'slugify';
 
+/** @typedef {{level: number, id: string, title: string: children?: Heading[]}} Heading */
+
 /* eslint no-useless-escape: 0 */
 const helpers = {
   isValidUrl: string => {
@@ -141,6 +143,36 @@ const helpers = {
       str = str.substring(0, length - 3) + '...';
     }
     return str;
+  },
+  /**
+   * @param {string} md
+   * @returns {Heading[]}
+   */
+  generateHeadings: (md = '') => {
+    /** @type {Heading[]} */
+    const headings = [];
+    const headingsParsed = md
+      .split('\n')
+      .filter(line => line.match(/^#{1,3}\s/));
+
+    for (const line of headingsParsed) {
+      const [, level, title] = line.match(/^(#{1,3})\s(.*)/);
+      const heading = {
+        level: level.length,
+        id: helpers.slugify(title),
+        title,
+      };
+
+      if (heading.level === 1 || heading.level === 2) {
+        headings.push({...heading, children: []});
+      } else if (heading.level === 3 && headings.length === 0) {
+        headings.push({children: [heading]});
+      } else if (heading.level === 3) {
+        headings[headings.length - 1].children.push(heading);
+      }
+    }
+
+    return headings;
   },
 };
 

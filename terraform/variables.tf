@@ -58,7 +58,7 @@ variable "domain" {
   type        = string
 }
 
-variable "hubspot_api_key" {
+variable "hubspot_pat" {
   type    = string
   default = ""
 }

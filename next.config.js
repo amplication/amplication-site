@@ -134,9 +134,26 @@ const nextConfig = {
           '/blog/the-open-source-development-platform-introducing-amplication',
         permanent: true,
       },
+      {
+        source: '/enterprise',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/features',
+        destination: '/developers',
+        permanent: true,
+      },
     ];
   },
   swcMinify: true,
+  webpack: config => {
+    config.module.rules.push({
+      test: /\.md$/,
+      use: 'raw-loader',
+    });
+    return config;
+  },
 };
 
 module.exports = nextConfig;
