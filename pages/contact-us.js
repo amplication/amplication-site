@@ -77,10 +77,10 @@ const ContactUs = () => {
                 <div className="header-and-video align-items-center">
                   <div className="content-block overflow-hidden relative p-10 border rounded border-solid border-dark-black-70 bg-light-blue">
                     <h3 className="!font-bold !text-[32px] !leading-[48px]">
-                      We’re here for you
+                      We&apos;re here for you
                     </h3>
                     <div className="font-normal text-lg leading-[27px] mb-10">
-                      Let us know how we can help and we'll get back to you
+                      Let us know how we can help and we&apos;ll get back to you
                       ASAP.
                     </div>
                     <form
@@ -197,7 +197,7 @@ const ContactUs = () => {
                       </div>
                       <div className="relative w-full !mt-6">
                         <span className="font-semibold text-sm leading-[22px]">
-                          Or just leave a message and we'll get back to you
+                          Or just leave a message and we&apos;ll get back to you
                         </span>
                         <div className="flex justify-between mt-2 w-full">
                           <label className="w-full mt-1 mb-0">
@@ -220,8 +220,8 @@ const ContactUs = () => {
                             required
                           />
                           <span className="ml-2 font-normal text-[10px] leading-[13px]">
-                            By signing up, I agree to Amplication's Terms of
-                            Service and Privacy Policy.
+                            By signing up, I agree to Amplication&apos;s Terms
+                            of Service and Privacy Policy.
                           </span>
                         </label>
                       </div>
@@ -276,8 +276,8 @@ const ContactUs = () => {
                       />
                       <div className="font-normal text-lg leading-[27px] mt-2 max-w-[560px]">
                         We invite you to stay logged in and discover more about
-                        Amplication's capabilities, and how you can benefit from
-                        our different plans.
+                        Amplication&apos;s capabilities, and how you can benefit
+                        from our different plans.
                       </div>
                     </div>
                   </div>
