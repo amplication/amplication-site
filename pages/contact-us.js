@@ -126,7 +126,7 @@ const ContactUs = () => {
                               id="radio-1"
                               type="radio"
                               name="what_would_you_like_to_do___purchase_page_"
-                              value="Talk with Customer Success"
+                              value="Talk with Customer Success Manager"
                               className="hidden"
                               required
                             />
@@ -136,7 +136,7 @@ const ContactUs = () => {
                             >
                               Talk with
                               <br />
-                              Customer Success
+                              Customer Success Manager
                             </label>
                           </div>
                           <div className="w-[calc(50%-12px)] laptop:w-[calc(25%-12px)]">
@@ -162,7 +162,7 @@ const ContactUs = () => {
                               id="radio-3"
                               type="radio"
                               name="what_would_you_like_to_do___purchase_page_"
-                              value="Subscribe to our blog"
+                              value="Subscribe to our amazing Blog"
                               className="hidden"
                               required
                             />
@@ -172,7 +172,7 @@ const ContactUs = () => {
                             >
                               Subscribe to
                               <br />
-                              our blog
+                              our amazing Blog
                             </label>
                           </div>
                           <div className="w-[calc(50%-12px)] laptop:w-[calc(25%-12px)]">
@@ -180,7 +180,7 @@ const ContactUs = () => {
                               id="radio-4"
                               type="radio"
                               name="what_would_you_like_to_do___purchase_page_"
-                              value="Something Else"
+                              value="I need something else"
                               className="hidden"
                               required
                             />
@@ -188,9 +188,9 @@ const ContactUs = () => {
                               htmlFor="radio-4"
                               className="!flex cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full px-2 py-6 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue"
                             >
-                              Something
+                              I need
                               <br />
-                              Else
+                              something else
                             </label>
                           </div>
                         </div>
