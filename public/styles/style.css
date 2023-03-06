@@ -6137,9 +6137,6 @@ body {
 .bg-black80 {
   background-color: var(--black80);
 }
-.amplication-base .border {
-  border: 1px solid #dee2e6;
-}
 .amplication-base .border-top {
   border-top: 1px solid #dee2e6 !important;
 }
@@ -6192,7 +6189,7 @@ body {
   border-color: var(--dark) !important;
 }
 .amplication-base .border-white {
-  border-color: var(--white) !important;
+  border-color: var(--white);
 }
 .amplication-base .rounded-sm {
   border-radius: 0.2rem !important;
@@ -11425,4 +11422,10 @@ body {
   margin: 4px 8px;
   padding: 4px 8px;
   white-space: nowrap;
+}
+
+.hubspot input[type="radio"]:checked + label {
+	background: #373D57;
+	border: 1px solid #444B66;
+	box-shadow: 0 20px 26px -16px rgba(21, 25, 44, 0.84);
 }
