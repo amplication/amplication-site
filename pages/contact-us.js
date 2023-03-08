@@ -136,7 +136,7 @@ const ContactUs = () => {
                             />
                             <label
                               htmlFor="radio-1"
-                              className="!flex cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full px-2 py-6 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue"
+                              className="!flex select-none cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full px-2 py-6 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue"
                             >
                               Talk with
                               <br />
@@ -155,7 +155,7 @@ const ContactUs = () => {
                             />
                             <label
                               htmlFor="radio-2"
-                              className="!flex cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full px-2 py-6 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue"
+                              className="!flex select-none cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full px-2 py-6 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue"
                             >
                               Get Technical
                               <br />
@@ -174,7 +174,7 @@ const ContactUs = () => {
                             />
                             <label
                               htmlFor="radio-3"
-                              className="!flex cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full px-2 py-6 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue"
+                              className="!flex select-none cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full px-2 py-6 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue"
                             >
                               Subscribe to
                               <br />
@@ -193,7 +193,7 @@ const ContactUs = () => {
                             />
                             <label
                               htmlFor="radio-4"
-                              className="!flex cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full px-2 py-6 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue"
+                              className="!flex select-none cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full px-2 py-6 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue"
                             >
                               I need
                               <br />
