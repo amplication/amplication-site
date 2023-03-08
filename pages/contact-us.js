@@ -7,6 +7,7 @@ import Contacts from '../public/images/contact-us.png';
 
 const ContactUs = () => {
   const [successMsg, setSuccessMsg] = useState('');
+  const [radioValue, setRadioValue] = useState('');
   const form = useRef(null);
 
   const submitSubscriptionForm = async e => {
@@ -15,10 +16,12 @@ const ContactUs = () => {
 
     const fields = [];
     [...formData].forEach(item => {
-      fields.push({
-        name: item[0],
-        value: item[1],
-      });
+      if (item[1]) {
+        fields.push({
+          name: item[0],
+          value: item[1],
+        });
+      }
     });
 
     try {
@@ -128,11 +131,12 @@ const ContactUs = () => {
                               name="what_would_you_like_to_do___purchase_page_"
                               value="Talk with Customer Success Manager"
                               className="hidden"
+                              onChange={() => setRadioValue('radio-1')}
                               required
                             />
                             <label
                               htmlFor="radio-1"
-                              className="!flex cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full px-2 py-6 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue"
+                              className="!flex select-none cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full px-2 py-6 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue"
                             >
                               Talk with
                               <br />
@@ -146,11 +150,12 @@ const ContactUs = () => {
                               name="what_would_you_like_to_do___purchase_page_"
                               value="Get Technical Support"
                               className="hidden"
+                              onChange={() => setRadioValue('radio-2')}
                               required
                             />
                             <label
                               htmlFor="radio-2"
-                              className="!flex cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full px-2 py-6 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue"
+                              className="!flex select-none cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full px-2 py-6 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue"
                             >
                               Get Technical
                               <br />
@@ -163,12 +168,13 @@ const ContactUs = () => {
                               type="radio"
                               name="what_would_you_like_to_do___purchase_page_"
                               value="Subscribe to our amazing Blog"
+                              onChange={() => setRadioValue('radio-3')}
                               className="hidden"
                               required
                             />
                             <label
                               htmlFor="radio-3"
-                              className="!flex cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full px-2 py-6 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue"
+                              className="!flex select-none cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full px-2 py-6 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue"
                             >
                               Subscribe to
                               <br />
@@ -182,11 +188,12 @@ const ContactUs = () => {
                               name="what_would_you_like_to_do___purchase_page_"
                               value="I need something else"
                               className="hidden"
+                              onChange={() => setRadioValue('radio-4')}
                               required
                             />
                             <label
                               htmlFor="radio-4"
-                              className="!flex cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full px-2 py-6 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue"
+                              className="!flex select-none cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full px-2 py-6 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue"
                             >
                               I need
                               <br />
@@ -195,9 +202,37 @@ const ContactUs = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="relative w-full !mt-6">
+                      <div
+                        className={
+                          (radioValue === 'radio-1' ? 'block' : 'hidden') +
+                          ' relative w-full !mt-6'
+                        }
+                      >
                         <span className="font-semibold text-sm leading-[22px]">
-                          Or just leave a message and we&apos;ll get back to you
+                          If you have a message for our customer success
+                          manager, he will be happy to take care of it and reply
+                          as soon as possible.
+                        </span>
+                        <div className="flex justify-between mt-2 w-full">
+                          <label className="w-full mt-1 mb-0">
+                            <textarea
+                              name="contact_us_message__csm"
+                              placeholder="Message"
+                              className="w-full leading-input focus:border-purple !shadow-hidden block w-full rounded-lg border border-solid bg-light-blue py-2 pl-3 pr-8 font-poppins text-sm text-white placeholder:text-gray hover:border-purple border-lite"
+                              rows="6"
+                            ></textarea>
+                          </label>
+                        </div>
+                      </div>
+                      <div
+                        className={
+                          (radioValue === 'radio-2' ? 'block' : 'hidden') +
+                          ' relative w-full !mt-6'
+                        }
+                      >
+                        <span className="font-semibold text-sm leading-[22px]">
+                          Our technical support team will be happy to answer any
+                          questions you may have and reply as soon as possible.
                         </span>
                         <div className="flex justify-between mt-2 w-full">
                           <label className="w-full mt-1 mb-0">
@@ -205,7 +240,27 @@ const ContactUs = () => {
                               name="contact_us_message__support"
                               placeholder="Message"
                               className="w-full leading-input focus:border-purple !shadow-hidden block w-full rounded-lg border border-solid bg-light-blue py-2 pl-3 pr-8 font-poppins text-sm text-white placeholder:text-gray hover:border-purple border-lite"
-                              required
+                              rows="6"
+                            ></textarea>
+                          </label>
+                        </div>
+                      </div>
+                      <div
+                        className={
+                          (radioValue === 'radio-4' ? 'block' : 'hidden') +
+                          ' relative w-full !mt-6'
+                        }
+                      >
+                        <span className="font-semibold text-sm leading-[22px]">
+                          It would be helpful to know how exactly we can assist
+                          you in getting the right response to your inquiry.
+                        </span>
+                        <div className="flex justify-between mt-2 w-full">
+                          <label className="w-full mt-1 mb-0">
+                            <textarea
+                              name="contact_us_message__something_else__sales_"
+                              placeholder="Message"
+                              className="w-full leading-input focus:border-purple !shadow-hidden block w-full rounded-lg border border-solid bg-light-blue py-2 pl-3 pr-8 font-poppins text-sm text-white placeholder:text-gray hover:border-purple border-lite"
                               rows="6"
                             ></textarea>
                           </label>
