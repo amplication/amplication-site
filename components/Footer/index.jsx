@@ -23,16 +23,7 @@ const Footer = ({customClass, compactView, hideBanner}) => {
               {/*Banner*/}
               {!hideBanner && (
                 <div className="amplication-base">
-                  <StartNow
-                    title="Build faster, with no limits"
-                    linkPrimary={{
-                      href: 'https://app.amplication.com/',
-                      title: 'Get started',
-                    }}
-                    linkOutline={{
-                      title: 'Contact us',
-                    }}
-                  />
+                  <StartNow />
                 </div>
               )}
 

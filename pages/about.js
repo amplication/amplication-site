@@ -35,16 +35,6 @@ const About = () => {
           <LogoList />
           <UsersList />
           <Steps />
-          {/*<LowCode />*/}
-          {/*<StartNow*/}
-          {/*  linkPrimary={{*/}
-          {/*    href: 'https://app.amplication.com/',*/}
-          {/*    title: 'Get started',*/}
-          {/*  }}*/}
-          {/*  linkSecondary={{*/}
-          {/*    title: 'Join Community',*/}
-          {/*  }}*/}
-          {/*/>*/}
         </div>
       </main>
     </>
