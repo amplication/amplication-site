@@ -28,7 +28,9 @@ const Button = ({
   if (isLink) {
     return (
       <Link href={href}>
-        <a className={classes}>{text}</a>
+        <a onClick={onClick} className={classes}>
+          {text}
+        </a>
       </Link>
     );
   }

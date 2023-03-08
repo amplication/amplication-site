@@ -1,14 +1,33 @@
 import Link from 'next/link';
 import Button from '../../Common/Button';
 import {useRouter} from 'next/router';
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useCallback} from 'react';
 import useWindowSize from '../../../utils/useWindowSize';
+import * as analytics from '../../../lib/analytics';
 
 const Menu = () => {
   const [isMobileMenuOpened, setIsMobileMenuOpened] = useState(false);
   const [hoveredLink, setHoveredLink] = useState('');
   const {width} = useWindowSize();
   const {asPath} = useRouter();
+
+  const handleStartNowClick = useCallback(() => {
+    analytics.event({
+      action: 'startNowClicked',
+      params: {
+        buttonLocation: 'header',
+      },
+    });
+  });
+
+  const handleMenuClick = useCallback(menuItem => {
+    if (menuItem && menuItem.onClickEventName) {
+      analytics.event({
+        action: menuItem.onClickEventName,
+        params: menuItem.onClickEventParams,
+      });
+    }
+  });
 
   const menuItems = [
     {
@@ -98,6 +117,10 @@ const Menu = () => {
       },
       target: '_self',
       isActive: Boolean(asPath === 'https://app.amplication.com/login'),
+      onClickEventName: 'startNowClicked',
+      onClickEventParams: {
+        buttonLocation: 'header-login',
+      },
     },
   ];
 
@@ -186,9 +209,10 @@ const Menu = () => {
                           item.isActive ? 'text-purple-bright' : 'text-gray'
                         }`}
                         target={item.pathname}
-                        onClick={() =>
-                          setIsMobileMenuOpened(!isMobileMenuOpened)
-                        }
+                        onClick={() => {
+                          handleMenuClick(item);
+                          setIsMobileMenuOpened(!isMobileMenuOpened);
+                        }}
                       >
                         {item.title}
                       </a>
@@ -251,6 +275,9 @@ const Menu = () => {
                             >
                               <Link href={subItem.href}>
                                 <a
+                                  onClick={() => {
+                                    handleMenuClick(subItem);
+                                  }}
                                   className={`text-xl max-laptop:hover:opacity-90 hover:text-white laptop:text-base text-center laptop:text-left block py-7 laptop:p-4 !leading-snug bg-purple-bright laptop:bg-purple-light ${
                                     asPath !== url
                                       ? 'text-white laptop:text-gray laptop:bg-purple-light'
@@ -296,6 +323,7 @@ const Menu = () => {
             backgroundColor="purpleBright"
             hoverBackgroundColor="purpleBrightHover"
             isLink={true}
+            onClick={handleStartNowClick}
             href="https://app.amplication.com/login"
             className="text-[15px] h-[40px] whitespace-nowrap !px-4"
           />
