@@ -105,6 +105,14 @@ const Menu = () => {
           target: '_blank',
           isActive: false,
         },
+        {
+          title: 'Contact Us',
+          href: {
+            pathname: '/contact-us',
+          },
+          target: '_self',
+          isActive: Boolean(asPath === '/contact-us'),
+        },
       ],
     },
     {
