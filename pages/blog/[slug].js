@@ -190,7 +190,11 @@ const Post = ({posts, post}) => {
                       key={post.slug}
                       virtualIndex={i}
                     >
-                      <PostCard data={post} key={post.slug} />
+                      <PostCard
+                        data={post}
+                        key={post.slug}
+                        clickEventName="relatedBlogItemClicked"
+                      />
                     </SwiperSlide>
                   );
                 })}
