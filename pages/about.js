@@ -35,16 +35,6 @@ const About = () => {
           <LogoList />
           <UsersList />
           <Steps />
-          {/*<LowCode />*/}
-          {/*<StartNow*/}
-          {/*  linkPrimary={{*/}
-          {/*    href: 'https://app.amplication.com/',*/}
-          {/*    title: 'Get started',*/}
-          {/*  }}*/}
-          {/*  linkSecondary={{*/}
-          {/*    title: 'Join Community',*/}
-          {/*  }}*/}
-          {/*/>*/}
         </div>
       </main>
     </>
@@ -56,7 +46,6 @@ About.getLayout = function getLayout(page) {
     <MainLayout
       paddingTopClasses="laptop:pt-[100px]"
       footerClass="bg-light-blue"
-      hideFooterBanner={true}
     >
       {page}
     </MainLayout>

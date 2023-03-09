@@ -1,8 +1,18 @@
+import {useCallback} from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import VideoWatch from '../../../../public/images/video-watch.png';
+import * as analytics from '../../../../lib/analytics';
 
 const HeroBlock = () => {
+  const handleStartNowClick = useCallback(() => {
+    analytics.event({
+      action: 'startNowClicked',
+      params: {
+        buttonLocation: 'hero',
+      },
+    });
+  });
   return (
     <>
       <section className="page-welcome !pt-10 !pb-8 large:!py-[9vh] xlg:!py-[17vh]">
@@ -29,7 +39,10 @@ const HeroBlock = () => {
                   </div>
                   <div className="buttons-wrapper d-flex tablet:align-items-center justify-content-start mt-2">
                     <Link href={'https://app.amplication.com'} passHref={true}>
-                      <a className="btn btn-primary btn-sm !h-[34px] mb-2 laptop:mr-2 w-full !font-normal !text-sm !max-w-[140px]">
+                      <a
+                        onClick={handleStartNowClick}
+                        className="btn btn-primary btn-sm !h-[34px] mb-2 laptop:mr-2 w-full !font-normal !text-sm !max-w-[140px]"
+                      >
                         Get started
                       </a>
                     </Link>

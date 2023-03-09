@@ -6,7 +6,7 @@ const Testimonials = () => {
   const iframe = useRef();
 
   const testimonialLink =
-    'https://embed-v2.testimonial.to/grid/selected/amplication/0?theme=dark&autoplay=off&showmore=on&one-row=on&same-height=off';
+    'https://embed-v2.testimonial.to/grid/selected/amplication/0?theme=light&card=base&loadMore=on&initialCount=20&randomize=on';
 
   return (
     <>
