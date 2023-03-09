@@ -46,7 +46,6 @@ About.getLayout = function getLayout(page) {
     <MainLayout
       paddingTopClasses="laptop:pt-[100px]"
       footerClass="bg-light-blue"
-      hideFooterBanner={true}
     >
       {page}
     </MainLayout>
