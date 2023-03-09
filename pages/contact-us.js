@@ -3,7 +3,7 @@ import {MainLayout} from '../layouts';
 import helpers from '../helpers';
 import Image from 'next/image';
 import {useRef, useState} from 'react';
-import { useNavigate } from 'react-router-dom';
+import {useRouter} from 'next/router';
 import Contacts from '../public/images/contact-us.png';
 
 const ContactUs = () => {
@@ -11,12 +11,8 @@ const ContactUs = () => {
   const [successMsg, setSuccessMsg] = useState('');
   const [radioValue, setRadioValue] = useState('radio-4');
 
-  const navigate = useNavigate();
+  const router = useRouter();
   const form = useRef(null);
-
-  const redirect = path => {
-    navigate(path);
-  }
 
   const submitSubscriptionForm = async e => {
     e.preventDefault();
@@ -54,8 +50,8 @@ const ContactUs = () => {
       );
       const data = await response.json();
       if (data.inlineMessage) {
-        //setSuccessMsg(data.inlineMessage);
-        redirect('/contact-us/thank-you');
+        setSuccessMsg(data.inlineMessage);
+        await router.push('/contact-us/thank-you');
       }
       setFormIsSended(false);
     } catch (e) {

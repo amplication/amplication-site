@@ -58,7 +58,7 @@ const ThankYou = () => {
           </h3>
           <div className="font-normal text-lg leading-[27px] mt-2 max-w-[560px]">
             We invite you to stay logged in and discover more about
-            Amplication's capabilities, and how you can benefit from our
+            Amplication&apos;s capabilities, and how you can benefit from our
             different plans.
           </div>
         </div>
