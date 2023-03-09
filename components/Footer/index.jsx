@@ -26,9 +26,6 @@ const Footer = ({customClass, compactView, hideBanner}) => {
                   <StartNow />
                 </div>
               )}
-
-              {/*Footer Main Content*/}
-              {/*<FooterContent />*/}
             </>
           )}
         </div>
