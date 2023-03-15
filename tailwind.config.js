@@ -97,6 +97,7 @@ module.exports = {
       },
       boxShadow: {
         hidden: 'initial',
+        radio: '0 20px 26px -16px rgb(21 25 44 / 84%)',
         btn: '0px 8px 20px 0px rgba(19, 22, 36, 0.24)',
         'hover-post': '0px 28px 32px -14px rgba(9, 11, 20, .5)',
         'hot-post': '0px 44px 48px -24px rgba(9, 11, 20, 0.3)',
