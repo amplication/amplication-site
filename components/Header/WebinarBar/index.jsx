@@ -5,7 +5,7 @@ import Image from 'next/image';
 const WebinarBar = () => {
   return (
     <div className="amplication-base relative z-10 w-full bg-[#111422] h-[60px] max-laptop:h-auto">
-      <div className="w-full flex justify-center items-center max-w-container m-container p-container max-laptop:flex-col">
+      <div className="w-full flex justify-center items-center max-w-container m-container p-container max-laptop:flex-col max-laptop:pb-4">
         <div className="relative h-[60px]">
           <Image
             className="block"
