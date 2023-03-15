@@ -3,11 +3,15 @@ import {MainLayout} from '../layouts';
 import helpers from '../helpers';
 import Image from 'next/image';
 import {useRef, useState} from 'react';
+import {useRouter} from 'next/router';
 import Contacts from '../public/images/contact-us.png';
 
 const ContactUs = () => {
+  const [formIsSended, setFormIsSended] = useState(false);
   const [successMsg, setSuccessMsg] = useState('');
-  const [radioValue, setRadioValue] = useState('');
+  const [radioValue, setRadioValue] = useState('radio-4');
+
+  const router = useRouter();
   const form = useRef(null);
 
   const submitSubscriptionForm = async e => {
@@ -23,6 +27,8 @@ const ContactUs = () => {
         });
       }
     });
+
+    setFormIsSended(true);
 
     try {
       const response = await fetch(
@@ -45,10 +51,23 @@ const ContactUs = () => {
       const data = await response.json();
       if (data.inlineMessage) {
         setSuccessMsg(data.inlineMessage);
+        await router.push('/contact-us/thank-you');
       }
+      setFormIsSended(false);
     } catch (e) {
       console.log('err', e);
     }
+  };
+
+  const onChangeHandler = e => {
+    const styles = getComputedStyle(e.target, null),
+      rows = parseInt(e.target.getAttribute('rows')) || 2,
+      lines = parseInt(styles.getPropertyValue('line-height')) * rows,
+      padding = parseInt(styles.getPropertyValue('padding-top')) * 2,
+      border = parseInt(styles.getPropertyValue('border-width')) * 4;
+
+    e.target.style.height = lines + padding + border + 'px';
+    e.target.style.height = e.target.scrollHeight + 'px';
   };
 
   return (
@@ -78,11 +97,11 @@ const ContactUs = () => {
             <div className="row align-items-center">
               <div className="col-12">
                 <div className="header-and-video align-items-center">
-                  <div className="content-block overflow-hidden relative p-10 border rounded border-solid border-dark-black-70 bg-light-blue">
+                  <div className="content-block overflow-hidden relative p-10 pt-7 border rounded border-solid border-dark-black-70 bg-light-blue z-10">
                     <h3 className="!font-bold !text-[32px] !leading-[48px]">
                       We&apos;re here for you
                     </h3>
-                    <div className="font-normal text-lg leading-[27px] mb-10">
+                    <div className="font-normal text-lg leading-[27px] mb-4">
                       Let us know how we can help and we&apos;ll get back to you
                       ASAP.
                     </div>
@@ -126,6 +145,7 @@ const ContactUs = () => {
                         <div className="flex flex-wrap justify-between mt-1 w-full">
                           <div className="w-[calc(50%-12px)] laptop:w-[calc(25%-12px)]">
                             <input
+                              checked={radioValue === 'radio-1'}
                               id="radio-1"
                               type="radio"
                               name="what_would_you_like_to_do___purchase_page_"
@@ -136,7 +156,12 @@ const ContactUs = () => {
                             />
                             <label
                               htmlFor="radio-1"
-                              className="!flex select-none cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full px-2 py-6 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue"
+                              className={
+                                (radioValue === 'radio-1'
+                                  ? 'bg-dark-black-70 border border-solid border-lite shadow-radio '
+                                  : '') +
+                                '!flex cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full px-2 py-3 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue'
+                              }
                             >
                               Talk with
                               <br />
@@ -145,6 +170,7 @@ const ContactUs = () => {
                           </div>
                           <div className="w-[calc(50%-12px)] laptop:w-[calc(25%-12px)]">
                             <input
+                              checked={radioValue === 'radio-2'}
                               id="radio-2"
                               type="radio"
                               name="what_would_you_like_to_do___purchase_page_"
@@ -155,7 +181,12 @@ const ContactUs = () => {
                             />
                             <label
                               htmlFor="radio-2"
-                              className="!flex select-none cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full px-2 py-6 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue"
+                              className={
+                                (radioValue === 'radio-2'
+                                  ? 'bg-dark-black-70 border border-solid border-lite shadow-radio '
+                                  : '') +
+                                '!flex cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full px-2 py-3 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue'
+                              }
                             >
                               Get Technical
                               <br />
@@ -164,6 +195,7 @@ const ContactUs = () => {
                           </div>
                           <div className="w-[calc(50%-12px)] laptop:w-[calc(25%-12px)]">
                             <input
+                              checked={radioValue === 'radio-3'}
                               id="radio-3"
                               type="radio"
                               name="what_would_you_like_to_do___purchase_page_"
@@ -174,7 +206,12 @@ const ContactUs = () => {
                             />
                             <label
                               htmlFor="radio-3"
-                              className="!flex select-none cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full px-2 py-6 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue"
+                              className={
+                                (radioValue === 'radio-3'
+                                  ? 'bg-dark-black-70 border border-solid border-lite shadow-radio '
+                                  : '') +
+                                '!flex cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full px-2 py-3 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue'
+                              }
                             >
                               Subscribe to
                               <br />
@@ -183,6 +220,7 @@ const ContactUs = () => {
                           </div>
                           <div className="w-[calc(50%-12px)] laptop:w-[calc(25%-12px)]">
                             <input
+                              checked={radioValue === 'radio-4'}
                               id="radio-4"
                               type="radio"
                               name="what_would_you_like_to_do___purchase_page_"
@@ -193,7 +231,12 @@ const ContactUs = () => {
                             />
                             <label
                               htmlFor="radio-4"
-                              className="!flex select-none cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full px-2 py-6 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue"
+                              className={
+                                (radioValue === 'radio-4'
+                                  ? 'bg-dark-black-70 border border-solid border-lite shadow-radio '
+                                  : '') +
+                                '!flex cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full px-2 py-3 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue'
+                              }
                             >
                               I need
                               <br />
@@ -216,10 +259,11 @@ const ContactUs = () => {
                         <div className="flex justify-between mt-2 w-full">
                           <label className="w-full mt-1 mb-0">
                             <textarea
+                              rows="1"
+                              onChange={onChangeHandler}
                               name="contact_us_message__csm"
                               placeholder="Message"
                               className="w-full leading-input focus:border-purple !shadow-hidden block w-full rounded-lg border border-solid bg-light-blue py-2 pl-3 pr-8 font-poppins text-sm text-white placeholder:text-gray hover:border-purple border-lite"
-                              rows="6"
                             ></textarea>
                           </label>
                         </div>
@@ -237,10 +281,11 @@ const ContactUs = () => {
                         <div className="flex justify-between mt-2 w-full">
                           <label className="w-full mt-1 mb-0">
                             <textarea
+                              rows="1"
+                              onChange={onChangeHandler}
                               name="contact_us_message__support"
                               placeholder="Message"
                               className="w-full leading-input focus:border-purple !shadow-hidden block w-full rounded-lg border border-solid bg-light-blue py-2 pl-3 pr-8 font-poppins text-sm text-white placeholder:text-gray hover:border-purple border-lite"
-                              rows="6"
                             ></textarea>
                           </label>
                         </div>
@@ -258,10 +303,11 @@ const ContactUs = () => {
                         <div className="flex justify-between mt-2 w-full">
                           <label className="w-full mt-1 mb-0">
                             <textarea
+                              rows="1"
+                              onChange={onChangeHandler}
                               name="contact_us_message__something_else__sales_"
                               placeholder="Message"
                               className="w-full leading-input focus:border-purple !shadow-hidden block w-full rounded-lg border border-solid bg-light-blue py-2 pl-3 pr-8 font-poppins text-sm text-white placeholder:text-gray hover:border-purple border-lite"
-                              rows="6"
                             ></textarea>
                           </label>
                         </div>
@@ -282,6 +328,7 @@ const ContactUs = () => {
                       </div>
                       <div className="relative w-full !mt-6 !flex align-items-center">
                         <input
+                          disabled={formIsSended ? 'disabled' : ''}
                           type="submit"
                           name="submit"
                           className="mt-1 flex justify-center items-center text-white font-poppins font-normal text-center rounded py-2 px-3 laptop:px-8 laptop:font-medium transition-all duration-300 bg-purple-bright hover:bg-purple-bright-hover text-[15px] h-[40px] whitespace-nowrap !px-4 ml-auto"
