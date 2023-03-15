@@ -25,7 +25,7 @@ const WebinarBar = () => {
           href="https://amplication.com/blog/webinar-march-29-2023"
           passHref={true}
         >
-          <a className="btn btn-outline-light btn-lg btn-sm !h-[34px] !font-normal !text-sm px-2 whitespace-nowrap">
+          <a className="btn btn-outline-light btn-lg btn-sm !h-[34px] !font-normal !text-sm !px-[12px] whitespace-nowrap">
             Register now
           </a>
         </Link>
