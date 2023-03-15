@@ -22,7 +22,7 @@ const WebinarBar = () => {
           Webinar: How to Build Nodejs Apps Faster With Amplication?
         </span>
         <Link
-          href="https://amplication.com/blog/webinar-march-29-2023"
+          href="https://www.eventbrite.com/e/how-to-build-nodejs-apps-faster-with-amplication-tickets-547785540297"
           passHref={true}
         >
           <a className="btn btn-outline-light btn-lg btn-sm !h-[34px] !font-normal !text-sm !px-[12px] whitespace-nowrap">
