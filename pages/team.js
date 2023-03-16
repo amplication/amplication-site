@@ -8,7 +8,7 @@ const Team = () => {
   return (
     <>
       <NextSeo
-        title="Meet the Team | Amplication"
+        title="Meet The Team. We Think Big. We think Different | Amplication"
         description="Meet the team behind Amplication! The open-source development tool that allows you to build production-ready Node.js applications in minutes. Click here to learn more."
         canonical={helpers.getCanonical('team')}
       />

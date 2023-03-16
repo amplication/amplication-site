@@ -11,7 +11,7 @@ const Blog = ({posts, tags}) => {
   return (
     <>
       <NextSeo
-        title="Amplication's Blog"
+        title="Blog: Node.js Insights for Developers & Enterprises | Amplication"
         description="Boost your knowledge and step up your game with top stories on backend development, Node.js and open-source from the Amplication team."
         canonical={helpers.getCanonical('blog')}
       />
