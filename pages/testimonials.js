@@ -10,7 +10,7 @@ const Testimonials = () => {
     <>
       <NextSeo
         title="Testimonials: Flexible Backend Development Platform | Amplication"
-        description="Amplication is an open-source platform built by developers for developers. We provide forever-free community developer license alongside flexible enterprise plans"
+        description="Read why users love Amplication. We're changing the game for Node.js app backend development. We provide open source plans as well as enterprise plans."
         canonical={helpers.getCanonical('pricing')}
       />
 
