@@ -10,7 +10,7 @@ const About = () => {
   return (
     <>
       <NextSeo
-        title="About Us | Amplication"
+        title="We Help Backend Developers Build Better and Faster | Amplication"
         description="Amplication is the most flexible open-source platform for Node.js app development.
         We enable developers to auto-generate production-ready backend in minutes. Design modelsand roles,
          deploy your app, connect with REST or GraphQL API, sync with GitHub. You own the code."

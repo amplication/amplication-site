@@ -6,7 +6,7 @@ const PrivacyPolicy = () => {
   return (
     <>
       <NextSeo
-        title="Privacy Policy | Amplication"
+        title="Read our Terms of Service on your Privacy & Security | Amplication "
         description="Please read the terms and conditions for using Amplication's service. By downloading, installing, accessing, or using our software you agree to these terms."
         canonical={helpers.getCanonical('privacy-policy')}
       />
