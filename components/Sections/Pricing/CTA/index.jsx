@@ -40,7 +40,7 @@ const Footer = () => {
               Amplication meet the requirements and standards of large
               organizations and enterprises. Read more about the generated app
               and its stack{' '}
-              <Link href="https://docs.amplication.com/getting-started">
+              <Link href="https://docs.amplication.com/getting-started/">
                 here
               </Link>
             </p>
