@@ -89,6 +89,8 @@ function Amplication({Component, pageProps}) {
         <link rel="icon" href="/images/favicon.ico" />
       </Head>
       <ApolloProvider client={client}>
+        <DefaultSeo canonical={canonicalUrl} />
+
         {getLayout(<Component {...pageProps} />)}
         {/*Google Fonts*/}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -164,7 +166,6 @@ function Amplication({Component, pageProps}) {
             style={{display: 'none', visibility: 'hidden'}}
           ></iframe>
         </noscript>
-        <DefaultSeo canonical={canonicalUrl} />
       </ApolloProvider>
     </>
   );

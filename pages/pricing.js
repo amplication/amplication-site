@@ -2,7 +2,6 @@ import HeroBlock from '../components/Sections/Pricing/HeroBlock';
 import CTA from '../components/Sections/Pricing/CTA';
 import {NextSeo} from 'next-seo';
 import {MainLayout} from '../layouts';
-import helpers from '../helpers';
 import dynamic from 'next/dynamic';
 
 export const PricingPlans = dynamic(
@@ -19,7 +18,6 @@ const Pricing = () => {
       <NextSeo
         title="Most flexible backend developent platform | Pricing | Amplciation"
         description="Amplication is an open-source platform built by developers for developers. We provide forever-free community developer license alongside flexible enterprise plans"
-        canonical={helpers.getCanonical('pricing')}
       />
 
       <main className="w-full font-poppins z-10 mb-12 laptop:mb-[100px] amplication-base">

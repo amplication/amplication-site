@@ -1,6 +1,5 @@
 import {NextSeo} from 'next-seo';
 import {MainLayout} from '../layouts';
-import helpers from '../helpers';
 import Image from 'next/image';
 import {useRef, useState} from 'react';
 import {useRouter} from 'next/router';
@@ -77,7 +76,6 @@ const ContactUs = () => {
         description="Amplication is the most flexible open-source platform for Node.js app development.
         We enable developers to auto-generate production-ready backend in minutes. Design modelsand roles,
          deploy your app, connect with REST or GraphQL API, sync with GitHub. You own the code."
-        canonical={helpers.getCanonical('/')}
         openGraph={{
           type: 'website',
           images: [
