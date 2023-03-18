@@ -1,5 +1,4 @@
 import {NextSeo} from 'next-seo';
-import helpers from '../helpers';
 import {MainLayout} from '../layouts';
 import ReactMarkdown from 'react-markdown';
 import markdown from '../content/terms.md';
@@ -13,7 +12,6 @@ const Terms = () => {
       <NextSeo
         title="Terms and Conditions | Amplication"
         description="Amplications Terms and Conditions. Please read the terms of use for our website. By accessing or using Amplications website, ​you agree to these terms."
-        canonical={helpers.getCanonical('sla')}
       />
 
       <main className="w-full font-poppins z-10 mb-12 laptop:mb-[100px] amplication-base circles-bg">

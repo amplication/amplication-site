@@ -1,5 +1,4 @@
 import {NextSeo} from 'next-seo';
-import helpers from '../../helpers';
 
 const ThankYou = () => {
   return (
@@ -9,7 +8,6 @@ const ThankYou = () => {
         description="Amplication is the most flexible open-source platform for Node.js app development.
         We enable developers to auto-generate production-ready backend in minutes. Design modelsand roles,
          deploy your app, connect with REST or GraphQL API, sync with GitHub. You own the code."
-        canonical={helpers.getCanonical('/')}
         openGraph={{
           type: 'website',
           images: [

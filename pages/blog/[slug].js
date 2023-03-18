@@ -66,7 +66,6 @@ const Post = ({posts, post}) => {
           site: 'amplication.com',
           cardType: 'summary_large_image',
         }}
-        canonical={helpers.getCanonical(helpers.getPostSlug(post.slug))}
       />
 
       <div className="w-full p-container laptop:max-w-container-desktop-blog laptop:m-container-desktop laptop:p-container-desktop mt-16 laptop:mt-12">

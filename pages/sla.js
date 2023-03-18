@@ -1,5 +1,4 @@
 import {NextSeo} from 'next-seo';
-import helpers from '../helpers';
 import {MainLayout} from '../layouts';
 import ReactMarkdown from 'react-markdown';
 import markdown from '../content/sla.md';
@@ -13,7 +12,6 @@ const SlaPage = () => {
       <NextSeo
         title="SLA | Amplication"
         description="Amplication's Service Level Agreement (SLA) for Enterprise and Pro plans."
-        canonical={helpers.getCanonical('sla')}
       />
 
       <main className="w-full font-poppins z-10 mb-12 laptop:mb-[100px] amplication-base circles-bg">
