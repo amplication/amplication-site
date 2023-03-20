@@ -34,7 +34,7 @@ export const getServerSideProps = async context => {
     helpers.getPostPerPage() *
     (context.query.page ? parseInt(context.query.page) : 1);
 
-  const postsTake = hotPostCount + 2 * postsPerPage;
+  const postsTake = hotPostCount + postsPerPage + 1;
 
   try {
     const {data} = await client.query({
