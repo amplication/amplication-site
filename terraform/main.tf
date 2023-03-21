@@ -84,6 +84,7 @@ module "lb-http" {
   name    = var.lb_name
 
   ssl                             = true
+  ssl_policy                      = "tls-1-2"
   managed_ssl_certificate_domains = [var.domain, "www.${var.domain}"]
   http_forward                    = false
   create_url_map                  = false
