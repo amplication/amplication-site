@@ -29,7 +29,7 @@ const PostCard = props => {
         >
           <div
             className={
-              'overflow-hidden border border-solid border-dark-black-70 laptop:border-transparent transition-all duration-1000 laptop:border-transparent h-full hover:shadow-hover-post laptop:hover:border laptop:hover:border-dark-black-70 rounded-2xl pb-6 ' +
+              'overflow-hidden border border-solid border-dark-black-70  h-full hover:shadow-hover-post rounded-2xl pb-6 ' +
               (props.className !== 'undefined' ? props.className : '')
             }
           >
@@ -44,14 +44,15 @@ const PostCard = props => {
                 alt={post.title}
               />
             </div>
-            <div className="px-6 laptop:px-4">
+            <div className="px-6 laptop:px-4 flex items-left flex-col h-52 ">
+              <Tags list={post.tags} />
+              <Title className="text-lg font-medium mt-4">{post.title}</Title>
+              <div className="flex-auto border-y border-t-0 border-solid border-dark-black-70"></div>
               <Author
                 avatar={post.author?.profileImage}
                 name={post.author?.firstName + ' ' + post.author?.lastName}
                 date={post.publishedAt}
               />
-              <Tags list={post.tags} />
-              <Title className="text-lg font-medium mt-4">{post.title}</Title>
             </div>
           </div>
         </a>

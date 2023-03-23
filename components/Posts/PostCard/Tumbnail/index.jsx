@@ -13,7 +13,7 @@ const Thumbnail = props => {
         (typeof props.className !== 'undefined' ? props.className : '')
       }
     >
-      <span className="group-hover:scale-105 transition-all duration-[2000ms] rounded-t-2xl w-full h-full pb-[52%] block relative overflow-hidden bg-purple-bright">
+      <span className=" rounded-t-2xl w-full h-full pb-[52%] block relative overflow-hidden bg-purple-bright">
         {props.src && (
           <Image
             onLoadingComplete={e => updateImageState(e)}

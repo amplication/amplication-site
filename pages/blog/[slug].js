@@ -115,7 +115,9 @@ const Post = ({posts, post}) => {
               />
               <Thumbnail
                 objectFit="initial"
-                className={'order-4 mt-8 mb-16 rounded-2xl !aspect-auto'}
+                className={
+                  'order-4 mt-8 mb-16 rounded-2xl !aspect-auto border border-solid border-dark-black-70'
+                }
                 src={
                   helpers.isValidUrl(post.featuredImage)
                     ? post.featuredImage
