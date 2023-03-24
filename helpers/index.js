@@ -109,7 +109,7 @@ const helpers = {
   },
 
   getPostPerPage: () => {
-    return 9;
+    return 12;
   },
   /**
    * Generates slug from string

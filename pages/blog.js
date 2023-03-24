@@ -51,7 +51,6 @@ export const getServerSideProps = async context => {
               lastName
               profileImage
             }
-            content
             publishedAt
             featuredImage
             slug
