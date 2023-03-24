@@ -55,7 +55,7 @@ const Posts = ({posts}) => {
           'w-full max-w-container m-container p-container laptop:max-w-container-desktop-blog laptop:m-container-desktop laptop:p-container-desktop pt-0 laptop:pt-0 laptop:pb-0 grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-7.5 laptop:gap-x-7.5 laptop:gap-y-[61px]'
         }
       >
-        {postsList.slice(0, 6).map((post, i) => {
+        {postsList.slice(0, 6).map(post => {
           return (
             <PostCard
               data={post}
