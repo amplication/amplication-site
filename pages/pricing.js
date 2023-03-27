@@ -34,6 +34,6 @@ const Pricing = () => {
   );
 };
 Pricing.getLayout = function getLayout(page) {
-  return <MainLayout hideFooterBanner>{page}</MainLayout>;
+  return <MainLayout>{page}</MainLayout>;
 };
 export default Pricing;
