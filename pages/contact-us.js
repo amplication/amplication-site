@@ -8,7 +8,7 @@ import Contacts from '../public/images/contact-us.png';
 const ContactUs = () => {
   const [formIsSended, setFormIsSended] = useState(false);
   const [successMsg, setSuccessMsg] = useState('');
-  const [radioValue, setRadioValue] = useState('radio-4');
+  const [radioValue, setRadioValue] = useState('radio-1');
 
   const router = useRouter();
   const form = useRef(null);
@@ -147,7 +147,7 @@ const ContactUs = () => {
                               id="radio-1"
                               type="radio"
                               name="what_would_you_like_to_do___purchase_page_"
-                              value="Talk with Customer Success Manager"
+                              value="Talk with Sales"
                               className="hidden"
                               onChange={() => setRadioValue('radio-1')}
                               required
@@ -163,7 +163,7 @@ const ContactUs = () => {
                             >
                               Talk with
                               <br />
-                              Customer Success Manager
+                              Sales
                             </label>
                           </div>
                           <div className="w-[calc(50%-12px)] laptop:w-[calc(25%-12px)]">
@@ -197,7 +197,7 @@ const ContactUs = () => {
                               id="radio-3"
                               type="radio"
                               name="what_would_you_like_to_do___purchase_page_"
-                              value="Subscribe to our amazing Blog"
+                              value="Subscribe to our blog"
                               onChange={() => setRadioValue('radio-3')}
                               className="hidden"
                               required
@@ -213,7 +213,7 @@ const ContactUs = () => {
                             >
                               Subscribe to
                               <br />
-                              our amazing Blog
+                              our blog
                             </label>
                           </div>
                           <div className="w-[calc(50%-12px)] laptop:w-[calc(25%-12px)]">
@@ -250,14 +250,13 @@ const ContactUs = () => {
                         }
                       >
                         <span className="font-semibold text-sm leading-[22px]">
-                          If you have a message for our customer success
-                          manager, he will be happy to take care of it and reply
-                          as soon as possible.
+                          Tell us about your project and our sales team will get
+                          back to you as soon as possible.
                         </span>
                         <div className="flex justify-between mt-2 w-full">
                           <label className="w-full mt-1 mb-0">
                             <textarea
-                              rows="1"
+                              rows="4"
                               onChange={onChangeHandler}
                               name="contact_us_message__csm"
                               placeholder="Message"
@@ -279,7 +278,7 @@ const ContactUs = () => {
                         <div className="flex justify-between mt-2 w-full">
                           <label className="w-full mt-1 mb-0">
                             <textarea
-                              rows="1"
+                              rows="4"
                               onChange={onChangeHandler}
                               name="contact_us_message__support"
                               placeholder="Message"
@@ -301,7 +300,7 @@ const ContactUs = () => {
                         <div className="flex justify-between mt-2 w-full">
                           <label className="w-full mt-1 mb-0">
                             <textarea
-                              rows="1"
+                              rows="4"
                               onChange={onChangeHandler}
                               name="contact_us_message__something_else__sales_"
                               placeholder="Message"
