@@ -66,7 +66,6 @@ const Post = ({posts, post}) => {
           site: 'amplication.com',
           cardType: 'summary_large_image',
         }}
-        canonical={helpers.getCanonical(helpers.getPostSlug(post.slug))}
       />
 
       <div className="w-full p-container laptop:max-w-container-desktop-blog laptop:m-container-desktop laptop:p-container-desktop mt-16 laptop:mt-12">
@@ -116,7 +115,9 @@ const Post = ({posts, post}) => {
               />
               <Thumbnail
                 objectFit="initial"
-                className={'order-4 mt-8 mb-16 rounded-2xl !aspect-auto'}
+                className={
+                  'order-4 mt-8 mb-16 rounded-2xl !aspect-auto border border-solid border-dark-black-70'
+                }
                 src={
                   helpers.isValidUrl(post.featuredImage)
                     ? post.featuredImage

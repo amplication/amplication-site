@@ -1,6 +1,4 @@
 import {ApolloProvider} from '@apollo/client';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import Head from 'next/head';
 import Script from 'next/script';
 import {useRouter} from 'next/router';
@@ -45,13 +43,6 @@ function Amplication({Component, pageProps}) {
   }, [router.events]);
 
   useEffect(() => {
-    // Scroll effects
-    AOS.init({
-      easing: 'ease-out-back',
-      duration: 1000,
-      disable: true, //router.asPath === '/enterprise' && width !== null && width < 640,
-    });
-
     const typingAnimations = document.querySelectorAll(
       '#animated-header-typed'
     );
@@ -89,6 +80,8 @@ function Amplication({Component, pageProps}) {
         <link rel="icon" href="/images/favicon.ico" />
       </Head>
       <ApolloProvider client={client}>
+        <DefaultSeo canonical={canonicalUrl} />
+
         {getLayout(<Component {...pageProps} />)}
         {/*Google Fonts*/}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -164,7 +157,6 @@ function Amplication({Component, pageProps}) {
             style={{display: 'none', visibility: 'hidden'}}
           ></iframe>
         </noscript>
-        <DefaultSeo canonical={canonicalUrl} />
       </ApolloProvider>
     </>
   );

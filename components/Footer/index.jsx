@@ -1,14 +1,8 @@
 import StartNow from '../../components/Sections/About/StartNow';
 import FooterBottomBar from './FooterBottomBar';
 import PropTypes from 'prop-types';
-import {useRouter} from 'next/router';
 
 const Footer = ({customClass, compactView, hideBanner}) => {
-  const {asPath} = useRouter();
-  if (asPath === '/contact-us') {
-    return '';
-  }
-
   return (
     <>
       <footer

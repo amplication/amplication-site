@@ -1,7 +1,6 @@
 import {NextSeo} from 'next-seo';
 import {MainLayout} from '../layouts';
 import IframeResizer from 'iframe-resizer-react';
-import helpers from '../helpers';
 const testimonialLink =
   'https://embed-v2.testimonial.to/grid/selected/amplication/0?theme=dark&autoplay=off&showmore=on&one-row=on&same-height=off';
 
@@ -9,9 +8,8 @@ const Testimonials = () => {
   return (
     <>
       <NextSeo
-        title="Most flexible backend developent platform | Testimonials | Amplication"
-        description="Amplication is an open-source platform built by developers for developers. We provide forever-free community developer license alongside flexible enterprise plans"
-        canonical={helpers.getCanonical('pricing')}
+        title="Testimonials: Flexible Backend Development Platform | Amplication"
+        description="Read why users love Amplication. We're changing the game for Node.js app backend development. We provide open source plans as well as enterprise plans."
       />
 
       <main className="w-full font-poppins z-10 mb-12 laptop:mb-[100px] amplication-base">

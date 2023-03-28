@@ -5,7 +5,6 @@ import CommunitySupport from '../components/Sections/Community/Support';
 import CommunitySpread from '../components/Sections/Community/Spread';
 import {NextSeo} from 'next-seo';
 import {MainLayout} from '../layouts';
-import helpers from '../helpers';
 
 const Community = () => {
   return (
@@ -13,7 +12,6 @@ const Community = () => {
       <NextSeo
         title="Join our community & contribute to Amplication"
         description="Join us in building the next generation of development tools. Any contribution counts."
-        canonical={helpers.getCanonical('community')}
       />
       <main className="w-full font-poppins z-10 mb-12 laptop:mb-[100px] amplication-base">
         <CommunityHero />

@@ -13,6 +13,15 @@ const HeroBlock = () => {
       },
     });
   });
+
+  const handleBookDemoClick = useCallback(() => {
+    analytics.event({
+      action: 'bookDemoClicked',
+      params: {
+        buttonLocation: 'hero',
+      },
+    });
+  });
   return (
     <>
       <section className="page-welcome !pt-10 !pb-8 large:!py-[9vh] xlg:!py-[17vh]">
@@ -44,6 +53,15 @@ const HeroBlock = () => {
                         className="btn btn-primary btn-sm !h-[34px] mb-2 laptop:mr-2 w-full !font-normal !text-sm !max-w-[140px]"
                       >
                         Get started
+                      </a>
+                    </Link>
+                    <div className="spacer"></div>
+                    <Link href={'/contact-us'} passHref={true}>
+                      <a
+                        onClick={handleBookDemoClick}
+                        className="btn btn-outline-light btn-sm !h-[34px] mb-2 laptop:mr-2 w-full !font-normal !text-sm !max-w-[140px] text-black80"
+                      >
+                        Book a Demo
                       </a>
                     </Link>
                   </div>

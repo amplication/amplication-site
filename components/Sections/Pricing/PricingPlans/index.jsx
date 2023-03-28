@@ -1,6 +1,36 @@
+import {useCallback} from 'react';
 import {StiggProvider, Paywall} from '@stigg/react-sdk';
+import * as analytics from '../../../../lib/analytics';
 
 export const PricingPlans = () => {
+  const handlePlanSelected = useCallback(({plan}) => {
+    if (plan.id === 'plan-amplication-free') {
+      analytics.event({
+        action: 'startNowClicked',
+        params: {
+          buttonLocation: 'website-pricing',
+        },
+      });
+      window.location.href = 'https://app.amplication.com/login';
+    } else if (plan.id === 'plan-amplication-pro') {
+      analytics.event({
+        action: 'upgradeProClicked',
+        params: {
+          buttonLocation: 'website-pricing',
+        },
+      });
+      window.location.href = 'https://app.amplication.com/purchase';
+    } else {
+      analytics.event({
+        action: 'enterpriseContactUsClicked',
+        params: {
+          buttonLocation: 'website-pricing',
+        },
+      });
+      window.location.href = '/contact-us';
+    }
+  });
+
   return (
     <div className="stigg-wrapper">
       <StiggProvider apiKey={process.env.NEXT_PUBLIC_BILLING_API_KEY}>
@@ -25,15 +55,7 @@ export const PricingPlans = () => {
               priceNotSet: 'Price not set',
             },
           }}
-          onPlanSelected={async ({plan}) => {
-            if (plan.id === 'plan-amplication-free') {
-              window.location.href = 'https://app.amplication.com/login';
-            } else if (plan.id === 'plan-amplication-pro') {
-              window.location.href = 'https://app.amplication.com/purchase';
-            } else {
-              window.HubSpotConversations.widget.open();
-            }
-          }}
+          onPlanSelected={handlePlanSelected}
         />
       </StiggProvider>
     </div>

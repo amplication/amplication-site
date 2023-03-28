@@ -20,7 +20,7 @@ const HeroBlock = () => {
                 </div>
                 <div className="relative align-items-center mt-[-20vw] mb-[-15vw] middle:my-0 middle:!max-w-[90%] w-full middle:min-h-[600px] flex align-items-center middle:!max-w-[53%]">
                   <div className="middle:absolute middle:my-auto min-w-[114vw] middle:min-w-full middle:w-[65vw] max-w-[1280px] middle:flex align-items-center">
-                    <Image src={Screenshot3} alt={''} />
+                    <Image src={Screenshot3} alt={'Amplication platform'} />
                   </div>
                 </div>
               </div>
