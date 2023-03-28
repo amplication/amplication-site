@@ -9694,7 +9694,6 @@ body {
   background-size: cover;
   padding-bottom: 3rem;
   padding-top: 3rem;
-  min-height: 100vh;
 }
 @media (min-width: 992px) {
   .amplication-base section.page-welcome .container-fluid,
