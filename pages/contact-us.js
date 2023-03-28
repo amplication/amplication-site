@@ -102,10 +102,10 @@ const ContactUs = () => {
                     best use of Amplication.
                   </div>
                   <div className="w-full font-normal text-sm leading-[1.56em] mt-8">
-                    <h3 className="font-semibold !text-lg leading-[27px]">
+                    <h3 className="font-semibold !text-lg leading-[27px] !mb-2">
                       How are you using Amplication currently?
                     </h3>
-                    <ul className="font-light text-sm leading-7 list-disc list-inside !mt-2">
+                    <ul className="font-light text-sm leading-7 list-disc list-inside">
                       <li>Easily generate all core backend functionality</li>
                       <li>
                         Continuously sync the generated code to your GitHub repo
