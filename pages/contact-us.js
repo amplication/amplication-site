@@ -115,7 +115,7 @@ const ContactUs = () => {
                     </ul>
                   </div>
                 </div>
-                <div className="w-full max-w-[599px] overflow-hidden relative p-10 pt-7 border rounded border-solid border-dark-black-70 bg-light-blue z-10">
+                <div className="w-full max-w-[599px] overflow-hidden relative p-10 pt-7 border rounded border-solid border-dark-black-70 bg-light-blue z-10 max-laptop:order-[-1]">
                   <form
                     className="hubspot w-full flex flex-col justify-start items-stretch laptop:flex-row laptop:flex-wrap laptop:items-start laptop:justify-between"
                     method="POST"
