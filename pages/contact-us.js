@@ -4,6 +4,17 @@ import {useRef, useState} from 'react';
 import {useRouter} from 'next/router';
 import Slider from '../components/Sections/Enterprise/Slider';
 
+// eslint-disable-next-line node/no-missing-import
+import 'swiper/css';
+// eslint-disable-next-line node/no-missing-import
+import 'swiper/css/pagination';
+import {Pagination} from 'swiper';
+import {Swiper, SwiperSlide} from 'swiper/react';
+
+import avatar1 from '../public/images/testimonials/testimonial-1.png';
+import avatar2 from '../public/images/testimonials/testimonial-2.png';
+import Image from 'next/image';
+
 const ContactUs = () => {
   const [formIsSended, setFormIsSended] = useState(false);
   const [successMsg, setSuccessMsg] = useState('');
@@ -67,6 +78,21 @@ const ContactUs = () => {
     e.target.style.height = lines + padding + border + 'px';
     e.target.style.height = e.target.scrollHeight + 'px';
   };
+
+  const testimonials = [
+    {
+      text: 'Amplication has helped us at OpenCures develop new API services faster in our work on healthsoftware for preventive health care. We were lookingfor a django alternative in NodeJS that fit ourarchitecture strategy and found exactly what we were looking for in Amplication. The skills and energy of the team have made our contributions a great pleasure!',
+      name: 'Thibaut Lefort',
+      position: 'CEO, Digital Copilote',
+      avatar: avatar1,
+    },
+    {
+      text: 'Amplication is a game-changing open-source platform for Node.js app development, offering unparalleled flexibility and the ability to auto-generate production-ready backend in minutes. I highly recommend it for any Node.js developer.',
+      name: 'Marko Denic',
+      position: 'Senior Full-stack Developer, Ideenreich Websolutions',
+      avatar: avatar2,
+    },
+  ];
 
   return (
     <>
@@ -346,6 +372,56 @@ const ContactUs = () => {
             </div>
           </div>
         </section>
+
+        <div className="flex flex-column bg-light-blue py-20 pb-14">
+          <Swiper
+            className="!max-w-[100%] bg-quote bg-no-repeat bg-[center_0]"
+            slidesPerView={1}
+            loop={true}
+            modules={[Pagination]}
+            pagination={{
+              type: 'bullets',
+              clickable: true,
+              clickableClass: 'swiper-pagination-clickable !relative pt-4',
+              bulletClass: 'swiper-pagination-bullet !bg-white',
+              bulletActiveClass:
+                'swiper-pagination-bullet-active relative top-[1px] !bg-purple-bright !w-2.5 !h-2.5',
+            }}
+          >
+            {testimonials.map((testimonial, index) => {
+              return (
+                <SwiperSlide key={index} className="w-full min-w-full">
+                  <div className="w-full flex flex-column align-items-center w-[90%] max-w-[880px] mx-auto">
+                    <div className="font-light text-lg max-laptop:text-sm leading-[27px] text-center text-white">
+                      {testimonial.text}
+                    </div>
+                    <div className="flex align-items-center mt-6">
+                      {testimonial.avatar && (
+                        <div className="!w-[35px] !h-[35px] overflow-hidden rounded-[100%]">
+                          <Image
+                            src={testimonial.avatar}
+                            alt={testimonial.name}
+                          />
+                        </div>
+                      )}
+                      {testimonial.name && testimonial.position && (
+                        <div className="flex flex-column ml-2">
+                          <div className="font-semibold text-xs leading-[18px]">
+                            {testimonial.name}
+                          </div>
+                          <div className="font-normal text-[10px] leading-[15px]">
+                            {testimonial.position}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        </div>
+
         <Slider />
       </main>
     </>
