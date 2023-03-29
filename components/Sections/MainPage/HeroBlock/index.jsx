@@ -1,10 +1,19 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import VideoWatch from '../../../../public/images/video-watch.png';
-import {useEffect, useState} from 'react';
+import {useEffect, useState, useCallback} from 'react';
+import * as analytics from '../../../../lib/analytics';
 
 const HeroBlock = () => {
   const [starsCount, setStarsCount] = useState(8.7);
+  const handleStartNowClick = useCallback(() => {
+    analytics.event({
+      action: 'startNowClicked',
+      params: {
+        buttonLocation: 'developers-hero',
+      },
+    });
+  });
 
   useEffect(() => {
     fetch('https://api.github.com/repos/amplication/amplication', {
@@ -80,7 +89,10 @@ const HeroBlock = () => {
                   </div>
                   <div className="buttons-wrapper d-flex align-items-center justify-content-start">
                     <Link href={'https://app.amplication.com'} passHref={true}>
-                      <a className="btn btn-primary btn-lg  mb-4">
+                      <a
+                        onClick={handleStartNowClick}
+                        className="btn btn-primary btn-sm !h-[34px] mb-2 laptop:mr-2 w-full !font-normal !text-sm !max-w-[140px]"
+                      >
                         Get Started
                       </a>
                     </Link>
@@ -91,7 +103,7 @@ const HeroBlock = () => {
                     >
                       <a
                         target="_blank"
-                        className="btn btn-outline-light btn-lg mb-4 text-black80"
+                        className="btn btn-outline-light btn-sm !h-[34px] mb-2 laptop:mr-2 w-full !font-normal !text-sm !max-w-[140px] text-black80"
                         rel="noreferrer"
                       >
                         Documentation

@@ -4,19 +4,15 @@ import LogoList from '../components/Sections/About/LogoList';
 import UsersList from '../components/Sections/About/UsersList';
 import {NextSeo} from 'next-seo';
 import {MainLayout} from '../layouts';
-import helpers from '../helpers';
 
 const About = () => {
   return (
     <>
       <NextSeo
-        title="About Us | Amplication"
-        description="Amplication is the most flexible open-source platform for Node.js app development.
-        We enable developers to auto-generate production-ready backend in minutes. Design modelsand roles,
-         deploy your app, connect with REST or GraphQL API, sync with GitHub. You own the code."
+        title="We Help Backend Developers Build Better and Faster | Amplication"
+        description="Amplication is the most flexible open-source Node.js app development platform. We enable developers to auto-generate production-ready backend in minutes. "
         noindex={true}
         nofollow={true}
-        canonical={helpers.getCanonical('/')}
         openGraph={{
           type: 'website',
           images: [
@@ -35,16 +31,6 @@ const About = () => {
           <LogoList />
           <UsersList />
           <Steps />
-          {/*<LowCode />*/}
-          {/*<StartNow*/}
-          {/*  linkPrimary={{*/}
-          {/*    href: 'https://app.amplication.com/',*/}
-          {/*    title: 'Get started',*/}
-          {/*  }}*/}
-          {/*  linkSecondary={{*/}
-          {/*    title: 'Join Community',*/}
-          {/*  }}*/}
-          {/*/>*/}
         </div>
       </main>
     </>
@@ -56,7 +42,6 @@ About.getLayout = function getLayout(page) {
     <MainLayout
       paddingTopClasses="laptop:pt-[100px]"
       footerClass="bg-light-blue"
-      hideFooterBanner={true}
     >
       {page}
     </MainLayout>

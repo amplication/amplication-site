@@ -4,7 +4,11 @@ import LogoEntree from '../../../../public/images/logotypes/logo-entree-capital.
 import LogoVertex from '../../../../public/images/logotypes/logo-vertex.png';
 
 const LogoList = () => {
-  const logos = [LogoNorwest, LogoVertex, LogoEntree];
+  const logos = [
+    {logo: LogoNorwest, name: 'Norwest'},
+    {logo: LogoVertex, name: 'Vertex Ventures'},
+    {logo: LogoEntree, name: 'Entrée Capital'},
+  ];
   return (
     <>
       <section className="background-transparent w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
@@ -19,7 +23,7 @@ const LogoList = () => {
                   className="px-[0.5rem] tablet:px-6 medium:px-10 text-center w-[360px] tablet:w-auto"
                   key={index}
                 >
-                  <Image src={logo} alt={''} />
+                  <Image src={logo.logo} alt={`${logo.name} logo`} />
                 </span>
               );
             })}

@@ -4,7 +4,8 @@ ARG ALPINE_VERSION=alpine3.14
 FROM node:$NODE_VERSION-$ALPINE_VERSION AS deps
 WORKDIR /app
 COPY package.json ./
-RUN npm install
+COPY package-lock.json ./
+RUN npm ci
 
 FROM node:$NODE_VERSION-$ALPINE_VERSION AS build
 WORKDIR /app

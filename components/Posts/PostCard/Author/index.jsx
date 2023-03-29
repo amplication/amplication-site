@@ -33,9 +33,15 @@ const Author = props => {
         <div className="text-white capitalize">
           {props.name || 'Amplication Team'}
         </div>
-        <div className={'text-white ' + (props.large ? 'laptop:text-sm' : '')}>
-          {helpers.getPostDate(props.date)}
-        </div>
+      </div>
+      <div className={'flex flex-col flex-auto'}></div>
+      <div
+        className={
+          'flex flex-col  ml-3 text-xs text-white ' +
+          (props.large ? 'laptop:text-sm' : '')
+        }
+      >
+        {helpers.getPostDate(props.date)}
       </div>
     </div>
   );

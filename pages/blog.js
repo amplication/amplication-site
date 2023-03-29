@@ -11,9 +11,8 @@ const Blog = ({posts, tags}) => {
   return (
     <>
       <NextSeo
-        title="Amplication's Blog"
+        title="Blog: Node.js Insights for Developers & Enterprises | Amplication"
         description="Boost your knowledge and step up your game with top stories on backend development, Node.js and open-source from the Amplication team."
-        canonical={helpers.getCanonical('blog')}
       />
 
       <main className="w-full font-poppins z-10 mb-12 laptop:mb-[100px] laptop:pt-10">
@@ -35,7 +34,7 @@ export const getServerSideProps = async context => {
     helpers.getPostPerPage() *
     (context.query.page ? parseInt(context.query.page) : 1);
 
-  const postsTake = hotPostCount + 2 * postsPerPage;
+  const postsTake = hotPostCount + postsPerPage + 1;
 
   try {
     const {data} = await client.query({
@@ -52,7 +51,6 @@ export const getServerSideProps = async context => {
               lastName
               profileImage
             }
-            content
             publishedAt
             featuredImage
             slug
