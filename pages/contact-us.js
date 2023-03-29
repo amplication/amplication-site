@@ -69,7 +69,7 @@ const ContactUs = () => {
       }
       setFormIsSended(false);
     } catch (e) {
-      console.log('err', e);
+      console.log('error', e);
     }
   };
 
