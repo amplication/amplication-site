@@ -4,31 +4,14 @@ import youtubeIcon from '../../../public/images/icons/youtube.svg';
 
 const FooterBottomBar = () => {
   return (
-    <div className="text-center w-full relative">
-      <ul className="w-full flex items-center py-3.5 whitespace-nowrap max-laptop:flex-col">
-        <li className="w-full laptop:w-auto py-3.5 min-w-[270px] text-left max-laptop:text-center">
-          <p className="text-xs text-white/50 font-poppins laptop:text-sm">
-            {`©${new Date().getFullYear()} amplication`}
-          </p>
-        </li>
-        <li className="w-full flex laptop:flex-row justify-center gap-4 py-3.5">
-          <Link href="/privacy-policy">
-            <a className="text-xs text-white/50 font-poppins underline laptop:text-sm hover:text-purple-bright-hover">
-              Privacy Policy
-            </a>
-          </Link>
-          <Link href="/terms">
-            <a className="text-xs text-white/50 font-poppins underline laptop:text-sm hover:text-purple-bright-hover">
-              Terms & Conditions
-            </a>
-          </Link>
-        </li>
-        <li className="flex items-center py-3.5 max-laptop:pb-0">
-          <span className="inline-flex items-center mr-6 text-xs text-white/50 font-poppins laptop:text-sm text-center">
+    <div className="text-center w-full relative border-t border-solid border-white/20">
+      <ul className="w-full flex flex-col items-center py-3.5">
+        <li className="flex flex-col laptop:flex-row align-items-center my-4 laptop:mb-0 laptop:mt-0 laptop:w-auto py-3.5">
+          <span className="mb-4 laptop:mb-0 laptop:mr-6 text-xs text-white/50 font-poppins laptop:text-sm text-center laptop:text-left">
             Follow us
           </span>
-          <ul className="inline-flex justify-center align-items-center flex-nowrap laptop:justify-start gap-7">
-            <li className="laptop:m-0 laptop:flex w-[25px] h-[25px]">
+          <ul className="flex justify-center align-items-center flex-wrap laptop:justify-start gap-7">
+            <li className="m-3 laptop:m-0 laptop:flex">
               <Link href={process.env.NEXT_PUBLIC_GITHUB_LINK}>
                 <a
                   className="inline-block transition-opacity hover:opacity-50"
@@ -49,7 +32,7 @@ const FooterBottomBar = () => {
                 </a>
               </Link>
             </li>
-            <li className="laptop:m-0 laptop:flex w-[25px] h-[25px]">
+            <li className="m-3 laptop:m-0 laptop:flex">
               <Link href={process.env.NEXT_PUBLIC_LINKEDIN_LINK}>
                 <a
                   className="inline-block transition-opacity hover:opacity-50"
@@ -70,7 +53,7 @@ const FooterBottomBar = () => {
                 </a>
               </Link>
             </li>
-            <li className="laptop:m-0 laptop:flex w-[25px] h-[25px]">
+            <li className="m-3 laptop:m-0 laptop:flex">
               <Link href={process.env.NEXT_PUBLIC_TWITTER_LINK}>
                 <a
                   className="inline-block transition-opacity hover:opacity-50"
@@ -91,7 +74,7 @@ const FooterBottomBar = () => {
                 </a>
               </Link>
             </li>
-            <li className="laptop:m-0 laptop:flex w-[25px] h-[25px]">
+            <li className="m-3 laptop:m-0 laptop:flex">
               <Link href={process.env.NEXT_PUBLIC_YOUTUBE_LINK}>
                 <a
                   className="inline-block transition-opacity hover:opacity-50"
@@ -107,6 +90,23 @@ const FooterBottomBar = () => {
               </Link>
             </li>
           </ul>
+        </li>
+        <li className="w-full flex-col flex laptop:flex-row laptop:justify-center gap-4 justify-end py-3.5">
+          <Link href="/privacy-policy">
+            <a className="text-xs text-white/50 font-poppins underline laptop:text-sm hover:text-purple-bright-hover">
+              Privacy Policy
+            </a>
+          </Link>
+          <Link href="/terms">
+            <a className="text-xs text-white/50 font-poppins underline laptop:text-sm hover:text-purple-bright-hover">
+              Terms & Conditions
+            </a>
+          </Link>
+        </li>
+        <li className="w-full laptop:w-auto py-3.5">
+          <p className="text-xs text-white/50 font-poppins laptop:text-sm">
+            {`©${new Date().getFullYear()} amplication`}
+          </p>
         </li>
       </ul>
     </div>
