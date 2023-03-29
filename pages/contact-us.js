@@ -4,6 +4,8 @@ import {useRef, useState} from 'react';
 import {useRouter} from 'next/router';
 import Slider from '../components/Sections/Enterprise/Slider';
 
+import helpers from '../helpers';
+
 // eslint-disable-next-line node/no-missing-import
 import 'swiper/css';
 // eslint-disable-next-line node/no-missing-import
@@ -13,6 +15,9 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 
 import avatar1 from '../public/images/testimonials/testimonial-1.png';
 import avatar2 from '../public/images/testimonials/testimonial-2.png';
+import avatar5 from '../public/images/testimonials/testimonial-5.png';
+import avatar6 from '../public/images/testimonials/testimonial-6.png';
+import avatar7 from '../public/images/testimonials/testimonial-7.png';
 import Image from 'next/image';
 
 const ContactUs = () => {
@@ -64,7 +69,7 @@ const ContactUs = () => {
       }
       setFormIsSended(false);
     } catch (e) {
-      console.log('err', e);
+      console.log('error', e);
     }
   };
 
@@ -81,9 +86,9 @@ const ContactUs = () => {
 
   const testimonials = [
     {
-      text: 'Amplication has helped us at OpenCures develop new API services faster in our work on healthsoftware for preventive health care. We were lookingfor a django alternative in NodeJS that fit ourarchitecture strategy and found exactly what we were looking for in Amplication. The skills and energy of the team have made our contributions a great pleasure!',
-      name: 'Thibaut Lefort',
-      position: 'CEO, Digital Copilote',
+      text: 'Amplication has helped us at OpenCures develop new API services faster in our work on health data software for preventive health care. We were looking for a django alternative in NodeJS that fit our architecture strategy and found exactly what we were looking for in Amplication. The skills and energy of the team have made our contributions a great pleasure!',
+      name: 'Vincenzo Domina',
+      position: 'OpenCures Inc.',
       avatar: avatar1,
     },
     {
@@ -91,6 +96,34 @@ const ContactUs = () => {
       name: 'Marko Denic',
       position: 'Senior Full-stack Developer, Ideenreich Websolutions',
       avatar: avatar2,
+    },
+    {
+      text: "“We've used Amplication as a Node.js backend in one of our bigger projects. The platform's ability to quickly bootstrap Back-End common tasks has greatly increased our get-to-go productivity and allowed us to focus on our business logic earlier in the project's life cycle. The team at Amplication have also been very responsive and helpful in addressing any issues or concerns. If you're starting a project from scratch, We highly recommend taking a look at this platform first” WeWrite https://wewrite.software/",
+      name: 'Avinoam',
+      position: 'WeWrite',
+    },
+    {
+      text: "As a Co-Founder and CTO of VijanaTech Tanzania (vijanatech.com), we needed a fast and reliable solution to be build our api and amplication was just a fit for us as a startup. The best thing is i don't have to worry about admin panel and all api code it just does everything for us. The product is best as it save a lot of time in debugging contrary to the old way where we had to spend numerous amount of hours debugging code.",
+      name: 'Emmanuel Mtera',
+      position: 'Co-Founder',
+    },
+    {
+      text: "Digital Copilote is an innovation-oriented web agency. We have been using Amplication for several months. As we work in a non-monolithic way we use Amplication to create backend services. What we like about Amplication is its ease of use and the speed with which you get a robust and usable app. Seriously, an organized junior dev who knows a little bit about Amplication can bootstrap a backend service in a day that would take a week for a seasoned senior dev. To conclude a 100% functional and serious product that saves us a lot of development hours and offers a rigorous framework allowing even junior devs to create POC or MVP type products that can be sent to production. In the end, our customers are happy because they end up with a project that costs half as much as before we used Amplication, and our developers are just as happy because they don't always develop the same project boostraping and focus on the business process of the project.",
+      name: 'Thibaut Lefort',
+      position: 'CEO, Digital Copilote',
+      avatar: avatar5,
+    },
+    {
+      text: "Looks like I don't actually need to worry about the internals of pagination, authorization, API documentation, routing and a bunch more when I build my next Node.js application... 🔥",
+      name: 'Liran Tal 🛫 ModernFrontends #London 🇬🇧',
+      position: '@liran_tal',
+      avatar: avatar6,
+    },
+    {
+      text: "been testing @amplication for production... It's actually good! as the base. The generated code is satisfyingly clean and the structures are well built. Good job open-source, good job.",
+      name: 'Arian',
+      position: '@ArianMirahmadi',
+      avatar: avatar7,
     },
   ];
 
@@ -141,7 +174,7 @@ const ContactUs = () => {
                     </ul>
                   </div>
                 </div>
-                <div className="w-full max-w-[599px] overflow-hidden relative p-10 pt-7 border rounded border-solid border-dark-black-70 bg-light-blue z-10 max-laptop:order-[-1]">
+                <div className="w-full max-w-[599px] overflow-hidden relative p-10 max-laptop:p-6 pt-7 border rounded border-solid border-dark-black-70 bg-light-blue z-10 max-laptop:order-[-1]">
                   <form
                     className="hubspot w-full flex flex-col justify-start items-stretch laptop:flex-row laptop:flex-wrap laptop:items-start laptop:justify-between"
                     method="POST"
@@ -149,12 +182,12 @@ const ContactUs = () => {
                     ref={form}
                   >
                     <div className="relative w-full !mt-6">
-                      <span className="font-semibold text-sm leading-[22px]">
+                      <span className="font-semibold text-sm leading-[22px] max-laptop:text-[16px]">
                         Tell us how you are using Amplication, so we can better
                         help you achieve your goals:
                       </span>
                       <div className="flex flex-wrap justify-between mt-1 w-full">
-                        <div className="w-[calc(50%-12px)] laptop:w-[calc(25%-12px)]">
+                        <div className="w-[calc(50%-8px)] laptop:w-[calc(25%-12px)]">
                           <input
                             checked={radioValue === 'radio-1'}
                             id="radio-1"
@@ -171,13 +204,13 @@ const ContactUs = () => {
                               (radioValue === 'radio-1'
                                 ? 'bg-dark-black-70 border border-solid border-lite shadow-radio '
                                 : '') +
-                              '!flex cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full px-2 py-3 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue'
+                              '!flex cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full p-2 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue select-none'
                             }
                           >
                             Not using
                           </label>
                         </div>
-                        <div className="w-[calc(50%-12px)] laptop:w-[calc(25%-12px)]">
+                        <div className="w-[calc(50%-8px)] laptop:w-[calc(25%-12px)]">
                           <input
                             checked={radioValue === 'radio-2'}
                             id="radio-2"
@@ -194,13 +227,13 @@ const ContactUs = () => {
                               (radioValue === 'radio-2'
                                 ? 'bg-dark-black-70 border border-solid border-lite shadow-radio '
                                 : '') +
-                              '!flex cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full px-2 py-3 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue'
+                              '!flex cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full p-2 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue select-none'
                             }
                           >
                             Evaluating
                           </label>
                         </div>
-                        <div className="w-[calc(50%-12px)] laptop:w-[calc(25%-12px)]">
+                        <div className="w-[calc(50%-8px)] laptop:w-[calc(25%-12px)]">
                           <input
                             checked={radioValue === 'radio-3'}
                             id="radio-3"
@@ -217,13 +250,13 @@ const ContactUs = () => {
                               (radioValue === 'radio-3'
                                 ? 'bg-dark-black-70 border border-solid border-lite shadow-radio '
                                 : '') +
-                              '!flex cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full px-2 py-3 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue'
+                              '!flex cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full p-2 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue select-none'
                             }
                           >
                             Actively building
                           </label>
                         </div>
-                        <div className="w-[calc(50%-12px)] laptop:w-[calc(25%-12px)]">
+                        <div className="w-[calc(50%-8px)] laptop:w-[calc(25%-12px)]">
                           <input
                             checked={radioValue === 'radio-4'}
                             id="radio-4"
@@ -240,7 +273,7 @@ const ContactUs = () => {
                               (radioValue === 'radio-4'
                                 ? 'bg-dark-black-70 border border-solid border-lite shadow-radio '
                                 : '') +
-                              '!flex cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full px-2 py-3 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue'
+                              '!flex cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full p-2 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue select-none'
                             }
                           >
                             In production
@@ -249,7 +282,7 @@ const ContactUs = () => {
                       </div>
                     </div>
                     <div className="relative mt-4 w-full">
-                      <span className="font-semibold text-sm leading-[22px]">
+                      <span className="font-semibold text-sm leading-[22px] max-laptop:text-[16px]">
                         Our sales team would love to set up a call/chat.
                       </span>
                     </div>
@@ -281,7 +314,7 @@ const ContactUs = () => {
                       />
                     </div>
                     <div className="block relative w-full !mt-6">
-                      <span className="font-semibold text-sm leading-[22px]">
+                      <span className="font-semibold text-sm leading-[22px] max-laptop:text-[16px]">
                         We would like to hear more about what you want to do
                         with Amplication:
                       </span>
@@ -378,6 +411,7 @@ const ContactUs = () => {
             className="!max-w-[100%] bg-quote bg-no-repeat bg-[center_0]"
             slidesPerView={1}
             loop={true}
+            autoHeight={true}
             modules={[Pagination]}
             pagination={{
               type: 'bullets',
@@ -396,14 +430,18 @@ const ContactUs = () => {
                       {testimonial.text}
                     </div>
                     <div className="flex align-items-center mt-6">
-                      {testimonial.avatar && (
-                        <div className="!w-[35px] !h-[35px] overflow-hidden rounded-[100%]">
+                      <div className="!w-[35px] !h-[35px] overflow-hidden rounded-[100%]">
+                        {testimonial.avatar ? (
                           <Image
                             src={testimonial.avatar}
                             alt={testimonial.name}
                           />
-                        </div>
-                      )}
+                        ) : (
+                          <span className="text-lg bg-[#5d5dff] h-full flex align-items-center justify-center">
+                            {helpers.getInitials(testimonial.name)}
+                          </span>
+                        )}
+                      </div>
                       {testimonial.name && testimonial.position && (
                         <div className="flex flex-column ml-2">
                           <div className="font-semibold text-xs leading-[18px]">
