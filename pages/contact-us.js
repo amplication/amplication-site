@@ -98,7 +98,7 @@ const ContactUs = () => {
       avatar: avatar2,
     },
     {
-      text: "“We've used Amplication as a Node.js backend in one of our bigger projects. The platform's ability to quickly bootstrap Back-End common tasks has greatly increased our get-to-go productivity and allowed us to focus on our business logic earlier in the project's life cycle. The team at Amplication have also been very responsive and helpful in addressing any issues or concerns. If you're starting a project from scratch, We highly recommend taking a look at this platform first” WeWrite https://wewrite.software/",
+      text: "“We've used Amplication as a Node.js backend in one of our bigger projects. The platform's ability to quickly bootstrap Back-End common tasks has greatly increased our get-to-go productivity and allowed us to focus on our business logic earlier in the project's life cycle. The team at Amplication have also been very responsive and helpful in addressing any issues or concerns. If you're starting a project from scratch, We highly recommend taking a look at this platform first” wewrite.software",
       name: 'Avinoam',
       position: 'WeWrite',
     },
