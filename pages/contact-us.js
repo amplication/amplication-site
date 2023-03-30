@@ -196,7 +196,7 @@ const ContactUs = () => {
                             checked={radioValue === 'radio-1'}
                             id="radio-1"
                             type="radio"
-                            name="what_would_you_like_to_do___purchase_page_"
+                            name="how_are_you_using_amplication"
                             value="Not using"
                             className="hidden"
                             onChange={() => setRadioValue('radio-1')}
@@ -219,7 +219,7 @@ const ContactUs = () => {
                             checked={radioValue === 'radio-2'}
                             id="radio-2"
                             type="radio"
-                            name="what_would_you_like_to_do___purchase_page_"
+                            name="how_are_you_using_amplication"
                             value="Evaluating"
                             className="hidden"
                             onChange={() => setRadioValue('radio-2')}
@@ -242,7 +242,7 @@ const ContactUs = () => {
                             checked={radioValue === 'radio-3'}
                             id="radio-3"
                             type="radio"
-                            name="what_would_you_like_to_do___purchase_page_"
+                            name="how_are_you_using_amplication"
                             value="Actively building"
                             onChange={() => setRadioValue('radio-3')}
                             className="hidden"
@@ -265,7 +265,7 @@ const ContactUs = () => {
                             checked={radioValue === 'radio-4'}
                             id="radio-4"
                             type="radio"
-                            name="what_would_you_like_to_do___purchase_page_"
+                            name="how_are_you_using_amplication"
                             value="In production"
                             className="hidden"
                             onChange={() => setRadioValue('radio-4')}
@@ -327,7 +327,7 @@ const ContactUs = () => {
                           <textarea
                             rows="4"
                             onChange={onChangeHandler}
-                            name="contact_us_message__csm"
+                            name="message"
                             placeholder="Message"
                             className="w-full leading-input focus:border-purple !shadow-hidden block w-full rounded-lg border border-solid bg-light-blue py-2 pl-3 pr-8 font-poppins text-sm text-white placeholder:text-gray hover:border-purple border-lite"
                           ></textarea>
@@ -338,7 +338,7 @@ const ContactUs = () => {
                       <label className="w-full mt-1 mb-0 flex align-items-center cursor-pointer">
                         <input
                           type="checkbox"
-                          name="what_would_you_like_to_do___purchase_page_"
+                          name="LEGAL_CONSENT.subscription_type_142787872"
                           className="shadow-none w-4 h-4 border rounded-sm border-solid border-white !bg-light-blue checked:!bg-purple-bright checked:!border-purple-bright focus:!bg-purple-bright"
                           required
                         />
