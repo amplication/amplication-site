@@ -171,6 +171,7 @@ const helpers = {
         headings[headings.length - 1].children.push(heading);
       }
     }
+
     return headings;
   },
   getInitials: string => {
