@@ -142,6 +142,7 @@ module.exports = {
         'form-pattern-2-mobile': "url('/images/decor_2_mobile.svg')",
         'form-pattern-2-desktop': "url('/images/decor_2_desktop.svg')",
         noise: "url('/images/noise.png')",
+        quote: "url('/images/bg/quote.svg')",
       },
     },
   },

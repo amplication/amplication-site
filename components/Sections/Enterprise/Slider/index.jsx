@@ -10,7 +10,7 @@ import Image from 'next/image';
 const Slider = () => {
   return (
     <>
-      <section className="!pt-5 !pb-4 laptop:!py-20 !bg-light-blue">
+      <section className="!pt-5 !pb-4 laptop:!py-20">
         <div className="flex-grow max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
           <h2 className="roadmap-heading tablet:text-center">
             Empowering developers from leading companies
