@@ -18,6 +18,7 @@ import erezGreenberg from '../../../../public/images/team/erez.png';
 import leviVan from '../../../../public/images/team/levi.png';
 import danieleIasella from '../../../../public/images/team/daniele.png';
 import brandonBaisch from '../../../../public/images/team/brandon.png';
+import mulyGottlieb from '../../../../public/images/team/muly.png';
 
 import talkWithUs from '../../../../public/images/icons/talk-with-with-team.svg';
 import joinUs from '../../../../public/images/icons/join-the-team.svg';
@@ -85,6 +86,21 @@ const TeamBlock = () => {
         },
         {
           href: 'https://github.com/GreenMachine01/',
+          iconClass: 'github',
+        },
+      ],
+    },
+    {
+      name: 'Muly Gottlieb',
+      position: 'VP R&D',
+      image: mulyGottlieb,
+      links: [
+        {
+          href: 'https://www.linkedin.com/in/mulyg/',
+          iconClass: 'linkedin',
+        },
+        {
+          href: 'https://github.com/mulygottlieb',
           iconClass: 'github',
         },
       ],
