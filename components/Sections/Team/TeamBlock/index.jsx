@@ -4,7 +4,6 @@ import innaBell from '../../../../public/images/team/inna-bell.png';
 import yuvalHanaz from '../../../../public/images/team/yuval-hazaz.png';
 import vikaGoncharuk from '../../../../public/images/team/vika-goncharuk.png';
 import morHagbi from '../../../../public/images/team/mor-hagbi.png';
-import mosheForman from '../../../../public/images/team/moshe-forman.png';
 import sauravJain from '../../../../public/images/team/saurav-jain.png';
 import alexBass from '../../../../public/images/team/alex-bass.png';
 import amitBarletz from '../../../../public/images/team/amit-barletz.png';
@@ -200,25 +199,6 @@ const TeamBlock = () => {
         {
           href: 'https://github.com/barshimi',
           iconClass: 'github',
-        },
-      ],
-    },
-    {
-      name: 'Moshe Forman',
-      position: 'Sr. Technical Writer',
-      image: mosheForman,
-      links: [
-        {
-          href: 'https://www.linkedin.com/in/mosheforman/',
-          iconClass: 'linkedin',
-        },
-        {
-          href: 'https://github.com/MoFoGo',
-          iconClass: 'github',
-        },
-        {
-          href: 'https://twitter.com/MosheForman',
-          iconClass: 'twitter',
         },
       ],
     },
