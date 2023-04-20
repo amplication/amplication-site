@@ -57,7 +57,10 @@ const Hero = () => {
                       </a>
                     </Link>
                     <div className="spacer"></div>
-                    <Link href={'https://app.amplication.com/login'} passHref={true}>
+                    <Link
+                      href={'https://app.amplication.com/login'}
+                      passHref={true}
+                    >
                       <a
                         onClick={handleBookDemoClick}
                         className="btn btn-outline-light btn-sm !h-[34px] mb-2 laptop:mr-2 w-full !font-normal !text-sm !max-w-[140px] text-black80"
