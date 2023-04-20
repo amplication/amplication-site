@@ -48,7 +48,7 @@ const Hero = () => {
                     </div>
                   </div>
                   <div className="d-flex tablet:align-items-center justify-content-start mt-2">
-                    <Link href={'https://app.amplication.com'} passHref={true}>
+                    <Link href={'/contact-us'} passHref={true}>
                       <a
                         onClick={handleStartNowClick}
                         className="btn btn-primary btn-sm !h-[34px] mb-2 laptop:mr-2 w-full !font-normal !text-sm !max-w-[140px]"
@@ -57,7 +57,7 @@ const Hero = () => {
                       </a>
                     </Link>
                     <div className="spacer"></div>
-                    <Link href={'/contact-us'} passHref={true}>
+                    <Link href={'https://app.amplication.com/login'} passHref={true}>
                       <a
                         onClick={handleBookDemoClick}
                         className="btn btn-outline-light btn-sm !h-[34px] mb-2 laptop:mr-2 w-full !font-normal !text-sm !max-w-[140px] text-black80"

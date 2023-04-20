@@ -4,7 +4,7 @@ import youtubeIcon from '../../../public/images/icons/youtube.svg';
 
 const FooterBottomBar = () => {
   return (
-    <div className="text-center w-full relative border-t border-solid border-white/20">
+    <div className="text-center w-full relative">
       <ul className="w-full flex flex-col items-center py-3.5">
         <li className="flex flex-col laptop:flex-row align-items-center my-4 laptop:mb-0 laptop:mt-0 laptop:w-auto py-3.5">
           <span className="mb-4 laptop:mb-0 laptop:mr-6 text-xs text-white/50 font-poppins laptop:text-sm text-center laptop:text-left">
