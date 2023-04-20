@@ -73,7 +73,10 @@ const IconsGroup = () => {
                     alt={item.title ?? ''}
                   />
                 )}
-                <span className="mt-2" dangerouslySetInnerHTML={{__html: item.title}}></span>
+                <span
+                  className="mt-2"
+                  dangerouslySetInnerHTML={{__html: item.title}}
+                ></span>
               </div>
             );
           })}
