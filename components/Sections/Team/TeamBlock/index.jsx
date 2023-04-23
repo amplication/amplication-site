@@ -4,7 +4,6 @@ import innaBell from '../../../../public/images/team/inna-bell.png';
 import yuvalHanaz from '../../../../public/images/team/yuval-hazaz.png';
 import vikaGoncharuk from '../../../../public/images/team/vika-goncharuk.png';
 import morHagbi from '../../../../public/images/team/mor-hagbi.png';
-import mosheForman from '../../../../public/images/team/moshe-forman.png';
 import sauravJain from '../../../../public/images/team/saurav-jain.png';
 import alexBass from '../../../../public/images/team/alex-bass.png';
 import amitBarletz from '../../../../public/images/team/amit-barletz.png';
@@ -13,11 +12,11 @@ import michaelSolati from '../../../../public/images/team/michael-solati.png';
 import eugineTseitlin from '../../../../public/images/team/eugene-tseitlin.png';
 import shimiBar from '../../../../public/images/team/shimi.png';
 import tomerNaim from '../../../../public/images/team/tomer.png';
-import toddFeinroth from '../../../../public/images/team/todd.png';
 import erezGreenberg from '../../../../public/images/team/erez.png';
 import leviVan from '../../../../public/images/team/levi.png';
 import danieleIasella from '../../../../public/images/team/daniele.png';
 import brandonBaisch from '../../../../public/images/team/brandon.png';
+import mulyGottlieb from '../../../../public/images/team/muly.png';
 
 import talkWithUs from '../../../../public/images/icons/talk-with-with-team.svg';
 import joinUs from '../../../../public/images/icons/join-the-team.svg';
@@ -39,22 +38,6 @@ const TeamBlock = () => {
         },
         {
           href: 'https://twitter.com/Yuvalhazaz1',
-          iconClass: 'twitter',
-        },
-      ],
-    },
-    {
-      name: 'Todd Feinroth',
-      position: 'VP Sales',
-      image: toddFeinroth,
-      links: [
-        {
-          href: 'https://www.linkedin.com/in/todd-feinroth-76a065168/',
-          iconClass: 'linkedin',
-        },
-
-        {
-          href: 'https://twitter.com/sailsmantf',
           iconClass: 'twitter',
         },
       ],
@@ -85,6 +68,21 @@ const TeamBlock = () => {
         },
         {
           href: 'https://github.com/GreenMachine01/',
+          iconClass: 'github',
+        },
+      ],
+    },
+    {
+      name: 'Muly Gottlieb',
+      position: 'VP R&D',
+      image: mulyGottlieb,
+      links: [
+        {
+          href: 'https://www.linkedin.com/in/mulyg/',
+          iconClass: 'linkedin',
+        },
+        {
+          href: 'https://github.com/mulygottlieb',
           iconClass: 'github',
         },
       ],
@@ -184,25 +182,6 @@ const TeamBlock = () => {
         {
           href: 'https://github.com/barshimi',
           iconClass: 'github',
-        },
-      ],
-    },
-    {
-      name: 'Moshe Forman',
-      position: 'Sr. Technical Writer',
-      image: mosheForman,
-      links: [
-        {
-          href: 'https://www.linkedin.com/in/mosheforman/',
-          iconClass: 'linkedin',
-        },
-        {
-          href: 'https://github.com/MoFoGo',
-          iconClass: 'github',
-        },
-        {
-          href: 'https://twitter.com/MosheForman',
-          iconClass: 'twitter',
         },
       ],
     },
