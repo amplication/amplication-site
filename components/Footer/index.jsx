@@ -14,7 +14,6 @@ const Footer = ({customClass, compactView, hideBanner}) => {
         <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
           {!compactView && (
             <>
-              {/*Banner*/}
               {!hideBanner && (
                 <div className="amplication-base">
                   <StartNow />
