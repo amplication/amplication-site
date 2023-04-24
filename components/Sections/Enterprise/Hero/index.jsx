@@ -1,7 +1,7 @@
 import {useCallback} from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import AppDashboard from '../../../../public/images/enterprise/app-dashboard.png';
+import AppDashboard from '../../../../public/images/enterprise/app-dashboard.svg';
 import * as analytics from '../../../../lib/analytics';
 
 const Hero = () => {
