@@ -21,6 +21,7 @@ const Features = () => {
       customClasses: '!pb-8',
       secondaryBtn: {
         title: 'Learn More',
+        href: 'https://docs.amplication.com/getting-started/'
       },
       content:
         '<p>Amplication Enterprise makes the most of any use case from data-driven applications to complex workflows. Our platform automates the creation of any backend foundations with all standards built-in, so your developers can focus on creating custom solutions for your business.</p>',
