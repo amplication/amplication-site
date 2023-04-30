@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import AppDashboard from '../../../../public/images/enterprise/app-dashboard.svg';
 import * as analytics from '../../../../lib/analytics';
-import VideoWatch from "../../../../public/images/video-watch.png";
+import VideoWatch from '../../../../public/images/video-watch.png';
 
 const Hero = () => {
   const handleStartNowClick = useCallback(() => {
