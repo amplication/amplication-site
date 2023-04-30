@@ -1,8 +1,8 @@
 import {useCallback} from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import AppDashboard from '../../../../public/images/enterprise/app-dashboard.svg';
 import * as analytics from '../../../../lib/analytics';
+import AppDashboard from '../../../../public/images/enterprise/app-dashboard.svg';
 
 const Hero = () => {
   const handleStartNowClick = useCallback(() => {
