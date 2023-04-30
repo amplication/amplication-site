@@ -71,7 +71,7 @@ const Hero = () => {
                     </Link>
                   </div>
                 </div>
-                <div className="relative align-items-center max-medium:mt-12 middle:!max-w-[90%] w-full middle:min-h-[600px] flex align-items-center medium:!max-w-[46%]">
+                <div className="relative align-items-center middle:!max-w-[90%] w-full middle:min-h-[600px] flex align-items-center medium:!max-w-[46%]">
                   <div className="absolute laptop:my-auto w-[50vw] -left-16 max-medium:w-full max-medium:left-0 max-medium:relative medium:flex align-items-center">
                     <Image src={AppDashboard} alt={'Amplication platform'} />
                   </div>
