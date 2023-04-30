@@ -35,7 +35,7 @@ const Hero = () => {
                       <span className="block font-bold">
                         Accelerate Your Business with Amplication Enterprise
                       </span>
-                      <span className="block text-[20px] tablet:text-[28px] desktop:text-[34px] leading-relaxed font-bold">
+                      <span className="block font-semibold text-[32px] leading-[48px]">
                         Automated, customizable solutions for faster application
                         development
                       </span>
@@ -72,7 +72,7 @@ const Hero = () => {
                   </div>
                 </div>
                 <div className="relative align-items-center max-medium:mt-12 middle:!max-w-[90%] w-full middle:min-h-[600px] flex align-items-center medium:!max-w-[46%]">
-                  <div className="middle:my-auto min-w-full max-w-[1280px] middle:flex align-items-center">
+                  <div className="absolute laptop:my-auto w-[50vw] -left-16 max-medium:w-full max-medium:left-0 max-medium:relative medium:flex align-items-center">
                     <Image src={AppDashboard} alt={'Amplication platform'} />
                   </div>
                 </div>
