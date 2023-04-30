@@ -9663,10 +9663,6 @@ body {
 .amplication-base section.background-transparent {
   background-color: transparent;
 }
-.amplication-base section .sub-title {
-  margin-top: 32px;
-  margin-bottom: 64px;
-}
 .amplication-base section .main-title {
   font-size: 3.5rem;
   font-weight: 600;
@@ -9749,6 +9745,11 @@ body {
 .amplication-base section.page-welcome .main-title {
   max-width: 1024px;
 }
+@media (max-width: 1600px) {
+  .amplication-base section.page-welcome .main-title {
+    font-size: 2.8125rem;
+  }
+}
 @media (max-width: 1439px) {
   .amplication-base section.page-welcome .main-title {
     font-size: 2.5rem;
@@ -9760,13 +9761,25 @@ body {
   }
 }
 .amplication-base section.page-welcome .sub-title {
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+  font-size: 2rem;
+  display: block;
+  font-weight: 600;
+  line-height: 1.5;
 }
-.amplication-base section.page-welcome .sub-title .highlight {
-  font-weight: 500;
-  color: var(--primary);
+@media (max-width: 1600px) {
+  .amplication-base section.page-welcome .sub-title {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 1439px) {
+  .amplication-base section.page-welcome .sub-title {
+    font-size: 1.5625rem;
+  }
+}
+@media (max-width: 640px) {
+  .amplication-base section.page-welcome .sub-title {
+    font-size: 1.25rem;
+  }
 }
 .amplication-base section.page-welcome .spacer {
   min-width: 24px;
