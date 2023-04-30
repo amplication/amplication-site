@@ -9749,7 +9749,7 @@ body {
 .amplication-base section.page-welcome .main-title {
   max-width: 1024px;
 }
-@media (max-width: 1440px) {
+@media (max-width: 1439px) {
   .amplication-base section.page-welcome .main-title {
     font-size: 2.5rem;
   }
