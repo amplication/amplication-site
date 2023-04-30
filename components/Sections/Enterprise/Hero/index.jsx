@@ -35,7 +35,7 @@ const Hero = () => {
                       <span className="block font-bold">
                         Accelerate Your Business with Amplication Enterprise
                       </span>
-                      <span className="sub-title !max-w-[710px]">
+                      <span className="sub-title">
                         Automated, customizable solutions for faster application
                         development
                       </span>

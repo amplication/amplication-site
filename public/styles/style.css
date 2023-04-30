@@ -9770,20 +9770,24 @@ body {
   display: block;
   font-weight: 600;
   line-height: 1.5;
+  max-width: 710px;
 }
 @media (max-width: 1919px) {
   .amplication-base section.page-welcome .sub-title {
     font-size: 1.8rem;
+    max-width: 650px;
   }
 }
 @media (max-width: 1600px) {
   .amplication-base section.page-welcome .sub-title {
     font-size: 1.5625rem;
+    max-width: 560px;
   }
 }
 @media (max-width: 1439px) {
   .amplication-base section.page-welcome .sub-title {
     font-size: 1.44rem;
+    max-width: 500px;
   }
 }
 @media (max-width: 640px) {
