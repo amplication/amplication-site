@@ -9,7 +9,27 @@ import icon7 from '../../../../public/images/icons/icon-7.svg';
 import icon8 from '../../../../public/images/icons/icon-8.svg';
 import icon9 from '../../../../public/images/icons/icon-9.svg';
 
+import {useEffect, useState} from 'react';
+
+// eslint-disable-next-line node/no-missing-import
+import 'swiper/css';
+import {Swiper, SwiperSlide} from 'swiper/react';
+
 const IconsGroup = () => {
+  const [isMobile, setIsMobile] = useState(true);
+
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      if (window.innerWidth < 991) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+      setIsMobile(window.innerWidth < 992);
+    });
+    setIsMobile(window.innerWidth < 992);
+  }, []);
+
   const items = [
     {
       title: 'Financial Services',
@@ -60,26 +80,56 @@ const IconsGroup = () => {
           industries, including:
         </div>
         <div className="d-flex flex-wrap justify-content-center mt-6 mx-[-12px]">
-          {items.map((item, index) => {
-            return (
-              <div
-                className="flex-[1] mx-[12px] max-w-[300px] min-w-[250px] mt-6 flex text-lg font-semibold leading-[27px] tracking-normal text-center align-items-center p-8 py-6 flex-column !border-dark-black-70 rounded-lg border-solid border"
-                key={index}
-              >
-                {item.icon && (
-                  <Image
-                    objectFit="cover"
-                    src={item.icon}
-                    alt={item.title ?? ''}
-                  />
-                )}
-                <span
-                  className="mt-2"
-                  dangerouslySetInnerHTML={{__html: item.title}}
-                ></span>
-              </div>
-            );
-          })}
+          {isMobile ? (
+            <Swiper
+              slidesPerView={'auto'}
+              loop={true}
+              autoHeight={false}
+              className="pb-4"
+            >
+              {items.map((item, index) => {
+                return (
+                  <SwiperSlide
+                    className="flex-[1] mx-[12px] max-w-[300px] min-w-[250px] mt-6 flex text-lg font-semibold leading-[27px] tracking-normal text-center align-items-center justify-content-center p-8 py-6 flex-column !border-dark-black-70 rounded-lg border-solid border"
+                    key={index}
+                  >
+                    {item.icon && (
+                      <Image
+                        objectFit="cover"
+                        src={item.icon}
+                        alt={item.title ?? ''}
+                      />
+                    )}
+                    <span
+                      className="mt-2"
+                      dangerouslySetInnerHTML={{__html: item.title}}
+                    ></span>
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+          ) : (
+            items.map((item, index) => {
+              return (
+                <div
+                  className="flex-[1] mx-[12px] max-w-[300px] min-w-[250px] mt-6 flex text-lg font-semibold leading-[27px] tracking-normal text-center align-items-center p-8 py-6 flex-column !border-dark-black-70 rounded-lg border-solid border"
+                  key={index}
+                >
+                  {item.icon && (
+                    <Image
+                      objectFit="cover"
+                      src={item.icon}
+                      alt={item.title ?? ''}
+                    />
+                  )}
+                  <span
+                    className="mt-2"
+                    dangerouslySetInnerHTML={{__html: item.title}}
+                  ></span>
+                </div>
+              );
+            })
+          )}
         </div>
       </div>
     </section>

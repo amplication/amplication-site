@@ -31,12 +31,13 @@ const Hero = () => {
               <div className="header-and-video align-items-center">
                 <div className="content-block medium:!max-w-[50%]">
                   <div className="animated-header">
-                    <h1 className="main-title mb-0 font-bold !text-[40px] large:!text-[56px] leading-[84px]">
-                      Accelerate Your Business <br /> with Amplication
-                      Enterprise
-                      <span className="block text-[24px] large:text-[32px] leading-[1.475em] mt-2">
-                        Automated, customizable solutions for
-                        <br /> faster application development
+                    <h1 className="main-title mb-0">
+                      <span className="block font-bold">
+                        Accelerate Your Business with Amplication Enterprise
+                      </span>
+                      <span className="block text-[20px] tablet:text-[28px] desktop:text-[34px] leading-relaxed font-bold">
+                        Automated, customizable solutions for faster application
+                        development
                       </span>
                     </h1>
                     <div className="explainer text-sm laptop:text-base large:text-lg text-white !mt-3 !mb-4 !max-w-[720px]">
