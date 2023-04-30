@@ -9708,7 +9708,7 @@ body {
   }
 }
 .amplication-base .header-and-video .content-block {
-  max-width: 48%;
+  max-width: 45%;
 }
 .amplication-base .header-and-video .video {
   max-width: 52%;
@@ -9745,14 +9745,19 @@ body {
 .amplication-base section.page-welcome .main-title {
   max-width: 1024px;
 }
+@media (max-width: 1919px) {
+  .amplication-base section.page-welcome .main-title {
+    font-size: 2.8rem;
+  }
+}
 @media (max-width: 1600px) {
   .amplication-base section.page-welcome .main-title {
-    font-size: 2.8125rem;
+    font-size: 2.5rem;
   }
 }
 @media (max-width: 1439px) {
   .amplication-base section.page-welcome .main-title {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
   }
 }
 @media (max-width: 640px) {
@@ -9766,14 +9771,19 @@ body {
   font-weight: 600;
   line-height: 1.5;
 }
-@media (max-width: 1600px) {
+@media (max-width: 1919px) {
   .amplication-base section.page-welcome .sub-title {
     font-size: 1.8rem;
   }
 }
-@media (max-width: 1439px) {
+@media (max-width: 1600px) {
   .amplication-base section.page-welcome .sub-title {
     font-size: 1.5625rem;
+  }
+}
+@media (max-width: 1439px) {
+  .amplication-base section.page-welcome .sub-title {
+    font-size: 1.44rem;
   }
 }
 @media (max-width: 640px) {

@@ -29,18 +29,18 @@ const Hero = () => {
           <div className="row align-items-center">
             <div className="col-12 text-center">
               <div className="header-and-video align-items-center">
-                <div className="content-block medium:!max-w-[50%]">
+                <div className="content-block medium:!max-w-[46%]">
                   <div className="animated-header">
                     <h1 className="main-title mb-0">
                       <span className="block font-bold">
                         Accelerate Your Business with Amplication Enterprise
                       </span>
-                      <span className="sub-title">
+                      <span className="sub-title !max-w-[710px]">
                         Automated, customizable solutions for faster application
                         development
                       </span>
                     </h1>
-                    <div className="explainer text-sm laptop:text-base large:text-lg text-white !mt-3 !mb-4 !max-w-[720px]">
+                    <div className="explainer text-sm laptop:text-base large:text-lg text-white !mt-3 !mb-4 !max-w-[710px]">
                       Unleash the power of fast development cycles with
                       Amplication Enterprise. Our secure, automated and
                       customizable solutions give teams an edge when it comes to
