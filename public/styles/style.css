@@ -9399,12 +9399,6 @@ body {
   line-height: 3.75rem;
   text-align: left;
 }
-@media (max-width: 767.98px) {
-  .amplication-base .animated-header .main-title {
-    font-size: 1.5rem;
-    line-height: 1.5;
-  }
-}
 .amplication-base .animated-header .animated-header__animated-text {
   font-family: 'DM Mono', monospace;
   font-weight: 400;
