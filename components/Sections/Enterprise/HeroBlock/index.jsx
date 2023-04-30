@@ -35,11 +35,11 @@ const HeroBlock = () => {
                       <span className="block font-bold">
                         Build microservices <br /> 20x faster.
                       </span>
-                      <span className="block font-semibold text-[32px] leading-[48px]">
+                      <span className="block font-semibold max-tablet:text-[20px] text-[25px] large:text-[32px] leading-normal">
                         Reliably. Securely. Consistently.
                       </span>
                     </h1>
-                    <div className="explainer text-sm laptop:text-base large:text-lg text-white !mt-8">
+                    <div className="explainer text-sm laptop:text-base large:text-lg text-white !mt-3 !mb-4 !max-w-[720px]">
                       Amplication is changing the way backend services are built
                       and delivered. We help you build backend services with the
                       highest standards, consistency, and scalability across

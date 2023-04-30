@@ -14,6 +14,7 @@ import {useEffect, useState} from 'react';
 // eslint-disable-next-line node/no-missing-import
 import 'swiper/css';
 import {Swiper, SwiperSlide} from 'swiper/react';
+import {Autoplay} from 'swiper';
 
 const IconsGroup = () => {
   const [isMobile, setIsMobile] = useState(true);
@@ -84,6 +85,11 @@ const IconsGroup = () => {
             <Swiper
               slidesPerView={'auto'}
               loop={true}
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+              }}
+              modules={[Autoplay]}
               autoHeight={false}
               className="pb-4"
             >
