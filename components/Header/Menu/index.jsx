@@ -31,20 +31,20 @@ const Menu = () => {
 
   const menuItems = [
     {
-      title: 'Enterprise',
-      href: {
-        pathname: '/enterprise',
-      },
-      target: '_self',
-      isActive: Boolean(asPath === '/enterprise'),
-    },
-    {
       title: 'Docs',
       href: {
         pathname: 'https://docs.amplication.com/getting-started/',
       },
       target: '_blank',
       isActive: false,
+    },
+    {
+      title: 'Enterprise',
+      href: {
+        pathname: '/enterprise',
+      },
+      target: '_self',
+      isActive: Boolean(asPath === '/enterprise'),
     },
     {
       title: 'Developers',
