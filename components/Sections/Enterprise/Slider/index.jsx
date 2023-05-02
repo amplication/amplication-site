@@ -6,11 +6,12 @@ import Logo5 from '../../../../public/images/logotypes/logo-5.svg';
 import Logo6 from '../../../../public/images/logotypes/logo-6.svg';
 import Logo7 from '../../../../public/images/logotypes/logo-7.svg';
 import Image from 'next/image';
+import PropTypes from 'prop-types';
 
-const Slider = () => {
+const Slider = ({classes}) => {
   return (
     <>
-      <section className="!pt-5 !pb-4 laptop:!py-20">
+      <section className={'!pt-5 !pb-4 laptop:!py-20 ' + classes}>
         <div className="flex-grow max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
           <h2 className="roadmap-heading tablet:text-center">
             Empowering developers from leading companies
@@ -42,6 +43,14 @@ const Slider = () => {
       </section>
     </>
   );
+};
+
+Slider.propTypes = {
+  classes: PropTypes.string,
+};
+
+Slider.defaultProps = {
+  classes: '',
 };
 
 export default Slider;

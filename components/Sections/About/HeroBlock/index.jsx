@@ -11,8 +11,8 @@ const HeroBlock = () => {
               <div className="header-and-video middle:!flex align-items-center">
                 <div className="content-block">
                   <div className="animated-header">
-                    <h1 className="w-full !font-semibold text-left mb-16 laptop:mb-28 !text-[36px] middle:!text-[40px] large:!text-[50px] !leading-normal text-left tablet:!text-center middle:!text-left">
-                      <span className="animated-header__fixed-text max-medium:max-w-[562px] mx-auto">
+                    <h1 className="main-title mb-0">
+                      <span className="block font-bold">
                         Helping developers build better and faster
                       </span>
                     </h1>
