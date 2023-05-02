@@ -73,9 +73,9 @@ const Features = () => {
   return (
     <>
       <NextSeo
-        title="Building Enterprise Ready Backends | Amplication"
+        title="Building Enterprise Ready Backend | Amplication"
         description="Amplication is the most flexible open-source backend development platform for Node.JS applications. Design models and roles, deploy your app, connect with REST or GraphQL API, sync with GitHub. Built for developers, by developers."
-        canonical={helpers.getCanonical('features')}
+        canonical={helpers.getCanonical('enterprise')}
       />
 
       <main className="w-full font-poppins z-10 !mb-0 laptop:mb-[100px] amplication-base">
