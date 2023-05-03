@@ -120,7 +120,7 @@ const TeamBlock = () => {
           iconClass: 'twitter',
         },
       ],
-    },    
+    },
     {
       name: 'Tomer Naim',
       position: 'Marketing Manager, Digital and Growth',
