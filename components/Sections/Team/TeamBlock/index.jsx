@@ -103,6 +103,25 @@ const TeamBlock = () => {
       ],
     },
     {
+      name: 'Alex Bass',
+      position: 'Sr. Product Designer',
+      image: alexBass,
+      links: [
+        {
+          href: 'https://www.linkedin.com/in/bassalex/',
+          iconClass: 'linkedin',
+        },
+        {
+          href: 'https://github.com/alexbass86',
+          iconClass: 'github',
+        },
+        {
+          href: 'https://twitter.com/kipibass86',
+          iconClass: 'twitter',
+        },
+      ],
+    },    
+    {
       name: 'Tomer Naim',
       position: 'Marketing Manager, Digital and Growth',
       image: tomerNaim,
@@ -253,25 +272,6 @@ const TeamBlock = () => {
         },
         {
           href: 'https://twitter.com/Sauain',
-          iconClass: 'twitter',
-        },
-      ],
-    },
-    {
-      name: 'Alex Bass',
-      position: 'Sr. Product Designer',
-      image: alexBass,
-      links: [
-        {
-          href: 'https://www.linkedin.com/in/bassalex/',
-          iconClass: 'linkedin',
-        },
-        {
-          href: 'https://github.com/alexbass86',
-          iconClass: 'github',
-        },
-        {
-          href: 'https://twitter.com/kipibass86',
           iconClass: 'twitter',
         },
       ],
