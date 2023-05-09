@@ -17,6 +17,7 @@ import leviVan from '../../../../public/images/team/levi.png';
 import danieleIasella from '../../../../public/images/team/daniele.png';
 import brandonBaisch from '../../../../public/images/team/brandon.png';
 import mulyGottlieb from '../../../../public/images/team/muly.png';
+import orenAlaluf from '../../../../public/images/team/oren.png';
 
 import talkWithUs from '../../../../public/images/icons/talk-with-with-team.svg';
 import joinUs from '../../../../public/images/icons/join-the-team.svg';
@@ -69,6 +70,17 @@ const TeamBlock = () => {
         {
           href: 'https://github.com/GreenMachine01/',
           iconClass: 'github',
+        },
+      ],
+    }, 
+    {
+      name: 'Oren Alaluf',
+      position: 'VP Sales',
+      image: orenAlaluf,
+      links: [
+        {
+          href: 'https://www.linkedin.com/in/oren-alaluf-69b14b43/',
+          iconClass: 'linkedin',
         },
       ],
     },
