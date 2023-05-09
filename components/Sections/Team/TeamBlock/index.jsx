@@ -9,7 +9,6 @@ import alexBass from '../../../../public/images/team/alex-bass.png';
 import amitBarletz from '../../../../public/images/team/amit-barletz.png';
 import ofekGabay from '../../../../public/images/team/ofek-gabay.png';
 import michaelSolati from '../../../../public/images/team/michael-solati.png';
-import eugineTseitlin from '../../../../public/images/team/eugene-tseitlin.png';
 import shimiBar from '../../../../public/images/team/shimi.png';
 import tomerNaim from '../../../../public/images/team/tomer.png';
 import erezGreenberg from '../../../../public/images/team/erez.png';
@@ -212,21 +211,6 @@ const TeamBlock = () => {
         },
         {
           href: 'https://github.com/barshimi',
-          iconClass: 'github',
-        },
-      ],
-    },
-    {
-      name: 'Eugene Tseitlin',
-      position: 'Sr. Full Stack Engineer',
-      image: eugineTseitlin,
-      links: [
-        {
-          href: 'https://www.linkedin.com/in/eugene-tseitlin-72b81aa7/',
-          iconClass: 'linkedin',
-        },
-        {
-          href: 'https://github.com/EugeneTseitlin',
           iconClass: 'github',
         },
       ],
