@@ -7,7 +7,6 @@ import morHagbi from '../../../../public/images/team/mor-hagbi.png';
 import sauravJain from '../../../../public/images/team/saurav-jain.png';
 import alexBass from '../../../../public/images/team/alex-bass.png';
 import amitBarletz from '../../../../public/images/team/amit-barletz.png';
-import ofekGabay from '../../../../public/images/team/ofek-gabay.png';
 import michaelSolati from '../../../../public/images/team/michael-solati.png';
 import shimiBar from '../../../../public/images/team/shimi.png';
 import tomerNaim from '../../../../public/images/team/tomer.png';
@@ -291,25 +290,7 @@ const TeamBlock = () => {
         },
       ],
     },
-    {
-      name: 'Ofek Gabay',
-      position: 'Full Stack Engineer',
-      image: ofekGabay,
-      links: [
-        {
-          href: 'https://www.linkedin.com/in/ofek-gabay/',
-          iconClass: 'linkedin',
-        },
-        {
-          href: 'https://github.com/tupe12334',
-          iconClass: 'github',
-        },
-        {
-          href: 'https://twitter.com/OfekGabay1',
-          iconClass: 'twitter',
-        },
-      ],
-    },
+   
   ];
 
   const features = [
