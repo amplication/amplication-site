@@ -7,7 +7,6 @@ import morHagbi from '../../../../public/images/team/mor-hagbi.png';
 import sauravJain from '../../../../public/images/team/saurav-jain.png';
 import alexBass from '../../../../public/images/team/alex-bass.png';
 import amitBarletz from '../../../../public/images/team/amit-barletz.png';
-import ofekGabay from '../../../../public/images/team/ofek-gabay.png';
 import michaelSolati from '../../../../public/images/team/michael-solati.png';
 import eugineTseitlin from '../../../../public/images/team/eugene-tseitlin.png';
 import shimiBar from '../../../../public/images/team/shimi.png';
@@ -17,6 +16,7 @@ import leviVan from '../../../../public/images/team/levi.png';
 import danieleIasella from '../../../../public/images/team/daniele.png';
 import brandonBaisch from '../../../../public/images/team/brandon.png';
 import mulyGottlieb from '../../../../public/images/team/muly.png';
+import orenAlaluf from '../../../../public/images/team/oren.png';
 
 import talkWithUs from '../../../../public/images/icons/talk-with-with-team.svg';
 import joinUs from '../../../../public/images/icons/join-the-team.svg';
@@ -69,6 +69,17 @@ const TeamBlock = () => {
         {
           href: 'https://github.com/GreenMachine01/',
           iconClass: 'github',
+        },
+      ],
+    },
+    {
+      name: 'Oren Alaluf',
+      position: 'VP Sales',
+      image: orenAlaluf,
+      links: [
+        {
+          href: 'https://www.linkedin.com/in/oren-alaluf-69b14b43/',
+          iconClass: 'linkedin',
         },
       ],
     },
@@ -291,25 +302,6 @@ const TeamBlock = () => {
         },
         {
           href: 'https://twitter.com/BarletzA52',
-          iconClass: 'twitter',
-        },
-      ],
-    },
-    {
-      name: 'Ofek Gabay',
-      position: 'Full Stack Engineer',
-      image: ofekGabay,
-      links: [
-        {
-          href: 'https://www.linkedin.com/in/ofek-gabay/',
-          iconClass: 'linkedin',
-        },
-        {
-          href: 'https://github.com/tupe12334',
-          iconClass: 'github',
-        },
-        {
-          href: 'https://twitter.com/OfekGabay1',
           iconClass: 'twitter',
         },
       ],
