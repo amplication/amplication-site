@@ -94,9 +94,9 @@ const Roadmap = ({customClass}) => {
                 <ul className="roadmap-list">
                   <li className="done">Docker</li>
                   <li className="text-white">Terraform</li>
-                  <li className="text-white">Helm charts</li>
+                  <li className="done">Helm charts</li>
                   <li className="text-white">Connect to private cloud</li>
-                  <li className="text-white">GitHub Actions</li>
+                  <li className="done">GitHub Actions</li>
                   <li className="text-white">GitOps</li>
                 </ul>
               </div>
