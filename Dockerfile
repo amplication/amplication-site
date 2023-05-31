@@ -43,7 +43,7 @@ COPY --from=base --chown=${user}:${group} /app/package.json ./
 COPY --from=base --chown=${user}:${group} /app/node_modules ./node_modules
 COPY --from=base --chown=${user}:${group} /app/public ./public
 COPY --from=base --chown=${user}:${group} /app/.next ./.next
-COPY --from=base --chown=${user}:${group} /app/next.config.js  ./
+COPY --from=base --chown=${user}:${group} /app/next.config.js ./
 
 # set user to the created non-privileged user
 USER ${user}
