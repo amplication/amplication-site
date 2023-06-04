@@ -1,0 +1,51 @@
+name: continuous-integration
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  release:
+    types: [published]
+
+jobs:
+  continuous-integration:
+    name: continuous-integration
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+
+      - name: install dependencies
+        run: npm install
+
+      - name: lint site
+        run: npm run lint
+
+      - name: build site
+        run: npm run build
+
+  configure:
+    name: configure deployment target environment
+    runs-on: ubuntu-20.04
+    outputs:
+      environment: ${{ steps.environment-identifier.outputs.environment }}
+    steps:
+      - id: environment-identifier
+        run: |
+          if [[ "${{ env.GITHUB_REF_NAME }}" == "master" ]];
+          then
+            echo environment="staging" >> $GITHUB_OUTPUT
+          elif [[ "${{ env.GITHUB_REF_TYPE }}" == "tag" ]];
+          then
+            echo environment="production" >> $GITHUB_OUTPUT
+          fi;
+
+  release:
+    name: release
+    needs: [continuous-integration, configure]
+    uses: ./.github/workflows/release.template.yml
+    with:
+
+      

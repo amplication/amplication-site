@@ -1,22 +1,29 @@
-name: Lighthouse CI
+name: lighthouse-ci
+
 on:
   push:
     branches:
       - main
   pull_request:
+
 jobs:
   lighthouse:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: checkout
         uses: actions/checkout@v2
         with:
           fetch-depth: 1
-      - name: Install dependencies
-        run: npm i
-      - name: Build site
+
+      - name: install dependencies
+        run: npm install
+
+      - name: build site
         run: npm run build
-      - name: Run Lighthouse CI
+
+      - name: run lighthouse ci
         run: npm run lhci
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+
+
