@@ -37,7 +37,7 @@ jobs:
         run: aws eks update-kubeconfig --region ${{ vars.AWS_REGION }} --name amplication-${{ inputs.environment-name }}
 
       - name: rollout restart deployment(s)
-        run: kubectl rollout restart deployments/${{ inputs.project-name }} -n "${{ inputs.environment-name }}"
+        run: kubectl rollout restart deployments/${{ inputs.project-name }} -n ${{ inputs.environment-name }}
 
       - name: time-out pod start-up
         run: sleep 60

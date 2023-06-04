@@ -9,7 +9,7 @@ on:
         required: true
       environment-name: 
         type: string
-        description: Environment to deploy to.
+        description: Environment to package.
         required: true
       project-name:
         type: string
@@ -79,9 +79,9 @@ jobs:
             type=ref,event=pr,prefix=pr-
             type=ref,event=tag,prefix=tag-
             type=raw,value=${{ github.run_id }},prefix=gh-
-            type=raw,value=${{ env.BRANCH }}
-            type=raw,value=${{ inputs.environment }}
-            type=raw,value=latest,enable=${{ env.BRANCH == 'master' }}
+            type=raw,value=${{ inputs.branch }}
+            type=raw,value=${{ inputs.environment-name }}
+            type=raw,value=latest,enable=${{ inputs.branch == 'master' }}
 
       - name: package
         run: npx nx package:container ${{ inputs.project-name }} --prod

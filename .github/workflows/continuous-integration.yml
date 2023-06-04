@@ -47,5 +47,12 @@ jobs:
     needs: [continuous-integration, configure]
     uses: ./.github/workflows/release.template.yml
     with:
-
+      branch: ${{ github.ref_name }}
+      environment-name: ${{ needs.configure.outputs.environment }}
+      project-name: "website"
+    secrets:
+      ECR_AWS_ACCESS_KEY_ID: ${{ secrets.ECR_AWS_ACCESS_KEY_ID }}
+      ECR_AWS_SECRET_ACCESS_KEY: ${{ secrets.ECR_AWS_SECRET_ACCESS_KEY }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       
