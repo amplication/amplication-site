@@ -1,9 +1,9 @@
 <h1 align="center">
     <a href="https://amplication.com/#gh-light-mode-only">
-    <img src="./.github/assets/amplication-logo-light-mode.svg">
+    <img src="https://github.com/amplication/amplication/blob/master/.github/assets/amplication-logo-light-mode.svg">
     </a>
     <a href="https://amplication.com/#gh-dark-mode-only">
-    <img src="./.github/assets/amplication-logo-dark-mode.svg">
+    <img src="https://github.com/amplication/amplication/blob/master/.github/assets/amplication-logo-dark-mode.svg">
     </a>
 </h1>
 
