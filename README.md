@@ -74,3 +74,7 @@ The [API routes](https://nextjs.org/docs/api-routes/introduction) can be accesse
 
 > **Note**
 > : there is no Next.js cache functionality for development mode.
+
+## Deployment
+
+Both the Amplication `website`, `blog server` and `blog admin-ui`, are hosted on the staging cluster aswell as the production cluster. The repository follows a similar approach to the main amplication repository, where the staging environment will be deployed by commits to `master` and the a release - i.e., a tag of a specific commit on master - will deploy to the production environment.
