@@ -42,7 +42,7 @@ jobs:
           prefix="amplication-"
           project=${project#$prefix}
 
-          kubectl rollout restart deployments/${{ inputs.project-name }} -n ${{ inputs.environment-name }}
+          kubectl rollout restart deployments/${{ inputs.project-name }}-${{ inputs.environment-name }} -n ${{ inputs.environment-name }}
 
       - name: time-out pod start-up
         run: sleep 60
