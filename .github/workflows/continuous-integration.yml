@@ -34,10 +34,10 @@ jobs:
     steps:
       - id: environment-identifier
         run: |
-          if [[ "${{ env.GITHUB_REF_NAME }}" == "${{ github.event.repository.default_branch }}" ]];
+          if [[ "${{ github.ref_name }}" == "${{ github.event.repository.default_branch }}" ]];
           then
             echo environment="staging" >> $GITHUB_OUTPUT
-          elif [[ "${{ env.GITHUB_REF_TYPE }}" == "tag" ]];
+          elif [[ "${{ github.ref_type }}" == "tag" ]];
           then
             echo environment="production" >> $GITHUB_OUTPUT
           fi;
