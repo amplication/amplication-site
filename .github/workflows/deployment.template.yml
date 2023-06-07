@@ -1,0 +1,51 @@
+name: reusable-deployment-container-template
+
+on:
+  workflow_call:
+    inputs:
+      environment-name: 
+        type: string
+        description: Environment to deploy to.
+        required: true
+      project-name:
+        type: string
+        description: Project (amplication application component) to deploy.
+        required: true
+        default: "website"
+    secrets:
+      AWS_ACCESS_KEY_ID:
+        required: true
+      AWS_SECRET_ACCESS_KEY:
+        required: true
+
+jobs:
+  deployment-container:
+    name: deployment-container
+    environment:
+      name: ${{ inputs.environment-name }}
+      url: ${{ vars.AMPLICATION_URL }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: aws credentials
+        uses: aws-actions/configure-aws-credentials@v1-node16
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - name: fetch kubeconfig file
+        run: aws eks update-kubeconfig --region ${{ vars.AWS_REGION }} --name amplication-${{ inputs.environment-name }}
+
+      - name: rollout restart deployment(s)
+        run: |
+          project=${{ inputs.project-name }}
+          prefix="amplication-"
+          project=${project#$prefix}
+
+          kubectl rollout restart deployments/${{ inputs.project-name }} -n ${{ inputs.environment-name }}
+
+      - name: time-out pod start-up
+        run: sleep 60
+
+      - name: invalidate cloudfront distribution
+        run: aws cloudfront create-invalidation --distribution-id ${{ vars.CLOUDFRONT_DISTRIBUTION_ID }}  --paths '/*'

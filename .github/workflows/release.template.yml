@@ -1,0 +1,103 @@
+name: reusable-release-template
+
+on:
+  workflow_call:
+    inputs:
+      branch:
+        type: string
+        description: Name of the git branch
+        required: true
+      environment-name: 
+        type: string
+        description: Environment to package.
+        required: true
+      project-name:
+        type: string
+        description: Project (amplication application component) to deploy.
+        required: true
+        default: "website"
+    secrets:
+      AWS_ACCESS_KEY_ID:
+        required: true
+      AWS_SECRET_ACCESS_KEY:
+        required: true
+      ECR_AWS_ACCESS_KEY_ID:
+        required: true
+      ECR_AWS_SECRET_ACCESS_KEY:
+        required: true
+
+jobs:
+  package:
+    name: package
+    runs-on: ubuntu-20.04
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.workflow_run.head_branch }}
+          fetch-depth: 0
+
+      - name: setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: "package.json"
+          cache: "npm"
+          cache-dependency-path: "**/package-lock.json"
+
+      - name: cache global node modules
+        id: cache-node-modules
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }}
+
+      - name: install dependencies
+        if: ${{ steps.cache-node-modules.outputs.cache-hit != 'true' }}
+        run: npm ci
+
+      - name: configure aws credentials - operations account
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.ECR_AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.ECR_AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: login container repository
+        uses: aws-actions/amazon-ecr-login@v1
+        with:
+          registries: "439403303254"
+
+      - name: container image metadata
+        uses: docker/metadata-action@v4
+        id: meta
+        with:
+          images: "439403303254.dkr.ecr.us-east-1.amazonaws.com/${{ inputs.project-name }}"
+          tags: |
+            type=sha,prefix=sha-
+            type=ref,event=pr,prefix=pr-
+            type=ref,event=tag,prefix=tag-
+            type=raw,value=${{ github.run_id }},prefix=gh-
+            type=raw,value=${{ inputs.branch }}
+            type=raw,value=${{ inputs.environment-name }}
+            type=raw,value=latest,enable=${{ inputs.branch == 'master' }}
+
+      - name: build and push
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+
+  deploy:
+    name: deployment
+    needs: [package]
+    uses: ./.github/workflows/deployment.template.yml
+    with:
+      environment-name: ${{ inputs.environment-name }}
+      project-name: website
+    secrets:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
