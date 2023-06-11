@@ -1,20 +1,22 @@
-name: Tests
+name: tests
+
 on:
-  push:
-    branches:
-      - main
   pull_request:
+
 jobs:
   tests:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: checkout
         uses: actions/checkout@v2
         with:
           fetch-depth: 1
-      - name: Install dependencies
-        run: npm i
-      - name: Lint site
+
+      - name: install dependencies
+        run: npm install
+
+      - name: lint site
         run: npm run lint
-      - name: Build site
+
+      - name: build site
         run: npm run build
