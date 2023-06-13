@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import icon1 from '../../../../public/images/icons/icon-1.svg';
+import icon1 from '../../../public/images/icons/icon-1.svg';
 import PropTypes from 'prop-types';
 
 import {useEffect, useState} from 'react';

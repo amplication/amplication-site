@@ -24,7 +24,7 @@ const StartNow = ({
           {linkPrimary.href && (
             <Link href={linkPrimary.href} passHref={true}>
               <a
-                target="_blank"
+                target={linkPrimary.target || '_blank'}
                 className="btn btn-primary btn-sm !text-sm !h-10 mr-4 w-[120px] !px-0 !h-[34px] !font-normal"
                 rel="noreferrer"
               >
@@ -35,7 +35,7 @@ const StartNow = ({
           {linkSecondary.href && (
             <Link href={linkSecondary.href} passHref={true}>
               <a
-                target="_blank"
+                target={linkSecondary.target || '_blank'}
                 className="d-flex justify-content-center align-items-center outline-button !text-sm text-white !h-10 mr-2 w-[120px] rounded !px-0 !h-[34px] !font-normal !bg-light-blue hover:!bg-dark-black-70"
                 rel="noreferrer"
               >
@@ -55,6 +55,7 @@ StartNow.propTypes = {
   linkPrimary: PropTypes.object,
   linkSecondary: PropTypes.object,
   backgroundClass: PropTypes.string,
+  target: PropTypes.string,
 };
 
 StartNow.defaultProps = {
@@ -64,10 +65,12 @@ StartNow.defaultProps = {
   linkPrimary: {
     title: '',
     href: '',
+    target: '',
   },
   linkSecondary: {
     title: '',
     href: '',
+    target: '',
   },
 };
 
