@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import * as analytics from '../../../../lib/analytics';
 import AppDashboard from '../../../../public/images/enterprise/app-dashboard.svg';
+import Form from '../Form';
 
 const Hero = () => {
   const handleStartNowClick = useCallback(() => {
@@ -27,7 +28,7 @@ const Hero = () => {
       <section className="page-welcome !pt-10 !pb-8 large:!py-[6vh] xlg:!py-[12vh]">
         <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
           <div className="row align-items-center">
-            <div className="col-12 text-center">
+            <div className="col-12 ">
               <div className="header-and-video align-items-center">
                 <div className="content-block medium:!max-w-[46%]">
                   <div className="animated-header">
@@ -52,7 +53,8 @@ const Hero = () => {
                 </div>
                 <div className="relative align-items-center middle:!max-w-[90%] w-full middle:min-h-[600px] flex align-items-center medium:!max-w-[46%]">
                   <div className="absolute laptop:my-auto w-[50vw] -left-16 max-medium:w-full max-medium:left-0 max-medium:relative medium:flex align-items-center">
-                    <Image src={AppDashboard} alt={'Amplication platform'} />
+                    {/* <Image src={AppDashboard} alt={'Amplication platform'} /> */}
+                    <Form />
                   </div>
                 </div>
               </div>

@@ -2,8 +2,12 @@ import Hero from '../components/Sections/DbImportBeta/Hero';
 import CardsList from '../components/Common/CardsList';
 import WidePanelWithImage from '../components/Common/WidePanelWithImage';
 import StartNow from '../components/Sections/Enterprise/StartNow';
-import icon1 from '../public/images/icons/icon-1.svg';
-import enterprise1 from '../public/images/enterprise/enterprise-1.png';
+import icon1 from '../public/images/db-import/icon-1.svg';
+import icon2 from '../public/images/db-import/icon-2.svg';
+import icon3 from '../public/images/db-import/icon-3.svg';
+import icon4 from '../public/images/db-import/icon-4.svg';
+import icon5 from '../public/images/db-import/icon-5.svg';
+import dbImportImage from '../public/images/db-import/db-import.svg';
 
 import { NextSeo } from 'next-seo';
 import { MainLayout } from '../layouts';
@@ -13,7 +17,7 @@ const cards = [
   {
     title: 'Quick import',
     subTitle: 'Import your existing database schema into Amplication swiftly and seamlessly.',
-    icon: icon1,
+    icon: icon5,
   },
   {
     title: 'Modern stack',
@@ -23,17 +27,17 @@ const cards = [
   {
     title: 'No redundancy',
     subTitle: 'No need to rebuild your database schema from scratch.',
-    icon: icon1,
+    icon: icon2,
   },
   {
     title: 'Seamless transition',
     subTitle: 'Maintain existing database wile transitioning to a modern architecture.',
-    icon: icon1,
+    icon: icon4,
   },
   {
     title: 'Ideal for modernization',
     subTitle: 'Perfect for organizations looking to update or replace their legacy systems.',
-    icon: icon1,
+    icon: icon3,
   },
 ];
 
@@ -47,9 +51,10 @@ const DbImportBeta = () => {
         canonical={helpers.getCanonical('db-inport-beta')}
       />
 
-      <main className="w-full font-poppins z-10 !mb-0 laptop:mb-[100px] amplication-base">
+      <main className="w-full font-poppins z-10 !mb-0 laptop:mb-[100px] amplication-base" id="apply">
         <Hero />
-        <StartNow backgroundClass={"!bg-light-blue"} title="Supercharge Your Business Today" linkSecondary={{
+
+        <StartNow backgroundClass={"!bg-light-blue"} title="Modernize your legacy systems without the hassle of remapping your entire database." linkSecondary={{
           href: '#apply',
           title: 'Apply now',
           target: "_self"
@@ -60,7 +65,7 @@ const DbImportBeta = () => {
             href: '#apply',
             title: 'Apply now',
           }}
-          image={enterprise1} title={"Get early access to the DB Schema Import feature and shape its final version"} >
+          image={dbImportImage} title={"Get early access to the DB Schema Import feature and shape its final version"} >
           <div className='py-2 text-sm desktop:text-lg text-white desktop:!leading-[27px] max-w-[600px]'>
             What do you get as beta user:
           </div>
