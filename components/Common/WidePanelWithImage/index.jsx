@@ -69,6 +69,7 @@ const WidePanelWithImage = ({
 };
 
 WidePanelWithImage.propTypes = {
+  children: PropTypes.any,
   image: PropTypes.string,
   title: PropTypes.string,
   customClasses: PropTypes.string,

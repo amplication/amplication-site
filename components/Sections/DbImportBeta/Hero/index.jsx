@@ -1,28 +1,6 @@
-import {useCallback} from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import * as analytics from '../../../../lib/analytics';
-import AppDashboard from '../../../../public/images/enterprise/app-dashboard.svg';
 import Form from '../Form';
 
 const Hero = () => {
-  const handleStartNowClick = useCallback(() => {
-    analytics.event({
-      action: 'startNowClicked',
-      params: {
-        buttonLocation: 'hero',
-      },
-    });
-  });
-
-  const handleBookDemoClick = useCallback(() => {
-    analytics.event({
-      action: 'bookDemoClicked',
-      params: {
-        buttonLocation: 'hero',
-      },
-    });
-  });
   return (
     <>
       <section className="page-welcome !pt-10 !pb-8 large:!py-[6vh] xlg:!py-[12vh]">

@@ -147,6 +147,7 @@ const HusSpotForm = ({
 };
 
 HusSpotForm.propTypes = {
+  children: PropTypes.any,
   hubSpotPortalId: PropTypes.string,
   hubSpotFormId: PropTypes.string,
   successMessage: PropTypes.string,

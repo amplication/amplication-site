@@ -1,11 +1,6 @@
-import {useState} from 'react';
 import HubSpotForm from '../../../Common/HubSpotForm';
 
-const SKIP_SUBMIT_TEST = true;
-
 const Form = () => {
-  const [radioValue, setRadioValue] = useState('radio-1');
-
   const onChangeHandler = e => {
     const styles = getComputedStyle(e.target, null),
       rows = parseInt(e.target.getAttribute('rows')) || 2,
