@@ -1,10 +1,16 @@
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 
-const StartNow = ({title, description, linkPrimary, linkSecondary}) => {
+const StartNow = ({
+  title,
+  description,
+  linkPrimary,
+  linkSecondary,
+  backgroundClass,
+}) => {
   return (
     <>
-      <section className="background-transparent w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop !py-[100px]">
+      <section className={'!pt-5 !pb-4 laptop:!py-20 ' + backgroundClass}>
         <h2 className="mx-auto text-[32px] !font-semibold leading-[48px] tracking-normal text-center max-w-[960px]">
           {title}
         </h2>
@@ -48,11 +54,13 @@ StartNow.propTypes = {
   description: PropTypes.string,
   linkPrimary: PropTypes.object,
   linkSecondary: PropTypes.object,
+  backgroundClass: PropTypes.string,
 };
 
 StartNow.defaultProps = {
   title: '',
   description: '',
+  backgroundClass: 'background-transparent',
   linkPrimary: {
     title: '',
     href: '',
