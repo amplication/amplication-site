@@ -14,7 +14,7 @@ const HusSpotForm = ({
   successMessage,
   pageName,
 }) => {
-  const [formIsSended, setFormIsSended] = useState(false);
+  const [formIsSending, setFormIsSending] = useState(false);
   const [successMsg, setSuccessMsg] = useState('');
 
   const router = useRouter();
@@ -34,7 +34,7 @@ const HusSpotForm = ({
       }
     });
 
-    setFormIsSended(true);
+    setFormIsSending(true);
     if (!SKIP_SUBMIT_TEST) {
       try {
         const response = await fetch(
@@ -59,7 +59,7 @@ const HusSpotForm = ({
           setSuccessMsg(successMessage);
         }
 
-        setFormIsSended(false);
+        setFormIsSending(false);
       } catch (e) {
         console.log('error', e);
       }
@@ -93,7 +93,7 @@ const HusSpotForm = ({
         </div>
         <div className="relative w-full !mt-6 !flex align-items-center">
           <input
-            disabled={formIsSended ? 'disabled' : ''}
+            disabled={formIsSending ? 'disabled' : ''}
             type="submit"
             name="submit"
             className="min-w-[130px] mt-1 flex justify-center items-center text-white font-poppins font-normal text-center rounded py-2 px-3 laptop:px-8 laptop:font-medium transition-all duration-300 bg-purple-bright hover:bg-purple-bright-hover text-[15px] h-[40px] whitespace-nowrap !px-4 mx-auto"
