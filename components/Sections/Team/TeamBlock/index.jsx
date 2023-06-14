@@ -98,7 +98,7 @@ const TeamBlock = () => {
     },
     {
       name: 'Vika Goncharuk',
-      position: 'Costumer Success Manager',
+      position: 'Customer Success Manager',
       image: vikaGoncharuk,
       links: [
         {
