@@ -8,13 +8,11 @@ import sauravJain from '../../../../public/images/team/saurav-jain.png';
 import alexBass from '../../../../public/images/team/alex-bass.png';
 import amitBarletz from '../../../../public/images/team/amit-barletz.png';
 import michaelSolati from '../../../../public/images/team/michael-solati.png';
-import eugineTseitlin from '../../../../public/images/team/eugene-tseitlin.png';
 import shimiBar from '../../../../public/images/team/shimi.png';
 import tomerNaim from '../../../../public/images/team/tomer.png';
 import erezGreenberg from '../../../../public/images/team/erez.png';
 import leviVan from '../../../../public/images/team/levi.png';
 import danieleIasella from '../../../../public/images/team/daniele.png';
-import brandonBaisch from '../../../../public/images/team/brandon.png';
 import mulyGottlieb from '../../../../public/images/team/muly.png';
 import orenAlaluf from '../../../../public/images/team/oren.png';
 
@@ -100,7 +98,7 @@ const TeamBlock = () => {
     },
     {
       name: 'Vika Goncharuk',
-      position: 'Office Manager',
+      position: 'Customer Success Manager',
       image: vikaGoncharuk,
       links: [
         {
@@ -171,21 +169,6 @@ const TeamBlock = () => {
       ],
     },
     {
-      name: 'Brandon Baisch',
-      position: 'Customer Success Manager',
-      image: brandonBaisch,
-      links: [
-        {
-          href: 'https://www.linkedin.com/in/brandonbaisch/',
-          iconClass: 'linkedin',
-        },
-        {
-          href: 'https://twitter.com/bmbaisch',
-          iconClass: 'twitter',
-        },
-      ],
-    },
-    {
       name: 'Mor Hagbi',
       position: 'Sr. Full Stack Engineer',
       image: morHagbi,
@@ -211,21 +194,6 @@ const TeamBlock = () => {
         },
         {
           href: 'https://github.com/barshimi',
-          iconClass: 'github',
-        },
-      ],
-    },
-    {
-      name: 'Eugene Tseitlin',
-      position: 'Sr. Full Stack Engineer',
-      image: eugineTseitlin,
-      links: [
-        {
-          href: 'https://www.linkedin.com/in/eugene-tseitlin-72b81aa7/',
-          iconClass: 'linkedin',
-        },
-        {
-          href: 'https://github.com/EugeneTseitlin',
           iconClass: 'github',
         },
       ],
