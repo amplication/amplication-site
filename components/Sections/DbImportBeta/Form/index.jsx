@@ -17,7 +17,7 @@ const Form = () => {
       hubSpotPortalId="25691669"
       hubSpotFormId="7299e150-38e9-4dc5-9b44-7399be050d7c"
       pageName="DB Import Beta"
-      successMessage="Congratulations! Your form has been successfully submitted. You're now on the list for early access to our exciting new beta feature. We appreciate your interest and will be in touch soon with further instructions. Stay tuned!"
+      successMessage="Congratulations! We appreciate your interest and will be in touch soon with further instructions."
     >
       <div className="block relative w-full !mt-6">
         <div className="font-semibold text-sm leading-[22px] max-laptop:text-[16px]">

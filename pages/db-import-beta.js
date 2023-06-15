@@ -34,7 +34,7 @@ const cards = [
   {
     title: 'Seamless transition',
     subTitle:
-      'Maintain existing database wile transitioning to a modern architecture.',
+      'Maintain existing database while transitioning to a modern architecture.',
     icon: icon4,
   },
   {

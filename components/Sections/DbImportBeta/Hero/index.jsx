@@ -11,15 +11,15 @@ const Hero = () => {
                 <div className="content-block medium:!max-w-[46%]">
                   <div className="animated-header">
                     <h1 className="main-title mb-0">
-                      <span className="block font-bold">
+                      <span className="block font-bold text-[44px]">
                         Modernize Faster with Amplication DB Schema Import
                       </span>
-                      <span className="sub-title">
+                      <span className="sub-title text-[24px]">
                         Join our exclusive beta program to streamline your
                         transition to a modern architecture
                       </span>
                     </h1>
-                    <div className="explainer text-sm laptop:text-base large:text-lg text-white !mt-3 !mb-4 !max-w-[710px]">
+                    <div className="explainer text-sm laptop:text-base large:text-lg text-white !mt-3 !mb-4 !max-w-[710px] font-light">
                       Introducing our new and highly anticipated Database Schema
                       Import feature. It allows you to seamlessly import your
                       existing database schema directly into Amplication. Ideal
