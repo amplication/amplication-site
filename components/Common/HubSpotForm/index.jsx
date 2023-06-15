@@ -138,7 +138,7 @@ const HusSpotForm = ({
           />
         </svg>
 
-        <div className="font-normal text-lg leading-[27px] mt-2 max-w-[560px]">
+        <div className="font-normal text-lg leading-[27px] mt-5 max-w-[560px]">
           {successMsg}
         </div>
       </div>

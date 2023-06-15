@@ -53,7 +53,7 @@ const CardsList = ({title, subTitle, cards, customClasses}) => {
               {cards.map((item, index) => {
                 return (
                   <SwiperSlide
-                    className="flex-[1] mx-[12px] max-w-[300px] min-w-[250px] mt-6 flex text-lg font-semibold leading-[27px] tracking-normal text-center align-items-center justify-content-center p-8 py-6 flex-column !border-dark-black-70 rounded-lg border-solid border"
+                    className="flex-[1] mx-[12px] max-w-[480px] min-w-[480px] mt-6 flex text-lg font-semibold leading-[27px] tracking-normal text-center align-items-center justify-content-center p-8 py-6 flex-column !border-dark-black-70 rounded-xl border-solid border bg-light-blue "
                     key={index}
                   >
                     {item.icon && (
@@ -64,13 +64,13 @@ const CardsList = ({title, subTitle, cards, customClasses}) => {
                       />
                     )}
                     <span
-                      className="mt-2 text-xl mb-1 font-bold text-center"
+                      className="mt-2 text-xl mb-1 font-semibold text-center text-[24px]"
                       style={{color: '#A787FF'}}
                       dangerouslySetInnerHTML={{__html: item.title}}
                     ></span>
                     {item.subTitle && (
                       <span
-                        className="font-normal text-[0.875rem] tablet:!text-base laptop:!text-lg leading-normal text-center text-white max-w-[360px]"
+                        className="font-light text-[18px] tablet:!text-base laptop:!text-lg leading-normal text-center text-white max-w-[360px]"
                         dangerouslySetInnerHTML={{__html: item.subTitle}}
                       ></span>
                     )}
@@ -82,7 +82,7 @@ const CardsList = ({title, subTitle, cards, customClasses}) => {
             cards.map((item, index) => {
               return (
                 <div
-                  className="flex-[1] mx-[12px] max-w-[300px] min-w-[250px] mt-6 flex text-lg font-semibold leading-[27px] tracking-normal text-center align-items-center p-8 py-6 flex-column !border-dark-black-70 rounded-lg border-solid border"
+                  className="flex-[1] h-[224px] mx-[12px] max-w-[480px] min-w-[480px] mt-6 flex text-lg font-semibold leading-[27px] tracking-normal text-center align-items-center p-8 py-6 flex-column !border-dark-black-70 rounded-xl border-solid border bg-light-blue "
                   key={index}
                 >
                   {item.icon && (
@@ -93,13 +93,13 @@ const CardsList = ({title, subTitle, cards, customClasses}) => {
                     />
                   )}
                   <span
-                    className="mt-2 text-xl mb-1 font-bold text-center"
+                    className="mt-2 text-xl mb-1 font-semibold text-center text-[24px]"
                     style={{color: '#A787FF'}}
                     dangerouslySetInnerHTML={{__html: item.title}}
                   ></span>
                   {item.subTitle && (
                     <span
-                      className="font-normal text-[0.875rem] tablet:!text-base laptop:!text-lg leading-normal text-center text-white max-w-[360px]"
+                      className="font-light text-[18px] tablet:!text-base laptop:!text-lg leading-normal text-center text-white max-w-[360px]"
                       dangerouslySetInnerHTML={{__html: item.subTitle}}
                     ></span>
                   )}
