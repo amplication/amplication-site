@@ -38,6 +38,11 @@ const Post = ({posts, post}) => {
     post.metaDescription || helpers.removeMarkdown(post.content)
   );
   const headings = helpers.generateHeadings(post.content);
+  const author = (post.author?.firstName + ' ' + post.author?.lastName).trim();
+  const twitterHandle = post.author?.twitter || 'amplication';
+  const validTwitterHandle = twitterHandle.startsWith('@')
+    ? twitterHandle
+    : '@' + twitterHandle;
 
   return (
     <>
@@ -62,7 +67,7 @@ const Post = ({posts, post}) => {
           site_name: 'Amplication Blog',
         }}
         twitter={{
-          handle: '@amplication',
+          handle: validTwitterHandle,
           site: 'amplication.com',
           cardType: 'summary_large_image',
         }}
@@ -109,7 +114,7 @@ const Post = ({posts, post}) => {
               <Author
                 className={'order-2 mt-4 laptop:mt-8'}
                 avatar={post.author?.profileImage}
-                name={post.author?.firstName + ' ' + post.author?.lastName}
+                name={author}
                 date={post.publishedAt}
                 large={true}
               />
@@ -232,6 +237,7 @@ export const getStaticProps = async context => {
               firstName
               lastName
               profileImage
+              twitter
             }
           }
         }
