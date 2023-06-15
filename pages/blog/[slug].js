@@ -110,7 +110,7 @@ const Post = ({posts, post}) => {
                 className="order-1 text-lg font-semibold text-white text-[32px] leading-[48px] laptop:mt-8 laptop:mb-8"
                 text={post.title}
               />
-              <Tags list={post.tags} className="order-3" />
+              <Tags list={post.tags} isLink className="order-3" />
               <Author
                 className={'order-2 mt-4 laptop:mt-8'}
                 avatar={post.author?.profileImage}
