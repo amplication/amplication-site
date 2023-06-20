@@ -1,10 +1,10 @@
-import {ApolloProvider} from '@apollo/client';
+import { ApolloProvider } from '@apollo/client';
 import Head from 'next/head';
 import Script from 'next/script';
-import {useRouter} from 'next/router';
-import {DefaultSeo} from 'next-seo';
+import { useRouter } from 'next/router';
+import { DefaultSeo } from 'next-seo';
 import PropTypes from 'prop-types';
-import {useEffect} from 'react';
+import { useEffect } from 'react';
 import Typed from 'typed.js';
 
 import '../styles/globals.css';
@@ -14,8 +14,8 @@ import 'react-loading-skeleton/dist/skeleton.css';
 import client from '../services/index';
 import * as analytics from '../lib/analytics';
 
-function Amplication({Component, pageProps}) {
-  const {asPath} = useRouter();
+function Amplication({ Component, pageProps }) {
+  const { asPath } = useRouter();
   const isBlogPage = Boolean(
     asPath.includes('/blog') || asPath.includes('/tags')
   );
@@ -29,7 +29,7 @@ function Amplication({Component, pageProps}) {
 
   useEffect(() => {
     const handleRouteChange = url => {
-      analytics.page(url, {url});
+      analytics.page(url, { url });
     };
     //When the component is mounted, subscribe to router changes
     //and log those page views
@@ -134,29 +134,6 @@ function Amplication({Component, pageProps}) {
           strategy={'afterInteractive'}
           src="//js-eu1.hs-scripts.com/25691669.js"
         />
-        {/* Google Tag Manager */}
-        <Script
-          id={'gtm'}
-          strategy={'afterInteractive'}
-          dangerouslySetInnerHTML={{
-            __html: `
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-TQF7HCF');
-          `,
-          }}
-        />
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-TQF7HCF"
-            height="0"
-            width="0"
-            style={{display: 'none', visibility: 'hidden'}}
-          ></iframe>
-        </noscript>
       </ApolloProvider>
     </>
   );
