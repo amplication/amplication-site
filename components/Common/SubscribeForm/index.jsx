@@ -1,85 +1,76 @@
-import {useState} from 'react';
+import {useState, useRef} from 'react';
+import {useRouter} from 'next/router';
 import PropTypes from 'prop-types';
 
+const SKIP_SUBMIT_TEST = false;
+
+const HUBSPOT_FORM_BASE_URL =
+  'https://api.hsforms.com/submissions/v3/integration/submit/';
+const HUBSPOT_PORTAL_ID = '25691669';
+const HUBSPOT_FORM_ID = '3f7e736b-6f89-4a11-94e4-eac111c43486';
+
+const SUCCESS_MESSAGE = 'Thank you for signing up for our mailing list!';
+const ERROR_MESSAGE = 'Something went wrong. Please try again later.';
+
 const SubscribeForm = ({isCompactView}) => {
-  const fieldErrorMessage = 'This field is required';
-  const [email, setEmail] = useState('');
-  const [emailFieldError, setEmailFieldError] = useState(false);
-  const [name, setName] = useState('');
-  const [nameFieldError, setNameFieldError] = useState(false);
-  const [source, setSource] = useState('');
-  const [sourceFieldError, setSourceFieldError] = useState(false);
-  const [formSuccess, setFormSuccess] = useState(null);
-  const [isWaitingForResponse, setIsWaitingForResponse] = useState(false);
-  const [afterFormSubmitMessage, setAfterFormSubmitMessage] = useState('');
+  const [successMsg, setSuccessMsg] = useState('');
+  const [formIsSending, setFormIsSending] = useState(false);
+  const router = useRouter();
+
+  const form = useRef(null);
 
   const submitSubscriptionForm = async e => {
     e.preventDefault();
+    const formData = new FormData(form.current);
 
-    setIsWaitingForResponse(true);
-
-    // Validation
-    let isValid = true;
-    if (!email) {
-      isValid = false;
-      setEmailFieldError(true);
-    } else {
-      setEmailFieldError(false);
-    }
-    if (!name) {
-      isValid = false;
-      setNameFieldError(true);
-    } else {
-      setNameFieldError(false);
-    }
-    if (!source) {
-      isValid = false;
-      setSourceFieldError(true);
-    } else {
-      setSourceFieldError(false);
-    }
-    if (!isValid) {
-      setIsWaitingForResponse(false);
-      return;
-    }
-    setAfterFormSubmitMessage('');
-    setFormSuccess(null);
-
-    const host = '/api/subscribe';
-    const body = {
-      EMAIL: email,
-      NAME: name,
-      SOURCE: source,
-    };
-
-    try {
-      const response = await fetch(host, {
-        method: 'POST',
-        body: JSON.stringify(body),
-      });
-      const data = await response.json();
-      if (data.result !== 'success' || !('result' in data)) {
-        setAfterFormSubmitMessage(
-          'msg' in data ? data.msg : 'Something went wrong'
-        );
-        setFormSuccess(false);
-      } else {
-        setAfterFormSubmitMessage(
-          'Thank you for signing up for our mailing list!'
-        );
-        setFormSuccess(true);
+    const fields = [];
+    [...formData].forEach(item => {
+      if (item[1]) {
+        fields.push({
+          name: item[0],
+          value: item[1],
+        });
       }
-    } catch (e) {
-      console.log('err', e);
-      setAfterFormSubmitMessage('Something went wrong');
-      setFormSuccess(false);
+    });
+
+    setFormIsSending(true);
+    if (!SKIP_SUBMIT_TEST) {
+      try {
+        const response = await fetch(
+          `${HUBSPOT_FORM_BASE_URL}/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_ID}`,
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              submittedAt: Date.now(),
+              fields: fields,
+              context: {
+                pageUri: router.asPath,
+                pageName: 'Blog Page',
+              },
+            }),
+          }
+        );
+        const data = await response.json();
+        if (data.inlineMessage) {
+          setSuccessMsg(SUCCESS_MESSAGE);
+        }
+
+        setFormIsSending(false);
+      } catch (e) {
+        setSuccessMsg(ERROR_MESSAGE);
+        console.log('error', e);
+      }
+    } else {
+      setSuccessMsg(SUCCESS_MESSAGE);
     }
-    setIsWaitingForResponse(false);
   };
 
   let loaderClasses =
     'w-full h-full absolute l-0 t-0 rounded-2xl transition-all opacity-50 pointer-events-none';
-  loaderClasses += isWaitingForResponse
+  loaderClasses += formIsSending
     ? ' bg-purple-light z-10 pointer-events-auto'
     : '';
 
@@ -88,7 +79,7 @@ const SubscribeForm = ({isCompactView}) => {
   if (isCompactView) {
     containerClasses +=
       ' laptop:flex-col laptop:justify-start laptop:items-stretch laptop:px-8';
-    if (formSuccess) {
+    if (successMsg) {
       containerClasses += ' laptop:py-20';
     } else {
       containerClasses += ' laptop:pt-20 laptop:pb-[120px]';
@@ -134,12 +125,12 @@ const SubscribeForm = ({isCompactView}) => {
         <div className="bg-noise">
           <div className={loaderClasses}></div>
           <div className={containerClasses}>
-            {formSuccess && (
+            {successMsg && (
               <h2 className="w-full text-center text-white text-2xl font-bold">
-                {afterFormSubmitMessage}
+                {successMsg}
               </h2>
             )}
-            {!formSuccess && (
+            {!successMsg && (
               <>
                 <div className={titleClasses}>
                   Sign up to stay up-to-date with our latest developments. We
@@ -147,107 +138,27 @@ const SubscribeForm = ({isCompactView}) => {
                 </div>
                 <form
                   className={formClasses}
-                  onSubmit={e => submitSubscriptionForm(e)}
+                  onSubmit={submitSubscriptionForm}
+                  ref={form}
                 >
-                  <div
+                  <input
+                    required
+                    type="email"
+                    name="email"
+                    placeholder="email@example.com"
                     className={
-                      emailFieldError
-                        ? fieldContainerClasses
-                        : fieldContainerClasses + ' pb-5'
+                      'my-2 leading-input focus:border-purple !shadow-hidden block w-full rounded-lg border border-solid bg-purple-dark py-2 pl-3 pr-8 font-poppins text-sm text-white placeholder:text-gray'
                     }
-                  >
-                    <div className="relative">
-                      <input
-                        type="email"
-                        value={email}
-                        onChange={e => setEmail(e.target.value)}
-                        name="EMAIL"
-                        placeholder="email@example.com"
-                        className={`leading-input focus:border-purple !shadow-hidden block w-full rounded-lg border border-solid bg-purple-dark py-2 pl-3 pr-8 font-poppins text-sm text-white placeholder:text-gray ${
-                          emailFieldError ? '' : 'hover:border-purple'
-                        } ${emailFieldError ? 'border-pink' : 'border-lite'}`}
-                      />
-                      {email && (
-                        <span
-                          className="absolute	right-4 top-[50%] translate-y-[-50%] cursor-pointer text-sm animate-fadeIn text-white"
-                          onClick={() => setEmail('')}
-                        >
-                          ✕
-                        </span>
-                      )}
-                    </div>
-                    {emailFieldError && (
-                      <span className="text-left block w-full text-xs text-pink py-0.5 ">
-                        {fieldErrorMessage}
-                      </span>
-                    )}
-                  </div>
-                  <div
+                  />
+                  <input
+                    type="text"
+                    placeholder="How did you hear about us"
+                    name="how_did_you_hear_about_us
+                        "
                     className={
-                      nameFieldError
-                        ? fieldContainerClasses
-                        : fieldContainerClasses + ' pb-5'
+                      'my-2 leading-input focus:border-purple !shadow-hidden block w-full rounded-lg border border-solid bg-purple-dark py-2 pl-3 pr-8 font-poppins text-sm text-white placeholder:text-gray'
                     }
-                  >
-                    <div className="relative">
-                      <input
-                        type="text"
-                        value={name}
-                        onChange={e => setName(e.target.value)}
-                        placeholder="Name"
-                        name="NAME"
-                        className={`leading-input focus:border-purple !shadow-hidden block w-full rounded-lg border border-solid bg-purple-dark py-2 pl-3 pr-8 font-poppins text-sm text-white placeholder:text-gray ${
-                          nameFieldError ? '' : 'hover:border-purple'
-                        } ${nameFieldError ? 'border-pink' : 'border-lite'}`}
-                      />
-                      {name && (
-                        <span
-                          className="absolute	right-4 top-[50%] translate-y-[-50%] cursor-pointer text-sm animate-fadeIn text-white"
-                          onClick={() => setName('')}
-                        >
-                          ✕
-                        </span>
-                      )}
-                    </div>
-                    {nameFieldError && (
-                      <span className="text-left block w-full text-xs text-pink py-0.5 ">
-                        {fieldErrorMessage}
-                      </span>
-                    )}
-                  </div>
-                  <div
-                    className={
-                      sourceFieldError
-                        ? fieldContainerClasses + ' pb-2'
-                        : fieldContainerClasses + ' pb-7'
-                    }
-                  >
-                    <div className="relative">
-                      <input
-                        type="text"
-                        value={source}
-                        onChange={e => setSource(e.target.value)}
-                        placeholder="How did you hear about us"
-                        name="source"
-                        className={`leading-input focus:border-purple !shadow-hidden block w-full rounded-lg border border-solid bg-purple-dark py-2 pl-3 pr-8 font-poppins text-sm text-white placeholder:text-gray ${
-                          sourceFieldError ? '' : 'hover:border-purple'
-                        } ${sourceFieldError ? 'border-pink' : 'border-lite'}`}
-                      />
-                      {source && (
-                        <span
-                          className="absolute	right-4 top-[50%] translate-y-[-50%] cursor-pointer text-sm animate-fadeIn text-white"
-                          onClick={() => setSource('')}
-                        >
-                          ✕
-                        </span>
-                      )}
-                    </div>
-                    {sourceFieldError && (
-                      <span className="text-left block w-full text-xs text-pink py-0.5 ">
-                        {fieldErrorMessage}
-                      </span>
-                    )}
-                  </div>
+                  />
                   <div
                     className={
                       isCompactView
@@ -256,23 +167,13 @@ const SubscribeForm = ({isCompactView}) => {
                     }
                   >
                     <input
-                      type="hidden"
-                      name="b_d4caec21be60d280924827504_49d58a40fc"
-                      tabIndex="-1"
-                    />
-                    <input
+                      disabled={formIsSending ? 'disabled' : ''}
                       type="submit"
                       value="Subscribe"
                       name="subscribe"
-                      className="w-full cursor-pointer flex justify-center items-center bg-purple-bright text-white font-poppins font-normal text-center transition-all duration-300 rounded py-2 px-5 mt-2 laptop:mt-0 hover:bg-purple-bright-hover"
+                      className="my-2 w-full cursor-pointer flex justify-center items-center bg-purple-bright text-white font-poppins font-normal text-center transition-all duration-300 rounded py-2 px-5  hover:bg-purple-bright-hover"
                     />
                   </div>
-                  {formSuccess === false && (
-                    <div
-                      className="w-full laptop:my-1 text-left text-xs text-pink py-1.5"
-                      dangerouslySetInnerHTML={{__html: afterFormSubmitMessage}}
-                    ></div>
-                  )}
                 </form>
               </>
             )}
