@@ -7,7 +7,7 @@ const SKIP_SUBMIT_TEST = false;
 const HUBSPOT_FORM_BASE_URL =
   'https://api.hsforms.com/submissions/v3/integration/submit/';
 
-const HusSpotForm = ({
+const HubSpotForm = ({
   children,
   hubSpotPortalId,
   hubSpotFormId,
@@ -146,7 +146,7 @@ const HusSpotForm = ({
   );
 };
 
-HusSpotForm.propTypes = {
+HubSpotForm.propTypes = {
   children: PropTypes.any,
   hubSpotPortalId: PropTypes.string,
   hubSpotFormId: PropTypes.string,
@@ -154,4 +154,4 @@ HusSpotForm.propTypes = {
   pageName: PropTypes.string,
 };
 
-export default HusSpotForm;
+export default HubSpotForm;
