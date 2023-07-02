@@ -82,8 +82,8 @@ const Roadmap = ({customClass}) => {
                 <ul className="roadmap-list">
                   <li className="done">Custom Code</li>
                   <li className="done">Continuos sync with Git</li>
-                  <li className="text-white">GitLab and other Git services</li>
                   <li className="done">Auto merge and conflict management</li>
+                  <li className="text-white">GitLab and other Git services</li>
                   <li className="text-white">Multiple branches</li>
                 </ul>
               </div>
@@ -93,10 +93,10 @@ const Roadmap = ({customClass}) => {
                 <div className="roadmap-title font-dmmono">CI/CD</div>
                 <ul className="roadmap-list">
                   <li className="done">Docker</li>
-                  <li className="text-white">Terraform</li>
                   <li className="done">Helm charts</li>
-                  <li className="text-white">Connect to private cloud</li>
                   <li className="done">GitHub Actions</li>
+                  <li className="text-white">Terraform</li>
+                  <li className="text-white">Connect to private cloud</li>
                   <li className="text-white">GitOps</li>
                 </ul>
               </div>
