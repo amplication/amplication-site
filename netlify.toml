@@ -11,7 +11,7 @@
   force = true
 
 [[redirects]]
-  from = "/careers"
+  from = "/docs"
   to = "https://docs.amplication.com"
   status = 301
   force = true
