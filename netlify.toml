@@ -1,0 +1,17 @@
+[[redirects]]
+  from = "/discord"
+  to = "https://discord.gg/KSJCZ24vj2"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/jobs"
+  to = "https://amplication.breezy.hr"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/careers"
+  to = "https://docs.amplication.com"
+  status = 301
+  force = true
