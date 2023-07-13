@@ -1,10 +1,10 @@
-import {ApolloProvider} from '@apollo/client';
+import { ApolloProvider } from '@apollo/client';
 import Head from 'next/head';
 import Script from 'next/script';
-import {useRouter} from 'next/router';
-import {DefaultSeo} from 'next-seo';
+import { useRouter } from 'next/router';
+import { DefaultSeo } from 'next-seo';
 import PropTypes from 'prop-types';
-import {useEffect} from 'react';
+import { useEffect } from 'react';
 import Typed from 'typed.js';
 
 import '../styles/globals.css';
@@ -14,8 +14,8 @@ import 'react-loading-skeleton/dist/skeleton.css';
 import client from '../services/index';
 import * as analytics from '../lib/analytics';
 
-function Amplication({Component, pageProps}) {
-  const {asPath} = useRouter();
+function Amplication({ Component, pageProps }) {
+  const { asPath } = useRouter();
   const isBlogPage = Boolean(
     asPath.includes('/blog') || asPath.includes('/tags')
   );
@@ -29,8 +29,9 @@ function Amplication({Component, pageProps}) {
 
   useEffect(() => {
     const handleRouteChange = url => {
-      analytics.page(url, {url});
+      analytics.page(url, { url });
     };
+    analytics.page(router.asPath, { url: router.asPath });
     //When the component is mounted, subscribe to router changes
     //and log those page views
     router.events.on('routeChangeComplete', handleRouteChange);
@@ -121,7 +122,6 @@ function Amplication({Component, pageProps}) {
             __html: `
             !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics._writeKey="GpXLWZ8HnAhUuUfZBs6bE5IE87yHmBtu";analytics.SNIPPET_VERSION="4.13.2";
             analytics.load("GpXLWZ8HnAhUuUfZBs6bE5IE87yHmBtu");
-            analytics.page();
             }}();
           `,
           }}
