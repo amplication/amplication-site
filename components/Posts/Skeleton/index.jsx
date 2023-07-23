@@ -9,7 +9,7 @@ const Skeleton = ({postPerPage}) => {
             className="display-flex flex-col justify-start items-stretch"
             key={i}
           >
-            <div className="w-full aspect-thumbnail-normal laptop:aspect-thumbnail rounded-2xl mb-6 shining-base-element overflow-hidden"></div>
+            <div className="w-full aspect-thumbnail-normal rounded-2xl mb-6 shining-base-element overflow-hidden"></div>
 
             <div className="w-full flex justify-start items-center gap-1.5 mb-4">
               <div className="w-16 h-5 rounded-xl shining-tag-element"></div>
