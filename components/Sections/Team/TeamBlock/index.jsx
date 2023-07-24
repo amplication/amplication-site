@@ -7,7 +7,6 @@ import morHagbi from '../../../../public/images/team/mor-hagbi.png';
 import sauravJain from '../../../../public/images/team/saurav-jain.png';
 import alexBass from '../../../../public/images/team/alex-bass.png';
 import amitBarletz from '../../../../public/images/team/amit-barletz.png';
-import michaelSolati from '../../../../public/images/team/michael-solati.png';
 import shimiBar from '../../../../public/images/team/shimi.png';
 import tomerNaim from '../../../../public/images/team/tomer.png';
 import erezGreenberg from '../../../../public/images/team/erez.png';
@@ -213,25 +212,6 @@ const TeamBlock = () => {
         },
         {
           href: 'https://twitter.com/vanNoortLevi',
-          iconClass: 'twitter',
-        },
-      ],
-    },
-    {
-      name: 'Michael Solati',
-      position: 'Developer Advocate',
-      image: michaelSolati,
-      links: [
-        {
-          href: 'https://www.linkedin.com/in/michaelsolati/',
-          iconClass: 'linkedin',
-        },
-        {
-          href: 'https://github.com/MichaelSolati',
-          iconClass: 'github',
-        },
-        {
-          href: 'https://twitter.com/MichaelSolati',
           iconClass: 'twitter',
         },
       ],
