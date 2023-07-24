@@ -9,7 +9,7 @@ const Thumbnail = props => {
   return (
     <div
       className={
-        'rounded-t-2xl overflow-hidden aspect-thumbnail-normal laptop:aspect-thumbnail overflow-fix ' +
+        'rounded-t-2xl overflow-hidden aspect-thumbnail-normal overflow-fix ' +
         (typeof props.className !== 'undefined' ? props.className : '')
       }
     >
