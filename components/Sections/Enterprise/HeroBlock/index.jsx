@@ -33,17 +33,18 @@ const HeroBlock = () => {
                   <div className="animated-header">
                     <h1 className="main-title mb-0">
                       <span className="block font-bold">
-                        Build microservices <br /> 20x faster.
+                        Generate&nbsp;Production&#8209;Ready <br /> Backend
+                        Services.
                       </span>
                       <span className="sub-title">
                         Reliably. Securely. Consistently.
                       </span>
                     </h1>
                     <div className="explainer text-sm laptop:text-base large:text-lg text-white !mt-3 !mb-4 !max-w-[720px]">
-                      Amplication is changing the way backend services are built
-                      and delivered. We help you build backend services with the
-                      highest standards, consistency, and scalability across
-                      your organization.
+                      Automatically generate backend services with the highest
+                      standards, consistency and scalability. Accelerate your
+                      development 20X. Never waste time on boilerplate and
+                      repetitive coding again.
                     </div>
                   </div>
                   <div className="buttons-wrapper d-flex tablet:align-items-center justify-content-start mt-2">
