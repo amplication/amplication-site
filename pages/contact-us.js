@@ -1,7 +1,7 @@
-import { NextSeo } from 'next-seo';
-import { MainLayout } from '../layouts';
-import { useRef, useState } from 'react';
-import { useRouter } from 'next/router';
+import {NextSeo} from 'next-seo';
+import {MainLayout} from '../layouts';
+import {useRef, useState} from 'react';
+import {useRouter} from 'next/router';
 import Slider from '../components/Sections/Enterprise/Slider';
 
 import helpers from '../helpers';
@@ -10,8 +10,8 @@ import helpers from '../helpers';
 import 'swiper/css';
 // eslint-disable-next-line node/no-missing-import
 import 'swiper/css/pagination';
-import { Pagination } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import {Pagination} from 'swiper';
+import {Swiper, SwiperSlide} from 'swiper/react';
 
 import avatar1 from '../public/images/testimonials/testimonial-1.png';
 import avatar2 from '../public/images/testimonials/testimonial-2.png';
@@ -67,15 +67,14 @@ const ContactUs = () => {
       if (data.inlineMessage) {
         setSuccessMsg(data.inlineMessage);
 
-
         const params = {};
-        formData.forEach((value, key) => params[key] = value);
+        formData.forEach((value, key) => (params[key] = value));
 
         analytics.event({
           action: 'formSubmitted',
           params: {
             formName: 'contactUsForm',
-            ...params
+            ...params,
           },
         });
 
@@ -357,8 +356,8 @@ const ContactUs = () => {
                           required
                         />
                         <span className="ml-2 font-normal text-[10px] leading-[13px]">
-                          By submitting this form, I agree to Amplication&apos;s Terms of
-                          Service and Privacy Policy.
+                          By submitting this form, I agree to Amplication&apos;s
+                          Terms of Service and Privacy Policy.
                         </span>
                       </label>
                     </div>
@@ -377,7 +376,7 @@ const ContactUs = () => {
                       successMsg === ''
                         ? 'hidden '
                         : '' +
-                        'absolute left-0 right-0 top-0 bottom-0 text-center flex align-items-center justify-content-center flex-column bg-light-blue'
+                          'absolute left-0 right-0 top-0 bottom-0 text-center flex align-items-center justify-content-center flex-column bg-light-blue'
                     }
                   >
                     <svg
@@ -410,7 +409,7 @@ const ContactUs = () => {
                     </svg>
                     <h3
                       className="!font-bold !text-[32px] !leading-[52px] max-w-[560px]"
-                      dangerouslySetInnerHTML={{ __html: successMsg }}
+                      dangerouslySetInnerHTML={{__html: successMsg}}
                     />
                     <div className="font-normal text-lg leading-[27px] mt-2 max-w-[560px]">
                       We invite you to stay logged in and discover more about
