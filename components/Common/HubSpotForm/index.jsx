@@ -1,6 +1,7 @@
 import {useRef, useState} from 'react';
 import {useRouter} from 'next/router';
 import PropTypes from 'prop-types';
+import * as analytics from '../../../lib/analytics';
 
 const SKIP_SUBMIT_TEST = false;
 
@@ -13,6 +14,7 @@ const HubSpotForm = ({
   hubSpotFormId,
   successMessage,
   pageName,
+  formName,
 }) => {
   const [formIsSending, setFormIsSending] = useState(false);
   const [successMsg, setSuccessMsg] = useState('');
@@ -58,6 +60,17 @@ const HubSpotForm = ({
         if (data.inlineMessage) {
           setSuccessMsg(successMessage);
         }
+
+        const params = {};
+        formData.forEach((value, key) => (params[key] = value));
+
+        analytics.event({
+          action: 'formSubmitted',
+          params: {
+            formName,
+            ...params,
+          },
+        });
 
         setFormIsSending(false);
       } catch (e) {
@@ -152,6 +165,7 @@ HubSpotForm.propTypes = {
   hubSpotFormId: PropTypes.string,
   successMessage: PropTypes.string,
   pageName: PropTypes.string,
+  formName: PropTypes.string,
 };
 
 export default HubSpotForm;

@@ -19,6 +19,7 @@ import avatar5 from '../public/images/testimonials/testimonial-5.png';
 import avatar6 from '../public/images/testimonials/testimonial-6.png';
 import avatar7 from '../public/images/testimonials/testimonial-7.png';
 import Image from 'next/image';
+import * as analytics from '../lib/analytics';
 
 const ContactUs = () => {
   const [formIsSended, setFormIsSended] = useState(false);
@@ -65,6 +66,18 @@ const ContactUs = () => {
       const data = await response.json();
       if (data.inlineMessage) {
         setSuccessMsg(data.inlineMessage);
+
+        const params = {};
+        formData.forEach((value, key) => (params[key] = value));
+
+        analytics.event({
+          action: 'formSubmitted',
+          params: {
+            formName: 'contactUsForm',
+            ...params,
+          },
+        });
+
         await router.push('/contact-us/thank-you');
       }
       setFormIsSended(false);
@@ -343,8 +356,8 @@ const ContactUs = () => {
                           required
                         />
                         <span className="ml-2 font-normal text-[10px] leading-[13px]">
-                          By signing up, I agree to Amplication&apos;s Terms of
-                          Service and Privacy Policy.
+                          By submitting this form, I agree to Amplication&apos;s
+                          Terms of Service and Privacy Policy.
                         </span>
                       </label>
                     </div>

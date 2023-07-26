@@ -1,6 +1,7 @@
 import {useState, useRef} from 'react';
 import {useRouter} from 'next/router';
 import PropTypes from 'prop-types';
+import * as analytics from '../../../lib/analytics';
 
 const SKIP_SUBMIT_TEST = false;
 
@@ -57,6 +58,17 @@ const SubscribeForm = ({isCompactView}) => {
         if (data.inlineMessage) {
           setSuccessMsg(SUCCESS_MESSAGE);
         }
+
+        const params = {};
+        formData.forEach((value, key) => (params[key] = value));
+
+        analytics.event({
+          action: 'formSubmitted',
+          params: {
+            formName: 'subscribeBlogForm',
+            ...params,
+          },
+        });
 
         setFormIsSending(false);
       } catch (e) {
