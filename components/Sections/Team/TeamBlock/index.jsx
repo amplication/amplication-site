@@ -254,7 +254,7 @@ const TeamBlock = () => {
           iconClass: 'twitter',
         },
       ],
-    }, 
+    },
     {
       name: 'Liza Dymava',
       position: 'Business Development Manager',
@@ -263,7 +263,7 @@ const TeamBlock = () => {
         {
           href: 'https://www.linkedin.com/in/lizavetadymava/',
           iconClass: 'linkedin',
-        }
+        },
       ],
     },
   ];
