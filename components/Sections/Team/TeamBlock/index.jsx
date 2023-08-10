@@ -14,6 +14,7 @@ import leviVan from '../../../../public/images/team/levi.png';
 import danieleIasella from '../../../../public/images/team/daniele.png';
 import mulyGottlieb from '../../../../public/images/team/muly.png';
 import orenAlaluf from '../../../../public/images/team/oren.png';
+import lizaDymava from '../../../../public/images/team/liza.png';
 
 import talkWithUs from '../../../../public/images/icons/talk-with-with-team.svg';
 import joinUs from '../../../../public/images/icons/join-the-team.svg';
@@ -252,6 +253,17 @@ const TeamBlock = () => {
           href: 'https://twitter.com/BarletzA52',
           iconClass: 'twitter',
         },
+      ],
+    }, 
+    {
+      name: 'Liza Dymava',
+      position: 'Business Development Manager',
+      image: lizaDymava,
+      links: [
+        {
+          href: 'https://www.linkedin.com/in/lizavetadymava/',
+          iconClass: 'linkedin',
+        }
       ],
     },
   ];
