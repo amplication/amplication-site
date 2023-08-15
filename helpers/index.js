@@ -104,7 +104,7 @@ const helpers = {
     const d = new Date(date || 'Dec 27, 2022');
 
     return `${d
-      .toLocaleString('en-US', {month: 'long'})
+      .toLocaleString('en-US', { month: 'long' })
       .substring(0, 3)} ${d.getDate()}, ${d.getFullYear()}`;
   },
 
@@ -164,15 +164,54 @@ const helpers = {
       };
 
       if (heading.level === 1 || heading.level === 2) {
-        headings.push({...heading, children: []});
+        headings.push({ ...heading, children: [] });
       } else if (heading.level === 3 && headings.length === 0) {
-        headings.push({children: [heading]});
+        headings.push({ children: [heading] });
       } else if (heading.level === 3) {
         headings[headings.length - 1].children.push(heading);
       }
     }
 
     return headings;
+  },
+  injectCtaToMarkdown: (md = '') => {
+    const blocks = md.split('\n');
+
+    const cta1Index = blocks.findIndex(block => {
+      return block === '<!-- cta-1 -->';
+    });
+
+    if (cta1Index !== -1) {
+      blocks.splice(cta1Index, 1, '<amplicationcta1></amplicationcta1>');
+    }
+
+    const cta2Index = blocks.findIndex(block => {
+      return block === '<!-- cta-2 -->';
+    });
+
+    if (cta2Index !== -1) {
+      blocks.splice(cta2Index, 1, '<amplicationcta2></amplicationcta2>');
+    }
+
+    if (cta1Index === -1 && cta2Index === -1) {
+      const prefix = '## ';
+      let count = 0;
+      let index = -1;
+
+      for (let i = 0; i < blocks.length; i++) {
+        if (blocks[i].startsWith(prefix)) {
+          count++;
+          if (count === 2) {
+            index = i;
+            break;
+          }
+        }
+      }
+
+      blocks.splice(index, 0, '<amplicationcta1></amplicationcta1>');
+    }
+
+    return blocks.join('\n');
   },
   getInitials: string => {
     const names = string.split(' ');
