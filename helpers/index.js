@@ -104,7 +104,7 @@ const helpers = {
     const d = new Date(date || 'Dec 27, 2022');
 
     return `${d
-      .toLocaleString('en-US', { month: 'long' })
+      .toLocaleString('en-US', {month: 'long'})
       .substring(0, 3)} ${d.getDate()}, ${d.getFullYear()}`;
   },
 
@@ -164,9 +164,9 @@ const helpers = {
       };
 
       if (heading.level === 1 || heading.level === 2) {
-        headings.push({ ...heading, children: [] });
+        headings.push({...heading, children: []});
       } else if (heading.level === 3 && headings.length === 0) {
-        headings.push({ children: [heading] });
+        headings.push({children: [heading]});
       } else if (heading.level === 3) {
         headings[headings.length - 1].children.push(heading);
       }
