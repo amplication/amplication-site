@@ -14,6 +14,7 @@ import 'swiper/css';
 // eslint-disable-next-line node/no-missing-import
 import 'swiper/css/pagination';
 import {Swiper, SwiperSlide} from 'swiper/react';
+import CtaBanner from '../../components/Common/CtaBanner';
 
 import client from '../../services';
 import helpers from '../../helpers';
@@ -27,6 +28,13 @@ import Sidebar from '../../components/Sidebar';
 import errorPage from '../404';
 import {MainLayout} from '../../layouts';
 import TOC from '../../components/Posts/TOC';
+
+const CTA1 = () => {
+  return <CtaBanner bgVersion={'version1'}></CtaBanner>;
+};
+const CTA2 = () => {
+  return <CtaBanner bgVersion={'version2'}></CtaBanner>;
+};
 
 const Post = ({posts, post}) => {
   if (!post) {
@@ -43,6 +51,10 @@ const Post = ({posts, post}) => {
   const validTwitterHandle = twitterHandle.startsWith('@')
     ? twitterHandle
     : '@' + twitterHandle;
+
+  const contentWithCta = helpers.injectCtaToMarkdown(
+    helpers.demoteHeadings(post.content)
+  );
 
   return (
     <>
@@ -141,9 +153,11 @@ const Post = ({posts, post}) => {
                     h1: Header,
                     h2: Header,
                     h3: Header,
+                    amplicationcta1: CTA1,
+                    amplicationcta2: CTA2,
                   }}
                 >
-                  {post.content}
+                  {contentWithCta}
                 </ReactMarkdown>
               </div>
             </>

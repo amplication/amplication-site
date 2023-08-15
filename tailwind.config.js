@@ -95,6 +95,9 @@ module.exports = {
         footer: '#fff3',
         purple: '#8D64FF',
       },
+      borderWidth: {
+        3: '3px',
+      },
       boxShadow: {
         hidden: 'initial',
         radio: '0 20px 26px -16px rgb(21 25 44 / 84%)',
@@ -141,6 +144,8 @@ module.exports = {
         'form-pattern-1-desktop': "url('/images/decor_1_desktop.svg')",
         'form-pattern-2-mobile': "url('/images/decor_2_mobile.svg')",
         'form-pattern-2-desktop': "url('/images/decor_2_desktop.svg')",
+        'cta-1': "url('/images/bg/cta-bg-1.png')",
+        'cta-2': "url('/images/bg/cta-bg-2.png')",
         noise: "url('/images/noise.png')",
         quote: "url('/images/bg/quotes.svg')",
       },
