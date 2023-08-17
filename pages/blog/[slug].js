@@ -33,7 +33,7 @@ const CTA_TITLE =
   'Today everyone is generating code, but do you have the guts to deploy it to production?';
 const CTA_SUB_TITLE = 'Amplication - generate a code you can trust!';
 
-const CTA1 = () => {
+const CTA2 = () => {
   return (
     <CtaBanner
       bgVersion={'version1'}
@@ -42,7 +42,7 @@ const CTA1 = () => {
     ></CtaBanner>
   );
 };
-const CTA2 = () => {
+const CTA1 = () => {
   return (
     <CtaBanner
       bgVersion={'version2'}
