@@ -30,10 +30,10 @@ const CtaBanner = ({bgVersion, title, subTitle, buttonText, buttonUrl}) => {
 
   return (
     <div
-      className={`w-full px-12 py-16 my-10 rounded-2xl bg-no-repeat bg-cover bg-right-bottom relative laptop:min-h-[300px] border-3 border-white ${bgStyle}`}
+      className={`w-full px-12 py-16 my-10 rounded-2xl bg-no-repeat bg-cover bg-left-bottom relative laptop:min-h-[300px] border-3 border-white ${bgStyle}`}
     >
       <div className="">
-        <div className="font-bold text-white text-[32px] leading-[42px]">
+        <div className="font-bold text-white text-[24px] leading-[32px]">
           {title || defaultTitle}
         </div>
         <div className="font-regular text-white text-[18px] mt-2 mb-4">

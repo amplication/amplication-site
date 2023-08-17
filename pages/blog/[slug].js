@@ -29,11 +29,27 @@ import errorPage from '../404';
 import {MainLayout} from '../../layouts';
 import TOC from '../../components/Posts/TOC';
 
+const CTA_TITLE =
+  'Today everyone is generating code, but do you have the guts to deploy it to production?';
+const CTA_SUB_TITLE = 'Amplication - generate a code you can trust!';
+
 const CTA1 = () => {
-  return <CtaBanner bgVersion={'version1'}></CtaBanner>;
+  return (
+    <CtaBanner
+      bgVersion={'version1'}
+      title={CTA_TITLE}
+      subTitle={CTA_SUB_TITLE}
+    ></CtaBanner>
+  );
 };
 const CTA2 = () => {
-  return <CtaBanner bgVersion={'version2'}></CtaBanner>;
+  return (
+    <CtaBanner
+      bgVersion={'version2'}
+      title={CTA_TITLE}
+      subTitle={CTA_SUB_TITLE}
+    ></CtaBanner>
+  );
 };
 
 const Post = ({posts, post}) => {
