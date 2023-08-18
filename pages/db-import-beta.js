@@ -9,8 +9,8 @@ import icon4 from '../public/images/db-import/icon-4.svg';
 import icon5 from '../public/images/db-import/icon-5.svg';
 import dbImportImage from '../public/images/db-import/db-import.svg';
 
-import {NextSeo} from 'next-seo';
-import {MainLayout} from '../layouts';
+import { NextSeo } from 'next-seo';
+import { MainLayout } from '../layouts';
 import helpers from '../helpers';
 
 const cards = [

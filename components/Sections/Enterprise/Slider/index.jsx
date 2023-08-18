@@ -8,7 +8,7 @@ import Logo7 from '../../../../public/images/logotypes/logo-7.svg';
 import Image from 'next/image';
 import PropTypes from 'prop-types';
 
-const Slider = ({classes}) => {
+const Slider = ({ classes }) => {
   return (
     <>
       <section className={'!pt-5 !pb-4 laptop:!py-20 ' + classes}>

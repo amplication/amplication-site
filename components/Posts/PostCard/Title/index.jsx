@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const Title = props => {
+const Title = (props) => {
   const Tag = props.level ? `h${props.level}` : 'div';
 
   return (

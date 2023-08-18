@@ -29,7 +29,7 @@ const FeatureItem = ({
               <div className="feature-title">{title}</div>
               <div
                 className="feature-page-description text-base text-white"
-                dangerouslySetInnerHTML={{__html: content}}
+                dangerouslySetInnerHTML={{ __html: content }}
               ></div>
               {buttons.length > 0 && (
                 <div className="buttons-wrapper d-flex mb-4 align-items-center justify-content-start mt-4">

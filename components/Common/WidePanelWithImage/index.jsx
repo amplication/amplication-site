@@ -29,7 +29,7 @@ const WidePanelWithImage = ({
             </div>
             <div
               className="text-sm desktop:text-lg text-white desktop:!leading-[27px] max-w-[600px]"
-              dangerouslySetInnerHTML={{__html: content}}
+              dangerouslySetInnerHTML={{ __html: content }}
             ></div>
             {children}
             <div className="buttons-wrapper d-flex tablet:align-items-center justify-content-start mt-4">

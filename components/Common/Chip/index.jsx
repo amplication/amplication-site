@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const Chip = ({children}) => {
+const Chip = ({ children }) => {
   return <span className="chip">{children}</span>;
 };
 

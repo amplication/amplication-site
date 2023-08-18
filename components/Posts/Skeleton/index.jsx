@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const Skeleton = ({postPerPage}) => {
+const Skeleton = ({ postPerPage }) => {
   return (
     <>
       {[...Array(postPerPage)].map((x, i) => {

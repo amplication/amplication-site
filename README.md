@@ -52,16 +52,19 @@ Experience the fastest way to develop Node.js applications with Amplication.
 First of all, it should be mentioned that there two possible modes: production and development.
 
 ### Production Mode
+
 In order to run the server for production mode these commands have to be executed:
 
 ```bash
 npm run build
 npm run start
 ```
+
 After the first command all the static pages will be save as json and html files as cache files.
 The second command starts the server, which is usually [http://localhost:3001](http://localhost:3001)
 
 ### Development Mode
+
 For starting the development server:
 
 ```bash

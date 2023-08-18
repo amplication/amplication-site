@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import GraphQLIcon from '../../../../public/images/features-page/icons/nenu_graphql_icon.svg';
 import GraphQLImage from '../../../../public/images/features-page/graphql.svg';
@@ -276,8 +276,6 @@ const Tabs = () => {
     }
   }, [activeTab, autorun]);
 
-
-
   const [opened, setOpened] = useState(features.map(() => false));
 
   return (
@@ -332,14 +330,14 @@ const Tabs = () => {
                           ? 'max-h-[calc(4*1.53em)] text-ellipsis overflow-hidden'
                           : '') + ' w-full font-normal text-sm leading-[1.56em]'
                       }
-                      dangerouslySetInnerHTML={{__html: feature.content}}
+                      dangerouslySetInnerHTML={{ __html: feature.content }}
                     ></div>
                     <span
                       onClick={() => {
                         setOpened(
                           opened.map((open, i) =>
-                            i === index ? open === false : open
-                          )
+                            i === index ? open === false : open,
+                          ),
                         );
                       }}
                       className={

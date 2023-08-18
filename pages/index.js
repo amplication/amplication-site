@@ -7,8 +7,8 @@ import GetList from '../components/Sections/MainPage/GetList';
 import Tabs from '../components/Sections/MainPage/Tabs';
 import Roadmap from '../components/Sections/MainPage/Roadmap';
 import LogoList from '../components/Sections/About/LogoList';
-import {NextSeo} from 'next-seo';
-import {MainLayout} from '../layouts';
+import { NextSeo } from 'next-seo';
+import { MainLayout } from '../layouts';
 
 const Home = () => {
   return (

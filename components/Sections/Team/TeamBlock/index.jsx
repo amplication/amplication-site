@@ -291,8 +291,6 @@ const features = [
 ];
 
 const TeamBlock = () => {
-
-
   return (
     <>
       <section className={'background-transparent'}>

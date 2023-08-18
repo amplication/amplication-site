@@ -1,15 +1,15 @@
-import {gql} from '@apollo/client';
+import { gql } from '@apollo/client';
 import client from '../../../services';
 import generateRSS from '../../../lib/rss';
 
 const TagsFeed = () => {};
 
-export const getServerSideProps = async context => {
+export const getServerSideProps = async (context) => {
   const postsTake = 10;
   let posts = [];
   let title = "Amplication's Blog";
   try {
-    const {data} = await client.query({
+    const { data } = await client.query({
       query: gql`
         query {
           posts(
@@ -56,10 +56,10 @@ export const getServerSideProps = async context => {
         'Boost your knowledge and step up your game with top storys on backend development, Node.js and open-source from the Amplication team.',
       path: `tags/${context.params.tagSlug}/feed`,
       posts,
-    })
+    }),
   );
   context.res.end();
-  return {props: {}};
+  return { props: {} };
 };
 
 export default TagsFeed;

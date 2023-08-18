@@ -16,7 +16,7 @@ import * as analytics from '../lib/analytics';
 function Amplication({ Component, pageProps }) {
   const { asPath } = useRouter();
   const isBlogPage = Boolean(
-    asPath.includes('/blog') || asPath.includes('/tags')
+    asPath.includes('/blog') || asPath.includes('/tags'),
   );
 
   const router = useRouter();
@@ -27,7 +27,7 @@ function Amplication({ Component, pageProps }) {
   ).split('?')[0];
 
   useEffect(() => {
-    const handleRouteChange = url => {
+    const handleRouteChange = (url) => {
       analytics.page(url, { url });
     };
     analytics.page(router.asPath, { url: router.asPath });
@@ -44,7 +44,7 @@ function Amplication({ Component, pageProps }) {
 
   useEffect(() => {
     const typingAnimations = document.querySelectorAll(
-      '#animated-header-typed'
+      '#animated-header-typed',
     );
     if (typingAnimations.length && isDevPage) {
       new Typed('#animated-header-typed', {
@@ -72,7 +72,7 @@ function Amplication({ Component, pageProps }) {
   }, [isBlogPage, isDevPage]);
 
   // Use the layout defined at the page level, if available
-  const getLayout = Component.getLayout || (page => page);
+  const getLayout = Component.getLayout || ((page) => page);
 
   return (
     <>

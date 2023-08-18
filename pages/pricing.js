@@ -1,15 +1,15 @@
 import HeroBlock from '../components/Sections/Pricing/HeroBlock';
 import CTA from '../components/Sections/Pricing/CTA';
-import {NextSeo} from 'next-seo';
-import {MainLayout} from '../layouts';
+import { NextSeo } from 'next-seo';
+import { MainLayout } from '../layouts';
 import dynamic from 'next/dynamic';
 
 export const PricingPlans = dynamic(
   () =>
     import('../components/Sections/Pricing/PricingPlans').then(
-      mod => mod.PricingPlans
+      (mod) => mod.PricingPlans,
     ),
-  {ssr: false}
+  { ssr: false },
 );
 
 const Pricing = () => {

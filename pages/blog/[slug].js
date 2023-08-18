@@ -40,7 +40,7 @@ const Post = ({ posts, post }) => {
 
   const title = post.metaTitle || post.title;
   const description = helpers.trimText(
-    post.metaDescription || helpers.removeMarkdown(post.content)
+    post.metaDescription || helpers.removeMarkdown(post.content),
   );
   const headings = helpers.generateHeadings(post.content);
   const author = (post.author?.firstName + ' ' + post.author?.lastName).trim();
@@ -50,7 +50,7 @@ const Post = ({ posts, post }) => {
     : '@' + twitterHandle;
 
   const contentWithCta = helpers.injectCtaToMarkdown(
-    helpers.demoteHeadings(post.content)
+    helpers.demoteHeadings(post.content),
   );
 
   return (
@@ -224,7 +224,7 @@ const Post = ({ posts, post }) => {
   );
 };
 
-export const getStaticProps = async context => {
+export const getStaticProps = async (context) => {
   try {
     const { data } = await client.query({
       query: gql`
@@ -261,10 +261,10 @@ export const getStaticProps = async context => {
       const tags =
         post.tags && post.tags.length
           ? `, tags: {some: {id: {in: ["${post.tags
-            .map(tag => {
-              return tag.id;
-            })
-            .join('" ,"')}"]}}}`
+              .map((tag) => {
+                return tag.id;
+              })
+              .join('" ,"')}"]}}}`
           : '';
 
       posts = await client.query({
@@ -314,7 +314,7 @@ export async function getStaticPaths() {
   const { data } = await client.query({
     query: gql`
       query {
-        posts(take: 1000, orderBy: {publishedAt: Desc}) {
+        posts(take: 1000, orderBy: { publishedAt: Desc }) {
           slug
           title
         }
@@ -322,7 +322,7 @@ export async function getStaticPaths() {
     `,
   });
 
-  const paths = data.posts.map(post => ({
+  const paths = data.posts.map((post) => ({
     params: {
       slug: post.slug,
     },

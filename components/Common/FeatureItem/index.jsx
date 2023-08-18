@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const FeatureItem = ({image, alt, title, content, linkUrl, linkText}) => {
+const FeatureItem = ({ image, alt, title, content, linkUrl, linkText }) => {
   return (
     <>
       <div className="feature-item">
@@ -14,11 +14,11 @@ const FeatureItem = ({image, alt, title, content, linkUrl, linkText}) => {
         <div className="feature-item__content">
           <div
             className="feature-item__title"
-            dangerouslySetInnerHTML={{__html: title}}
+            dangerouslySetInnerHTML={{ __html: title }}
           ></div>
           <div
             className="feature-item__description text-base"
-            dangerouslySetInnerHTML={{__html: content}}
+            dangerouslySetInnerHTML={{ __html: content }}
           ></div>
           {linkText && linkUrl && (
             <Link href={linkUrl} passHref={true}>

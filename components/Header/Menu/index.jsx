@@ -1,15 +1,15 @@
 import Link from 'next/link';
 import Button from '../../Common/Button';
-import {useRouter} from 'next/router';
-import {useState, useEffect, useCallback} from 'react';
+import { useRouter } from 'next/router';
+import { useState, useEffect, useCallback } from 'react';
 import useWindowSize from '../../../utils/useWindowSize';
 import * as analytics from '../../../lib/analytics';
 
 const Menu = () => {
   const [isMobileMenuOpened, setIsMobileMenuOpened] = useState(false);
   const [hoveredLink, setHoveredLink] = useState('');
-  const {width} = useWindowSize();
-  const {asPath} = useRouter();
+  const { width } = useWindowSize();
+  const { asPath } = useRouter();
 
   const handleStartNowClick = useCallback(() => {
     analytics.event({
@@ -18,16 +18,16 @@ const Menu = () => {
         buttonLocation: 'header',
       },
     });
-  },[]);
+  }, []);
 
-  const handleMenuClick = useCallback(menuItem => {
+  const handleMenuClick = useCallback((menuItem) => {
     if (menuItem && menuItem.onClickEventName) {
       analytics.event({
         action: menuItem.onClickEventName,
         params: menuItem.onClickEventParams,
       });
     }
-  },[]);
+  }, []);
 
   const menuItems = [
     {
@@ -86,7 +86,7 @@ const Menu = () => {
           },
           target: '_self',
           isActive: Boolean(
-            asPath.includes('/tags') || asPath.includes('/blog')
+            asPath.includes('/tags') || asPath.includes('/blog'),
           ),
         },
         {
@@ -199,21 +199,21 @@ const Menu = () => {
                   onMouseOver={() => {
                     if (width > 991) {
                       setHoveredLink(
-                        hoveredLink === '' ? item.href.pathname : ''
+                        hoveredLink === '' ? item.href.pathname : '',
                       );
                     }
                   }}
                   onMouseOut={() => {
                     if (width > 991) {
                       setHoveredLink(
-                        hoveredLink === '' ? item.href.pathname : ''
+                        hoveredLink === '' ? item.href.pathname : '',
                       );
                     }
                   }}
                   onClick={() => {
                     if (width <= 991) {
                       setHoveredLink(
-                        hoveredLink === '' ? item.href.pathname : ''
+                        hoveredLink === '' ? item.href.pathname : '',
                       );
                     }
                   }}

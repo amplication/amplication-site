@@ -10,7 +10,7 @@ module.exports = {
       try {
         if (
           (await fs.promises.readFile(file, 'utf8')).match(
-            /<meta.*noindex.*>/im
+            /<meta.*noindex.*>/im,
           )
         ) {
           return null;

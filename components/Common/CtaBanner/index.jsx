@@ -1,10 +1,10 @@
-import {useCallback} from 'react';
+import { useCallback } from 'react';
 import Button from '../Button';
 import PropTypes from 'prop-types';
 import * as analytics from '../../../lib/analytics';
-import {useRouter} from 'next/router';
+import { useRouter } from 'next/router';
 
-const CtaBanner = ({bgVersion, title, subTitle, buttonText, buttonUrl}) => {
+const CtaBanner = ({ bgVersion, title, subTitle, buttonText, buttonUrl }) => {
   const router = useRouter();
 
   const handleStartNowClick = useCallback(() => {
@@ -16,7 +16,7 @@ const CtaBanner = ({bgVersion, title, subTitle, buttonText, buttonUrl}) => {
         pageUri: router.asPath,
       },
     });
-  },[bgVersion,router.asPath]);
+  }, [bgVersion, router.asPath]);
 
   const bgStyle =
     bgVersion === 'version1'

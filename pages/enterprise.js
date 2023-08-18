@@ -7,8 +7,8 @@ import enterprise1 from '../public/images/enterprise/enterprise-1.png';
 import enterprise2 from '../public/images/enterprise/enterprise-2.png';
 import enterprise3 from '../public/images/enterprise/enterprise-3.png';
 import enterprise4 from '../public/images/enterprise/enterprise-4.png';
-import {NextSeo} from 'next-seo';
-import {MainLayout} from '../layouts';
+import { NextSeo } from 'next-seo';
+import { MainLayout } from '../layouts';
 import helpers from '../helpers';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -70,8 +70,6 @@ const features = [
 ];
 
 const Features = () => {
-
-
   return (
     <>
       <NextSeo
@@ -111,7 +109,7 @@ const Features = () => {
                     </div>
                     <div
                       className="text-sm desktop:text-lg text-white desktop:!leading-[27px] max-w-[600px]"
-                      dangerouslySetInnerHTML={{__html: feature.content}}
+                      dangerouslySetInnerHTML={{ __html: feature.content }}
                     ></div>
                     <div className="buttons-wrapper d-flex tablet:align-items-center justify-content-start mt-4">
                       {feature.primaryBtn && (

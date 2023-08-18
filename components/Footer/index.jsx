@@ -2,7 +2,7 @@ import StartNow from '../../components/Sections/About/StartNow';
 import FooterBottomBar from './FooterBottomBar';
 import PropTypes from 'prop-types';
 
-const Footer = ({customClass, compactView, hideBanner}) => {
+const Footer = ({ customClass, compactView, hideBanner }) => {
   return (
     <>
       <footer

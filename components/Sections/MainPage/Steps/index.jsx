@@ -5,7 +5,7 @@ import RolesIcon from '../../../../public/images/steps/roles.svg';
 import SyncWithGithubIcon from '../../../../public/images/steps/sync_with_github.svg';
 import AdminUiIcon from '../../../../public/images/steps/admin-ui.svg';
 import ConnectIcon from '../../../../public/images/steps/connect.png';
-import {useState} from 'react';
+import { useState } from 'react';
 
 const Steps = () => {
   const [activeTab, setActiveTab] = useState('data-models');
@@ -53,7 +53,7 @@ const Steps = () => {
                       className={`nav-link ${
                         activeTab === 'data-models' ? 'active' : ''
                       }`}
-                      onClick={e => {
+                      onClick={(e) => {
                         tabHandler(e, 'data-models');
                       }}
                       aria-controls="data-models"
@@ -69,7 +69,7 @@ const Steps = () => {
                       className={`nav-link ${
                         activeTab === 'roles' ? 'active' : ''
                       }`}
-                      onClick={e => {
+                      onClick={(e) => {
                         tabHandler(e, 'roles');
                       }}
                       aria-controls="roles"

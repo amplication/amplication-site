@@ -1,8 +1,5 @@
 {
-  "include": [
-    "src/**/*.ts",
-    "test/**/*.ts"
-  ],
+  "include": ["src/**/*.ts", "test/**/*.ts"],
   "compilerOptions": {
     "allowJs": true,
     "skipLibCheck": true,
@@ -13,16 +10,10 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "strict": false,
     "forceConsistentCasingInFileNames": true,
     "module": "esnext"
   },
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }

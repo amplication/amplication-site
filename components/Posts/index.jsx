@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import {useRouter} from 'next/router';
+import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 import 'swiper/css';
 
 import PostCard from './PostCard';
@@ -9,7 +9,7 @@ import SubscribeForm from '../Common/SubscribeForm';
 import helpers from '../../helpers';
 import Skeleton from './Skeleton';
 
-const Posts = ({posts}) => {
+const Posts = ({ posts }) => {
   const [postsList, setPostsList] = useState([]);
   const [loadMore, setLoadMore] = useState(true);
   const [loader, setLoader] = useState(false);
@@ -17,7 +17,7 @@ const Posts = ({posts}) => {
   const postPerPage = helpers.getPostPerPage();
 
   const router = useRouter();
-  const {tagID, page} = router.query;
+  const { tagID, page } = router.query;
 
   useEffect(() => {
     if (Array.isArray(posts) && posts.length) {
@@ -33,8 +33,8 @@ const Posts = ({posts}) => {
         setPostsList(
           posts.splice(
             0,
-            postPerPage * (typeof page === 'undefined' ? 1 : parseInt(page))
-          )
+            postPerPage * (typeof page === 'undefined' ? 1 : parseInt(page)),
+          ),
         );
       }
 
@@ -54,7 +54,7 @@ const Posts = ({posts}) => {
           'w-full max-w-container m-container p-container laptop:max-w-container-desktop-blog laptop:m-container-desktop laptop:p-container-desktop pt-0 laptop:pt-0 laptop:pb-0 grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-7.5 laptop:gap-x-7.5 laptop:gap-y-[61px]'
         }
       >
-        {postsList.slice(0, 6).map(post => {
+        {postsList.slice(0, 6).map((post) => {
           return (
             <PostCard
               data={post}
@@ -74,9 +74,10 @@ const Posts = ({posts}) => {
         {postsList
           .slice(
             6,
-            postPerPage * (typeof page !== 'undefined' ? parseInt(page) + 1 : 2)
+            postPerPage *
+              (typeof page !== 'undefined' ? parseInt(page) + 1 : 2),
           )
-          .map(post => {
+          .map((post) => {
             return (
               <PostCard
                 data={post}

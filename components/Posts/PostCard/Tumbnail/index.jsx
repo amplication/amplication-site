@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import Image from 'next/image';
-import {useState} from 'react';
+import { useState } from 'react';
 
-const Thumbnail = props => {
+const Thumbnail = (props) => {
   const [src, setSrc] = useState('');
   const updateImageState = () => setSrc(props.src);
 
@@ -16,7 +16,7 @@ const Thumbnail = props => {
       <span className=" rounded-t-2xl w-full h-full pb-[52%] block relative overflow-hidden bg-purple-bright">
         {props.src && (
           <Image
-            onLoadingComplete={e => updateImageState(e)}
+            onLoadingComplete={(e) => updateImageState(e)}
             alt={props.alt || ''}
             src={
               props.src && props.src.trim() !== ''

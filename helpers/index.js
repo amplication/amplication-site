@@ -4,7 +4,7 @@ import slugify from 'slugify';
 
 /* eslint no-useless-escape: 0 */
 const helpers = {
-  isValidUrl: string => {
+  isValidUrl: (string) => {
     let url;
 
     try {
@@ -34,7 +34,7 @@ const helpers = {
         if (options.listUnicodeChar)
           string = string.replace(
             /^([\s\t]*)([\*\-\+]|\d+\.)\s+/gm,
-            options.listUnicodeChar + ' $1'
+            options.listUnicodeChar + ' $1',
           );
         else string = string.replace(/^([\s\t]*)([\*\-\+]|\d+\.)\s+/gm, '$1');
       }
@@ -62,7 +62,7 @@ const helpers = {
         // Remove images
         .replace(
           /\!\[(.*?)\][\[\(].*?[\]\)]/g,
-          options.useImgAltText ? '$1' : ''
+          options.useImgAltText ? '$1' : '',
         )
         // Remove inline links
         .replace(/\[(.*?)\][\[\(].*?[\]\)]/g, '$1')
@@ -73,7 +73,7 @@ const helpers = {
         // Remove atx-style headers
         .replace(
           /^(\n)?\s{0,}#{1,6}\s+| {0,}(\n)?\s{0,}#{0,} {0,}(\n)?\s{0,}$/gm,
-          '$1$2$3'
+          '$1$2$3',
         )
         // Remove emphasis (repeat the line to remove double emphasis)
         .replace(/([\*_]{1,3})(\S.*?\S{0,1})\1/g, '$2')
@@ -96,15 +96,16 @@ const helpers = {
    * @param {string} path
    * @returns {string}
    */
-  getCanonical: path => new URL(path, process.env.NEXT_PUBLIC_SITE).toString(),
+  getCanonical: (path) =>
+    new URL(path, process.env.NEXT_PUBLIC_SITE).toString(),
 
-  getPostSlug: slug => `/blog/${slug}`,
+  getPostSlug: (slug) => `/blog/${slug}`,
 
-  getPostDate: date => {
+  getPostDate: (date) => {
     const d = new Date(date || 'Dec 27, 2022');
 
     return `${d
-      .toLocaleString('en-US', {month: 'long'})
+      .toLocaleString('en-US', { month: 'long' })
       .substring(0, 3)} ${d.getDate()}, ${d.getFullYear()}`;
   },
 
@@ -116,7 +117,7 @@ const helpers = {
    * @param {string} str
    * @returns {string}
    */
-  slugify: str =>
+  slugify: (str) =>
     slugify(str, {
       lower: true,
       strict: true,
@@ -130,7 +131,7 @@ const helpers = {
   demoteHeadings: (str = '') => {
     const h1Match = str.match(/^#\s/gm);
     const hasH1 = h1Match ? h1Match.length > 0 : false;
-    return hasH1 ? str.replaceAll(/^#{1,5}\s/gm, m => '#' + m) : str;
+    return hasH1 ? str.replaceAll(/^#{1,5}\s/gm, (m) => '#' + m) : str;
   },
   /**
    * Trims text to defined length and adds appropriate ellipses
@@ -153,7 +154,7 @@ const helpers = {
     const headings = [];
     const headingsParsed = md
       .split('\n')
-      .filter(line => line.match(/^#{1,3}\s/));
+      .filter((line) => line.match(/^#{1,3}\s/));
 
     for (const line of headingsParsed) {
       const [, level, title] = line.match(/^(#{1,3})\s(.*)/);
@@ -164,9 +165,9 @@ const helpers = {
       };
 
       if (heading.level === 1 || heading.level === 2) {
-        headings.push({...heading, children: []});
+        headings.push({ ...heading, children: [] });
       } else if (heading.level === 3 && headings.length === 0) {
-        headings.push({children: [heading]});
+        headings.push({ children: [heading] });
       } else if (heading.level === 3) {
         headings[headings.length - 1].children.push(heading);
       }
@@ -177,7 +178,7 @@ const helpers = {
   injectCtaToMarkdown: (md = '') => {
     const blocks = md.split('\n');
 
-    const cta1Index = blocks.findIndex(block => {
+    const cta1Index = blocks.findIndex((block) => {
       return block === '<!-- cta-1 -->';
     });
 
@@ -185,7 +186,7 @@ const helpers = {
       blocks.splice(cta1Index, 1, '<amplicationcta1></amplicationcta1>');
     }
 
-    const cta2Index = blocks.findIndex(block => {
+    const cta2Index = blocks.findIndex((block) => {
       return block === '<!-- cta-2 -->';
     });
 
@@ -213,7 +214,7 @@ const helpers = {
 
     return blocks.join('\n');
   },
-  getInitials: string => {
+  getInitials: (string) => {
     const names = string.split(' ');
     let initials = names[0].substring(0, 1).toUpperCase();
 

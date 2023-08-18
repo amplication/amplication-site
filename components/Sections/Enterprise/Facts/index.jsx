@@ -42,7 +42,7 @@ const Facts = () => {
                   >
                     <div
                       className="text-2xl mb-1 font-bold text-center"
-                      style={{color: '#A787FF'}}
+                      style={{ color: '#A787FF' }}
                     >
                       {fact.title}
                     </div>

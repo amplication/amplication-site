@@ -1,5 +1,5 @@
-import {useEffect, useState} from 'react';
-import {useRouter} from 'next/router';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 const BottomBar = () => {
@@ -14,19 +14,19 @@ const BottomBar = () => {
         'https://api.github.com/repos/amplication/amplication/releases/latest',
         {
           method: 'GET',
-        }
+        },
       )
-        .then(response => {
+        .then((response) => {
           if (response.ok) {
             return response.json();
           }
         })
-        .then(data => {
+        .then((data) => {
           if (typeof data !== 'undefined' && data.name) {
             setVersion(data.name);
           }
         })
-        .catch(error => {
+        .catch((error) => {
           console.log(error);
         });
     }
@@ -46,7 +46,7 @@ const BottomBar = () => {
           <Link href={'/enterprise'} passHref={true}>
             <a
               className="hidden float-right text-lg py-2 hover:text-white text-[#54DBEE] transition-all font-light relative ml-auto"
-              style={{top: '-' + scrollY + 'px'}}
+              style={{ top: '-' + scrollY + 'px' }}
             >
               Enterprise
             </a>

@@ -1,7 +1,7 @@
 import HubSpotForm from '../../../Common/HubSpotForm';
 
 const Form = () => {
-  const onChangeHandler = e => {
+  const onChangeHandler = (e) => {
     const styles = getComputedStyle(e.target, null),
       rows = parseInt(e.target.getAttribute('rows')) || 2,
       lines = parseInt(styles.getPropertyValue('line-height')) * rows,

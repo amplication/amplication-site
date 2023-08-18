@@ -1,5 +1,5 @@
-import {useRef, useState} from 'react';
-import {useRouter} from 'next/router';
+import { useRef, useState } from 'react';
+import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import * as analytics from '../../../lib/analytics';
 
@@ -22,12 +22,12 @@ const HubSpotForm = ({
   const router = useRouter();
   const form = useRef(null);
 
-  const submitSubscriptionForm = async e => {
+  const submitSubscriptionForm = async (e) => {
     e.preventDefault();
     const formData = new FormData(form.current);
 
     const fields = [];
-    [...formData].forEach(item => {
+    [...formData].forEach((item) => {
       if (item[1]) {
         fields.push({
           name: item[0],
@@ -54,7 +54,7 @@ const HubSpotForm = ({
                 pageName: pageName,
               },
             }),
-          }
+          },
         );
         const data = await response.json();
         if (data.inlineMessage) {
@@ -86,7 +86,7 @@ const HubSpotForm = ({
       <form
         className="hubspot w-full flex flex-col justify-start items-stretch laptop:flex-row laptop:flex-wrap laptop:items-start laptop:justify-between"
         method="POST"
-        onSubmit={e => submitSubscriptionForm(e)}
+        onSubmit={(e) => submitSubscriptionForm(e)}
         ref={form}
       >
         {children}

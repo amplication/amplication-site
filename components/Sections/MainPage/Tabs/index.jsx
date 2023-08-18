@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import enterprise5 from '../../../../public/images/enterprise/enterprise-5.svg';
 import enterprise1 from '../../../../public/images/enterprise/enterprise-1.svg';
@@ -89,8 +89,6 @@ const Tabs = () => {
     }
   }, [activeTab, autorun]);
 
-
-
   const [opened, setOpened] = useState(features.map(() => false));
 
   return (
@@ -147,14 +145,14 @@ const Tabs = () => {
                             : '') +
                           ' w-full font-normal text-sm leading-[1.56em]'
                         }
-                        dangerouslySetInnerHTML={{__html: feature.content}}
+                        dangerouslySetInnerHTML={{ __html: feature.content }}
                       ></div>
                       <span
                         onClick={() => {
                           setOpened(
                             opened.map((open, i) =>
-                              i === index ? open === false : open
-                            )
+                              i === index ? open === false : open,
+                            ),
                           );
                         }}
                         className={

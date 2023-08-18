@@ -1,4 +1,4 @@
-import {useCallback} from 'react';
+import { useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import * as analytics from '../../../../lib/analytics';
@@ -12,7 +12,7 @@ const Hero = () => {
         buttonLocation: 'hero',
       },
     });
-  },[]);
+  }, []);
 
   const handleBookDemoClick = useCallback(() => {
     analytics.event({
@@ -21,7 +21,7 @@ const Hero = () => {
         buttonLocation: 'hero',
       },
     });
-  },[]);
+  }, []);
 
   return (
     <>
