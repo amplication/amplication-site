@@ -1,4 +1,4 @@
-import {useCallback} from 'react';
+import { useCallback } from 'react';
 import Author from './Author';
 import Tags from './Tags';
 import Title from './Title';
@@ -8,7 +8,7 @@ import Link from 'next/link';
 import * as analytics from '../../../lib/analytics';
 import PropTypes from 'prop-types';
 
-const PostCard = props => {
+const PostCard = (props) => {
   const post = props.data;
 
   const handleClick = useCallback(() => {
@@ -18,7 +18,7 @@ const PostCard = props => {
         slug: post.slug,
       },
     });
-  });
+  }, [post.slug, props.clickEventName]);
 
   if (Object.keys(post).length) {
     return (

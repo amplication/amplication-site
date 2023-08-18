@@ -18,7 +18,7 @@ const nextConfig = {
       'www.facebook.com',
     ],
   },
-  experimental: {images: {allowFutureImage: true}, optimizeCss: true},
+  experimental: { images: { allowFutureImage: true }, optimizeCss: true },
   async redirects() {
     return [
       {
@@ -142,7 +142,7 @@ const nextConfig = {
     ];
   },
   swcMinify: true,
-  webpack: config => {
+  webpack: (config) => {
     config.module.rules.push({
       test: /\.md$/,
       use: 'raw-loader',

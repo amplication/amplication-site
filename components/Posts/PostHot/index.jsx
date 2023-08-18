@@ -1,4 +1,4 @@
-import {useCallback} from 'react';
+import { useCallback } from 'react';
 import Author from '../PostCard/Author';
 import Tags from '../PostCard/Tags';
 import Title from '../PostCard/Title';
@@ -8,7 +8,7 @@ import Link from 'next/link';
 import * as analytics from '../../../lib/analytics';
 import PropTypes from 'prop-types';
 
-const PostHot = props => {
+const PostHot = (props) => {
   const post = props.data;
 
   const handleClick = useCallback(() => {
@@ -18,7 +18,7 @@ const PostHot = props => {
         slug: post.slug,
       },
     });
-  });
+  }, [post.slug]);
 
   const abridgedContent = helpers
     .removeMarkdown(post?.content ?? '')

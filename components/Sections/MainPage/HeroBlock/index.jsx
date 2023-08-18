@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import VideoWatch from '../../../../public/images/video-watch.png';
-import {useEffect, useState, useCallback} from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import * as analytics from '../../../../lib/analytics';
 
 const HeroBlock = () => {
@@ -13,14 +13,14 @@ const HeroBlock = () => {
         buttonLocation: 'developers-hero',
       },
     });
-  });
+  }, []);
 
   useEffect(() => {
     fetch('https://api.github.com/repos/amplication/amplication', {
       'Content-Type': 'application/json',
     })
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         if (data.stargazers_count) {
           setStarsCount(parseFloat((data.stargazers_count / 1000).toFixed(1)));
         }
@@ -69,7 +69,10 @@ const HeroBlock = () => {
                         Just code what matters.
                       </span>
                     </h1>
-                    <div id="animated-header-content" style={{display: 'none'}}>
+                    <div
+                      id="animated-header-content"
+                      style={{ display: 'none' }}
+                    >
                       <span>Microservices.</span>
                       <span>GraphQL API.</span>
                       <span>REST API.</span>

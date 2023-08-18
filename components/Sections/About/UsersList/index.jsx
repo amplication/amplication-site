@@ -190,11 +190,11 @@ const UsersList = () => {
                   </h4>
                   <div
                     className="text-base large:text-lg large:leading-[18px] text-gray"
-                    dangerouslySetInnerHTML={{__html: user.position}}
+                    dangerouslySetInnerHTML={{ __html: user.position }}
                   ></div>
                   <div
                     className="text-base large:text-lg large:leading-7 mt-3 min-h-[56px]"
-                    dangerouslySetInnerHTML={{__html: user.description}}
+                    dangerouslySetInnerHTML={{ __html: user.description }}
                   ></div>
                 </div>
               </div>

@@ -2,13 +2,13 @@ import Posts from '../../components/Posts';
 import Filter from '../../components/Posts/Filter';
 import PropTypes from 'prop-types';
 import client from '../../services';
-import {gql} from '@apollo/client';
+import { gql } from '@apollo/client';
 import helpers from '../../helpers';
-import {NextSeo} from 'next-seo';
-import {MainLayout} from '../../layouts';
+import { NextSeo } from 'next-seo';
+import { MainLayout } from '../../layouts';
 
-const TagsPage = props => {
-  const {posts, tags, tag} = props;
+const TagsPage = (props) => {
+  const { posts, tags, tag } = props;
   const title = `${tag.name} | Amplication's Blog`;
 
   return (
@@ -33,14 +33,14 @@ const TagsPage = props => {
   );
 };
 
-export const getServerSideProps = async context => {
+export const getServerSideProps = async (context) => {
   const postsPerPage =
     helpers.getPostPerPage() *
     (context.params.page ? parseInt(context.params.page) : 1);
   const postsTake = postsPerPage + 1;
 
   try {
-    const {data} = await client.query({
+    const { data } = await client.query({
       query: gql`
         query {
           posts(
@@ -77,7 +77,7 @@ export const getServerSideProps = async context => {
       `,
     });
 
-    const tag = data.tags.find(t => t.slug === context.params.tagSlug);
+    const tag = data.tags.find((t) => t.slug === context.params.tagSlug);
     if (!tag) {
       return {
         notFound: true,

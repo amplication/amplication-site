@@ -1,23 +1,22 @@
-import {ApolloProvider} from '@apollo/client';
+import { ApolloProvider } from '@apollo/client';
 import Head from 'next/head';
 import Script from 'next/script';
-import {useRouter} from 'next/router';
-import {DefaultSeo} from 'next-seo';
+import { useRouter } from 'next/router';
+import { DefaultSeo } from 'next-seo';
 import PropTypes from 'prop-types';
-import {useEffect} from 'react';
+import { useEffect } from 'react';
 import Typed from 'typed.js';
 
 import '../styles/globals.css';
 import '../styles/stigg.css';
-// eslint-disable-next-line node/no-extraneous-import
 import 'react-loading-skeleton/dist/skeleton.css';
 import client from '../services/index';
 import * as analytics from '../lib/analytics';
 
-function Amplication({Component, pageProps}) {
-  const {asPath} = useRouter();
+function Amplication({ Component, pageProps }) {
+  const { asPath } = useRouter();
   const isBlogPage = Boolean(
-    asPath.includes('/blog') || asPath.includes('/tags')
+    asPath.includes('/blog') || asPath.includes('/tags'),
   );
 
   const router = useRouter();
@@ -28,10 +27,10 @@ function Amplication({Component, pageProps}) {
   ).split('?')[0];
 
   useEffect(() => {
-    const handleRouteChange = url => {
-      analytics.page(url, {url});
+    const handleRouteChange = (url) => {
+      analytics.page(url, { url });
     };
-    analytics.page(router.asPath, {url: router.asPath});
+    analytics.page(router.asPath, { url: router.asPath });
     //When the component is mounted, subscribe to router changes
     //and log those page views
     router.events.on('routeChangeComplete', handleRouteChange);
@@ -41,11 +40,11 @@ function Amplication({Component, pageProps}) {
     return () => {
       router.events.off('routeChangeComplete', handleRouteChange);
     };
-  }, [router.events]);
+  }, [router.events, router.asPath]);
 
   useEffect(() => {
     const typingAnimations = document.querySelectorAll(
-      '#animated-header-typed'
+      '#animated-header-typed',
     );
     if (typingAnimations.length && isDevPage) {
       new Typed('#animated-header-typed', {
@@ -73,7 +72,7 @@ function Amplication({Component, pageProps}) {
   }, [isBlogPage, isDevPage]);
 
   // Use the layout defined at the page level, if available
-  const getLayout = Component.getLayout || (page => page);
+  const getLayout = Component.getLayout || ((page) => page);
 
   return (
     <>
@@ -91,6 +90,7 @@ function Amplication({Component, pageProps}) {
           href="https://fonts.gstatic.com"
           crossOrigin={'true'}
         />
+        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
         <link
           href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Poppins:wght@300;400;500;600;700;800&family=Ubuntu+Mono&display=swap"
           rel="stylesheet"

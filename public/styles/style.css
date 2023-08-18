@@ -1853,7 +1853,9 @@ body {
   background-clip: padding-box;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition:
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
   .amplication-base .form-control {
@@ -2055,7 +2057,8 @@ body {
 .amplication-base .custom-select.is-valid {
   border-color: #31c587;
   padding-right: calc(0.75em + 2.3125rem);
-  background: url("data:image/svg xml,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'><path fill='#343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/></svg>")
+  background:
+    url("data:image/svg xml,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'><path fill='#343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/></svg>")
       no-repeat right 0.75rem center/8px 10px,
     url("data:image/svg xml,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'><path fill='#31c587' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/></svg>")
       var(--white) no-repeat center right 1.75rem / calc(0.75em + 0.375rem)
@@ -2184,7 +2187,8 @@ body {
 .amplication-base .custom-select.is-invalid {
   border-color: var(--danger);
   padding-right: calc(0.75em + 2.3125rem);
-  background: url("data:image/svg xml,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'><path fill='#343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/></svg>")
+  background:
+    url("data:image/svg xml,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'><path fill='#343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/></svg>")
       no-repeat right 0.75rem center/8px 10px,
     url("data:image/svg xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='var(--danger)' viewBox='0 0 12 12'><circle cx='6' cy='6' r='4.5'/><path stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/><circle cx='6' cy='8.2' r='.6' fill='var(--danger)' stroke='none'/></svg>")
       var(--white) no-repeat center right 1.75rem / calc(0.75em + 0.375rem)
@@ -2333,8 +2337,11 @@ body {
   font-size: 1rem;
   line-height: 1.5;
   border-radius: 4px;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition:
+    color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
   .amplication-base .btn {
@@ -3633,8 +3640,11 @@ body {
   height: calc(-3rem);
   background-color: #adb5bd;
   border-radius: 0.5rem;
-  transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition:
+    transform 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
   .amplication-base .custom-switch .custom-control-label::after {
@@ -3782,13 +3792,19 @@ body {
   outline: none;
 }
 .amplication-base .custom-range:focus::-webkit-slider-thumb {
-  box-shadow: 0 0 0 1px var(--white), 0 0 0 0.2rem rgba(121, 80, 237, 0.25);
+  box-shadow:
+    0 0 0 1px var(--white),
+    0 0 0 0.2rem rgba(121, 80, 237, 0.25);
 }
 .amplication-base .custom-range:focus::-moz-range-thumb {
-  box-shadow: 0 0 0 1px var(--white), 0 0 0 0.2rem rgba(121, 80, 237, 0.25);
+  box-shadow:
+    0 0 0 1px var(--white),
+    0 0 0 0.2rem rgba(121, 80, 237, 0.25);
 }
 .amplication-base .custom-range:focus::-ms-thumb {
-  box-shadow: 0 0 0 1px var(--white), 0 0 0 0.2rem rgba(121, 80, 237, 0.25);
+  box-shadow:
+    0 0 0 1px var(--white),
+    0 0 0 0.2rem rgba(121, 80, 237, 0.25);
 }
 .amplication-base .custom-range::-moz-focus-outer {
   border: 0;
@@ -3800,7 +3816,9 @@ body {
   background-color: var(--primary);
   border: 0;
   border-radius: 1rem;
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+  transition:
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
     box-shadow 0.15s ease-in-out;
   appearance: none;
 }
@@ -3827,7 +3845,9 @@ body {
   background-color: var(--primary);
   border: 0;
   border-radius: 1rem;
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+  transition:
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
     box-shadow 0.15s ease-in-out;
   appearance: none;
 }
@@ -3857,7 +3877,9 @@ body {
   background-color: var(--primary);
   border: 0;
   border-radius: 1rem;
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+  transition:
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
     box-shadow 0.15s ease-in-out;
   appearance: none;
 }
@@ -3905,7 +3927,9 @@ body {
 .amplication-base .custom-control-label::before,
 .amplication-base .custom-file-label,
 .amplication-base .custom-select {
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+  transition:
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
     box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -4669,8 +4693,11 @@ body {
   white-space: nowrap;
   vertical-align: baseline;
   border-radius: 0.25rem;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition:
+    color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
   .amplication-base .badge {
@@ -9574,8 +9601,12 @@ body {
     url(../images/circle-red.svg), url(../images/circle-yellow.svg),
     url(../images/circle-purple.svg), url(../images/circle-green.svg);
   background-repeat: no-repeat;
-  background-position: right -57vw top 70vh, left -20vw bottom -40vw,
-    right -40vw bottom -26vw, left -95vh top 120vh, left 17vw top 140vh;
+  background-position:
+    right -57vw top 70vh,
+    left -20vw bottom -40vw,
+    right -40vw bottom -26vw,
+    left -95vh top 120vh,
+    left 17vw top 140vh;
   background-size: 70vw, 50vw, 52vw, 120vh, 120vh;
 }
 .amplication-base .circles-bg section {
@@ -9585,9 +9616,19 @@ body {
   scroll-behavior: smooth;
 }
 .amplication-base body {
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-    'Helvetica Neue', sans-serif;
+  font-family:
+    'Poppins',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    'Roboto',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
   line-height: 1.7;
   color: var(--white);
   background-color: var(--dark);
@@ -10537,7 +10578,9 @@ body {
     background-image: url(../images/bg/banner-small-free-to-use.png),
       url(../images/bg/banner-small-free-to-use-bg.svg);
     box-shadow: inset 4px -4px 20px 2px rgba(82, 58, 155, 0.22);
-    background-position: bottom right, top left;
+    background-position:
+      bottom right,
+      top left;
     background-size: 80%, cover;
     align-items: center;
     text-align: center;
@@ -11445,8 +11488,8 @@ body {
   white-space: nowrap;
 }
 
-.hubspot input[type="radio"]:checked + label {
-	background: #373D57;
-	border: 1px solid #444B66;
-	box-shadow: 0 20px 26px -16px rgba(21, 25, 44, 0.84);
+.hubspot input[type='radio']:checked + label {
+  background: #373d57;
+  border: 1px solid #444b66;
+  box-shadow: 0 20px 26px -16px rgba(21, 25, 44, 0.84);
 }

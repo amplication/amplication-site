@@ -1,5 +1,5 @@
-import {NextSeo} from 'next-seo';
-import {MainLayout} from '../layouts';
+import { NextSeo } from 'next-seo';
+import { MainLayout } from '../layouts';
 import IframeResizer from 'iframe-resizer-react';
 const testimonialLink =
   'https://embed-v2.testimonial.to/grid/selected/amplication/0?theme=dark&autoplay=off&showmore=on&one-row=on&same-height=off';
@@ -20,7 +20,7 @@ const Testimonials = () => {
               className="transition-all"
               heightCalculationMethod="lowestElement"
               src={testimonialLink}
-              style={{width: '1px', minWidth: '100%'}}
+              style={{ width: '1px', minWidth: '100%' }}
             ></IframeResizer>
           </div>
         </section>

@@ -1,5 +1,5 @@
-import {NextSeo} from 'next-seo';
-import {MainLayout} from '../layouts';
+import { NextSeo } from 'next-seo';
+import { MainLayout } from '../layouts';
 import ReactMarkdown from 'react-markdown';
 import markdown from '../content/sla.md';
 import remarkGfm from 'remark-gfm';

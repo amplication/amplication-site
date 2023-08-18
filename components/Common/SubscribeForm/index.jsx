@@ -1,5 +1,5 @@
-import {useState, useRef} from 'react';
-import {useRouter} from 'next/router';
+import { useState, useRef } from 'react';
+import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import * as analytics from '../../../lib/analytics';
 
@@ -13,19 +13,19 @@ const HUBSPOT_FORM_ID = '3f7e736b-6f89-4a11-94e4-eac111c43486';
 const SUCCESS_MESSAGE = 'Thank you for signing up for our mailing list!';
 const ERROR_MESSAGE = 'Something went wrong. Please try again later.';
 
-const SubscribeForm = ({isCompactView}) => {
+const SubscribeForm = ({ isCompactView }) => {
   const [successMsg, setSuccessMsg] = useState('');
   const [formIsSending, setFormIsSending] = useState(false);
   const router = useRouter();
 
   const form = useRef(null);
 
-  const submitSubscriptionForm = async e => {
+  const submitSubscriptionForm = async (e) => {
     e.preventDefault();
     const formData = new FormData(form.current);
 
     const fields = [];
-    [...formData].forEach(item => {
+    [...formData].forEach((item) => {
       if (item[1]) {
         fields.push({
           name: item[0],
@@ -52,7 +52,7 @@ const SubscribeForm = ({isCompactView}) => {
                 pageName: 'Blog Page',
               },
             }),
-          }
+          },
         );
         const data = await response.json();
         if (data.inlineMessage) {

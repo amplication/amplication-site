@@ -1,4 +1,4 @@
-import {useCallback} from 'react';
+import { useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import VideoWatch from '../../../../public/images/video-watch.png';
@@ -12,7 +12,7 @@ const HeroBlock = () => {
         buttonLocation: 'hero',
       },
     });
-  });
+  }, []);
 
   const handleBookDemoClick = useCallback(() => {
     analytics.event({
@@ -21,7 +21,7 @@ const HeroBlock = () => {
         buttonLocation: 'hero',
       },
     });
-  });
+  }, []);
   return (
     <>
       <section className="page-welcome !pt-10 !pb-8 large:!py-[9vh] xlg:!py-[17vh]">

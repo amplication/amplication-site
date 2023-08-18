@@ -1,4 +1,4 @@
-import {useCallback} from 'react';
+import { useCallback } from 'react';
 import Link from 'next/link';
 import Button from '../../../Common/Button';
 import * as analytics from '../../../../lib/analytics';
@@ -14,7 +14,7 @@ const StartNow = () => {
         buttonLocation: 'footer',
       },
     });
-  });
+  }, []);
 
   const handleContactUsClick = useCallback(() => {
     analytics.event({
@@ -23,7 +23,7 @@ const StartNow = () => {
         buttonLocation: 'footer',
       },
     });
-  });
+  }, []);
 
   return (
     <>

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const Roadmap = ({customClass}) => {
+const Roadmap = ({ customClass }) => {
   const mystyle = {
     color: ' #A787FF',
   };

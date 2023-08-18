@@ -36,7 +36,9 @@
   }
 
   .burger-menu__item:nth-of-type(1) {
-    transition: top 0.3s ease 0.3s, transform 0.3s ease-out 0.1s;
+    transition:
+      top 0.3s ease 0.3s,
+      transform 0.3s ease-out 0.1s;
     @apply top-[1.5px];
   }
 
@@ -46,14 +48,18 @@
   }
 
   .burger-menu__item:nth-of-type(3) {
-    transition: top 0.3s ease 0.3s, transform 0.3s ease-out 0.1s;
+    transition:
+      top 0.3s ease 0.3s,
+      transform 0.3s ease-out 0.1s;
     @apply top-[19.5px];
   }
 
   .burger-menu.burger-menu--active .burger-menu__item:nth-of-type(1) {
     @apply top-[10.5px];
     transform: rotate(45deg);
-    transition: top 0.3s ease 0.1s, transform 0.3s ease-out 0.5s;
+    transition:
+      top 0.3s ease 0.1s,
+      transform 0.3s ease-out 0.5s;
   }
 
   .burger-menu.burger-menu--active .burger-menu__item:nth-of-type(2) {
@@ -63,7 +69,9 @@
   .burger-menu.burger-menu--active .burger-menu__item:nth-of-type(3) {
     @apply top-[10.5px];
     transform: rotate(-45deg);
-    transition: top 0.3s ease 0.1s, transform 0.3s ease-out 0.5s;
+    transition:
+      top 0.3s ease 0.1s,
+      transform 0.3s ease-out 0.5s;
   }
 
   .menu .menu__item {

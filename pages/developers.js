@@ -2,8 +2,8 @@ import HeroBlock from '../components/Sections/MainPage/HeroBlock';
 import Tabs from '../components/Sections/Enterprise/Tabs';
 import Steps from '../components/Sections/MainPage/Steps';
 import Testimonials from '../components/Sections/Enterprise/Testimonials';
-import {NextSeo} from 'next-seo';
-import {MainLayout} from '../layouts';
+import { NextSeo } from 'next-seo';
+import { MainLayout } from '../layouts';
 import Slider from '../components/Sections/Enterprise/Slider';
 import Facts from '../components/Sections/Enterprise/Facts';
 

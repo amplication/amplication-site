@@ -1,19 +1,19 @@
-import {useRouter} from 'next/router';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
-import {Swiper, SwiperSlide} from 'swiper/react';
-import {FreeMode} from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { FreeMode } from 'swiper';
 
 /**
  * @param {{tags: {posts: any[]}[]}} param0
  * @returns
  */
-const Filter = ({tags}) => {
+const Filter = ({ tags }) => {
   const tagClass =
     'px-1 pb-2 cursor-pointer border-b-2 border-transparent inline-block whitespace-nowrap before:absolute before:text-white before:content-[attr(data-before)] before:flex';
 
   const router = useRouter();
-  const {tagSlug} = router.query;
+  const { tagSlug } = router.query;
 
   return (
     <div className="no-scrollbar overflow-x-auto overflow-hidden relative flex flex-row flex-nowrap w-full max-w-container m-container p-container laptop:max-w-container-desktop-blog laptop:m-container-desktop laptop:p-container-desktop text-sm !pb-9 !pt-6 whitespace-nowrap">
@@ -43,7 +43,7 @@ const Filter = ({tags}) => {
           </Link>
         </SwiperSlide>
 
-        {tags.map(tag => {
+        {tags.map((tag) => {
           if (tag.posts.length) {
             return (
               <SwiperSlide key={tag.slug} className={'!w-auto'}>

@@ -1,4 +1,4 @@
-import {useRef} from 'react';
+import { useRef } from 'react';
 import IframeResizer from 'iframe-resizer-react';
 import Link from 'next/link';
 
@@ -20,7 +20,7 @@ const Testimonials = () => {
               autoResize={false}
               className="transition-all"
               src={testimonialLink}
-              style={{width: '1px', minWidth: '100%', minHeight: '400px'}}
+              style={{ width: '1px', minWidth: '100%', minHeight: '400px' }}
               forwardRef={iframe}
             ></IframeResizer>
             <div className="absolute pt-48 inset-0 top-auto flex justify-content-center bg-[linear-gradient(180deg,_transparent_0%,_#15192c_60%,_#15192c_100%)]">

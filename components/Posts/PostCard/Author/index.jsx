@@ -2,7 +2,7 @@ import helpers from '../../../../helpers';
 import PropTypes from 'prop-types';
 import Image from 'next/image';
 
-const Author = props => {
+const Author = (props) => {
   return (
     <div
       className={

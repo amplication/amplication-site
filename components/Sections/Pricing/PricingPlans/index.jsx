@@ -1,9 +1,9 @@
-import {useCallback} from 'react';
-import {StiggProvider, Paywall} from '@stigg/react-sdk';
+import { useCallback } from 'react';
+import { StiggProvider, Paywall } from '@stigg/react-sdk';
 import * as analytics from '../../../../lib/analytics';
 
 export const PricingPlans = () => {
-  const handlePlanSelected = useCallback(({plan}) => {
+  const handlePlanSelected = useCallback(({ plan }) => {
     if (plan.id === 'plan-amplication-free') {
       analytics.event({
         action: 'startNowClicked',
@@ -29,14 +29,14 @@ export const PricingPlans = () => {
       });
       window.location.href = '/contact-us';
     }
-  });
+  }, []);
 
   return (
     <div className="stigg-wrapper">
       <StiggProvider apiKey={process.env.NEXT_PUBLIC_BILLING_API_KEY}>
         <Paywall
           textOverrides={{
-            entitlementsTitle: plan => {
+            entitlementsTitle: (plan) => {
               return plan.basePlan
                 ? `Everything in ${plan.basePlan.displayName} plan, plus:`
                 : 'All core backend functionality:';

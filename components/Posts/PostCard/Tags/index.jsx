@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 
-const Tags = ({list, className, isLink}) => {
+const Tags = ({ list, className, isLink }) => {
   if (list.length) {
     return (
       <div
@@ -10,7 +10,7 @@ const Tags = ({list, className, isLink}) => {
           (className !== 'undefined' ? className : '')
         }
       >
-        {list.map(tag => {
+        {list.map((tag) => {
           return (
             <span
               className="py-1 px-2 bg-light-blue rounded-full border border-solid border-lite mr-1.5 leading-tag font-medium"

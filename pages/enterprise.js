@@ -7,69 +7,69 @@ import enterprise1 from '../public/images/enterprise/enterprise-1.png';
 import enterprise2 from '../public/images/enterprise/enterprise-2.png';
 import enterprise3 from '../public/images/enterprise/enterprise-3.png';
 import enterprise4 from '../public/images/enterprise/enterprise-4.png';
-import {NextSeo} from 'next-seo';
-import {MainLayout} from '../layouts';
+import { NextSeo } from 'next-seo';
+import { MainLayout } from '../layouts';
 import helpers from '../helpers';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const Features = () => {
-  const features = [
-    {
-      image: enterprise1,
-      title: 'All-in-One Platform',
-      customClasses: '!pb-8',
-      secondaryBtn: {
-        title: 'Learn More',
-        href: 'https://docs.amplication.com/getting-started/',
-      },
-      content:
-        '<p>Amplication Enterprise makes the most of any use case from data-driven applications to complex workflows. Our platform automates the creation of any backend foundations with all standards built-in, so your developers can focus on creating custom solutions for your business.</p>',
+const features = [
+  {
+    image: enterprise1,
+    title: 'All-in-One Platform',
+    customClasses: '!pb-8',
+    secondaryBtn: {
+      title: 'Learn More',
+      href: 'https://docs.amplication.com/getting-started/',
     },
-    {
-      image: enterprise2,
-      title: 'Unparalleled Efficiency and Speed',
-      customClasses: '!pt-8',
-      secondaryBtn: {
-        title: 'Book a Demo',
-        href: '/contact-us',
-      },
-      content:
-        '<p>Amplication Enterprise allows you to build, manage and scale applications at the speed of light. With our platform you can create applications faster and with fewer resources. Generate all the necessary foundations for your service in a few clicks and tailor applications to your unique needs.</p>',
-      buttons: [],
+    content:
+      '<p>Amplication Enterprise makes the most of any use case from data-driven applications to complex workflows. Our platform automates the creation of any backend foundations with all standards built-in, so your developers can focus on creating custom solutions for your business.</p>',
+  },
+  {
+    image: enterprise2,
+    title: 'Unparalleled Efficiency and Speed',
+    customClasses: '!pt-8',
+    secondaryBtn: {
+      title: 'Book a Demo',
+      href: '/contact-us',
     },
-    {
-      image: enterprise3,
-      title: 'Secure, Reliable Solutions',
-      customClasses: '!pb-6',
-      primaryBtn: {
-        title: 'Contact Sales',
-        href: '/contact-us',
-      },
-      secondaryBtn: {
-        title: 'Start Now',
-        href: 'https://app.amplication.com/login',
-      },
-      content:
-        '<p>Amplication Enterprise includes built-in security measures that ensure the safety of your data and applications. Our platform offers Authentication and Authorization options, combined with regular audits, and ongoing vulnerability assessments, so you can rest assured that your applications will run smoothly and reliably.</p>',
+    content:
+      '<p>Amplication Enterprise allows you to build, manage and scale applications at the speed of light. With our platform you can create applications faster and with fewer resources. Generate all the necessary foundations for your service in a few clicks and tailor applications to your unique needs.</p>',
+    buttons: [],
+  },
+  {
+    image: enterprise3,
+    title: 'Secure, Reliable Solutions',
+    customClasses: '!pb-6',
+    primaryBtn: {
+      title: 'Contact Sales',
+      href: '/contact-us',
     },
-    {
-      image: enterprise4,
-      title: 'Seamless Integration and Scale',
-      customClasses: '!pb-8',
-      primaryBtn: {
-        title: 'Contact Sales',
-        href: '/contact-us',
-      },
-      secondaryBtn: {
-        title: 'Start Now',
-        href: 'https://app.amplication.com/login',
-      },
-      content:
-        '<p>Amplication Enterprise is designed to grow with your business. Our platform integrates seamlessly with your existing CI/CD pipelines, enabling you to easily scale with increased business demand.</p>',
+    secondaryBtn: {
+      title: 'Start Now',
+      href: 'https://app.amplication.com/login',
     },
-  ];
+    content:
+      '<p>Amplication Enterprise includes built-in security measures that ensure the safety of your data and applications. Our platform offers Authentication and Authorization options, combined with regular audits, and ongoing vulnerability assessments, so you can rest assured that your applications will run smoothly and reliably.</p>',
+  },
+  {
+    image: enterprise4,
+    title: 'Seamless Integration and Scale',
+    customClasses: '!pb-8',
+    primaryBtn: {
+      title: 'Contact Sales',
+      href: '/contact-us',
+    },
+    secondaryBtn: {
+      title: 'Start Now',
+      href: 'https://app.amplication.com/login',
+    },
+    content:
+      '<p>Amplication Enterprise is designed to grow with your business. Our platform integrates seamlessly with your existing CI/CD pipelines, enabling you to easily scale with increased business demand.</p>',
+  },
+];
 
+const Features = () => {
   return (
     <>
       <NextSeo
@@ -109,7 +109,7 @@ const Features = () => {
                     </div>
                     <div
                       className="text-sm desktop:text-lg text-white desktop:!leading-[27px] max-w-[600px]"
-                      dangerouslySetInnerHTML={{__html: feature.content}}
+                      dangerouslySetInnerHTML={{ __html: feature.content }}
                     ></div>
                     <div className="buttons-wrapper d-flex tablet:align-items-center justify-content-start mt-4">
                       {feature.primaryBtn && (

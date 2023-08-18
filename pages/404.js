@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import PageNotFoundIcon from '../public/images/404.png';
 import Link from 'next/link';
-import {NextSeo} from 'next-seo';
-import {MainLayout} from '../layouts';
+import { NextSeo } from 'next-seo';
+import { MainLayout } from '../layouts';
 
 const errorPage = () => {
   return (

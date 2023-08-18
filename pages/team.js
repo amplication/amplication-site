@@ -1,7 +1,7 @@
 import HeroBlock from '../components/Sections/Team/HeroBlock';
 import TeamBlock from '../components/Sections/Team/TeamBlock';
-import {NextSeo} from 'next-seo';
-import {MainLayout} from '../layouts';
+import { NextSeo } from 'next-seo';
+import { MainLayout } from '../layouts';
 
 const Team = () => {
   return (

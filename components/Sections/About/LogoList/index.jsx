@@ -5,9 +5,9 @@ import LogoVertex from '../../../../public/images/logotypes/logo-vertex.png';
 
 const LogoList = () => {
   const logos = [
-    {logo: LogoNorwest, name: 'Norwest'},
-    {logo: LogoVertex, name: 'Vertex Ventures'},
-    {logo: LogoEntree, name: 'Entrée Capital'},
+    { logo: LogoNorwest, name: 'Norwest' },
+    { logo: LogoVertex, name: 'Vertex Ventures' },
+    { logo: LogoEntree, name: 'Entrée Capital' },
   ];
   return (
     <>

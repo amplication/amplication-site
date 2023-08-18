@@ -1,38 +1,3 @@
 {
-  "extends": [
-    "./node_modules/gts/",
-    "plugin:react/recommended",
-    "plugin:react/jsx-runtime"
-  ],
-  "parser": "@babel/eslint-parser",
-  "parserOptions": {
-    "requireConfigFile": false,
-    "ecmaVersion": 2018,
-    "sourceType": "module",
-    "babelOptions": {
-      "presets": ["@babel/preset-react"]
-    }
-  },
-  "env": {
-    "browser": true,
-    "es6": true,
-    "node": true
-  },
-  "globals": {},
-  "rules": {
-    "node/no-missing-import": [
-      "error",
-      {
-        "tryExtensions": [".js", ".json", ".jsx", ".node"]
-      }
-    ],
-    "node/no-unpublished-import": 0,
-    "node/no-unpublished-require": 0,
-    "node/no-unsupported-features/es-syntax": 0
-  },
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
-  }
+  "extends": "next/core-web-vitals"
 }

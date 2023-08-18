@@ -2,8 +2,8 @@ import HeroBlock from '../components/Sections/About/HeroBlock';
 import Steps from '../components/Sections/About/Steps';
 import LogoList from '../components/Sections/About/LogoList';
 import UsersList from '../components/Sections/About/UsersList';
-import {NextSeo} from 'next-seo';
-import {MainLayout} from '../layouts';
+import { NextSeo } from 'next-seo';
+import { MainLayout } from '../layouts';
 
 const About = () => {
   return (

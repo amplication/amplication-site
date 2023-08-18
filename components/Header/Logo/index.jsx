@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import logoMobileImage from '../../../public/images/logo.svg';
 import logoDesktopImage from '../../../public/images/logo_desktop.svg';
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 
 const Logo = () => {
   const [isMobile, setIsMobile] = useState(true);

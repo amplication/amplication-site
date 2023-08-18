@@ -1,19 +1,16 @@
-import {gql} from '@apollo/client';
-// eslint-disable-next-line node/no-extraneous-import
+import { gql } from '@apollo/client';
 import 'highlight.js/styles/github-dark-dimmed.css';
 import Link from 'next/link';
-import {NextSeo} from 'next-seo';
+import { NextSeo } from 'next-seo';
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 import rehypeHighlight from 'rehype-highlight';
 import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
-import {Pagination} from 'swiper';
-// eslint-disable-next-line node/no-missing-import
+import { Pagination } from 'swiper';
 import 'swiper/css';
-// eslint-disable-next-line node/no-missing-import
 import 'swiper/css/pagination';
-import {Swiper, SwiperSlide} from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import CtaBanner from '../../components/Common/CtaBanner';
 
 import client from '../../services';
@@ -26,7 +23,7 @@ import Title from '../../components/Posts/PostCard/Title';
 import PostCard from '../../components/Posts/PostCard';
 import Sidebar from '../../components/Sidebar';
 import errorPage from '../404';
-import {MainLayout} from '../../layouts';
+import { MainLayout } from '../../layouts';
 import TOC from '../../components/Posts/TOC';
 
 const CTA1 = () => {
@@ -36,14 +33,14 @@ const CTA2 = () => {
   return <CtaBanner bgVersion={'version2'}></CtaBanner>;
 };
 
-const Post = ({posts, post}) => {
+const Post = ({ posts, post }) => {
   if (!post) {
     return errorPage();
   }
 
   const title = post.metaTitle || post.title;
   const description = helpers.trimText(
-    post.metaDescription || helpers.removeMarkdown(post.content)
+    post.metaDescription || helpers.removeMarkdown(post.content),
   );
   const headings = helpers.generateHeadings(post.content);
   const author = (post.author?.firstName + ' ' + post.author?.lastName).trim();
@@ -53,7 +50,7 @@ const Post = ({posts, post}) => {
     : '@' + twitterHandle;
 
   const contentWithCta = helpers.injectCtaToMarkdown(
-    helpers.demoteHeadings(post.content)
+    helpers.demoteHeadings(post.content),
   );
 
   return (
@@ -227,9 +224,9 @@ const Post = ({posts, post}) => {
   );
 };
 
-export const getStaticProps = async context => {
+export const getStaticProps = async (context) => {
   try {
-    const {data} = await client.query({
+    const { data } = await client.query({
       query: gql`
         query {
           posts(where: {slug: {equals: "${context.params.slug}"}}) {
@@ -264,7 +261,7 @@ export const getStaticProps = async context => {
       const tags =
         post.tags && post.tags.length
           ? `, tags: {some: {id: {in: ["${post.tags
-              .map(tag => {
+              .map((tag) => {
                 return tag.id;
               })
               .join('" ,"')}"]}}}`
@@ -314,10 +311,10 @@ export const getStaticProps = async context => {
 };
 
 export async function getStaticPaths() {
-  const {data} = await client.query({
+  const { data } = await client.query({
     query: gql`
       query {
-        posts(take: 1000, orderBy: {publishedAt: Desc}) {
+        posts(take: 1000, orderBy: { publishedAt: Desc }) {
           slug
           title
         }
@@ -325,13 +322,13 @@ export async function getStaticPaths() {
     `,
   });
 
-  const paths = data.posts.map(post => ({
+  const paths = data.posts.map((post) => ({
     params: {
       slug: post.slug,
     },
   }));
 
-  return {paths, fallback: 'blocking'};
+  return { paths, fallback: 'blocking' };
 }
 
 Post.propTypes = {

@@ -4,15 +4,15 @@ import styles from './style.module.css';
 /**
  * @param {{headings: Heading[], open: boolean}} props
  */
-const TOC = props => {
-  const smoothScroll = e => {
+const TOC = (props) => {
+  const smoothScroll = (e) => {
     e.preventDefault();
     const id = e.target.getAttribute('data-id');
     const header = document.getElementById(id);
     const offset =
       header.getBoundingClientRect().top + window.pageYOffset - 150;
     history.replaceState(undefined, undefined, `#${id}`);
-    window.scrollTo({top: offset, behavior: 'smooth'});
+    window.scrollTo({ top: offset, behavior: 'smooth' });
   };
 
   return props.headings.length === 0 ? (
@@ -27,7 +27,7 @@ const TOC = props => {
           <li key={i} className={styles.toc__element}>
             {h.title ? (
               <a
-                onClick={e => smoothScroll(e)}
+                onClick={(e) => smoothScroll(e)}
                 data-id={h.id}
                 href={'#' + h.id}
               >
@@ -41,7 +41,7 @@ const TOC = props => {
                 {h.children.map((c, i) => (
                   <li key={i} className={styles.toc__element}>
                     <a
-                      onClick={e => smoothScroll(e)}
+                      onClick={(e) => smoothScroll(e)}
                       data-id={c.id}
                       href={'#' + c.id}
                     >

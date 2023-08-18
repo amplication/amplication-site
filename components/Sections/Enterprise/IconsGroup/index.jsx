@@ -9,12 +9,11 @@ import icon7 from '../../../../public/images/icons/icon-7.svg';
 import icon8 from '../../../../public/images/icons/icon-8.svg';
 import icon9 from '../../../../public/images/icons/icon-9.svg';
 
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 
-// eslint-disable-next-line node/no-missing-import
 import 'swiper/css';
-import {Swiper, SwiperSlide} from 'swiper/react';
-import {Autoplay} from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper';
 
 const IconsGroup = () => {
   const [isMobile, setIsMobile] = useState(true);
@@ -108,7 +107,7 @@ const IconsGroup = () => {
                     )}
                     <span
                       className="mt-2"
-                      dangerouslySetInnerHTML={{__html: item.title}}
+                      dangerouslySetInnerHTML={{ __html: item.title }}
                     ></span>
                   </SwiperSlide>
                 );
@@ -130,7 +129,7 @@ const IconsGroup = () => {
                   )}
                   <span
                     className="mt-2"
-                    dangerouslySetInnerHTML={{__html: item.title}}
+                    dangerouslySetInnerHTML={{ __html: item.title }}
                   ></span>
                 </div>
               );

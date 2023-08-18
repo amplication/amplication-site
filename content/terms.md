@@ -36,7 +36,7 @@ whatsoever, or any part or aspect thereof; and (ii) any derivative work of the S
 
 (g) "**Update**" means an upgrade, update (such as a fix or patch), or other modification, improvement, enhancement or customization to or of the Software.
 
-## 2. LICENSE. 
+## 2. LICENSE.
 
 Subject to Your compliance with the terms of this Agreement (including without limitation the License Restrictions in the section below), Amplication grants You a limited, personal, non-exclusive, revocable, non-sublicensable, non-assignable, and non-transferable license, during the Term, to access, install and use the Software, download the Source Available Code (in whole but not in part), solely for Your own internal business or personal use, all as further specified herein (the "License"). You agree to use the Software in accordance with such documentation. Further, You must only install the Software on a device that you own or control. For the avoidance of doubt, the Software (and its copies) are only licensed, and not sold, to You. Any rights not expressly granted to You in this Agreement are hereby reserved by Amplication and its licensors, and, except for the License, You are granted no other right or license in or to the Software, whether by implied license, estoppel, exhaustion, operation of law, or otherwise. Nothing in this Agreement shall in any way limit or restrict Amplication’s ability to use the Software for any purpose whatsoever, including commercialization, sale, distribution or the right to make Modifications.
 
@@ -50,23 +50,23 @@ For clarity, the License does not apply to use of the Software's "core" componen
 
 ## 4. PAYMENT.
 
-4.1. Fees. 
+4.1. Fees.
 
-If You ordered a paid License (rather than a free License), You agree to pay all fees stated in the Order Form, and in accordance with such Order Form's payment terms (such fees, the “Fees”). 
+If You ordered a paid License (rather than a free License), You agree to pay all fees stated in the Order Form, and in accordance with such Order Form's payment terms (such fees, the “Fees”).
 
-4.2. General. 
+4.2. General.
 
 Except as otherwise expressly stated in Section 13 (Term and Termination) below or in an Order Form: (a) all Fees are stated, and are to be paid, in US Dollars; (b) all Fees are payable in advance; (c) all payments under this Agreement are non-refundable, and are without any right of set-off or cancellation; and (d) any amount not paid when due will accrue interest on a daily basis until paid in full, at the lesser of: (a) the rate of one and a half percent (1.5%) per month; and (b) the highest amount permitted by applicable law. Fees are exclusive of all current and future taxes, including without limitation, sales, use, value-added, withholding or other taxes or levies on transactions made under this Agreement. If any taxes, exclusive of taxes imposed upon Amplication’s net income, are found to be applicable, the appropriate amount of tax shall be invoiced to and paid by You. If a certificate of exemption or similar document is required to exempt You from sales or use tax liability, You shall obtain and furnish to Amplication evidence of such exemption with the Order Form, in a form satisfactory to Amplication.
 
-## 5. SERVICE LEVELS, UPDATES AND TECHNICAL SUPPORT. 
+## 5. SERVICE LEVELS, UPDATES AND TECHNICAL SUPPORT.
 
 Amplication may from time to time provide service levels, Updates and technical support, but shall not be under any obligation to do so. Software Service levels are available at [https://amplication.com/sla](https://amplication.com/sla) and may be offered only for certain License plans. Updates and technical support will be supplied according to whatever then-current internal policies We may have in place, and some Updates may in any event be limited, suspended or restricted by geography, volume, duration or any other criteria decided by Amplication in its sole discretion. Some Updates may include automatic updating or upgrading without any notice or obligation to Customer, and Customer consents to any such automatic updating or upgrading of the Software. In some cases, Customer may be required to install the Update manually. Updates and technical support may be accompanied by additional terms and conditions. Amplication may in its sole discretion charge for Updates and/or technical support and/or require additional personal information.
 
-## 6. ADDITIONAL SERVICES. 
+## 6. ADDITIONAL SERVICES.
 
 Amplication may provide in the future specific paid features, tools, modules, or functionality of the Software (collectively "**Features**"). Access to such Features and/or receiving additional License metric volume, if applicable, during the Term (collectively, "**Additional Services**") shall be mutually agreed in writing, in each case according to the pricing agreed between the Parties (or the pricing pre-agreed in the Order Form, if any). Order Forms shall be subject to the terms and conditions of this Agreement.
 
-## 7. OPEN SOURCE SOFTWARE. 
+## 7. OPEN SOURCE SOFTWARE.
 
 The Software may include what is commonly referred to as 'open source' software. Under some of their respective license terms and conditions, Amplication may be required to provide You with notice of the license terms and attribution to the third party, in which case Amplication may provide You with such information (whether via the Site, as a file within the Software, or otherwise). Notwithstanding anything to the contrary herein, use of open source software included in the Software will be subject to the license terms and conditions applicable to such open source software, to the extent required by the applicable license (which terms and conditions shall not restrict the license rights granted to you hereunder), and to the extent any such license terms and conditions grant You rights that are inconsistent with the limited rights granted to You in this Agreement, then such rights in the applicable open source license shall take precedence over the rights and restrictions granted in this Agreement, but solely with respect to such open source software. Amplication will comply with any valid written request submitted by You to us for exercising any rights You may have under such license terms and conditions (but We make no commitment on how quickly We will comply). The "**Site**" means Amplication's official website and/or its Software repositories.
 
@@ -91,7 +91,7 @@ THE SOFTWARE, AS WELL AS ANY OTHER GOODS OR SERVICES PROVIDED OR MADE AVAILABLE 
 
 JURISDICTION DOES NOT ALLOW THE EXCLUSION OR THE LIMITATION OF LIABILITY FOR CONSEQUENTIAL OR INCIDENTAL DAMAGES, OR OF LIABILITY FOR PERSONAL INJURY OR DEATH CAUSED BY NEGLIGENCE); (ii) EVEN IF AMPLICATION OR ITS AFFILIATES HAVE BEEN ADVISED, OR SHOULD HAVE BEEN AWARE, OF THE POSSIBILITY OF LOSSES, DAMAGES, OR COSTS; (iii) EVEN IF ANY REMEDY IN THIS AGREEMENT FAILS OF ITS ESSENTIAL PURPOSE; AND (iv) REGARDLESS OF THE THEORY OR BASIS OF LIABILITY, INCLUDING WITHOUT LIMITATION BREACH OF WARRANTY, NEGLIGENCE, MISREPRESENTATION, STRICT LIABILITY, OR OTHER CONTRACT, TORT OR STATUTORY LIABILITY.
 
-# 11. CONFIDENTIALITY. 
+# 11. CONFIDENTIALITY.
 
 The Software, including any information and documentation related thereto that are not in the public domain (the "**Confidential Information**"), are proprietary and confidential information of Amplication. You shall keep in full confidence any information in connection with the Confidential Information and under access and use restrictions sufficient to protect copying, usage or disclosure thereof. Such restrictions will be reasonable and at least as stringent as those applied to Your most valuable confidential and proprietary information. No Confidential Information shall be disclosed by You to any third party, unless Amplication has agreed to such disclosure in writing and in advance. The provisions of this Section shall remain in full force and effect after termination of this Agreement for whatever reason.
 
@@ -113,11 +113,11 @@ The Software, including any information and documentation related thereto that a
 
 13.5. Survival. Termination of this Agreement shall not affect any rights or obligations that accrued as of the effective date of termination. Any provision of this Agreement that ought by its nature to survive termination, shall survive (including without limitation Sections 5 (Ownership; Feedback) through 13 (General)).
 
-## 14. REFERENCE. 
+## 14. REFERENCE.
 
 Amplication may refer to You as a customer on the Site and in sales and marketing presentations and may use Your trademarks solely for such purposes.
 
-## 15. GOVERNING LAW AND JURISDICTION. 
+## 15. GOVERNING LAW AND JURISDICTION.
 
 This Agreement shall be governed by, and construed in accordance with, the laws of the State of Israel without regard to any conflicts of laws rules or principles. The United Nations Convention on Contracts for the International Sale of Goods shall not apply to this Agreement and is hereby disclaimed. Any claim, dispute or controversy between the parties will be subject to the exclusive jurisdiction and venue of the courts located in Tel Aviv, Israel and each Party hereby irrevocably submits to the personal jurisdiction of such courts and waives any jurisdictional, venue, or inconvenient forum objections to such courts. Notwithstanding the foregoing, Amplication may seek equitable relief in any court of competent jurisdiction. EXCEPT TO SEEK EQUITABLE RELIEF, OR TO OTHERWISE PROTECT OR ENFORCE A PARTY'S INTELLECTUAL PROPERTY RIGHTS OR LICENSE RIGHTS OR OBLIGATIONS, NO ACTION, REGARDLESS OF FORM, UNDER THIS AGREEMENT MAY BE BROUGHT BY EITHER PARTY MORE THAN ONE (1) YEAR AFTER THE DATE ON WHICH THE CORRESPONDING LIABILITY AROSE. OTHERWISE, YOU AGREE THAT SUCH CAUSE OF ACTION SHALL BE DEEMED PERMANENTLY BARRED. Any claims or damages that You may have against Amplication shall only be enforceable against Amplication, and not any other entity (such as Amplication's Affiliates or licensors) or Amplication's officers, directors, representatives, employees, or agents.
 

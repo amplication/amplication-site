@@ -1,17 +1,15 @@
-import {NextSeo} from 'next-seo';
-import {MainLayout} from '../layouts';
-import {useRef, useState} from 'react';
-import {useRouter} from 'next/router';
+import { NextSeo } from 'next-seo';
+import { MainLayout } from '../layouts';
+import { useRef, useState } from 'react';
+import { useRouter } from 'next/router';
 import Slider from '../components/Sections/Enterprise/Slider';
 
 import helpers from '../helpers';
 
-// eslint-disable-next-line node/no-missing-import
 import 'swiper/css';
-// eslint-disable-next-line node/no-missing-import
 import 'swiper/css/pagination';
-import {Pagination} from 'swiper';
-import {Swiper, SwiperSlide} from 'swiper/react';
+import { Pagination } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 import avatar1 from '../public/images/testimonials/testimonial-1.png';
 import avatar2 from '../public/images/testimonials/testimonial-2.png';
@@ -29,12 +27,12 @@ const ContactUs = () => {
   const router = useRouter();
   const form = useRef(null);
 
-  const submitSubscriptionForm = async e => {
+  const submitSubscriptionForm = async (e) => {
     e.preventDefault();
     const formData = new FormData(form.current);
 
     const fields = [];
-    [...formData].forEach(item => {
+    [...formData].forEach((item) => {
       if (item[1]) {
         fields.push({
           name: item[0],
@@ -61,7 +59,7 @@ const ContactUs = () => {
               pageName: 'Contact Us',
             },
           }),
-        }
+        },
       );
       const data = await response.json();
       if (data.inlineMessage) {
@@ -86,7 +84,7 @@ const ContactUs = () => {
     }
   };
 
-  const onChangeHandler = e => {
+  const onChangeHandler = (e) => {
     const styles = getComputedStyle(e.target, null),
       rows = parseInt(e.target.getAttribute('rows')) || 2,
       lines = parseInt(styles.getPropertyValue('line-height')) * rows,
@@ -195,7 +193,7 @@ const ContactUs = () => {
                   <form
                     className="hubspot w-full flex flex-col justify-start items-stretch laptop:flex-row laptop:flex-wrap laptop:items-start laptop:justify-between"
                     method="POST"
-                    onSubmit={e => submitSubscriptionForm(e)}
+                    onSubmit={(e) => submitSubscriptionForm(e)}
                     ref={form}
                   >
                     <div className="relative w-full !mt-6">
@@ -409,7 +407,7 @@ const ContactUs = () => {
                     </svg>
                     <h3
                       className="!font-bold !text-[32px] !leading-[52px] max-w-[560px]"
-                      dangerouslySetInnerHTML={{__html: successMsg}}
+                      dangerouslySetInnerHTML={{ __html: successMsg }}
                     />
                     <div className="font-normal text-lg leading-[27px] mt-2 max-w-[560px]">
                       We invite you to stay logged in and discover more about

@@ -17,7 +17,7 @@ const StartNow = ({
         {description && (
           <div
             className="mx-auto text-lg font-normal leading-[27px] tracking-normal text-center max-w-[780px]"
-            dangerouslySetInnerHTML={{__html: description}}
+            dangerouslySetInnerHTML={{ __html: description }}
           ></div>
         )}
         <div className="d-flex justify-content-center align-items-center mt-8">

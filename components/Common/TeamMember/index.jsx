@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const TeamMember = ({name, position, image, links}) => {
+const TeamMember = ({ name, position, image, links }) => {
   return (
     <>
       <div className="team-member">

@@ -54,7 +54,7 @@ const Features = () => {
                   )}
                   <div
                     className="solution-content text-base large:text-lg text-white text-center tablet:max-w-[270px] mt-[0.75rem] large:mt-3 large:!leading-7"
-                    dangerouslySetInnerHTML={{__html: item.content}}
+                    dangerouslySetInnerHTML={{ __html: item.content }}
                   ></div>
                 </div>
               );

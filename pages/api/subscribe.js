@@ -1,4 +1,4 @@
-import {Client} from '@hubspot/api-client';
+import { Client } from '@hubspot/api-client';
 
 const hubspotClient = new Client({
   accessToken: process.env.NEXT_PRIVATE_HUBSPOT_PAT,
@@ -27,10 +27,10 @@ export default async function handler(req, res) {
         reportedsource: body.SOURCE,
       },
     });
-    res.end(JSON.stringify({result: 'success'}));
+    res.end(JSON.stringify({ result: 'success' }));
   } catch (e) {
     if (e.body.category === 'CONFLICT')
-      return res.end(JSON.stringify({result: 'success'}));
+      return res.end(JSON.stringify({ result: 'success' }));
     console.warn(e);
     res.end();
   }

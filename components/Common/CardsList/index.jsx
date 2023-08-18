@@ -2,14 +2,13 @@ import Image from 'next/image';
 import icon1 from '../../../public/images/icons/icon-1.svg';
 import PropTypes from 'prop-types';
 
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 
-// eslint-disable-next-line node/no-missing-import
 import 'swiper/css';
-import {Swiper, SwiperSlide} from 'swiper/react';
-import {Autoplay} from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper';
 
-const CardsList = ({title, subTitle, cards, customClasses}) => {
+const CardsList = ({ title, subTitle, cards, customClasses }) => {
   const [isMobile, setIsMobile] = useState(true);
 
   useEffect(() => {
@@ -65,13 +64,13 @@ const CardsList = ({title, subTitle, cards, customClasses}) => {
                     )}
                     <span
                       className="mt-2 text-xl mb-1 font-semibold text-center text-[24px]"
-                      style={{color: '#A787FF'}}
-                      dangerouslySetInnerHTML={{__html: item.title}}
+                      style={{ color: '#A787FF' }}
+                      dangerouslySetInnerHTML={{ __html: item.title }}
                     ></span>
                     {item.subTitle && (
                       <span
                         className="font-light text-[18px] tablet:!text-base laptop:!text-lg leading-normal text-center text-white max-w-[360px]"
-                        dangerouslySetInnerHTML={{__html: item.subTitle}}
+                        dangerouslySetInnerHTML={{ __html: item.subTitle }}
                       ></span>
                     )}
                   </SwiperSlide>
@@ -94,13 +93,13 @@ const CardsList = ({title, subTitle, cards, customClasses}) => {
                   )}
                   <span
                     className="mt-2 text-xl mb-1 font-semibold text-center text-[24px]"
-                    style={{color: '#A787FF'}}
-                    dangerouslySetInnerHTML={{__html: item.title}}
+                    style={{ color: '#A787FF' }}
+                    dangerouslySetInnerHTML={{ __html: item.title }}
                   ></span>
                   {item.subTitle && (
                     <span
                       className="font-light text-[18px] tablet:!text-base laptop:!text-lg leading-normal text-center text-white max-w-[360px]"
-                      dangerouslySetInnerHTML={{__html: item.subTitle}}
+                      dangerouslySetInnerHTML={{ __html: item.subTitle }}
                     ></span>
                   )}
                 </div>
