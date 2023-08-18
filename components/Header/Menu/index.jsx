@@ -18,7 +18,7 @@ const Menu = () => {
         buttonLocation: 'header',
       },
     });
-  });
+  },[]);
 
   const handleMenuClick = useCallback(menuItem => {
     if (menuItem && menuItem.onClickEventName) {
@@ -27,7 +27,7 @@ const Menu = () => {
         params: menuItem.onClickEventParams,
       });
     }
-  });
+  },[]);
 
   const menuItems = [
     {
@@ -144,7 +144,7 @@ const Menu = () => {
     if (hoveredLink !== '') {
       setHoveredLink(null);
     }
-  }, [asPath]);
+  }, [asPath, hoveredLink]);
 
   useEffect(() => {
     window.addEventListener('resize', () => {

@@ -1,5 +1,4 @@
 {
-  "extends": "./node_modules/gts/tsconfig-google.json",
   "include": [
     "src/**/*.ts",
     "test/**/*.ts"
@@ -12,6 +11,18 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
-  }
+    "jsx": "preserve",
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext"
+  },
+  "exclude": [
+    "node_modules"
+  ]
 }

@@ -9,6 +9,7 @@
     "start": "next start",
     "stage": "next start -p 3001",
     "lint": "next lint",
+    "lint:fix": "next lint --fix",
     "format": "prettier --check .",
     "format:fix": "prettier --write ."
   },

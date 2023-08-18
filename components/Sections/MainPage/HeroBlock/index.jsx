@@ -13,7 +13,7 @@ const HeroBlock = () => {
         buttonLocation: 'developers-hero',
       },
     });
-  });
+  },[]);
 
   useEffect(() => {
     fetch('https://api.github.com/repos/amplication/amplication', {

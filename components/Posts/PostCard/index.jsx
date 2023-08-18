@@ -18,7 +18,7 @@ const PostCard = props => {
         slug: post.slug,
       },
     });
-  });
+  },[post.slug, props.clickEventName]);
 
   if (Object.keys(post).length) {
     return (

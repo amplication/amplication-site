@@ -18,7 +18,7 @@ const PostHot = props => {
         slug: post.slug,
       },
     });
-  });
+  },[post.slug]);
 
   const abridgedContent = helpers
     .removeMarkdown(post?.content ?? '')

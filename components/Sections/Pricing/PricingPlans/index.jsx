@@ -29,7 +29,7 @@ export const PricingPlans = () => {
       });
       window.location.href = '/contact-us';
     }
-  });
+  },[]);
 
   return (
     <div className="stigg-wrapper">

@@ -11,7 +11,6 @@ import icon9 from '../../../../public/images/icons/icon-9.svg';
 
 import {useEffect, useState} from 'react';
 
-// eslint-disable-next-line node/no-missing-import
 import 'swiper/css';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {Autoplay} from 'swiper';

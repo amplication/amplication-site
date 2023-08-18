@@ -14,7 +14,7 @@ const StartNow = () => {
         buttonLocation: 'footer',
       },
     });
-  });
+  },[]);
 
   const handleContactUsClick = useCallback(() => {
     analytics.event({
@@ -23,7 +23,7 @@ const StartNow = () => {
         buttonLocation: 'footer',
       },
     });
-  });
+  },[]);
 
   return (
     <>

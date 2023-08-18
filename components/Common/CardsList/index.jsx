@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 import {useEffect, useState} from 'react';
 
-// eslint-disable-next-line node/no-missing-import
 import 'swiper/css';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {Autoplay} from 'swiper';

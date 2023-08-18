@@ -16,7 +16,7 @@ const CtaBanner = ({bgVersion, title, subTitle, buttonText, buttonUrl}) => {
         pageUri: router.asPath,
       },
     });
-  });
+  },[bgVersion,router.asPath]);
 
   const bgStyle =
     bgVersion === 'version1'

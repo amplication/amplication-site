@@ -2,7 +2,6 @@ import Link from 'next/link';
 import {useRouter} from 'next/router';
 import PropTypes from 'prop-types';
 import {useEffect, useState} from 'react';
-// eslint-disable-next-line node/no-missing-import
 import 'swiper/css';
 
 import PostCard from './PostCard';
@@ -46,7 +45,7 @@ const Posts = ({posts}) => {
       setPostsList([]);
     }
     setLoader(false);
-  }, [posts]);
+  }, [page, postPerPage, posts]);
 
   return (
     <>
