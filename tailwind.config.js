@@ -146,6 +146,8 @@ module.exports = {
         'form-pattern-2-desktop': "url('/images/decor_2_desktop.svg')",
         'cta-1': "url('/images/bg/cta-bg-1.png')",
         'cta-2': "url('/images/bg/cta-bg-2.png')",
+        'cta-1-small': "url('/images/bg/cta-bg-1-small.png')",
+        'cta-2-small': "url('/images/bg/cta-bg-2-small.png')",
         noise: "url('/images/noise.png')",
         quote: "url('/images/bg/quotes.svg')",
       },
