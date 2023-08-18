@@ -144,7 +144,8 @@ const Menu = () => {
     if (hoveredLink !== '') {
       setHoveredLink(null);
     }
-  }, [asPath, hoveredLink]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [asPath]);
 
   useEffect(() => {
     window.addEventListener('resize', () => {
