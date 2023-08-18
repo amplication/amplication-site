@@ -18,8 +18,10 @@ const CtaBanner = ({bgVersion, title, subTitle, buttonText, buttonUrl}) => {
     });
   });
 
-  const bgStyle = bgVersion === 'version1' ? 'bg-cta-1' : 'bg-cta-2';
-  const bgClasses = `${bgStyle}-small tablet:${bgStyle}`;
+  const bgStyle =
+    bgVersion === 'version1'
+      ? 'bg-cta-1-small tablet:bg-cta-1'
+      : 'bg-cta-2-small tablet:bg-cta-2';
 
   const defaultTitle = (
     <>
@@ -32,7 +34,7 @@ const CtaBanner = ({bgVersion, title, subTitle, buttonText, buttonUrl}) => {
 
   return (
     <div
-      className={`w-full px-4 py-4 tablet:px-12 tablet:py-16 my-10 rounded-2xl bg-no-repeat bg-cover bg-right-top relative min-h-[450px] tablet:min-h-[300px] border-3 border-white  ${bgClasses} `}
+      className={`w-full px-4 py-4 tablet:px-12 tablet:py-16 my-10 rounded-2xl bg-no-repeat bg-cover bg-right-top relative min-h-[450px] tablet:min-h-[300px] border-3 border-white  ${bgStyle} `}
     >
       <div className="max-w-[320px] tablet:max-w-[500px]">
         <div className="font-bold text-white text-[24px] leading-[32px]">
