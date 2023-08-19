@@ -93,88 +93,82 @@ const Tabs = () => {
 
   return (
     <>
-      <section className="page-steps !py-20">
-        <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
-          <h2 className="roadmap-heading">
-            Let your teams write critical business logic instead of redundant
-            <br />
-            infrastructure code
-          </h2>
-          <div className="flex max-medium:!flex-col mt-8 laptop:mt-24">
-            <ul className="w-[22.4%] max-medium:w-full max-medium:overflow-x-scroll scrollbar-hide snap-x flex flex-column max-medium:!flex-row">
-              {features.map((feature, index) => {
-                return (
-                  <li
-                    className={
-                      (activeTab === index ? 'text-white ' : '') +
-                      'max-medium:pr-4 max-medium:whitespace-nowrap cursor-pointer font-semibold text-sm leading-7 text-[#686F8C] hover:text-white'
-                    }
-                    onClick={() => {
-                      destroyTimeout();
-                      setAutorun(false);
-                      setActiveTab(index);
-                    }}
-                    key={index}
-                  >
-                    {feature.tabTitle}
-                  </li>
-                );
-              })}
-            </ul>
-            <div className="tab-content w-[75%] max-medium:w-full mt-[16px] tablet:mt-0">
-              {features.map((feature, index) => {
-                return (
+      <h2 className="roadmap-heading">
+        Let your teams write critical business logic instead of redundant
+        <br />
+        infrastructure code
+      </h2>
+      <div className="flex max-medium:!flex-col mt-8 laptop:mt-24">
+        <ul className="w-[22.4%] max-medium:w-full max-medium:overflow-x-scroll scrollbar-hide snap-x flex flex-column max-medium:!flex-row">
+          {features.map((feature, index) => {
+            return (
+              <li
+                className={
+                  (activeTab === index ? 'text-white ' : '') +
+                  'max-medium:pr-4 max-medium:whitespace-nowrap cursor-pointer font-semibold text-sm leading-7 text-[#686F8C] hover:text-white'
+                }
+                onClick={() => {
+                  destroyTimeout();
+                  setAutorun(false);
+                  setActiveTab(index);
+                }}
+                key={index}
+              >
+                {feature.tabTitle}
+              </li>
+            );
+          })}
+        </ul>
+        <div className="tab-content w-[75%] max-medium:w-full mt-[16px] tablet:mt-0">
+          {features.map((feature, index) => {
+            return (
+              <div
+                key={index}
+                className={
+                  (activeTab === index
+                    ? '!flex justify-content-between flex-col tablet:flex-row '
+                    : '') + 'hidden'
+                }
+              >
+                <div className="relative max-w-full tablet:max-w-[44%]">
+                  {feature.title && (
+                    <h4 className="!font-bold !text-2xl !leading-9 !mb-4">
+                      {feature.title}
+                    </h4>
+                  )}
                   <div
-                    key={index}
                     className={
-                      (activeTab === index
-                        ? '!flex justify-content-between flex-col tablet:flex-row '
-                        : '') + 'hidden'
+                      (isMobile && !opened[index]
+                        ? 'max-h-[calc(4*1.53em)] text-ellipsis overflow-hidden'
+                        : '') + ' w-full font-normal text-sm leading-[1.56em]'
+                    }
+                    dangerouslySetInnerHTML={{ __html: feature.content }}
+                  ></div>
+                  <span
+                    onClick={() => {
+                      setOpened(
+                        opened.map((open, i) =>
+                          i === index ? open === false : open,
+                        ),
+                      );
+                    }}
+                    className={
+                      (isMobile
+                        ? 'flex font-normal text-sm leading-[1.5em]'
+                        : 'hidden') + ' cursor-pointer text-turquoise underline'
                     }
                   >
-                    <div className="relative max-w-full tablet:max-w-[44%]">
-                      {feature.title && (
-                        <h4 className="!font-bold !text-2xl !leading-9 !mb-4">
-                          {feature.title}
-                        </h4>
-                      )}
-                      <div
-                        className={
-                          (isMobile && !opened[index]
-                            ? 'max-h-[calc(4*1.53em)] text-ellipsis overflow-hidden'
-                            : '') +
-                          ' w-full font-normal text-sm leading-[1.56em]'
-                        }
-                        dangerouslySetInnerHTML={{ __html: feature.content }}
-                      ></div>
-                      <span
-                        onClick={() => {
-                          setOpened(
-                            opened.map((open, i) =>
-                              i === index ? open === false : open,
-                            ),
-                          );
-                        }}
-                        className={
-                          (isMobile
-                            ? 'flex font-normal text-sm leading-[1.5em]'
-                            : 'hidden') +
-                          ' cursor-pointer text-turquoise underline'
-                        }
-                      >
-                        Read more
-                      </span>
-                    </div>
-                    <div className="ml-auto w-full tablet:w-[40%] mt-12 tablet:mt-0 medium:mr-32">
-                      <Image src={feature.image} alt={feature.title} />
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
+                    Read more
+                  </span>
+                </div>
+                <div className="ml-auto w-full tablet:w-[40%] mt-12 tablet:mt-0 medium:mr-32">
+                  <Image src={feature.image} alt={feature.title} />
+                </div>
+              </div>
+            );
+          })}
         </div>
-      </section>
+      </div>
     </>
   );
 };

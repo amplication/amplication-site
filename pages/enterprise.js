@@ -12,6 +12,7 @@ import { MainLayout } from '../layouts';
 import helpers from '../helpers';
 import Image from 'next/image';
 import Link from 'next/link';
+import PageSection from '../components/Common/PageSection';
 
 const features = [
   {
@@ -80,7 +81,9 @@ const Features = () => {
 
       <main className="w-full font-poppins z-10 !mb-0 laptop:mb-[100px] amplication-base">
         <Hero />
-        <Slider classes="!bg-light-blue" />
+        <PageSection alternate className={'!pt-5 !pb-4 laptop:!py-20 '} innerClassName={"flex-grow"}>
+          <Slider />
+        </PageSection>
 
         {features.map((feature, i) => {
           return (

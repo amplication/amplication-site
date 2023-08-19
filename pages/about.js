@@ -4,6 +4,7 @@ import LogoList from '../components/Sections/About/LogoList';
 import UsersList from '../components/Sections/About/UsersList';
 import { NextSeo } from 'next-seo';
 import { MainLayout } from '../layouts';
+import PageSection from '../components/Common/PageSection';
 
 const About = () => {
   return (
@@ -28,7 +29,9 @@ const About = () => {
       <main className="w-full font-poppins z-10 amplication-base">
         <HeroBlock />
         <div className="bg-gradient">
-          <LogoList />
+          <PageSection alternate>
+            <LogoList />
+          </PageSection>
           <UsersList />
           <Steps />
         </div>
