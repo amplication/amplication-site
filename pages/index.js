@@ -10,6 +10,7 @@ import LogoList from '../components/Sections/About/LogoList';
 import { NextSeo } from 'next-seo';
 import { MainLayout } from '../layouts';
 import PageSection from '../components/Common/PageSection';
+import Soc2Banner from '../components/Common/SOC2';
 
 const Home = () => {
   return (
@@ -36,8 +37,11 @@ const Home = () => {
         <PageSection className={"page-welcome !pt-10 !pb-8 large:!py-[9vh] xlg:!py-[17vh]"}>
           <HeroBlock />
         </PageSection>
-        <PageSection alternate className={'!pt-5 !pb-4 laptop:!py-20 '} innerClassName={"flex-grow"}>
+        <PageSection className={'!pt-5 !pb-4 laptop:!py-20 '} innerClassName={"flex-grow"}>
           <Slider />
+        </PageSection>
+        <PageSection alternate className={"page-welcome-solution !py-20"} >
+          <Features />
         </PageSection>
         <PageSection innerClassName={"flex-grow"} className={"!pt-5 !pb-4 laptop:!px-14 laptop:!pt-24 laptop:!pb-20"} >
           <Testimonials />
@@ -45,9 +49,10 @@ const Home = () => {
         <PageSection className={"!py-10"} alternate>
           <Facts />
         </PageSection>
-        <PageSection className={"page-welcome-solution !py-20"} >
-          <Features />
+        <PageSection >
+          <Soc2Banner />
         </PageSection>
+
         <PageSection alternate className={"!py-20"} >
           <GetList />
         </PageSection>

@@ -97,6 +97,7 @@ module.exports = {
       },
       borderWidth: {
         3: '3px',
+        1: '1px',
       },
       boxShadow: {
         hidden: 'initial',
