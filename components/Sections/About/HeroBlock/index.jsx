@@ -4,7 +4,7 @@ import Screenshot3 from '../../../../public/images/screenshots/screenshot-3.png'
 const HeroBlock = () => {
   return (
     <>
-      <section className="page-welcome !py-8 desktop:!pt-36 desktop:!pb-[13rem] !overflow-visible">
+      <section className="page-welcome !py-8 desktop:!pt-26 desktop:!pb-[13rem] !overflow-visible">
         <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
           <div className="row align-items-center">
             <div className="col-12 text-center">

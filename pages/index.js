@@ -9,6 +9,7 @@ import Roadmap from '../components/Sections/MainPage/Roadmap';
 import LogoList from '../components/Sections/About/LogoList';
 import { NextSeo } from 'next-seo';
 import { MainLayout } from '../layouts';
+import PageSection from '../components/Common/PageSection';
 
 const Home = () => {
   return (
@@ -32,16 +33,35 @@ const Home = () => {
       />
 
       <main className="w-full font-poppins z-10 !mb-0 laptop:mb-[100px] amplication-base">
-        <HeroBlock />
-        <Slider />
-        <Testimonials />
-        <Facts />
-        <Features />
-        <GetList />
-        <Tabs />
-        <Roadmap customClass="!bg-light-blue !py-24" />
-        <LogoList />
-      </main>
+        <PageSection className={"page-welcome !pt-10 !pb-8 large:!py-[9vh] xlg:!py-[17vh]"}>
+          <HeroBlock />
+        </PageSection>
+        <PageSection alternate className={'!pt-5 !pb-4 laptop:!py-20 '} innerClassName={"flex-grow"}>
+          <Slider />
+        </PageSection>
+        <PageSection innerClassName={"flex-grow"} className={"!pt-5 !pb-4 laptop:!px-14 laptop:!pt-24 laptop:!pb-20"} >
+          <Testimonials />
+        </PageSection>
+        <PageSection className={"!py-10"} alternate>
+          <Facts />
+        </PageSection>
+        <PageSection className={"page-welcome-solution !py-20"} >
+          <Features />
+        </PageSection>
+        <PageSection alternate className={"!py-20"} >
+          <GetList />
+        </PageSection>
+        <PageSection className="page-steps !py-20" >
+          <Tabs />
+        </PageSection>
+        <PageSection className={'page-roadmap !py-24'} alternate id="roadmap">
+          <Roadmap />
+        </PageSection>
+        <PageSection >
+          <LogoList />
+        </PageSection>
+
+      </main >
     </>
   );
 };

@@ -18,6 +18,7 @@ import avatar6 from '../public/images/testimonials/testimonial-6.png';
 import avatar7 from '../public/images/testimonials/testimonial-7.png';
 import Image from 'next/image';
 import * as analytics from '../lib/analytics';
+import PageSection from '../components/Common/PageSection';
 
 const ContactUs = () => {
   const [formIsSended, setFormIsSended] = useState(false);
@@ -374,7 +375,7 @@ const ContactUs = () => {
                       successMsg === ''
                         ? 'hidden '
                         : '' +
-                          'absolute left-0 right-0 top-0 bottom-0 text-center flex align-items-center justify-content-center flex-column bg-light-blue'
+                        'absolute left-0 right-0 top-0 bottom-0 text-center flex align-items-center justify-content-center flex-column bg-light-blue'
                     }
                   >
                     <svg
@@ -474,8 +475,9 @@ const ContactUs = () => {
             })}
           </Swiper>
         </div>
-
-        <Slider />
+        <PageSection className={'!pt-5 !pb-4 laptop:!py-20 '} innerClassName={"flex-grow"}>
+          <Slider />
+        </PageSection>
       </main>
     </>
   );
