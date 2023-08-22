@@ -4,7 +4,7 @@ import soc2Logo from '../../../public/images/soc2.png';
 
 const Soc2Banner = ({ title, subTitle }) => {
   const defaultTitle = (
-    <>Secured and complaint, because your data&nbsp;matters</>
+    <>Secured and compliant, because your data&nbsp;matters</>
   );
   const defaultSubTitle =
     'Amplication is SOC-2 certified. We meet the highest standards for data security, availability, processing, integrity, confidentiality, and privacy.';
