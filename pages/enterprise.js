@@ -13,6 +13,7 @@ import helpers from '../helpers';
 import Image from 'next/image';
 import Link from 'next/link';
 import PageSection from '../components/Common/PageSection';
+import Soc2Banner from '../components/Common/SOC2';
 
 const features = [
   {
@@ -161,14 +162,9 @@ const Features = () => {
           }}
         />
         <IconsGroup />
-        <StartNow
-          title="Build faster, with no limits"
-          description="Try Amplication Enterprise today and unlock the power of fast development cycles."
-          linkPrimary={{
-            href: 'https://app.amplication.com/login',
-            title: 'Start Now',
-          }}
-        />
+        <PageSection >
+          <Soc2Banner title={"Enterprise-grade compliance"} subTitle={"We strive to provide you with a secure environment where you can confidently build and manage your applications. Amplication meets rigorous standards for data security, availability, processing, integrity, confidentiality, and privacy. We are SOC-2 certified and continuously monitor and improve our data security measures."} />
+        </PageSection>
       </main>
     </>
   );
