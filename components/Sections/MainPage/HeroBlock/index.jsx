@@ -96,7 +96,7 @@ const HeroBlock = () => {
                 </Link>
                 <div className="spacer"></div>
                 <Link
-                  href={'https://docs.amplication.com/getting-started/'}
+                  href={'https://docs.amplication.com/'}
                   passHref={true}
                 >
                   <a

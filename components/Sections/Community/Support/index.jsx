@@ -71,7 +71,7 @@ const Support = () => {
                 new&nbsp;articles.
               </div>
               <div className="actions">
-                <Link href="https://docs.amplication.com/getting-started/">
+                <Link href="https://docs.amplication.com/">
                   <a target="_blank" className="btn btn-primary">
                     Read the docs
                   </a>
