@@ -15,7 +15,7 @@ const Menu = () => {
     analytics.event({
       action: 'startNowClicked',
       params: {
-        buttonLocation: 'header',
+        buttonLocation: 'header-sign-up',
       },
     });
   }, []);
@@ -144,7 +144,7 @@ const Menu = () => {
     if (hoveredLink !== '') {
       setHoveredLink(null);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [asPath]);
 
   useEffect(() => {
@@ -336,7 +336,7 @@ const Menu = () => {
         </div>
         <div className="hidden laptop:flex ml-1 desktop:ml-4 align-items-center">
           <Button
-            text="Start Now"
+            text="Sign Up"
             backgroundColor="purpleBright"
             hoverBackgroundColor="purpleBrightHover"
             isLink={true}
