@@ -19,7 +19,7 @@ const features = [
     title: '<span>Read</span> our docs',
     content:
       'Visit our documentation site to learn more about Amplication, how to get started and the generated apps.',
-    linkUrl: 'https://docs.amplication.com/getting-started/',
+    linkUrl: 'https://docs.amplication.com/',
     linkText: 'Read docs',
   },
 ];
