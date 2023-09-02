@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import Button from '../../Common/Button';
 import { useRouter } from 'next/router';
@@ -9,103 +10,11 @@ import Logo from '../Logo';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
-const MENU_ITEMS = [
-  {
-    title: 'Docs',
-    href: {
-      pathname: 'https://docs.amplication.com/',
-    },
-    target: '_blank',
-  },
-  {
-    title: 'Enterprise',
-    href: {
-      pathname: '/enterprise',
-    },
-    target: '_self',
-  },
-  {
-    title: 'Developers',
-    href: {
-      pathname: '/developers',
-    },
-    target: '_self',
-  },
-  {
-    title: 'Roadmap',
-    href: {
-      pathname: '/',
-      hash: 'roadmap',
-    },
-    target: '_self',
-  },
-  {
-    title: 'Pricing',
-    href: {
-      pathname: '/pricing',
-    },
-    target: '_self',
-  },
-  {
-    title: 'Company',
-    href: {
-      pathname: '/company',
-    },
-    target: '_blank',
-    menuItems: [
-      {
-        title: 'Blog',
-        href: {
-          pathname: '/blog',
-        },
-        target: '_self',
-      },
-      {
-        title: 'About',
-        href: {
-          pathname: '/about',
-        },
-        target: '_self',
-      },
-      {
-        title: 'Team',
-        href: {
-          pathname: '/team',
-        },
-        target: '_self',
-      },
-      {
-        title: 'Careers',
-        href: {
-          pathname: 'https://amplication.breezy.hr/',
-        },
-        target: '_blank',
-      },
-      {
-        title: 'Contact Us',
-        href: {
-          pathname: '/contact-us',
-        },
-        target: '_self',
-      },
-    ],
-  },
-  {
-    title: '',
-  },
-  {
-    title: 'Log In',
-    href: {
-      pathname: 'https://app.amplication.com/login',
-    },
-    target: '_self',
-    onClickEventName: 'startNowClicked',
-    onClickEventParams: {
-      buttonLocation: 'header-login',
-    },
-  },
-];
+import { LEFT_MENU_ITEMS, RIGHT_MENU_ITEMS } from './menu-items';
 
 const Menu = () => {
   const [expanded, setExpanded] = useState(false);
@@ -155,8 +64,18 @@ const Menu = () => {
             </div>
           </Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="mr-auto">
+              {LEFT_MENU_ITEMS.map((item, index) => (
+                <MenuItem
+                  isMobileMenu={isMobileMenu}
+                  key={index}
+                  item={item}
+                  onMenuItemClick={handleMenuClick}
+                />
+              ))}
+            </Nav>
             <Nav className="ml-auto">
-              {MENU_ITEMS.map((item, index) => (
+              {RIGHT_MENU_ITEMS.map((item, index) => (
                 <MenuItem
                   isMobileMenu={isMobileMenu}
                   key={index}
@@ -223,43 +142,95 @@ const MenuItem = ({ item, onMenuItemClick, isMobileMenu }) => {
       setTimeoutHandle(
         setTimeout(() => {
           setDropdownOpen(false);
-        }, 300),
+        }, 100),
       );
     }
   };
 
   const { asPath } = useRouter();
-  const url =
-    item.href?.pathname + (item.href?.hash ? '#' + item.href?.hash : '');
 
-  const hasSubItem = item.menuItems && item.menuItems.length > 0;
+  const hasSubItems = item.menuItems && item.menuItems.length > 0;
+  const hasColumns = item.columns && item.columns.length > 0;
 
-  return hasSubItem ? (
+  return hasSubItems || hasColumns ? (
     <NavDropdown
       onClick={handleDropDownClick}
       show={dropdownOpen}
       onMouseOver={handleDropDownMouseOver}
       onMouseOut={handleDropDownMouseOut}
+      align={item.align || 'start'}
       title={item.title}
       id="basic-nav-dropdown"
     >
-      {item.menuItems.map((subItem, index) => (
-        <MenuItem
-          isMobileMenu={isMobileMenu}
-          key={index}
-          item={subItem}
-          onMenuItemClick={onMenuItemClick}
-        />
-      ))}
+      <Container>
+        <Row lg={item.columns?.length || 1} xs="1">
+          {item.columns?.length ? (
+            item.columns.map((column, index) => (
+              <Col key={index}>
+                {column.title || <span>&nbsp;</span>}
+                {column.menuItems.map((subItem, index) => (
+                  <InnerMenuItem
+                    isMobileMenu={isMobileMenu}
+                    key={index}
+                    item={subItem}
+                    onMenuItemClick={onMenuItemClick}
+                  />
+                ))}
+              </Col>
+            ))
+          ) : (
+            <Col>
+              {item.menuItems.map((subItem, index) => (
+                <InnerMenuItem
+                  isMobileMenu={isMobileMenu}
+                  key={index}
+                  item={subItem}
+                  onMenuItemClick={onMenuItemClick}
+                />
+              ))}
+            </Col>
+          )}
+        </Row>
+      </Container>
     </NavDropdown>
   ) : (
-    <Link href={url}>
+    <Link href={item.url}>
       <a
         target={item.target}
         onClick={() => onMenuItemClick(item)}
-        className={`nav-link ${asPath === url ? 'active' : ''} `}
+        className={`nav-link ${asPath === item.url ? 'active' : ''} `}
       >
         {item.title}
+      </a>
+    </Link>
+  );
+};
+
+const InnerMenuItem = ({ item, onMenuItemClick, isMobileMenu }) => {
+  const { asPath } = useRouter();
+
+  return (
+    <Link href={item.url}>
+      <a
+        target={item.target}
+        onClick={() => onMenuItemClick(item)}
+        className={`nav-link-inner ${asPath === item.url ? 'active' : ''} `}
+      >
+        <Row col="2">
+          <Col xs="auto">
+            <Image
+              className="nav-link-image"
+              width={30}
+              height={30}
+              src={item.image}
+              alt={item.title}
+            />
+          </Col>
+          <Col>
+            {item.title}
+            <div className="description">{item.description}</div>
+          </Col>
+        </Row>
       </a>
     </Link>
   );

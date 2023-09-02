@@ -20,5 +20,29 @@
 
   .nav-item.dropdown .dropdown-menu {
     background-color: #2c3249;
+    width: max-content;
+    border-radius: 0.25rem;
+  }
+
+  a.nav-link-inner {
+    display: block;
+    min-width: 300px;
+    width: 350px;
+    max-width: 400px;
+    text-decoration: none;
+    color: #fff;
+    padding: 0.3rem;
+    font-size: 16px;
+    font-weight: normal;
+
+    &:hover {
+      background-color: #22273c;
+      border-radius: 4px;
+    }
+
+    .description {
+      font-size: 12px;
+      color: #a3a8b8;
+    }
   }
 }
