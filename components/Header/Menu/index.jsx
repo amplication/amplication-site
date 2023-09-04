@@ -91,9 +91,7 @@ const MENU_ITEMS = [
       },
     ],
   },
-  {
-    title: '',
-  },
+
   {
     title: 'Log In',
     href: {
@@ -168,7 +166,7 @@ const Menu = () => {
             <div className="mt-auto mt-[-1px] pb-8 laptop:hidden">
               <div className="w-full menu__item pt-12 flex flex-col justify-end items-stretch border-t border-[rgba(255,255,255,0.2)]">
                 <div className="w-full">
-                  <p className="font-poppins font-medium text-white text-center text-base mb-6 laptop:text-lg laptop:text-left laptop:mb-6">
+                  <p className="font-poppins font-medium text-center text-base mb-6 laptop:text-lg laptop:text-left laptop:mb-6">
                     Contact us
                   </p>
                   <ul className="w-full flex flex-col justify-start items-center">

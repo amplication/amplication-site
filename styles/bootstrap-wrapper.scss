@@ -8,6 +8,14 @@
     --bs-navbar-nav-link-padding-x: 15px;
   }
 
+  .navbar-collapse {
+    overflow: auto;
+    max-height: calc(100vh - 150px);
+    @include media-breakpoint-up(lg) {
+      overflow: visible;
+    }
+  }
+
   .nav-link {
     color: #a3a8b8 !important;
   }
@@ -19,6 +27,12 @@
   }
 
   .nav-item.dropdown .dropdown-menu {
-    background-color: #2c3249;
+    background: transparent;
+    padding-left: 8px;
+
+    @include media-breakpoint-up(lg) {
+      background-color: #2c3249;
+      padding-left: 0px;
+    }
   }
 }
