@@ -193,6 +193,7 @@ const Menu = () => {
           onClick={handleStartNowClick}
           href="https://app.amplication.com/login"
           className="text-[15px] h-[40px] whitespace-nowrap !px-4"
+          delayLinkMs={300}
         />
       </div>
     </>
