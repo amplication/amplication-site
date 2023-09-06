@@ -51,6 +51,7 @@ const CtaBanner = ({ bgVersion, title, subTitle, buttonText, buttonUrl }) => {
           onClick={handleStartNowClick}
           href={buttonUrl || defaultButtonUrl}
           className="text-[15px] h-[40px] min-w-[100px] whitespace-nowrap !px-4 !text-white !no-underline !inline"
+          delayLinkMs={300}
         />
       </div>
     </div>

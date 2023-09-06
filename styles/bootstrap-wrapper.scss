@@ -1,0 +1,38 @@
+//in order not to impact all existing styles, we use a unique wrapper class to import bootstrap
+.bootstrap-wrapper {
+  width: 100%;
+  @import 'bootstrap/scss/bootstrap';
+
+  .navbar {
+    --bs-nav-link-font-size: 15px;
+    --bs-navbar-nav-link-padding-x: 15px;
+  }
+
+  .navbar-collapse {
+    overflow: auto;
+    max-height: calc(100vh - 150px);
+    @include media-breakpoint-up(lg) {
+      overflow: visible;
+    }
+  }
+
+  .nav-link {
+    color: #a3a8b8 !important;
+  }
+
+  .nav-link:hover,
+  .nav-link:active,
+  .nav-link.active {
+    color: #7950ed !important;
+  }
+
+  .nav-item.dropdown .dropdown-menu {
+    background: transparent;
+    padding-left: 8px;
+
+    @include media-breakpoint-up(lg) {
+      background-color: #2c3249;
+      padding-left: 0px;
+    }
+  }
+}
