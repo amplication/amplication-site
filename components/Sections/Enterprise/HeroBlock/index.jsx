@@ -31,8 +31,7 @@ const HeroBlock = () => {
               <div className="animated-header">
                 <h1 className="main-title mb-0">
                   <span className="block font-bold">
-                    Generate&nbsp;Production&#8209;Ready <br /> Backend
-                    Services.
+                    Generate Production&#8209;Ready <br /> Backend Services.
                   </span>
                   <span className="sub-title">
                     Reliably. Securely. Consistently.
