@@ -6,7 +6,7 @@ const PLUGIN_LOGO_BASE_URL =
 
 const PluginLogo = ({ plugin }) => {
   return (
-    <span className="min-w-[60px] max-w-[60px] pr-4">
+    <span className="min-w-[60px] max-w-[60px] pr-4 flex flex-row justify-center items-center">
       {plugin?.icon ? (
         <Image
           width={44}

@@ -4,6 +4,7 @@ import Facts from '../components/Sections/Enterprise/Facts';
 import Testimonials from '../components/Sections/Enterprise/Testimonials';
 import Features from '../components/Sections/MainPage/Features';
 import GetList from '../components/Sections/MainPage/GetList';
+import PluginsPanel from '../components/Plugins/Plugin/plugins-panel';
 import Tabs from '../components/Sections/MainPage/Tabs';
 import Roadmap from '../components/Sections/MainPage/Roadmap';
 import LogoList from '../components/Sections/About/LogoList';
@@ -12,7 +13,10 @@ import { MainLayout } from '../layouts';
 import PageSection from '../components/Common/PageSection';
 import Soc2Banner from '../components/Common/SOC2';
 
-const Home = () => {
+import { gql } from '@apollo/client';
+import client from '../services/plugin-api';
+
+const Home = ({ plugins }) => {
   return (
     <>
       <NextSeo
@@ -46,6 +50,9 @@ const Home = () => {
         <PageSection innerClassName={"flex-grow"} className={"!pt-5 !pb-4 laptop:!px-14 laptop:!pt-24 laptop:!pb-20"} >
           <Testimonials />
         </PageSection>
+        <PageSection alternate>
+          <PluginsPanel plugins={plugins} />
+        </PageSection>
         <PageSection className={"!py-10"} alternate>
           <Facts />
         </PageSection>
@@ -70,6 +77,43 @@ const Home = () => {
     </>
   );
 };
+
+export const getServerSideProps = async (context) => {
+  try {
+    const { data } = await client.query({
+      query: gql`
+        query {
+          plugins {
+            id
+            pluginId
+            name
+            icon
+            description
+            taggedVersions
+            npm
+            github
+            website
+          }
+        }
+      `,
+    });
+    return {
+      props: {
+        plugins: data?.plugins
+      },
+    };
+  } catch (e) {
+    console.error(e);
+  }
+
+  return {
+    props: {
+      plugins: null,
+    },
+  };
+};
+
+
 Home.getLayout = function getLayout(page) {
   return (
     <MainLayout

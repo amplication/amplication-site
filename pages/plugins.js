@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
 import { NextSeo } from 'next-seo';
 import PropTypes from 'prop-types';
-import Plugin from "../components/Plugins/Plugin";
+import Plugin from "../components/Plugins/plugin-card";
 import helpers from '../helpers';
 import { MainLayout } from '../layouts';
 import client from '../services/plugin-api';
@@ -103,17 +103,17 @@ export const getServerSideProps = async (context) => {
 
   return {
     props: {
-      posts: null,
+      plugins: null,
     },
   };
 };
 
 Plugins.propTypes = {
-  posts: PropTypes.array
+  plugins: PropTypes.array
 };
 
 Plugins.defaultProps = {
-  posts: []
+  plugins: []
 };
 
 Plugins.getLayout = function getLayout(page) {

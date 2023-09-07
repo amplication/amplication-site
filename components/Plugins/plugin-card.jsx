@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import PropTypes from 'prop-types';
 import { useCallback } from 'react';
-import * as analytics from '../../../lib/analytics';
-import Button from '../../Common/Button';
+import * as analytics from '../../lib/analytics';
+import Button from '../Common/Button';
 import PluginLogo from './plugin-logo';
 
 const Plugin = ({ plugin }) => {
