@@ -79,7 +79,7 @@ const Home = ({ plugins }) => {
   );
 };
 
-export const getServerSideProps = async (context) => {
+export const getStaticProps = async () => {
   try {
     const { data } = await client.query({
       query: gql`
