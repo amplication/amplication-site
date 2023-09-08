@@ -45,6 +45,11 @@ const Plugins = ({ plugins }) => {
                 Create your own plugin
               </a>
             </Link>
+            <Link href="https://github.com/amplication/amplication/issues/new?assignees=&labels=type%3A+feature+request&projects=&template=feature.yml&title=%F0%9F%A7%A9%20Plugin%20request:">
+              <a className="text-white text-xs font-poppins font-medium py-1 px-2 inline-block">
+                Request a new plugin
+              </a>
+            </Link>
           </div>
         </div>
 
