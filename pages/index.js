@@ -4,6 +4,7 @@ import Facts from '../components/Sections/Enterprise/Facts';
 import Testimonials from '../components/Sections/Enterprise/Testimonials';
 import Features from '../components/Sections/MainPage/Features';
 import GetList from '../components/Sections/MainPage/GetList';
+import PluginsPanel from '../components/Plugins/plugins-panel';
 import Tabs from '../components/Sections/MainPage/Tabs';
 import Roadmap from '../components/Sections/MainPage/Roadmap';
 import LogoList from '../components/Sections/About/LogoList';
@@ -12,7 +13,10 @@ import { MainLayout } from '../layouts';
 import PageSection from '../components/Common/PageSection';
 import Soc2Banner from '../components/Common/SOC2';
 
-const Home = () => {
+import { gql } from '@apollo/client';
+import client from '../services/plugin-api';
+
+const Home = ({ plugins }) => {
   return (
     <>
       <NextSeo
@@ -37,15 +41,19 @@ const Home = () => {
         <PageSection className={"page-welcome !pt-10 !pb-8 large:!py-[9vh] xlg:!py-[17vh]"}>
           <HeroBlock />
         </PageSection>
-        <PageSection className={'!pt-5 !pb-4 laptop:!py-20 '} innerClassName={"flex-grow"}>
+        <PageSection alternate className={'!pt-5 !pb-4 laptop:!py-20 '} innerClassName={"flex-grow"}>
           <Slider />
         </PageSection>
-        <PageSection alternate className={"page-welcome-solution !py-20"} >
+        <PageSection className={"page-welcome-solution !py-20"} >
           <Features />
+        </PageSection>
+        <PageSection alternate>
+          <PluginsPanel plugins={plugins} />
         </PageSection>
         <PageSection innerClassName={"flex-grow"} className={"!pt-5 !pb-4 laptop:!px-14 laptop:!pt-24 laptop:!pb-20"} >
           <Testimonials />
         </PageSection>
+
         <PageSection className={"!py-10"} alternate>
           <Facts />
         </PageSection>
@@ -70,6 +78,43 @@ const Home = () => {
     </>
   );
 };
+
+export const getServerSideProps = async (context) => {
+  try {
+    const { data } = await client.query({
+      query: gql`
+        query {
+          plugins {
+            id
+            pluginId
+            name
+            icon
+            description
+            taggedVersions
+            npm
+            github
+            website
+          }
+        }
+      `,
+    });
+    return {
+      props: {
+        plugins: data?.plugins
+      },
+    };
+  } catch (e) {
+    console.error(e);
+  }
+
+  return {
+    props: {
+      plugins: null,
+    },
+  };
+};
+
+
 Home.getLayout = function getLayout(page) {
   return (
     <MainLayout

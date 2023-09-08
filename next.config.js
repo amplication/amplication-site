@@ -16,6 +16,7 @@ const nextConfig = {
       '*.s3.amazonaws.com',
       's3.amazonaws.com',
       'www.facebook.com',
+      'raw.githubusercontent.com'
     ],
   },
   experimental: { images: { allowFutureImage: true }, optimizeCss: true },
