@@ -79,7 +79,12 @@ const Home = ({ plugins }) => {
   );
 };
 
-export const getServerSideProps = async (context) => {
+export const getServerSideProps = async ({ req, res }) => {
+  res.setHeader(
+    'Cache-Control',
+    'public, s-maxage=3600, stale-while-revalidate=7200'
+  )
+
   try {
     const { data } = await client.query({
       query: gql`
