@@ -1,19 +1,26 @@
 import { gql } from '@apollo/client';
 import { NextSeo } from 'next-seo';
 import PropTypes from 'prop-types';
+import { useCallback } from 'react';
+import Button from '../components/Common/Button';
 import Plugin from "../components/Plugins/plugin-card";
 import helpers from '../helpers';
 import { MainLayout } from '../layouts';
+import * as analytics from '../lib/analytics';
 import client from '../services/plugin-api';
-import Link from 'next/link';
 
 const Plugins = ({ plugins }) => {
+  const handleStartNowClick = useCallback((eventName) => {
+    analytics.event({
+      action: eventName
+    });
+  }, []);
 
   return (
     <>
       <NextSeo
-        title="Plugins: Extend the generate code with plugins | Amplication"
-        description="Boost your knowledge and step up your game with top stories on backend development, Node.js and open-source from the Amplication team."
+        title="Plugins: Extend the generated code with plugins | Amplication"
+        description="Extend and customize your services by using plugins for various technologies and integrations."
       />
       <main className="w-full font-poppins z-10 mt-12 mb-12 laptop:mb-[100px] ">
         <section className={'background-transparent amplication-base mb-12'}>
@@ -35,21 +42,31 @@ const Plugins = ({ plugins }) => {
         </section>
         <div className={'w-full max-w-container m-container p-container laptop:max-w-container-desktop-blog laptop:m-container-desktop laptop:p-container-desktop  laptop:pb-0   '}>
           <div className='mb-10'>
-            <Link href="https://docs.amplication.com/plugins/overview/">
-              <a className="text-white text-xs font-poppins font-medium py-1 px-2 inline-block">
-                Learn more about plugins
-              </a>
-            </Link>
-            <Link href="https://docs.amplication.com/plugins/how-to-create-plugin/">
-              <a className="text-white text-xs font-poppins font-medium py-1 px-2 inline-block">
-                Create your own plugin
-              </a>
-            </Link>
-            <Link href="https://github.com/amplication/amplication/issues/new?assignees=&labels=type%3A+feature+request&projects=&template=feature.yml&title=%F0%9F%A7%A9%20Plugin%20request:">
-              <a className="text-white text-xs font-poppins font-medium py-1 px-2 inline-block">
-                Request a new plugin
-              </a>
-            </Link>
+            <Button
+              text="Learn more about plugins"
+              isLink={true}
+              onClick={() => handleStartNowClick("PluginsLearnMoreClick")}
+              className="!inline-block  !text-xs    !font-normal  !bg-transparent hover:!bg-transparent !px-2"
+              href="https://docs.amplication.com/plugins/overview/"
+              delayLinkMs={300}
+            />
+            <Button
+              text="Create your own plugin"
+              isLink={true}
+              onClick={() => handleStartNowClick("PluginsCreateYourOwnClick")}
+              className="!inline-block  !text-xs    !font-normal  !bg-transparent hover:!bg-transparent !px-2"
+              href="https://docs.amplication.com/plugins/overview/"
+              delayLinkMs={300}
+            />
+            <Button
+              text="Request a new plugin"
+              isLink={true}
+              onClick={() => handleStartNowClick("PluginsRequestNewClick")}
+              className="!inline-block  !text-xs    !font-normal  !bg-transparent hover:!bg-transparent  !px-2"
+              href="https://docs.amplication.com/plugins/overview/"
+              delayLinkMs={300}
+            />
+
           </div>
         </div>
 

@@ -33,11 +33,9 @@ const Button = ({
   const handleClick = useCallback(
     (e) => {
       onClick && onClick(e);
-
       if (delayLinkMs) {
         e.preventDefault();
         setTimeout(() => {
-          console.log('href', href);
           router.push(href);
         }, delayLinkMs);
       }
