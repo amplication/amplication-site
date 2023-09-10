@@ -12,8 +12,8 @@ const PluginsPanel = ({ plugins }) => {
       </div>
       <div className="mt-8">
         <div className=" flex items-center  justify-center">
-          <div className="w-[200%] h-20 overflow-hidden relative">
-            <div className="w-[200%] flex items-center h-20 justify-around absolute left-0 animate  ">
+          <div className="w-[100%] h-20 overflow-hidden relative">
+            <div className="flex items-center h-20 justify-around absolute animate  ">
               {plugins.map((plugin) => {
                 return (
                   <div
