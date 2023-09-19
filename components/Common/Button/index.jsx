@@ -24,7 +24,7 @@ const Button = ({
   const router = useRouter();
 
   let classes =
-    'flex justify-center items-center text-white font-poppins font-normal text-center rounded py-2 px-3 laptop:px-8 laptop:font-medium transition-all duration-300';
+    'flex justify-center items-center text-white  font-normal text-center rounded py-2 px-3 laptop:px-8 laptop:font-medium transition-all duration-300';
   classes += `${isAlignFull ? ' w-full' : ''}`;
   classes += ` ${ButtonColorsConfig[backgroundColor]}`;
   classes += ` ${ButtonColorsConfig[hoverBackgroundColor]}`;

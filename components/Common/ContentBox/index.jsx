@@ -1,0 +1,43 @@
+import PropTypes from 'prop-types';
+import Button from '../Button';
+
+const ContentBox = ({ title, body, ctaLabel, ctaUrl, className }) => {
+  return (
+    <>
+      <div className={`${className} text-sm font-normal`}>
+        <div className="text-2xl">{title}</div>
+        <div className="">{body}</div>
+        {ctaLabel !== '' && (
+          <Button
+            text={ctaLabel}
+            backgroundColor="transparent"
+            hoverBackgroundColor="transparent"
+            isLink={true}
+            //onClick={handleStartNowClick}
+            href={ctaUrl}
+            className="mt-8 border border-1 border-white rounded !px-1.5 !py-3 inline-flex"
+            delayLinkMs={300}
+          />
+        )}
+      </div>
+    </>
+  );
+};
+
+ContentBox.propTypes = {
+  title: PropTypes.node,
+  body: PropTypes.node,
+  ctaLabel: PropTypes.string,
+  ctaUrl: PropTypes.string,
+  className: PropTypes.string,
+};
+
+ContentBox.defaultProps = {
+  title: null,
+  body: null,
+  ctaLabel: '',
+  ctaUrl: '',
+  className: '',
+};
+
+export default ContentBox;

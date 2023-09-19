@@ -95,6 +95,11 @@ function Amplication({ Component, pageProps }) {
         href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Poppins:wght@300;400;500;600;700;800&family=Ubuntu+Mono&display=swap"
         rel="stylesheet"
       />
+      {/* eslint-disable-next-line @next/next/no-page-custom-font */}
+      <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap"
+        rel="stylesheet"
+      />
       {/*Facebook Pixel*/}
       <Script
         id={'facebook-pixel'}

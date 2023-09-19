@@ -25,25 +25,18 @@ const Hero = () => {
 
   return (
     <>
-      <section className="page-welcome !pt-10 !pb-8 large:!py-[6vh] xlg:!py-[12vh]">
-        <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
-          <div className="row align-items-center">
-            <div className="col-12 text-center">
-              <div className="header-and-video align-items-center">
-                <div className="relative align-items-center flex-col  w-full  flex ">
-                  <div>
-                    <Image src={HeroImage} alt={'Amplication platform'} />
-                  </div>
-                  <span className="block font-bold">
-                    Celebrate Open-source and Hacktoberfest 2023 with
-                    Amplication
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div className="relative w-full flex flex-col align-items-center  justify-center  h-[calc(100vh-102px)] text-center bg-red">
+        <div className="h-[118px] mb-12">
+          <Image
+            src={HeroImage}
+            alt={'Hacktoberfest & Amplication'}
+            className="h-full"
+          />
         </div>
-      </section>
+        <span className="block font-extrabold text-4xl">
+          Celebrate Open-source <br /> and Hacktoberfest 2023 with Amplication
+        </span>
+      </div>
     </>
   );
 };

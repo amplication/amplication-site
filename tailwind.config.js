@@ -9,6 +9,7 @@ module.exports = {
       dmmono: ['DM Mono'],
       poppins: ['poppins'],
       ubuntumono: ['Ubuntu Mono'],
+      jetbrains: ['JetBrains Mono']
     },
     screens: {
       tablet: '640px',
