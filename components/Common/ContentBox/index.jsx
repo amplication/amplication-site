@@ -4,7 +4,7 @@ import Button from '../Button';
 const ContentBox = ({ title, body, ctaLabel, ctaUrl, className }) => {
   return (
     <>
-      <div className={`${className} text-sm font-normal`}>
+      <div className={`text-sm font-normal ${className} `}>
         <div className="text-2xl">{title}</div>
         <div className="">{body}</div>
         {ctaLabel !== '' && (

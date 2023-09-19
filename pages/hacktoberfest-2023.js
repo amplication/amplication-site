@@ -1,12 +1,13 @@
 import { NextSeo } from 'next-seo';
-import Hero from '../components/Sections/Hacktoberfest/Hero';
-import { MainLayout } from '../layouts';
 import PageSection from '../components/Common/PageSection';
-import SplitSection from '../components/Common/SplitSection';
-import ContentBox from '../components/Common/ContentBox';
-import TeamSportImage from '../public/images/hacktoberfest/hacktoberfest-team-sport.svg';
-import Hf10Image from '../public/images/hacktoberfest/hacktoberfest-10.svg';
-import Image from 'next/image';
+import Hero from '../components/Sections/Hacktoberfest/Hero';
+import About from '../components/Sections/Hacktoberfest/Steps/about';
+import HowTo1 from '../components/Sections/Hacktoberfest/Steps/how-to1';
+import HowTo2 from '../components/Sections/Hacktoberfest/Steps/how-to2';
+import HowTo3 from '../components/Sections/Hacktoberfest/Steps/how-to3';
+import Win from '../components/Sections/Hacktoberfest/Steps/win';
+import OpenSource from '../components/Sections/Hacktoberfest/Steps/open-source';
+import { MainLayout } from '../layouts';
 
 const Plugins = () => {
 
@@ -18,60 +19,25 @@ const Plugins = () => {
         description="Extend and customize your services by using plugins for various technologies and integrations."
       />
       <main className="font-jetbrains w-full z-10 ">
-        <PageSection >
-          <Hero />
-        </PageSection>
-
+        <Hero />
         <PageSection alternate >
-          <SplitSection
-            firstSectionNode={
-              <ContentBox
-                title={
-                  <>
-                    Open-source is a team sport.<br />
-                    Let&apos;s win together.
-                  </>
-                }
-                body={
-                  <>
-                    We&apos;re inviting you to experience the joy and learning that comes from contributing to open-source projects like Amplication. Win digital swag and additional major prizes.
-                  </>
-                }
-                ctaLabel="How to contribute"
-                ctaUrl="http" />}
-            SecondSectionNode={
-              <Image
-                src={TeamSportImage}
-                alt={'Open-source is a team sport'}
-                className="h-[350px]"
-              />}
-            reverse={false} />
+          <OpenSource />
         </PageSection>
         <PageSection  >
-          <SplitSection
-            firstSectionNode={
-              <ContentBox
-                title={
-                  <>
-                    About Hacktoberfest
-                  </>
-                }
-                body={
-                  <>
-                    Hacktoberfest is an annual, month-long celebration of open-source software run by DigitalOcean. It encourages developers from all corners of the world to contribute to open-source projects. Amplication is one of the projects you can contribute to and is a proud sponsor of Hacktoberfest. Whether you&apos;re new to coding or an experienced developer, there&apos;s something in Hacktoberfest for everyone.
-                  </>
-                }
-                ctaLabel=""
-                ctaUrl="" />}
-            SecondSectionNode={
-              <Image
-                src={Hf10Image}
-                alt={'Hacktoberfest 10th anniversary'}
-                className="h-[350px]"
-              />}
-            reverse={true} />
+          <About />
         </PageSection>
-
+        <PageSection alternate >
+          <Win />
+        </PageSection>
+        <PageSection  >
+          <HowTo1 />
+        </PageSection>
+        <PageSection alternate >
+          <HowTo2 />
+        </PageSection>
+        <PageSection  >
+          <HowTo3 />
+        </PageSection >
       </main >
     </>
   );
@@ -89,6 +55,6 @@ Plugins.defaultProps = {
 };
 
 Plugins.getLayout = function getLayout(page) {
-  return <MainLayout>{page}</MainLayout>;
+  return <MainLayout paddingTopClasses={"laptop:pt-[90px]"} hideFooterBanner={true} >{page}</MainLayout>;
 };
 export default Plugins;

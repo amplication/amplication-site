@@ -139,6 +139,9 @@ module.exports = {
       textDecorationThickness: {
         3: '3px',
       },
+      backgroundSize: {
+        grid: '25px 25px'
+      },
       backgroundImage: {
         'radial-gradient':
           'radial-gradient(circle, transparent 0%, transparent 30%, rgba(9,9,121,0.1) 30%, rgba(9,9,121,0.1) 70%, rgba(118,79,229,0) 70%)',
@@ -152,6 +155,7 @@ module.exports = {
         'cta-2-small': "url('/images/bg/cta-bg-2-small.png')",
         noise: "url('/images/noise.png')",
         quote: "url('/images/bg/quotes.svg')",
+        grid: 'linear-gradient(to right, #22273C 1px, transparent 1px), linear-gradient(to bottom, #22273C 1px, transparent 1px);'
       },
     },
   },

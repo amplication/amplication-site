@@ -13,10 +13,10 @@ const SplitSection = ({
           reverse ? 'flex-row-reverse' : 'flex-row'
         } max-medium:flex-col-reverse  ${className}`}
       >
-        <div className="flex items-center flex-1 text-left max-medium:text-center max-w-[568px]">
+        <div className="relative flex items-center flex-1 text-left max-medium:text-center max-w-[568px]">
           {firstSectionNode}
         </div>
-        <div className="flex items-center flex-1 text-center max-w-[568px]">
+        <div className="relative flex items-center flex-1 text-center max-w-[568px]">
           {SecondSectionNode}
         </div>
       </div>
