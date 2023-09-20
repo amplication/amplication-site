@@ -21,7 +21,7 @@ const RedeemCoupon = ({ couponCode }) => {
             Congratulations!
           </span>
           <span className="block font-extrabold text-4xl max-w-[800px]">
-            You've won a 2-month Pro subscription to Amplication!
+            You&apos;ve won a 2-month Pro subscription to Amplication!
           </span>
           <Button
             text={'Claim your reward'}
