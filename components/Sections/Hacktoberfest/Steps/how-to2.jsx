@@ -23,14 +23,9 @@ const HowTo2 = () => {
           </svg>
 
           <ContentBox
-            title={<>Solve open issues</>}
-            body={
-              <>
-                Solve the following issues, ranging in difficulty from beginner
-                to experienced levels.
-              </>
-            }
-            ctaLabel="See issues"
+            title={<>Build a plugin</>}
+            body={<>Contribute a plugin to Amplication</>}
+            ctaLabel="Check plugin ideas"
             ctaUrl="http"
             className="pl-36 z-20"
           />

@@ -21,11 +21,15 @@ const HowTo1 = () => {
               fill="#22273C"
             />
           </svg>
-
           <ContentBox
-            title={<>Build a plugin</>}
-            body={<>Contribute a plugin to Amplication</>}
-            ctaLabel="Check plugin ideas"
+            title={<>Solve open issues</>}
+            body={
+              <>
+                Solve the following issues, ranging in difficulty from beginner
+                to experienced levels.
+              </>
+            }
+            ctaLabel="See issues"
             ctaUrl="http"
             className="pl-36 z-20"
           />
