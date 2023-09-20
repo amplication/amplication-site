@@ -12,7 +12,7 @@ const Win = () => {
       body={
         <div className="text-2xl mt-4">
           Get a chance to win digital rewards, $500 worth of gift cards, and
-          many other prizes. Read the rules and guidelines here
+          many other prizes. Check the rules and guidelines to learn how.
         </div>
       }
       ctaLabel="Read the rules"

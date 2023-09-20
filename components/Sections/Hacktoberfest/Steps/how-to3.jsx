@@ -23,11 +23,11 @@ const HowTo3 = () => {
           </svg>
 
           <ContentBox
-            title={<>Build a web app</>}
+            title={<>Build an application</>}
             body={
               <>
-                Build any web application using Amplication and any of your
-                favorite tech stacks
+                Build a web application using Amplication alongside any of your
+                favorite technologies.
               </>
             }
             ctaLabel="See issues"

@@ -15,7 +15,7 @@ const ContentBox = ({ title, body, ctaLabel, ctaUrl, className }) => {
             isLink={true}
             //onClick={handleStartNowClick}
             href={ctaUrl}
-            className="mt-8 border border-1 border-white rounded !px-1.5 !py-3 inline-flex"
+            className="mt-8 border border-1 border-white rounded !py-1.5 !px-3 inline-flex"
             delayLinkMs={300}
           />
         )}

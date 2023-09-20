@@ -24,7 +24,13 @@ const HowTo2 = () => {
 
           <ContentBox
             title={<>Build a plugin</>}
-            body={<>Contribute a plugin to Amplication</>}
+            body={
+              <>
+                {' '}
+                Contribute a plugin to Amplication and stand a chance to win
+                exciting rewards based on a plugin ranking.
+              </>
+            }
             ctaLabel="Check plugin ideas"
             ctaUrl="http"
             className="pl-36 z-20"

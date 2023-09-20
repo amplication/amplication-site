@@ -30,7 +30,7 @@ const RedeemCoupon = ({ couponCode }) => {
             isLink={true}
             onClick={handleStartNowClick}
             href={`https://app.amplication.com/login?coupon-code=${couponCode}`}
-            className="mt-8 border border-1 border-white rounded !px-1.5 !py-3 inline-flex"
+            className="mt-8 border border-1 border-white rounded !py-2 !px-4 inline-flex"
             delayLinkMs={300}
           />
         </div>
