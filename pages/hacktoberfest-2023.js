@@ -9,14 +9,14 @@ import Win from '../components/Sections/Hacktoberfest/Steps/win';
 import OpenSource from '../components/Sections/Hacktoberfest/Steps/open-source';
 import { MainLayout } from '../layouts';
 
-const Plugins = () => {
+const Hacktoberfest = () => {
 
 
   return (
     <>
       <NextSeo
-        title="Plugins: Extend the generated code with plugins | Amplication"
-        description="Extend and customize your services by using plugins for various technologies and integrations."
+        title="Celebrate Open-source and Hacktoberfest 2023 with Amplication | Amplication"
+        description="We're inviting you to experience the joy and learning that comes from contributing to open-source projects like Amplication. Win digital swag and additional major prizes."
       />
       <main className="font-jetbrains w-full z-10 ">
         <Hero />
@@ -48,13 +48,13 @@ const Plugins = () => {
 
 
 
-Plugins.propTypes = {
+Hacktoberfest.propTypes = {
 };
 
-Plugins.defaultProps = {
+Hacktoberfest.defaultProps = {
 };
 
-Plugins.getLayout = function getLayout(page) {
+Hacktoberfest.getLayout = function getLayout(page) {
   return <MainLayout paddingTopClasses={"laptop:pt-[90px]"} hideFooterBanner={true} >{page}</MainLayout>;
 };
-export default Plugins;
+export default Hacktoberfest;

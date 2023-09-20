@@ -140,7 +140,12 @@ module.exports = {
         3: '3px',
       },
       backgroundSize: {
-        grid: '25px 25px'
+        grid: '25px 25px',
+        "80%": "80%",
+        "reward-mobile": "1500px"
+      },
+      backgroundPosition: {
+        "reward-mobile": "-850px"
       },
       backgroundImage: {
         'radial-gradient':
@@ -155,7 +160,8 @@ module.exports = {
         'cta-2-small': "url('/images/bg/cta-bg-2-small.png')",
         noise: "url('/images/noise.png')",
         quote: "url('/images/bg/quotes.svg')",
-        grid: 'linear-gradient(to right, #22273C 1px, transparent 1px), linear-gradient(to bottom, #22273C 1px, transparent 1px);'
+        grid: 'linear-gradient(to right, #22273C 1px, transparent 1px), linear-gradient(to bottom, #22273C 1px, transparent 1px);',
+        'reward-success': "url('/images/hacktoberfest/reward-success.svg')"
       },
     },
   },

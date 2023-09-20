@@ -1,25 +1,44 @@
 import { NextSeo } from 'next-seo';
-import { MainLayout } from '../../../layouts';
-import Hero from '../../../components/Sections/Hacktoberfest/Hero';
+import PageSection from '../../../components/Common/PageSection';
+import RedeemCoupon from '../../../components/Sections/Hacktoberfest/Hero/redeem-coupon';
+import About from '../../../components/Sections/Hacktoberfest/Steps/about';
+import HowTo1 from '../../../components/Sections/Hacktoberfest/Steps/how-to1';
+import HowTo2 from '../../../components/Sections/Hacktoberfest/Steps/how-to2';
+import HowTo3 from '../../../components/Sections/Hacktoberfest/Steps/how-to3';
+import Win from '../../../components/Sections/Hacktoberfest/Steps/win';
+import OpenSource from '../../../components/Sections/Hacktoberfest/Steps/open-source';
 import PropTypes from 'prop-types';
+import { MainLayout } from '../../../layouts';
 
-const Plugins = ({ couponCode }) => {
+const Reward = ({ couponCode }) => {
 
 
     return (
         <>
             <NextSeo
-                title="Plugins: Extend the generated code with plugins | Amplication"
-                description="Extend and customize your services by using plugins for various technologies and integrations."
+                title="Celebrate Open-source and Hacktoberfest 2023 with Amplication | Amplication"
+                description="We're inviting you to experience the joy and learning that comes from contributing to open-source projects like Amplication. Win digital swag and additional major prizes."
             />
-            <main className="w-full font-poppins z-10 mb-12 laptop:mb-[100px] amplication-base">
-                <Hero />
-                <div className='relative align-items-center flex-col  w-full  flex '>
-
-                    <a href={`https://app.amplication.com/login?coupon-code=${couponCode}`}>Redeem code</a>
-
-
-                </div>
+            <main className="font-jetbrains w-full z-10 ">
+                <RedeemCoupon couponCode={couponCode} />
+                <PageSection alternate >
+                    <OpenSource />
+                </PageSection>
+                <PageSection  >
+                    <About />
+                </PageSection>
+                <PageSection alternate >
+                    <Win />
+                </PageSection>
+                <PageSection  >
+                    <HowTo1 />
+                </PageSection>
+                <PageSection alternate >
+                    <HowTo2 />
+                </PageSection>
+                <PageSection  >
+                    <HowTo3 />
+                </PageSection >
             </main >
         </>
     );
@@ -36,15 +55,16 @@ export const getServerSideProps = async (context) => {
 };
 
 
-Plugins.propTypes = {
+Reward.propTypes = {
     couponCode: PropTypes.string,
 };
 
-Plugins.defaultProps = {
+Reward.defaultProps = {
     couponCode: "",
 };
 
-Plugins.getLayout = function getLayout(page) {
-    return <MainLayout>{page}</MainLayout>;
+
+Reward.getLayout = function getLayout(page) {
+    return <MainLayout paddingTopClasses={"laptop:pt-[90px]"} hideFooterBanner={true} >{page}</MainLayout>;
 };
-export default Plugins;
+export default Reward;
