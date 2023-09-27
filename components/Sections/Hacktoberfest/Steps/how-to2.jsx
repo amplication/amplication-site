@@ -32,7 +32,7 @@ const HowTo2 = () => {
               </>
             }
             ctaLabel="Check plugin ideas"
-            ctaUrl="http"
+            ctaUrl="https://github.com/amplication/amplication/issues/7027"
             className="pl-36 z-20"
           />
         </>
