@@ -31,7 +31,7 @@ const HowTo3 = () => {
               </>
             }
             ctaLabel="See issues"
-            ctaUrl="http"
+            ctaUrl="https://github.com/amplication/amplication/issues/7028"
             className="pl-36 z-20"
           />
         </>
