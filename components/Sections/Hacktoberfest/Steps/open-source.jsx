@@ -23,7 +23,7 @@ const OpenSource = () => {
             </>
           }
           ctaLabel="How to contribute"
-          ctaUrl="http"
+          ctaUrl="https://github.com/amplication/amplication/issues/7026"
         />
       }
       SecondSectionNode={

@@ -16,7 +16,7 @@ const Win = () => {
         </div>
       }
       ctaLabel="Read the rules"
-      ctaUrl="http"
+      ctaUrl="https://github.com/amplication/amplication/issues/7030"
     />
   );
 };
