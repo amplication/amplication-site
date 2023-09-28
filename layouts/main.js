@@ -9,6 +9,7 @@ const MainLayout = ({
   footerCompactView,
   footerClass,
   paddingTopClasses,
+  hideTopBar = false
 }) => {
   return (
     <div
@@ -17,7 +18,7 @@ const MainLayout = ({
         paddingTopClasses,
       )}
     >
-      <Header />
+      <Header hideBar={hideTopBar} />
       {children}
       <Footer
         customClass={footerClass}
