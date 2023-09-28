@@ -24,6 +24,7 @@ const OpenSource = () => {
           }
           ctaLabel="How to contribute"
           ctaUrl="https://github.com/amplication/amplication/issues/7026"
+          eventName={'ClickHacktoberfestHowToContribute'}
         />
       }
       SecondSectionNode={

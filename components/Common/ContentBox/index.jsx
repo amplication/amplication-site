@@ -1,7 +1,24 @@
 import PropTypes from 'prop-types';
 import Button from '../Button';
+import * as analytics from '../../../lib/analytics';
 
-const ContentBox = ({ title, body, ctaLabel, ctaUrl, className }) => {
+const ContentBox = ({
+  title,
+  body,
+  ctaLabel,
+  ctaUrl,
+  className,
+  eventName,
+}) => {
+  const handleCtaClick = useCallback(() => {
+    analytics.event({
+      action: eventName,
+      params: {
+        ctaLabel: ctaLabel,
+      },
+    });
+  }, [eventName, ctaLabel]);
+
   return (
     <>
       <div className={`text-sm font-normal ${className} `}>
@@ -13,7 +30,7 @@ const ContentBox = ({ title, body, ctaLabel, ctaUrl, className }) => {
             backgroundColor="transparent"
             hoverBackgroundColor="transparent"
             isLink={true}
-            //onClick={handleStartNowClick}
+            onClick={handleCtaClick}
             href={ctaUrl}
             className="mt-8 border border-1 border-white rounded !py-1.5 !px-3 inline-flex"
             delayLinkMs={300}
@@ -30,6 +47,7 @@ ContentBox.propTypes = {
   ctaLabel: PropTypes.string,
   ctaUrl: PropTypes.string,
   className: PropTypes.string,
+  eventName: PropTypes.string,
 };
 
 ContentBox.defaultProps = {
@@ -38,6 +56,7 @@ ContentBox.defaultProps = {
   ctaLabel: '',
   ctaUrl: '',
   className: '',
+  eventName: '',
 };
 
 export default ContentBox;
