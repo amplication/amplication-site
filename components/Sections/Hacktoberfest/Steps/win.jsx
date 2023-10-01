@@ -17,6 +17,7 @@ const Win = () => {
       }
       ctaLabel="Read the rules"
       ctaUrl="https://github.com/amplication/amplication/issues/7030"
+      eventName={'ClickHacktoberfestRules'}
     />
   );
 };

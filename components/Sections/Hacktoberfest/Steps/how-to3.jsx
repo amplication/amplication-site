@@ -33,6 +33,7 @@ const HowTo3 = () => {
             ctaLabel="Learn More"
             ctaUrl="https://github.com/amplication/amplication/issues/7028"
             className="pl-36 z-20"
+            eventName={'ClickHacktoberfestBuildApp'}
           />
         </>
       }

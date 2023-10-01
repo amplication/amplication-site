@@ -32,6 +32,7 @@ const HowTo1 = () => {
             ctaLabel="See issues"
             ctaUrl="https://github.com/amplication/amplication/issues?q=is%3Aopen+is%3Aissue+label%3A%22open+to+community%22"
             className="pl-36 z-20"
+            eventName={'ClickHacktoberfestIssues'}
           />
         </>
       }

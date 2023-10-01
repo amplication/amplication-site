@@ -1,13 +1,14 @@
-import TopBar from './TopBar';
+// import TopBar from './TopBar';
+import HacktoberfestBar from './TopBar/hacktoberfest';
 import MainBar from './MainBar';
 import BottomBar from './BottomBar';
 
-const Header = () => {
+const Header = ({ hideBar = false }) => {
   return (
     <>
       <header className="z-20 font-poppins laptop:fixed laptop:w-full laptop:top-0 h-[150px]">
         <div className="fixed w-full">
-          <TopBar />
+          {!hideBar && <HacktoberfestBar />}
           <MainBar />
           <BottomBar />
         </div>
