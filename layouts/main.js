@@ -9,6 +9,7 @@ const MainLayout = ({
   footerCompactView,
   footerClass,
   paddingTopClasses,
+  hideTopBar = false
 }) => {
   return (
     <div
@@ -17,7 +18,7 @@ const MainLayout = ({
         paddingTopClasses,
       )}
     >
-      <Header />
+      <Header hideBar={hideTopBar} />
       {children}
       <Footer
         customClass={footerClass}
@@ -34,6 +35,7 @@ MainLayout.propTypes = {
   footerCompactView: PropTypes.bool,
   footerClass: PropTypes.string,
   paddingTopClasses: PropTypes.string,
+  hideTopBar: PropTypes.bool
 };
 
 MainLayout.defaultProps = {
@@ -41,6 +43,7 @@ MainLayout.defaultProps = {
   footerCompactView: false,
   footerClass: '',
   paddingTopClasses: 'laptop:pt-[110px]',
+  hideTopBar: false
 };
 
 export { MainLayout };
