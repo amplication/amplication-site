@@ -35,6 +35,7 @@ MainLayout.propTypes = {
   footerCompactView: PropTypes.bool,
   footerClass: PropTypes.string,
   paddingTopClasses: PropTypes.string,
+  hideTopBar: PropTypes.bool
 };
 
 MainLayout.defaultProps = {
@@ -42,6 +43,7 @@ MainLayout.defaultProps = {
   footerCompactView: false,
   footerClass: '',
   paddingTopClasses: 'laptop:pt-[110px]',
+  hideTopBar: false
 };
 
 export { MainLayout };

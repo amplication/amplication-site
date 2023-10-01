@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import Button from '../Button';
 import * as analytics from '../../../lib/analytics';
+import { useCallback } from 'react';
 
 const ContentBox = ({
   title,
