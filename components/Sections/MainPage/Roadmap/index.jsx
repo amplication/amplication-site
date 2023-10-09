@@ -30,6 +30,9 @@ const Roadmap = ({ customClass }) => {
               <li className="done">REST API</li>
               <li className="done">React Admin UI</li>
               <li className="text-white">Subscriptions</li>
+              <li className="text-white">Custom actions</li>
+              <li className="text-white">Custom types</li>
+              <li className="text-white">API gateway</li>
               <li className="text-white">Websockets</li>
             </ul>
           </div>
@@ -42,8 +45,10 @@ const Roadmap = ({ customClass }) => {
               <li className="done">PostgreSQL</li>
               <li className="done">MySQL</li>
               <li className="done">MongoDB</li>
-              <li className="text-white">ERD View</li>
-              <li className="text-white">Connect to your own database</li>
+              <li className="done">ERD View</li>
+              <li className="done">Connect to your own database</li>
+              <li className="done">Import schema from existing database</li>
+              <li className="done">MS SQL</li>
             </ul>
           </div>
         </div>
@@ -55,8 +60,10 @@ const Roadmap = ({ customClass }) => {
               <li className="done">Identity Management</li>
               <li className="done">Plugin System &amp; marketplace</li>
               <li className="done">Monorepo</li>
+              <li className="done">Monitoring &amp; observability</li>
               <li className="text-white">Logging &amp; auditing</li>
-              <li className="text-white">Monitoring &amp; observability</li>
+              <li className="text-white">Multi tenancy</li>
+              <li className="text-white">Serverless</li>
             </ul>
           </div>
         </div>
@@ -66,7 +73,10 @@ const Roadmap = ({ customClass }) => {
             <ul className="roadmap-list">
               <li className="done">Modular services</li>
               <li className="done">Queues</li>
-              <li className="text-white">Other transports</li>
+              <li className="done">Other transports</li>
+              <li className="text-white">Storage resource</li>
+              <li className="text-white">Central auth resource</li>
+              <li className="text-white">Service without database</li>
               <li className="text-white">Secrets</li>
               <li className="text-white">Environment variables</li>
             </ul>
@@ -81,8 +91,8 @@ const Roadmap = ({ customClass }) => {
               <li className="done">Custom Code</li>
               <li className="done">Continuos sync with Git</li>
               <li className="done">Auto merge and conflict management</li>
+              <li className="done">Multiple branches</li>
               <li className="text-white">GitLab and other Git services</li>
-              <li className="text-white">Multiple branches</li>
             </ul>
           </div>
         </div>
