@@ -65,6 +65,6 @@ Reward.defaultProps = {
 
 
 Reward.getLayout = function getLayout(page) {
-    return <MainLayout paddingTopClasses={"laptop:pt-[90px]"} hideFooterBanner={false} >{page}</MainLayout>;
+    return <MainLayout hideTopBar={true} paddingTopClasses={"laptop:pt-[90px]"} hideFooterBanner={false} >{page}</MainLayout>;
 };
 export default Reward;
