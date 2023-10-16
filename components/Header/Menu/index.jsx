@@ -10,6 +10,7 @@ import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Navbar from 'react-bootstrap/Navbar';
 import GitHubStarsButton from '../../Common/GitHubStarsButton';
+import GitHubStarsUsButtonContent from '../../Common/GitHubStarsButton/GitHubStarsUsButtonContent';
 
 const MENU_ITEMS = [
   {
@@ -92,18 +93,6 @@ const MENU_ITEMS = [
       },
     ],
   },
-
-  {
-    title: 'Log In',
-    href: {
-      pathname: 'https://app.amplication.com/login',
-    },
-    target: '_self',
-    onClickEventName: 'startNowClicked',
-    onClickEventParams: {
-      buttonLocation: 'header-login',
-    },
-  },
 ];
 
 const Menu = () => {
@@ -111,6 +100,7 @@ const Menu = () => {
 
   const { width } = useWindowSize();
 
+  const router = useRouter();
   const isMobileMenu = width < 992;
 
   const handleStartNowClick = useCallback(() => {
@@ -121,6 +111,15 @@ const Menu = () => {
       },
     });
   }, []);
+
+  const handleStarUsClick = useCallback(() => {
+    analytics.event({
+      action: 'starUsClicked',
+      params: {
+        pageUri: router.asPath,
+      },
+    });
+  }, [router.asPath]);
 
   const handleMenuClick = useCallback((menuItem) => {
     if (menuItem && menuItem.onClickEventName) {
@@ -163,6 +162,33 @@ const Menu = () => {
                   onMenuItemClick={handleMenuClick}
                 />
               ))}
+              <MenuItem
+                isMobileMenu={isMobileMenu}
+                item={{
+                  title: <GitHubStarsUsButtonContent />,
+                  href: {
+                    pathname: 'https://github.com/amplication/amplication',
+                  },
+                  target: '_blank',
+                }}
+                onMenuItemClick={handleStarUsClick}
+              />
+              <MenuItem
+                isMobileMenu={isMobileMenu}
+                item={{
+                  title: 'Log In',
+                  href: {
+                    pathname: 'https://app.amplication.com/login',
+                  },
+                  target: '_self',
+                  onClickEventName: 'startNowClicked',
+                  onClickEventParams: {
+                    buttonLocation: 'header-login',
+                  },
+                }}
+                className="nav-link-sep"
+                onMenuItemClick={handleStartNowClick}
+              />
             </Nav>
             <div className="mt-auto mt-[-1px] pb-8 laptop:hidden">
               <div className="w-full menu__item pt-12 flex flex-col justify-end items-stretch border-t border-[rgba(255,255,255,0.2)]">
@@ -185,9 +211,7 @@ const Menu = () => {
           </Navbar.Collapse>
         </Navbar>
       </div>
-      <div className="hidden laptop:flex ml-1 desktop:ml-4 align-items-center">
-        <GitHubStarsButton />
-      </div>
+
       <div className="hidden laptop:flex ml-1 desktop:ml-4 align-items-center">
         <Button
           text="Start Now"
@@ -204,7 +228,7 @@ const Menu = () => {
   );
 };
 
-const MenuItem = ({ item, onMenuItemClick, isMobileMenu }) => {
+const MenuItem = ({ item, onMenuItemClick, isMobileMenu, className }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [timeoutHandle, setTimeoutHandle] = useState(null);
 
@@ -260,7 +284,7 @@ const MenuItem = ({ item, onMenuItemClick, isMobileMenu }) => {
       <a
         target={item.target}
         onClick={() => onMenuItemClick(item)}
-        className={`nav-link ${asPath === url ? 'active' : ''} `}
+        className={`nav-link ${asPath === url ? 'active' : ''} ${className}`}
       >
         {item.title}
       </a>

@@ -18,12 +18,26 @@
 
   .nav-link {
     color: #a3a8b8 !important;
+    display: flex;
+    align-items: center;
+
+    &.nav-link-sep {
+      border-left: 1px solid #22273c;
+    }
+
+    svg {
+      fill: #a3a8b8 !important;
+      transition: fill 0.15s ease-in-out;
+    }
   }
 
   .nav-link:hover,
   .nav-link:active,
   .nav-link.active {
     color: #7950ed !important;
+    svg {
+      fill: #7950ed !important;
+    }
   }
 
   .nav-item.dropdown .dropdown-menu {
