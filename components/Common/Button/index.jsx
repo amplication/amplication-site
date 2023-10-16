@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import PropTypes from 'prop-types';
 import { useCallback } from 'react';
 
 // Background Colors
@@ -20,6 +20,7 @@ const Button = ({
   onClick,
   className,
   delayLinkMs,
+  target,
 }) => {
   const router = useRouter();
 
@@ -33,20 +34,20 @@ const Button = ({
   const handleClick = useCallback(
     (e) => {
       onClick && onClick(e);
-      if (delayLinkMs) {
+      if (delayLinkMs && !target) {
         e.preventDefault();
         setTimeout(() => {
           router.push(href);
         }, delayLinkMs);
       }
     },
-    [delayLinkMs, href, onClick, router],
+    [delayLinkMs, href, onClick, router, target],
   );
 
   if (isLink) {
     return (
       <Link href={href}>
-        <a onClick={handleClick} className={classes}>
+        <a onClick={handleClick} className={classes} target={target}>
           {text}
         </a>
       </Link>
@@ -60,7 +61,7 @@ const Button = ({
 };
 
 Button.propTypes = {
-  text: PropTypes.string.isRequired,
+  text: PropTypes.node,
   isAlignFull: PropTypes.bool,
   backgroundColor: PropTypes.string,
   hoverBackgroundColor: PropTypes.string,
@@ -68,6 +69,7 @@ Button.propTypes = {
   href: PropTypes.string,
   onClick: PropTypes.func,
   className: PropTypes.string,
+  target: PropTypes.string,
 };
 
 Button.defaultProps = {
@@ -77,6 +79,7 @@ Button.defaultProps = {
   href: '',
   onClick: undefined,
   className: undefined,
+  target: undefined,
 };
 
 export default Button;

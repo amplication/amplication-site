@@ -1,14 +1,15 @@
 import Link from 'next/link';
-import Button from '../../Common/Button';
 import { useRouter } from 'next/router';
-import { useState, useEffect, useCallback } from 'react';
-import useWindowSize from '../../../utils/useWindowSize';
+import { useCallback, useState } from 'react';
 import * as analytics from '../../../lib/analytics';
+import useWindowSize from '../../../utils/useWindowSize';
+import Button from '../../Common/Button';
 import Logo from '../Logo';
 
 import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import Navbar from 'react-bootstrap/Navbar';
+import GitHubStarsButton from '../../Common/GitHubStarsButton';
 
 const MENU_ITEMS = [
   {
@@ -183,6 +184,9 @@ const Menu = () => {
             </div>
           </Navbar.Collapse>
         </Navbar>
+      </div>
+      <div className="hidden laptop:flex ml-1 desktop:ml-4 align-items-center">
+        <GitHubStarsButton />
       </div>
       <div className="hidden laptop:flex ml-1 desktop:ml-4 align-items-center">
         <Button
