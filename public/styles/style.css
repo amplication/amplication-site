@@ -6221,9 +6221,9 @@ body {
 .amplication-base .rounded-sm {
   border-radius: 0.2rem !important;
 }
-.amplication-base .rounded {
+/* .amplication-base .rounded {
   border-radius: 0.25rem !important;
-}
+} */
 .amplication-base .rounded-top {
   border-top-left-radius: 0.25rem !important;
   border-top-right-radius: 0.25rem !important;
