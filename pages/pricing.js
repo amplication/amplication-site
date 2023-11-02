@@ -1,5 +1,6 @@
 import HeroBlock from '../components/Sections/Pricing/HeroBlock';
 import CTA from '../components/Sections/Pricing/CTA';
+import { PromoBanner } from '../components/Sections/Pricing/PromoBanner';
 import { NextSeo } from 'next-seo';
 import { MainLayout } from '../layouts';
 import dynamic from 'next/dynamic';
@@ -24,6 +25,7 @@ const Pricing = () => {
         <div className="pricing-page">
           {/*Hero Block*/}
           <HeroBlock />
+          <PromoBanner />
           {/*Block with prices*/}
           <PricingPlans />
           {/*Pricing Footer*/}
