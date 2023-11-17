@@ -11,6 +11,7 @@ import client from '../../services/plugin-api';
 import helpers from '../../helpers';
 import { MainLayout } from '../../layouts';
 import errorPage from '../404';
+import StartNowPlugin from '../../components/Plugins/start-now-plugin';
 
 
 
@@ -80,10 +81,8 @@ const Plugin = ({ plugin }) => {
           {plugin && <PluginDetails plugin={plugin} />}
         </div>
 
-
-
-
       </main>
+      <StartNowPlugin plugin={plugin} />
     </>
   );
 };
@@ -176,6 +175,6 @@ Plugin.defaultProps = {
   plugin: {}
 };
 Plugin.getLayout = function getLayout(page) {
-  return <MainLayout>{page}</MainLayout>;
+  return <MainLayout hideFooterBanner={true}>{page}</MainLayout>;
 };
 export default Plugin;

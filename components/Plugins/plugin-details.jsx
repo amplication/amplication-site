@@ -27,7 +27,7 @@ const PluginDetails = ({ plugin }) => {
 };
 
 PluginDetails.propTypes = {
-  PluginDetails: PropTypes.object.isRequired,
+  plugin: PropTypes.object.isRequired,
 };
 
 export default PluginDetails;

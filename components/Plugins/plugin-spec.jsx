@@ -36,7 +36,7 @@ const PluginSpec = ({ plugin }) => {
 };
 
 PluginSpec.propTypes = {
-  pluginSpec: PropTypes.object.isRequired,
+  plugin: PropTypes.object.isRequired,
 };
 
 export default PluginSpec;

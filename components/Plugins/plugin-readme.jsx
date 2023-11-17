@@ -34,7 +34,7 @@ const PluginReadme = ({ plugin }) => {
 };
 
 PluginReadme.propTypes = {
-  PluginReadme: PropTypes.object.isRequired,
+  plugin: PropTypes.object.isRequired,
 };
 
 export default PluginReadme;
