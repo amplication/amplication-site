@@ -1,5 +1,9 @@
 import slugify from 'slugify';
 
+
+const PLUGIN_LOGO_BASE_URL =
+  'https://raw.githubusercontent.com/amplication/plugin-catalog/master/assets/icons/';
+
 /** @typedef {{level: number, id: string, title: string: children?: Heading[]}} Heading */
 
 /* eslint no-useless-escape: 0 */
@@ -91,6 +95,10 @@ const helpers = {
     }
     return string;
   },
+  getPluginLogoUrl: (plugin) => {
+    return `${PLUGIN_LOGO_BASE_URL}${plugin.icon}`;
+  },
+
 
   /**
    * @param {string} path
@@ -100,6 +108,7 @@ const helpers = {
     new URL(path, process.env.NEXT_PUBLIC_SITE).toString(),
 
   getPostSlug: (slug) => `/blog/${slug}`,
+  getPluginSlug: (pluginId) => `/plugins/${pluginId}`,
 
   getPostDate: (date) => {
     const d = new Date(date || 'Dec 27, 2022');
@@ -223,6 +232,17 @@ const helpers = {
     }
     return initials;
   },
+  convertToRawGitHubUrl(githubUrl) {
+    // Check if the URL is a valid GitHub URL
+    if (!githubUrl.includes('github.com')) {
+      return "";
+    }
+
+    // Replace 'github.com' with 'raw.githubusercontent.com' and remove '/blob'
+    const rawUrl = githubUrl.replace('github.com', 'raw.githubusercontent.com').replace('/blob', '').replace('/tree', '');
+
+    return rawUrl;
+  }
 };
 
 export default helpers;

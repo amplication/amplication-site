@@ -1,8 +1,6 @@
 import Image from 'next/image';
 import PropTypes from 'prop-types';
-
-const PLUGIN_LOGO_BASE_URL =
-  'https://raw.githubusercontent.com/amplication/plugin-catalog/master/assets/icons/';
+import helpers from '../../helpers';
 
 const PluginLogo = ({ plugin }) => {
   return (
@@ -11,7 +9,7 @@ const PluginLogo = ({ plugin }) => {
         <Image
           width={44}
           height={44}
-          src={`${PLUGIN_LOGO_BASE_URL}${plugin.icon}`}
+          src={helpers.getPluginLogoUrl(plugin)}
           alt="plugin logo"
           className="rounded-lg"
         />
