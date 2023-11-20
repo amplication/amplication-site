@@ -35,14 +35,6 @@ const MENU_ITEMS = [
     target: '_self',
   },
   {
-    title: 'Roadmap',
-    href: {
-      pathname: '/',
-      hash: 'roadmap',
-    },
-    target: '_self',
-  },
-  {
     title: 'Pricing',
     href: {
       pathname: '/pricing',
