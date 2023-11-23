@@ -9803,7 +9803,7 @@ body {
 }
 @media (max-width: 640px) {
   .amplication-base section.page-welcome .main-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
 .amplication-base section.page-welcome .sub-title {

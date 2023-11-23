@@ -29,13 +29,17 @@ const HeroBlock = () => {
           <div className="header-and-video align-items-center">
             <div className="content-block">
               <div className="animated-header">
-                <h1 className="main-title mb-0">
-                  <span className="block font-bold">
-                    Generate Production&#8209;Ready <br /> Backend Services.
+                <h1 className="main-title mb-0 !font-normal">
+                  Anyone&nbsp;can&nbsp;
+                  <span className="font-bold">generate&nbsp;code</span>,
+                  <br />
+                  but&nbsp;
+                  <span className="text-pink">
+                    do&nbsp;you&nbsp;have&nbsp;the&nbsp;guts{' '}
                   </span>
-                  <span className="sub-title">
-                    Reliably. Securely. Consistently.
-                  </span>
+                  <br />
+                  to&nbsp;take&nbsp;it&nbsp;to&nbsp;
+                  <span className="font-bold">production</span>?
                 </h1>
                 <div className="explainer text-sm laptop:text-base large:text-lg text-white !mt-3 !mb-4 !max-w-[720px]">
                   Automatically generate backend services with the highest
