@@ -6,11 +6,11 @@ const Question = ({ question, answer }) => {
 
   return (
     <div className={styles.question} onClick={() => setIsOpen(!isOpen)}>
-      <button className={styles['question-toggle']}>
+      <button className={styles["question-toggle"]}>
         <strong>{question}</strong>
-        <span className={styles['toggle-symbol']}>{isOpen ? '-' : '+'}</span>
+        <span className={styles["toggle-symbol"]}>{isOpen ? "-" : "+"}</span>
       </button>
-      {isOpen && <div className={`${styles['question-answer']} ${isOpen ? styles.open : ''}`}>{answer}</div>}
+      {isOpen && <div className={`${styles["question-answer"]} ${isOpen ? styles.open : ""}`}>{answer}</div>}
     </div>
   );
 };
@@ -19,8 +19,8 @@ const PricingFAQ = () => {
   return (
     <section className="bg-transparent">
       <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
-          <h2 class="text-white text-center">FAQ</h2>
-          <section className={styles['faq-section']}>
+          <h2 className="text-white text-center">FAQ</h2>
+          <section className={styles["faq-section"]}>
             <Question
               question="What are the differences between the free and the enterprise tier?"
               answer={
