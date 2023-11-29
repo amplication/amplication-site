@@ -1,7 +1,7 @@
 .faq-section {
     background-color: #1a1a2e; /* Assuming this is the background color */
     color: #fff;
-    max-width: 800px; /* Adjust width as necessary */
+    max-width: 972px; /* Adjust width as necessary */
     margin: auto;
     padding: 2rem;
     border-radius: 8px;
@@ -35,11 +35,16 @@
     outline: none !important;
   }
 
+  .question-text {
+    font-weight: 600;
+    font-size: 14px;
+  }
+
   .question-answer {
     display: none; /* Hide answer by default */
     padding-top: 1rem;
     margin-top: 1rem;
-    font-size: 1rem;
+    font-size: 14px;
     line-height: 1.5;
     border-top: 1px solid #333;
 
@@ -54,4 +59,9 @@
     line-height: 1;
     margin-left: 0.3rem;
   }
-  
+
+@media (max-width: 992px) {
+    .faq-section {
+        padding: 1rem;
+    }
+}

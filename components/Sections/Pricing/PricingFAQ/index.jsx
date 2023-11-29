@@ -7,7 +7,7 @@ const Question = ({ question, answer }) => {
   return (
     <div className={styles.question} onClick={() => setIsOpen(!isOpen)}>
       <button className={styles["question-toggle"]}>
-        <strong>{question}</strong>
+        <span className={styles["question-text"]}>{question}</span>
         <span className={styles["toggle-symbol"]}>{isOpen ? "-" : "+"}</span>
       </button>
       {isOpen && <div className={`${styles["question-answer"]} ${isOpen ? styles.open : ""}`}>{answer}</div>}
@@ -27,7 +27,8 @@ const PricingFAQ = () => {
                 <div>
                   The Free plan includes database and model management, role-based
                   permissions, and both GraphQL & REST API support.
-                  <br></br>
+                  <br />
+                  <br />
                   The Enterprise plan adds unlimited projects, unlimited services,
                   unlimited team members, advanced security features, additional git
                   sync providers, dedicated support, and includes SSO.
