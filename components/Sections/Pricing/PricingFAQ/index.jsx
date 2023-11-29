@@ -39,7 +39,7 @@ const PricingFAQ = () => {
               question="Does Amplication support advanced security features like 2FA, audit logs, and SSO for organizational security concerns?"
               answer={
                 <div>
-                  Yes, Amplication's Enterprise plan is equipped with advanced
+                  Yes, Amplication&lsquo;s Enterprise plan is equipped with advanced
                   security features to meet the needs of your organization. This
                   includes support for{" "}
                   <a href="https://docs.amplication.com/enterprise-sso/">
@@ -55,7 +55,7 @@ const PricingFAQ = () => {
             />
             <Question
             question="Can I pay to Amplication through my AWS account (AWS billing)?"
-            answer="Yes, we support this billing method. Please contact us and we'll help you handle it."
+            answer="Yes, we support this billing method. Please contact us and we will help you handle it."
             />
             <Question
               question="We have our own best practices and standards - can we ask Amplication to generate the code in our own flavor?"
@@ -83,7 +83,7 @@ const PricingFAQ = () => {
                 <div>
                   No, we respect your code changes.
                   <br></br>
-                  Amplication's Smart Git Sync feature ensures that your custom code
+                  Amplication&lsquo;s Smart Git Sync feature ensures that your custom code
                   always takes precedence over the generated code.
                   <br></br>
                   For more details on how this works, please refer to our{" "}
