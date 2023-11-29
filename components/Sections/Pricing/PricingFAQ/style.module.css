@@ -1,0 +1,57 @@
+.faq-section {
+    background-color: #1a1a2e; /* Assuming this is the background color */
+    color: #fff;
+    max-width: 800px; /* Adjust width as necessary */
+    margin: auto;
+    padding: 2rem;
+    border-radius: 8px;
+  }
+  
+  .question {
+    border: 1px solid #333; /* Darker line for separation */
+    border-radius: 8px;
+    padding: 1rem 2rem;
+    cursor: pointer;
+  }
+
+  .question + .question { 
+    margin-top: 0.8rem;
+  }
+
+  button.question-toggle {
+    background: none;
+    border: none;
+    outline: none !important;
+    color: #fff;
+    width: 100%;
+    text-align: left;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  button.question-toggle:focus {
+    outline: none !important;
+  }
+
+  .question-answer {
+    display: none; /* Hide answer by default */
+    padding-top: 1rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-top: 1px solid #333;
+
+  }
+  
+  .question-answer.open {
+    display: block; /* Show answer when open */
+  }
+  
+  .toggle-symbol {
+    font-size: 1.5rem;
+    line-height: 1;
+    margin-left: 0.3rem;
+  }
+  
