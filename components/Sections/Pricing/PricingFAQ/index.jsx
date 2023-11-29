@@ -46,7 +46,7 @@ const PricingFAQ = () => {
               question="We are working with the enterprise edition of GitLab / BitBucket, will it work with Amplication?"
               answer={
                 <div>
-                  Amplication's compatibility with git providers varies based on the
+                  Amplication&lsquo;s compatibility with git providers varies based on the
                   plan:
                   <ul>
                     <li>
@@ -82,7 +82,7 @@ const PricingFAQ = () => {
               question="Will your generated code override my code changes?"
               answer={
                 <div>
-                  Yes, Amplication's Smart Git Sync feature ensures that your custom
+                  Yes, Amplication&lsquo;s Smart Git Sync feature ensures that your custom
                   code always takes precedence over the generated code. Our system
                   intelligently combines both, managing the syncing process
                   efficiently. This means that your changes will not be overridden
