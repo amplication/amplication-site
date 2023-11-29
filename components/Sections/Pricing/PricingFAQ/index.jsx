@@ -42,7 +42,7 @@ const PricingFAQ = () => {
                   Yes, Amplication&lsquo;s Enterprise plan is equipped with advanced
                   security features to meet the needs of your organization. This
                   includes support for{" "}
-                  <a target="_blank" href="https://docs.amplication.com/enterprise-sso/">
+                  <a target="_blank" rel="noreferrer" href="https://docs.amplication.com/enterprise-sso/">
                     Single Sign-On (SSO)
                   </a>
                   , audit logs, and Two-Factor Authentication (2FA).
@@ -62,14 +62,14 @@ const PricingFAQ = () => {
               answer={
                 <div>
                   Amplication offers a structured way to{" "}
-                  <a target="_blank" href="https://docs.amplication.com/custom-code/">
+                  <a target="_blank" rel="noreferrer" href="https://docs.amplication.com/custom-code/">
                     add custom code
                   </a>{" "}
                   and modify your generated code.
                   <br />
                   <br />
                   We also provide various{" "}
-                  <a target="_blank" href="https://docs.amplication.com/getting-started/plugins/">
+                  <a target="_blank" rel="noreferrer" href="https://docs.amplication.com/getting-started/plugins/">
                     plugins
                   </a>
                   , like Prettier and ESLint, so you can format your code exactly
@@ -87,7 +87,7 @@ const PricingFAQ = () => {
                   always takes precedence over the generated code.
                   <br></br>
                   For more details on how this works, please refer to our{" "}
-                  <a target="_blank" href="https://docs.amplication.com/smart-git-sync/">
+                  <a target="_blank" rel="noreferrer" href="https://docs.amplication.com/smart-git-sync/">
                     documentation
                   </a>
                   .
