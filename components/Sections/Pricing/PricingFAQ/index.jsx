@@ -35,31 +35,26 @@ const PricingFAQ = () => {
               }
             />
             <Question
-              question="Due to security regulations, my enterprise require supporting relevant capabilities, like 2FA, audit log, SSO and more. Do you support it?"
-              answer="The Enterprise edition gives you access to advanced security features like SSO and audit logs are provided."
+              question="Does Amplication support advanced security features like 2FA, audit logs, and SSO for organizational security concerns?"
+              answer={
+                <div>
+                  Yes, Amplication's Enterprise plan is equipped with advanced
+                  security features to meet the needs of your organization. This
+                  includes support for{" "}
+                  <a href="https://docs.amplication.com/enterprise-sso/">
+                    Single Sign-On (SSO)
+                  </a>
+                  , audit logs, and Two-Factor Authentication (2FA).
+                </div>
+              }
             />
             <Question
               question="We have multiple teams in the organization, can we use one account to manage separate teams?"
               answer="Yes, the Enterprise plan lets you have unlimited projects, services, and team members. You can manage all your teams from the same organization in your preferred structure."
             />
             <Question
-              question="We are working with the enterprise edition of GitLab / BitBucket, will it work with Amplication?"
-              answer={
-                <div>
-                  Amplication&lsquo;s compatibility with git providers varies based on the
-                  plan:
-                  <ul>
-                    <li>
-                      <strong>Free Plan:</strong> Supports GitHub.
-                    </li>
-                    <li>
-                      <strong>Enterprise Plan:</strong> Supports Bitbucket, AWS
-                      CodeCommit, and GitLab.
-                    </li>
-                  </ul>
-                  We have to plans to add more git providers in the future.
-                </div>
-              }
+            question="Can I pay to Amplication through my AWS account (AWS billing)?"
+            answer="Yes, we support this billing method. Please contact us and we'll help you handle it."
             />
             <Question
               question="We have our own best practices and standards - can we ask Amplication to generate the code in our own flavor?"
@@ -72,9 +67,12 @@ const PricingFAQ = () => {
                   and modify your generated code.
                   <br />
                   <br />
-                  We provide guides on how to add actions to REST API controllers,
-                  add custom DTOs (Data Transfer Objects), add queries to GraphQL
-                  resolver, and more on our documentation.
+                  We also provide various{" "}
+                  <a href="https://docs.amplication.com/getting-started/plugins/">
+                    plugins
+                  </a>
+                  , like Prettier and ESLint, so you can format your code exactly
+                  how you need it.
                 </div>
               }
             />
@@ -82,13 +80,12 @@ const PricingFAQ = () => {
               question="Will your generated code override my code changes?"
               answer={
                 <div>
-                  Yes, Amplication&lsquo;s Smart Git Sync feature ensures that your custom
-                  code always takes precedence over the generated code. Our system
-                  intelligently combines both, managing the syncing process
-                  efficiently. This means that your changes will not be overridden
-                  and will be seamlessly integrated with any new changes from
-                  Amplication. For more details on how this works, please refer to
-                  our{" "}
+                  No, we respect your code changes.
+                  <br></br>
+                  Amplication's Smart Git Sync feature ensures that your custom code
+                  always takes precedence over the generated code.
+                  <br></br>
+                  For more details on how this works, please refer to our{" "}
                   <a href="https://docs.amplication.com/smart-git-sync/">
                     documentation
                   </a>
@@ -96,7 +93,6 @@ const PricingFAQ = () => {
                 </div>
               }
             />
-
           </section>
         </div>
       </section>
