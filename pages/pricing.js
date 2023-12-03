@@ -17,7 +17,7 @@ const Pricing = () => {
   return (
     <>
       <NextSeo
-        title="Most flexible backend developent platform | Pricing | Amplciation"
+        title="Most flexible backend developent platform | Pricing | Amplication"
         description="Amplication is an open-source platform built by developers for developers. We provide forever-free community developer license alongside flexible enterprise plans"
       />
 
