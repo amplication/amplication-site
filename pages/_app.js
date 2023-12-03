@@ -100,16 +100,6 @@ function Amplication({ Component, pageProps }) {
         href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap"
         rel="stylesheet"
       />
-      {/*Facebook Pixel*/}
-      <Script
-        id={'facebook-pixel'}
-        strategy={'afterInteractive'}
-        dangerouslySetInnerHTML={{
-          __html: `
-            !function(e,t,n,c,o,a,f){e.fbq||(o=e.fbq=function(){o.callMethod?o.callMethod.apply(o,arguments):o.queue.push(arguments)},e._fbq||(e._fbq=o),o.push=o,o.loaded=!0,o.version="2.0",o.queue=[],(a=t.createElement(n)).async=!0,a.src="https://connect.facebook.net/en_US/fbevents.js",(f=t.getElementsByTagName(n)[0]).parentNode.insertBefore(a,f))}(window,document,"script"),fbq("init","694076677979309"),fbq("track","PageView");
-          `,
-        }}
-      />
       {/*Hotjar Tracking Code*/}
       <Script
         id={'hotjar'}
