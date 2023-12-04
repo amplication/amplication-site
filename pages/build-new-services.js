@@ -113,7 +113,7 @@ const Home = () => {
           >
 
             <div className="py-1">
-              Control the flavor of the generated code, including security, privacy, standards, and best practices, with Amplication plugins. Add advanced analytics, connect to CI/CD pipelines, integrate with third-party services, or optimize your deployment process. Our plugins are designed to cater to your specific needs. Create custom plugins to keep your organization's current conventions, standards, and best practices while enforcing usage across teams.
+              Control the flavor of the generated code, including security, privacy, standards, and best practices, with Amplication plugins. Add advanced analytics, connect to CI/CD pipelines, integrate with third-party services, or optimize your deployment process. Our plugins are designed to cater to your specific needs. Create custom plugins to keep your organization&apos;s current conventions, standards, and best practices while enforcing usage across teams.
             </div>
 
           </WidePanelWithImage>
