@@ -8,6 +8,7 @@ import icon3 from '../public/images/db-import/icon-3.svg';
 import icon4 from '../public/images/db-import/icon-4.svg';
 import icon5 from '../public/images/db-import/icon-5.svg';
 import dbImportImage from '../public/images/db-import/db-import.svg';
+import PageSection from '../components/Common/PageSection';
 
 import { NextSeo } from 'next-seo';
 import { MainLayout } from '../layouts';
@@ -74,32 +75,34 @@ const DbImportBeta = () => {
           title={'DB Schema Import Key Features'}
           customClasses={'!bg-transparent'}
         />
-        <WidePanelWithImage
-          secondaryBtn={{
-            href: '#apply',
-            title: 'Apply now',
-          }}
-          image={dbImportImage}
-          title={
-            'Get early access to the DB Schema Import feature and shape its final version'
-          }
-        >
-          <div className="py-2 text-sm desktop:text-lg text-white desktop:!leading-[27px] max-w-[600px]">
-            What do you get as beta user:
-          </div>
-          <div className="py-1">
-            <span className="font-semibold"> Early Access:</span> Get your hands
-            on our DB Schema Import feature before anyone else.
-          </div>
-          <div className="py-1">
-            <span className="font-semibold">Influence Development:</span>{' '}
-            Provide your valuable feedback and help us fine-tune the feature.
-          </div>
-          <div className="py-1">
-            <span className="font-semibold">Dedicated Support:</span> Receive
-            priority support to ensure a smooth experience.
-          </div>
-        </WidePanelWithImage>
+        <PageSection alternate  >
+          <WidePanelWithImage
+            secondaryBtn={{
+              href: '#apply',
+              title: 'Apply now',
+            }}
+            image={dbImportImage}
+            title={
+              'Get early access to the DB Schema Import feature and shape its final version'
+            }
+          >
+            <div className="py-2 text-sm desktop:text-lg text-white desktop:!leading-[27px] max-w-[600px]">
+              What do you get as beta user:
+            </div>
+            <div className="py-1">
+              <span className="font-semibold"> Early Access:</span> Get your hands
+              on our DB Schema Import feature before anyone else.
+            </div>
+            <div className="py-1">
+              <span className="font-semibold">Influence Development:</span>{' '}
+              Provide your valuable feedback and help us fine-tune the feature.
+            </div>
+            <div className="py-1">
+              <span className="font-semibold">Dedicated Support:</span> Receive
+              priority support to ensure a smooth experience.
+            </div>
+          </WidePanelWithImage>
+        </PageSection>
       </main>
     </>
   );
