@@ -65,13 +65,8 @@ const HeroBlock = () => {
                   <span>Admin UI.</span>
                 </div>
                 <div className="explainer text-base laptop:text-lg large:text-xl text-white !mt-2">
-                  Amplication is a&nbsp;
-                  <span className="highlight">
-                    flexible open-source Node.js
-                  </span>{' '}
-                  app development platform. It helps you build production-ready
-                  Node.js backend without wasting time on
-                  repetitive&nbsp;coding.
+                  Build production-ready services in minutes without wasting
+                  time on repetitive coding
                 </div>
               </div>
               <div className="buttons-wrapper d-flex align-items-center justify-content-start">

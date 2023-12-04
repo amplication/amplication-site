@@ -1,7 +1,7 @@
 import HeroBlock from '../components/Sections/MainPage/HeroBlock';
 import { NextSeo } from 'next-seo';
 import { MainLayout } from '../layouts';
-import Slider from '../components/Sections/Enterprise/Slider';
+import TechSlider from '../components/Common/TechSlider';
 import PageSection from '../components/Common/PageSection';
 import WidePanelWithImage from '../components/Common/WidePanelWithImage';
 import image1 from '../public/images/build-new-services/image1.svg';
@@ -34,8 +34,8 @@ const Home = () => {
         <PageSection className={"page-welcome !pt-10 !pb-8 large:!py-[9vh] xlg:!py-[17vh]"} >
           <HeroBlock />
         </PageSection >
-        <PageSection alternate className={'!pt-5 !pb-4 laptop:!py-20 '} innerClassName={"flex-grow"}>
-          <Slider />
+        <PageSection alternate >
+          <TechSlider />
         </PageSection>
 
         <PageSection   >

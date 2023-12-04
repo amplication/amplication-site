@@ -14,6 +14,13 @@ import GitHubStarsUsButtonContent from '../../Common/GitHubStarsButton/GitHubSta
 
 const MENU_ITEMS = [
   {
+    title: 'Docs',
+    href: {
+      pathname: 'https://docs.amplication.com/',
+    },
+    target: '_blank',
+  },
+  {
     title: 'Product',
     href: {
       pathname: '/product',
@@ -34,33 +41,12 @@ const MENU_ITEMS = [
         },
         target: '_self',
       },
-      {
-        title: 'Continuous Backend Code Generator',
-        href: {
-          pathname: '/Continuous-backend-code-generator',
-        },
-        target: '_self',
-      },
     ],
-  },
-  {
-    title: 'Docs',
-    href: {
-      pathname: 'https://docs.amplication.com/',
-    },
-    target: '_blank',
   },
   {
     title: 'Enterprise',
     href: {
       pathname: '/enterprise',
-    },
-    target: '_self',
-  },
-  {
-    title: 'Developers',
-    href: {
-      pathname: '/developers',
     },
     target: '_self',
   },
