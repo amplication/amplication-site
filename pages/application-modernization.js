@@ -16,8 +16,8 @@ const ApplicationModernization = () => {
   return (
     <>
       <NextSeo
-        title="Building Enterprise Ready Backend | Amplication"
-        description="Amplication is the most flexible open-source backend development platform for Node.JS applications. Design models and roles, deploy your app, connect with REST or GraphQL API, sync with GitHub. Built for developers, by developers."
+        title="Modernize, Transform and Migrate Legacy Systems | Amplication"
+        description="Empower your business with modern applications. Streamline and revolutionize your development process."
         canonical={helpers.getCanonical('enterprise')}
       />
 
@@ -41,8 +41,8 @@ const ApplicationModernization = () => {
         </PageSection>
 
         <StartNow
-          title="Modernize, Transform and Migrate Legacy Systems | Amplication"
-          description="Empower your business with modern applications. Streamline and revolutionize your development process."
+          title="Supercharge Your Business Today"
+          description="Discover how Amplication Enterprise can help you build powerful, scalable, and secure applications tailored to your business needs."
           linkPrimary={{
             href: '/contact-us',
             title: 'Book a Demo',

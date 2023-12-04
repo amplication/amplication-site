@@ -15,10 +15,8 @@ const Home = () => {
   return (
     <>
       <NextSeo
-        title="Node.js App Development: Open Source Platform | Amplication"
-        description="Amplication is the most flexible open-source platform for Node.js app development.
-        We enable developers to auto-generate production-ready backend in minutes. Design modelsand roles,
-         deploy your app, connect with REST or GraphQL API, sync with GitHub. You own the code."
+        title="Generate production-ready backend infrastructure | Amplication"
+        description="Automatically generate backend services with the highest standards, consistency and scalability. Never waste time on boilerplate and repetitive coding again. No more copy+paste from old projects or legacy templates."
         openGraph={{
           type: 'website',
           images: [
