@@ -1,7 +1,6 @@
 import Hero from '../components/Sections/Modernization/Hero';
 import Slider from '../components/Sections/Enterprise/Slider';
 import StartNow from '../components/Sections/Enterprise/StartNow';
-import IconsGroup from '../components/Sections/Enterprise/IconsGroup';
 import Values from '../components/Sections/Modernization/ModernizationValues';
 import Values2 from '../components/Sections/Modernization/ModernizationValues2';
 import HowItWorks from '../components/Sections/Modernization/HowItWorks';
@@ -11,7 +10,6 @@ import { NextSeo } from 'next-seo';
 import { MainLayout } from '../layouts';
 import helpers from '../helpers';
 import PageSection from '../components/Common/PageSection';
-import Soc2Banner from '../components/Common/SOC2';
 
 
 const ApplicationModernization = () => {
@@ -43,8 +41,8 @@ const ApplicationModernization = () => {
         </PageSection>
 
         <StartNow
-          title="Supercharge Your Business Today"
-          description="Discover how Amplication Enterprise can help you build powerful, scalable, and secure applications tailored to your business needs."
+          title="Modernize, Transform and Migrate Legacy Systems | Amplication"
+          description="Empower your business with modern applications. Streamline and revolutionize your development process."
           linkPrimary={{
             href: '/contact-us',
             title: 'Book a Demo',

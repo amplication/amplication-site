@@ -1,9 +1,11 @@
+import { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useCallback } from 'react';
 import * as analytics from '../../../../lib/analytics';
 import VideoWatch from '../../../../public/images/video-watch.png';
 import GitHubStarsButton from '../../../Common/GitHubStarsButton';
+import Typed from 'typed.js';
 
 const HeroBlock = () => {
   const handleStartNowClick = useCallback(() => {
@@ -13,6 +15,23 @@ const HeroBlock = () => {
         buttonLocation: 'developers-hero',
       },
     });
+  }, []);
+
+  useEffect(() => {
+    const typingAnimations = document.querySelectorAll(
+      '#animated-header-typed',
+    );
+    if (typingAnimations.length) {
+      new Typed('#animated-header-typed', {
+        stringsElement: '#animated-header-content',
+        typeSpeed: 60,
+        backSpeed: 20,
+        backDelay: 1700,
+        startDelay: 0,
+        smartBackspace: false,
+        loop: true,
+      });
+    }
   }, []);
 
   return (

@@ -4,7 +4,6 @@ import { useRouter } from 'next/router';
 import { DefaultSeo } from 'next-seo';
 import PropTypes from 'prop-types';
 import { useEffect } from 'react';
-import Typed from 'typed.js';
 
 import '../styles/globals.css';
 import '../styles/stigg.css';
@@ -44,20 +43,7 @@ function Amplication({ Component, pageProps }) {
   }, [router.events, router.asPath]);
 
   useEffect(() => {
-    const typingAnimations = document.querySelectorAll(
-      '#animated-header-typed',
-    );
-    if (typingAnimations.length && isDevPage) {
-      new Typed('#animated-header-typed', {
-        stringsElement: '#animated-header-content',
-        typeSpeed: 60,
-        backSpeed: 20,
-        backDelay: 1700,
-        startDelay: 0,
-        smartBackspace: false,
-        loop: true,
-      });
-    }
+
 
     // Run code on client-side only : ensure document is here
     if (typeof document !== 'undefined') {
