@@ -14,6 +14,36 @@ import GitHubStarsUsButtonContent from '../../Common/GitHubStarsButton/GitHubSta
 
 const MENU_ITEMS = [
   {
+    title: 'Product',
+    href: {
+      pathname: '/product',
+    },
+    target: '_blank',
+    menuItems: [
+      {
+        title: 'Build New Services',
+        href: {
+          pathname: '/build-new-services',
+        },
+        target: '_self',
+      },
+      {
+        title: 'Application Modernization',
+        href: {
+          pathname: '/application-modernization',
+        },
+        target: '_self',
+      },
+      {
+        title: 'Continuous Backend Code Generator',
+        href: {
+          pathname: '/Continuous-backend-code-generator',
+        },
+        target: '_self',
+      },
+    ],
+  },
+  {
     title: 'Docs',
     href: {
       pathname: 'https://docs.amplication.com/',
@@ -276,7 +306,9 @@ const MenuItem = ({ item, onMenuItemClick, isMobileMenu, className }) => {
       <a
         target={item.target}
         onClick={() => onMenuItemClick(item)}
-        className={`nav-link ${asPath === url ? 'active' : ''} ${className}`}
+        className={`whitespace-nowrap	 nav-link ${
+          asPath === url ? 'active' : ''
+        } ${className}`}
       >
         {item.title}
       </a>
