@@ -14,6 +14,7 @@ import danieleIasella from '../../../../public/images/team/daniele.png';
 import mulyGottlieb from '../../../../public/images/team/muly.png';
 import orenAlaluf from '../../../../public/images/team/oren.png';
 import lizaDymava from '../../../../public/images/team/liza.png';
+import pazYanover from '../../../../public/images/team/paz.png';
 
 import talkWithUs from '../../../../public/images/icons/talk-with-with-team.svg';
 import joinUs from '../../../../public/images/icons/join-the-team.svg';
@@ -50,6 +51,17 @@ const members = [
       {
         href: 'https://twitter.com/InnaBell_',
         iconClass: 'twitter',
+      },
+    ],
+  },
+  {
+    name: 'Paz Yanover',
+    position: 'VP Product',
+    image: pazYanover,
+    links: [
+      {
+        href: 'https://www.linkedin.com/in/pazyanover/',
+        iconClass: 'linkedin',
       },
     ],
   },
