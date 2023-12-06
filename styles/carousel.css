@@ -10,3 +10,7 @@
 .animate {
   animation: scroll 25s linear infinite;
 }
+
+.animate-60 {
+  animation: scroll 60s linear infinite;
+}

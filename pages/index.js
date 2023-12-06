@@ -81,7 +81,7 @@ export const getStaticProps = async () => {
     const { data } = await client.query({
       query: gql`
         query {
-          plugins {
+          plugins(take:30) {
             id
             pluginId
             name

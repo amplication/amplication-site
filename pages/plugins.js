@@ -89,13 +89,6 @@ const Plugins = ({ plugins }) => {
 };
 
 export const getServerSideProps = async (context) => {
-  const hotPostCount = 1;
-  const postsPerPage =
-    helpers.getPostPerPage() *
-    (context.query.page ? parseInt(context.query.page) : 1);
-
-  const postsTake = hotPostCount + postsPerPage + 1;
-
   try {
     const { data } = await client.query({
       query: gql`
