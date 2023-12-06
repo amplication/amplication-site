@@ -15,6 +15,7 @@ const HubSpotForm = ({
   successMessage,
   pageName,
   formName,
+  includeConsent,
 }) => {
   const [formIsSending, setFormIsSending] = useState(false);
   const [successMsg, setSuccessMsg] = useState('');
@@ -82,7 +83,7 @@ const HubSpotForm = ({
   };
 
   return (
-    <div className="w-full max-w-[599px] overflow-hidden relative p-10 max-laptop:p-6 pt-7 border rounded border-solid border-dark-black-70 bg-light-blue z-10 max-laptop:order-[-1] ">
+    <div className="w-full max-w-[599px] overflow-hidden relative p-10 max-laptop:p-6 pt-7 border rounded border-solid border-dark-black-70 bg-light-blue z-10 ">
       <form
         className="hubspot w-full flex flex-col justify-start items-stretch laptop:flex-row laptop:flex-wrap laptop:items-start laptop:justify-between"
         method="POST"
@@ -90,20 +91,22 @@ const HubSpotForm = ({
         ref={form}
       >
         {children}
-        <div className="relative w-full !mt-2">
-          <label className="w-full mt-1 mb-0 flex align-items-center cursor-pointer">
-            <input
-              type="checkbox"
-              name="LEGAL_CONSENT.subscription_type_142787872"
-              className="shadow-none w-4 h-4 border rounded-sm border-solid border-white !bg-light-blue checked:!bg-purple-bright checked:!border-purple-bright focus:!bg-purple-bright"
-              required
-            />
-            <span className="ml-2 font-normal text-[10px] leading-[13px]">
-              By submitting this form, I agree to Amplication&apos;s Terms of
-              Service and Privacy Policy.
-            </span>
-          </label>
-        </div>
+        {includeConsent && (
+          <div className="relative w-full !mt-2">
+            <label className="w-full mt-1 mb-0 flex align-items-center cursor-pointer">
+              <input
+                type="checkbox"
+                name="LEGAL_CONSENT.subscription_type_142787872"
+                className="shadow-none w-4 h-4 border rounded-sm border-solid border-white !bg-light-blue checked:!bg-purple-bright checked:!border-purple-bright focus:!bg-purple-bright"
+                required
+              />
+              <span className="ml-2 font-normal text-[10px] leading-[13px]">
+                By submitting this form, I agree to Amplication&apos;s Terms of
+                Service and Privacy Policy.
+              </span>
+            </label>
+          </div>
+        )}
         <div className="relative w-full !mt-6 !flex align-items-center">
           <input
             disabled={formIsSending ? 'disabled' : ''}
@@ -119,7 +122,7 @@ const HubSpotForm = ({
           successMsg === ''
             ? 'hidden '
             : '' +
-              'absolute left-0 right-0 top-0 bottom-0 text-center flex align-items-center justify-content-center flex-column bg-light-blue'
+              'p-8 absolute left-0 right-0 top-0 bottom-0 text-center flex flex-col items-center justify-content-center  bg-light-blue'
         }
       >
         <svg
@@ -159,6 +162,10 @@ const HubSpotForm = ({
   );
 };
 
+HubSpotForm.defaultProps = {
+  includeConsent: true,
+};
+
 HubSpotForm.propTypes = {
   children: PropTypes.any,
   hubSpotPortalId: PropTypes.string,
@@ -166,6 +173,7 @@ HubSpotForm.propTypes = {
   successMessage: PropTypes.string,
   pageName: PropTypes.string,
   formName: PropTypes.string,
+  includeConsent: PropTypes.bool,
 };
 
 export default HubSpotForm;

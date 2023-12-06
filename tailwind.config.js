@@ -162,7 +162,8 @@ module.exports = {
         noise: "url('/images/noise.png')",
         quote: "url('/images/bg/quotes.svg')",
         grid: 'linear-gradient(to right, #22273C 1px, transparent 1px), linear-gradient(to bottom, #22273C 1px, transparent 1px);',
-        'reward-success': "url('/images/hacktoberfest/reward-success.svg')"
+        'reward-success': "url('/images/hacktoberfest/reward-success.svg')",
+        'app-modernization': "url('/images/bg/bg-app-modernization.jpg')"
       },
     },
   },
