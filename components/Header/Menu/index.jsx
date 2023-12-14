@@ -21,16 +21,32 @@ const MENU_ITEMS = [
     target: '_blank',
   },
   {
+    title: 'Product',
+    href: {
+      pathname: '/product',
+    },
+    target: '_blank',
+    menuItems: [
+      {
+        title: 'Build New Services',
+        href: {
+          pathname: '/build-new-services',
+        },
+        target: '_self',
+      },
+      {
+        title: 'Application Modernization',
+        href: {
+          pathname: '/application-modernization',
+        },
+        target: '_self',
+      },
+    ],
+  },
+  {
     title: 'Enterprise',
     href: {
       pathname: '/enterprise',
-    },
-    target: '_self',
-  },
-  {
-    title: 'Developers',
-    href: {
-      pathname: '/developers',
     },
     target: '_self',
   },
@@ -276,7 +292,9 @@ const MenuItem = ({ item, onMenuItemClick, isMobileMenu, className }) => {
       <a
         target={item.target}
         onClick={() => onMenuItemClick(item)}
-        className={`nav-link ${asPath === url ? 'active' : ''} ${className}`}
+        className={`whitespace-nowrap	 nav-link ${
+          asPath === url ? 'active' : ''
+        } ${className}`}
       >
         {item.title}
       </a>

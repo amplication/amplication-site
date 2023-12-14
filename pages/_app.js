@@ -4,7 +4,6 @@ import { useRouter } from 'next/router';
 import { DefaultSeo } from 'next-seo';
 import PropTypes from 'prop-types';
 import { useEffect } from 'react';
-import Typed from 'typed.js';
 
 import '../styles/globals.css';
 import '../styles/stigg.css';
@@ -44,20 +43,7 @@ function Amplication({ Component, pageProps }) {
   }, [router.events, router.asPath]);
 
   useEffect(() => {
-    const typingAnimations = document.querySelectorAll(
-      '#animated-header-typed',
-    );
-    if (typingAnimations.length && isDevPage) {
-      new Typed('#animated-header-typed', {
-        stringsElement: '#animated-header-content',
-        typeSpeed: 60,
-        backSpeed: 20,
-        backDelay: 1700,
-        startDelay: 0,
-        smartBackspace: false,
-        loop: true,
-      });
-    }
+
 
     // Run code on client-side only : ensure document is here
     if (typeof document !== 'undefined') {
@@ -99,16 +85,6 @@ function Amplication({ Component, pageProps }) {
       <link
         href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap"
         rel="stylesheet"
-      />
-      {/*Facebook Pixel*/}
-      <Script
-        id={'facebook-pixel'}
-        strategy={'afterInteractive'}
-        dangerouslySetInnerHTML={{
-          __html: `
-            !function(e,t,n,c,o,a,f){e.fbq||(o=e.fbq=function(){o.callMethod?o.callMethod.apply(o,arguments):o.queue.push(arguments)},e._fbq||(e._fbq=o),o.push=o,o.loaded=!0,o.version="2.0",o.queue=[],(a=t.createElement(n)).async=!0,a.src="https://connect.facebook.net/en_US/fbevents.js",(f=t.getElementsByTagName(n)[0]).parentNode.insertBefore(a,f))}(window,document,"script"),fbq("init","694076677979309"),fbq("track","PageView");
-          `,
-        }}
       />
       {/*Hotjar Tracking Code*/}
       <Script
