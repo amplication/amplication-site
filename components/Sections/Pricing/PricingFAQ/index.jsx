@@ -74,6 +74,9 @@ const PricingFAQ = () => {
                   </a>
                   , like Prettier and ESLint, so you can format your code exactly
                   how you need it.
+                  <br />
+                  <br />
+                  Furthermore, you can create <a target="_blank" rel="noreferrer" href="https://docs.amplication.com/enterprise-private-plugins/">private plugins</a> that are accessible only within your organization.
                 </div>
               }
             />
