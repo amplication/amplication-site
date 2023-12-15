@@ -36,8 +36,8 @@
   }
 
   .question-text {
-    font-weight: 600;
-    font-size: 14px;
+    font-weight: normal;
+    font-size: 1.2rem;
   }
 
   .question-answer {
