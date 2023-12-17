@@ -43,8 +43,9 @@ export const PricingPlans = () => {
             },
             planCTAButton: {
               startNew: 'Start Now',
-              upgrade: 'Upgrade now',
-              custom: 'Contact us',
+              upgrade: 'Upgrade Now',
+              custom: 'Contact Us',
+              startTrial: (plan) => `Try Free`,
             },
             price: {
               free: {
