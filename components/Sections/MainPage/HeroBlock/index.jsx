@@ -75,7 +75,7 @@ const HeroBlock = () => {
                     onClick={handleStartNowClick}
                     className="btn btn-primary btn-sm !h-[34px] mb-2 laptop:mr-2 w-full !font-normal !text-sm !max-w-[140px]"
                   >
-                    Get Started
+                    Start Free
                   </a>
                 </Link>
                 <div className="spacer"></div>

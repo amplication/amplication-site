@@ -4,7 +4,7 @@ import Button from '../../../Common/Button';
 import * as analytics from '../../../../lib/analytics';
 
 const PRIMARY_LINK = 'https://app.amplication.com/';
-const PRIMARY_TITLE = 'Get started';
+const PRIMARY_TITLE = 'Start Free';
 
 const StartNow = () => {
   const handleStartNowClick = useCallback(() => {
