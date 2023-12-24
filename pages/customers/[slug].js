@@ -83,7 +83,7 @@ const CustomerStory = ({ stories, story }) => {
             </li>
             <li className="text-turquoise inline-block">
               <span className="text-turquoise font-poppins font-medium text-sm">
-                {story.title}
+                {story.customerName}
               </span>
             </li>
           </ul>
@@ -202,6 +202,7 @@ export const getStaticProps = async (context) => {
             content
             draft
             featuredImage
+            customerName
             metaDescription
             metaTitle
             slug

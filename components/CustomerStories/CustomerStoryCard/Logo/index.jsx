@@ -2,6 +2,9 @@ import PropTypes from 'prop-types';
 import Image from 'next/image';
 
 const Logo = (props) => {
+  if (!props.src) {
+    return null;
+  }
   return <Image width={156} height={80} src={props.src} alt={props.alt} />;
 };
 
