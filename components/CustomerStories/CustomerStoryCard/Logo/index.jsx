@@ -1,19 +1,18 @@
 import PropTypes from 'prop-types';
 import Image from 'next/image';
-import { useState } from 'react';
 
-const Thumbnail = (props) => {
+const Logo = (props) => {
   return <Image width={156} height={80} src={props.src} alt={props.alt} />;
 };
 
-Thumbnail.propTypes = {
+Logo.propTypes = {
   src: PropTypes.string,
   alt: PropTypes.string,
 };
 
-Thumbnail.defaultProps = {
+Logo.defaultProps = {
   src: '',
   alt: '',
 };
 
-export default Thumbnail;
+export default Logo;

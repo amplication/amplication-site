@@ -114,6 +114,7 @@ module.exports = {
       colors: {
         'light-blue': '#22273C',
         'dark-black-70': '#373D57',
+        'dark-black-70': '#444B66',
         'dark-black-surface': '#1F2336',
         'dark-black-100': '#15192C',
         'blue-dark': '#090979',

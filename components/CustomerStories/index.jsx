@@ -53,7 +53,7 @@ laptop:max-w-container-desktop-blog laptop:m-container-desktop laptop:p-containe
       >
         <div
           className={
-            'w-full  grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-6 gap-7.5 '
+            'w-full  grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-6 gap-6 '
           }
         >
           {storiesList.slice(0, 2).map((story) => {

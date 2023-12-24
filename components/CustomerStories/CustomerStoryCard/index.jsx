@@ -1,12 +1,12 @@
 import { useCallback } from 'react';
-import Author from './Author';
-import Tags from './Tags';
+import Tag from './Tag';
 import Title from './Title';
-import Thumbnail from './Tumbnail';
+import Logo from './Logo';
 import helpers from '../../../helpers';
 import Link from 'next/link';
 import * as analytics from '../../../lib/analytics';
 import PropTypes from 'prop-types';
+import Button from '../../Common/Button';
 
 const CustomerStoryCard = (props) => {
   const story = props.data;
@@ -24,20 +24,16 @@ const CustomerStoryCard = (props) => {
     return (
       <Link href={helpers.getCustomerStorySlug(story.slug)} passHref>
         <a
-          className={
-            'text-white transition-colors text-ellipsis display-block laptop:mb-0 group ' +
-            (props.className !== 'undefined' ? props.className : '')
-          }
+          className={props.className !== 'undefined' ? props.className : ''}
           onClick={handleClick}
         >
           <div
             className={
-              'overflow-hidden border border-solid border-dark-black-70  h-full hover:shadow-hover-story rounded-lg p-6 ' +
-              (props.className !== 'undefined' ? props.className : '')
+              'overflow-hidden border border-solid border-dark-black-70 hover:border-lite hover:bg-purple-light rounded-lg p-8 '
             }
           >
-            <div className="overflow-hidden">
-              <Thumbnail
+            <div className="overflow-hidden flex flex-row justify-between items-start	">
+              <Logo
                 className=""
                 src={
                   helpers.isValidUrl(story.featuredImage)
@@ -46,17 +42,17 @@ const CustomerStoryCard = (props) => {
                 }
                 alt={story.title}
               />
+              <Tag tag={story.tag} />
             </div>
-            <div className="px-6 laptop:px-4 flex items-left flex-col h-52 ">
-              <Tags list={story.tags} />
-              <Title className="text-lg font-medium mt-4">{story.title}</Title>
-              <div className="flex-auto border-y border-t-0 border-solid border-dark-black-70"></div>
-              <Author
-                avatar={story.author?.profileImage}
-                name={story.author?.firstName + ' ' + story.author?.lastName}
-                date={story.publishedAt}
-              />
-            </div>
+            <Title>{story.title}</Title>
+            <Button
+              text="Learn more"
+              isLink={true}
+              //onClick={() => handleStartNowClick("PluginsLearnMoreClick")}
+              className="border border-1 border-white !inline-block  !text-xs    !font-normal  !bg-transparent hover:!bg-transparent !px-2"
+              href="https://docs.amplication.com/plugins/overview/"
+              delayLinkMs={300}
+            />
           </div>
         </a>
       </Link>
