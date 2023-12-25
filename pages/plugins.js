@@ -47,7 +47,7 @@ const Plugins = ({ plugins }) => {
               isLink={true}
               onClick={() => handleStartNowClick("PluginsLearnMoreClick")}
               className="!inline-block  !text-xs    !font-normal  !bg-transparent hover:!bg-transparent !px-2"
-              href="https://docs.amplication.com/plugins/overview/"
+              href="https://docs.amplication.com/getting-started/plugins/"
               delayLinkMs={300}
             />
             <Button
@@ -55,7 +55,7 @@ const Plugins = ({ plugins }) => {
               isLink={true}
               onClick={() => handleStartNowClick("PluginsCreateYourOwnClick")}
               className="!inline-block  !text-xs    !font-normal  !bg-transparent hover:!bg-transparent !px-2"
-              href="https://docs.amplication.com/plugins/overview/"
+              href="https://docs.amplication.com/plugins/how-to-create-plugin/"
               delayLinkMs={300}
             />
             <Button
@@ -63,7 +63,7 @@ const Plugins = ({ plugins }) => {
               isLink={true}
               onClick={() => handleStartNowClick("PluginsRequestNewClick")}
               className="!inline-block  !text-xs    !font-normal  !bg-transparent hover:!bg-transparent  !px-2"
-              href="https://docs.amplication.com/plugins/overview/"
+              href="https://docs.amplication.com/contributing/"
               delayLinkMs={300}
             />
 
