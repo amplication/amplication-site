@@ -63,7 +63,7 @@ const Plugins = ({ plugins }) => {
               isLink={true}
               onClick={() => handleStartNowClick("PluginsRequestNewClick")}
               className="!inline-block  !text-xs    !font-normal  !bg-transparent hover:!bg-transparent  !px-2"
-              href="https://docs.amplication.com/contributing/"
+              href="https://github.com/amplication/amplication/issues/new?assignees=&labels=type%3A+feature+request&projects=&template=feature.yml"
               delayLinkMs={300}
             />
 
