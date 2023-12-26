@@ -6,6 +6,7 @@ import CustomerStories from '../components/CustomerStories';
 import { NextSeo } from 'next-seo';
 import { MainLayout } from '../layouts';
 import PageSection from '../components/Common/PageSection';
+import HeroBlock from '../components/CustomerStories/HeroBlock';
 
 const Customers = ({ stories }) => {
   return (
@@ -15,6 +16,9 @@ const Customers = ({ stories }) => {
         description="Learn how companies use Amplication to build applications to production."
       />
 
+      <PageSection>
+        <HeroBlock />
+      </PageSection>
       <PageSection alternate>
 
 
