@@ -11,7 +11,7 @@ import { Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import CtaBanner from '../../components/Common/CtaBanner';
+import CustomerQuote from '../../components/CustomerStories/CustomerQuote';
 
 import client from '../../services';
 import helpers from '../../helpers';
@@ -23,12 +23,6 @@ import CustomerStoryCard from '../../components/CustomerStories/CustomerStoryCar
 import errorPage from '../404';
 import { MainLayout } from '../../layouts';
 
-const CTA1 = () => {
-  return <CtaBanner bgVersion={'version1'}></CtaBanner>;
-};
-const CTA2 = () => {
-  return <CtaBanner bgVersion={'version2'}></CtaBanner>;
-};
 
 const CustomerStory = ({ stories, story }) => {
   if (!story) {
@@ -62,50 +56,44 @@ const CustomerStory = ({ stories, story }) => {
         }}
       />
 
-      <div className="w-full p-container laptop:max-w-container-desktop-blog laptop:m-container-desktop laptop:p-container-desktop mt-16 laptop:mt-12">
-        <nav>
-          <ul className="flex justify-start items-center flex-wrap">
-            <li className="text-white inline-block mr-1">
-              <Link href={process.env.NEXT_PUBLIC_SITE}>
-                <a className="text-white font-poppins font-medium text-sm hover:text-purple-bright-hover">
-                  Home
-                </a>
-              </Link>{' '}
-              /
-            </li>
-            <li className="text-white inline-block mr-1">
-              <Link href="/customers">
-                <a className="text-white font-poppins font-medium text-sm hover:text-purple-bright-hover">
-                  Customers
-                </a>
-              </Link>{' '}
-              /
-            </li>
-            <li className="text-turquoise inline-block">
-              <span className="text-turquoise font-poppins font-medium text-sm">
-                {story.customerName}
-              </span>
-            </li>
-          </ul>
-        </nav>
-      </div>
 
-      <main className="flex flex-col flex-wrap laptop:flex-row justify-between w-full bg-dark-black-100 font-poppins max-medium:overflow-hidden p-container laptop:max-w-container-desktop-blog laptop:m-container-desktop laptop:p-container-desktop py-8 gap-8 desktop:gap-28">
-        <div className="max-medium:w-full medium:max-w-[881px] flex-1 order-1 flex flex-col laptop:block overflow-hidden">
+
+      <main className="flex flex-col flex-wrap  justify-center items-center w-full bg-dark-black-100 font-poppins max-medium:overflow-hidden p-container laptop:max-w-container-desktop-blog laptop:m-container-desktop laptop:p-container-desktop py-8 ">
+
+
+        <div className="max-medium:w-full medium:max-w-[881px] flex-1 order-1 flex flex-col laptop:block overflow-hidden gap-8 mb-16">
           {story && (
             <>
-              <Title
-                level={1}
-                className="order-1 text-lg font-semibold text-white text-[32px] leading-[48px] laptop:mt-8 laptop:mb-8"
-                text={story.title}
-              />
-              <Tags list={[{ name: story.tag }]} isLink className="order-3" />
+              <div className="mt-16 laptop:mt-12">
+                <nav>
+                  <ul className="flex justify-start items-center flex-wrap">
+                    <li className="text-white inline-block mr-1">
+                      <Link href={process.env.NEXT_PUBLIC_SITE}>
+                        <a className="text-white font-poppins font-medium text-sm hover:text-purple-bright-hover">
+                          Home
+                        </a>
+                      </Link>{' '}
+                      /
+                    </li>
+                    <li className="text-white inline-block mr-1">
+                      <Link href="/customers">
+                        <a className="text-white font-poppins font-medium text-sm hover:text-purple-bright-hover">
+                          Customers
+                        </a>
+                      </Link>{' '}
+                      /
+                    </li>
+                    <li className="text-turquoise inline-block">
+                      <span className="text-turquoise font-poppins font-medium text-sm">
+                        {story.customerName}
+                      </span>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <Tags list={[{ name: story.tag }]} isLink />
 
               <Logo
-
-                className={
-                  'order-4 mt-8 mb-16 rounded-2xl !aspect-auto border border-solid border-dark-black-70'
-                }
                 src={
                   helpers.isValidUrl(story.featuredImage)
                     ? story.featuredImage
@@ -113,6 +101,13 @@ const CustomerStory = ({ stories, story }) => {
                 }
                 alt={story.title}
               />
+              <Title
+                level={1}
+                className="order-1 text-lg font-semibold text-white text-[32px] leading-[48px] laptop:mt-8 laptop:mb-8"
+                text={story.title}
+              />
+
+
               <div className="font-normal order-5 blog-content text-base text-white">
 
                 <ReactMarkdown
@@ -122,8 +117,7 @@ const CustomerStory = ({ stories, story }) => {
                     h1: Header,
                     h2: Header,
                     h3: Header,
-                    amplicationcta1: CTA1,
-                    amplicationcta2: CTA2,
+                    customerquote: CustomerQuote
                   }}
                 >
                   {contentWithCta}
@@ -139,7 +133,7 @@ const CustomerStory = ({ stories, story }) => {
           <>
             <div className="w-full pt-4 pb-6 laptop:py-16 desktop:pt-0 order-4">
               <div className="w-full mb-6 laptop:mb-8">
-                <Title className="text-2xl laptop:text-[32px] leading-9 laptop:leading-[48px] font-semibold text-white">
+                <Title className="text-xl laptop:text-xl font-semibold text-white">
                   Related Customer Stories<span className="text-[#53DBEE]">.</span>
                 </Title>
               </div>
