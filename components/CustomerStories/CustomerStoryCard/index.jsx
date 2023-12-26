@@ -50,7 +50,7 @@ const CustomerStoryCard = (props) => {
               isLink={true}
               //onClick={() => handleStartNowClick("PluginsLearnMoreClick")}
               className="border border-1 border-white !inline-block  !text-xs    !font-normal  !bg-transparent hover:!bg-transparent !px-2"
-              href="https://docs.amplication.com/plugins/overview/"
+              href={helpers.getCustomerStorySlug(story.slug)}
               delayLinkMs={300}
             />
           </div>
