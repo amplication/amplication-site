@@ -106,6 +106,8 @@ module.exports = {
         btn: '0px 8px 20px 0px rgba(19, 22, 36, 0.24)',
         'hover-post': '0px 28px 32px -14px rgba(9, 11, 20, .5)',
         'hot-post': '0px 44px 48px -24px rgba(9, 11, 20, 0.3)',
+        'hover-card': '0px 24px 26px -16px rgba(21, 25, 44, 0.75)'
+
       },
       lineHeight: {
         tag: '1.2',
@@ -114,6 +116,7 @@ module.exports = {
       colors: {
         'light-blue': '#22273C',
         'dark-black-70': '#373D57',
+        'dark-black-70': '#444B66',
         'dark-black-surface': '#1F2336',
         'dark-black-100': '#15192C',
         'blue-dark': '#090979',

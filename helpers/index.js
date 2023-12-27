@@ -100,6 +100,10 @@ const helpers = {
     new URL(path, process.env.NEXT_PUBLIC_SITE).toString(),
 
   getPostSlug: (slug) => `/blog/${slug}`,
+  getCustomerStorySlug: (slug) => `/customers/${slug}`,
+  getCustomerStoriesPerPage: () => {
+    return 9;
+  },
 
   getPostDate: (date) => {
     const d = new Date(date || 'Dec 27, 2022');
