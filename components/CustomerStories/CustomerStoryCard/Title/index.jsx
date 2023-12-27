@@ -1,29 +1,25 @@
 import PropTypes from 'prop-types';
 
 const Title = (props) => {
-  const Tag = props.level ? `h${props.level}` : 'div';
-
   return (
-    <Tag
+    <div
       className={
-        (props.level ? '' : 'text-ellipsis line-clamp-2 ') +
+        'text-ellipsis line-clamp-3 text-md font-normal my-8 h-[72px] ' +
         (props.className !== 'undefined' ? props.className : '')
       }
     >
       {props.text || props.children}
-    </Tag>
+    </div>
   );
 };
 
 Title.propTypes = {
-  level: PropTypes.number,
   text: PropTypes.string,
   className: PropTypes.string,
   children: PropTypes.any,
 };
 
 Title.defaultProps = {
-  level: null,
   text: '',
 };
 
