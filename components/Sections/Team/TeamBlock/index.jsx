@@ -9,12 +9,12 @@ import alexBass from '../../../../public/images/team/alex-bass.png';
 import amitBarletz from '../../../../public/images/team/amit-barletz.png';
 import shimiBar from '../../../../public/images/team/shimi.png';
 import tomerNaim from '../../../../public/images/team/tomer.png';
-import erezGreenberg from '../../../../public/images/team/erez.png';
 import leviVan from '../../../../public/images/team/levi.png';
 import danieleIasella from '../../../../public/images/team/daniele.png';
 import mulyGottlieb from '../../../../public/images/team/muly.png';
 import orenAlaluf from '../../../../public/images/team/oren.png';
 import lizaDymava from '../../../../public/images/team/liza.png';
+import pazYanover from '../../../../public/images/team/paz.png';
 
 import talkWithUs from '../../../../public/images/icons/talk-with-with-team.svg';
 import joinUs from '../../../../public/images/icons/join-the-team.svg';
@@ -55,17 +55,13 @@ const members = [
     ],
   },
   {
-    name: 'Erez Greenberg',
-    position: 'Head of Product',
-    image: erezGreenberg,
+    name: 'Paz Yanover',
+    position: 'VP Product',
+    image: pazYanover,
     links: [
       {
-        href: 'https://www.linkedin.com/in/erez-greenberg-35263a20/',
+        href: 'https://www.linkedin.com/in/pazyanover/',
         iconClass: 'linkedin',
-      },
-      {
-        href: 'https://github.com/GreenMachine01/',
-        iconClass: 'github',
       },
     ],
   },
@@ -125,6 +121,25 @@ const members = [
       },
       {
         href: 'https://twitter.com/kipibass86',
+        iconClass: 'twitter',
+      },
+    ],
+  },
+  {
+    name: 'Amit Barletz',
+    position: 'Full Stack Engineer',
+    image: amitBarletz,
+    links: [
+      {
+        href: 'https://www.linkedin.com/in/amitbarletz/',
+        iconClass: 'linkedin',
+      },
+      {
+        href: 'https://github.com/abrl91',
+        iconClass: 'github',
+      },
+      {
+        href: 'https://twitter.com/BarletzA52',
         iconClass: 'twitter',
       },
     ],
@@ -231,25 +246,6 @@ const members = [
       },
       {
         href: 'https://twitter.com/Sauain',
-        iconClass: 'twitter',
-      },
-    ],
-  },
-  {
-    name: 'Amit Barletz',
-    position: 'Full Stack Engineer',
-    image: amitBarletz,
-    links: [
-      {
-        href: 'https://www.linkedin.com/in/amitbarletz/',
-        iconClass: 'linkedin',
-      },
-      {
-        href: 'https://github.com/abrl91',
-        iconClass: 'github',
-      },
-      {
-        href: 'https://twitter.com/BarletzA52',
         iconClass: 'twitter',
       },
     ],

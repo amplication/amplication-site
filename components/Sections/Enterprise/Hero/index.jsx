@@ -67,7 +67,7 @@ const Hero = () => {
                         onClick={handleStartNowClick}
                         className="btn btn-outline-light btn-sm !h-[34px] mb-2 laptop:mr-2 w-full !font-normal !text-sm !max-w-[140px] text-black80"
                       >
-                        Start Now
+                        Try Free
                       </a>
                     </Link>
                   </div>

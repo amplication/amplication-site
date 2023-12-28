@@ -6221,9 +6221,9 @@ body {
 .amplication-base .rounded-sm {
   border-radius: 0.2rem !important;
 }
-.amplication-base .rounded {
+/* .amplication-base .rounded {
   border-radius: 0.25rem !important;
-}
+} */
 .amplication-base .rounded-top {
   border-top-left-radius: 0.25rem !important;
   border-top-right-radius: 0.25rem !important;
@@ -7359,7 +7359,7 @@ body {
 }
 .amplication-base .pr-4,
 .amplication-base .px-4 {
-  padding-right: 1.5rem !important;
+  padding-right: 1rem !important;
 }
 .amplication-base .pb-4,
 .amplication-base .py-4 {

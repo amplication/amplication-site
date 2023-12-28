@@ -24,12 +24,25 @@
   --highlight-color: rgba(255, 255, 255, 0.1) !important;
 }
 
+.stigg-paywall-plans-layout {
+  max-width: 924px;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+@media (max-device-width: 1024px) {
+  .stigg-paywall-plans-layout {
+    flex-direction: column;
+  }
+}
+
 .stigg-plan-offering-container {
   border-radius: 8px !important;
   border: 1px solid #373d57 !important;
-  max-width: 244px !important;
-  min-width: 244px !important;
+  max-width: 100% !important;
+  min-width: 1px !important;
   padding-top: 16px !important;
+  flex: 1;
 }
 
 .stigg-plan-offering-container:nth-child(1) {
@@ -202,4 +215,17 @@
 
 .stigg-paywall-plan-button svg {
   display: none !important;
+}
+
+.promo-banner {
+  display: flex;
+  align-items: center;
+  width: 924px;
+  height: 300px;
+  background-size: cover;
+  margin: auto;
+  margin-bottom: 40px;
+  border: 3px solid #ffffff;
+  box-shadow: 0px 36px 38px -19px rgba(9, 11, 20, 0.7);
+  border-radius: 8px;
 }

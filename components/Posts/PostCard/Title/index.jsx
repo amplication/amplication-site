@@ -6,7 +6,7 @@ const Title = (props) => {
   return (
     <Tag
       className={
-        'text-ellipsis line-clamp-2 ' +
+        (props.level ? '' : 'text-ellipsis line-clamp-2 ') +
         (props.className !== 'undefined' ? props.className : '')
       }
     >

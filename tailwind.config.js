@@ -9,6 +9,7 @@ module.exports = {
       dmmono: ['DM Mono'],
       poppins: ['poppins'],
       ubuntumono: ['Ubuntu Mono'],
+      jetbrains: ['JetBrains Mono']
     },
     screens: {
       tablet: '640px',
@@ -105,6 +106,8 @@ module.exports = {
         btn: '0px 8px 20px 0px rgba(19, 22, 36, 0.24)',
         'hover-post': '0px 28px 32px -14px rgba(9, 11, 20, .5)',
         'hot-post': '0px 44px 48px -24px rgba(9, 11, 20, 0.3)',
+        'hover-card': '0px 24px 26px -16px rgba(21, 25, 44, 0.75)'
+
       },
       lineHeight: {
         tag: '1.2',
@@ -113,6 +116,8 @@ module.exports = {
       colors: {
         'light-blue': '#22273C',
         'dark-black-70': '#373D57',
+        'dark-black-70': '#444B66',
+        'dark-black-surface': '#1F2336',
         'dark-black-100': '#15192C',
         'blue-dark': '#090979',
         purple: '#8D64FF',
@@ -138,6 +143,14 @@ module.exports = {
       textDecorationThickness: {
         3: '3px',
       },
+      backgroundSize: {
+        grid: '25px 25px',
+        "80%": "80%",
+        "reward-mobile": "1500px"
+      },
+      backgroundPosition: {
+        "reward-mobile": "-850px"
+      },
       backgroundImage: {
         'radial-gradient':
           'radial-gradient(circle, transparent 0%, transparent 30%, rgba(9,9,121,0.1) 30%, rgba(9,9,121,0.1) 70%, rgba(118,79,229,0) 70%)',
@@ -151,6 +164,9 @@ module.exports = {
         'cta-2-small': "url('/images/bg/cta-bg-2-small.png')",
         noise: "url('/images/noise.png')",
         quote: "url('/images/bg/quotes.svg')",
+        grid: 'linear-gradient(to right, #22273C 1px, transparent 1px), linear-gradient(to bottom, #22273C 1px, transparent 1px);',
+        'reward-success': "url('/images/hacktoberfest/reward-success.svg')",
+        'app-modernization': "url('/images/bg/bg-app-modernization.jpg')"
       },
     },
   },
