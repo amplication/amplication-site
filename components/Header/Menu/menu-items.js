@@ -253,12 +253,14 @@ export const RIGHT_MENU_ITEMS = [
         ],
     },
 
-    {
-        title: 'Log In',
-        url: 'https://app.amplication.com/login',
-        onClickEventName: 'startNowClicked',
-        onClickEventParams: {
-            buttonLocation: 'header-login',
-        },
-    },
+
 ];
+
+export const LOGIN_MENU_ITEM = {
+    title: 'Log In',
+    url: 'https://app.amplication.com/login',
+    onClickEventName: 'startNowClicked',
+    onClickEventParams: {
+        buttonLocation: 'header-login',
+    },
+}

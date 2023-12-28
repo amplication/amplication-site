@@ -2,25 +2,30 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Button from '../../Common/Button';
 import { useRouter } from 'next/router';
-import { useState, useEffect, useCallback } from 'react';
+import { useCallback, useState } from 'react';
 import useWindowSize from '../../../utils/useWindowSize';
 import * as analytics from '../../../lib/analytics';
 import Logo from '../Logo';
 
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import GitHubStarsUsButtonContent from '../../Common/GitHubStarsButton/GitHubStarsUsButtonContent';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import { LEFT_MENU_ITEMS, RIGHT_MENU_ITEMS } from './menu-items';
+import {
+  LEFT_MENU_ITEMS,
+  RIGHT_MENU_ITEMS,
+  LOGIN_MENU_ITEM,
+} from './menu-items';
 
 const Menu = () => {
   const [expanded, setExpanded] = useState(false);
 
   const { width } = useWindowSize();
-
+  const router = useRouter();
   const isMobileMenu = width < 992;
 
   const handleStartNowClick = useCallback(() => {
@@ -31,6 +36,15 @@ const Menu = () => {
       },
     });
   }, []);
+
+  const handleStarUsClick = useCallback(() => {
+    analytics.event({
+      action: 'starUsClicked',
+      params: {
+        pageUri: router.asPath,
+      },
+    });
+  }, [router.asPath]);
 
   const handleMenuClick = useCallback((menuItem) => {
     if (menuItem && menuItem.onClickEventName) {
@@ -83,6 +97,22 @@ const Menu = () => {
                   onMenuItemClick={handleMenuClick}
                 />
               ))}
+              <MenuItem
+                isMobileMenu={isMobileMenu}
+                item={{
+                  title: <GitHubStarsUsButtonContent />,
+                  url: 'https://github.com/amplication/amplication',
+
+                  target: '_blank',
+                }}
+                onMenuItemClick={handleStarUsClick}
+              />
+              <MenuItem
+                isMobileMenu={isMobileMenu}
+                item={LOGIN_MENU_ITEM}
+                className="nav-link-sep"
+                onMenuItemClick={handleStartNowClick}
+              />
             </Nav>
             <div className="mt-auto mt-[-1px] pb-8 laptop:hidden">
               <div className="w-full menu__item pt-12 flex flex-col justify-end items-stretch border-t border-[rgba(255,255,255,0.2)]">
@@ -120,7 +150,7 @@ const Menu = () => {
   );
 };
 
-const MenuItem = ({ item, onMenuItemClick, isMobileMenu }) => {
+const MenuItem = ({ item, onMenuItemClick, isMobileMenu, className }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [timeoutHandle, setTimeoutHandle] = useState(null);
 
@@ -198,7 +228,9 @@ const MenuItem = ({ item, onMenuItemClick, isMobileMenu }) => {
       <a
         target={item.target}
         onClick={() => onMenuItemClick(item)}
-        className={`nav-link ${asPath === item.url ? 'active' : ''} `}
+        className={`nav-link ${
+          asPath === item.url ? 'active' : ''
+        } ${className}`}
       >
         {item.title}
       </a>
