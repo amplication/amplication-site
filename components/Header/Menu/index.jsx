@@ -193,11 +193,16 @@ const MenuItem = ({ item, onMenuItemClick, isMobileMenu, className }) => {
       id="basic-nav-dropdown"
     >
       <Container>
-        <Row lg={item.columns?.length || 1} xs="1">
+        <Row className="p-4" lg={item.columns?.length || 1} xs="1">
           {item.columns?.length ? (
             item.columns.map((column, index) => (
-              <Col key={index}>
-                {column.title || <span>&nbsp;</span>}
+              <Col key={index} className="nav-link-column">
+                {column.title && (
+                  <div className="flex flex-row items-center text-xs text-gray font-normal pb-2">
+                    {column.title}
+                  </div>
+                )}
+
                 {column.menuItems.map((subItem, index) => (
                   <InnerMenuItem
                     isMobileMenu={isMobileMenu}
@@ -248,21 +253,19 @@ const InnerMenuItem = ({ item, onMenuItemClick, isMobileMenu }) => {
         onClick={() => onMenuItemClick(item)}
         className={`nav-link-inner ${asPath === item.url ? 'active' : ''} `}
       >
-        <Row col="2">
-          <Col xs="auto">
+        <div className="flex flex-row items-center justify-start gap-3 ">
+          <div className="w-[32px] h-[32px] flex items-center justify-center bg-dark-black-70 !rounded">
             <Image
-              className="nav-link-image"
-              width={30}
-              height={30}
+              className=""
+              width={18}
+              height={18}
               src={item.image}
               alt={item.title}
             />
-          </Col>
-          <Col>
-            {item.title}
-            <div className="description">{item.description}</div>
-          </Col>
-        </Row>
+          </div>
+
+          <div>{item.title}</div>
+        </div>
       </a>
     </Link>
   );

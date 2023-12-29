@@ -13,57 +13,21 @@ import Feature11 from '../../../public/images/features/feature-icon-11.svg';
 import Feature12 from '../../../public/images/features/feature-icon-12.svg';
 
 
-const PRODUCT_MENU_ITEMS_2 = [
+const PRODUCT_MENU_ITEMS = [
     {
         title: 'Build new services',
         image: Feature12,
-        description: 'a short description of the item',
-        url: '/developers',
+        url: '/build-new-services',
     },
 
     {
-        title: 'Build APIs on existing DB',
+        title: 'Application Modernization',
         image: Feature11,
-        description: 'a short description of the item',
-        url: '/developers',
-    },
-    {
-        title: 'Event-Driven architecture',
-        image: Feature11,
-        description: 'a short description of the item',
-        url: '/developers',
-    },
-]
-
-
-const PRODUCT_MENU_ITEMS = [
-    {
-        title: 'Continuous Backend Generator ',
-        image: Feature11,
-        description: 'a short description of the item',
-        url: '/developers',
-    },
-    {
-        title: 'Digital transformation and modernization ',
-        image: Feature11,
-        description: 'a short description of the item',
-        url: '/developers',
-    },
-    {
-        title: 'Break the monolith',
-        image: Feature11,
-        description: 'a short description of the item',
-        url: '/developers',
-    },
-    {
-        title: 'Standardize backend infrastructure ',
-        image: Feature11,
-        description:
-            'a longer description of the item a longer description of the item',
-        url: '/developers',
+        url: '/application-modernization',
     },
 
 ]
+
 
 const FEATURE_MENU_ITEMS = [
 
@@ -94,82 +58,22 @@ const FEATURE_MENU_ITEMS = [
     },
 ]
 
-const CUSTOMERS_MENU_ITEMS = [
-    {
-        title: 'Manufacturing',
-        image: Feature12,
-        description: 'a short description of the item',
-        url: '/developers',
-    },
-    {
-        title: 'Retail',
-        image: Feature11,
-        description:
-            'a longer description of the item a longer description of the item',
-        url: '/developers',
-    },
-    {
-        title: 'Healthcare',
-        image: Feature11,
-        description:
-            'a longer description of the item a longer description of the item',
-        url: '/developers',
-    },
-]
-
-const GET_STARTED_MENU_ITEMS = [
-    {
-        title: 'Why Amplication',
-        url: '/docs/why',
-        image: Feature7,
-        target: '_docs',
-    },
-    {
-        title: 'Build your first service with Amplication',
-        url: '/docs/getting-started',
-        image: Feature8,
-        target: '_docs',
-    },
-    {
-        title: 'Build API on your existing DB',
-        url: '/docs/getting-started',
-        image: Feature9,
-        target: '_docs',
-    },
-    {
-        title: 'Event-driven architecture',
-        url: '/docs/getting-started',
-        image: Feature10,
-        target: '_docs',
-    }
-]
 
 const RESOURCES_MENU_ITEMS = [
-    {
-        title: 'Docs',
-        image: Feature2,
-        url: 'https://docs.amplication.com',
-    },
     {
         title: 'Blog',
         image: Feature3,
         url: '/blog',
     },
     {
-        title: 'GitHub',
-        image: Feature4,
-        url: 'https://github.com/amplication/amplication',
+        title: 'About',
+        image: Feature3,
+        url: '/about',
     },
     {
-        title: 'Discord Community',
-        image: Feature6,
-        url: 'https://amplication.com/discord',
-        target: '_blank',
-    },
-    {
-        title: 'Video',
-        image: Feature5,
-        url: '/contact-us',
+        title: 'Team',
+        image: Feature3,
+        url: '/team',
     },
     {
         title: 'Contact Us',
@@ -182,19 +86,15 @@ const RESOURCES_MENU_ITEMS = [
 
 
 export const LEFT_MENU_ITEMS = [
+
+];
+
+export const RIGHT_MENU_ITEMS = [
+
     {
-        title: 'Product2',
-        align: "start",
-        columns: [
-            {
-                title: 'Products',
-                menuItems: [...PRODUCT_MENU_ITEMS, ...PRODUCT_MENU_ITEMS_2],
-            },
-            {
-                title: '',
-                menuItems: FEATURE_MENU_ITEMS,
-            },
-        ],
+        title: 'Docs',
+        url: 'https://docs.amplication.com/',
+        target: '_blank',
     },
     {
         title: 'Product',
@@ -203,55 +103,27 @@ export const LEFT_MENU_ITEMS = [
             {
                 title: 'Products',
                 menuItems: PRODUCT_MENU_ITEMS,
-            },
-            {
-                title: '',
-                menuItems: PRODUCT_MENU_ITEMS_2,
-            },
+            }
         ],
     },
     {
-        title: 'Customers',
-        align: "start",
-        columns: [
-            {
-                title: 'Customers',
-                menuItems: CUSTOMERS_MENU_ITEMS,
-            }
-
-        ],
-
+        title: 'Enterprise',
+        url: '/enterprise',
     },
     {
         title: 'Pricing',
         url: '/pricing',
     },
     {
-        title: 'Enterprise',
-        url: '/enterprise',
-    }
-];
-
-export const RIGHT_MENU_ITEMS = [
-    {
-        title: 'Docs',
-        url: 'https://docs.amplication.com/',
-        target: '_blank',
-    },
-    {
-        title: 'Learn',
+        title: 'Company',
         align: "end",
         columns: [
-            {
-                title: 'Get Started',
-                menuItems: GET_STARTED_MENU_ITEMS,
-            },
             {
                 title: 'Resources',
                 menuItems: RESOURCES_MENU_ITEMS,
             },
         ],
-    },
+    }
 
 
 ];
