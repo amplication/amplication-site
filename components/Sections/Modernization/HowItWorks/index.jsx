@@ -25,7 +25,7 @@ const HowItWorks = () => {
     <>
       <div className="mb-6 large:mb-11">
         <h2 className="roadmap-heading m-0 text-center">
-          How Amplication backend development platform works?
+          Automate your transition to advanced backend services with Amplication
         </h2>
       </div>
       <div>
