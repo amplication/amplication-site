@@ -192,7 +192,7 @@ const MenuItem = ({ item, onMenuItemClick, isMobileMenu, className }) => {
       title={item.title}
       id="basic-nav-dropdown"
     >
-      <Container>
+      <Container fluid>
         <Row className="p-4" lg={item.columns?.length || 1} xs="1">
           {item.columns?.length ? (
             item.columns.map((column, index) => (
@@ -257,8 +257,8 @@ const InnerMenuItem = ({ item, onMenuItemClick, isMobileMenu }) => {
           <div className="w-[32px] h-[32px] flex items-center justify-center bg-dark-black-70 !rounded">
             <Image
               className=""
-              width={18}
-              height={18}
+              width={32}
+              height={32}
               src={item.image}
               alt={item.title}
             />
