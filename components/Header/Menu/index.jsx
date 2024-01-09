@@ -198,7 +198,7 @@ const MenuItem = ({ item, onMenuItemClick, isMobileMenu, className }) => {
             item.columns.map((column, index) => (
               <Col key={index} className="nav-link-column">
                 {column.title && (
-                  <div className="flex flex-row items-center text-xs text-gray font-normal pb-2">
+                  <div className="flex flex-row items-center text-xs text-gray font-normal pb-2 mt-3 pl-2">
                     {column.title}
                   </div>
                 )}

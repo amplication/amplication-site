@@ -31,37 +31,8 @@ const PRODUCT_MENU_ITEMS = [
 ]
 
 
-const FEATURE_MENU_ITEMS = [
 
-    {
-        title: 'GraphQL',
-        image: Icon2,
-        url: '/developers',
-    },
-    {
-        title: 'REST API',
-        image: Icon2,
-        url: '/about',
-    },
-    {
-        title: 'Identity & Permissions',
-        image: Icon2,
-        url: '/team',
-    },
-    {
-        title: 'React Admin UI',
-        image: Icon2,
-        url: '/team',
-    },
-    {
-        title: 'Custom Code',
-        image: Icon2,
-        url: '/contact-us',
-    },
-]
-
-
-const RESOURCES_MENU_ITEMS = [
+const ABOUT_MENU_ITEMS = [
     {
         title: 'Blog',
         image: Icon3,
@@ -84,6 +55,28 @@ const RESOURCES_MENU_ITEMS = [
     },
 ]
 
+const RESOURCES_MENU_ITEMS = [
+    {
+        title: 'Docs',
+        image: Icon8,
+        url: 'https://docs.amplication.com/',
+    },
+    {
+        title: 'GitHub',
+        image: Icon10,
+        url: 'https://github.com/amplication/amplication',
+    },
+    {
+        title: 'Discord Community',
+        image: Icon7,
+        url: '/discord',
+    },
+    {
+        title: 'Plugins Catalog',
+        image: Icon12,
+        url: '/plugins',
+    },
+]
 
 
 
@@ -116,11 +109,16 @@ export const RIGHT_MENU_ITEMS = [
         url: '/pricing',
     },
     {
-        title: 'Company',
+        title: 'Learn',
         align: "end",
         columns: [
             {
+                title: "Resources",
                 menuItems: RESOURCES_MENU_ITEMS,
+            },
+            {
+                title: "company",
+                menuItems: ABOUT_MENU_ITEMS,
             },
         ],
     }
