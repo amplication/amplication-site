@@ -193,7 +193,7 @@ const MenuItem = ({ item, onMenuItemClick, isMobileMenu, className }) => {
       id="basic-nav-dropdown"
     >
       <Container fluid>
-        <Row className="p-4" lg={item.columns?.length || 1} xs="1">
+        <Row className="p-0" lg={item.columns?.length || 1} xs="1">
           {item.columns?.length ? (
             item.columns.map((column, index) => (
               <Col key={index} className="nav-link-column">
