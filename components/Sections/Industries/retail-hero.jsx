@@ -5,13 +5,13 @@ const RetailHero = () => {
   return (
     <>
       <PageHero
-        title={'Accelerate Your Business with Amplication Enterprise'}
+        title={
+          'Amplication for Manufacturing: Automate Your Path to Digital Transformation'
+        }
         subTitle={
-          'Automated, customizable solutions for faster application development'
+          'Automate, optimize, and scale your manufacturing operations with tailor-made digital solutions.'
         }
-        subText={
-          'Unleash the power of fast development cycles with Amplication Enterprise. Our secure, automated and customizable solutions give teams an edge when it comes to rapidly launching applications that meet any business requirements.'
-        }
+        subText={''}
         mainButton={{
           text: 'Book a Demo',
           href: '/contact-us',

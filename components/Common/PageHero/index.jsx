@@ -28,16 +28,20 @@ const PageHero = ({
   }, [secondaryButton.eventName, secondaryButton.eventParams]);
   return (
     <>
-      <div className="relative w-full flex items-center  justify-between  h-[calc(100vh-90px)] text-center min-h-[600px]">
-        <div className="content-block medium:!max-w-[46%]">
-          <div className="text-left">
-            <h1 className="text-h1 font-bold ">{title}</h1>
-            <h2 className="text-h2 font-semibold">{subTitle}</h2>
+      <div className="relative w-full flex flex-col laptop:flex-row items-center  justify-between  laptop:h-[calc(100vh-90px)] text-center min-h-[600px]">
+        <div className="laptop:!max-w-[50%]">
+          <div className="text-center laptop:text-left mt-12 laptop:mt-0 max-w-[500px] laptop:max-w-[none]">
+            <h1 className="text-2xl laptop:text-4xl desktop:text-5xl font-bold ">
+              {title}
+            </h1>
+            <h2 className="text-lg laptop:text-2xl desktop:text-3xl  font-semibold">
+              {subTitle}
+            </h2>
             <div className="text-sm laptop:text-base large:text-lg text-white !mt-3 !mb-4 !max-w-[710px]">
               {subText}
             </div>
           </div>
-          <div className="flex items-center justify-start tablet:items-center mt-2 gap-4">
+          <div className="flex items-center justify-center laptop:justify-start tablet:items-center mt-2 gap-4">
             <PrimaryButton
               text={mainButton.text}
               backgroundColor="purpleBright"
