@@ -76,6 +76,8 @@ module.exports = {
       fontSize: {
         tiny: '10px',
         base: ['15px', '1.4rem'],
+        h1: ['50px', '1.2'],
+        h2: ['32px', '1.5'],
       },
       gap: {
         7.5: '1.875rem',
@@ -95,6 +97,9 @@ module.exports = {
         lite: '#444B66',
         footer: '#fff3',
         purple: '#8D64FF',
+        'purple-bright': '#7950ED',
+        'purple-bright-hover': '#AA8BFF',
+
       },
       borderWidth: {
         3: '3px',
@@ -132,6 +137,7 @@ module.exports = {
         'light-gray': '#DFE2EA',
         'error-red': '#CC2C3F',
         'light-turquoise': '#41CADD',
+        'light': '#f4f4f7',
       },
       aspectRatio: {
         thumbnail: '238 / 125',
