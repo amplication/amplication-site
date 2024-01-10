@@ -1,16 +1,14 @@
 import PageHero from '../../Common/PageHero';
 import Lottie from 'lottie-react';
-import animationData from '../../../lottie/retail.json';
+import { data } from '../../../lottie/healthcare';
 
 const RetailHero = () => {
   return (
     <>
       <PageHero
-        title={
-          "Amplication for Retail: Digital Solutions for Tomorrow's Retailers"
-        }
+        title={'Modernize Your Healthcare Management with Amplication'}
         subTitle={
-          'Build tailor-made applications for your retail operations and leap ahead of the competition.'
+          'Streamline, optimize, and boost your healthcare operations with Amplication. '
         }
         subText={''}
         mainButton={{
@@ -29,7 +27,7 @@ const RetailHero = () => {
             buttonLocation: 'hero',
           },
         }}
-        imageNode={<Lottie animationData={animationData} loop={true} />}
+        imageNode={<Lottie animationData={data} loop={true} />}
       />
     </>
   );

@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import PropTypes from 'prop-types';
 import { useCallback } from 'react';
 import * as analytics from '../../../lib/analytics';
@@ -11,7 +10,7 @@ const PageHero = ({
   subText,
   mainButton,
   secondaryButton,
-  image,
+  imageNode,
 }) => {
   const handleMainClick = useCallback(() => {
     analytics.event({
@@ -62,7 +61,7 @@ const PageHero = ({
         </div>
         <div className="relative items-center middle:!max-w-[90%] w-full middle:min-h-[600px] flex medium:!max-w-[46%]">
           <div className="absolute laptop:my-auto w-[50vw] -left-16 max-medium:w-full max-medium:left-0 max-medium:relative medium:flex align-items-center">
-            <Image src={image.src} alt={image.alt} />
+            {imageNode}
           </div>
         </div>
       </div>
@@ -86,10 +85,7 @@ PageHero.propTypes = {
     eventName: PropTypes.string,
     eventParams: PropTypes.object,
   }),
-  image: PropTypes.shape({
-    src: PropTypes.object,
-    alt: PropTypes.string,
-  }),
+  imageNode: PropTypes.node,
 };
 
 export default PageHero;
