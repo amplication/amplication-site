@@ -49,6 +49,7 @@ const StartNow = () => {
             isLink={true}
             href={process.env.NEXT_PUBLIC_BOOK_MEETING_URL}
             onClick={handleBookDemoClick}
+            target={'_blank'}
           />
         </div>
       </section>
