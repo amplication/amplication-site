@@ -16,9 +16,9 @@ const StartNow = () => {
     });
   }, []);
 
-  const handleContactUsClick = useCallback(() => {
+  const handleBookDemoClick = useCallback(() => {
     analytics.event({
-      action: 'contactUsClicked',
+      action: 'bookDemoClicked',
       params: {
         buttonLocation: 'footer',
       },
@@ -44,11 +44,12 @@ const StartNow = () => {
           </Link>
 
           <Button
-            text={'Contact us'}
+            text={'Book a demo'}
             className="outline-button !text-sm !h-10 mr-2 w-full max-w-[104px] !px-0 !h-[34px] !font-normal !bg-light-blue hover:!bg-dark-black-70"
             isLink={true}
-            href="/contact-us"
-            onClick={handleContactUsClick}
+            href={process.env.NEXT_PUBLIC_BOOK_MEETING_URL}
+            onClick={handleBookDemoClick}
+            target={'_blank'}
           />
         </div>
       </section>

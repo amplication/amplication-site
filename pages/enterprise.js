@@ -33,7 +33,8 @@ const features = [
     customClasses: '!pt-8',
     secondaryBtn: {
       title: 'Book a Demo',
-      href: '/contact-us',
+      href: process.env.NEXT_PUBLIC_BOOK_MEETING_URL,
+      target: "_blank"
     },
     content:
       '<p>Amplication Enterprise allows you to build, manage and scale applications at the speed of light. With our platform you can create applications faster and with fewer resources. Generate all the necessary foundations for your service in a few clicks and tailor applications to your unique needs.</p>',
@@ -45,7 +46,8 @@ const features = [
     customClasses: '!pb-6',
     primaryBtn: {
       title: 'Contact Sales',
-      href: '/contact-us',
+      href: process.env.NEXT_PUBLIC_BOOK_MEETING_URL,
+      target: "_blank"
     },
     secondaryBtn: {
       title: 'Start Now',
@@ -60,7 +62,8 @@ const features = [
     customClasses: '!pb-8',
     primaryBtn: {
       title: 'Contact Sales',
-      href: '/contact-us',
+      href: process.env.NEXT_PUBLIC_BOOK_MEETING_URL,
+      target: "_blank"
     },
     secondaryBtn: {
       title: 'Start Now',
@@ -118,7 +121,9 @@ const Features = () => {
                     <div className="buttons-wrapper d-flex tablet:align-items-center justify-content-start mt-4">
                       {feature.primaryBtn && (
                         <Link href={feature.primaryBtn.href} passHref={true}>
-                          <a className="btn btn-primary btn-sm !h-[34px] mb-2 mr-6 w-full !font-normal !text-sm !max-w-[140px]">
+                          <a className="btn btn-primary btn-sm !h-[34px] mb-2 mr-6 w-full !font-normal !text-sm !max-w-[140px]"
+                            target={feature.primaryBtn.target ?? "_self"}
+                          >
                             {feature.primaryBtn.title}
                           </a>
                         </Link>
@@ -128,7 +133,9 @@ const Features = () => {
                           href={feature.secondaryBtn.href ?? ''}
                           passHref={true}
                         >
-                          <a className="btn btn-outline-light btn-sm !h-[34px] mb-2 laptop:mr-2 w-full !font-normal !text-sm !max-w-[140px]">
+                          <a className="btn btn-outline-light btn-sm !h-[34px] mb-2 laptop:mr-2 w-full !font-normal !text-sm !max-w-[140px]"
+                            target={feature.secondaryBtn.target ?? "_self"}
+                          >
                             {feature.secondaryBtn.title}
                           </a>
                         </Link>
@@ -157,7 +164,7 @@ const Features = () => {
           title="Supercharge Your Business Today"
           description="Discover how Amplication Enterprise can help you build powerful, scalable, and secure applications tailored to your business needs."
           linkPrimary={{
-            href: '/contact-us',
+            href: process.env.NEXT_PUBLIC_BOOK_MEETING_URL,
             title: 'Book a Demo',
           }}
         />
