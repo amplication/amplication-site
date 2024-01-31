@@ -44,7 +44,7 @@ const ApplicationModernization = () => {
           title="Supercharge Your Business Today"
           description="Discover how Amplication Enterprise can help you build powerful, scalable, and secure applications tailored to your business needs."
           linkPrimary={{
-            href: '/contact-us',
+            href: process.env.NEXT_PUBLIC_BOOK_MEETING_URL,
             title: 'Book a Demo',
           }}
         />

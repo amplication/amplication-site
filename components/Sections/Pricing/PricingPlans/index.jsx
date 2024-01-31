@@ -27,7 +27,7 @@ export const PricingPlans = () => {
           buttonLocation: 'website-pricing',
         },
       });
-      window.location.href = '/contact-us';
+      window.location.href = process.env.NEXT_PUBLIC_BOOK_MEETING_URL;
     }
   }, []);
 
@@ -45,7 +45,7 @@ export const PricingPlans = () => {
               startNew: 'Start Now',
               upgrade: 'Upgrade Now',
               custom: 'Contact Us',
-              startTrial: (plan) => `Try Free`,
+              startTrial: (plan) => `Book a Demo`,
             },
             price: {
               free: {
