@@ -27,7 +27,7 @@ const PageHero = ({
   }, [secondaryButton.eventName, secondaryButton.eventParams]);
   return (
     <>
-      <div className="relative w-full flex flex-col laptop:flex-row items-center  justify-between  laptop:h-[calc(100vh-90px)] text-center min-h-[600px]">
+      <div className="relative w-full flex gap-8 flex-col laptop:flex-row items-center  justify-between  laptop:h-[calc(100vh-90px)] text-center min-h-[600px]">
         <div className="laptop:!max-w-[50%]">
           <div className="text-center laptop:text-left mt-12 laptop:mt-0 max-w-[500px] laptop:max-w-[none]">
             <h1 className="text-2xl laptop:text-4xl desktop:text-5xl font-bold ">
@@ -60,7 +60,7 @@ const PageHero = ({
           </div>
         </div>
         <div className="relative items-center middle:!max-w-[90%] w-full middle:min-h-[600px] flex medium:!max-w-[46%]">
-          <div className="absolute laptop:my-auto w-[50vw] -left-16 max-medium:w-full max-medium:left-0 max-medium:relative medium:flex align-items-center">
+          <div className="laptop:my-auto max-medium:w-full max-medium:left-0 max-medium:relative medium:flex align-items-center">
             {imageNode}
           </div>
         </div>
