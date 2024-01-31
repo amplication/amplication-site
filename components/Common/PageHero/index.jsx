@@ -51,10 +51,10 @@ const PageHero = ({
               delayLinkMs={300}
             />
             <OutlineButton
-              text="Try Free"
+              text={secondaryButton.text}
               isLink={true}
               onClick={handleSecondaryClick}
-              href={'https://app.amplication.com/login'}
+              href={secondaryButton.href}
               delayLinkMs={300}
             />
           </div>
