@@ -1,7 +1,7 @@
 import Lottie from 'lottie-react';
 import { useCallback } from 'react';
 import * as analytics from '../../../../lib/analytics';
-import animationData from '../../../../lottie/amplication-how-to-transparent.json';
+import videoSrc from '../../../../public/animation/amplication-how-to.mp4';
 import PageHero from '../../../Common/PageHero';
 
 const HeroBlock = () => {
@@ -51,7 +51,11 @@ const HeroBlock = () => {
             buttonLocation: 'hero',
           },
         }}
-        imageNode={<Lottie animationData={animationData} loop={true} />}
+        imageNode={
+          <video autoPlay loop muted style={{ width: '100%', height: 'auto' }}>
+            <source src={videoSrc} type="video/mp4" />
+          </video>
+        }
       />
     </>
   );
