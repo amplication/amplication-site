@@ -20,7 +20,6 @@ module.exports = {
       'max-laptop': {
         max: '991px',
       },
-      middle: '1080px',
       medium: '1200px',
       'max-medium': {
         max: '1199px',
