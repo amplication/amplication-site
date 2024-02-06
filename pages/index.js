@@ -6,7 +6,6 @@ import Features from '../components/Sections/MainPage/Features';
 import GetList from '../components/Sections/MainPage/GetList';
 import PluginsPanel from '../components/Plugins/plugins-panel';
 import Tabs from '../components/Sections/MainPage/Tabs';
-import Roadmap from '../components/Sections/MainPage/Roadmap';
 import LogoList from '../components/Sections/About/LogoList';
 import { NextSeo } from 'next-seo';
 import { MainLayout } from '../layouts';
@@ -64,12 +63,10 @@ const Home = ({ plugins }) => {
         <PageSection alternate className={"!py-20"} >
           <GetList />
         </PageSection>
-        <PageSection className="page-steps !py-20" >
+        <PageSection alternate className="page-steps !py-20" >
           <Tabs />
         </PageSection>
-        <PageSection className={'page-roadmap !py-24'} alternate id="roadmap">
-          <Roadmap />
-        </PageSection>
+
         <PageSection >
           <LogoList />
         </PageSection>
@@ -84,7 +81,7 @@ export const getStaticProps = async () => {
     const { data } = await client.query({
       query: gql`
         query {
-          plugins {
+          plugins(take:30) {
             id
             pluginId
             name

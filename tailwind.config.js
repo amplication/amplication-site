@@ -76,6 +76,10 @@ module.exports = {
       fontSize: {
         tiny: '10px',
         base: ['15px', '1.4rem'],
+        // "3xl": ['1.875rem;', '2.25rem'],
+        "5xl": ['3rem;', '1.2'],
+        // h1: ['50px', '1.2'],
+        // h2: ['32px', '1.5'],
       },
       gap: {
         7.5: '1.875rem',
@@ -95,6 +99,9 @@ module.exports = {
         lite: '#444B66',
         footer: '#fff3',
         purple: '#8D64FF',
+        'purple-bright': '#7950ED',
+        'purple-bright-hover': '#AA8BFF',
+
       },
       borderWidth: {
         3: '3px',
@@ -106,6 +113,8 @@ module.exports = {
         btn: '0px 8px 20px 0px rgba(19, 22, 36, 0.24)',
         'hover-post': '0px 28px 32px -14px rgba(9, 11, 20, .5)',
         'hot-post': '0px 44px 48px -24px rgba(9, 11, 20, 0.3)',
+        'hover-card': '0px 24px 26px -16px rgba(21, 25, 44, 0.75)'
+
       },
       lineHeight: {
         tag: '1.2',
@@ -114,6 +123,8 @@ module.exports = {
       colors: {
         'light-blue': '#22273C',
         'dark-black-70': '#373D57',
+        'dark-black-70': '#444B66',
+        'dark-black-surface': '#1F2336',
         'dark-black-100': '#15192C',
         'blue-dark': '#090979',
         purple: '#8D64FF',
@@ -128,6 +139,7 @@ module.exports = {
         'light-gray': '#DFE2EA',
         'error-red': '#CC2C3F',
         'light-turquoise': '#41CADD',
+        'light': '#f4f4f7',
       },
       aspectRatio: {
         thumbnail: '238 / 125',
@@ -161,7 +173,8 @@ module.exports = {
         noise: "url('/images/noise.png')",
         quote: "url('/images/bg/quotes.svg')",
         grid: 'linear-gradient(to right, #22273C 1px, transparent 1px), linear-gradient(to bottom, #22273C 1px, transparent 1px);',
-        'reward-success': "url('/images/hacktoberfest/reward-success.svg')"
+        'reward-success': "url('/images/hacktoberfest/reward-success.svg')",
+        'app-modernization': "url('/images/bg/bg-app-modernization.jpg')"
       },
     },
   },

@@ -109,6 +109,10 @@ const helpers = {
 
   getPostSlug: (slug) => `/blog/${slug}`,
   getPluginSlug: (pluginId) => `/plugins/${pluginId}`,
+  getCustomerStorySlug: (slug) => `/customers/${slug}`,
+  getCustomerStoriesPerPage: () => {
+    return 9;
+  },
 
   getPostDate: (date) => {
     const d = new Date(date || 'Dec 27, 2022');

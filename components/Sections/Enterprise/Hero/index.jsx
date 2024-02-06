@@ -50,10 +50,14 @@ const Hero = () => {
                     </div>
                   </div>
                   <div className="d-flex tablet:align-items-center justify-content-start mt-2">
-                    <Link href={'/contact-us'} passHref={true}>
+                    <Link
+                      href={process.env.NEXT_PUBLIC_BOOK_MEETING_URL}
+                      passHref={true}
+                    >
                       <a
                         onClick={handleBookDemoClick}
                         className="btn btn-primary btn-sm !h-[34px] mb-2 laptop:mr-2 w-full !font-normal !text-sm !max-w-[140px]"
+                        target="_blank"
                       >
                         Book a Demo
                       </a>
@@ -67,7 +71,7 @@ const Hero = () => {
                         onClick={handleStartNowClick}
                         className="btn btn-outline-light btn-sm !h-[34px] mb-2 laptop:mr-2 w-full !font-normal !text-sm !max-w-[140px] text-black80"
                       >
-                        Start Now
+                        Try Free
                       </a>
                     </Link>
                   </div>

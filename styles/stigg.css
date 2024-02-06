@@ -25,7 +25,15 @@
 }
 
 .stigg-paywall-plans-layout {
-  width: 924px;
+  max-width: 924px;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+@media (max-device-width: 1024px) {
+  .stigg-paywall-plans-layout {
+    flex-direction: column;
+  }
 }
 
 .stigg-plan-offering-container {
