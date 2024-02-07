@@ -3,15 +3,13 @@ import 'highlight.js/styles/github-dark-dimmed.css';
 import { NextSeo } from 'next-seo';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
+import PageSection from '../../components/Common/PageSection';
 import PluginDetails from '../../components/Plugins/plugin-details';
-import Button from '../../components/Common/Button';
-
 import client from '../../services/plugin-api';
-
+import StartNowPlugin from '../../components/Plugins/start-now-plugin';
 import helpers from '../../helpers';
 import { MainLayout } from '../../layouts';
 import errorPage from '../404';
-import StartNowPlugin from '../../components/Plugins/start-now-plugin';
 
 
 
@@ -77,12 +75,14 @@ const Plugin = ({ plugin }) => {
       </div>
 
       <main className="flex flex-col flex-wrap laptop:flex-row justify-between w-full bg-dark-black-100 font-poppins max-medium:overflow-hidden p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-8 gap-8 desktop:gap-28">
-        <div className="max-medium:w-full  flex-1 order-1 flex flex-col laptop:block overflow-hidden">
+        <div className="max-medium:w-full  flex-1 order-1 flex flex-col laptop:block overflow-hidden mb-12">
           {plugin && <PluginDetails plugin={plugin} />}
         </div>
 
       </main>
-      <StartNowPlugin plugin={plugin} />
+      <PageSection alternate>
+        <StartNowPlugin plugin={plugin} />
+      </PageSection>
     </>
   );
 };
@@ -92,7 +92,7 @@ export const getStaticProps = async (context) => {
     const { data } = await client.query({
       query: gql`
         query {
-          plugins(where: {pluginId: {equals: "${context.params.slug}"}}) {
+          plugins(where: {categories: {}, pluginId: {equals: "${context.params.slug}"}}) {
             id
             pluginId
             name
@@ -102,6 +102,8 @@ export const getStaticProps = async (context) => {
             npm
             github
             website
+            categories
+            downloads
           }
         }
       `,
@@ -117,7 +119,7 @@ export const getStaticProps = async (context) => {
       revalidate: 30,
     };
   } catch (e) {
-    console.error(e);
+    console.error(JSON.stringify(e));
   }
 
   return {

@@ -76,10 +76,7 @@ module.exports = {
       fontSize: {
         tiny: '10px',
         base: ['15px', '1.4rem'],
-        // "3xl": ['1.875rem;', '2.25rem'],
         "5xl": ['3rem;', '1.2'],
-        // h1: ['50px', '1.2'],
-        // h2: ['32px', '1.5'],
       },
       gap: {
         7.5: '1.875rem',

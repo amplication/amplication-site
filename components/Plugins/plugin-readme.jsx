@@ -5,6 +5,7 @@ import rehypeHighlight from 'rehype-highlight';
 import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
 import helpers from '../../helpers';
+import PluginReadmeH1 from './plugin-readme-h1';
 
 const PluginReadme = ({ plugin }) => {
   const [readmeContent, setReadmeContent] = useState('');
@@ -26,6 +27,9 @@ const PluginReadme = ({ plugin }) => {
         remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeRaw, rehypeHighlight]}
         source={plugin.readme}
+        components={{
+          h1: PluginReadmeH1,
+        }}
       >
         {readmeContent}
       </ReactMarkdown>

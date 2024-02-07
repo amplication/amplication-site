@@ -2,13 +2,13 @@ import Image from 'next/image';
 import PropTypes from 'prop-types';
 import helpers from '../../helpers';
 
-const PluginLogo = ({ plugin }) => {
+const PluginLogo = ({ plugin, size = 44 }) => {
   return (
-    <span className="min-w-[60px] max-w-[60px] pr-4 flex flex-row justify-center items-center">
+    <span className=" pr-4 flex flex-row justify-center items-center">
       {plugin?.icon ? (
         <Image
-          width={44}
-          height={44}
+          width={size}
+          height={size}
           src={helpers.getPluginLogoUrl(plugin)}
           alt="plugin logo"
           className="rounded-lg"
@@ -22,6 +22,7 @@ const PluginLogo = ({ plugin }) => {
 
 PluginLogo.propTypes = {
   plugin: PropTypes.object.isRequired,
+  size: PropTypes.number,
 };
 
 export default PluginLogo;
