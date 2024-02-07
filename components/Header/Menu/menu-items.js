@@ -31,15 +31,35 @@ const PRODUCT_MENU_ITEMS = [
 ]
 
 
-
-const ABOUT_MENU_ITEMS = [
+const CUSTOMERS_MENU_ITEMS = [
     {
-        title: 'Blog',
-        image: Icon3,
-        url: '/blog',
+        title: 'Customer Stories',
+        image: Icon7,
+        url: '/customers',
     },
     {
-        title: 'About',
+        title: 'Retail',
+        image: Icon1,
+        url: '/build-new-services',
+    },
+    {
+        title: 'Manufacturing',
+        image: Icon11,
+        url: '/application-modernization',
+    },
+    {
+        title: 'Healthcare',
+        image: Icon11,
+        url: '/application-modernization',
+    },
+
+]
+
+
+const ABOUT_MENU_ITEMS = [
+
+    {
+        title: 'Company',
         image: Icon4,
         url: '/about',
     },
@@ -48,6 +68,7 @@ const ABOUT_MENU_ITEMS = [
         image: Icon5,
         url: '/team',
     },
+
     {
         title: 'Contact Us',
         image: Icon4,
@@ -62,9 +83,9 @@ const RESOURCES_MENU_ITEMS = [
         url: 'https://docs.amplication.com/',
     },
     {
-        title: 'GitHub',
-        image: Icon10,
-        url: 'https://github.com/amplication/amplication',
+        title: 'Customer Stories',
+        image: Icon7,
+        url: '/customers',
     },
     {
         title: 'Discord Community',
@@ -76,7 +97,47 @@ const RESOURCES_MENU_ITEMS = [
         image: Icon12,
         url: '/plugins',
     },
+    {
+        title: 'GitHub',
+        image: Icon10,
+        url: 'https://github.com/amplication/amplication',
+    },
+    {
+        title: 'Blog',
+        image: Icon3,
+        url: '/blog',
+    },
 ]
+
+const USE_AMPLICATION_MENU_ITEMS = [
+    {
+        title: 'Get started ',
+        image: Icon8,
+        url: 'https://docs.amplication.com/first-service/',
+    },
+    {
+        title: 'Build APIs on legacy DB',
+        image: Icon7,
+        url: 'https://docs.amplication.com/how-to/import-prisma-schema/',
+    },
+    {
+        title: 'Event-Driven architecture',
+        image: Icon10,
+        url: 'https://docs.amplication.com/',
+    },
+    {
+        title: 'Break the monolith',
+        image: Icon12,
+        url: 'https://docs.amplication.com/break-the-monolith/#how-to-use-break-the-monolith',
+    },
+    {
+        title: 'Custom plugins',
+        image: Icon12,
+        url: 'https://docs.amplication.com/plugins/how-to-create-plugin/',
+    },
+
+]
+
 
 
 
@@ -86,11 +147,6 @@ export const LEFT_MENU_ITEMS = [
 
 export const RIGHT_MENU_ITEMS = [
 
-    {
-        title: 'Docs',
-        url: 'https://docs.amplication.com/',
-        target: '_blank',
-    },
     {
         title: 'Product',
         align: "start",
@@ -109,15 +165,35 @@ export const RIGHT_MENU_ITEMS = [
         url: '/pricing',
     },
     {
+        title: 'Customers',
+        align: "end",
+        columns: [
+            {
+                menuItems: CUSTOMERS_MENU_ITEMS,
+            }
+        ],
+    },
+    {
         title: 'Learn',
         align: "end",
         columns: [
             {
-                title: "Resources",
-                menuItems: RESOURCES_MENU_ITEMS,
+                title: "Use Amplication",
+                menuItems: USE_AMPLICATION_MENU_ITEMS,
             },
             {
-                title: "company",
+                title: "Resource",
+                menuItems: RESOURCES_MENU_ITEMS,
+            },
+
+        ],
+    },
+    {
+        title: 'About',
+        align: "end",
+        columns: [
+
+            {
                 menuItems: ABOUT_MENU_ITEMS,
             },
         ],
