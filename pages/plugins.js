@@ -8,6 +8,7 @@ import helpers from '../helpers';
 import { MainLayout } from '../layouts';
 import * as analytics from '../lib/analytics';
 import client from '../services/plugin-api';
+import PageSection from '../components/Common/PageSection';
 
 const Plugins = ({ plugins }) => {
   const handleStartNowClick = useCallback((eventName) => {
@@ -72,16 +73,22 @@ const Plugins = ({ plugins }) => {
 
 
 
-        <div className={'mt-4 w-full max-w-container m-container p-container laptop:max-w-container-desktop-blog laptop:m-container-desktop laptop:p-container-desktop pt-0 laptop:pt-0 laptop:pb-0 grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-7.5 laptop:gap-x-7.5 laptop:gap-y-[61px]'}>
-          {plugins.map((plugin) => (
-            <Plugin key={plugin.pluginId} plugin={plugin} />
-          ))}
-          {(!Array.isArray(plugins) || !plugins.length) && (
-            <div>
-              plugins not found
+
+        <PageSection alternate>
+
+          <div className={'mt-4  w-full max-w-container m-container p-container laptop:max-w-container-desktop-blog laptop:m-container-desktop laptop:p-container-desktop pt-0 laptop:pt-0 laptop:pb-0'}>
+            <div className='grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 medium:grid-cols-4 gap-7.5   py-8'>
+              {plugins.map((plugin) => (
+                <Plugin key={plugin.pluginId} plugin={plugin} />
+              ))}
+              {(!Array.isArray(plugins) || !plugins.length) && (
+                <div>
+                  plugins not found
+                </div>
+              )}
             </div>
-          )}
-        </div>
+          </div>
+        </PageSection>
 
       </main >
     </>
