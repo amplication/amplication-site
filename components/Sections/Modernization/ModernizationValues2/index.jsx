@@ -62,8 +62,12 @@ const ModernizationValues2 = () => {
                 fast-track your digital transformation.
               </div>
             </div>
-            <Link href={'/contact-us'} passHref={true}>
+            <Link
+              href={process.env.NEXT_PUBLIC_BOOK_MEETING_URL}
+              passHref={true}
+            >
               <a
+                target="_blank"
                 onClick={handleBookDemoClick}
                 className="btn btn-primary btn-sm !h-[34px] mb-2 laptop:mr-2 w-full !font-normal !text-sm !max-w-[140px]"
               >
