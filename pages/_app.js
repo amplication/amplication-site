@@ -10,7 +10,6 @@ import '../styles/stigg.css';
 import 'react-loading-skeleton/dist/skeleton.css';
 import "../styles/bootstrap-wrapper.scss"
 import "../styles/carousel.css"
-import client from '../services/index';
 import * as analytics from '../lib/analytics';
 
 function Amplication({ Component, pageProps }) {
