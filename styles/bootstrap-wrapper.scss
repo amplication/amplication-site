@@ -4,8 +4,8 @@
   @import 'bootstrap/scss/bootstrap';
 
   .navbar {
-    --bs-nav-link-font-size: 15px;
-    --bs-navbar-nav-link-padding-x: 15px;
+    --bs-nav-link-font-size: 14px;
+    --bs-navbar-nav-link-padding-x: 14px;
     padding-top: 0;
     padding-bottom: 0;
   }
@@ -32,6 +32,7 @@
     height: 62px;
     display: flex;
     align-items: center;
+    white-space: nowrap;
   }
 
   .nav-item.dropdown {
@@ -69,15 +70,16 @@
   a.nav-link-inner {
     display: block;
     min-width: 200px;
-    //width: 300px;
+    width: 250px;
     max-width: 400px;
     text-decoration: none;
     color: #fff;
-    padding: 12px;
-    margin: 6px 0;
+    padding: 6px;
+    margin: 2px 0;
     font-size: 14px;
     font-weight: normal;
     border: 1px solid transparent;
+    white-space: nowrap;
 
     &:hover {
       background-color: #373d57;
