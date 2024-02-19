@@ -1,5 +1,5 @@
 import Hero from '../components/Sections/CodeSmartPlayHard/Hero';
-import StartNow from '../components/Sections/Enterprise/StartNow';
+import StartNow from '../components/Sections/About/StartNow';
 
 import { NextSeo } from 'next-seo';
 import { MainLayout } from '../layouts';
@@ -22,6 +22,10 @@ const CodeSmartPlayHard = () => {
         <PageSection>
           <Hero />
         </PageSection>
+        <div className='amplication-base'>
+          <StartNow />
+        </div>
+
 
 
 
