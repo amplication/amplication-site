@@ -70,7 +70,7 @@ const Hero = () => {
         <div className="text-center flex flex-col items-center justify-center ">
           <h2 className="text-3xl font-semibold">Build. Deploy. Accelerate.</h2>
         </div>
-        <div className="w-full  flex flex-col laptop:flex-row gap-8 my-10 z-10 items-stretch justify-center">
+        <div className="w-full  flex flex-col laptop:flex-row gap-8 my-10 z-10 items-center laptop:items-stretch justify-center">
           {links.map((link, index) => (
             <Link href={link.to} passHref key={index}>
               <a
