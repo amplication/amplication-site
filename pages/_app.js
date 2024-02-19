@@ -10,6 +10,7 @@ import '../styles/stigg.css';
 import 'react-loading-skeleton/dist/skeleton.css';
 import "../styles/bootstrap-wrapper.scss"
 import "../styles/carousel.css"
+import "../styles/components.scss"
 import client from '../services/index';
 import * as analytics from '../lib/analytics';
 

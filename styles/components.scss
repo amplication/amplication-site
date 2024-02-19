@@ -1,0 +1,14 @@
+.hero-blur {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    background: #7950ed;
+    filter: blur(100px);
+  }
+}

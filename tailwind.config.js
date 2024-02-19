@@ -134,7 +134,7 @@ module.exports = {
         'secondary-turquoise': '#53DBEE',
         gray: '#A3A8B8',
         'light-gray': '#DFE2EA',
-        'error-red': '#CC2C3F',
+        'error-red': '#f85b6e',
         'light-turquoise': '#41CADD',
         'light': '#f4f4f7',
       },
