@@ -29,4 +29,18 @@
       filter: blur(50px);
     }
   }
+
+  &--far {
+    @include hero-blur;
+
+    &::before {
+      top: auto;
+      top: 0px;
+      left: auto;
+      right: -100px;
+      width: 100px;
+      height: 100px;
+      filter: blur(100px);
+    }
+  }
 }
