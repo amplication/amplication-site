@@ -50,7 +50,7 @@ const Form = () => {
       },
     });
 
-    const url = `https://app.amplication-sandbox.com/signup/preview-account?email=${emailValue}&previewAccountType=BreakingTheMonolith`;
+    const url = `https://app.amplication.com/signup/preview-account?email=${emailValue}&previewAccountType=BreakingTheMonolith`;
     router.push(url);
   };
   return (
