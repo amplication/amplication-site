@@ -11,8 +11,8 @@ const CodeSmartPlayHard = () => {
   return (
     <>
       <NextSeo
-        title="Code Smart Play Hard | Amplication"
-        description="Amplication is the most flexible open-source backend development platform for Node.js applications. Design models and roles, deploy your app, connect with REST or GraphQL API, sync with GitHub. Built for developers, by developers."
+        title="Code. Deploy. Game On! | Amplication"
+        description="Boost your coding & gaming experience with Amplication."
       />
 
       <main
