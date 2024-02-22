@@ -7,7 +7,7 @@ const Form = () => {
       hubSpotFormId="5eb8cd14-51ce-4588-b2d3-2141172998ea"
       pageName="code-smart-play-hard"
       formName="codeSmartPlayHard"
-      successMessage="Congratulations! Look for our confirmation email in your inbox and click the link to finish registering."
+      successMessage="Congratulations! Please check your inbox for our confirmation email and click on the link to complete your registration"
       includeConsent={false}
       buttonClassName="w-full"
       hideSuccessImage={true}

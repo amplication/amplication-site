@@ -12,7 +12,7 @@ const links = [
     title: 'Book a demo',
     subTitle:
       "See how to bring your applications to life quicker than you've ever imagined",
-    to: process.env.NEXT_PUBLIC_BOOK_MEETING_URL,
+    to: 'https://meetings-eu1.hubspot.com/oalaluf/book-your-demo-mwc',
     icon: icon6,
     actionName: 'bookDemo',
   },
