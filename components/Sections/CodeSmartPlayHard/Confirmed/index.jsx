@@ -52,7 +52,8 @@ const Hero = () => {
           <div className="flex flex-col gap-10 laptop:flex-row  justify-between flex-1 ">
             <div className="flex flex-col gap-2 flex-1 items-center max-w-[800px] ">
               <h1 className="text-5xl  laptop:text-7xl font-bold ">
-                Success! You&apos;re in the Game!
+                Success!
+                <br /> You&apos;re in the Game!
               </h1>
 
               <div className="text-sm laptop:text-base large:text-lg text-white">

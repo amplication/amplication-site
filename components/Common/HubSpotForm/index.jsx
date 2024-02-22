@@ -22,6 +22,7 @@ const HubSpotForm = ({
   includeConsent,
   buttonClassName,
   hideSuccessImage,
+  buttonText,
 }) => {
   const [formIsSending, setFormIsSending] = useState(false);
   const [successMsg, setSuccessMsg] = useState('');
@@ -133,7 +134,7 @@ const HubSpotForm = ({
             name="submit"
             className={`min-w-[130px] mt-1 flex justify-center items-center text-white font-poppins font-normal text-center rounded py-2 px-3 laptop:px-8 laptop:font-medium transition-all duration-300 bg-purple-bright hover:bg-purple-bright-hover text-[15px] h-[40px] whitespace-nowrap !px-4 mx-auto 
               ${buttonClassName}`}
-            value="Submit"
+            value={buttonText}
           />
         </div>
         <div className="font-normal text-sm mt-5 text-error-red">{error}</div>
@@ -186,6 +187,7 @@ const HubSpotForm = ({
 
 HubSpotForm.defaultProps = {
   includeConsent: true,
+  buttonText: 'Submit',
 };
 
 HubSpotForm.propTypes = {
@@ -198,6 +200,7 @@ HubSpotForm.propTypes = {
   includeConsent: PropTypes.bool,
   buttonClassName: PropTypes.string,
   hideSuccessImage: PropTypes.bool,
+  buttonText: PropTypes.string,
 };
 
 export default HubSpotForm;

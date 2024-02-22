@@ -11,6 +11,7 @@ const Form = () => {
       includeConsent={false}
       buttonClassName="w-full"
       hideSuccessImage={true}
+      buttonText={'Join the Raffle'}
     >
       <div className="relative laptop:w-[calc(50%-8px)] my-2">
         <input
@@ -30,16 +31,8 @@ const Form = () => {
           className="leading-input focus:border-purple !shadow-hidden block w-full rounded-lg border border-solid bg-dark-black-100 py-2 pl-3 pr-8 font-poppins text-sm text-white placeholder:text-white hover:border-purple border-lite"
         />
       </div>
-      <div className="relative laptop:w-[calc(50%-8px)] my-2">
-        <input
-          required
-          type="text"
-          name="company"
-          placeholder="Company Name"
-          className="leading-input focus:border-purple !shadow-hidden block w-full rounded-lg border border-solid bg-dark-black-100 py-2 pl-3 pr-8 font-poppins text-sm text-white placeholder:text-white hover:border-purple border-lite"
-        />
-      </div>
-      <div className="relative laptop:w-[calc(50%-8px)] my-2">
+
+      <div className="relative laptop:w-full my-2">
         <input
           required
           type="email"
