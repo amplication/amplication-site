@@ -41,6 +41,13 @@ const MENU_ITEMS = [
         },
         target: '_self',
       },
+      {
+        title: 'Break the Monolith',
+        href: {
+          pathname: '/break-the-monolith',
+        },
+        target: '_self',
+      },
     ],
   },
   {
