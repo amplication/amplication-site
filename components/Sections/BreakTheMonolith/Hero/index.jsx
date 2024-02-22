@@ -18,7 +18,7 @@ const Hero = () => {
               into our sandbox environment and see how Amplication enhances your
               system architecture and transforms your development workflow.
             </div>
-            <h2 className="text-lg laptop:text-2xl desktop:text-3xl font-semibold">
+            <h2 className="text-2xl laptop:text-xl desktop:text-2xl font-semibold">
               Experience the power of Break the Monolith
             </h2>
             <Form />
