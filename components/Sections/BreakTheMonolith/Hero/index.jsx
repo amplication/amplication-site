@@ -13,10 +13,10 @@ const Hero = () => {
             </h1>
 
             <div className="text-sm laptop:text-base large:text-lg text-white">
-              Step into the forefront of service design! See how our Break the
-              Monolith feature reshapes your approach to microservices. Dive
-              into our sandbox environment and see how Amplication enhances your
-              system architecture and transforms your development workflow.
+            See how our Break the Monolith feature reshapes your approach to 
+            microservices architecture. 
+            Dive into our sandbox environment and see how Amplication modernizes 
+            your system architecture and transforms your development workflow.
             </div>
             <h2 className="text-lg laptop:text-2xl desktop:text-3xl font-semibold">
               Experience the power of Break the Monolith
