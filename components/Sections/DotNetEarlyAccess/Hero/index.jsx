@@ -11,15 +11,11 @@ const Hero = () => {
         subTitle={
           'Join our exclusive early-access program for production-ready services in .NET'
         }
-        subText={`Boost your .NET projects with unmatched speed, reliability, and scalability 
-        using our backend development platform.
-        Amplication is set to revolutionize your .NET projects, bringing the speed, reliability, 
-        and scalability that's already trusted by tens of thousands of Node.js developers. 
-        Supported by the global open-source community, Amplication is excited to announce its upcoming 
-        availability for .NET! Join our exclusive beta program and transform your backend development experience. 
+        subText={`We are bringing the speed, reliability, and scalability that's already trusted by 
+        tens of thousands of Node.js developers, to your .NET projects. 
         Seamlessly integrate with your existing workflow and accelerate your development by 30X. 
-        Say ‘Goodbye’ to time-consuming tasks and ‘Hello’ to a new era of efficiency with our 
-        highly anticipated .NET backend capabilities.`}
+        Say ‘Goodbye’ to time-consuming tasks and ‘Hello’ to a new era of efficiency with our highly 
+        anticipated .NET backend capabilities.`}
         //
         imageNode={
           <div className="relative p-[50px]  text-left">
