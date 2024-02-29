@@ -19,7 +19,7 @@ const Hero = () => {
             your system architecture and transforms your development workflow.
             </div>
             <h2 className="text-2xl laptop:text-xl desktop:text-2xl font-semibold">
-              Experience Break the Monolith: Access Sandbox Now
+              Experience Break the Monolith, Access Sandbox Now
             </h2>
             <Form />
           </div>
