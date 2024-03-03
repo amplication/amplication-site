@@ -55,6 +55,7 @@ DotNetEarlyAccess.getLayout = function getLayout(page) {
       footerClass="bg-light-blue"
       hideFooterBanner={true}
       hideBackground={true}
+      hideTopBar={true}
     >
       {page}
     </MainLayout>
