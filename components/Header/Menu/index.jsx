@@ -48,6 +48,13 @@ const MENU_ITEMS = [
         },
         target: '_self',
       },
+      {
+        title: 'Build with .NET - early access ',
+        href: {
+          pathname: '/dot-net-early-access',
+        },
+        target: '_self',
+      },
     ],
   },
   {
