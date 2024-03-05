@@ -18,7 +18,7 @@ const links = [
   },
   {
     title: 'Try for free',
-    subTitle: 'Sign up for our free 14-day Enterprise trial',
+    subTitle: 'Sign up for our free 7-day Enterprise trial',
     to: 'https://app.amplication.com/login',
     icon: icon7,
     actionName: 'tryForFree',
