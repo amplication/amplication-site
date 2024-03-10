@@ -49,6 +49,13 @@ const MENU_ITEMS = [
         target: '_self',
       },
       {
+        title: 'Plugins Catalog',
+        href: {
+          pathname: '/plugins',
+        },
+        target: '_self',
+      },
+      {
         title: 'Build with .NET - early access ',
         href: {
           pathname: '/dot-net-early-access',
