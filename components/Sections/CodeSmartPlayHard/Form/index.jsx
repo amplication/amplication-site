@@ -1,6 +1,20 @@
+import { useCallback } from 'react';
 import HubSpotForm from '../../../Common/HubSpotForm';
+import { useRouter } from 'next/router';
 
 const Form = () => {
+  const router = useRouter();
+
+  const onSubmit = useCallback(
+    (fields) => {
+      console.log({ fields });
+
+      const url = `https://app.amplication.com/signup/preview-account?email=${fields.email}&previewAccountType=PreviewOnboarding`;
+      router.push(url);
+    },
+    [router],
+  );
+
   return (
     <HubSpotForm
       hubSpotPortalId="25691669"
@@ -12,6 +26,7 @@ const Form = () => {
       buttonClassName="w-full"
       hideSuccessImage={true}
       buttonText={'Join the Raffle'}
+      onSubmit={onSubmit}
     >
       <div className="relative laptop:w-[calc(50%-8px)] my-2">
         <input
