@@ -23,6 +23,7 @@ const HubSpotForm = ({
   buttonClassName,
   hideSuccessImage,
   buttonText,
+  onSubmit,
 }) => {
   const [formIsSending, setFormIsSending] = useState(false);
   const [successMsg, setSuccessMsg] = useState('');
@@ -94,6 +95,7 @@ const HubSpotForm = ({
         });
 
         setFormIsSending(false);
+        onSubmit && onSubmit(fields);
       } catch (e) {
         console.log('error', e);
       }
@@ -201,6 +203,7 @@ HubSpotForm.propTypes = {
   buttonClassName: PropTypes.string,
   hideSuccessImage: PropTypes.bool,
   buttonText: PropTypes.string,
+  onSubmit: PropTypes.func,
 };
 
 export default HubSpotForm;

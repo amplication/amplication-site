@@ -14,9 +14,10 @@ const Hero = () => {
             <h2 className="text-lg laptop:text-2xl desktop:text-3xl font-semibold">
               Boost your coding & gaming experience with Amplication.
             </h2>
-            <div className="text-sm laptop:text-base large:text-lg text-white">
-              Join our exclusive MWC 2024 raffle and get the chance to win an
-              Xbox Series X!
+            <div className="text-sm laptop:text-base large:text-lg text-white ">
+              Join our exclusive KubeCon raffle and get the chance to win an
+              Xbox Series X! To enter, create a production-ready service with
+              Amplication in 30 seconds. Just a few clicks and you&apos;re in!
             </div>
             <div className="hidden laptop:block">
               <Form />
