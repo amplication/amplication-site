@@ -1,5 +1,5 @@
 //import TopBar from './TopBar';
-import EnterpriseTrialBar from './TopBar/enterpriseTrial';
+import TopBar from './TopBar/dotNetEarlyAccess';
 import MainBar from './MainBar';
 import BottomBar from './BottomBar';
 
@@ -8,7 +8,7 @@ const Header = ({ hideBar = false }) => {
     <>
       <header className="z-20 font-poppins laptop:fixed laptop:w-full laptop:top-0 h-[150px]">
         <div className="fixed w-full">
-          {!hideBar && <EnterpriseTrialBar />}
+          {!hideBar && <TopBar />}
           <MainBar />
           <BottomBar />
         </div>

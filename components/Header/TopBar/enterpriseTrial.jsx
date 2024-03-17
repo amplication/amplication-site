@@ -21,7 +21,7 @@ const EnterpriseTrialBar = () => {
           className="w-full flex flex-col laptop:flex-row gap-1 laptop:gap-4 justify-center text-xs text-center items-center max-w-container m-container p-container py-2 cursor-pointer  "
         >
           <span>
-            Try Amplication Enterprise free for 14 days. No credit card
+            Try Amplication Enterprise free for 7 days. No credit card
             required.
           </span>
         </a>

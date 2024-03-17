@@ -41,6 +41,27 @@ const MENU_ITEMS = [
         },
         target: '_self',
       },
+      {
+        title: 'Break the Monolith',
+        href: {
+          pathname: '/break-the-monolith',
+        },
+        target: '_self',
+      },
+      {
+        title: 'Plugins Catalog',
+        href: {
+          pathname: '/plugins',
+        },
+        target: '_self',
+      },
+      {
+        title: 'Build with .NET - early access ',
+        href: {
+          pathname: '/dot-net-early-access',
+        },
+        target: '_self',
+      },
     ],
   },
   {

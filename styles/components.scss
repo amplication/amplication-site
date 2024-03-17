@@ -1,0 +1,46 @@
+@mixin hero-blur {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    background: #7950ed;
+    filter: blur(100px);
+  }
+}
+
+.hero-blur {
+  @include hero-blur;
+
+  &--side {
+    @include hero-blur;
+
+    &::before {
+      top: auto;
+      bottom: 100px;
+      left: -100px;
+      width: 100px;
+      height: 100px;
+      background: #4e1474;
+      filter: blur(50px);
+    }
+  }
+
+  &--far {
+    @include hero-blur;
+
+    &::before {
+      top: auto;
+      top: 0px;
+      left: auto;
+      right: -100px;
+      width: 100px;
+      height: 100px;
+      filter: blur(100px);
+    }
+  }
+}
