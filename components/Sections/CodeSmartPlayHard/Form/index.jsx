@@ -7,9 +7,9 @@ const Form = () => {
 
   const onSubmit = useCallback(
     (fields) => {
-      console.log({ fields });
+      const email = fields.find((field) => field.name === 'email').value;
 
-      const url = `https://app.amplication.com/signup/preview-account?email=${fields.email}&previewAccountType=PreviewOnboarding`;
+      const url = `https://app.amplication.com/signup/preview-account?email=${email}&previewAccountType=PreviewOnboarding`;
       router.push(url);
     },
     [router],
