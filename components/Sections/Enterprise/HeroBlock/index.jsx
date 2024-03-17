@@ -1,8 +1,8 @@
+import Lottie from 'lottie-react';
 import { useCallback } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import VideoWatch from '../../../../public/images/video-watch.png';
 import * as analytics from '../../../../lib/analytics';
+import videoSrc from '../../../../public/animation/amplication-how-to.mp4';
+import PageHero from '../../../Common/PageHero';
 
 const HeroBlock = () => {
   const handleStartNowClick = useCallback(() => {
@@ -24,67 +24,39 @@ const HeroBlock = () => {
   }, []);
   return (
     <>
-      <div className="row align-items-center">
-        <div className="col-12 text-center">
-          <div className="header-and-video align-items-center">
-            <div className="content-block">
-              <div className="animated-header">
-                <h1 className="main-title mb-0">
-                  <span className="block font-bold">
-                    Generate Production&#8209;Ready <br /> Backend Services.
-                  </span>
-                  <span className="sub-title">
-                    Reliably. Securely. Consistently.
-                  </span>
-                </h1>
-                <div className="explainer text-sm laptop:text-base large:text-lg text-white !mt-3 !mb-4 !max-w-[720px]">
-                  Automatically generate backend services with the highest
-                  standards, consistency and scalability. Accelerate your
-                  development 20X. Never waste time on boilerplate and
-                  repetitive coding again.
-                </div>
-              </div>
-              <div className="buttons-wrapper d-flex tablet:align-items-center justify-content-start mt-2">
-                <Link href={'https://app.amplication.com'} passHref={true}>
-                  <a
-                    onClick={handleStartNowClick}
-                    className="btn btn-primary btn-sm !h-[34px] mb-2 laptop:mr-2 w-full !font-normal !text-sm !max-w-[140px]"
-                  >
-                    Start Free
-                  </a>
-                </Link>
-                <div className="spacer"></div>
-                <Link
-                  href={process.env.NEXT_PUBLIC_BOOK_MEETING_URL}
-                  passHref={true}
-                >
-                  <a
-                    onClick={handleBookDemoClick}
-                    className="btn btn-outline-light btn-sm !h-[34px] mb-2 laptop:mr-2 w-full !font-normal !text-sm !max-w-[140px] text-black80"
-                    target="_blank"
-                  >
-                    Book a Demo
-                  </a>
-                </Link>
-              </div>
-            </div>
-            <div className="video flex align-items-center">
-              <div className="relative align-items-center !max-w-[92%] w-full min-h-[600px] hidden medium:flex align-items-center laptop:!max-w-[56%]">
-                <div className="absolute laptop:my-auto !-mt-24 w-[84vw] medium:flex align-items-center">
-                  <Link
-                    href={'https://www.youtube.com/watch?v=Kn5cNlUecCs'}
-                    passHref={true}
-                  >
-                    <a data-lity={true}>
-                      <Image src={VideoWatch} alt={''} />
-                    </a>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <PageHero
+        title={
+          <>
+            Generate Production&#8209;Ready <br /> Backend Services.
+          </>
+        }
+        subTitle={'Reliably. Securely. Consistently.'}
+        subText={`Automatically generate backend services with the highest
+        standards, consistency and scalability. Accelerate your
+        development 20X. Never waste time on boilerplate and
+        repetitive coding again.`}
+        mainButton={{
+          text: ' Start Free',
+          href: 'https://app.amplication.com',
+          eventName: 'startNowClicked',
+          eventParams: {
+            buttonLocation: 'hero',
+          },
+        }}
+        secondaryButton={{
+          text: 'Book a Demo',
+          href: process.env.NEXT_PUBLIC_BOOK_MEETING_URL,
+          eventName: 'bookDemoClicked',
+          eventParams: {
+            buttonLocation: 'hero',
+          },
+        }}
+        imageNode={
+          <video autoPlay loop muted style={{ width: '100%', height: 'auto' }}>
+            <source src={videoSrc} type="video/mp4" />
+          </video>
+        }
+      />
     </>
   );
 };

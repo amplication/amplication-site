@@ -61,7 +61,7 @@ const PageHero = ({
             )}
           </div>
         </div>
-        <div className="relative items-center justify-center middle:!max-w-[90%] w-full middle:min-h-[600px] flex medium:!max-w-[46%]">
+        <div className="relative flex items-center max-w-[600px] mb-8 w-full laptop:min-h-[600px] laptop:!max-w-[46%] laptop:mb-0 ">
           <div className="">{imageNode}</div>
         </div>
       </div>
@@ -70,7 +70,7 @@ const PageHero = ({
 };
 
 PageHero.propTypes = {
-  title: PropTypes.string,
+  title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   subTitle: PropTypes.string,
   subText: PropTypes.string,
   mainButton: PropTypes.shape({
