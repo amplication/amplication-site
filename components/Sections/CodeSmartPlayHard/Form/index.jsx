@@ -7,9 +7,9 @@ const Form = () => {
 
   const onSubmit = useCallback(
     (fields) => {
-      console.log({ fields });
+      const email = fields.find((field) => field.name === 'email').value;
 
-      const url = `https://app.amplication.com/signup/preview-account?email=${fields.email}&previewAccountType=PreviewOnboarding`;
+      const url = `https://app.amplication.com/signup/preview-account?email=${email}&previewAccountType=PreviewOnboarding`;
       router.push(url);
     },
     [router],
@@ -18,7 +18,7 @@ const Form = () => {
   return (
     <HubSpotForm
       hubSpotPortalId="25691669"
-      hubSpotFormId="5eb8cd14-51ce-4588-b2d3-2141172998ea"
+      hubSpotFormId="bc4c0a15-a656-4d89-af94-e2c75bbf1316"
       pageName="code-smart-play-hard"
       formName="codeSmartPlayHard"
       successMessage="Congratulations! Please check your inbox for our confirmation email and click on the link to complete your registration"
