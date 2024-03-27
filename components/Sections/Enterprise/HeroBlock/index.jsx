@@ -2,7 +2,7 @@ import Lottie from 'lottie-react';
 import { useCallback } from 'react';
 import * as analytics from '../../../../lib/analytics';
 import videoSrc from '../../../../public/animation/amplication-how-to.mp4';
-import PageHero from '../../../Common/PageHero';
+import VerticalPageHero from '../../../Common/PageHero/vertical-hero';
 
 const HeroBlock = () => {
   const handleStartNowClick = useCallback(() => {
@@ -24,17 +24,23 @@ const HeroBlock = () => {
   }, []);
   return (
     <>
-      <PageHero
+      <VerticalPageHero
         title={
           <>
-            Generate Production&#8209;Ready <br /> Backend Services.
+            <span className="text-purple1">
+              The Fastest Way in the World to
+            </span>{' '}
+            <span className="text-purple">Build Backend Services.</span>
           </>
         }
-        subTitle={'Reliably. Securely. Consistently.'}
-        subText={`Automatically generate backend services with the highest
-        standards, consistency and scalability. Accelerate your
-        development 20X. Never waste time on boilerplate and
-        repetitive coding again.`}
+        subTitle={null}
+        subText={
+          <>
+            Automatically generate backend services with full ownership, no
+            vendor lock&#8209;in, and no blackboxing. Fully customizable and
+            production-ready.
+          </>
+        }
         mainButton={{
           text: ' Start Free',
           href: 'https://app.amplication.com',
