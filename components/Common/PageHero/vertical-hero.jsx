@@ -28,7 +28,7 @@ const VerticalPageHero = ({
   return (
     <>
       <div className="relative w-full flex flex-col items-center justify-between  text-center min-h-[600px] gap-8 ">
-        <div className="laptop:!max-w-[50%]">
+        <div className="laptop:!max-w-[800px]">
           <div className=" flex flex-col gap-2 text-center items-center mt-32 max-w-[500px] laptop:max-w-[none]">
             <h1 className="text-4xl desktop:text-5xl font-semibold ">
               {title}
