@@ -4,16 +4,11 @@ import innaBell from '../../../../public/images/team/inna-bell.png';
 import yuvalHanaz from '../../../../public/images/team/yuval-hazaz.png';
 import vikaGoncharuk from '../../../../public/images/team/vika-goncharuk.png';
 import morHagbi from '../../../../public/images/team/mor-hagbi.png';
-import sauravJain from '../../../../public/images/team/saurav-jain.png';
-import alexBass from '../../../../public/images/team/alex-bass.png';
 import amitBarletz from '../../../../public/images/team/amit-barletz.png';
-import shimiBar from '../../../../public/images/team/shimi.png';
 import tomerNaim from '../../../../public/images/team/tomer.png';
-import leviVan from '../../../../public/images/team/levi.png';
 import danieleIasella from '../../../../public/images/team/daniele.png';
 import mulyGottlieb from '../../../../public/images/team/muly.png';
 import orenAlaluf from '../../../../public/images/team/oren.png';
-import lizaDymava from '../../../../public/images/team/liza.png';
 import pazYanover from '../../../../public/images/team/paz.png';
 
 import talkWithUs from '../../../../public/images/icons/talk-with-with-team.svg';
@@ -107,25 +102,6 @@ const members = [
     ],
   },
   {
-    name: 'Alex Bass',
-    position: 'Sr. Product Designer',
-    image: alexBass,
-    links: [
-      {
-        href: 'https://www.linkedin.com/in/bassalex/',
-        iconClass: 'linkedin',
-      },
-      {
-        href: 'https://github.com/alexbass86',
-        iconClass: 'github',
-      },
-      {
-        href: 'https://twitter.com/kipibass86',
-        iconClass: 'twitter',
-      },
-    ],
-  },
-  {
     name: 'Amit Barletz',
     position: 'Full Stack Engineer',
     image: amitBarletz,
@@ -194,70 +170,6 @@ const members = [
       {
         href: 'https://github.com/morhag90',
         iconClass: 'github',
-      },
-    ],
-  },
-  {
-    name: 'Shimi Bar',
-    position: 'Sr. Full Stack Engineer',
-    image: shimiBar,
-    links: [
-      {
-        href: 'https://www.linkedin.com/in/shimibar/',
-        iconClass: 'linkedin',
-      },
-      {
-        href: 'https://github.com/barshimi',
-        iconClass: 'github',
-      },
-    ],
-  },
-  {
-    name: 'Levi van Noort',
-    position: 'DevOps Engineer',
-    image: leviVan,
-    links: [
-      {
-        href: 'https://www.linkedin.com/in/levivannoort/',
-        iconClass: 'linkedin',
-      },
-      {
-        href: 'https://github.com/levivannoort',
-        iconClass: 'github',
-      },
-      {
-        href: 'https://twitter.com/vanNoortLevi',
-        iconClass: 'twitter',
-      },
-    ],
-  },
-  {
-    name: 'Saurav Jain',
-    position: 'Community Manager',
-    image: sauravJain,
-    links: [
-      {
-        href: 'https://www.linkedin.com/in/saurav-jain-384625147/',
-        iconClass: 'linkedin',
-      },
-      {
-        href: 'https://github.com/souravjain540',
-        iconClass: 'github',
-      },
-      {
-        href: 'https://twitter.com/Sauain',
-        iconClass: 'twitter',
-      },
-    ],
-  },
-  {
-    name: 'Liza Dymava',
-    position: 'Business Development Manager',
-    image: lizaDymava,
-    links: [
-      {
-        href: 'https://www.linkedin.com/in/lizavetadymava/',
-        iconClass: 'linkedin',
       },
     ],
   },
