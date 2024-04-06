@@ -38,7 +38,7 @@ const PageHero = ({
               {subText}
             </div>
           </div>
-          <div className="flex items-center justify-center laptop:justify-start tablet:items-center mt-2 gap-4">
+          <div className="flex items-center justify-center laptop:justify-start tablet:items-center mt-4 gap-4">
             {mainButton && (
               <PrimaryButton
                 text={mainButton.text}

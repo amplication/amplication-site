@@ -2,7 +2,7 @@ import Lottie from 'lottie-react';
 import { useCallback } from 'react';
 import * as analytics from '../../../../lib/analytics';
 import videoSrc from '../../../../public/animation/amplication-how-to.mp4';
-import VerticalPageHero from '../../../Common/PageHero/vertical-hero';
+import PageHero from '../../../Common/PageHero';
 
 const HeroBlock = () => {
   const handleStartNowClick = useCallback(() => {
@@ -24,15 +24,8 @@ const HeroBlock = () => {
   }, []);
   return (
     <>
-      <VerticalPageHero
-        title={
-          <>
-            <span className="text-purple1">
-              The Fastest Way in the World to
-            </span>{' '}
-            <span className="text-purple">Build Backend Services.</span>
-          </>
-        }
+      <PageHero
+        title={<>The Fastest Way in the World to Build Backend Services.</>}
         subTitle={null}
         subText={
           <>
