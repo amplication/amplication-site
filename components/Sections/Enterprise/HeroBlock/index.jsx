@@ -25,16 +25,15 @@ const HeroBlock = () => {
   return (
     <>
       <PageHero
-        title={
+        title={<>The Fastest Way in the World to Build Backend Services.</>}
+        subTitle={null}
+        subText={
           <>
-            Generate Production&#8209;Ready <br /> Backend Services.
+            Automatically generate backend services with full ownership, no
+            vendor lock&#8209;in, and no blackboxing. Fully customizable and
+            production-ready.
           </>
         }
-        subTitle={'Reliably. Securely. Consistently.'}
-        subText={`Automatically generate backend services with the highest
-        standards, consistency and scalability. Accelerate your
-        development 20X. Never waste time on boilerplate and
-        repetitive coding again.`}
         mainButton={{
           text: ' Start Free',
           href: 'https://app.amplication.com',

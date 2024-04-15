@@ -4,7 +4,7 @@ import * as analytics from '../../../lib/analytics';
 import OutlineButton from '../../Common/Button/button-outline';
 import PrimaryButton from '../../Common/Button/button-primary';
 
-const PageHero = ({
+const VerticalPageHero = ({
   title,
   subTitle,
   subText,
@@ -27,10 +27,12 @@ const PageHero = ({
   }, [secondaryButton]);
   return (
     <>
-      <div className="relative w-full flex flex-col laptop:flex-row items-center  justify-between  laptop:h-[calc(100vh-90px)] text-center min-h-[600px] gap-8">
-        <div className="laptop:!max-w-[50%]">
-          <div className=" flex flex-col gap-2 text-center laptop:text-left mt-12 laptop:mt-0 max-w-[500px] laptop:max-w-[none]">
-            <h1 className="text-4xl desktop:text-5xl font-bold ">{title}</h1>
+      <div className="relative w-full flex flex-col items-center justify-between  text-center min-h-[600px] gap-8 ">
+        <div className="laptop:!max-w-[800px]">
+          <div className=" flex flex-col gap-2 text-center items-center mt-32 max-w-[500px] laptop:max-w-[none]">
+            <h1 className="text-4xl desktop:text-5xl font-semibold ">
+              {title}
+            </h1>
             <h2 className="text-2xl desktop:text-3xl  font-semibold">
               {subTitle}
             </h2>
@@ -38,7 +40,7 @@ const PageHero = ({
               {subText}
             </div>
           </div>
-          <div className="flex items-center justify-center laptop:justify-start tablet:items-center mt-4 gap-4">
+          <div className="flex items-center justify-center   mt-8 gap-4">
             {mainButton && (
               <PrimaryButton
                 text={mainButton.text}
@@ -69,7 +71,7 @@ const PageHero = ({
   );
 };
 
-PageHero.propTypes = {
+VerticalPageHero.propTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   subTitle: PropTypes.string,
   subText: PropTypes.string,
@@ -88,4 +90,4 @@ PageHero.propTypes = {
   imageNode: PropTypes.node,
 };
 
-export default PageHero;
+export default VerticalPageHero;
