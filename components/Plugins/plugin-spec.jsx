@@ -29,7 +29,7 @@ const PluginSpec = ({ plugin }) => {
         <div>
           <div className="text-lg font-bold">Installs</div>
           <div className="text-xs text-secondary-turquoise">
-            {plugin.downloads.toLocaleString()}
+            {plugin.downloads?.toLocaleString()}
           </div>
         </div>
         <div>
