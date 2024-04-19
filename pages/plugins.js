@@ -23,7 +23,7 @@ const Plugins = ({ plugins }) => {
         title="Plugins: Extend the generated code with plugins | Amplication"
         description="Extend and customize your services by using plugins for various technologies and integrations."
       />
-      <main className="w-full font-poppins z-10 mt-12 mb-12 laptop:mb-[100px] ">
+      <main className="w-full font-poppins z-10 mt-12  ">
         <section className={'background-transparent amplication-base mb-12'}>
           <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
             <div className="row align-items-center justify-content-center mb-4">
