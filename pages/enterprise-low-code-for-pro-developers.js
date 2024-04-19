@@ -16,6 +16,7 @@ import ImageFullCode from '../public/images/low-code/image-full-code.png';
 import ImageForDevelopers from '../public/images/low-code/image-for-developers.png';
 import ImageIntegration from '../public/images/low-code/image-integration.png';
 import ImagePlugins from '../public/images/low-code/image-plugins.png';
+import StartNow from '../components/Sections/About/StartNow';
 
 const cards = [
   {
@@ -163,7 +164,11 @@ const LowCode = () => {
 
 
         </PageSection>
-
+        <PageSection alternate>
+          <div className='amplication-base'>
+            <StartNow />
+          </div>
+        </PageSection>
 
 
 
