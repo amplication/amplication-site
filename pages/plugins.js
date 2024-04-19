@@ -42,30 +42,33 @@ const Plugins = ({ plugins }) => {
 
         </section>
         <div className={'w-full max-w-container m-container p-container laptop:max-w-container-desktop-blog laptop:m-container-desktop laptop:p-container-desktop  laptop:pb-0   '}>
-          <div className='mb-10'>
+          <div className='mb-4'>
             <Button
               text="Learn more about plugins"
               isLink={true}
               onClick={() => handleStartNowClick("PluginsLearnMoreClick")}
-              className="!inline-block  !text-xs    !font-normal  !bg-transparent hover:!bg-transparent !px-2"
+              className="!inline-block  !text-xs    !font-normal  !bg-transparent hover:!bg-transparent !px-2 text-secondary-turquoise"
               href="https://docs.amplication.com/getting-started/plugins/"
               delayLinkMs={300}
+              target={"_blank"}
             />
             <Button
               text="Create your own plugin"
               isLink={true}
               onClick={() => handleStartNowClick("PluginsCreateYourOwnClick")}
-              className="!inline-block  !text-xs    !font-normal  !bg-transparent hover:!bg-transparent !px-2"
+              className="!inline-block  !text-xs    !font-normal  !bg-transparent hover:!bg-transparent !px-2  text-secondary-turquoise"
               href="https://docs.amplication.com/plugins/how-to-create-plugin/"
               delayLinkMs={300}
+              target={"_blank"}
             />
             <Button
               text="Request a new plugin"
               isLink={true}
               onClick={() => handleStartNowClick("PluginsRequestNewClick")}
-              className="!inline-block  !text-xs    !font-normal  !bg-transparent hover:!bg-transparent  !px-2"
+              className="!inline-block  !text-xs    !font-normal  !bg-transparent hover:!bg-transparent  !px-2  text-secondary-turquoise"
               href="https://github.com/amplication/amplication/issues/new?assignees=&labels=type%3A+feature+request&projects=&template=feature.yml"
               delayLinkMs={300}
+              target={"_blank"}
             />
 
           </div>
@@ -77,7 +80,7 @@ const Plugins = ({ plugins }) => {
         <PageSection alternate>
 
           <div className={'mt-4  w-full max-w-container m-container p-container laptop:max-w-container-desktop-blog laptop:m-container-desktop laptop:p-container-desktop pt-0 laptop:pt-0 laptop:pb-0'}>
-            <div className='grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 medium:grid-cols-4 gap-7.5   py-8'>
+            <div className='grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 medium:grid-cols-3 gap-7.5   py-8'>
               {plugins.map((plugin) => (
                 <Plugin key={plugin.pluginId} plugin={plugin} />
               ))}

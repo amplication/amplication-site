@@ -36,41 +36,42 @@ const Home = ({ plugins }) => {
         }}
       />
 
-      <main className="w-full font-poppins z-10 !mb-0 laptop:mb-[100px] amplication-base">
-        <PageSection className={"page-welcome !pt-10 !pb-8 large:!py-[9vh] xlg:!py-[17vh]"}>
+      <main className="w-full font-poppins z-10 !mb-0 laptop:mb-[100px] ">
+        <PageSection >
           <HeroBlock />
         </PageSection>
-        <PageSection alternate className={'!pt-5 !pb-4 laptop:!py-20 '} innerClassName={"flex-grow"}>
-          <Slider />
-        </PageSection>
-        <PageSection className={"page-welcome-solution !py-20"} >
-          <Features />
-        </PageSection>
-        <PageSection alternate>
-          <PluginsPanel plugins={plugins} />
-        </PageSection>
-        <PageSection innerClassName={"flex-grow"} className={"!pt-5 !pb-4 laptop:!px-14 laptop:!pt-24 laptop:!pb-20"} >
-          <Testimonials />
-        </PageSection>
+        <div className='amplication-base'>
+          <PageSection alternate className={'!pt-5 !pb-4 laptop:!py-20 '} innerClassName={"flex-grow"}>
+            <Slider />
+          </PageSection>
+          <PageSection className={"page-welcome-solution !py-20"} >
+            < Features />
+          </PageSection>
+          <PageSection alternate >
+            <PluginsPanel plugins={plugins} />
+          </PageSection>
+          <PageSection innerClassName={"flex-grow"} className={"!pt-5 !pb-4 laptop:!px-14 laptop:!pt-24 laptop:!pb-20"} >
+            <Testimonials />
+          </PageSection>
 
-        <PageSection className={"!py-10"} alternate>
-          <Facts />
-        </PageSection>
-        <PageSection >
-          <Soc2Banner />
-        </PageSection>
+          <PageSection className={"!py-10"} alternate>
+            <Facts />
+          </PageSection>
+          <PageSection >
+            <Soc2Banner />
+          </PageSection>
 
-        <PageSection alternate className={"!py-20"} >
-          <GetList />
-        </PageSection>
-        <PageSection alternate className="page-steps !py-20" >
-          <Tabs />
-        </PageSection>
+          <PageSection alternate className={"!py-20"} >
+            <GetList />
+          </PageSection>
+          <PageSection alternate className="page-steps !py-20" >
+            <Tabs />
+          </PageSection>
 
-        <PageSection >
-          <LogoList />
-        </PageSection>
-
+          <PageSection >
+            <LogoList />
+          </PageSection>
+        </div>
       </main >
     </>
   );
