@@ -1,3 +1,17 @@
+$menu-bg: var(--black80);
+$menu-border-color: var(--black60);
+$menu-drop-padding: 40px 16px;
+
+$menu-top-level-color: var(--black5);
+$menu-top-level-hover-color: var(--black5);
+
+$menu-item-color: var(--white);
+$menu-item-hover-bg: var(--black70);
+$menu-item-hover-color: var(--white);
+$menu-item-description-color: var(--black20);
+$menu-item-padding: 12px;
+$menu-item-margin: 12px;
+
 //in order not to impact all existing styles, we use a unique wrapper class to import bootstrap
 .bootstrap-wrapper {
   width: 100%;
@@ -10,34 +24,34 @@
     padding-bottom: 0;
   }
 
+  //top-level menu
   .nav-link {
-    color: #a3a8b8 !important;
-
-    svg {
-      fill: #a3a8b8 !important;
-      transition: fill 0.15s ease-in-out;
-    }
-  }
-
-  .nav-link:hover,
-  .nav-link:active,
-  .nav-link.active {
-    color: #fff !important;
-    svg {
-      fill: #fff !important;
-    }
-  }
-
-  .nav-link {
+    color: $menu-top-level-color !important;
     height: 62px;
     display: flex;
     align-items: center;
     white-space: nowrap;
+
+    svg {
+      fill: $menu-top-level-color !important;
+      transition: fill 0.15s ease-in-out;
+    }
   }
 
+  //top-level menu hover
+  .nav-link:hover,
+  .nav-link:active,
+  .nav-link.active {
+    color: $menu-top-level-color !important;
+    svg {
+      fill: $menu-top-level-color !important;
+    }
+  }
+
+  //top-level menu active
   .nav-item.dropdown {
     .dropdown-menu {
-      background-color: #2c3249;
+      background-color: $menu-bg;
     }
   }
   @include media-breakpoint-down(lg) {
@@ -48,48 +62,61 @@
   }
 
   @include media-breakpoint-up(lg) {
+    //top-level menu active
     .nav-item.dropdown {
       .show {
-        background-color: #2c3249;
-        color: #fff !important;
+        background-color: $menu-bg;
+        color: $menu-top-level-hover-color !important;
       }
+      //sub menu drop
       .dropdown-menu {
-        background-color: #2c3249;
-        width: max-content;
+        padding: $menu-drop-padding;
+        background-color: $menu-bg;
         border-radius: 0 0 12px 12px;
-        border: 1px solid #444b66;
+        border: 1px solid $menu-border-color;
         margin-top: 0;
+
+        .container {
+          width: max-content;
+        }
       }
     }
 
     a.nav-link-inner {
       max-width: none;
+      width: max-content;
     }
   }
 
+  //sub menu drop item
   a.nav-link-inner {
     display: block;
     min-width: 200px;
-    width: 250px;
-    max-width: 400px;
+    // width: 250px;
+    // max-width: 400px;
     text-decoration: none;
-    color: #fff;
-    padding: 6px;
-    margin: 2px 0;
+    color: $menu-item-color;
+    padding: $menu-item-padding;
+    margin-bottom: $menu-item-margin;
     font-size: 14px;
     font-weight: normal;
     border: 1px solid transparent;
     white-space: nowrap;
 
+    &:last-child {
+      margin-bottom: 0;
+    }
+
     &:hover {
       background-color: #373d57;
       border-radius: 4px;
       border: 1px solid #444b66;
+      color: $menu-item-hover-color;
     }
 
     .description {
       font-size: 12px;
-      color: #a3a8b8;
+      color: $menu-item-description-color;
     }
   }
 }

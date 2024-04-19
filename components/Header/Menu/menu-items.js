@@ -1,59 +1,120 @@
 
-import Icon1 from '../../../public/menu/icon-box.svg';
-import Icon2 from '../../../public/menu/icon-backend.svg';
 import Icon3 from '../../../public/menu/icon-blog.svg';
 import Icon4 from '../../../public/menu/icon-contact.svg';
 import Icon5 from '../../../public/menu/icon-custom-code.svg';
-import Icon6 from '../../../public/menu/icon-db.svg';
 import Icon7 from '../../../public/menu/icon-discord.svg';
 import Icon8 from '../../../public/menu/icon-docs.svg';
-import Icon9 from '../../../public/menu/icon-events.svg';
 import Icon10 from '../../../public/menu/icon-github.svg';
-import Icon11 from '../../../public/menu/icon-microservices.svg';
 import Icon12 from '../../../public/menu/icon-plugin.svg';
-import Icon13 from '../../../public/menu/icon-video.svg';
-import Icon14 from '../../../public/menu/icon-api.svg';
+
+import IconAPI from '../../../public/menu/icon-api.svg';
+import IconBTM from '../../../public/menu/icon-break-the-monolith.svg';
+import IconBuildNew from '../../../public/menu/icon-build-new-services.svg';
+import IconDotNet from '../../../public/menu/icon-dot-net.svg';
+import IconModernize from '../../../public/menu/icon-modernize-applications.svg';
+import IconPlugins from '../../../public/menu/icon-plugins.svg';
+
+import IconHealthcare from '../../../public/menu/icon-healthcare.svg';
+import IconManufacturing from '../../../public/menu/icon-manufacturing.svg';
+import IconRetails from '../../../public/menu/icon-retail.svg';
+import IconStories from '../../../public/menu/icon-stories.svg';
 
 
-const PRODUCT_MENU_ITEMS = [
-    {
-        title: 'Build new services',
-        image: Icon1,
-        url: '/build-new-services',
-    },
 
-    {
-        title: 'Application Modernization',
-        image: Icon11,
-        url: '/application-modernization',
-    },
+const PRODUCT_MENU_ITEMS =
+    [
+        {
+            title: 'Products',
+            menuItems: [
+                {
+                    title: 'Build new services',
+                    image: IconBuildNew,
+                    url: '/build-new-services',
+                    description: 'Production-ready backend with .NET or Node.js',
+                },
 
-]
+                {
+                    title: 'Modernize applications',
+                    image: IconModernize,
+                    url: '/application-modernization',
+                    description: 'Transform and migrate legacy systems',
+                },
+                {
+                    title: 'Build APIs on existing DB',
+                    image: IconAPI,
+                    url: '/database-first-api',
+                    description: 'Head start development using existing DB',
+                },
+
+
+            ],
+        },
+        {
+            title: ' ',
+            menuItems: [
+                {
+                    title: 'Break the monolith',
+                    image: IconBTM,
+                    url: '/break-the-monolith',
+                    description: 'Shift to microservices seamlessly',
+                },
+
+                {
+                    title: 'Plugins',
+                    image: IconPlugins,
+                    url: '/plugins',
+                    description: 'Extend and customize your services',
+                },
+                {
+                    title: 'Build with .NET',
+                    image: IconDotNet,
+                    url: '/dot-net',
+                    description: 'Enterprise-grade .NET backend services',
+                },
+
+
+            ],
+        }
+    ]
+
 
 
 const CUSTOMERS_MENU_ITEMS = [
     {
-        title: 'Customer Stories',
-        image: Icon7,
-        url: '/customers',
-    },
-    {
-        title: 'Retail',
-        image: Icon1,
-        url: '/build-new-services',
-    },
-    {
-        title: 'Manufacturing',
-        image: Icon11,
-        url: '/application-modernization',
-    },
-    {
-        title: 'Healthcare',
-        image: Icon11,
-        url: '/application-modernization',
-    },
+        menuItems: [
 
+            {
+                title: 'Retail',
+                image: IconRetails,
+                url: '/industries/retail',
+            },
+            {
+                title: 'Manufacturing',
+                image: IconManufacturing,
+                url: '/industries/manufacturing',
+            },
+            {
+                title: 'Healthcare',
+                image: IconHealthcare,
+                url: '/industries/healthcare',
+            },
+
+        ],
+    },
+    {
+        menuItems: [
+            {
+                title: 'Customer Stories',
+                image: IconStories,
+                url: '/customers',
+            },
+
+
+        ],
+    }
 ]
+
+
 
 
 const ABOUT_MENU_ITEMS = [
@@ -150,11 +211,7 @@ export const RIGHT_MENU_ITEMS = [
     {
         title: 'Product',
         align: "start",
-        columns: [
-            {
-                menuItems: PRODUCT_MENU_ITEMS,
-            }
-        ],
+        columns: PRODUCT_MENU_ITEMS,
     },
     {
         title: 'Enterprise',
@@ -167,11 +224,7 @@ export const RIGHT_MENU_ITEMS = [
     {
         title: 'Customers',
         align: "end",
-        columns: [
-            {
-                menuItems: CUSTOMERS_MENU_ITEMS,
-            }
-        ],
+        columns: CUSTOMERS_MENU_ITEMS,
     },
     {
         title: 'Learn',

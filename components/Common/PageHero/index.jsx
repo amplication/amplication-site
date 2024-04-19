@@ -72,7 +72,7 @@ const PageHero = ({
 PageHero.propTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   subTitle: PropTypes.string,
-  subText: PropTypes.string,
+  subText: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   mainButton: PropTypes.shape({
     text: PropTypes.string,
     href: PropTypes.string,
