@@ -1,11 +1,6 @@
 
-import Icon3 from '../../../public/menu/icon-blog.svg';
-import Icon4 from '../../../public/menu/icon-contact.svg';
-import Icon5 from '../../../public/menu/icon-custom-code.svg';
-import Icon7 from '../../../public/menu/icon-discord.svg';
-import Icon8 from '../../../public/menu/icon-docs.svg';
-import Icon10 from '../../../public/menu/icon-github.svg';
-import Icon12 from '../../../public/menu/icon-plugin.svg';
+import IconContact from '../../../public/menu/icon-contact.svg';
+import IconCustomCode from '../../../public/menu/icon-custom-code.svg';
 
 import IconAPI from '../../../public/menu/icon-api.svg';
 import IconBTM from '../../../public/menu/icon-break-the-monolith.svg';
@@ -19,7 +14,16 @@ import IconManufacturing from '../../../public/menu/icon-manufacturing.svg';
 import IconRetails from '../../../public/menu/icon-retail.svg';
 import IconStories from '../../../public/menu/icon-stories.svg';
 
+import IconEventDriven from '../../../public/menu/icon-event-driven.svg';
+import IconGettingStarted from '../../../public/menu/icon-getting-started.svg';
+import IconSyncWithGit from '../../../public/menu/icon-sync-with-git.svg';
 
+
+import IconBlog from '../../../public/menu/icon-blog.svg';
+import IconCatalog from '../../../public/menu/icon-catalog.svg';
+import IconDiscord from '../../../public/menu/icon-discord.svg';
+import IconDocs from '../../../public/menu/icon-docs.svg';
+import IconGithub from '../../../public/menu/icon-github.svg';
 
 const PRODUCT_MENU_ITEMS =
     [
@@ -104,7 +108,7 @@ const CUSTOMERS_MENU_ITEMS = [
     {
         menuItems: [
             {
-                title: 'Customer Stories',
+                title: 'Customer stories',
                 image: IconStories,
                 url: '/customers',
             },
@@ -117,55 +121,37 @@ const CUSTOMERS_MENU_ITEMS = [
 
 
 
-const ABOUT_MENU_ITEMS = [
 
-    {
-        title: 'Company',
-        image: Icon4,
-        url: '/about',
-    },
-    {
-        title: 'Team',
-        image: Icon5,
-        url: '/team',
-    },
-
-    {
-        title: 'Contact Us',
-        image: Icon4,
-        url: '/contact-us',
-    },
-]
 
 const RESOURCES_MENU_ITEMS = [
     {
         title: 'Docs',
-        image: Icon8,
+        image: IconDocs,
         url: 'https://docs.amplication.com/',
     },
     {
-        title: 'Customer Stories',
-        image: Icon7,
+        title: 'Customer stories',
+        image: IconStories,
         url: '/customers',
     },
     {
-        title: 'Discord Community',
-        image: Icon7,
-        url: '/discord',
-    },
-    {
-        title: 'Plugins Catalog',
-        image: Icon12,
+        title: 'Plugins catalog',
+        image: IconCatalog,
         url: '/plugins',
     },
     {
+        title: 'Discord community',
+        image: IconDiscord,
+        url: '/discord',
+    },
+    {
         title: 'GitHub',
-        image: Icon10,
+        image: IconGithub,
         url: 'https://github.com/amplication/amplication',
     },
     {
         title: 'Blog',
-        image: Icon3,
+        image: IconBlog,
         url: '/blog',
     },
 ]
@@ -173,29 +159,35 @@ const RESOURCES_MENU_ITEMS = [
 const USE_AMPLICATION_MENU_ITEMS = [
     {
         title: 'Get started ',
-        image: Icon8,
+        image: IconGettingStarted,
         url: 'https://docs.amplication.com/first-service/',
     },
     {
-        title: 'Build APIs on legacy DB',
-        image: Icon7,
-        url: 'https://docs.amplication.com/how-to/import-prisma-schema/',
+        title: 'Custom plugins',
+        image: IconPlugins,
+        url: 'https://docs.amplication.com/plugins/how-to-create-plugin/',
+    },
+    {
+        title: 'Custom code',
+        image: IconCustomCode,
+        url: 'https://docs.amplication.com/custom-code/',
+    },
+    {
+        title: 'Sync with Git',
+        image: IconSyncWithGit,
+        url: 'https://docs.amplication.com/smart-git-sync/',
     },
     {
         title: 'Event-Driven architecture',
-        image: Icon10,
-        url: 'https://docs.amplication.com/',
+        image: IconEventDriven,
+        url: 'https://docs.amplication.com/concepts/event-driven-architecture/',
     },
     {
         title: 'Break the monolith',
-        image: Icon12,
-        url: 'https://docs.amplication.com/break-the-monolith/#how-to-use-break-the-monolith',
+        image: IconContact,
+        url: 'https://docs.amplication.com/break-the-monolith/',
     },
-    {
-        title: 'Custom plugins',
-        image: Icon12,
-        url: 'https://docs.amplication.com/plugins/how-to-create-plugin/',
-    },
+
 
 ]
 
@@ -235,22 +227,12 @@ export const RIGHT_MENU_ITEMS = [
                 menuItems: USE_AMPLICATION_MENU_ITEMS,
             },
             {
-                title: "Resource",
+                title: "Resources",
                 menuItems: RESOURCES_MENU_ITEMS,
             },
 
         ],
     },
-    {
-        title: 'About',
-        align: "end",
-        columns: [
-
-            {
-                menuItems: ABOUT_MENU_ITEMS,
-            },
-        ],
-    }
 
 
 ];
