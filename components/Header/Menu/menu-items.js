@@ -25,96 +25,96 @@ import IconDiscord from '../../../public/menu/icon-discord.svg';
 import IconDocs from '../../../public/menu/icon-docs.svg';
 import IconGithub from '../../../public/menu/icon-github.svg';
 
-const PRODUCT_MENU_ITEMS =
-    [
-        {
-            title: 'Products',
-            menuItems: [
-                {
-                    title: 'Build new services',
-                    image: IconBuildNew,
-                    url: '/build-new-services',
-                    description: 'Production-ready backend with .NET or Node.js',
-                },
+const PRODUCTS_ITEMS_1 = [
+    {
+        title: 'Build new services',
+        image: IconBuildNew,
+        url: '/build-new-services',
+        description: 'Production-ready backend with .NET or Node.js',
+    },
 
-                {
-                    title: 'Modernize applications',
-                    image: IconModernize,
-                    url: '/application-modernization',
-                    description: 'Transform and migrate legacy systems',
-                },
-                {
-                    title: 'Build APIs on existing DB',
-                    image: IconAPI,
-                    url: '/database-first-api',
-                    description: 'Head start development using existing DB',
-                },
+    {
+        title: 'Modernize applications',
+        image: IconModernize,
+        url: '/application-modernization',
+        description: 'Transform and migrate legacy systems',
+    },
+    {
+        title: 'Build APIs on existing DB',
+        image: IconAPI,
+        url: '/database-first-api',
+        description: 'Head start development using existing DB',
+    },
+];
 
+const PRODUCTS_ITEMS_2 = [
+    {
+        title: 'Break the monolith',
+        image: IconBTM,
+        url: '/break-the-monolith',
+        description: 'Shift to microservices seamlessly',
+    },
 
-            ],
-        },
-        {
-            title: ' ',
-            menuItems: [
-                {
-                    title: 'Break the monolith',
-                    image: IconBTM,
-                    url: '/break-the-monolith',
-                    description: 'Shift to microservices seamlessly',
-                },
-
-                {
-                    title: 'Plugins',
-                    image: IconPlugins,
-                    url: '/plugins',
-                    description: 'Extend and customize your services',
-                },
-                {
-                    title: 'Build with .NET',
-                    image: IconDotNet,
-                    url: '/dot-net',
-                    description: 'Enterprise-grade .NET backend services',
-                },
+    {
+        title: 'Plugins',
+        image: IconPlugins,
+        url: '/plugins',
+        description: 'Extend and customize your services',
+    },
+    {
+        title: 'Build with .NET',
+        image: IconDotNet,
+        url: '/dot-net',
+        description: 'Enterprise-grade .NET backend services',
+    },
+];
 
 
-            ],
-        }
-    ]
 
+const CUSTOMERS_ITEMS_1 = [
+    {
+        title: 'Retail',
+        image: IconRetails,
+        url: '/industries/retail',
+    },
+    {
+        title: 'Manufacturing',
+        image: IconManufacturing,
+        url: '/industries/manufacturing',
+    },
+    {
+        title: 'Healthcare',
+        image: IconHealthcare,
+        url: '/industries/healthcare',
+    },
+];
+const CUSTOMERS_ITEMS_2 = [
+    {
+        title: 'Customer stories',
+        image: IconStories,
+        url: '/customers',
+    },
+];
+
+
+const PRODUCT_MENU_ITEMS = [
+    {
+        title: 'Products',
+        menuItems: PRODUCTS_ITEMS_1,
+    },
+    {
+        title: ' ',
+        menuItems: PRODUCTS_ITEMS_2,
+    }
+]
 
 
 const CUSTOMERS_MENU_ITEMS = [
     {
-        menuItems: [
-
-            {
-                title: 'Retail',
-                image: IconRetails,
-                url: '/industries/retail',
-            },
-            {
-                title: 'Manufacturing',
-                image: IconManufacturing,
-                url: '/industries/manufacturing',
-            },
-            {
-                title: 'Healthcare',
-                image: IconHealthcare,
-                url: '/industries/healthcare',
-            },
-
-        ],
+        menuItems: CUSTOMERS_ITEMS_1,
     },
     {
-        menuItems: [
-            {
-                title: 'Customer stories',
-                image: IconStories,
-                url: '/customers',
-            },
-
-
-        ],
+        menuItems: CUSTOMERS_ITEMS_2,
     }
 ]
 
@@ -191,6 +191,23 @@ const USE_AMPLICATION_MENU_ITEMS = [
 
 ]
 
+const ABOUT_ITEMS = [
+    {
+        title: 'Company',
+        url: '/about',
+
+    },
+    {
+        title: 'Team',
+        url: '/team',
+
+    },
+    {
+        title: 'Contact us',
+        url: '/contact-us',
+
+    }
+]
 
 
 
@@ -237,6 +254,9 @@ export const RIGHT_MENU_ITEMS = [
 
 ];
 
+
+
+
 export const LOGIN_MENU_ITEM = {
     title: 'Log In',
     url: 'https://app.amplication.com/login',
@@ -245,3 +265,43 @@ export const LOGIN_MENU_ITEM = {
         buttonLocation: 'header-login',
     },
 }
+
+
+export const FOOTER_GROUPS = [
+    {
+        title: 'Product',
+        items: [...PRODUCTS_ITEMS_1, ...PRODUCTS_ITEMS_2]
+
+    },
+    {
+        title: 'Customers',
+        items: [...CUSTOMERS_ITEMS_1, ...CUSTOMERS_ITEMS_2]
+    },
+    {
+        title: 'Use Amplication',
+        items: USE_AMPLICATION_MENU_ITEMS
+    },
+    {
+        title: 'Resources',
+        items: RESOURCES_MENU_ITEMS
+    },
+    {
+        items: [
+            {
+                title: 'Enterprise',
+                url: '/enterprise',
+            },
+            {
+                title: 'Pricing',
+                url: '/pricing',
+            },
+        ]
+    },
+
+    {
+        title: 'About',
+        items: ABOUT_ITEMS
+    }
+
+
+]

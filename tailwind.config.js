@@ -34,6 +34,11 @@ module.exports = {
       'container-desktop-enlarged': '1920px',
     },
     extend: {
+      gridTemplateColumns: {
+        'footer': 'repeat(2, minmax(0, 1fr))',
+        'footer-medium': 'repeat(3, minmax(0, 1fr))',
+        'footer-large': 'repeat(6, minmax(0, 300px))',
+      },
       animation: {
         fadeIn: 'fadeIn 0.5s ease-in-out',
         appear: 'appearing 0.5s ease-in-out',

@@ -1,32 +1,30 @@
 import StartNow from '../../components/Sections/About/StartNow';
 import FooterBottomBar from './FooterBottomBar';
 import PropTypes from 'prop-types';
+import FooterLinks from './FooterLinks';
 
-const Footer = ({ customClass, compactView, hideBanner }) => {
+const Footer = ({ compactView, hideBanner }) => {
   return (
     <>
       <footer
         className={
-          'w-full mt-auto relative overflow-hidden z-10 laptop:mt-0 ' +
-          customClass
+          'w-full mt-0 relative overflow-hidden z-10  bg-dark-black-100 '
         }
       >
-        <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
+        <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop bg-light-blue">
           {!compactView && (
             <>
               {/*Banner*/}
               {!hideBanner && (
-                <div className="amplication-base">
+                <div className="amplication-base ">
                   <StartNow />
                 </div>
               )}
             </>
           )}
         </div>
-        <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop relative z-10 flex justify-between items-center relative py-6 laptop:py-0 !max-w-[1904px]">
-          {/*Footer Bottom Bar*/}
-          <FooterBottomBar />
-        </div>
+        <FooterLinks />
+        <FooterBottomBar />
       </footer>
     </>
   );

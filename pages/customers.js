@@ -22,7 +22,7 @@ const Customers = ({ stories }) => {
       <PageSection alternate>
 
 
-        <main className="w-full font-poppins z-10 mb-12 laptop:mb-[100px] laptop:pt-10">
+        <main className="w-full font-poppins z-10 laptop:mb-[100px] laptop:pt-10">
           {Array.isArray(stories) && !!stories.length && <CustomerStories stories={stories} />}
           {(!Array.isArray(stories) || !stories.length) && (
             <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop py-12 text-white text-center !pb-12">
