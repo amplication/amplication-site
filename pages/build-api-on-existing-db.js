@@ -149,7 +149,7 @@ const ImportDBPage = () => {
           <CardsList
             cards={cards}
             title={'DB Schema Import Key Features'}
-            customClasses={'tablet:grid-cols-3'}
+            customClasses={'tablet:!grid-cols-3'}
           />
           <div className="p-4">
             {features.map((feature, i) =>
