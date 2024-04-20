@@ -31,13 +31,11 @@ const Footer = ({ compactView, hideBanner }) => {
 };
 
 Footer.propTypes = {
-  customClass: PropTypes.string,
   compactView: PropTypes.bool,
   hideBanner: PropTypes.bool,
 };
 
 Footer.defaultProps = {
-  customClass: '',
   isLink: false,
   hideBanner: false,
 };

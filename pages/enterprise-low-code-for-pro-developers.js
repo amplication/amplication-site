@@ -10,12 +10,14 @@ import IconFreedom from '../public/images/low-code/icon-operational-freedom.svg'
 import IconRapid from '../public/images/low-code/icon-rapid.svg';
 import Slider from '../components/Sections/Enterprise/Slider';
 import WidePanelWithImage from '../components/Common/WidePanelWithImage';
-import ImageModernDev from '../public/images/low-code/image-modern-dev.png';
-import ImageCode from '../public/images/low-code/image-code.png';
-import ImageFullCode from '../public/images/low-code/image-full-code.png';
-import ImageForDevelopers from '../public/images/low-code/image-for-developers.png';
-import ImageIntegration from '../public/images/low-code/image-integration.png';
-import ImagePlugins from '../public/images/low-code/image-plugins.png';
+
+import ImageModernDev from '../public/images/product/image-modern-dev.png';
+import ImageCode from '../public/images/product/image-code.png';
+import ImageFullCode from '../public/images/product/image-full-code.png';
+import ImageForDevelopers from '../public/images/product/image-for-developers.png';
+import ImageIntegration from '../public/images/product/image-integration.png';
+import ImagePlugins from '../public/images/product/image-plugins.png';
+
 import StartNow from '../components/Sections/About/StartNow';
 
 const cards = [
@@ -141,7 +143,6 @@ const LowCode = () => {
           <CardsList
             cards={cards}
             title={'DB Schema Import Key Features'}
-            customClasses={'!bg-transparent'}
           />
           <div className="p-4">
             {features.map((feature, i) =>
@@ -180,7 +181,6 @@ const LowCode = () => {
 LowCode.getLayout = function getLayout(page) {
   return (
     <MainLayout
-      footerClass="bg-light-blue"
       hideFooterBanner={true}
       hideBackground={true}
     >

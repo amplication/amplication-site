@@ -46,7 +46,6 @@ const Retail = () => {
 Retail.getLayout = function getLayout(page) {
   return (
     <MainLayout
-      footerClass="bg-light-blue"
       hideFooterBanner={true}
       hideBackground={true}
     >

@@ -116,7 +116,6 @@ export const getStaticProps = async () => {
 Home.getLayout = function getLayout(page) {
   return (
     <MainLayout
-      footerClass="bg-light-blue"
       paddingTopClasses="laptop:pt-[100px]"
     >
       {page}

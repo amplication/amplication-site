@@ -486,7 +486,6 @@ const ContactUs = () => {
 ContactUs.getLayout = function getLayout(page) {
   return (
     <MainLayout
-      footerClass="bg-light-blue"
       paddingTopClasses="laptop:pt-[100px]"
       hideFooterBanner={true}
     >
