@@ -42,7 +42,7 @@ const PRODUCTS_ITEMS_1 = [
     {
         title: 'Build APIs on existing DB',
         image: IconAPI,
-        url: '/database-first-api',
+        url: '/build-api-on-existing-db',
         description: 'Head start development using existing DB',
     },
 ];

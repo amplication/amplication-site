@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import LowCodeHeroImage from '../../../../public/images/low-code/low-code-hero.png';
+import LowCodeHeroImage from '../../../../public/images/product/low-code-hero.png';
 import PageHero from '../../../Common/PageHero';
 
 const Hero = () => {

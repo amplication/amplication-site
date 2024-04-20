@@ -2,15 +2,11 @@ import Image from 'next/image';
 import icon1 from '../../../public/images/icons/icon-1.svg';
 import PropTypes from 'prop-types';
 
-import { useEffect, useState } from 'react';
-
-import 'swiper/css';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper';
-
 const CardsList = ({ title, subTitle, cards, customClasses }) => {
   return (
-    <div className="w-full grid grid-cols-1 tablet:grid-cols-2 gap-4 p-4">
+    <div
+      className={`w-full grid grid-cols-1 tablet:grid-cols-2 gap-4 p-4 ${customClasses}`}
+    >
       {cards.map((item, index) => {
         return (
           <div
