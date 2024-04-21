@@ -139,7 +139,7 @@ const ImportDBPage = () => {
             }
           />
         </PageSection>
-        <PageSection alternate className={'!pt-5 !pb-4 laptop:!py-20 '} innerClassName={"flex-grow"}>
+        <PageSection alternate className={'py-5 laptop:py-12 '} innerClassName={"flex-grow"}>
           <Slider />
         </PageSection>
         <PageSection>

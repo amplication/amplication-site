@@ -23,7 +23,7 @@ const ApplicationModernization = () => {
 
       <main className="w-full font-poppins z-10 !mb-0 laptop:mb-[100px] amplication-base">
         <Hero />
-        <PageSection alternate className={'!pt-5 !pb-4 laptop:!py-20 '} innerClassName={"flex-grow"}>
+        <PageSection alternate className={'py-5 laptop:py-12 '} innerClassName={"flex-grow"}>
           <Slider />
         </PageSection>
 

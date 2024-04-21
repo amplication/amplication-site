@@ -11,7 +11,7 @@ const PageSection = ({
     <>
       <section
         {...rest}
-        className={`py-12 ${className} ${alternate && '!bg-light-blue'}`}
+        className={`${className} ${alternate && '!bg-light-blue'}`}
       >
         <div
           className={`${innerClassName} w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop`}
