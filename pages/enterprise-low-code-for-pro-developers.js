@@ -19,6 +19,7 @@ import ImageIntegration from '../public/images/product/image-integration.png';
 import ImagePlugins from '../public/images/product/image-plugins.png';
 
 import StartNow from '../components/Sections/Enterprise/StartNow';
+import TestimonialsSlider from '../components/Sections/Enterprise/Testimonials/testimonials-slider';
 
 const cards = [
   {
@@ -165,6 +166,9 @@ const LowCode = () => {
 
 
 
+        </PageSection>
+        <PageSection >
+          <TestimonialsSlider />
         </PageSection>
         <PageSection alternate>
           <StartNow

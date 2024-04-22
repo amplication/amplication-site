@@ -20,6 +20,7 @@ import ImageHero from '../public/images/product/image-db-import-hero.png';
 import StartNow from '../components/Sections/Enterprise/StartNow';
 import PageHero from '../components/Common/PageHero';
 import Image from 'next/image';
+import TestimonialsSlider from '../components/Sections/Enterprise/Testimonials/testimonials-slider';
 
 const cards = [
   {
@@ -167,7 +168,9 @@ const ImportDBPage = () => {
             )}
           </div>
         </PageSection>
-
+        <PageSection >
+          <TestimonialsSlider />
+        </PageSection>
         <PageSection alternate>
           <StartNow
             title="Modernize Your Business"

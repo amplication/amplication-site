@@ -14,6 +14,7 @@ import Soc2Banner from '../components/Common/SOC2';
 
 import { gql } from '@apollo/client';
 import client from '../services/plugin-api';
+import TestimonialsSlider from '../components/Sections/Enterprise/Testimonials/testimonials-slider';
 
 const Home = ({ plugins }) => {
   return (
@@ -50,8 +51,12 @@ const Home = ({ plugins }) => {
           <PageSection alternate >
             <PluginsPanel plugins={plugins} />
           </PageSection>
-          <PageSection innerClassName={"flex-grow"} className={"!pt-5 !pb-4 laptop:!px-14 laptop:!pt-24 laptop:!pb-20"} >
-            <Testimonials />
+          <PageSection  >
+            <h2 className="my-12 mx-auto text-[32px] !font-semibold leading-[48px] tracking-normal text-center max-w-[960px]">
+              What users are saying about Amplication?
+            </h2>
+            <TestimonialsSlider />
+
           </PageSection>
 
           <PageSection className={"!py-10"} alternate>

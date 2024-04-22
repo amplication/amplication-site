@@ -10,7 +10,7 @@ const CardsList = ({ title, subTitle, cards, customClasses }) => {
       {cards.map((item, index) => {
         return (
           <div
-            className="flex p-12 gap-2 flex-col items-start text-left !border-dark-black-70 rounded-xl border-solid border bg-light-blue bg-[#442A8B] bg-panel-gradient "
+            className="flex p-8 gap-2 flex-col items-start text-left !border-dark-black-70 rounded-xl border-solid border bg-light-blue bg-[#442A8B] bg-panel-gradient "
             key={index}
           >
             {item.icon && (
