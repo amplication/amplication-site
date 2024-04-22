@@ -18,7 +18,7 @@ import ImageForDevelopers from '../public/images/product/image-for-developers.pn
 import ImageIntegration from '../public/images/product/image-integration.png';
 import ImagePlugins from '../public/images/product/image-plugins.png';
 
-import StartNow from '../components/Sections/About/StartNow';
+import StartNow from '../components/Sections/Enterprise/StartNow';
 
 const cards = [
   {
@@ -143,6 +143,7 @@ const LowCode = () => {
           <CardsList
             cards={cards}
             title={'DB Schema Import Key Features'}
+            customClasses={'desktop:!grid-cols-4'}
           />
           <div className="p-4">
             {features.map((feature, i) =>
@@ -166,9 +167,15 @@ const LowCode = () => {
 
         </PageSection>
         <PageSection alternate>
-          <div className='amplication-base'>
-            <StartNow />
-          </div>
+          <StartNow
+            title="Build faster, with no limits"
+            description="Try Amplication Enterprise today and unlock the power of fast development cycles."
+            linkPrimary={{
+              href: process.env.NEXT_PUBLIC_BOOK_MEETING_URL,
+              title: 'Talk to Expert',
+            }}
+
+          />
         </PageSection>
 
 
