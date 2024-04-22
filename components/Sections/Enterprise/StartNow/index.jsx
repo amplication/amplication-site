@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import PropTypes from 'prop-types';
+import OutlineButton from '../../../Common/Button/button-outline';
+import PrimaryButton from '../../../Common/Button/button-primary';
 
 const StartNow = ({
   title,
@@ -10,38 +12,38 @@ const StartNow = ({
 }) => {
   return (
     <>
-      <section className={'!pt-5 !pb-4 laptop:!py-20 ' + backgroundClass}>
-        <h2 className="mx-auto text-[32px] !font-semibold leading-[48px] tracking-normal text-center max-w-[960px]">
+      <section
+        className={
+          '!pt-5 !pb-4 tablet:!py-20 flex flex-col gap-4 ' + backgroundClass
+        }
+      >
+        <h2 className="mx-auto text-5xl font-semibold text-center max-w-[960px]">
           {title}
         </h2>
         {description && (
           <div
-            className="mx-auto text-lg font-normal leading-[27px] tracking-normal text-center max-w-[780px]"
+            className="mx-auto text-lg  text-center max-w-[780px]"
             dangerouslySetInnerHTML={{ __html: description }}
           ></div>
         )}
-        <div className="d-flex justify-content-center align-items-center mt-8">
+        <div className="flex items-center justify-center gap-2">
           {linkPrimary.href && (
-            <Link href={linkPrimary.href} passHref={true}>
-              <a
-                target={linkPrimary.target || '_blank'}
-                className="btn btn-primary btn-sm !text-sm !h-10 mr-4 w-[120px] !px-0 !h-[34px] !font-normal"
-                rel="noreferrer"
-              >
-                {linkPrimary.title}
-              </a>
-            </Link>
+            <PrimaryButton
+              text={linkPrimary.title}
+              isLink={true}
+              //onClick={handleMainClick}
+              href={linkPrimary.href}
+              delayLinkMs={300}
+            />
           )}
           {linkSecondary.href && (
-            <Link href={linkSecondary.href} passHref={true}>
-              <a
-                target={linkSecondary.target || '_blank'}
-                className="d-flex justify-content-center align-items-center outline-button !text-sm text-white !h-10 mr-2 w-[120px] rounded !px-0 !h-[34px] !font-normal !bg-light-blue hover:!bg-dark-black-70"
-                rel="noreferrer"
-              >
-                {linkSecondary.title}
-              </a>
-            </Link>
+            <OutlineButton
+              text={linkSecondary.title}
+              isLink={true}
+              //onClick={handleSecondaryClick}
+              href={linkSecondary.href}
+              delayLinkMs={300}
+            />
           )}
         </div>
       </section>

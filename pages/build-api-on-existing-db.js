@@ -17,7 +17,7 @@ import ImageModernDev from '../public/images/product/image-modern-dev.png';
 import ImageHero from '../public/images/product/image-db-import-hero.png';
 
 
-import StartNow from '../components/Sections/About/StartNow';
+import StartNow from '../components/Sections/Enterprise/StartNow';
 import PageHero from '../components/Common/PageHero';
 import Image from 'next/image';
 
@@ -108,10 +108,9 @@ const ImportDBPage = () => {
           <PageHero
             title={
               <>
-                Accelerate Your Modernization Journey{' '}
-                <span className="text-purple-bright">
-                  with Amplication DB Schema Import
-                </span>
+                Build modern API{' '}
+
+                on top of your existing database in minutes
               </>
             }
             subTitle={''}
@@ -170,11 +169,19 @@ const ImportDBPage = () => {
         </PageSection>
 
         <PageSection alternate>
-          <div className='amplication-base'>
-            <StartNow />
-          </div>
+          <StartNow
+            title="Modernize Your Business"
+            description="Designed for businesses looking to upgrade their legacy systems to modern, scalable applications"
+            linkPrimary={{
+              href: process.env.NEXT_PUBLIC_BOOK_MEETING_URL,
+              title: 'Book a Demo',
+            }}
+            linkSecondary={{
+              href: 'https://app.amplication.com/login',
+              title: 'Try Free',
+            }}
+          />
         </PageSection>
-
       </main >
     </>
   );

@@ -34,8 +34,6 @@ const WidePanelWithImage = ({
           {primaryBtn && (
             <PrimaryButton
               text={primaryBtn.title}
-              backgroundColor="purpleBright"
-              hoverBackgroundColor="purpleBrightHover"
               isLink={true}
               href={primaryBtn.href}
               delayLinkMs={300}
