@@ -178,13 +178,13 @@ const USE_AMPLICATION_MENU_ITEMS = [
         url: 'https://docs.amplication.com/smart-git-sync/',
     },
     {
-        title: 'Event-Driven architecture',
+        title: 'Event-driven architecture',
         image: IconEventDriven,
         url: 'https://docs.amplication.com/concepts/event-driven-architecture/',
     },
     {
         title: 'Break the monolith',
-        image: IconContact,
+        image: IconBTM,
         url: 'https://docs.amplication.com/break-the-monolith/',
     },
 

@@ -10,7 +10,7 @@ const CardsList = ({ title, subTitle, cards, customClasses }) => {
       {cards.map((item, index) => {
         return (
           <div
-            className="flex p-12 gap-2 flex-col items-start text-left !border-dark-black-70 rounded-xl border-solid border bg-light-blue bg-[#442A8B] "
+            className="flex p-12 gap-2 flex-col items-start text-left !border-dark-black-70 rounded-xl border-solid border bg-light-blue bg-[#442A8B] bg-panel-gradient "
             key={index}
           >
             {item.icon && (
@@ -18,11 +18,9 @@ const CardsList = ({ title, subTitle, cards, customClasses }) => {
                 <Image src={item.icon} alt={item.title ?? ''} />
               </div>
             )}
-            <span className="text-xl font-semibold ">{item.title}</span>
+            <span className="text-3xl font-semibold ">{item.title}</span>
             {item.subTitle && (
-              <span className="font-light text-base leading-normal text-white ">
-                {item.subTitle}
-              </span>
+              <span className="text-lg text-white ">{item.subTitle}</span>
             )}
           </div>
         );
