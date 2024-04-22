@@ -369,7 +369,7 @@ const ContactUs = () => {
           </div>
         </section>
         <PageSection alternate>
-          <TestimonialsSlider />
+          <TestimonialsSlider useSlider={false} totalItems={3} wrapperClassName={"laptop:!grid-cols-3"} />
         </PageSection>
 
         <PageSection className={'!pt-5 !pb-4 laptop:!py-20 '} innerClassName={"flex-grow"}>

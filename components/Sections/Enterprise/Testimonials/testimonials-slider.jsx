@@ -1,5 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import helpers from '../../../../helpers';
+import PropTypes from 'prop-types';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -48,9 +49,20 @@ const testimonials = [
   },
 ];
 
-const TestimonialsSlider = () => {
+const TestimonialsSlider = ({
+  totalItems,
+  loop,
+  useSlider,
+  wrapperClassName,
+}) => {
   const [width, setWidth] = useState(0);
   const [cols, setCols] = useState(3);
+
+  const items = useMemo(() => {
+    return totalItems === 'auto'
+      ? testimonials
+      : testimonials.slice(0, totalItems);
+  }, [totalItems]);
 
   useEffect(() => {
     window.addEventListener('resize', () => {
@@ -73,62 +85,45 @@ const TestimonialsSlider = () => {
 
   return (
     <div className={'py-5 tablet:py-12 '}>
-      <Swiper
-        key={`${width}_${cols}`}
-        className="!max-w-[100%] "
-        slidesPerView={cols}
-        freeMode={true}
-        loop={true}
-        spaceBetween={16}
-        autoHeight={true}
-        updateOnWindowResize={true}
-        modules={[Pagination]}
-        pagination={{
-          type: 'bullets',
-          clickable: true,
-          clickableClass: 'swiper-pagination-clickable !relative pt-4',
-          bulletClass: 'swiper-pagination-bullet !bg-white',
-          bulletActiveClass:
-            'swiper-pagination-bullet-active relative top-[1px] !bg-purple-bright !w-2.5 !h-2.5',
-        }}
-      >
-        {testimonials.map((testimonial, index) => {
-          return (
-            <SwiperSlide key={index} className="self-stretch">
-              <div className="h-full box-border overflow-hidden w-full flex flex-col gap-6 items-center rounded-xl border-solid border-2 bg-light-blue bg-[#442A8B]  border-purple-bright p-8 ">
-                <div className="flex items-start gap-2">
-                  <div className="min-w-[40px] !w-[40px] !h-[40px] rounded-[100%] overflow-hidden ">
-                    {testimonial.avatar ? (
-                      <Image
-                        src={testimonial.avatar}
-                        alt={testimonial.name}
-                        height={40}
-                        width={40}
-                        layout="responsive"
-                      />
-                    ) : (
-                      <span className="text-lg bg-[#5d5dff] h-full flex items-center justify-center">
-                        {helpers.getInitials(testimonial.name)}
-                      </span>
-                    )}
-                  </div>
-                  <div className="flex flex-col">
-                    <div className="font-semibold text-sm ">
-                      {testimonial.name}
-                    </div>
-                    <div className="font-normal text-xs ">
-                      {testimonial.position}
-                    </div>
-                  </div>
-                </div>
-                <div className="font-light text-sm max-laptop:text-sm font-semibold text-center text-white ">
-                  <q>{testimonial.text}</q>
-                </div>
-              </div>
-            </SwiperSlide>
-          );
-        })}
-      </Swiper>
+      {!useSlider ? (
+        <div
+          className={`grid grid-cols-1 laptop:grid-cols-3 gap-4 max-w-[960px] mx-auto ${wrapperClassName}`}
+        >
+          {items.map((testimonial, index) => {
+            return (
+              <TestimonialsSliderItem key={index} testimonial={testimonial} />
+            );
+          })}
+        </div>
+      ) : (
+        <Swiper
+          key={`${width}_${cols}`}
+          className="!max-w-[100%] "
+          slidesPerView={3}
+          freeMode={true}
+          loop={loop}
+          spaceBetween={16}
+          autoHeight={true}
+          modules={[Pagination]}
+          pagination={{
+            type: 'bullets',
+            clickable: true,
+            clickableClass: 'swiper-pagination-clickable !relative pt-4',
+            bulletClass: 'swiper-pagination-bullet !bg-white',
+            bulletActiveClass:
+              'swiper-pagination-bullet-active relative top-[1px] !bg-purple-bright !w-2.5 !h-2.5',
+          }}
+        >
+          {items.map((testimonial, index) => {
+            return (
+              <SwiperSlide key={index} className="self-stretch">
+                <TestimonialsSliderItem testimonial={testimonial} />
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      )}
+
       <div className="flex items-center justify-center mt-4">
         <OutlineButton
           text="Show all testimonials"
@@ -140,6 +135,51 @@ const TestimonialsSlider = () => {
       </div>
     </div>
   );
+};
+
+const TestimonialsSliderItem = ({ testimonial }) => {
+  return (
+    <div className="h-full box-border overflow-hidden w-full flex flex-col gap-6 items-center rounded-xl border-solid border-2 bg-light-blue bg-[#442A8B]  border-purple-bright p-8 ">
+      <div className="flex items-start gap-2">
+        <div className="min-w-[40px] !w-[40px] !h-[40px] rounded-[100%] overflow-hidden ">
+          {testimonial.avatar ? (
+            <Image
+              src={testimonial.avatar}
+              alt={testimonial.name}
+              height={40}
+              width={40}
+              layout="responsive"
+            />
+          ) : (
+            <span className="text-lg bg-[#5d5dff] h-full flex items-center justify-center">
+              {helpers.getInitials(testimonial.name)}
+            </span>
+          )}
+        </div>
+        <div className="flex flex-col">
+          <div className="font-semibold text-sm ">{testimonial.name}</div>
+          <div className="font-normal text-xs ">{testimonial.position}</div>
+        </div>
+      </div>
+      <div className="font-light text-sm max-laptop:text-sm font-semibold text-center text-white ">
+        <q>{testimonial.text}</q>
+      </div>
+    </div>
+  );
+};
+
+TestimonialsSlider.propTypes = {
+  totalItems: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  loop: PropTypes.bool,
+  useSlider: PropTypes.bool,
+  wrapperClassName: PropTypes.string,
+};
+
+TestimonialsSlider.defaultProps = {
+  totalItems: 'auto',
+  loop: true,
+  useSlider: true,
+  wrapperClassName: '',
 };
 
 export default TestimonialsSlider;

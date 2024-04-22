@@ -55,8 +55,7 @@ const Home = ({ plugins }) => {
             <h2 className="my-12 mx-auto text-[32px] !font-semibold leading-[48px] tracking-normal text-center max-w-[960px]">
               What users are saying about Amplication?
             </h2>
-            <TestimonialsSlider />
-
+            <TestimonialsSlider useSlider={false} totalItems={3} wrapperClassName={"laptop:!grid-cols-3"} />
           </PageSection>
 
           <PageSection className={"!py-10"} alternate>

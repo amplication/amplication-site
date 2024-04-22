@@ -168,7 +168,7 @@ const LowCode = () => {
 
         </PageSection>
         <PageSection >
-          <TestimonialsSlider />
+          <TestimonialsSlider useSlider={false} totalItems={3} wrapperClassName={"laptop:!grid-cols-3"} />
         </PageSection>
         <PageSection alternate>
           <StartNow
