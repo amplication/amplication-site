@@ -1,4 +1,4 @@
-import StartNow from '../../components/Sections/About/StartNow';
+import StartNow from '../../components/Sections/Enterprise/StartNow';
 import FooterBottomBar from './FooterBottomBar';
 import PropTypes from 'prop-types';
 import FooterLinks from './FooterLinks';
@@ -11,13 +11,24 @@ const Footer = ({ compactView, hideBanner }) => {
           'w-full mt-0 relative overflow-hidden z-10  bg-dark-black-100 '
         }
       >
-        <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop bg-light-blue">
+        <div className=" ">
           {!compactView && (
             <>
               {/*Banner*/}
               {!hideBanner && (
-                <div className="amplication-base ">
-                  <StartNow />
+                <div className=" bg-light-blue">
+                  <StartNow
+                    title="Build faster, with no limits"
+                    description="Discover how Amplication Enterprise can help you build powerful, scalable, and secure applications tailored to your business needs."
+                    linkPrimary={{
+                      href: process.env.NEXT_PUBLIC_BOOK_MEETING_URL,
+                      title: 'Book a Demo',
+                    }}
+                    linkSecondary={{
+                      href: 'https://app.amplication.com/login',
+                      title: 'Try Free',
+                    }}
+                  />
                 </div>
               )}
             </>
