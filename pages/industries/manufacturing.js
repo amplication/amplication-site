@@ -71,8 +71,8 @@ const Manufacturing = () => {
   return (
     <>
       <NextSeo
-        title="Modernize retail experiences with Amplication | Amplication"
-        description="Amplication helps retails modernize faster."
+        title="Amplication for Manufacturing: Automate Your Path to Digital Transformation | Amplication"
+        description="Automate, optimize, and scale your manufacturing operations with tailor-made digital solutions."
 
       />
 

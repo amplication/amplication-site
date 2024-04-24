@@ -70,8 +70,8 @@ const healthcare = () => {
   return (
     <>
       <NextSeo
-        title="Modernize retail experiences with Amplication | Amplication"
-        description="Amplication helps retails modernize faster."
+        title="Modernize Your Healthcare Management  | Amplication"
+        description="Streamline, optimize, and boost your healthcare operations with Amplication."
 
       />
 
