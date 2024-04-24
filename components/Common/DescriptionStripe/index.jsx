@@ -19,7 +19,7 @@ const DescriptionStripe = ({ items, ctaItem }) => {
           {items.map((item, index) => {
             return (
               <div
-                className=" flex  flex-column items-center  text-center! max-w-[350px]"
+                className=" flex  flex-col items-center  text-center! max-w-[350px]"
                 key={index}
               >
                 <div className="flex min-w-[60px] max-w-[60px] h-[60px]">
