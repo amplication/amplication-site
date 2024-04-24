@@ -5,9 +5,9 @@ import { useCallback } from 'react';
 
 // Background Colors
 const ButtonColorsConfig = {
-  purpleDark: 'bg-purple-dark hover:bg-purple-bright-hover',
-  purpleBright: 'bg-purple-bright',
-  purpleBrightHover: 'hover:bg-purple-bright-hover',
+  purpleDark: '!bg-purple-dark !hover:bg-purple-bright-hover',
+  purpleBright: '!bg-purple-bright',
+  purpleBrightHover: '!hover:bg-purple-bright-hover',
   transparent: 'bg-transparent hover:bg-purple-bright-hover',
 };
 

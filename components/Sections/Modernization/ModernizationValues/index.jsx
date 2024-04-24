@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Feature1 from '../../../../public/images/modernization/faster.svg';
 import Feature2 from '../../../../public/images/modernization/save-cost.svg';
 import Feature3 from '../../../../public/images/modernization/flexible.svg';
+import DescriptionStripe from '../../../Common/DescriptionStripe';
 
 const items = [
   {
@@ -24,33 +25,7 @@ const items = [
   },
 ];
 const ModernizationValues = () => {
-  return (
-    <>
-      <div>
-        <div className="flex gap-10 flex-row flex-wrap justify-content-around align-items-start ">
-          {items.map((item, index) => {
-            return (
-              <div
-                className=" flex  flex-column align-items-center  text-center! max-w-[350px]"
-                key={index}
-              >
-                <div className="flex min-w-[60px] max-w-[60px] h-[60px]">
-                  <Image src={item.image} alt={item.title} />
-                </div>
-
-                <div className=" text-lg text-white leading-[25px] !font-semibold !max-w-full !mt-[.75rem] pb-2">
-                  {item.title}
-                </div>
-                <div className=" text-sm text-center text-white font-regular ">
-                  {item.content}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </>
-  );
+  return <DescriptionStripe items={items} />;
 };
 
 export default ModernizationValues;
