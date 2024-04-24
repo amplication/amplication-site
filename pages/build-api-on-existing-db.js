@@ -109,9 +109,8 @@ const ImportDBPage = () => {
           <PageHero
             title={
               <>
-                Build modern API{' '}
-
-                on top of your existing database in minutes
+                Build Modern APIs{' '}
+                on Top of Your Existing Database in Minutes
               </>
             }
             subTitle={''}
