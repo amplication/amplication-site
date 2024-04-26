@@ -37,7 +37,7 @@ const Pricing = () => {
           <PageSection addMargins className={"min-h-[400px]"}>
             <PricingPlans />
           </PageSection>
-          <PageSection alternate>
+          <PageSection alternate addMargins>
             <PricingFAQ />
           </PageSection>
           <CTA />
