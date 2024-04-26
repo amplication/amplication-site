@@ -5,13 +5,21 @@ import { PromoBanner } from '../components/Sections/Pricing/PromoBanner';
 import { NextSeo } from 'next-seo';
 import { MainLayout } from '../layouts';
 import dynamic from 'next/dynamic';
+import PageSection from '../components/Common/PageSection';
+import { PricingLoader } from '../components/Sections/Pricing/PricingPlans/loader';
 
 export const PricingPlans = dynamic(
   () =>
     import('../components/Sections/Pricing/PricingPlans').then(
       (mod) => mod.PricingPlans,
     ),
-  { ssr: false },
+  {
+    ssr: false,
+    loading: () => (
+      <PricingLoader />
+
+    )
+  },
 );
 
 const Pricing = () => {
@@ -22,15 +30,16 @@ const Pricing = () => {
         description="Amplication is an open-source platform built by developers for developers. We provide forever-free community developer license alongside flexible enterprise plans"
       />
 
-      <main className="w-full font-poppins z-10 mb-12 laptop:mb-[100px] amplication-base">
+      <main className="w-full font-poppins z-10">
         <div className="pricing-page">
-          {/*Hero Block*/}
           <HeroBlock />
           <PromoBanner />
-          {/*Block with prices*/}
-          <PricingPlans />
-          <PricingFAQ />
-          {/*Pricing Footer*/}
+          <PageSection addMargins className={"min-h-[400px]"}>
+            <PricingPlans />
+          </PageSection>
+          <PageSection alternate>
+            <PricingFAQ />
+          </PageSection>
           <CTA />
         </div>
       </main>

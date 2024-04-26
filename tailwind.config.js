@@ -130,6 +130,7 @@ module.exports = {
         'dark-black-100': '#15192C',
         'blue-dark': '#090979',
         purple: '#8D64FF',
+        'secondary-purple': '#A787FF',
         'purple-dark': '#15192C',
         'purple-bright': '#7950ED',
         'purple-light': '#2C3249',
