@@ -7,6 +7,8 @@ import { MainLayout } from '../layouts';
 import dynamic from 'next/dynamic';
 import PageSection from '../components/Common/PageSection';
 import { PricingLoader } from '../components/Sections/Pricing/PricingPlans/loader';
+import StartNow from '../components/Sections/About/StartNow';
+import TestimonialsSlider from '../components/Sections/Enterprise/Testimonials/testimonials-slider';
 
 export const PricingPlans = dynamic(
   () =>
@@ -40,7 +42,9 @@ const Pricing = () => {
           <PageSection alternate addMargins>
             <PricingFAQ />
           </PageSection>
-          <CTA />
+          <PageSection  >
+            <TestimonialsSlider showMoreButton={false} useSlider={false} totalItems={3} wrapperClassName={"laptop:!grid-cols-3"} />
+          </PageSection>
         </div>
       </main>
     </>
