@@ -54,6 +54,7 @@ const TestimonialsSlider = ({
   loop,
   useSlider,
   wrapperClassName,
+  showMoreButton,
 }) => {
   const [width, setWidth] = useState(0);
   const [cols, setCols] = useState(3);
@@ -124,15 +125,17 @@ const TestimonialsSlider = ({
         </Swiper>
       )}
 
-      <div className="flex items-center justify-center mt-4">
-        <OutlineButton
-          text="Show all testimonials"
-          isLink={true}
-          href={'/testimonials'}
-          delayLinkMs={300}
-          className={'!w-auto !max-w-[200px]'}
-        />
-      </div>
+      {showMoreButton && (
+        <div className="flex items-center justify-center mt-4">
+          <OutlineButton
+            text="Show all testimonials"
+            isLink={true}
+            href={'/testimonials'}
+            delayLinkMs={300}
+            className={'!w-auto !max-w-[200px]'}
+          />
+        </div>
+      )}
     </div>
   );
 };
@@ -173,6 +176,7 @@ TestimonialsSlider.propTypes = {
   loop: PropTypes.bool,
   useSlider: PropTypes.bool,
   wrapperClassName: PropTypes.string,
+  showMoreButton: PropTypes.bool,
 };
 
 TestimonialsSlider.defaultProps = {
@@ -180,6 +184,7 @@ TestimonialsSlider.defaultProps = {
   loop: true,
   useSlider: true,
   wrapperClassName: '',
+  showMoreButton: true,
 };
 
 export default TestimonialsSlider;
