@@ -64,7 +64,7 @@ const PRODUCTS_ITEMS_2 = [
     {
         title: 'Build with .NET',
         image: IconDotNet,
-        url: '/dot-net',
+        url: '/dot-net-early-access',
         description: 'Enterprise-grade .NET backend services',
     },
 ];
@@ -73,15 +73,16 @@ const PRODUCTS_ITEMS_2 = [
 
 const CUSTOMERS_ITEMS_1 = [
     {
+        title: 'IT Services',
+        image: IconBuildNew,
+        url: '/industries/it-services',
+    },
+    {
         title: 'Retail',
         image: IconRetails,
         url: '/industries/retail',
     },
-    {
-        title: 'Manufacturing',
-        image: IconManufacturing,
-        url: '/industries/manufacturing',
-    },
+
     {
         title: 'Healthcare',
         image: IconHealthcare,
@@ -89,6 +90,11 @@ const CUSTOMERS_ITEMS_1 = [
     },
 ];
 const CUSTOMERS_ITEMS_2 = [
+    {
+        title: 'Manufacturing',
+        image: IconManufacturing,
+        url: '/industries/manufacturing',
+    },
     {
         title: 'Customer stories',
         image: IconStories,
