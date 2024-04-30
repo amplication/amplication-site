@@ -19,19 +19,19 @@ import Feature1 from '../../public/images/product/retail-speed.svg';
 const items = [
   {
     image: Feature1,
-    title: 'Accelerated Delivery',
+    title: 'Accelerated delivery',
     content:
       "Quickly develop and deploy applications, reducing time-to-market for your clients.",
   },
   {
     image: Feature2,
-    title: 'Cost Reduction:',
+    title: 'Cost reduction',
     content:
       "Minimize development and operational costs, allowing you to offer competitive rates.",
   },
   {
     image: Feature5,
-    title: 'Scalable Solutions',
+    title: 'Scalable solutions',
     content:
       "Build applications that scale effortlessly with your clients’ growing needs.",
   },
@@ -40,13 +40,13 @@ const items = [
 const items2 = [
   {
     image: Feature3,
-    title: 'Pre-built Components',
+    title: 'Pre-built components',
     content:
       "Utilize customizable modules to speed up development. ",
   },
   {
     image: Feature4,
-    title: 'Customization Options',
+    title: 'Customization options',
     content:
       "Bring your own opinions and best practices to the table, ensuring a tailored solution for your clients.",
   },
@@ -84,10 +84,10 @@ const ITServices = () => {
             subTitle={
               "Expedite the development of custom software solutions for your clients"
             }
-            subText={'Emphasize efficiency, scalability, and innovation in your projects, providing superior service and value.'}
+            subText={'Maximize efficiency, scalability, and innovation in your projects, providing superior service and value.'}
             mainButton={{
               text: 'Book a Demo',
-              href: '/contact-us',
+              href: process.env.NEXT_PUBLIC_BOOK_MEETING_URL,
               eventName: 'bookDemoClicked',
               eventParams: {
                 buttonLocation: 'hero',

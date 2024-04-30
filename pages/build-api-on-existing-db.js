@@ -87,7 +87,7 @@ const features = [
     },
     secondaryBtn: undefined,
     content:
-      'Avoid the redundancy of recreating your database schema',
+      'Avoid the redundancy of recreating your database schema.',
   },
 
 

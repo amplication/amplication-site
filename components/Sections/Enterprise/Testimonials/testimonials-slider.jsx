@@ -128,7 +128,7 @@ const TestimonialsSlider = ({
       {showMoreButton && (
         <div className="flex items-center justify-center mt-4">
           <OutlineButton
-            text="Show all testimonials"
+            text="More testimonials"
             isLink={true}
             href={'/testimonials'}
             delayLinkMs={300}

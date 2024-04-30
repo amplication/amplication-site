@@ -8,7 +8,7 @@ const Footer = ({ compactView, hideBanner }) => {
     <>
       <footer
         className={
-          'w-full mt-0 relative overflow-hidden z-10  bg-dark-black-100 '
+          'w-full mt-0 relative overflow-hidden z-10  bg-dark-black-100 font-poppins'
         }
       >
         <div className=" ">
