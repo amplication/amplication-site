@@ -12,8 +12,8 @@ import GetList from '../../components/Sections/MainPage/GetList';
 import Feature1 from '../../public/images/modernization/faster.svg';
 import Feature2 from '../../public/images/modernization/save-cost.svg';
 import Feature3 from '../../public/images/modernization/flexible.svg';
-import Feature4 from '../../public/images/modernization/graph.svg';
-import Feature5 from '../../public/images/modernization/production-ready.svg';
+import Feature4 from '../../public/images/product/composite.svg';
+import Feature5 from '../../public/images/product/modernize.svg';
 
 
 const items = [

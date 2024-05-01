@@ -7,10 +7,10 @@ const RetailHero = () => {
     <>
       <PageHero
         title={'Modernize Your Healthcare Management with Amplication'}
-        subTitle={
+        subTitle={''}
+        subText={
           'Streamline, optimize, and boost your healthcare operations with Amplication. '
         }
-        subText={''}
         mainButton={{
           text: 'Book a Demo',
           href: process.env.NEXT_PUBLIC_BOOK_MEETING_URL,

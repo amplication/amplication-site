@@ -9,10 +9,10 @@ const RetailHero = () => {
         title={
           'Amplication for Manufacturing: Automate Your Path to Digital Transformation'
         }
-        subTitle={
+        subTitle={''}
+        subText={
           'Automate, optimize, and scale your manufacturing operations with tailor-made digital solutions.'
         }
-        subText={''}
         mainButton={{
           text: 'Book a Demo',
           href: process.env.NEXT_PUBLIC_BOOK_MEETING_URL,

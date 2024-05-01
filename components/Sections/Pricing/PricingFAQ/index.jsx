@@ -1,11 +1,32 @@
 import React, { useState } from 'react';
 
 const Question = ({ question, answer }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleOpen = () => setIsOpen(!isOpen);
+
   return (
-    <div className="flex flex-col justify-between gap-4 items-start border border-solid border-dark-black-70 bg-dark-black-surface rounded-lg p-4">
-      <span className="text-lg text-white ">{question}</span>
-      <div className="text-sm text-gray">{answer}</div>
-    </div>
+    <a onClick={toggleOpen} className="cursor-pointer w-full">
+      <div className="flex flex-col justify-between  items-start border border-solid border-dark-black-70  rounded-lg p-4">
+        <div className="flex flex-row w-full">
+          <span className="flex-1 text-lg text-white pr-4 ">{question}</span>
+          <span
+            className={`text-md text-white self-start justify-self-end transition-transform duration-400 ease-in  ${
+              !isOpen ? 'rotate-[270deg]' : 'rotate-90'
+            } `}
+          >
+            &lt;
+          </span>
+        </div>
+
+        <div
+          className={`text-sm text-gray overflow-hidden transition-all duration-400 ease-in  ${
+            !isOpen ? 'max-h-0 pt-0' : 'max-h-[100px] pt-4 '
+          } `}
+        >
+          {answer}
+        </div>
+      </div>
+    </a>
   );
 };
 
@@ -15,7 +36,7 @@ const PricingFAQ = () => {
       <h2 className="my-12 mx-auto  text-[32px] !font-semibold leading-[48px] tracking-normal text-center ">
         Frequently Asked Questions
       </h2>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-2">
         <Question
           question="What are the differences between the free and the enterprise tier?"
           answer={
