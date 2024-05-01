@@ -7,14 +7,72 @@ import { NextSeo } from 'next-seo';
 import PageSection from '../../components/Common/PageSection';
 import Soc2Banner from '../../components/Common/SOC2';
 import { MainLayout } from '../../layouts';
+import DescriptionStripe from '../../components/Common/DescriptionStripe';
+import GetList from '../../components/Sections/MainPage/GetList';
+import Feature1 from '../../public/images/modernization/faster.svg';
+import Feature2 from '../../public/images/modernization/save-cost.svg';
+import Feature3 from '../../public/images/modernization/flexible.svg';
+import Feature4 from '../../public/images/modernization/graph.svg';
+import Feature5 from '../../public/images/modernization/production-ready.svg';
 
 
-const Retail = () => {
+const items = [
+  {
+    image: Feature1,
+    title: 'Speed up development',
+    content:
+      'Rapidly build innovative applications with Amplication’s code generation. Solve unique manufacturing problems, from supply chain management to production automation.',
+  },
+  {
+    image: Feature2,
+    title: 'Cut costs, not corners',
+    content:
+      "Save costs without compromising on quality. Simplify the complexities of manufacturing workflows with custom applications, enhance productivity and operational efficiency.",
+  },
+  {
+    image: Feature5,
+    title: 'Future-ready',
+    content:
+      "Equip your manufacturing operations with applications that are built for the future. Amplication ensures you stay innovative, agile, and ahead of the curve.",
+  },
+];
+
+const items2 = [
+  {
+    image: Feature3,
+    title: 'Modernize without disruption',
+    content:
+      'Easily integrate with your current manufacturing systems, enhancing them without the need for complete overhauls.',
+  },
+  {
+    image: Feature4,
+    title: 'Built to scale',
+    content:
+      "Whether you're an SME or a global manufacturing giant, Amplication scales with your needs, ensuring consistent performance.",
+  },
+];
+
+const ctaItem = {
+  title: 'Unlock the Power of Smart Manufacturing Today',
+  content:
+    'Discover how Amplication Enterprise can boost your app development with scalable, secure solutions.',
+  buttonTitle: 'Book a Demo',
+  buttonLink: process.env.NEXT_PUBLIC_BOOK_MEETING_URL,
+  buttonEvent: {
+    action: 'bookDemoClicked',
+    params: {
+      buttonLocation: 'manufacturing',
+    },
+  },
+};
+
+
+const Manufacturing = () => {
   return (
     <>
       <NextSeo
-        title="Modernize retail experiences with Amplication | Amplication"
-        description="Amplication helps retails modernize faster."
+        title="Amplication for Manufacturing: Automate Your Path to Digital Transformation | Amplication"
+        description="Automate, optimize, and scale your manufacturing operations with tailor-made digital solutions."
 
       />
 
@@ -22,36 +80,29 @@ const Retail = () => {
         <PageSection >
           <Hero />
         </PageSection>
-        <PageSection alternate className={'!pt-5 !pb-4 laptop:!py-20 '} innerClassName={"flex-grow"}>
+        <PageSection alternate className={'py-5 laptop:py-12 '} innerClassName={"flex-grow"}>
           <Slider />
         </PageSection>
-
-
-        <StartNow
-          title="Supercharge Your Business Today"
-          description="Discover how Amplication Enterprise can help you build powerful, scalable, and secure applications tailored to your business needs."
-          linkPrimary={{
-            href: '/contact-us',
-            title: 'Book a Demo',
-          }}
-        />
-        <IconsGroup />
-        <PageSection >
-          <Soc2Banner title={"Enterprise-grade compliance"} subTitle={"We strive to provide you with a secure environment where you can confidently build and manage your applications. Amplication meets rigorous standards for data security, availability, processing, integrity, confidentiality, and privacy. We are SOC-2 certified and continuously monitor and improve our data security measures."} />
+        <PageSection addMargins>
+          <DescriptionStripe items={items} />
+        </PageSection>
+        <PageSection alternate addMargins>
+          <DescriptionStripe items={items2} ctaItem={ctaItem} />
+        </PageSection>
+        <PageSection addMargins className={"amplication-base"} >
+          <GetList />
         </PageSection>
       </main>
     </>
   );
 };
-Retail.getLayout = function getLayout(page) {
+Manufacturing.getLayout = function getLayout(page) {
   return (
     <MainLayout
-      footerClass="bg-light-blue"
-      hideFooterBanner={true}
       hideBackground={true}
     >
       {page}
     </MainLayout>
   );
 };
-export default Retail;
+export default Manufacturing;

@@ -1,52 +1,122 @@
+$menu-bg: var(--black80);
+$menu-border-color: var(--black60);
+$menu-drop-padding: 40px 16px;
+
+$menu-top-level-color: var(--black5);
+$menu-top-level-hover-color: var(--black5);
+
+$menu-item-color: var(--white);
+$menu-item-hover-bg: var(--black70);
+$menu-item-hover-color: var(--white);
+$menu-item-description-color: var(--black20);
+$menu-item-padding: 12px;
+$menu-item-margin: 12px;
+
 //in order not to impact all existing styles, we use a unique wrapper class to import bootstrap
 .bootstrap-wrapper {
   width: 100%;
   @import 'bootstrap/scss/bootstrap';
 
   .navbar {
-    --bs-nav-link-font-size: 15px;
-    --bs-navbar-nav-link-padding-x: 15px;
+    --bs-nav-link-font-size: 14px;
+    --bs-navbar-nav-link-padding-x: 14px;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
-  .navbar-collapse {
-    overflow: auto;
-    max-height: calc(100vh - 150px);
-    @include media-breakpoint-up(lg) {
-      overflow: visible;
-    }
-  }
-
+  //top-level menu
   .nav-link {
-    color: #a3a8b8 !important;
+    color: $menu-top-level-color !important;
+    height: 62px;
     display: flex;
     align-items: center;
-
-    &.nav-link-sep {
-      border-left: 1px solid #22273c;
-    }
+    white-space: nowrap;
 
     svg {
-      fill: #a3a8b8 !important;
+      fill: $menu-top-level-color !important;
       transition: fill 0.15s ease-in-out;
     }
   }
 
+  //top-level menu hover
   .nav-link:hover,
   .nav-link:active,
   .nav-link.active {
-    color: #7950ed !important;
+    color: $menu-top-level-color !important;
     svg {
-      fill: #7950ed !important;
+      fill: $menu-top-level-color !important;
     }
   }
 
-  .nav-item.dropdown .dropdown-menu {
-    background: transparent;
-    padding-left: 8px;
+  //top-level menu active
+  .nav-item.dropdown {
+    .dropdown-menu {
+      background-color: $menu-bg;
+    }
+  }
+  @include media-breakpoint-down(lg) {
+    .navbar-collapse {
+      max-height: 90vh;
+      overflow: auto;
+    }
+  }
 
-    @include media-breakpoint-up(lg) {
-      background-color: #2c3249;
-      padding-left: 0px;
+  @include media-breakpoint-up(lg) {
+    //top-level menu active
+    .nav-item.dropdown {
+      .show {
+        background-color: $menu-bg;
+        color: $menu-top-level-hover-color !important;
+      }
+      //sub menu drop
+      .dropdown-menu {
+        padding: $menu-drop-padding;
+        background-color: $menu-bg;
+        border-radius: 0 0 12px 12px;
+        border: 1px solid $menu-border-color;
+        margin-top: 0;
+
+        .container {
+          width: max-content;
+        }
+      }
+    }
+
+    a.nav-link-inner {
+      max-width: none;
+      width: max-content;
+    }
+  }
+
+  //sub menu drop item
+  a.nav-link-inner {
+    display: block;
+    min-width: 200px;
+    // width: 250px;
+    // max-width: 400px;
+    text-decoration: none;
+    color: $menu-item-color;
+    padding: $menu-item-padding;
+    margin-bottom: $menu-item-margin;
+    font-size: 14px;
+    font-weight: normal;
+    border: 1px solid transparent;
+    white-space: nowrap;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      background-color: #373d57;
+      border-radius: 4px;
+      border: 1px solid #444b66;
+      color: $menu-item-hover-color;
+    }
+
+    .description {
+      font-size: 12px;
+      color: $menu-item-description-color;
     }
   }
 }

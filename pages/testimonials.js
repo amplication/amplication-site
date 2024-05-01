@@ -2,7 +2,7 @@ import { NextSeo } from 'next-seo';
 import { MainLayout } from '../layouts';
 import IframeResizer from 'iframe-resizer-react';
 const testimonialLink =
-  'https://embed-v2.testimonial.to/w/amplication?theme=dark&card=base&loadMore=on&initialCount=20&tag=testimonial-page';
+  'https://embed-v2.testimonial.to/w/amplication?hideDate=on&theme=dark&card=base&loadMore=on&initialCount=20&tag=testimonial-page';
 
 
 

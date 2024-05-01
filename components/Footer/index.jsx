@@ -1,45 +1,52 @@
-import StartNow from '../../components/Sections/About/StartNow';
+import StartNow from '../../components/Sections/Enterprise/StartNow';
 import FooterBottomBar from './FooterBottomBar';
 import PropTypes from 'prop-types';
+import FooterLinks from './FooterLinks';
 
-const Footer = ({ customClass, compactView, hideBanner }) => {
+const Footer = ({ compactView, hideBanner }) => {
   return (
     <>
       <footer
         className={
-          'w-full mt-auto relative overflow-hidden z-10 laptop:mt-0 ' +
-          customClass
+          'w-full mt-0 relative overflow-hidden z-10  bg-dark-black-100 font-poppins'
         }
       >
-        <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
+        <div className=" ">
           {!compactView && (
             <>
               {/*Banner*/}
               {!hideBanner && (
-                <div className="amplication-base">
-                  <StartNow />
+                <div className=" bg-light-blue">
+                  <StartNow
+                    title="Build faster, with no limits"
+                    description="Discover how Amplication Enterprise can help you build powerful, scalable, and secure applications tailored to your business needs."
+                    linkPrimary={{
+                      href: process.env.NEXT_PUBLIC_BOOK_MEETING_URL,
+                      title: 'Book a Demo',
+                    }}
+                    linkSecondary={{
+                      href: 'https://app.amplication.com/login',
+                      title: 'Try Free',
+                    }}
+                  />
                 </div>
               )}
             </>
           )}
         </div>
-        <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop relative z-10 flex justify-between items-center relative py-6 laptop:py-0 !max-w-[1904px]">
-          {/*Footer Bottom Bar*/}
-          <FooterBottomBar />
-        </div>
+        <FooterLinks />
+        <FooterBottomBar />
       </footer>
     </>
   );
 };
 
 Footer.propTypes = {
-  customClass: PropTypes.string,
   compactView: PropTypes.bool,
   hideBanner: PropTypes.bool,
 };
 
 Footer.defaultProps = {
-  customClass: '',
   isLink: false,
   hideBanner: false,
 };

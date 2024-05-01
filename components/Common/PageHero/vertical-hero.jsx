@@ -44,8 +44,6 @@ const VerticalPageHero = ({
             {mainButton && (
               <PrimaryButton
                 text={mainButton.text}
-                backgroundColor="purpleBright"
-                hoverBackgroundColor="purpleBrightHover"
                 isLink={true}
                 onClick={handleMainClick}
                 href={mainButton.href}

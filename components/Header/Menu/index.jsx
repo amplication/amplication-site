@@ -1,134 +1,30 @@
+import Image from 'next/image';
 import Link from 'next/link';
+import Button from '../../Common/Button';
 import { useRouter } from 'next/router';
 import { useCallback, useState } from 'react';
-import * as analytics from '../../../lib/analytics';
 import useWindowSize from '../../../utils/useWindowSize';
-import Button from '../../Common/Button';
+import * as analytics from '../../../lib/analytics';
 import Logo from '../Logo';
 
 import Nav from 'react-bootstrap/Nav';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import Navbar from 'react-bootstrap/Navbar';
-import GitHubStarsButton from '../../Common/GitHubStarsButton';
 import GitHubStarsUsButtonContent from '../../Common/GitHubStarsButton/GitHubStarsUsButtonContent';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
-const MENU_ITEMS = [
-  {
-    title: 'Docs',
-    href: {
-      pathname: 'https://docs.amplication.com/',
-    },
-    target: '_blank',
-  },
-  {
-    title: 'Product',
-    href: {
-      pathname: '/product',
-    },
-    target: '_blank',
-    menuItems: [
-      {
-        title: 'Build New Services',
-        href: {
-          pathname: '/build-new-services',
-        },
-        target: '_self',
-      },
-      {
-        title: 'Application Modernization',
-        href: {
-          pathname: '/application-modernization',
-        },
-        target: '_self',
-      },
-      {
-        title: 'Break the Monolith',
-        href: {
-          pathname: '/break-the-monolith',
-        },
-        target: '_self',
-      },
-      {
-        title: 'Plugins Catalog',
-        href: {
-          pathname: '/plugins',
-        },
-        target: '_self',
-      },
-      {
-        title: 'Build with .NET - early access ',
-        href: {
-          pathname: '/dot-net-early-access',
-        },
-        target: '_self',
-      },
-    ],
-  },
-  {
-    title: 'Enterprise',
-    href: {
-      pathname: '/enterprise',
-    },
-    target: '_self',
-  },
-  {
-    title: 'Pricing',
-    href: {
-      pathname: '/pricing',
-    },
-    target: '_self',
-  },
-  {
-    title: 'Company',
-    href: {
-      pathname: '/company',
-    },
-    target: '_blank',
-    menuItems: [
-      {
-        title: 'Blog',
-        href: {
-          pathname: '/blog',
-        },
-        target: '_self',
-      },
-      {
-        title: 'About',
-        href: {
-          pathname: '/about',
-        },
-        target: '_self',
-      },
-      {
-        title: 'Team',
-        href: {
-          pathname: '/team',
-        },
-        target: '_self',
-      },
-      {
-        title: 'Careers',
-        href: {
-          pathname: 'https://amplication.breezy.hr/',
-        },
-        target: '_blank',
-      },
-      {
-        title: 'Contact Us',
-        href: {
-          pathname: '/contact-us',
-        },
-        target: '_self',
-      },
-    ],
-  },
-];
+import {
+  LEFT_MENU_ITEMS,
+  RIGHT_MENU_ITEMS,
+  LOGIN_MENU_ITEM,
+} from './menu-items';
 
 const Menu = () => {
   const [expanded, setExpanded] = useState(false);
 
   const { width } = useWindowSize();
-
   const router = useRouter();
   const isMobileMenu = width < 992;
 
@@ -182,8 +78,18 @@ const Menu = () => {
             </div>
           </Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="mr-auto">
+              {LEFT_MENU_ITEMS.map((item, index) => (
+                <MenuItem
+                  isMobileMenu={isMobileMenu}
+                  key={index}
+                  item={item}
+                  onMenuItemClick={handleMenuClick}
+                />
+              ))}
+            </Nav>
             <Nav className="ml-auto">
-              {MENU_ITEMS.map((item, index) => (
+              {RIGHT_MENU_ITEMS.map((item, index) => (
                 <MenuItem
                   isMobileMenu={isMobileMenu}
                   key={index}
@@ -195,26 +101,15 @@ const Menu = () => {
                 isMobileMenu={isMobileMenu}
                 item={{
                   title: <GitHubStarsUsButtonContent />,
-                  href: {
-                    pathname: 'https://github.com/amplication/amplication',
-                  },
+                  url: 'https://github.com/amplication/amplication',
+
                   target: '_blank',
                 }}
                 onMenuItemClick={handleStarUsClick}
               />
               <MenuItem
                 isMobileMenu={isMobileMenu}
-                item={{
-                  title: 'Log In',
-                  href: {
-                    pathname: 'https://app.amplication.com/login',
-                  },
-                  target: '_self',
-                  onClickEventName: 'startNowClicked',
-                  onClickEventParams: {
-                    buttonLocation: 'header-login',
-                  },
-                }}
+                item={LOGIN_MENU_ITEM}
                 className="nav-link-sep"
                 onMenuItemClick={handleStartNowClick}
               />
@@ -222,7 +117,7 @@ const Menu = () => {
             <div className="mt-auto mt-[-1px] pb-8 laptop:hidden">
               <div className="w-full menu__item pt-12 flex flex-col justify-end items-stretch border-t border-[rgba(255,255,255,0.2)]">
                 <div className="w-full">
-                  <p className="font-poppins font-medium text-center text-base mb-6 laptop:text-lg laptop:text-left laptop:mb-6">
+                  <p className="font-poppins font-medium text-white text-center text-base mb-6 laptop:text-lg laptop:text-left laptop:mb-6">
                     Contact us
                   </p>
                   <ul className="w-full flex flex-col justify-start items-center">
@@ -240,7 +135,6 @@ const Menu = () => {
           </Navbar.Collapse>
         </Navbar>
       </div>
-
       <div className="hidden laptop:flex ml-1 desktop:ml-4 align-items-center">
         <Button
           text="Start Now"
@@ -250,7 +144,6 @@ const Menu = () => {
           onClick={handleStartNowClick}
           href="https://app.amplication.com/login"
           className="text-[15px] h-[40px] whitespace-nowrap !px-4"
-          delayLinkMs={300}
         />
       </div>
     </>
@@ -279,45 +172,103 @@ const MenuItem = ({ item, onMenuItemClick, isMobileMenu, className }) => {
       setTimeoutHandle(
         setTimeout(() => {
           setDropdownOpen(false);
-        }, 300),
+        }, 100),
       );
     }
   };
 
   const { asPath } = useRouter();
-  const url =
-    item.href?.pathname + (item.href?.hash ? '#' + item.href?.hash : '');
 
-  const hasSubItem = item.menuItems && item.menuItems.length > 0;
+  const hasSubItems = item.menuItems && item.menuItems.length > 0;
+  const hasColumns = item.columns && item.columns.length > 0;
 
-  return hasSubItem ? (
+  return hasSubItems || hasColumns ? (
     <NavDropdown
       onClick={handleDropDownClick}
       show={dropdownOpen}
       onMouseOver={handleDropDownMouseOver}
       onMouseOut={handleDropDownMouseOut}
+      align={item.align || 'start'}
       title={item.title}
       id="basic-nav-dropdown"
     >
-      {item.menuItems.map((subItem, index) => (
-        <MenuItem
-          isMobileMenu={isMobileMenu}
-          key={index}
-          item={subItem}
-          onMenuItemClick={onMenuItemClick}
-        />
-      ))}
+      <Container>
+        <Row className="p-0" lg={item.columns?.length || 1} xs="1">
+          {item.columns?.length ? (
+            item.columns.map((column, index) => (
+              <Col key={index} className="nav-link-column">
+                {column.title && (
+                  <div className="flex flex-row items-center text-xs text-gray font-normal pb-2">
+                    {column.title} &nbsp;
+                  </div>
+                )}
+
+                {column.menuItems.map((subItem, index) => (
+                  <InnerMenuItem
+                    isMobileMenu={isMobileMenu}
+                    key={index}
+                    item={subItem}
+                    onMenuItemClick={onMenuItemClick}
+                  />
+                ))}
+              </Col>
+            ))
+          ) : (
+            <Col>
+              {item.menuItems.map((subItem, index) => (
+                <InnerMenuItem
+                  isMobileMenu={isMobileMenu}
+                  key={index}
+                  item={subItem}
+                  onMenuItemClick={onMenuItemClick}
+                />
+              ))}
+            </Col>
+          )}
+        </Row>
+      </Container>
     </NavDropdown>
   ) : (
-    <Link href={url}>
+    <Link href={item.url}>
       <a
         target={item.target}
         onClick={() => onMenuItemClick(item)}
-        className={`whitespace-nowrap	 nav-link ${
-          asPath === url ? 'active' : ''
+        className={`nav-link ${
+          asPath === item.url ? 'active' : ''
         } ${className}`}
       >
         {item.title}
+      </a>
+    </Link>
+  );
+};
+
+const InnerMenuItem = ({ item, onMenuItemClick, isMobileMenu }) => {
+  const { asPath } = useRouter();
+
+  return (
+    <Link href={item.url}>
+      <a
+        target={item.target}
+        onClick={() => onMenuItemClick(item)}
+        className={`nav-link-inner ${asPath === item.url ? 'active' : ''} `}
+      >
+        <div className="flex flex-row items-center justify-start gap-3 ">
+          <div className="w-[32px] h-[32px] min-w-[32px] flex items-center justify-center bg-dark-black-70 !rounded">
+            <Image
+              className=""
+              width={32}
+              height={32}
+              src={item.image}
+              alt={item.title}
+            />
+          </div>
+
+          <div className="flex flex-col">
+            <div>{item.title}</div>
+            <div className="description">{item.description}</div>
+          </div>
+        </div>
       </a>
     </Link>
   );

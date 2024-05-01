@@ -42,8 +42,6 @@ const PageHero = ({
             {mainButton && (
               <PrimaryButton
                 text={mainButton.text}
-                backgroundColor="purpleBright"
-                hoverBackgroundColor="purpleBrightHover"
                 isLink={true}
                 onClick={handleMainClick}
                 href={mainButton.href}
@@ -72,7 +70,7 @@ const PageHero = ({
 PageHero.propTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   subTitle: PropTypes.string,
-  subText: PropTypes.string,
+  subText: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   mainButton: PropTypes.shape({
     text: PropTypes.string,
     href: PropTypes.string,

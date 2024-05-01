@@ -27,7 +27,7 @@ const DotNetEarlyAccess = () => {
         </PageSection>
 
         <div className="amplication-base">
-          <PageSection alternate className={'!pt-5 !pb-4 laptop:!py-20 '} innerClassName={"flex-grow"}>
+          <PageSection alternate className={'py-5 laptop:py-12 '} innerClassName={"flex-grow"}>
             <Slider />
           </PageSection>
           <section className="start-alternate-colors-based-on-nth-child p-0" />
@@ -52,7 +52,6 @@ const DotNetEarlyAccess = () => {
 DotNetEarlyAccess.getLayout = function getLayout(page) {
   return (
     <MainLayout
-      footerClass="bg-light-blue"
       hideFooterBanner={true}
       hideBackground={true}
       hideTopBar={true}

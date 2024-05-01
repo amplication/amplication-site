@@ -34,6 +34,11 @@ module.exports = {
       'container-desktop-enlarged': '1920px',
     },
     extend: {
+      gridTemplateColumns: {
+        'footer': 'repeat(2, minmax(0, 1fr))',
+        'footer-medium': 'repeat(3, minmax(0, 1fr))',
+        'footer-large': 'repeat(6, minmax(0, 300px))',
+      },
       animation: {
         fadeIn: 'fadeIn 0.5s ease-in-out',
         appear: 'appearing 0.5s ease-in-out',
@@ -125,6 +130,7 @@ module.exports = {
         'dark-black-100': '#15192C',
         'blue-dark': '#090979',
         purple: '#8D64FF',
+        'secondary-purple': '#A787FF',
         'purple-dark': '#15192C',
         'purple-bright': '#7950ED',
         'purple-light': '#2C3249',
@@ -171,7 +177,11 @@ module.exports = {
         quote: "url('/images/bg/quotes.svg')",
         grid: 'linear-gradient(to right, #22273C 1px, transparent 1px), linear-gradient(to bottom, #22273C 1px, transparent 1px);',
         'reward-success': "url('/images/hacktoberfest/reward-success.svg')",
-        'app-modernization': "url('/images/bg/bg-app-modernization.jpg')"
+        'app-modernization': "url('/images/bg/bg-app-modernization.jpg')",
+        //'panel-gradient': "linear-gradient(180deg, rgba(121, 80, 237, 0.52)  0%, #25223C 100%)"
+        'panel-gradient': "linear-gradient(180deg, #7950ED 0%, rgba(83, 42, 198, 0.52) 100%);"
+        //'panel-gradient': "linear-gradient(180deg, #7950ED 0%, rgba(167, 135, 255, 0.52) 100%)"
+
       },
     },
   },

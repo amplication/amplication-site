@@ -15,7 +15,7 @@ const RetailHero = () => {
         subText={''}
         mainButton={{
           text: 'Book a Demo',
-          href: '/contact-us',
+          href: process.env.NEXT_PUBLIC_BOOK_MEETING_URL,
           eventName: 'bookDemoClicked',
           eventParams: {
             buttonLocation: 'hero',

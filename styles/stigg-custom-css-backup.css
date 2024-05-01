@@ -1,0 +1,261 @@
+/* 
+This rules are set via the Stigg Widget UI. 
+they are saved here for backup. 
+*/
+
+.stigg-paywall-container {
+  --stigg-plan-free-color: #7950ed;
+  --stigg-plan-enterprise-color: #31c587;
+  --stigg-plan-background-color: #22273c;
+  --stigg-plan-border-color: #373d57;
+}
+
+.stigg-paywall-plans-layout {
+  max-width: 960px;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+@media (max-device-width: 1024px) {
+  .stigg-paywall-plans-layout {
+    flex-direction: column;
+  }
+}
+
+/* plan column */
+.stigg-plan-offering-container {
+  border-radius: 8px;
+  border: 1px solid var(--stigg-plan-border-color);
+  max-width: 100%;
+  min-width: 1px;
+  padding: 0;
+
+  flex: 1;
+  background-color: var(--stigg-plan-background-color);
+}
+
+.stigg-plan-amplication-free {
+  border-top: 10px solid var(--stigg-plan-free-color);
+}
+
+.stigg-plan-amplication-enterprise {
+  border-top: 10px solid var(--stigg-plan-enterprise-color);
+}
+
+/* Current Plan text */
+.stigg-current-plan .stigg-plan-header::before {
+  display: block;
+  content: 'Current plan';
+  font-size: 12px;
+  line-height: 18px;
+  color: #ffffff;
+  color: var(--stigg-plan-enterprise-color);
+  margin-left: -4px;
+  position: absolute;
+  left: 20px;
+  top: 8px;
+  font-weight: bold;
+}
+
+.stigg-plan-amplication-free.stigg-current-plan .stigg-plan-header::before {
+  color: var(--stigg-plan-free-color);
+}
+
+.stigg-current-plan .stigg-paywall-plan-button {
+  visibility: hidden;
+}
+
+/* plan header */
+.stigg-header-wrapper {
+  padding: 24px;
+  padding-top: 32px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--stigg-plan-border-color);
+  align-items: center;
+  gap: 8px;
+}
+
+/* plan name */
+.stigg-plan-header {
+  font-weight: 700;
+  margin-bottom: 4px;
+  font-size: 32px;
+  line-height: 36px;
+  padding-bottom: 0;
+}
+
+.stigg-price-text {
+  font-size: 40px;
+  margin-top: 4px;
+  text-align: center;
+}
+
+.stigg-price-billing-period-text {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 15px;
+  color: #a3a8b8;
+}
+
+.stigg-price-billing-period-text::first-letter {
+  text-transform: uppercase;
+}
+
+.stigg-plan-description {
+  min-height: auto;
+  margin-top: 0;
+  font-size: 16px;
+  text-align: center;
+  color: white;
+  font-family: Poppins, sans-serif;
+  height: 130px;
+  position: relative;
+}
+
+.stigg-plan-description:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  font-weight: 700;
+  font-size: 18px;
+  color: #ffffff;
+  display: block;
+  background-repeat: no-repeat;
+  text-align: center;
+  height: 40px;
+  width: 100%;
+  background-position: center;
+  background-image: url('/images/code-with-dotnet-node.svg');
+}
+
+.stigg-plan-amplication-free .stigg-plan-description:after {
+  background-image: url('/images/code-with-node.svg');
+}
+
+.stigg-price-text span[class*='PriceUnitSpan'] {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  color: #a3a8b8;
+  margin-left: 0px;
+}
+
+.stigg-plan-header-divider {
+  display: none;
+}
+
+.stigg-plan-entitlements-container {
+  width: 100%;
+  padding: 24px;
+  flex: 1;
+  /* leave space for the last line item */
+  padding-bottom: 120px;
+}
+
+.stigg-plan-entitlements-title {
+  color: white;
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  border-bottom: none;
+  padding-bottom: 4px;
+  margin-bottom: 0;
+}
+
+.stigg-entitlement-name {
+  color: white;
+  font-family: Poppins, sans-serif;
+  line-height: 22px;
+  font-size: 16px;
+}
+
+.stigg-plan-description,
+.stigg-entitlement-name {
+  font-weight: 300;
+}
+
+/* entitlement icon wrapper */
+.stigg-entitlement-row-container > div:first-child {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background: #31c587;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stigg-plan-amplication-free
+  .stigg-entitlement-row-container
+  > div:first-child {
+  background: var(--stigg-plan-free-color);
+}
+
+/* support line item */
+.stigg-entitlement-row-container:last-child {
+  margin: 0 -24px;
+  border-top: 1px solid var(--stigg-plan-border-color);
+  padding: 24px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+/* hide the check mark on the last line item */
+.stigg-entitlement-row-container:last-child > div:first-child {
+  display: none;
+}
+
+.stigg-entitlement-row-icon {
+  transform: scale(0.7);
+  /* display: block;
+    margin-right: 8px ; */
+}
+
+.stigg-entitlement-row-icon path {
+  fill: #ffffff;
+}
+
+.stigg-paywall-plan-button-layout {
+  align-items: center;
+}
+
+.stigg-paywall-plan-button {
+  background-color: var(--stigg-plan-enterprise-color);
+  border-radius: 4px;
+  text-align: center;
+  padding: 2px 5px;
+  height: 28px;
+  width: 170px;
+}
+.stigg-paywall-plan-button:hover {
+  background-color: var(--stigg-plan-enterprise-color);
+  opacity: 0.9;
+}
+
+.stigg-plan-amplication-free .stigg-paywall-plan-button {
+  background-color: var(--stigg-plan-free-color);
+}
+
+.stigg-plan-amplication-free .stigg-paywall-plan-button:hover {
+  background-color: var(--stigg-plan-free-color);
+  opacity: 0.9;
+}
+
+.stigg-paywall-plan-button-text {
+  color: white;
+  font-family: Poppins, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.stigg-paywall-plan-button svg {
+  display: none;
+}
+.stigg-trial-days-left-text {
+  color: var(--stigg-plan-enterprise-color);
+}
+.stigg-plan-amplication-enterprise.stigg-current-plan
+  .stigg-paywall-plan-button {
+  visibility: visible;
+}

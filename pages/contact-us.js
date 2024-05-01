@@ -3,20 +3,8 @@ import { MainLayout } from '../layouts';
 import { useRef, useState } from 'react';
 import { useRouter } from 'next/router';
 import Slider from '../components/Sections/Enterprise/Slider';
+import TestimonialsSlider from '../components/Sections/Enterprise/Testimonials/testimonials-slider';
 
-import helpers from '../helpers';
-
-import 'swiper/css';
-import 'swiper/css/pagination';
-import { Pagination } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-import avatar1 from '../public/images/testimonials/testimonial-1.png';
-import avatar2 from '../public/images/testimonials/testimonial-2.png';
-import avatar5 from '../public/images/testimonials/testimonial-5.png';
-import avatar6 from '../public/images/testimonials/testimonial-6.png';
-import avatar7 from '../public/images/testimonials/testimonial-7.png';
-import Image from 'next/image';
 import * as analytics from '../lib/analytics';
 import PageSection from '../components/Common/PageSection';
 
@@ -96,48 +84,7 @@ const ContactUs = () => {
     e.target.style.height = e.target.scrollHeight + 'px';
   };
 
-  const testimonials = [
-    {
-      text: 'Amplication has helped us at OpenCures develop new API services faster in our work on health data software for preventive health care. We were looking for a django alternative in NodeJS that fit our architecture strategy and found exactly what we were looking for in Amplication. The skills and energy of the team have made our contributions a great pleasure!',
-      name: 'Vincenzo Domina',
-      position: 'OpenCures Inc.',
-      avatar: avatar1,
-    },
-    {
-      text: 'Amplication is a game-changing open-source platform for Node.js app development, offering unparalleled flexibility and the ability to auto-generate production-ready backend in minutes. I highly recommend it for any Node.js developer.',
-      name: 'Marko Denic',
-      position: 'Senior Full-stack Developer, Ideenreich Websolutions',
-      avatar: avatar2,
-    },
-    {
-      text: "“We've used Amplication as a Node.js backend in one of our bigger projects. The platform's ability to quickly bootstrap Back-End common tasks has greatly increased our get-to-go productivity and allowed us to focus on our business logic earlier in the project's life cycle. The team at Amplication have also been very responsive and helpful in addressing any issues or concerns. If you're starting a project from scratch, We highly recommend taking a look at this platform first” wewrite.software",
-      name: 'Avinoam',
-      position: 'WeWrite',
-    },
-    {
-      text: "As a Co-Founder and CTO of VijanaTech Tanzania (vijanatech.com), we needed a fast and reliable solution to be build our api and amplication was just a fit for us as a startup. The best thing is i don't have to worry about admin panel and all api code it just does everything for us. The product is best as it save a lot of time in debugging contrary to the old way where we had to spend numerous amount of hours debugging code.",
-      name: 'Emmanuel Mtera',
-      position: 'Co-Founder',
-    },
-    {
-      text: "Digital Copilote is an innovation-oriented web agency. We have been using Amplication for several months. As we work in a non-monolithic way we use Amplication to create backend services. What we like about Amplication is its ease of use and the speed with which you get a robust and usable app. Seriously, an organized junior dev who knows a little bit about Amplication can bootstrap a backend service in a day that would take a week for a seasoned senior dev. To conclude a 100% functional and serious product that saves us a lot of development hours and offers a rigorous framework allowing even junior devs to create POC or MVP type products that can be sent to production. In the end, our customers are happy because they end up with a project that costs half as much as before we used Amplication, and our developers are just as happy because they don't always develop the same project boostraping and focus on the business process of the project.",
-      name: 'Thibaut Lefort',
-      position: 'CEO, Digital Copilote',
-      avatar: avatar5,
-    },
-    {
-      text: "Looks like I don't actually need to worry about the internals of pagination, authorization, API documentation, routing and a bunch more when I build my next Node.js application... 🔥",
-      name: 'Liran Tal 🛫 ModernFrontends #London 🇬🇧',
-      position: '@liran_tal',
-      avatar: avatar6,
-    },
-    {
-      text: "been testing @amplication for production... It's actually good! as the base. The generated code is satisfyingly clean and the structures are well built. Good job open-source, good job.",
-      name: 'Arian',
-      position: '@ArianMirahmadi',
-      avatar: avatar7,
-    },
-  ];
+
 
   return (
     <>
@@ -421,60 +368,10 @@ const ContactUs = () => {
             </div>
           </div>
         </section>
+        <PageSection alternate>
+          <TestimonialsSlider useSlider={false} totalItems={3} wrapperClassName={"laptop:!grid-cols-3"} />
+        </PageSection>
 
-        <div className="flex flex-column bg-light-blue py-20 pb-14">
-          <Swiper
-            className="!max-w-[100%] bg-quote bg-no-repeat bg-[center_0]"
-            slidesPerView={1}
-            loop={true}
-            autoHeight={true}
-            modules={[Pagination]}
-            pagination={{
-              type: 'bullets',
-              clickable: true,
-              clickableClass: 'swiper-pagination-clickable !relative pt-4',
-              bulletClass: 'swiper-pagination-bullet !bg-white',
-              bulletActiveClass:
-                'swiper-pagination-bullet-active relative top-[1px] !bg-purple-bright !w-2.5 !h-2.5',
-            }}
-          >
-            {testimonials.map((testimonial, index) => {
-              return (
-                <SwiperSlide key={index} className="w-full min-w-full">
-                  <div className="w-full flex flex-column align-items-center w-[90%] max-w-[880px] mx-auto">
-                    <div className="font-light text-lg max-laptop:text-sm leading-[27px] text-center text-white">
-                      {testimonial.text}
-                    </div>
-                    <div className="flex align-items-center mt-6">
-                      <div className="!w-[35px] !h-[35px] overflow-hidden rounded-[100%]">
-                        {testimonial.avatar ? (
-                          <Image
-                            src={testimonial.avatar}
-                            alt={testimonial.name}
-                          />
-                        ) : (
-                          <span className="text-lg bg-[#5d5dff] h-full flex align-items-center justify-center">
-                            {helpers.getInitials(testimonial.name)}
-                          </span>
-                        )}
-                      </div>
-                      {testimonial.name && testimonial.position && (
-                        <div className="flex flex-column ml-2">
-                          <div className="font-semibold text-xs leading-[18px]">
-                            {testimonial.name}
-                          </div>
-                          <div className="font-normal text-[10px] leading-[15px]">
-                            {testimonial.position}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </SwiperSlide>
-              );
-            })}
-          </Swiper>
-        </div>
         <PageSection className={'!pt-5 !pb-4 laptop:!py-20 '} innerClassName={"flex-grow"}>
           <Slider />
         </PageSection>
@@ -486,7 +383,6 @@ const ContactUs = () => {
 ContactUs.getLayout = function getLayout(page) {
   return (
     <MainLayout
-      footerClass="bg-light-blue"
       paddingTopClasses="laptop:pt-[100px]"
       hideFooterBanner={true}
     >

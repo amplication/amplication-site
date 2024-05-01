@@ -11,7 +11,7 @@ import PropTypes from 'prop-types';
 const Slider = ({ classes }) => {
   return (
     <>
-      <h2 className="roadmap-heading tablet:text-center">
+      <h2 className="text-2xl font-bold tablet:text-center">
         Empowering developers from leading companies
       </h2>
       <div className="logotypes mt-6 flex flex-wrap align-items-center">

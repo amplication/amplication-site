@@ -34,7 +34,7 @@ const Home = () => {
         <PageSection className={"page-welcome !pt-10 !pb-8 large:!py-[9vh] xlg:!py-[17vh]"} >
           <HeroBlock />
         </PageSection>
-        <PageSection className={'!pt-5 !pb-4 laptop:!py-20 '} innerClassName={"flex-grow"}>
+        <PageSection alternate className={'py-5 laptop:py-12 '} innerClassName={"flex-grow"}>
           <Slider />
         </PageSection>
         <PageSection alternate className={"page-welcome-solution !py-20"} >
@@ -56,7 +56,6 @@ const Home = () => {
 Home.getLayout = function getLayout(page) {
   return (
     <MainLayout
-      footerClass="bg-light-blue"
       paddingTopClasses="laptop:pt-[100px]"
     >
       {page}
