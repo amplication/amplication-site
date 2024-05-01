@@ -9,10 +9,10 @@ const RetailHero = () => {
         title={
           "Amplication for Retail: Digital Solutions for Tomorrow's Retailers"
         }
-        subTitle={
+        subTitle={''}
+        subText={
           'Build tailor-made applications for your retail operations and leap ahead of the competition.'
         }
-        subText={''}
         mainButton={{
           text: 'Book a Demo',
           href: process.env.NEXT_PUBLIC_BOOK_MEETING_URL,
