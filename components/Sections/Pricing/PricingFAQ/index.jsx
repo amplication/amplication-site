@@ -11,7 +11,7 @@ const Question = ({ question, answer }) => {
           <span className="flex-1 text-lg text-white pr-4 ">{question}</span>
           <span
             className={`text-md text-white self-start justify-self-end transition-transform duration-400 ease-in  ${
-              isOpen ? 'rotate-[270deg]' : 'rotate-90'
+              !isOpen ? 'rotate-[270deg]' : 'rotate-90'
             } `}
           >
             &lt;
@@ -20,7 +20,7 @@ const Question = ({ question, answer }) => {
 
         <div
           className={`text-sm text-gray overflow-hidden transition-all duration-400 ease-in  ${
-            isOpen ? 'max-h-0 pt-0' : 'max-h-[100px] pt-4 '
+            !isOpen ? 'max-h-0 pt-0' : 'max-h-[100px] pt-4 '
           } `}
         >
           {answer}
