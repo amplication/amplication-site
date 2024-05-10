@@ -31,7 +31,7 @@ const PageHero = ({
   }, [secondaryButton]);
   return (
     <>
-      <div className="relative w-full flex flex-col laptop:flex-row items-center  justify-between  laptop:h-[calc(100vh-90px)] text-center min-h-[600px] gap-8">
+      <div className="relative w-full flex flex-col laptop:flex-row items-center  justify-between  laptop:h-[calc(100vh-90px)] max-h-[1000px] text-center min-h-[600px] gap-8">
         <div className="laptop:!max-w-[50%]">
           <div className=" flex flex-col gap-2 text-center laptop:text-left mt-12 laptop:mt-0 max-w-[500px] laptop:max-w-[none]">
             <h1 className="text-4xl desktop:text-5xl font-bold ">{title}</h1>
