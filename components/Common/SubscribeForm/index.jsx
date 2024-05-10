@@ -83,7 +83,7 @@ const SubscribeForm = ({ isCompactView }) => {
   let loaderClasses =
     'w-full h-full absolute l-0 t-0 rounded-2xl transition-all opacity-50 pointer-events-none';
   loaderClasses += formIsSending
-    ? ' bg-purple-light z-10 pointer-events-auto'
+    ? ' bg-dark-black-80 z-10 pointer-events-auto'
     : '';
 
   let containerClasses =
@@ -123,7 +123,7 @@ const SubscribeForm = ({ isCompactView }) => {
 
   return (
     <div
-      className={`w-full rounded-2xl bg-purple-light bg-no-repeat bg-right-top laptop:min-h-[208px] transition-all bg-form-pattern-1-mobile ${
+      className={`w-full rounded-2xl bg-dark-black-80 bg-no-repeat bg-right-top laptop:min-h-[208px] transition-all bg-form-pattern-1-mobile ${
         isCompactView
           ? ''
           : 'laptop:bg-form-pattern-1-desktop laptop:bg-[length:auto_100%]'

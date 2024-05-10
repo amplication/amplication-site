@@ -29,7 +29,7 @@ const CustomerStoryCard = (props) => {
         >
           <div
             className={
-              'overflow-hidden border border-solid border-dark-black-70 hover:border-lite hover:bg-purple-light rounded-lg p-8 hover:shadow-hover-card'
+              'overflow-hidden border border-solid border-dark-black-70 hover:border-lite hover:bg-dark-black-80 rounded-lg p-8 hover:shadow-hover-card'
             }
           >
             <div className="overflow-hidden flex flex-row justify-between items-start	">
