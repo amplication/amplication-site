@@ -51,10 +51,11 @@ const Home = () => {
           </h2>
           <TestimonialsSlider useSlider={false} totalItems={3} wrapperClassName={"laptop:!grid-cols-3"} />
         </PageSection>
+
+        <PageSection alternate className={"!py-20"} >
+          <GetList />
+        </PageSection>
         <div className='amplication-base'>
-          <PageSection alternate className={"!py-20"} >
-            <GetList />
-          </PageSection>
           <PageSection >
             <Soc2Banner />
           </PageSection>

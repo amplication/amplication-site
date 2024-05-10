@@ -79,29 +79,25 @@ const items = [
 const GetList = () => {
   return (
     <>
-      <div className="mb-6 large:mb-11">
-        <h2 className="roadmap-heading m-0">
-          What do you get from Amplication?
-        </h2>
-      </div>
-      <div className="features">
-        <div
-          className="d-flex flex-wrap justify-content-between align-items-start !w-auto !max-w-none"
-          id="features"
-        >
+      <h2 className="w-full mx-auto text-[32px] !font-semibold leading-[48px] tracking-normal text-center tablet:text-left">
+        What do you get from Amplication?
+      </h2>
+      <div>
+        <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-4  gap-8 items-start !w-auto !max-w-none pt-6">
           {items.map((item, index) => {
             return (
-              <div className="feature-card flex !text-left" key={index}>
-                <div className="flex min-w-[60px] max-w-[60px]">
-                  <Image src={item.image} alt={'open source'} />
+              <div
+                className="flex flex-col text-center tablet:text-left gap-2 items-center tablet:items-start "
+                key={index}
+              >
+                <div className="flex min-w-[60px] max-w-[60px] justify-center">
+                  <Image src={item.image} alt={item.title} />
                 </div>
-                <div className="flex-auto">
-                  <div className="feature-card-text text-lg text-white leading-[25px] !font-semibold !max-w-full !mt-[.75rem] pb-2">
-                    {item.title}
-                  </div>
-                  <div className="feature-card-content text-sm text-white font-regular max-w-[282px]">
-                    {item.content}
-                  </div>
+                <div className=" text-lg text-white leading-[25px] !font-semibold !max-w-full ">
+                  {item.title}
+                </div>
+                <div className=" text-sm text-white font-regular">
+                  {item.content}
                 </div>
               </div>
             );
