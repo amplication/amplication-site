@@ -41,14 +41,14 @@ const Home = ({ plugins }) => {
         <PageSection >
           <HeroBlock />
         </PageSection>
-        <PageSection light className={'py-5  '} innerClassName={"flex-grow"}>
+        <PageSection light className={'py-5'} innerClassName={"flex-grow"}>
           <Slider />
         </PageSection>
-        <div className='amplication-base'>
 
-          <PageSection className={"!py-10"} alternate>
-            <Facts />
-          </PageSection>
+        <PageSection className={"py-10"} alternate>
+          <Facts />
+        </PageSection>
+        <div className='amplication-base'>
 
           <PageSection className={"page-welcome-solution !py-20"} >
             < Features />

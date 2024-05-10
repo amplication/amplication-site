@@ -98,6 +98,7 @@ module.exports = {
       borderColor: {
         'dark-black-70': '#373D57',
         'light-turquoise': '#41CADD',
+        'dark-black-80': '#2C3249',
         lite: '#444B66',
         footer: '#fff3',
         purple: '#8D64FF',

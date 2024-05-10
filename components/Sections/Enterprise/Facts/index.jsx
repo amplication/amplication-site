@@ -16,25 +16,21 @@ const facts = [
 const Facts = () => {
   return (
     <>
-      <div className="row align-items-center justify-content-center">
+      <div className="grid grid-cols-1 tablet:grid-cols-3 gap-4 w-full ">
         {facts.map((fact, i) => {
           return (
             <div
-              className="flex-grow w-[50%] laptop:w-[33.3333%] large:w-[20%] col-md-[20%]"
               key={i}
+              className={
+                (i !== 0 ? 'border-l-1 ' : '') +
+                'border-dark-black-80  flex flex-col gap-2 items-center p-4 text-center'
+              }
             >
-              <div
-                className={
-                  (i !== 0 ? 'border-l-[1px] ' : '') +
-                  'rounded-lg border-[#2C3249] min-h-[116px] flex flex-column align-items-center p-[24px] large:!py-0 laptop:!px-12'
-                }
-              >
-                <div className="text-2xl mb-1 font-bold text-center text-secondary-purple">
-                  {fact.title}
-                </div>
-                <div className="font-normal text-[0.875rem] tablet:!text-base laptop:!text-lg leading-normal text-center text-white max-w-[360px]">
-                  {fact.description}
-                </div>
+              <div className="text-4xl tablet:text-3xl desktop:text-5xl font-bold text-secondary-purple text-nowrap">
+                {fact.title}
+              </div>
+              <div className="font-normal text-base text-white  ">
+                {fact.description}
               </div>
             </div>
           );
