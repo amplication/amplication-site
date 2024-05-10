@@ -11,10 +11,10 @@ import PropTypes from 'prop-types';
 const Slider = ({ classes }) => {
   return (
     <>
-      <h2 className="text-2xl font-bold tablet:text-center">
+      <h2 className="text-2xl font-bold text-center">
         Empowering developers from leading companies
       </h2>
-      <div className="logotypes mt-6 flex flex-wrap items-center">
+      <div className="mt-6 flex flex-wrap items-center justify-evenly">
         <div className="flex justify-center w-[25%] tablet:w-[20%] laptop:w-[14.2857%]">
           <Image src={Logo1} alt="pull request" />
         </div>

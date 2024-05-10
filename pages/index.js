@@ -41,10 +41,15 @@ const Home = ({ plugins }) => {
         <PageSection >
           <HeroBlock />
         </PageSection>
+        <PageSection light className={'py-5  '} innerClassName={"flex-grow"}>
+          <Slider />
+        </PageSection>
         <div className='amplication-base'>
-          <PageSection alternate className={'py-5 laptop:py-12 '} innerClassName={"flex-grow"}>
-            <Slider />
+
+          <PageSection className={"!py-10"} alternate>
+            <Facts />
           </PageSection>
+
           <PageSection className={"page-welcome-solution !py-20"} >
             < Features />
           </PageSection>
@@ -58,9 +63,7 @@ const Home = ({ plugins }) => {
             <TestimonialsSlider useSlider={false} totalItems={3} wrapperClassName={"laptop:!grid-cols-3"} />
           </PageSection>
 
-          <PageSection className={"!py-10"} alternate>
-            <Facts />
-          </PageSection>
+
           <PageSection >
             <Soc2Banner />
           </PageSection>

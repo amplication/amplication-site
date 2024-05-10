@@ -11458,11 +11458,7 @@ body {
   }
 }
 
-.amplication-base .logotypes {
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-}
+
 
 .outline-button {
   border: 1px solid var(--white);

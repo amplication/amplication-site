@@ -1,28 +1,19 @@
-const Facts = () => {
-  const facts = [
-    {
-      title: '20x faster',
-      description: 'To deliver code to production',
-    },
-    {
-      title: '2 months',
-      description: 'Saved on initial project setup',
-    },
-    {
-      title: '100+ hrs',
-      description:
-        'Per month saved on app infrastructure and boilerplate updates',
-    },
-    {
-      title: '30%',
-      description: 'Of developers’ time saved',
-    },
-    {
-      title: '50+ hrs',
-      description: 'Saved per developer on knowledge sharing and training',
-    },
-  ];
+const facts = [
+  {
+    title: '20x faster',
+    description: 'To deliver code to production',
+  },
+  {
+    title: '2+ sprints',
+    description: 'Saved on each service created',
+  },
+  {
+    title: '73% decrease',
+    description: 'in infrastructure-related production bugs',
+  },
+];
 
+const Facts = () => {
   return (
     <>
       <div className="row align-items-center justify-content-center">
@@ -38,10 +29,7 @@ const Facts = () => {
                   'rounded-lg border-[#2C3249] min-h-[116px] flex flex-column align-items-center p-[24px] large:!py-0 laptop:!px-12'
                 }
               >
-                <div
-                  className="text-2xl mb-1 font-bold text-center"
-                  style={{ color: '#A787FF' }}
-                >
+                <div className="text-2xl mb-1 font-bold text-center text-secondary-purple">
                   {fact.title}
                 </div>
                 <div className="font-normal text-[0.875rem] tablet:!text-base laptop:!text-lg leading-normal text-center text-white max-w-[360px]">
