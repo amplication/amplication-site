@@ -141,6 +141,12 @@ const nextConfig = {
         destination: '/developers',
         permanent: true,
       },
+      {
+        source: '/developers',
+        destination: '/build-new-services',
+        permanent: true,
+      },
+
     ];
   },
   swcMinify: true,
