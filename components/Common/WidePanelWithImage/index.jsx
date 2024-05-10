@@ -13,20 +13,31 @@ const WidePanelWithImage = ({
   content,
   children,
   alternate,
+  fullWidth,
 }) => {
   return (
     <div
-      className={`w-full grid grid-cols-1 tablet:grid-cols-2 gap-8 tablet:gap-16 content-center item-center py-8 ${customClasses}`}
+      className={`w-full grid grid-cols-1 ${
+        fullWidth
+          ? 'max-w-[1100px] m-auto gap-4'
+          : 'tablet:grid-cols-2 gap-8 tablet:gap-16'
+      }    content-center item-center py-8 ${customClasses}`}
     >
       <div
-        className={`flex flex-col items-start text-left tablet:text-left tablet:items-start justify-center ${
-          alternate && 'order-1 tablet:order-2'
-        }`}
+        className={`flex flex-col  ${
+          fullWidth
+            ? 'text-center tablet:text-center items-center justify-center'
+            : 'text-left tablet:text-left items-start '
+        }   justify-center ${alternate && 'order-1 tablet:order-2'}`}
       >
         <div className="!text-[24px] desktop:!text-[32px] !leading-[36px] desktop:!leading-[48px] font-semibold pb-2">
           {title}
         </div>
-        <div className="text-sm desktop:text-lg text-white desktop:!leading-[27px] max-w-[600px]">
+        <div
+          className={`text-sm desktop:text-base text-white  ${
+            fullWidth ? 'max-w-[750px]' : 'max-w-[600px]'
+          }`}
+        >
           {content}
         </div>
         {children}
@@ -49,15 +60,8 @@ const WidePanelWithImage = ({
           )}
         </div>
       </div>
-      <div className="order-1" data-aos="fade-up-left">
-        {image && (
-          <Image
-            className="max-w-[710px] !visible"
-            src={image}
-            alt={title}
-            objectFit={'cover'}
-          />
-        )}
+      <div className={`order-1 ${fullWidth && 'flex items-center'}`}>
+        {image && <Image src={image} alt={title} objectFit={'cover'} />}
       </div>
     </div>
   );
@@ -78,6 +82,7 @@ WidePanelWithImage.propTypes = {
   },
   content: PropTypes.string,
   alternate: PropTypes.bool,
+  fullWidth: PropTypes.bool,
 };
 
 WidePanelWithImage.defaultProps = {
@@ -88,6 +93,7 @@ WidePanelWithImage.defaultProps = {
   secondaryBtn: undefined,
   content: '',
   alternate: false,
+  fullWidth: false,
 };
 
 export default WidePanelWithImage;
