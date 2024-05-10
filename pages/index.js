@@ -1,22 +1,16 @@
-import HeroBlock from '../components/Sections/Enterprise/HeroBlock';
-import Slider from '../components/Sections/Enterprise/Slider';
-import Facts from '../components/Sections/Enterprise/Facts';
-import Testimonials from '../components/Sections/Enterprise/Testimonials';
-import Features from '../components/Sections/MainPage/Features';
-import GetList from '../components/Sections/MainPage/GetList';
-import PluginsPanel from '../components/Plugins/plugins-panel';
-import Tabs from '../components/Sections/MainPage/Tabs';
-import LogoList from '../components/Sections/About/LogoList';
 import { NextSeo } from 'next-seo';
-import { MainLayout } from '../layouts';
 import PageSection from '../components/Common/PageSection';
 import Soc2Banner from '../components/Common/SOC2';
+import Facts from '../components/Sections/Enterprise/Facts';
+import HeroBlock from '../components/Sections/Enterprise/HeroBlock';
+import Slider from '../components/Sections/Enterprise/Slider';
+import GetList from '../components/Sections/MainPage/GetList';
+import { MainLayout } from '../layouts';
 
-import { gql } from '@apollo/client';
-import client from '../services/plugin-api';
 import TestimonialsSlider from '../components/Sections/Enterprise/Testimonials/testimonials-slider';
+import Steps from '../components/Sections/MainPage/Steps';
 
-const Home = ({ plugins }) => {
+const Home = () => {
   return (
     <>
       <NextSeo
@@ -48,75 +42,26 @@ const Home = ({ plugins }) => {
         <PageSection className={"py-10"} alternate>
           <Facts />
         </PageSection>
+        <PageSection className={'py-5'} >
+          <Steps />
+        </PageSection>
+        <PageSection  >
+          <h2 className="my-12 mx-auto text-[32px] !font-semibold leading-[48px] tracking-normal text-center max-w-[960px]">
+            What users are saying about Amplication?
+          </h2>
+          <TestimonialsSlider useSlider={false} totalItems={3} wrapperClassName={"laptop:!grid-cols-3"} />
+        </PageSection>
         <div className='amplication-base'>
-
-          <PageSection className={"page-welcome-solution !py-20"} >
-            < Features />
-          </PageSection>
-          <PageSection alternate >
-            <PluginsPanel plugins={plugins} />
-          </PageSection>
-          <PageSection  >
-            <h2 className="my-12 mx-auto text-[32px] !font-semibold leading-[48px] tracking-normal text-center max-w-[960px]">
-              What users are saying about Amplication?
-            </h2>
-            <TestimonialsSlider useSlider={false} totalItems={3} wrapperClassName={"laptop:!grid-cols-3"} />
-          </PageSection>
-
-
-          <PageSection >
-            <Soc2Banner />
-          </PageSection>
-
           <PageSection alternate className={"!py-20"} >
             <GetList />
           </PageSection>
-          <PageSection alternate className="page-steps !py-20" >
-            <Tabs />
-          </PageSection>
-
           <PageSection >
-            <LogoList />
+            <Soc2Banner />
           </PageSection>
         </div>
       </main >
     </>
   );
-};
-
-export const getStaticProps = async () => {
-  try {
-    const { data } = await client.query({
-      query: gql`
-        query {
-          plugins(take:30) {
-            id
-            pluginId
-            name
-            icon
-            description
-            taggedVersions
-            npm
-            github
-            website
-          }
-        }
-      `,
-    });
-    return {
-      props: {
-        plugins: data?.plugins
-      },
-    };
-  } catch (e) {
-    console.error(e);
-  }
-
-  return {
-    props: {
-      plugins: null,
-    },
-  };
 };
 
 
