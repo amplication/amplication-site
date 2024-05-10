@@ -11,7 +11,9 @@ const HeroBlock = () => {
         showTechStack={true}
         title={
           <div className="max-w-[480px] desktop:max-w-[680px]">
-            <span className="text-purple-bright">World's Fastest Way to</span>{' '}
+            <span className="text-purple-bright">
+              World&apos;s Fastest Way to
+            </span>{' '}
             Build Backend services
           </div>
         }
