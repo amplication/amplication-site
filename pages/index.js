@@ -38,7 +38,6 @@ const Home = () => {
         <PageSection light className={'py-5'} innerClassName={"flex-grow"}>
           <Slider />
         </PageSection>
-
         <PageSection className={"py-10"} alternate>
           <Facts />
         </PageSection>
@@ -51,15 +50,12 @@ const Home = () => {
           </h2>
           <TestimonialsSlider useSlider={false} totalItems={3} wrapperClassName={"laptop:!grid-cols-3"} />
         </PageSection>
-
         <PageSection alternate className={"!py-20"} >
           <GetList />
         </PageSection>
-        <div className='amplication-base'>
-          <PageSection >
-            <Soc2Banner />
-          </PageSection>
-        </div>
+        <PageSection >
+          <Soc2Banner />
+        </PageSection>
       </main >
     </>
   );
