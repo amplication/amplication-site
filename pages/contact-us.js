@@ -165,7 +165,7 @@ const ContactUs = () => {
                             htmlFor="radio-1"
                             className={
                               (radioValue === 'radio-1'
-                                ? 'bg-dark-black-70 border border-solid border-lite shadow-radio '
+                                ? 'bg-dark-black-60 border border-solid border-lite shadow-radio '
                                 : '') +
                               '!flex cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full p-2 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue select-none'
                             }
@@ -188,7 +188,7 @@ const ContactUs = () => {
                             htmlFor="radio-2"
                             className={
                               (radioValue === 'radio-2'
-                                ? 'bg-dark-black-70 border border-solid border-lite shadow-radio '
+                                ? 'bg-dark-black-60 border border-solid border-lite shadow-radio '
                                 : '') +
                               '!flex cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full p-2 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue select-none'
                             }
@@ -211,7 +211,7 @@ const ContactUs = () => {
                             htmlFor="radio-3"
                             className={
                               (radioValue === 'radio-3'
-                                ? 'bg-dark-black-70 border border-solid border-lite shadow-radio '
+                                ? 'bg-dark-black-60 border border-solid border-lite shadow-radio '
                                 : '') +
                               '!flex cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full p-2 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue select-none'
                             }
@@ -234,7 +234,7 @@ const ContactUs = () => {
                             htmlFor="radio-4"
                             className={
                               (radioValue === 'radio-4'
-                                ? 'bg-dark-black-70 border border-solid border-lite shadow-radio '
+                                ? 'bg-dark-black-60 border border-solid border-lite shadow-radio '
                                 : '') +
                               '!flex cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full p-2 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue select-none'
                             }

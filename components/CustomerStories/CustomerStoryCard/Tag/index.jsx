@@ -10,7 +10,7 @@ const Tag = ({ tag, className }) => {
       }
     >
       <span
-        className="py-1 px-2 bg-dark-black-70 rounded-full font-normal text-[10px] flex items-center justify-center min-w-[50px]"
+        className="py-1 px-2 bg-dark-black-60 rounded-full font-normal text-[10px] flex items-center justify-center min-w-[50px]"
         key={tag.slug}
       >
         {tag}

@@ -104,7 +104,7 @@ const Posts = ({ posts }) => {
               <a
                 onClick={() => setLoader(true)}
                 className={
-                  'w-[118px] inline-block py-2 px-4 rounded transition-all duration-300 text-center text-white bg-dark-black-70 hover:bg-purple' +
+                  'w-[118px] inline-block py-2 px-4 rounded transition-all duration-300 text-center text-white bg-dark-black-60 hover:bg-purple' +
                   (loader ? ' loader' : '')
                 }
               >
