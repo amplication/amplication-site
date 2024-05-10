@@ -5,27 +5,16 @@ import videoSrc from '../../../../public/animation/amplication-how-to.mp4';
 import PageHero from '../../../Common/PageHero';
 
 const HeroBlock = () => {
-  const handleStartNowClick = useCallback(() => {
-    analytics.event({
-      action: 'startNowClicked',
-      params: {
-        buttonLocation: 'hero',
-      },
-    });
-  }, []);
-
-  const handleBookDemoClick = useCallback(() => {
-    analytics.event({
-      action: 'bookDemoClicked',
-      params: {
-        buttonLocation: 'hero',
-      },
-    });
-  }, []);
   return (
     <>
       <PageHero
-        title={<>The Fastest Way in the World to Build Backend Services.</>}
+        showTechStack={true}
+        title={
+          <div className="max-w-[480px] desktop:max-w-[680px]">
+            <span className="text-purple-bright">World's Fastest Way to</span>{' '}
+            Build Backend services
+          </div>
+        }
         subTitle={null}
         subText={
           <>

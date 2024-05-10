@@ -3,6 +3,9 @@ import { useCallback } from 'react';
 import * as analytics from '../../../lib/analytics';
 import OutlineButton from '../../Common/Button/button-outline';
 import PrimaryButton from '../../Common/Button/button-primary';
+import Image from 'next/image';
+import nodejs from '../../../public/images/icons/nodejs.svg';
+import dotnet from '../../../public/images/icons/dotnet.svg';
 
 const PageHero = ({
   title,
@@ -11,6 +14,7 @@ const PageHero = ({
   mainButton,
   secondaryButton,
   imageNode,
+  showTechStack = false,
 }) => {
   const handleMainClick = useCallback(() => {
     analytics.event({
@@ -38,7 +42,7 @@ const PageHero = ({
               {subText}
             </div>
           </div>
-          <div className="flex items-center justify-center laptop:justify-start tablet:items-center mt-4 gap-4">
+          <div className="flex items-center justify-center laptop:justify-start tablet:items-center mt-6 gap-4">
             {mainButton && (
               <PrimaryButton
                 text={mainButton.text}
@@ -58,6 +62,18 @@ const PageHero = ({
               />
             )}
           </div>
+          {showTechStack && (
+            <div className="flex items-center justify-center laptop:justify-start tablet:items-center mt-4 gap-4">
+              <span className="text-lg font-bold">Supported Technologies:</span>
+
+              <div>
+                <Image src={dotnet} alt={'.NET'} />
+              </div>
+              <div>
+                <Image src={nodejs} alt={'Node.js'} />
+              </div>
+            </div>
+          )}
         </div>
         <div className="relative flex items-center max-w-[600px] mb-8 w-full laptop:min-h-[600px] laptop:!max-w-[46%] laptop:mb-0 ">
           <div className="">{imageNode}</div>
@@ -84,6 +100,7 @@ PageHero.propTypes = {
     eventParams: PropTypes.object,
   }),
   imageNode: PropTypes.node,
+  showTechStack: PropTypes.bool,
 };
 
 export default PageHero;
