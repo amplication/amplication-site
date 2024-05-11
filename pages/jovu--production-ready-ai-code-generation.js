@@ -170,16 +170,13 @@ const JovuPage = () => {
         </PageSection>
         <PageSection alternate>
           <StartNow
-            title="Modernize Your Business"
-            description="Designed for businesses looking to upgrade their legacy systems to modern, scalable applications"
+            title="Build faster, with no limits"
+            description="Try Amplication Enterprise today and unlock the power of fast development cycles."
             linkPrimary={{
               href: process.env.NEXT_PUBLIC_BOOK_MEETING_URL,
-              title: 'Book a Demo',
+              title: 'Talk to Expert',
             }}
-            linkSecondary={{
-              href: 'https://app.amplication.com/login',
-              title: 'Try Free',
-            }}
+
           />
         </PageSection>
       </main >
