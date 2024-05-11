@@ -5,7 +5,6 @@ import yuvalHanaz from '../../../../public/images/team/yuval-hazaz.png';
 import vikaGoncharuk from '../../../../public/images/team/vika-goncharuk.png';
 import morHagbi from '../../../../public/images/team/mor-hagbi.png';
 import amitBarletz from '../../../../public/images/team/amit-barletz.png';
-import tomerNaim from '../../../../public/images/team/tomer.png';
 import danieleIasella from '../../../../public/images/team/daniele.png';
 import mulyGottlieb from '../../../../public/images/team/muly.png';
 import orenAlaluf from '../../../../public/images/team/oren.png';
@@ -120,25 +119,7 @@ const members = [
       },
     ],
   },
-  {
-    name: 'Tomer Naim',
-    position: 'Marketing Manager, Digital and Growth',
-    image: tomerNaim,
-    links: [
-      {
-        href: 'https://www.linkedin.com/in/tomernaim/',
-        iconClass: 'linkedin',
-      },
-      {
-        href: 'https://github.com/tnaim',
-        iconClass: 'github',
-      },
-      {
-        href: 'https://twitter.com/tomernaim',
-        iconClass: 'twitter',
-      },
-    ],
-  },
+
   {
     name: 'Daniele Iasella',
     position: 'Principal Engineer',
