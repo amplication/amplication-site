@@ -90,7 +90,7 @@ const ContactUs = () => {
     <>
       <NextSeo
         title="Node.js App Development: Open Source Platform | Amplication"
-        description="Amplication is the most flexible open-source platform for Node.js app development.
+        description="Amplication is the most flexible open-source platform for .NET and Node.js app development.
         We enable developers to auto-generate production-ready backend in minutes. Design modelsand roles,
          deploy your app, connect with REST or GraphQL API, sync with GitHub. You own the code."
         openGraph={{
@@ -133,7 +133,7 @@ const ContactUs = () => {
                         Continuously sync the generated code to your GitHub repo
                       </li>
                       <li>Create microservices or monolithic architecture</li>
-                      <li>Create a production-ready Node.js application</li>
+                      <li>Create a production-ready .NET and Node.js application</li>
                     </ul>
                   </div>
                 </div>

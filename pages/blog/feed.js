@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 import client from '../../services';
 import generateRSS from '../../lib/rss';
 
-const Feed = () => {};
+const Feed = () => { };
 
 export const getServerSideProps = async (context) => {
   const postsTake = 10;
@@ -41,7 +41,7 @@ export const getServerSideProps = async (context) => {
     generateRSS({
       title: "Amplication's Blog",
       description:
-        'Boost your knowledge and step up your game with top storys on backend development, Node.js and open-source from the Amplication team.',
+        'Boost your knowledge and step up your game with top stories on backend development, .NET, Node.js and open-source from the Amplication team.',
       path: 'blog/feed',
       posts,
     }),

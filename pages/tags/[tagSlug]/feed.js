@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 import client from '../../../services';
 import generateRSS from '../../../lib/rss';
 
-const TagsFeed = () => {};
+const TagsFeed = () => { };
 
 export const getServerSideProps = async (context) => {
   const postsTake = 10;
@@ -53,7 +53,7 @@ export const getServerSideProps = async (context) => {
     generateRSS({
       title,
       description:
-        'Boost your knowledge and step up your game with top storys on backend development, Node.js and open-source from the Amplication team.',
+        'Boost your knowledge and step up your game with top stories on backend development, .NET, Node.js and open-source from the Amplication team.',
       path: `tags/${context.params.tagSlug}/feed`,
       posts,
     }),
