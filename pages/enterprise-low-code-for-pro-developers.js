@@ -143,7 +143,6 @@ const LowCode = () => {
           </h2>
           <CardsList
             cards={cards}
-            title={'DB Schema Import Key Features'}
             customClasses={'desktop:!grid-cols-4'}
           />
           <div className="p-4">

@@ -17,6 +17,7 @@ import IconStories from '../../../public/menu/icon-stories.svg';
 import IconEventDriven from '../../../public/menu/icon-event-driven.svg';
 import IconGettingStarted from '../../../public/menu/icon-getting-started.svg';
 import IconSyncWithGit from '../../../public/menu/icon-sync-with-git.svg';
+import IconBackend from '../../../public/menu/icon-backend.svg';
 
 
 import IconBlog from '../../../public/menu/icon-blog.svg';
@@ -27,17 +28,16 @@ import IconGithub from '../../../public/menu/icon-github.svg';
 
 const PRODUCTS_ITEMS_1 = [
     {
+        title: 'Jovu',
+        image: IconBackend,
+        url: '/jovu--production-ready-ai-code-generation',
+        description: 'From idea to production in minutes',
+    },
+    {
         title: 'Build new services',
         image: IconBuildNew,
         url: '/build-new-services',
         description: 'Production-ready backend with .NET or Node.js',
-    },
-
-    {
-        title: 'Modernize applications',
-        image: IconModernize,
-        url: '/application-modernization',
-        description: 'Transform and migrate legacy systems',
     },
     {
         title: 'Build APIs on existing DB',
@@ -45,6 +45,7 @@ const PRODUCTS_ITEMS_1 = [
         url: '/build-api-on-existing-db',
         description: 'Head start development using existing DB',
     },
+
 ];
 
 const PRODUCTS_ITEMS_2 = [
@@ -54,19 +55,19 @@ const PRODUCTS_ITEMS_2 = [
         url: '/break-the-monolith',
         description: 'Shift to microservices seamlessly',
     },
-
+    {
+        title: 'Modernize applications',
+        image: IconModernize,
+        url: '/application-modernization',
+        description: 'Transform and migrate legacy systems',
+    },
     {
         title: 'Plugins',
         image: IconPlugins,
         url: '/plugins',
         description: 'Extend and customize your services',
     },
-    {
-        title: 'Build with .NET',
-        image: IconDotNet,
-        url: '/dot-net-early-access',
-        description: 'Enterprise-grade .NET backend services',
-    },
+
 ];
 
 
