@@ -1,5 +1,5 @@
 import ImageCodeOwnership from '../../../../public/images/product/image-code-ownership.png';
-import ImageGitProviders from '../../../../public/images/product/image-git-providers.png';
+import ImageGitProviders from '../../../../public/images/product/image-git-providers.svg';
 import ImagePlugins from '../../../../public/images/product/image-plugins.png';
 import ImageProductOverview from '../../../../public/images/product/product-overview.svg';
 import WidePanelWithImage from '../../../Common/WidePanelWithImage';
