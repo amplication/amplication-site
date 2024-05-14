@@ -32,7 +32,7 @@ const PageHero = ({
   return (
     <>
       <div className="relative w-full flex flex-col laptop:flex-row items-center  justify-between  laptop:h-[calc(100vh-90px)] max-h-[1000px] text-center min-h-[600px] gap-8">
-        <div className="laptop:!max-w-[50%]">
+        <div className="laptop:!max-w-[45%]">
           <div className=" flex flex-col gap-2 text-center laptop:text-left mt-12 laptop:mt-0 max-w-[500px] laptop:max-w-[none]">
             <h1 className="text-4xl desktop:text-5xl font-bold ">{title}</h1>
             <h2 className="text-2xl desktop:text-3xl  font-semibold">
@@ -75,7 +75,7 @@ const PageHero = ({
             </div>
           )}
         </div>
-        <div className="relative flex items-center max-w-[600px] mb-8 w-full laptop:min-h-[600px] laptop:!max-w-[46%] laptop:mb-0 ">
+        <div className="relative flex items-center max-w-[600px] mb-8 w-full laptop:min-h-[600px] laptop:!max-w-[51%] laptop:mb-0 ">
           <div className="">{imageNode}</div>
         </div>
       </div>

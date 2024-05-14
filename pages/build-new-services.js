@@ -30,96 +30,98 @@ const Home = () => {
         }}
       />
 
-      <main className="w-full font-poppins z-10 amplication-base">
-        <PageSection className={"page-welcome !pt-10 !pb-8 large:!py-[9vh] xlg:!py-[17vh]"} >
-          <HeroBlock />
-        </PageSection >
-        <PageSection alternate >
-          <TechSlider />
-        </PageSection>
+      <main className="w-full font-poppins z-10">
+        <div className=' amplication-base'>
+          <PageSection className={"page-welcome !pt-10 !pb-8 large:!py-[9vh] xlg:!py-[17vh]"} >
+            <HeroBlock />
+          </PageSection >
+          <PageSection alternate >
+            <TechSlider />
+          </PageSection>
 
-        <PageSection   >
-          <WidePanelWithImage
-            secondaryBtn={{
-              href: 'https://app.amplication.com/',
-              title: 'Try now',
-            }}
-            image={image1}
-            title={
-              'Generate production-ready backend infrastructure'
-            }
-          >
+          <PageSection   >
+            <WidePanelWithImage
+              secondaryBtn={{
+                href: 'https://app.amplication.com/',
+                title: 'Try now',
+              }}
+              image={image1}
+              title={
+                'Generate production-ready backend infrastructure'
+              }
+            >
 
-            <div className="py-1">
-              Automatically generate backend services with the highest standards, consistency and scalability. Never waste time on boilerplate and repetitive coding again. No more copy+paste from old projects or legacy templates.
-            </div>
+              <div className="py-1">
+                Automatically generate backend services with the highest standards, consistency and scalability. Never waste time on boilerplate and repetitive coding again. No more copy+paste from old projects or legacy templates.
+              </div>
 
-          </WidePanelWithImage>
-        </PageSection>
+            </WidePanelWithImage>
+          </PageSection>
 
 
-        <PageSection alternate >
-          <WidePanelWithImage
-            customClasses="flex-row-reverse"
-            secondaryBtn={{
-              href: 'https://app.amplication.com/',
-              title: 'Try now',
-            }}
-            image={image2}
-            title={
-              'Focus on coding what matters- your business logic'
-            }
-          >
+          <PageSection alternate >
+            <WidePanelWithImage
+              customClasses="flex-row-reverse"
+              secondaryBtn={{
+                href: 'https://app.amplication.com/',
+                title: 'Try now',
+              }}
+              image={image2}
+              title={
+                'Focus on coding what matters- your business logic'
+              }
+            >
 
-            <div className="py-1">
-              Amplication generates in minutes high-quality customizable code for fully functioning backend. GraphQL & REST APIs, DB schema, monitoring, logging, configuration, CI, deployment, testing, dependencies, tracing, monorepo management and more. It’s up to you to configure how to take off.
-            </div>
+              <div className="py-1">
+                Amplication generates in minutes high-quality customizable code for fully functioning backend. GraphQL & REST APIs, DB schema, monitoring, logging, configuration, CI, deployment, testing, dependencies, tracing, monorepo management and more. It’s up to you to configure how to take off.
+              </div>
 
-          </WidePanelWithImage>
-        </PageSection>
+            </WidePanelWithImage>
+          </PageSection>
 
-        <PageSection   >
-          <WidePanelWithImage
-            secondaryBtn={{
-              href: 'https://app.amplication.com/',
-              title: 'Try now',
-            }}
-            image={image3}
-            title={
-              'Build any architecture, for any scale'
-            }
-          >
+          <PageSection   >
+            <WidePanelWithImage
+              secondaryBtn={{
+                href: 'https://app.amplication.com/',
+                title: 'Try now',
+              }}
+              image={image3}
+              title={
+                'Build any architecture, for any scale'
+              }
+            >
 
-            <div className="py-1">
-              Whereas it’s a single service that you’re building or a massive microservices solution- Amplication is designed for any scale. Ensure consistency across development teams, centralized management and alignment with the latest industry standards and best practices. No matter how complex your needs become.
-            </div>
+              <div className="py-1">
+                Whereas it’s a single service that you’re building or a massive microservices solution- Amplication is designed for any scale. Ensure consistency across development teams, centralized management and alignment with the latest industry standards and best practices. No matter how complex your needs become.
+              </div>
 
-          </WidePanelWithImage>
-        </PageSection>
+            </WidePanelWithImage>
+          </PageSection>
 
-        <PageSection alternate >
-          <WidePanelWithImage
-            customClasses="flex-row-reverse"
-            secondaryBtn={{
-              href: '/plugins',
-              title: 'View Plugins',
-            }}
-            image={image4}
-            title={
-              'Leverage plugins for unlimited customization'
-            }
-          >
+          <PageSection alternate >
+            <WidePanelWithImage
+              customClasses="flex-row-reverse"
+              secondaryBtn={{
+                href: '/plugins',
+                title: 'View Plugins',
+              }}
+              image={image4}
+              title={
+                'Leverage plugins for unlimited customization'
+              }
+            >
 
-            <div className="py-1">
-              Control the flavor of the generated code, including security, privacy, standards, and best practices, with Amplication plugins. Add advanced analytics, connect to CI/CD pipelines, integrate with third-party services, or optimize your deployment process. Our plugins are designed to cater to your specific needs. Create custom plugins to keep your organization&apos;s current conventions, standards, and best practices while enforcing usage across teams.
-            </div>
+              <div className="py-1">
+                Control the flavor of the generated code, including security, privacy, standards, and best practices, with Amplication plugins. Add advanced analytics, connect to CI/CD pipelines, integrate with third-party services, or optimize your deployment process. Our plugins are designed to cater to your specific needs. Create custom plugins to keep your organization&apos;s current conventions, standards, and best practices while enforcing usage across teams.
+              </div>
 
-          </WidePanelWithImage>
-        </PageSection>
+            </WidePanelWithImage>
+          </PageSection>
 
-        <PageSection className={"page-welcome-solution !py-20"} >
-          <Features />
-        </PageSection>
+          <PageSection className={"page-welcome-solution !py-20"} >
+            <Features />
+          </PageSection>
+        </div>
         <PageSection alternate className={"!py-20"} >
           <GetList />
         </PageSection>

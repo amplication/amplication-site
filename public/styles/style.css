@@ -8911,10 +8911,10 @@ body {
   text-align: left;
 }
 .amplication-base .text-right {
-  text-align: right !important;
+  text-align: right;
 }
 .amplication-base .text-center {
-  text-align: center !important;
+  text-align: center;
 }
 @media (min-width: 576px) {
   .amplication-base .text-sm-left {
@@ -11457,8 +11457,6 @@ body {
     margin-bottom: 1rem;
   }
 }
-
-
 
 .outline-button {
   border: 1px solid var(--white);

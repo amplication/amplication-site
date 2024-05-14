@@ -88,7 +88,7 @@ const healthcare = () => {
         <PageSection alternate addMargins>
           <DescriptionStripe items={items2} ctaItem={ctaItem} />
         </PageSection>
-        <PageSection addMargins className={"amplication-base"} >
+        <PageSection addMargins  >
           <GetList />
         </PageSection>
       </main>
