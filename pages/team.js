@@ -8,7 +8,7 @@ const Team = () => {
     <>
       <NextSeo
         title="Meet The Team. We Think Big. We think Different | Amplication"
-        description="Meet the team behind Amplication! The open-source development tool that allows you to build production-ready Node.js applications in minutes. Click here to learn more."
+        description="Meet the team behind Amplication! The open-source development tool that allows you to build production-ready .NET and Node.js applications in minutes. Click here to learn more."
       />
 
       <main className="w-full font-poppins z-10 mb-12 laptop:mb-[100px] amplication-base circles-bg">

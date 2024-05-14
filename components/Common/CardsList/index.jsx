@@ -2,7 +2,7 @@ import Image from 'next/image';
 import icon1 from '../../../public/images/icons/icon-1.svg';
 import PropTypes from 'prop-types';
 
-const CardsList = ({ title, subTitle, cards, customClasses }) => {
+const CardsList = ({ cards, customClasses }) => {
   return (
     <div
       className={`w-full grid grid-cols-1 tablet:grid-cols-2 gap-4 p-4 ${customClasses}`}
@@ -30,8 +30,6 @@ const CardsList = ({ title, subTitle, cards, customClasses }) => {
 };
 
 CardsList.propTypes = {
-  title: PropTypes.string,
-  subTitle: PropTypes.string,
   cards: PropTypes.arrayOf({
     title: PropTypes.string,
     subTitle: PropTypes.string,
@@ -49,8 +47,6 @@ const items = [
 ];
 
 CardsList.defaultProps = {
-  title: '',
-  subTitle: '',
   cards: items,
   customClasses: '',
 };

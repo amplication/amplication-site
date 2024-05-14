@@ -2,17 +2,19 @@ import { NextSeo } from 'next-seo';
 import { MainLayout } from '../layouts';
 import PageSection from '../components/Common/PageSection';
 import CardsList from '../components/Common/CardsList';
-import IconEvolution from '../public/images/low-code/icon-evolution.svg';
-import IconFreedom from '../public/images/low-code/icon-operational-freedom.svg';
-import IconRapid from '../public/images/low-code/icon-rapid.svg';
 import Slider from '../components/Sections/Enterprise/Slider';
 import WidePanelWithImage from '../components/Common/WidePanelWithImage';
 
-import ImageImport from '../public/images/product/image-import.png';
-import ImageModernStack from '../public/images/product/image-modern-stack.png';
-import ImagePlugins from '../public/images/product/image-plugins.svg';
-import ImageModernDev from '../public/images/product/image-modern-dev.png';
-import ImageHero from '../public/images/product/image-db-import-hero.png';
+
+import ImageHero from '../public/images/product/image-jovu-hero.svg';
+import IconDev from '../public/images/icons/icon-development.svg';
+import IconDeploy from '../public/images/icons/icon-deploy.svg';
+import IconCloud from '../public/images/icons/icon-cloud.svg';
+
+import ImageDescribe from '../public/images/product/image-jovu-describe.svg';
+import ImageExtend from '../public/images/product/image-jovu-extend.svg';
+import ImageOwn from '../public/images/product/image-jovu-own.png';
+import ImageDeploy from '../public/images/product/image-jovu-deploy.svg';
 
 
 import StartNow from '../components/Sections/Enterprise/StartNow';
@@ -22,21 +24,21 @@ import TestimonialsSlider from '../components/Sections/Enterprise/Testimonials/t
 
 const cards = [
   {
-    title: 'Quick transition',
+    title: 'Accelerate development',
     subTitle:
-      "Significantly cut down on development time, focus on innovation and enhancement rather than starting from scratch.",
-    icon: IconRapid,
+      "Transition from concept to deployment in minutes with production-ready code that’s built to scale.",
+    icon: IconDev,
   },
   {
-    title: 'Seamless integration',
+    title: 'Build with standards and best practices',
     subTitle:
-      "Maintain the integrity of your existing database structure, move to modern application architecture without disruption.",
-    icon: IconEvolution,
+      "Amplication’s AI delivers more than prototypes- get fully operational, robust backend services ready to go live.",
+    icon: IconCloud,
   },
   {
-    title: 'Improved efficiency',
-    subTitle: "Eliminate the need for extensive resources investment in rebuilding your database for new applications and reduce overall project costs.",
-    icon: IconFreedom,
+    title: 'Boost efficiency and velocity',
+    subTitle: "Streamline development workflows, reduce time, and optimize your resources. Do more with what you have with the power of AI.",
+    icon: IconDeploy,
   },
 
 ];
@@ -44,59 +46,59 @@ const cards = [
 const features = [
 
   {
-    title: 'Quick import',
-    image: ImageImport,
+    title: 'Describe your service',
+    image: ImageDescribe,
     secondaryBtn: {
       title: 'Learn More',
       href: 'https://docs.amplication.com/',
     },
     primaryBtn: undefined,
     content:
-      "Import your existing database schema directly into Amplication, without compromising on data integrity."
+      "Input your requirements and watch Jovu translate them into ready-to-use code components. Production-ready data models, APIs, authentication, authorization, event-driven architecture and everything else that is needed to get your service up and running."
   },
   {
-    title: 'Modern stack',
-    image: ImageModernStack,
+    title: 'Customize, extend, integrate',
+    image: ImageExtend,
     primaryBtn: {
       title: 'Book a Demo',
       href: process.env.NEXT_PUBLIC_BOOK_MEETING_URL,
     },
     secondaryBtn: undefined,
     content:
-      "Build modern services and APIs on top of your database in minutes."
+      "Add architecture components, integrations and extend with Amplication plugins. Jovu will provide smart recommendations to ensure you have scalable, reliable foundations for modern applications."
   },
   {
-    title: 'Seamless transition',
-    image: ImagePlugins,
+    title: 'Generate and own your code',
+    image: ImageOwn,
     secondaryBtn: {
       title: 'Try Free',
       href: 'https://app.amplication.com/',
     },
     primaryBtn: undefined,
     content:
-      "Maintain your existing database while transitioning to a modern application architecture."
+      "Get all the code directly to you git repositories. Freely evolve and tailor the generated code to your unique business needs. Jovu keeps you in control."
   },
   {
-    title: 'No redundancy',
-    image: ImageModernDev,
+    title: 'Deploy with confidence',
+    image: ImageDeploy,
     primaryBtn: {
       title: 'Book a Demo',
       href: process.env.NEXT_PUBLIC_BOOK_MEETING_URL,
     },
     secondaryBtn: undefined,
     content:
-      'Avoid the redundancy of recreating your database schema.',
+      'From innovation to implementation, in 4 minutes. Jovu gets you AI-generated, production-ready, consistent, high-quality, predictable, validated .NET or Node.js code.From innovation to implementation, in 4 minutes. Jovu gets you AI-generated, production-ready, consistent, high-quality, predictable, validated .NET or Node.js code.',
   },
 
 
 ]
 
-const ImportDBPage = () => {
+const JovuPage = () => {
   return (
     <>
       <NextSeo
-        title="Accelerate Your Modernization Journey with Amplication DB Schema Import | Amplication"
-        description="Streamline your transition to a modern, scalable application architecture."
+        title="Generate production-ready code with Amplication AI | Amplication"
+        description="Effortlessly build new services, extend your existing applications with Amplication AI. Go from idea to production in four minutes."
       />
 
       <main
@@ -107,20 +109,19 @@ const ImportDBPage = () => {
           <PageHero
             title={
               <>
-                Build Modern APIs{' '}
-                on Top of Your Existing Database in Minutes
+                <span className="text-purple-bright">Jovu:</span> The Only Production-ready AI-powered Code Generation
               </>
             }
             subTitle={''}
             subText={
-              'Streamline your transition to a modern, scalable application architecture.'
+              'Effortlessly build new services, extend your existing applications with Amplication AI. Go from idea to production in four minutes.'
             }
             mainButton={{
               text: 'Book a Demo',
               href: process.env.NEXT_PUBLIC_BOOK_MEETING_URL,
               eventName: 'bookDemoClicked',
               eventParams: {
-                buttonLocation: 'hero-import-db',
+                buttonLocation: 'hero-jovu',
               },
             }}
             secondaryButton={{
@@ -128,7 +129,7 @@ const ImportDBPage = () => {
               href: 'https://app.amplication.com/login',
               eventName: 'startNowClicked',
               eventParams: {
-                buttonLocation: 'hero-import-db',
+                buttonLocation: 'hero-jovu',
               },
             }}
             imageNode={
@@ -141,11 +142,11 @@ const ImportDBPage = () => {
         </PageSection>
         <PageSection>
           <h2 className="my-12 mx-auto text-[32px] !font-semibold leading-[48px] tracking-normal text-center max-w-[960px]">
-            Modernize your legacy systems without the hassle of remapping your entire database
+            AI-powered assistant that generates production-ready code, ensuring consistency, predictability, and adherence to the highest standards.
           </h2>
           <CardsList
             cards={cards}
-            customClasses={'tablet:!grid-cols-3'}
+            customClasses={'tablet:!grid-cols-1 laptop:!grid-cols-3'}
           />
           <div className="p-4">
             {features.map((feature, i) =>
@@ -169,23 +170,20 @@ const ImportDBPage = () => {
         </PageSection>
         <PageSection alternate>
           <StartNow
-            title="Modernize Your Business"
-            description="Designed for businesses looking to upgrade their legacy systems to modern, scalable applications"
+            title="Build faster, with no limits"
+            description="Try Amplication Enterprise today and unlock the power of fast development cycles."
             linkPrimary={{
               href: process.env.NEXT_PUBLIC_BOOK_MEETING_URL,
-              title: 'Book a Demo',
+              title: 'Talk to Expert',
             }}
-            linkSecondary={{
-              href: 'https://app.amplication.com/login',
-              title: 'Try Free',
-            }}
+
           />
         </PageSection>
       </main >
     </>
   );
 };
-ImportDBPage.getLayout = function getLayout(page) {
+JovuPage.getLayout = function getLayout(page) {
   return (
     <MainLayout
       hideFooterBanner={true}
@@ -195,4 +193,4 @@ ImportDBPage.getLayout = function getLayout(page) {
     </MainLayout>
   );
 };
-export default ImportDBPage;
+export default JovuPage;

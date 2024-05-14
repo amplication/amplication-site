@@ -21,21 +21,23 @@ const ApplicationModernization = () => {
         canonical={helpers.getCanonical('enterprise')}
       />
 
-      <main className="w-full font-poppins z-10 !mb-0 laptop:mb-[100px] amplication-base">
-        <Hero />
-        <PageSection alternate className={'py-5 laptop:py-12 '} innerClassName={"flex-grow"}>
-          <Slider />
-        </PageSection>
+      <main className="w-full font-poppins z-10 !mb-0 laptop:mb-[100px] ">
+        <div className=' amplication-base'>
+          <Hero />
+          <PageSection alternate className={'py-5 laptop:py-12 '} innerClassName={"flex-grow"}>
+            <Slider />
+          </PageSection>
 
-        <PageSection  >
-          <Values />
-        </PageSection>
-        <PageSection alternate>
-          <Values2 />
-        </PageSection>
-        <PageSection  >
-          <HowItWorks />
-        </PageSection>
+          <PageSection  >
+            <Values />
+          </PageSection>
+          <PageSection alternate>
+            <Values2 />
+          </PageSection>
+          <PageSection  >
+            <HowItWorks />
+          </PageSection>
+        </div>
         <PageSection alternate className={"!py-20"} >
           <GetList />
         </PageSection>

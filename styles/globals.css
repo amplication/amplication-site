@@ -186,7 +186,7 @@
   }
 
   .blog-content pre code.hljs {
-    @apply bg-purple-light my-8;
+    @apply bg-dark-black-80 my-8;
   }
 
   .no-scrollbar {

@@ -12,7 +12,7 @@ const Blog = ({ posts, tags }) => {
     <>
       <NextSeo
         title="Blog: Node.js Insights for Developers & Enterprises | Amplication"
-        description="Boost your knowledge and step up your game with top stories on backend development, Node.js and open-source from the Amplication team."
+        description="Boost your knowledge and step up your game with top stories on backend development, Node.js, .NET, and open-source from the Amplication team."
       />
 
       <main className="w-full font-poppins z-10 mb-12 laptop:mb-[100px] laptop:pt-10">

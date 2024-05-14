@@ -18,7 +18,7 @@ const PluginsPanel = ({ plugins }) => {
                 return (
                   <div
                     key={plugin.pluginId}
-                    className="flex flex-row justify-center items-center whitespace-nowrap  border border-solid border-dark-black-70 bg-purple-light    rounded-lg p-2 px-3  m-2 font-normal "
+                    className="flex flex-row justify-center items-center whitespace-nowrap  border border-solid border-dark-black-70 bg-dark-black-80    rounded-lg p-2 px-3  m-2 font-normal "
                   >
                     <PluginLogo plugin={plugin} />
                     <span className="text-gray text-sm">{plugin.name}</span>
@@ -29,7 +29,7 @@ const PluginsPanel = ({ plugins }) => {
                 return (
                   <div
                     key={plugin.pluginId}
-                    className="flex flex-row justify-center items-center whitespace-nowrap  border border-solid border-dark-black-70 bg-purple-light    rounded-lg p-2 px-3  m-2 font-normal "
+                    className="flex flex-row justify-center items-center whitespace-nowrap  border border-solid border-dark-black-70 bg-dark-black-80    rounded-lg p-2 px-3  m-2 font-normal "
                   >
                     <PluginLogo plugin={plugin} />
                     <span className="text-gray text-sm">{plugin.name}</span>

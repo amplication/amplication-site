@@ -50,10 +50,9 @@ function Amplication({ Component, pageProps }) {
       require('lity/dist/lity.min.js');
       require('lity/dist/lity.min.css');
       require('../public/styles/vars.css');
+      require('../public/styles/style.css');
       if (isBlogPage) {
         require('../public/styles/blog.css');
-      } else {
-        require('../public/styles/style.css');
       }
     }
   }, [isBlogPage, isDevPage]);

@@ -98,6 +98,7 @@ module.exports = {
       borderColor: {
         'dark-black-70': '#373D57',
         'light-turquoise': '#41CADD',
+        'dark-black-80': '#2C3249',
         lite: '#444B66',
         footer: '#fff3',
         purple: '#8D64FF',
@@ -124,8 +125,9 @@ module.exports = {
       },
       colors: {
         'light-blue': '#22273C',
+        'dark-black-80': '#2C3249',
         'dark-black-70': '#373D57',
-        'dark-black-70': '#444B66',
+        'dark-black-60': '#444B66',
         'dark-black-surface': '#1F2336',
         'dark-black-100': '#15192C',
         'blue-dark': '#090979',
@@ -133,7 +135,6 @@ module.exports = {
         'secondary-purple': '#A787FF',
         'purple-dark': '#15192C',
         'purple-bright': '#7950ED',
-        'purple-light': '#2C3249',
         'purple-bright-hover': '#AA8BFF',
         pink: '#F85B6E',
         turquoise: '#48D4E9',

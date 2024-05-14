@@ -254,7 +254,7 @@ const InnerMenuItem = ({ item, onMenuItemClick, isMobileMenu }) => {
         className={`nav-link-inner ${asPath === item.url ? 'active' : ''} `}
       >
         <div className="flex flex-row items-center justify-start gap-3 ">
-          <div className="w-[32px] h-[32px] min-w-[32px] flex items-center justify-center bg-dark-black-70 !rounded">
+          <div className="w-[32px] h-[32px] min-w-[32px] flex items-center justify-center bg-dark-black-60 !rounded">
             <Image
               className=""
               width={32}

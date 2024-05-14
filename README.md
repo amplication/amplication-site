@@ -8,7 +8,7 @@
 </h1>
 
 <p align="center">
-  <i align="center">Instantly generate production-ready Node.js backend apps 🚀</i>
+  <i align="center">Instantly generate production-ready .NET and Node.js backend apps 🚀</i>
 </p>
 
 <h4 align="center">
@@ -39,13 +39,13 @@
 
 ## Introduction
 
-`Amplication` is a robust, open-source development platform crafted to revolutionize the creation of scalable and secure Node.js applications. We eliminate repetitive coding tasks and deliver production-ready infrastructure code, meticulously tailored to your specifications and adhering to industry best practices.
+`Amplication` is a robust, open-source development platform crafted to revolutionize the creation of scalable and secure .NET and Node.js applications. We eliminate repetitive coding tasks and deliver production-ready infrastructure code, meticulously tailored to your specifications and adhering to industry best practices.
 
 Our user-friendly interface fosters seamless integration of APIs, data models, databases, authentication, and authorization. Built on a flexible, plugin-based architecture, Amplication allows effortless customization of the code and offers a diverse range of integrations.
 
 With a strong focus on collaboration, Amplication streamlines team-oriented development, making it an ideal choice for groups of all sizes, from startups to large enterprises. Our platform enables you to concentrate on your business logic, while we handle the heavy lifting.
 
-Experience the fastest way to develop Node.js applications with Amplication.
+Experience the fastest way to develop .NET and Node.js applications with Amplication.
 
 ## Getting Started
 

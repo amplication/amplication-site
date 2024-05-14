@@ -14,108 +14,90 @@ import Feature12 from '../../../../public/images/features/feature-icon-12.svg';
 
 const items = [
   {
+    image: Feature12,
+    title: 'AI-powered generation',
+    content: 'Generate models, APIs, and configuration using the power of AI',
+  },
+  {
     image: Feature1,
-    link: '/features#open-source',
     title: 'Production-ready APIs',
     content: 'Full featured GraphQL and REST APIs',
   },
   {
     image: Feature2,
-    link: '/features#custom-code',
     title: 'Data model',
     content: 'Simple definition of entities & database schema',
   },
   {
     image: Feature3,
-    link: '/features#sync-with-github',
     title: 'Role-Based access control',
     content: 'Automatically generated identity & permission models',
   },
   {
     image: Feature4,
-    link: '/features#version-control',
     title: 'Microservices support',
     content: 'Any architecture, synchronous or asynchronous communication',
   },
   {
     image: Feature5,
-    link: '/features#custom-code',
     title: 'Continuous Git sync',
-    content: 'Automated sync with private or public GitHub repos',
+    content: 'Automated sync with any Git provider',
   },
   {
     image: Feature6,
-    link: '/features#code-generation',
-    title: 'TypeScript & Node.js source code',
-    content:
-      'Automatically generated human-readable and human-editable Node.js code',
+    title: 'Full ownership of source code',
+    content: 'Human-readable and human-editable .NET & Node.js code',
   },
   {
     image: Feature7,
-    link: '/features#deployment',
     title: 'Plugin system',
     content: 'Use community-built plugins or create your own',
   },
   {
     image: Feature8,
-    link: '/features#identity-permissions',
     title: 'Monorepo or polyrepo',
     content: 'Use Amplication with a monorepo, polyrepo, or both',
   },
   {
     image: Feature9,
-    link: '/features#admin-ui',
     title: 'Custom code',
     content: 'Easy customization & modification of generated code',
   },
   {
     image: Feature10,
-    link: '/features#identity-permissions',
     title: 'Ready to deploy app',
     content:
       'Generate Docker container or use plugins to connect to CI/CD tools & cloud providers',
   },
   {
     image: Feature11,
-    link: '/features#deployment',
     title: 'Admin UI',
     content:
       'Automatically generated React Admin UI to create & edit your data models',
-  },
-  {
-    image: Feature12,
-    link: '/features#cli',
-    title: 'Amplication console & CLI',
-    content:
-      'Fast app generation using Amplication console or Command Line Interface (CLI)',
   },
 ];
 const GetList = () => {
   return (
     <>
-      <div className="mb-6 large:mb-11">
-        <h2 className="roadmap-heading m-0">
-          What do you get from Amplication?
-        </h2>
-      </div>
-      <div className="features">
-        <div
-          className="d-flex flex-wrap justify-content-between align-items-start !w-auto !max-w-none"
-          id="features"
-        >
+      <h2 className="w-full mx-auto text-[32px] !font-semibold leading-[48px] tracking-normal text-center tablet:text-left">
+        What do you get from Amplication?
+      </h2>
+      <div>
+        <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-4  gap-8 items-start !w-auto !max-w-none pt-6">
           {items.map((item, index) => {
             return (
-              <div className="feature-card flex !text-left" key={index}>
-                <div className="flex min-w-[60px] max-w-[60px]">
-                  <Image src={item.image} alt={'open source'} />
+              <div
+                className="flex flex-col text-center tablet:text-left gap-2 items-center tablet:items-start "
+                key={index}
+              >
+                <div className="flex min-w-[60px] max-w-[60px] justify-center">
+                  <Image src={item.image} alt={item.title} />
                 </div>
-                <div className="flex-auto">
-                  <div className="feature-card-text text-lg text-white leading-[25px] !font-semibold !max-w-full !mt-[.75rem] pb-2">
-                    {item.title}
-                  </div>
-                  <div className="feature-card-content text-sm text-white font-regular max-w-[282px]">
-                    {item.content}
-                  </div>
+                <div className=" text-lg text-white leading-[25px] !font-semibold !max-w-full ">
+                  {item.title}
+                </div>
+                <div className=" text-sm text-white font-regular">
+                  {item.content}
                 </div>
               </div>
             );

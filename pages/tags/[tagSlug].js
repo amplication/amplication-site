@@ -16,7 +16,7 @@ const TagsPage = (props) => {
       <NextSeo
         title={title}
         description="Amplication is an open-source development tool. It helps you develop
-          quality Node.js applications without spending time on repetitive
+          quality .NET and Node.js applications without spending time on repetitive
           coding tasks."
         canonical={helpers.getCanonical('blog')} //override default canonical
       />

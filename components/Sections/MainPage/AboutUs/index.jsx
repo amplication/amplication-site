@@ -24,11 +24,11 @@ const AboutUs = () => {
                   we do
                 </div>
                 <div className={'text-base text-white'}>
-                  Our vision is to create one platform for Node.js app
-                  development that will empower professional developers in
-                  creating business applications and extend platform
-                  capabilities, with the open-source community&apos;s power of
-                  collaboration & transparency.
+                  Our vision is to create one platform for backend development
+                  that will empower professional developers in creating business
+                  applications and extend platform capabilities, with the
+                  open-source community&apos;s power of collaboration &
+                  transparency.
                 </div>
               </div>
             </div>

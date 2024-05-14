@@ -45,7 +45,7 @@ const StartNow = () => {
 
           <Button
             text={'Book a demo'}
-            className="outline-button !text-sm !h-10 mr-2 w-full max-w-[104px] !px-0 !h-[34px] !font-normal !bg-light-blue hover:!bg-dark-black-70"
+            className="outline-button !text-sm !h-10 mr-2 w-full max-w-[104px] !px-0 !h-[34px] !font-normal !bg-light-blue hover:!bg-dark-black-60"
             isLink={true}
             href={process.env.NEXT_PUBLIC_BOOK_MEETING_URL}
             onClick={handleBookDemoClick}

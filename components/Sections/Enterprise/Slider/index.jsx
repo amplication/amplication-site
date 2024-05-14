@@ -11,29 +11,29 @@ import PropTypes from 'prop-types';
 const Slider = ({ classes }) => {
   return (
     <>
-      <h2 className="text-2xl font-bold tablet:text-center">
+      <h2 className="text-2xl font-bold text-center">
         Empowering developers from leading companies
       </h2>
-      <div className="logotypes mt-6 flex flex-wrap align-items-center">
-        <div className="flex justify-content-center w-[25%] tablet:w-[20%] laptop:w-[14.2857%]">
+      <div className="mt-6 flex flex-wrap items-center justify-evenly">
+        <div className="flex justify-center w-[25%] tablet:w-[20%] laptop:w-[14.2857%]">
           <Image src={Logo1} alt="pull request" />
         </div>
-        <div className="flex justify-content-center w-[25%] tablet:w-[20%] laptop:w-[14.2857%]">
+        <div className="flex justify-center w-[25%] tablet:w-[20%] laptop:w-[14.2857%]">
           <Image src={Logo2} alt="pull request" />
         </div>
-        <div className="flex justify-content-center w-[25%] tablet:w-[20%] laptop:w-[14.2857%]">
+        <div className="flex justify-center w-[25%] tablet:w-[20%] laptop:w-[14.2857%]">
           <Image src={Logo3} alt="pull request" />
         </div>
-        <div className="flex justify-content-center w-[25%] tablet:w-[20%] laptop:w-[14.2857%]">
+        <div className="flex justify-center w-[25%] tablet:w-[20%] laptop:w-[14.2857%]">
           <Image src={Logo4} alt="pull request" />
         </div>
-        <div className="flex justify-content-center w-[25%] tablet:w-[20%] laptop:w-[14.2857%]">
+        <div className="flex justify-center w-[25%] tablet:w-[20%] laptop:w-[14.2857%]">
           <Image src={Logo5} alt="pull request" />
         </div>
-        <div className="flex justify-content-center w-[25%] tablet:w-[20%] laptop:w-[14.2857%]">
+        <div className="flex justify-center w-[25%] tablet:w-[20%] laptop:w-[14.2857%]">
           <Image src={Logo6} alt="pull request" />
         </div>
-        <div className="flex justify-content-center w-[25%] tablet:w-[20%] laptop:w-[14.2857%]">
+        <div className="flex justify-center w-[25%] tablet:w-[20%] laptop:w-[14.2857%]">
           <Image src={Logo7} alt="pull request" />
         </div>
       </div>

@@ -3,6 +3,9 @@ import { useCallback } from 'react';
 import * as analytics from '../../../lib/analytics';
 import OutlineButton from '../../Common/Button/button-outline';
 import PrimaryButton from '../../Common/Button/button-primary';
+import Image from 'next/image';
+import nodejs from '../../../public/images/icons/nodejs.svg';
+import dotnet from '../../../public/images/icons/dotnet.svg';
 
 const PageHero = ({
   title,
@@ -11,6 +14,7 @@ const PageHero = ({
   mainButton,
   secondaryButton,
   imageNode,
+  showTechStack = false,
 }) => {
   const handleMainClick = useCallback(() => {
     analytics.event({
@@ -27,8 +31,8 @@ const PageHero = ({
   }, [secondaryButton]);
   return (
     <>
-      <div className="relative w-full flex flex-col laptop:flex-row items-center  justify-between  laptop:h-[calc(100vh-90px)] text-center min-h-[600px] gap-8">
-        <div className="laptop:!max-w-[50%]">
+      <div className="relative w-full flex flex-col laptop:flex-row items-center  justify-between  laptop:h-[calc(100vh-90px)] max-h-[1000px] text-center min-h-[600px] gap-8">
+        <div className="laptop:!max-w-[45%]">
           <div className=" flex flex-col gap-2 text-center laptop:text-left mt-12 laptop:mt-0 max-w-[500px] laptop:max-w-[none]">
             <h1 className="text-4xl desktop:text-5xl font-bold ">{title}</h1>
             <h2 className="text-2xl desktop:text-3xl  font-semibold">
@@ -38,7 +42,7 @@ const PageHero = ({
               {subText}
             </div>
           </div>
-          <div className="flex items-center justify-center laptop:justify-start tablet:items-center mt-4 gap-4">
+          <div className="flex items-center justify-center laptop:justify-start tablet:items-center mt-6 gap-4">
             {mainButton && (
               <PrimaryButton
                 text={mainButton.text}
@@ -58,8 +62,20 @@ const PageHero = ({
               />
             )}
           </div>
+          {showTechStack && (
+            <div className="flex items-center justify-center laptop:justify-start tablet:items-center mt-4 gap-4">
+              <span className="text-lg font-bold">Supported Technologies:</span>
+
+              <div>
+                <Image src={dotnet} alt={'.NET'} />
+              </div>
+              <div>
+                <Image src={nodejs} alt={'Node.js'} />
+              </div>
+            </div>
+          )}
         </div>
-        <div className="relative flex items-center max-w-[600px] mb-8 w-full laptop:min-h-[600px] laptop:!max-w-[46%] laptop:mb-0 ">
+        <div className="relative flex items-center max-w-[600px] mb-8 w-full laptop:min-h-[600px] laptop:!max-w-[51%] laptop:mb-0 ">
           <div className="">{imageNode}</div>
         </div>
       </div>
@@ -84,6 +100,7 @@ PageHero.propTypes = {
     eventParams: PropTypes.object,
   }),
   imageNode: PropTypes.node,
+  showTechStack: PropTypes.bool,
 };
 
 export default PageHero;

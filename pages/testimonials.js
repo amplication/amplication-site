@@ -11,7 +11,7 @@ const Testimonials = () => {
     <>
       <NextSeo
         title="Testimonials: Flexible Backend Development Platform | Amplication"
-        description="Read why users love Amplication. We're changing the game for Node.js app backend development. We provide open source plans as well as enterprise plans."
+        description="Read why users love Amplication. We're changing the game for .NET and Node.js app backend development. We provide open source plans as well as enterprise plans."
       />
 
       <main className="w-full font-poppins z-10 mb-12 laptop:mb-[100px] amplication-base">

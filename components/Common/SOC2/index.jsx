@@ -10,14 +10,16 @@ const Soc2Banner = ({ title, subTitle }) => {
     'Amplication is SOC-2 certified. We meet the highest standards for data security, availability, processing, integrity, confidentiality, and privacy.';
 
   return (
-    <div className="d-flex align-items-center py-3 max-medium:flex-col max-medium:text-center">
-      <div className="max-medium:pb-8">
-        <h2 className="roadmap-heading m-0 pt-1">{title || defaultTitle}</h2>
+    <div className="flex items-center py-12 flex-col text-center justify-around desktop:flex-row desktop:text-left gap-12">
+      <div className=" max-w-[800px]">
+        <h2 className="mx-auto text-3xl !font-semibold ">
+          {title || defaultTitle}
+        </h2>
         <div>{subTitle || defaultSubTitle}</div>
       </div>
-      <div className="ml-auto w-full large:max-w-[35%] d-flex justify-center align-items-center">
+      <div className=" flex justify-center items-center">
         <Image src={soc2Logo} alt={'SOC2 Logo'} />
-        <div className="text-center d-flex align-items-center flex-column pl-4">
+        <div className="text-center flex items-center flex-col pl-4">
           <span className="text-[32px] !font-semibold leading-[48px] whitespace-nowrap">
             SOC 2 Type II
           </span>

@@ -5,33 +5,24 @@ import videoSrc from '../../../../public/animation/amplication-how-to.mp4';
 import PageHero from '../../../Common/PageHero';
 
 const HeroBlock = () => {
-  const handleStartNowClick = useCallback(() => {
-    analytics.event({
-      action: 'startNowClicked',
-      params: {
-        buttonLocation: 'hero',
-      },
-    });
-  }, []);
-
-  const handleBookDemoClick = useCallback(() => {
-    analytics.event({
-      action: 'bookDemoClicked',
-      params: {
-        buttonLocation: 'hero',
-      },
-    });
-  }, []);
   return (
     <>
       <PageHero
-        title={<>The Fastest Way in the World to Build Backend Services.</>}
+        showTechStack={true}
+        title={
+          <div className="max-w-[480px] desktop:max-w-[680px]">
+            <span className="text-purple-bright">
+              World&apos;s Fastest Way to
+            </span>{' '}
+            Build Backend services
+          </div>
+        }
         subTitle={null}
         subText={
           <>
-            Automatically generate backend services with full ownership, no
-            vendor lock&#8209;in, and no blackboxing. Fully customizable and
-            production-ready.
+            Take control with our AI-powered platform and generate customizable,
+            production-ready backend services. No vendor lock-ins, no black
+            boxes, complete ownership.
           </>
         }
         mainButton={{

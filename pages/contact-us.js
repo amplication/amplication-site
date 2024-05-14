@@ -90,7 +90,7 @@ const ContactUs = () => {
     <>
       <NextSeo
         title="Node.js App Development: Open Source Platform | Amplication"
-        description="Amplication is the most flexible open-source platform for Node.js app development.
+        description="Amplication is the most flexible open-source platform for .NET and Node.js app development.
         We enable developers to auto-generate production-ready backend in minutes. Design modelsand roles,
          deploy your app, connect with REST or GraphQL API, sync with GitHub. You own the code."
         openGraph={{
@@ -133,7 +133,7 @@ const ContactUs = () => {
                         Continuously sync the generated code to your GitHub repo
                       </li>
                       <li>Create microservices or monolithic architecture</li>
-                      <li>Create a production-ready Node.js application</li>
+                      <li>Create a production-ready .NET and Node.js application</li>
                     </ul>
                   </div>
                 </div>
@@ -165,7 +165,7 @@ const ContactUs = () => {
                             htmlFor="radio-1"
                             className={
                               (radioValue === 'radio-1'
-                                ? 'bg-dark-black-70 border border-solid border-lite shadow-radio '
+                                ? 'bg-dark-black-60 border border-solid border-lite shadow-radio '
                                 : '') +
                               '!flex cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full p-2 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue select-none'
                             }
@@ -188,7 +188,7 @@ const ContactUs = () => {
                             htmlFor="radio-2"
                             className={
                               (radioValue === 'radio-2'
-                                ? 'bg-dark-black-70 border border-solid border-lite shadow-radio '
+                                ? 'bg-dark-black-60 border border-solid border-lite shadow-radio '
                                 : '') +
                               '!flex cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full p-2 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue select-none'
                             }
@@ -211,7 +211,7 @@ const ContactUs = () => {
                             htmlFor="radio-3"
                             className={
                               (radioValue === 'radio-3'
-                                ? 'bg-dark-black-70 border border-solid border-lite shadow-radio '
+                                ? 'bg-dark-black-60 border border-solid border-lite shadow-radio '
                                 : '') +
                               '!flex cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full p-2 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue select-none'
                             }
@@ -234,7 +234,7 @@ const ContactUs = () => {
                             htmlFor="radio-4"
                             className={
                               (radioValue === 'radio-4'
-                                ? 'bg-dark-black-70 border border-solid border-lite shadow-radio '
+                                ? 'bg-dark-black-60 border border-solid border-lite shadow-radio '
                                 : '') +
                               '!flex cursor-pointer h-[calc(100%-16px)] align-items-center justify-center w-full p-2 text-center mt-2 text-sm leading-[22px] text-gray border rounded border-solid border-dark-black-70 bg-light-blue select-none'
                             }
