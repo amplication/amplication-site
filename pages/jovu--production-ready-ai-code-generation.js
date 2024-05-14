@@ -33,12 +33,12 @@ const cards = [
     title: 'Build with standards and best practices',
     subTitle:
       "Amplication’s AI delivers more than prototypes- get fully operational, robust backend services ready to go live.",
-    icon: IconDeploy,
+    icon: IconCloud,
   },
   {
     title: 'Boost efficiency and velocity',
     subTitle: "Streamline development workflows, reduce time, and optimize your resources. Do more with what you have with the power of AI.",
-    icon: IconCloud,
+    icon: IconDeploy,
   },
 
 ];
@@ -57,7 +57,7 @@ const features = [
       "Input your requirements and watch Jovu translate them into ready-to-use code components. Production-ready data models, APIs, authentication, authorization, event-driven architecture and everything else that is needed to get your service up and running."
   },
   {
-    title: 'Extend and customize with plugins',
+    title: 'Customize, extend, integrate',
     image: ImageExtend,
     primaryBtn: {
       title: 'Book a Demo',
@@ -65,7 +65,7 @@ const features = [
     },
     secondaryBtn: undefined,
     content:
-      "Amplication’s AI delivers more than prototypes- get fully operational, robust backend services ready to go live."
+      "Add architecture components, integrations and extend with Amplication plugins. Jovu will provide smart recommendations to ensure you have scalable, reliable foundations for modern applications."
   },
   {
     title: 'Generate and own your code',
@@ -87,7 +87,7 @@ const features = [
     },
     secondaryBtn: undefined,
     content:
-      'From innovation to implementation, in 4 minutes. Jovu gets you AI-generated, production-ready, consistent, high-quality, predictable, validated .NET or Node.js code.',
+      'From innovation to implementation, in 4 minutes. Jovu gets you AI-generated, production-ready, consistent, high-quality, predictable, validated .NET or Node.js code.From innovation to implementation, in 4 minutes. Jovu gets you AI-generated, production-ready, consistent, high-quality, predictable, validated .NET or Node.js code.',
   },
 
 
@@ -159,7 +159,7 @@ const JovuPage = () => {
                 primaryBtn={feature.primaryBtn}
                 secondaryBtn={feature.secondaryBtn}
                 customClasses={feature.customClasses}
-                alternate={i % 2 !== 1}
+                alternate={i % 2 === 1}
               />
             )
             )}

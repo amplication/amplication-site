@@ -43,7 +43,7 @@ const features = [
     title: 'Freely modify and evolve the generated code',
     image: ImageGitProviders,
     secondaryBtn: {
-      title: 'Tall with an expert',
+      title: 'Talk to Expert',
       href: process.env.NEXT_PUBLIC_BOOK_MEETING_URL,
     },
     primaryBtn: undefined,

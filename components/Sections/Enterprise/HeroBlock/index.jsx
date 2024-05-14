@@ -20,9 +20,9 @@ const HeroBlock = () => {
         subTitle={null}
         subText={
           <>
-            Our AI-powered platform leaves you in the driver&apos;s seat.
-            Generate production-ready backend services with full ownership. No
-            vendor lock-ins, no blackboxing and fully customizable.
+            Take control with our AI-powered platform and generate customizable,
+            production-ready backend services. No vendor lock-ins, no black
+            boxes, complete ownership.
           </>
         }
         mainButton={{
