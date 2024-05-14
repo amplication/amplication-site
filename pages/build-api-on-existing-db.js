@@ -10,7 +10,7 @@ import WidePanelWithImage from '../components/Common/WidePanelWithImage';
 
 import ImageImport from '../public/images/product/image-import.png';
 import ImageModernStack from '../public/images/product/image-modern-stack.png';
-import ImagePlugins from '../public/images/product/image-plugins.png';
+import ImagePlugins from '../public/images/product/image-plugins.svg';
 import ImageModernDev from '../public/images/product/image-modern-dev.png';
 import ImageHero from '../public/images/product/image-db-import-hero.png';
 

@@ -16,7 +16,7 @@ import ImageCode from '../public/images/product/image-code.png';
 import ImageFullCode from '../public/images/product/image-full-code.png';
 import ImageForDevelopers from '../public/images/product/image-for-developers.png';
 import ImageIntegration from '../public/images/product/image-integration.png';
-import ImagePlugins from '../public/images/product/image-plugins.png';
+import ImagePlugins from '../public/images/product/image-plugins.svg';
 
 import StartNow from '../components/Sections/Enterprise/StartNow';
 import TestimonialsSlider from '../components/Sections/Enterprise/Testimonials/testimonials-slider';
