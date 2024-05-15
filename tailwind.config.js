@@ -180,8 +180,10 @@ module.exports = {
         'reward-success': "url('/images/hacktoberfest/reward-success.svg')",
         'app-modernization': "url('/images/bg/bg-app-modernization.jpg')",
         //'panel-gradient': "linear-gradient(180deg, rgba(121, 80, 237, 0.52)  0%, #25223C 100%)"
-        'panel-gradient': "linear-gradient(180deg, #7950ED 0%, rgba(83, 42, 198, 0.52) 100%);"
+        'panel-gradient': "linear-gradient(180deg, #7950ED 0%, rgba(83, 42, 198, 0.52) 100%);",
         //'panel-gradient': "linear-gradient(180deg, #7950ED 0%, rgba(167, 135, 255, 0.52) 100%)"
+        'jovu-gradient': "linear-gradient(45deg,#6c37ff,#23c4da)"
+
 
       },
     },
