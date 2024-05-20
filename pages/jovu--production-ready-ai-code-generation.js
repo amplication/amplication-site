@@ -50,7 +50,7 @@ const features = [
     image: ImageDescribe,
     secondaryBtn: {
       title: 'Learn More',
-      href: 'https://docs.amplication.com/',
+      href: 'https://docs.amplication.com/amplication-ai/',
     },
     primaryBtn: undefined,
     content:
