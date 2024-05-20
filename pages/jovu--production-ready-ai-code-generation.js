@@ -179,6 +179,13 @@ const JovuPage = () => {
 
           />
         </PageSection>
+        <PageSection className={'py-5 laptop:py-12 '}  >
+          <div className="flex justify-center">
+            <a href="https://theresanaiforthat.com/ai/jovu/?ref=featured&v=1491061" target="_blank" rel="nofollow noreferrer">
+              <Image src={'https://media.theresanaiforthat.com/featured3.png'} alt="" width={300} height={61} />
+            </a>
+          </div>
+        </PageSection>
       </main >
     </>
   );
