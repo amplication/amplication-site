@@ -14,7 +14,7 @@ const HeroBlock = () => {
             <span className="text-purple-bright">
               World&apos;s Fastest Way to
             </span>{' '}
-            Build Backend services
+            Build Backend Services
           </div>
         }
         subTitle={null}

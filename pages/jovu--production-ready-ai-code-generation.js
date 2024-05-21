@@ -87,7 +87,7 @@ const features = [
     },
     secondaryBtn: undefined,
     content:
-      'From innovation to implementation, in 4 minutes. Jovu gets you AI-generated, production-ready, consistent, high-quality, predictable, validated .NET or Node.js code.From innovation to implementation, in 4 minutes. Jovu gets you AI-generated, production-ready, consistent, high-quality, predictable, validated .NET or Node.js code.',
+      'From innovation to implementation, in 4 minutes. Jovu gets you AI-generated, production-ready, consistent, high-quality, predictable, validated .NET or Node.js code.',
   },
 
 
