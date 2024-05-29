@@ -109,7 +109,7 @@ const JovuPage = () => {
           <PageHero
             title={
               <>
-                <span className="text-purple-bright">Jovu:</span> The Only Production-ready AI-powered Code Generation
+                <span className="text-purple-bright">Jovu:</span> The Only Production-Ready AI-Powered Code Generation
               </>
             }
             subTitle={''}
