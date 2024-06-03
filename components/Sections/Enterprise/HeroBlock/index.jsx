@@ -11,18 +11,19 @@ const HeroBlock = () => {
         showTechStack={true}
         title={
           <div className="max-w-[480px] desktop:max-w-[680px]">
+            The Only{' '}
             <span className="text-purple-bright">
-              World&apos;s Fastest Way to
+              Production-Ready AI-Powered
             </span>{' '}
-            Build Backend Services
+            Code Generation
           </div>
         }
         subTitle={null}
         subText={
           <>
-            Take control with our AI-powered platform and generate customizable,
-            production-ready backend services. No vendor lock-ins, no black
-            boxes, complete ownership.
+            Build new services, extend existing applications or modernize legacy
+            systems with Amplication AI. Go from idea to production in minutes,
+            with code that is built to scale.
           </>
         }
         mainButton={{
