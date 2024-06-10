@@ -12,9 +12,9 @@ export const PricingPlans = () => {
         },
       });
       window.location.href = 'https://app.amplication.com/login';
-    } else if (plan.id === 'plan-amplication-pro') {
+    } else if (plan.id === 'plan-amplication-essential') {
       analytics.event({
-        action: 'upgradeProClicked',
+        action: 'upgradeEssentialClicked',
         params: {
           buttonLocation: 'website-pricing',
         },

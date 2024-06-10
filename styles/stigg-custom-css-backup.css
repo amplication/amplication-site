@@ -5,6 +5,7 @@ they are saved here for backup.
 
 .stigg-paywall-container {
   --stigg-plan-free-color: #7950ed;
+  --stigg-plan-essential-color: #20a4f3;
   --stigg-plan-enterprise-color: #31c587;
   --stigg-plan-background-color: #22273c;
   --stigg-plan-border-color: #373d57;
@@ -40,6 +41,10 @@ they are saved here for backup.
 
 .stigg-plan-amplication-enterprise {
   border-top: 10px solid var(--stigg-plan-enterprise-color);
+}
+
+.stigg-plan-amplication-essential {
+  border-top: 10px solid var(--stigg-plan-essential-color);
 }
 
 /* Current Plan text */
@@ -191,6 +196,12 @@ they are saved here for backup.
   background: var(--stigg-plan-free-color);
 }
 
+.stigg-plan-amplication-essential
+  .stigg-entitlement-row-container
+  > div:first-child {
+  background: var(--stigg-plan-essential-color);
+}
+
 /* support line item */
 .stigg-entitlement-row-container:last-child {
   margin: 0 -24px;
@@ -239,6 +250,15 @@ they are saved here for backup.
 
 .stigg-plan-amplication-free .stigg-paywall-plan-button:hover {
   background-color: var(--stigg-plan-free-color);
+  opacity: 0.9;
+}
+
+.stigg-plan-amplication-essential .stigg-paywall-plan-button {
+  background-color: var(--stigg-plan-essential-color);
+}
+
+.stigg-plan-amplication-essential .stigg-paywall-plan-button:hover {
+  background-color: var(--stigg-plan-essential-color);
   opacity: 0.9;
 }
 
