@@ -27,7 +27,7 @@ const HeroBlock = () => {
           </>
         }
         mainButton={{
-          text: ' Start Free',
+          text: 'Start Free',
           href: 'https://app.amplication.com',
           eventName: 'startNowClicked',
           eventParams: {
