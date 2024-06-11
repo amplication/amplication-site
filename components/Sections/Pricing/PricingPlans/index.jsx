@@ -45,7 +45,6 @@ export const PricingPlans = () => {
               startNew: 'Start Now',
               upgrade: 'Upgrade Now',
               custom: 'Contact Us',
-              startTrial: (plan) => `Book a Demo`,
             },
             price: {
               free: {
