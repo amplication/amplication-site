@@ -62,12 +62,13 @@ they are saved here for backup.
   font-weight: bold;
 }
 
-.stigg-plan-amplication-free.stigg-current-plan .stigg-plan-header::before {
-  color: var(--stigg-plan-free-color);
+.stigg-plan-amplication-essential.stigg-current-plan
+  .stigg-plan-header::before {
+  color: var(--stigg-plan-essential-color);
 }
 
-.stigg-current-plan .stigg-paywall-plan-button {
-  visibility: hidden;
+.stigg-plan-amplication-free.stigg-current-plan .stigg-plan-header::before {
+  color: var(--stigg-plan-free-color);
 }
 
 /* plan header */
@@ -113,7 +114,7 @@ they are saved here for backup.
   text-align: center;
   color: white;
   font-family: Poppins, sans-serif;
-  height: 130px;
+  min-height: 130px;
   position: relative;
 }
 
@@ -275,7 +276,6 @@ they are saved here for backup.
 .stigg-trial-days-left-text {
   color: var(--stigg-plan-enterprise-color);
 }
-.stigg-plan-amplication-enterprise.stigg-current-plan
-  .stigg-paywall-plan-button {
-  visibility: visible;
+.stigg-plan-amplication-essential .stigg-trial-days-left-text {
+  color: var(--stigg-plan-essential-color);
 }

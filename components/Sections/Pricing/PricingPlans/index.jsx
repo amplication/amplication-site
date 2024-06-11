@@ -19,7 +19,7 @@ export const PricingPlans = () => {
           buttonLocation: 'website-pricing',
         },
       });
-      window.location.href = 'https://app.amplication.com/purchase';
+      window.location.href = `${process.env.NEXT_PUBLIC_PURCHASE_URL}?plan=essential`;
     } else {
       analytics.event({
         action: 'enterpriseContactUsClicked',
