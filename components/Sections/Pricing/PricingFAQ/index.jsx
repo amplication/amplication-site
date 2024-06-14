@@ -51,7 +51,7 @@ const PricingFAQ = () => {
                     Ideal for individual developers working on small-scale
                     applications. This plan includes core features like Node.js
                     support, database integration, roles & permissions, GraphQL
-                    & REST APIs, and unlimited code generation builds. It's
+                    & REST APIs, and unlimited code generation builds. It&apos;s
                     perfect for getting started without any cost.
                   </p>
                 </li>
@@ -122,7 +122,7 @@ const PricingFAQ = () => {
           question="Does Amplication support advanced security features like 2FA, audit logs, and SSO for organizational security concerns?"
           answer={
             <div>
-              Yes, Amplication's Enterprise plan is equipped with advanced
+              Yes, Amplication&apos;s Enterprise plan is equipped with advanced
               security features to meet the needs of your organization. This
               includes support for Single Sign-On (SSO), audit logs, and
               Two-Factor Authentication (2FA).
