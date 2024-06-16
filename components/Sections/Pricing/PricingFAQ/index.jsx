@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
+import Link from 'next/link';
+import * as analytics from '../../../../lib/analytics';
 
 const Question = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,6 +33,15 @@ const Question = ({ question, answer }) => {
 };
 
 const PricingFAQ = () => {
+  const handleBookDemoClick = useCallback(() => {
+    analytics.event({
+      action: 'bookDemoClicked',
+      params: {
+        buttonLocation: 'faq',
+      },
+    });
+  }, []);
+
   return (
     <div className="max-w-[960px] m-auto">
       <h2 className="my-12 mx-auto  text-[32px] !font-semibold leading-[48px] tracking-normal text-center ">
@@ -82,7 +93,20 @@ const PricingFAQ = () => {
                     microservices. This plan is tailored for scalability and
                     integration with lifecycle management tools. For a full
                     breakdown of its capabilities and to get a personalized
-                    quote, contact us directly.
+                    quote,{' '}
+                    <Link
+                      href={process.env.NEXT_PUBLIC_BOOK_MEETING_URL}
+                      passHref={true}
+                    >
+                      <a
+                        onClick={handleBookDemoClick}
+                        className="text-secondary-purple"
+                        target="_blank"
+                      >
+                        contact us directly
+                      </a>
+                    </Link>
+                    .
                   </p>
                 </li>
               </ul>
@@ -97,7 +121,20 @@ const PricingFAQ = () => {
               Free plan is offered for <strong>FREE</strong>. The Essential plan
               is offered in a monthly or annual subscription, for a single or
               multiple projects. Enterprise plan pricing will be tailored to
-              your specific requirements. Contact us to get a quote.
+              your specific requirements.{' '}
+              <Link
+                href={process.env.NEXT_PUBLIC_BOOK_MEETING_URL}
+                passHref={true}
+              >
+                <a
+                  onClick={handleBookDemoClick}
+                  className="text-secondary-purple"
+                  target="_blank"
+                >
+                  Contact us to get a quote
+                </a>
+              </Link>
+              .
             </div>
           }
         />
