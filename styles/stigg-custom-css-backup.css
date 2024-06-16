@@ -5,6 +5,7 @@ they are saved here for backup.
 
 .stigg-paywall-container {
   --stigg-plan-free-color: #7950ed;
+  --stigg-plan-essential-color: #20a4f3;
   --stigg-plan-enterprise-color: #31c587;
   --stigg-plan-background-color: #22273c;
   --stigg-plan-border-color: #373d57;
@@ -42,6 +43,10 @@ they are saved here for backup.
   border-top: 10px solid var(--stigg-plan-enterprise-color);
 }
 
+.stigg-plan-amplication-essential {
+  border-top: 10px solid var(--stigg-plan-essential-color);
+}
+
 /* Current Plan text */
 .stigg-current-plan .stigg-plan-header::before {
   display: block;
@@ -57,12 +62,13 @@ they are saved here for backup.
   font-weight: bold;
 }
 
-.stigg-plan-amplication-free.stigg-current-plan .stigg-plan-header::before {
-  color: var(--stigg-plan-free-color);
+.stigg-plan-amplication-essential.stigg-current-plan
+  .stigg-plan-header::before {
+  color: var(--stigg-plan-essential-color);
 }
 
-.stigg-current-plan .stigg-paywall-plan-button {
-  visibility: hidden;
+.stigg-plan-amplication-free.stigg-current-plan .stigg-plan-header::before {
+  color: var(--stigg-plan-free-color);
 }
 
 /* plan header */
@@ -108,7 +114,7 @@ they are saved here for backup.
   text-align: center;
   color: white;
   font-family: Poppins, sans-serif;
-  height: 130px;
+  min-height: 130px;
   position: relative;
 }
 
@@ -191,6 +197,12 @@ they are saved here for backup.
   background: var(--stigg-plan-free-color);
 }
 
+.stigg-plan-amplication-essential
+  .stigg-entitlement-row-container
+  > div:first-child {
+  background: var(--stigg-plan-essential-color);
+}
+
 /* support line item */
 .stigg-entitlement-row-container:last-child {
   margin: 0 -24px;
@@ -242,6 +254,15 @@ they are saved here for backup.
   opacity: 0.9;
 }
 
+.stigg-plan-amplication-essential .stigg-paywall-plan-button {
+  background-color: var(--stigg-plan-essential-color);
+}
+
+.stigg-plan-amplication-essential .stigg-paywall-plan-button:hover {
+  background-color: var(--stigg-plan-essential-color);
+  opacity: 0.9;
+}
+
 .stigg-paywall-plan-button-text {
   color: white;
   font-family: Poppins, sans-serif;
@@ -255,7 +276,6 @@ they are saved here for backup.
 .stigg-trial-days-left-text {
   color: var(--stigg-plan-enterprise-color);
 }
-.stigg-plan-amplication-enterprise.stigg-current-plan
-  .stigg-paywall-plan-button {
-  visibility: visible;
+.stigg-plan-amplication-essential .stigg-trial-days-left-text {
+  color: var(--stigg-plan-essential-color);
 }
