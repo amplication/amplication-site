@@ -12,14 +12,14 @@ export const PricingPlans = () => {
         },
       });
       window.location.href = 'https://app.amplication.com/login';
-    } else if (plan.id === 'plan-amplication-pro') {
+    } else if (plan.id === 'plan-amplication-essential') {
       analytics.event({
-        action: 'upgradeProClicked',
+        action: 'upgradeEssentialClicked',
         params: {
           buttonLocation: 'website-pricing',
         },
       });
-      window.location.href = 'https://app.amplication.com/purchase';
+      window.location.href = `${process.env.NEXT_PUBLIC_PURCHASE_URL}?plan=essential`;
     } else {
       analytics.event({
         action: 'enterpriseContactUsClicked',
@@ -45,7 +45,6 @@ export const PricingPlans = () => {
               startNew: 'Start Now',
               upgrade: 'Upgrade Now',
               custom: 'Contact Us',
-              startTrial: (plan) => `Book a Demo`,
             },
             price: {
               free: {
