@@ -4,8 +4,6 @@ import innaBell from '../../../../public/images/team/inna-bell.png';
 import yuvalHanaz from '../../../../public/images/team/yuval-hazaz.png';
 import vikaGoncharuk from '../../../../public/images/team/vika-goncharuk.png';
 import morHagbi from '../../../../public/images/team/mor-hagbi.png';
-import amitBarletz from '../../../../public/images/team/amit-barletz.png';
-import danieleIasella from '../../../../public/images/team/daniele.png';
 import mulyGottlieb from '../../../../public/images/team/muly.png';
 import orenAlaluf from '../../../../public/images/team/oren.png';
 import pazYanover from '../../../../public/images/team/paz.png';
@@ -97,45 +95,6 @@ const members = [
       {
         href: 'https://github.com/VikaGon',
         iconClass: 'github',
-      },
-    ],
-  },
-  {
-    name: 'Amit Barletz',
-    position: 'Full Stack Engineer',
-    image: amitBarletz,
-    links: [
-      {
-        href: 'https://www.linkedin.com/in/amitbarletz/',
-        iconClass: 'linkedin',
-      },
-      {
-        href: 'https://github.com/abrl91',
-        iconClass: 'github',
-      },
-      {
-        href: 'https://twitter.com/BarletzA52',
-        iconClass: 'twitter',
-      },
-    ],
-  },
-
-  {
-    name: 'Daniele Iasella',
-    position: 'Principal Engineer',
-    image: danieleIasella,
-    links: [
-      {
-        href: 'https://www.linkedin.com/in/danieleiasella/',
-        iconClass: 'linkedin',
-      },
-      {
-        href: 'https://github.com/overbit',
-        iconClass: 'github',
-      },
-      {
-        href: 'https://twitter.com/ov3rbit',
-        iconClass: 'twitter',
       },
     ],
   },
