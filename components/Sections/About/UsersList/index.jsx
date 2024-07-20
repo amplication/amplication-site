@@ -80,12 +80,6 @@ const UsersList = () => {
       description: 'Battery Ventures',
     },
     {
-      avatar: UserAvatar9,
-      name: 'Scott Williamson',
-      position: 'Product Advisor',
-      description: 'ex CPO @ GitLab & VPP<br />\n@ SendGrid / Twilio',
-    },
-    {
       avatar: UserAvatar22,
       name: 'Opher Kahane',
       position: 'Investor and Entrepreneur',
@@ -150,12 +144,6 @@ const UsersList = () => {
       name: 'Liran Tal',
       position: 'Director of Developer Advocacy',
       description: 'Snyk',
-    },
-    {
-      avatar: UserAvatar20,
-      name: 'Paz Yanover',
-      position: 'VP Product',
-      description: 'Hyro, Prev. Testim',
     },
     {
       avatar: UserAvatar21,
