@@ -2,6 +2,7 @@ import HeroBlock from '../components/Sections/Pricing/HeroBlock';
 import CTA from '../components/Sections/Pricing/CTA';
 import PricingFAQ from '../components/Sections/Pricing/PricingFAQ';
 import { PromoBanner } from '../components/Sections/Pricing/PromoBanner';
+import { AwsMarketplaceButton } from '../components/Sections/Pricing/AwsMarketplaceButton';
 import { NextSeo } from 'next-seo';
 import { MainLayout } from '../layouts';
 import dynamic from 'next/dynamic';
@@ -36,6 +37,9 @@ const Pricing = () => {
         <div className="pricing-page">
           <HeroBlock />
           <PromoBanner />
+          <PageSection addMargins >
+            <AwsMarketplaceButton />
+          </PageSection>
           <PageSection addMargins className={"min-h-[400px]"}>
             <PricingPlans />
           </PageSection>

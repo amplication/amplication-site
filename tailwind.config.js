@@ -144,6 +144,7 @@ module.exports = {
         'error-red': '#f85b6e',
         'light-turquoise': '#41CADD',
         'light': '#f4f4f7',
+        'success': '#31C587',
       },
       aspectRatio: {
         thumbnail: '238 / 125',
