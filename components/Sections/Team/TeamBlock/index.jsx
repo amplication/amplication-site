@@ -33,7 +33,7 @@ const members = [
   },
   {
     name: 'Inna Bell',
-    position: 'Head of Marketing',
+    position: 'VP Marketing',
     image: innaBell,
     links: [
       {
