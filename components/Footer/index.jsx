@@ -18,7 +18,7 @@ const Footer = ({ compactView, hideBanner }) => {
               {!hideBanner && (
                 <div className=" bg-light-blue">
                   <StartNow
-                    title="Build faster, with no limits"
+                    title="Build smarter, better, faster"
                     description="Discover how Amplication Enterprise can help you build powerful, scalable, and secure applications tailored to your business needs."
                     linkPrimary={{
                       href: process.env.NEXT_PUBLIC_BOOK_MEETING_URL,

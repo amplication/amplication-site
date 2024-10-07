@@ -11,23 +11,19 @@ const HeroBlock = () => {
         showTechStack={true}
         title={
           <div className="max-w-[480px] desktop:max-w-[680px]">
-            The Only{' '}
-            <span className="text-purple-bright">
-              Production-Ready AI-Powered
-            </span>{' '}
-            Code Generation
+            Automate and Standardize Your Backend Development
           </div>
         }
         subTitle={null}
         subText={
           <>
-            Build new services, extend existing applications or modernize legacy
-            systems with Amplication AI. Go from idea to production in minutes,
-            with code that is built to scale.
+            Quickly build, maintain, and scale backend services that embed your
+            company’s best practices and standards. Avoid fragmented workflows
+            and ensure your development teams follow the Golden Paths.
           </>
         }
         mainButton={{
-          text: 'Start Free',
+          text: 'Free Trial',
           href: 'https://app.amplication.com',
           eventName: 'startNowClicked',
           eventParams: {
