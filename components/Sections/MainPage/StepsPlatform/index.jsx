@@ -6,7 +6,8 @@ import WidePanelWithImage from '../../../Common/WidePanelWithImage';
 
 const features = [
   {
-    title: 'Transform Platform Engineering with Tailor-Made Live Templates',
+    title:
+      'Transform Platform Engineering with Tailor-made Live Templates & Service Catalog',
     image: ImageProductOverview,
     secondaryBtn: {
       title: 'Try Free',
