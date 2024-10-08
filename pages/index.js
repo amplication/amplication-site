@@ -48,10 +48,8 @@ const Home = () => {
   return (
     <>
       <NextSeo
-        title=".NET and Node.js App Development: Open Source Platform | Amplication"
-        description="Amplication is the most flexible open-source platform for .NET and Node.js app development.
-        We enable developers to auto-generate production-ready backend in minutes. Design models and roles,
-         deploy your app, connect with REST or GraphQL API, sync with Git. You own the code."
+        title="Standardize and Automate Backend Development for Platform Engineering Teams | Amplication"
+        description="Discover how Amplication can streamline your platform engineering with live templates, AI-powered automation, and continuous updates. Start with a free trial or book a demo today!"
         openGraph={{
           type: 'website',
           images: [

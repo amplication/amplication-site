@@ -6,7 +6,8 @@ import WidePanelWithImage from '../../../Common/WidePanelWithImage';
 
 const features = [
   {
-    title: 'Empower Your Platform Teams with Tailor-Made Backend Solutions',
+    title:
+      'Transform Platform Engineering with Tailor-made Live Templates & Service Catalog',
     image: ImageProductOverview,
     secondaryBtn: {
       title: 'Try Free',
@@ -21,8 +22,8 @@ const features = [
     title: 'Prepare with Live Templates ',
     image: ImagePlugins,
     secondaryBtn: {
-      title: 'View Plugins',
-      href: '/plugins',
+      title: 'Get a Demo',
+      href: process.env.NEXT_PUBLIC_BOOK_MEETING_URL,
     },
     primaryBtn: undefined,
     content:
