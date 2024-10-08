@@ -3,6 +3,8 @@ import ImageGitProviders from '../../../../public/images/product/image-git-provi
 import ImagePlugins from '../../../../public/images/product/image-plugins.svg';
 import ImageProductOverview from '../../../../public/images/product/product-overview.svg';
 import WidePanelWithImage from '../../../Common/WidePanelWithImage';
+import ImageExtend from '../../../../public/images/product/image-jovu-extend.svg';
+import ImageDeploy from '../../../../public/images/product/image-jovu-deploy.svg';
 
 const features = [
   {
@@ -31,7 +33,7 @@ const features = [
   },
   {
     title: 'Build with AI-powered Automation',
-    image: ImageCodeOwnership,
+    image: ImageExtend,
     secondaryBtn: {
       title: 'Learn More',
       href: 'https://docs.amplication.com/',
@@ -42,7 +44,7 @@ const features = [
   },
   {
     title: 'Maintain Continuously ',
-    image: ImageGitProviders,
+    image: ImageDeploy,
     secondaryBtn: {
       title: 'Talk to Expert',
       href: process.env.NEXT_PUBLIC_BOOK_MEETING_URL,
