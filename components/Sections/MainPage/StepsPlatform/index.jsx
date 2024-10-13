@@ -1,10 +1,9 @@
 import ImageCodeOwnership from '../../../../public/images/product/image-code-ownership.png';
 import ImageGitProviders from '../../../../public/images/product/image-git-providers.svg';
 import ImagePlugins from '../../../../public/images/product/image-plugins.svg';
-import ImageProductOverview from '../../../../public/images/product/product-overview.svg';
+import ImageProductOverview from '../../../../public/images/product/image-tech-debt.svg';
 import WidePanelWithImage from '../../../Common/WidePanelWithImage';
 import ImageExtend from '../../../../public/images/product/image-jovu-extend.svg';
-import ImageDeploy from '../../../../public/images/product/image-jovu-deploy.svg';
 
 const features = [
   {
@@ -44,7 +43,7 @@ const features = [
   },
   {
     title: 'Maintain Continuously ',
-    image: ImageDeploy,
+    image: ImageGitProviders,
     secondaryBtn: {
       title: 'Talk to Expert',
       href: process.env.NEXT_PUBLIC_BOOK_MEETING_URL,

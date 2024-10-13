@@ -60,7 +60,9 @@ const WidePanelWithImage = ({
           )}
         </div>
       </div>
-      <div className={`order-1 ${fullWidth && 'flex items-center'}`}>
+      <div
+        className={`order-1 ${fullWidth && 'flex items-center justify-center'}`}
+      >
         {image && <Image src={image} alt={title} objectFit={'cover'} />}
       </div>
     </div>
