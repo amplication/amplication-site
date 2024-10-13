@@ -1,8 +1,9 @@
 import ImageCodeOwnership from '../../../../public/images/product/image-code-ownership.png';
 import ImageGitProviders from '../../../../public/images/product/image-git-providers.svg';
 import ImagePlugins from '../../../../public/images/product/image-plugins.svg';
-import ImageProductOverview from '../../../../public/images/product/product-overview.svg';
+import ImageProductOverview from '../../../../public/images/product/image-tech-debt.svg';
 import WidePanelWithImage from '../../../Common/WidePanelWithImage';
+import ImageExtend from '../../../../public/images/product/image-jovu-extend.svg';
 
 const features = [
   {
@@ -31,7 +32,7 @@ const features = [
   },
   {
     title: 'Build with AI-powered Automation',
-    image: ImageCodeOwnership,
+    image: ImageExtend,
     secondaryBtn: {
       title: 'Learn More',
       href: 'https://docs.amplication.com/',
