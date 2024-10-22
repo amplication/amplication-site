@@ -38,8 +38,8 @@ export const PricingPlans = () => {
           textOverrides={{
             entitlementsTitle: (plan) => {
               return plan.basePlan
-                ? `Everything in ${plan.basePlan.displayName} plan, plus:`
-                : 'All core backend functionality:';
+                ? `Backend standardization and optimization:`
+                : `Code generation functionality:`;
             },
             planCTAButton: {
               startNew: 'Start Now',
