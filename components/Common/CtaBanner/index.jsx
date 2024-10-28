@@ -30,7 +30,7 @@ const CtaBanner = ({ bgVersion, title, subTitle, buttonText, buttonUrl }) => {
   );
   const defaultSubTitle = ' ';
   const defaultButtonText = 'Get a demo';
-  const defaultButtonUrl = 'https://meetings-eu1.hubspot.com/muly/product-review-with-amplication-vp-engineering';
+  const defaultButtonUrl = process.env.NEXT_PUBLIC_BOOK_MEETING_URL;
 
   return (
     <div
