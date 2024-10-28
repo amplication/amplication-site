@@ -25,12 +25,12 @@ const CtaBanner = ({ bgVersion, title, subTitle, buttonText, buttonUrl }) => {
 
   const defaultTitle = (
     <>
-      Instantly generate <br /> production-ready backend
+      Automate and standardize <br /> backend development.
     </>
   );
-  const defaultSubTitle = 'Never waste time on repetitive coding again.';
-  const defaultButtonText = 'Try Now';
-  const defaultButtonUrl = 'https://app.amplication.com/';
+  const defaultSubTitle = ' ';
+  const defaultButtonText = 'Get a demo';
+  const defaultButtonUrl = process.env.NEXT_PUBLIC_BOOK_MEETING_URL;
 
   return (
     <div
