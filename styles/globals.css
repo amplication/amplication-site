@@ -185,6 +185,10 @@
     border-radius: 8px;
   }
 
+  .blog-content strong {
+    font-weight: bold;
+  }
+
   .blog-content pre code.hljs {
     @apply bg-dark-black-80 my-8;
   }
