@@ -6,15 +6,15 @@ import Slider from '../components/Sections/Enterprise/Slider';
 import WidePanelWithImage from '../components/Common/WidePanelWithImage';
 
 
-import ImageHero from '../public/images/product/image-jovu-extend.svg';
+import ImageHero from '../public/images/product/image-plugins-hero.svg';
 
-import IconDev from '../public/images/icons/icon-development.svg';
-import IconDeploy from '../public/images/icons/icon-deploy.svg';
-import IconCloud from '../public/images/icons/icon-cloud.svg';
+import IconPlugin from '../public/images/icons/icon-plugin.svg';
+import IconConsole from '../public/images/icons/icon-console.svg';
+import IconPluginSystem from '../public/images/icons/icon-plugin-system.svg';
 
-import ImageDescribe from '../public/images/product/image-jovu-describe.svg';
-import ImageExtend from '../public/images/product/image-jovu-extend.svg';
-import ImageOwn from '../public/images/product/image-jovu-own.png';
+import ImageExtend from '../public/images/product/image-jovu-describe.svg';
+import ImagePluginCategory from '../public/images/product/image-plugin-category.svg';
+import ImageCatalog from '../public/images/product/image-catalog.svg';
 
 
 import StartNow from '../components/Sections/Enterprise/StartNow';
@@ -26,18 +26,18 @@ const cards = [
     title: 'Rich plugins catalog',
     subTitle:
       "Use plugins from our  catalog to connect with a wide array of third-party services, including popular cloud providers, security tools, and CI/CD pipelines.",
-    icon: IconDev,
+    icon: IconPlugin,
   },
   {
     title: 'Build your own plugins',
     subTitle:
       "Easily build internal plugins that integrate seamlessly with your home grown tech, internal tools and processes.",
-    icon: IconCloud,
+    icon: IconPluginSystem,
   },
   {
     title: 'Bespoke solutions',
     subTitle: "Build bespoke live templates for your backend services, tailor-made to meet the unique needs of your organization.",
-    icon: IconDeploy,
+    icon: IconConsole,
   },
 
 ];
@@ -45,8 +45,8 @@ const cards = [
 const features = [
 
   {
-    title: 'Integrate with any third-party service or internal tool. Create a smooth experience for your development teams.',
-    image: ImageDescribe,
+    title: 'Your Integrations. Your Standards. Your Best Practices. ',
+    // image: ImageDescribe,
     secondaryBtn: {
       title: 'Learn More',
       href: 'https://docs.amplication.com/platform-console/#platform-console-templates',
@@ -54,7 +54,7 @@ const features = [
     primaryBtn: undefined,
 
     content:
-      "Amplication integrates with nearly any 3rd party technology out there. Our rich plugin catalog offers a variety of ready-to-use integrations and building blocks to generate additional resources, while our private plugin capabilities allow for bespoke solutions tailored specifically to your organization’s needs.",
+      "Our rich plugin catalog offers ready-to-use integrations and building blocks to enhance your development process. With private plugins you can incorporate your organization’s best practices and standards, enabling tailored solutions that meet your specific needs.",
     fullWidth: true,
   },
   {
@@ -70,7 +70,7 @@ const features = [
   },
   {
     title: 'Rich out-of-the-box plugin catalog',
-    image: ImageOwn,
+    image: ImagePluginCategory,
     secondaryBtn: {
       title: 'Plugin Catalog',
       href: './plugins',
@@ -81,7 +81,7 @@ const features = [
   },
   {
     title: 'Custom live templates',
-    image: ImageOwn,
+    image: ImageCatalog,
     secondaryBtn: {
       title: 'Get a Demo',
       href: process.env.NEXT_PUBLIC_BOOK_MEETING_URL,
