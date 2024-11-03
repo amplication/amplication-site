@@ -44,14 +44,17 @@ export const PricingPlans = () => {
             planCTAButton: {
               startNew: 'Start Now',
               upgrade: 'Upgrade Now',
-              custom: 'Contact Us',
+              custom: 'Custom',
+              startTrial: () => {
+                return 'Book a Demo';
+              },
             },
             price: {
               free: {
                 price: '$0',
                 unit: '',
               },
-              custom: 'Contact Us',
+              custom: 'Custom',
               priceNotSet: 'Price not set',
             },
           }}

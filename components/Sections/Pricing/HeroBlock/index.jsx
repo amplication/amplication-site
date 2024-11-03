@@ -4,7 +4,7 @@ const HeroBlock = () => {
       <div className="w-full max-w-container m-container p-container laptop:max-w-container-desktop laptop:m-container-desktop laptop:p-container-desktop">
         <div className="flex flex-col items-center content-center text-center ">
           <h1 className="text-5xl font-bold mb-4 ">
-            Accelerate your backend development.
+            Boost your platform engineering
             <div className="text-secondary-purple">Start FREE </div>
           </h1>
         </div>
