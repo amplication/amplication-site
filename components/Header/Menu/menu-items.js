@@ -26,13 +26,30 @@ import IconDiscord from '../../../public/menu/icon-discord.svg';
 import IconDocs from '../../../public/menu/icon-docs.svg';
 import IconGithub from '../../../public/menu/icon-github.svg';
 
-const PRODUCTS_ITEMS_1 = [
+const PLATFORM_MENU_ITEMS_1 = [
+
+    {
+        title: 'Live Templates',
+        image: IconBuildNew,
+        url: '/live-templates',
+        description: 'Tailor-made Templates to Keep Your Services Always Up-to-Date',
+    },
+    {
+        title: 'Plugins',
+        image: IconPlugins,
+        url: '/extend-with-plugins',
+        description: 'Customize Your Development with Amplication’s Plugins',
+    },
     {
         title: 'Jovu',
         image: IconBackend,
         url: '/jovu--production-ready-ai-code-generation',
         description: 'From idea to production in minutes',
     },
+
+];
+
+const PRODUCTS_ITEMS_1 = [
     {
         title: 'Build new services',
         image: IconBuildNew,
@@ -45,10 +62,6 @@ const PRODUCTS_ITEMS_1 = [
         url: '/build-api-on-existing-db',
         description: 'Head start development using existing DB',
     },
-
-];
-
-const PRODUCTS_ITEMS_2 = [
     {
         title: 'Break the monolith',
         image: IconBTM,
@@ -61,14 +74,10 @@ const PRODUCTS_ITEMS_2 = [
         url: '/application-modernization',
         description: 'Transform and migrate legacy systems',
     },
-    {
-        title: 'Plugins',
-        image: IconPlugins,
-        url: '/plugins',
-        description: 'Extend and customize your services',
-    },
 
 ];
+
+
 
 
 
@@ -109,10 +118,7 @@ const PRODUCT_MENU_ITEMS = [
         title: 'Products',
         menuItems: PRODUCTS_ITEMS_1,
     },
-    {
-        title: ' ',
-        menuItems: PRODUCTS_ITEMS_2,
-    }
+
 ]
 
 
@@ -123,6 +129,13 @@ const CUSTOMERS_MENU_ITEMS = [
     {
         menuItems: CUSTOMERS_ITEMS_2,
     }
+]
+
+const PLATFORM_MENU_ITEMS = [
+    {
+        menuItems: PLATFORM_MENU_ITEMS_1,
+    },
+
 ]
 
 
@@ -225,13 +238,18 @@ export const LEFT_MENU_ITEMS = [
 export const RIGHT_MENU_ITEMS = [
 
     {
-        title: 'Product',
+        title: 'Platform',
+        align: "start",
+        columns: PLATFORM_MENU_ITEMS,
+    },
+    {
+        title: 'Solutions',
         align: "start",
         columns: PRODUCT_MENU_ITEMS,
     },
     {
-        title: 'Enterprise',
-        url: '/enterprise',
+        title: 'Plugins',
+        url: '/plugins',
     },
     {
         title: 'Pricing',
@@ -277,7 +295,7 @@ export const LOGIN_MENU_ITEM = {
 export const FOOTER_GROUPS = [
     {
         title: 'Product',
-        items: [...PRODUCTS_ITEMS_1, ...PRODUCTS_ITEMS_2]
+        items: [...PRODUCTS_ITEMS_1]
 
     },
     {
