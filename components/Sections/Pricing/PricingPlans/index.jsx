@@ -27,7 +27,7 @@ export const PricingPlans = () => {
           buttonLocation: 'website-pricing',
         },
       });
-      window.location.href = process.env.NEXT_PUBLIC_BOOK_MEETING_URL;
+      window.location.href = 'https://app.amplication.com/login';
     }
   }, []);
 
@@ -45,9 +45,6 @@ export const PricingPlans = () => {
               startNew: 'Start Now',
               upgrade: 'Upgrade Now',
               custom: 'Custom',
-              startTrial: () => {
-                return 'Book a Demo';
-              },
             },
             price: {
               free: {

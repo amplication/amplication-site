@@ -5,7 +5,9 @@ const HeroBlock = () => {
         <div className="flex flex-col items-center content-center text-center ">
           <h1 className="text-5xl font-bold mb-4 ">
             Boost your platform engineering
-            <div className="text-secondary-purple">Start FREE </div>
+            <div className="text-secondary-purple">
+              Start 14-day Enterprise FREE trial
+            </div>
           </h1>
         </div>
       </div>
