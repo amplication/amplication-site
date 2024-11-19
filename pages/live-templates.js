@@ -58,7 +58,7 @@ const features = [
       "Live Templates serve as dynamic foundations for your backend services. Create templates that match your organization’s unique standards, best practices and tech."
   },
   {
-    title: 'Dynamic, Real-Time Updates',
+    title: 'Dynamic, real-time updates',
     image: ImageExtend,
     primaryBtn: {
       title: 'Talk to Expert',
@@ -69,7 +69,7 @@ const features = [
       "Modifications made to live templates can trigger immediate, automated updates to dependent services, reflecting new standards or improvements right away. This continuous synchronization reduces errors, technical debt and aligns every service with the latest organizational guidelines and technology shifts."
   },
   {
-    title: 'Accelerate with Self-Serve ',
+    title: 'Accelerate with self-serve ',
     image: ImageOwn,
     secondaryBtn: {
       title: 'Try Free',
@@ -100,7 +100,7 @@ const JovuPage = () => {
           <PageHero
             title={
               <>
-                Amplication&apos;s Live Templates: Tailor-made Templates to Keep Your Services <span className="text-purple-bright">Always Up-to-Date</span>.
+                Amplication&apos;s Live Templates: Keeping Services <span className="text-purple-bright">Always Up-to-Date</span>.
               </>
             }
             subTitle={''}
@@ -133,7 +133,7 @@ const JovuPage = () => {
         </PageSection>
         <PageSection>
           <h2 className="my-12 mx-auto text-[32px] !font-semibold leading-[48px] tracking-normal text-center max-w-[960px]">
-            Build, Adapt and Evolve Your Backend Services in Real-Time with  Live Templates.
+            Build, adapt and evolve your backend services in real-time with Live Templates.
           </h2>
           <CardsList
             cards={cards}

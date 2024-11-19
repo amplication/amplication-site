@@ -45,7 +45,7 @@ const cards = [
 const features = [
 
   {
-    title: 'Your Integrations. Your Standards. Your Best Practices. ',
+    title: 'Your integrations. Your standards. Your best practices. ',
     // image: ImageDescribe,
     secondaryBtn: {
       title: 'Learn More',

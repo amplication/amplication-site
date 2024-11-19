@@ -11,7 +11,7 @@ const HeroBlock = () => {
         showTechStack={true}
         title={
           <div className="max-w-[480px] desktop:max-w-[680px]">
-            Automate and Standardize Your Backend Development
+            Automate and Standardize Backend Development
           </div>
         }
         subTitle={null}
