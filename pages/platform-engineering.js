@@ -8,44 +8,56 @@ import WidePanelWithImage from '../components/Common/WidePanelWithImage';
 
 import ImageHero from '../public/images/product/image-tech-debt.svg';
 
+import ImageTemplates from '../public/images/product/image-templates.svg';
+import ImageCatalog from '../public/images/product/image-catalog.svg';
 import IconDev from '../public/images/icons/icon-development.svg';
 import IconDeploy from '../public/images/icons/icon-deploy.svg';
 import IconCloud from '../public/images/icons/icon-cloud.svg';
 
-import ImageTemplates from '../public/images/product/image-templates.svg';
+import ImageDescribe from '../public/images/product/image-jovu-describe.svg';
 import ImageExtend from '../public/images/product/image-jovu-extend.svg';
-import ImageCatalog from '../public/images/product/image-catalog.svg';
+import ImageOwn from '../public/images/product/image-jovu-own.png';
+import ImageTechDebtView from '../public/images/product/image-tech-debt-view.svg';
 
 
 import StartNow from '../components/Sections/Enterprise/StartNow';
 import PageHero from '../components/Common/PageHero';
 import Image from 'next/image';
+import TestimonialsSlider from '../components/Sections/Enterprise/Testimonials/testimonials-slider';
 
 const cards = [
   {
-    title: 'Bring Your Own Flavor ',
+    title: 'Accelerated time-to-code',
     subTitle:
-      "Create templates embedding your organization’s best practices and standards, ensuring every project starts on the right footing and remains aligned across its lifecycle. ",
+      "Spin up new services in no time with automated scaffolding and AI-powered code generation.",
     icon: IconDev,
   },
   {
-    title: 'Golden Paths',
+    title: 'Developer autonomy ',
     subTitle:
       "Set the Golden Paths for your engineering teams to accelerate delivery, onboard new teammates faster via self-service, and prevent drift.",
     icon: IconCloud,
   },
   {
-    title: 'Live Updates ',
-    subTitle: "Updates or changes to a template are automatically reflected across the associated services, triggering pull requests with necessary code changes without manual intervention.",
+    title: 'Increased efficiency',
+    subTitle: "Automatically sync updates across projects and reduce tech debt. Your entire portfolio stays modern without manual intervention.",
     icon: IconDeploy,
   },
 
 ];
 
+const mainFeature = {
+  title: 'Direct tools for direct results: scaffolding, Golden Paths, standardization, self-service, and maintenance- simplified.',
+  secondaryBtn: undefined,
+  primaryBtn: undefined,
+  content:
+    "Amplication equips platform teams with straightforward, powerful tools to speed up development, standardize processes, and maintain services up-to-date, all while reducing cognitive load and technical debt. "
+}
+
 const features = [
 
   {
-    title: 'Tailor-made Live Templates',
+    title: 'Efficient scaffolding',
     image: ImageTemplates,
     secondaryBtn: {
       title: 'Learn More',
@@ -53,10 +65,10 @@ const features = [
     },
     primaryBtn: undefined,
     content:
-      "Live Templates serve as dynamic foundations for your backend services. Create templates that match your organization’s unique standards, best practices and tech."
+      "Speed up your way to production with auto- generation of all the infrastructure code. Create live templates, with your standards and best practices built-in, that handle the initial heavy lifting, ensuring a consistent start for every project."
   },
   {
-    title: 'Dynamic, real-time updates',
+    title: 'Golden Paths ',
     image: ImageExtend,
     primaryBtn: {
       title: 'Talk to Expert',
@@ -64,10 +76,10 @@ const features = [
     },
     secondaryBtn: undefined,
     content:
-      "Modifications made to live templates can trigger immediate, automated updates to dependent services, reflecting new standards or improvements right away. This continuous synchronization reduces errors, technical debt and aligns every service with the latest organizational guidelines and technology shifts."
+      "Define clear, optimized paths that standardize development processes, making it easier to onboard new engineers and accelerate project timelines. Ensure every developer follows the same set of best practices, reducing errors and aligning outputs."
   },
   {
-    title: 'Accelerate with self-serve ',
+    title: 'Self-serve developer tooling',
     image: ImageCatalog,
     secondaryBtn: {
       title: 'Try Free',
@@ -75,19 +87,30 @@ const features = [
     },
     primaryBtn: undefined,
     content:
-      "Empower your developers with the ability to self-serve from a catalog of pre-approved templates. The Golden Paths defined within the templates guide development, ensuring high-quality outputs and adherence to best practices without slowing down innovation."
+      "Equip developers with comprehensive service catalog, a rich library of pre-approved templates and components to chose from, reducing dependencies between the teams and boosting efficiency. "
+  },
+  {
+    title: 'Reduced technical debt',
+    image: ImageTechDebtView,
+    secondaryBtn: {
+      title: 'Try Free',
+      href: 'https://app.amplication.com/',
+    },
+    primaryBtn: undefined,
+    content:
+      "Automatically update your live templates and applications to reflect the latest organizational standards. Reduce the time and resources spent on manual updates, allowing your team to focus on innovation."
   },
 
 
 
 ]
 
-const JovuPage = () => {
+const PlatformEngineeringPage = () => {
   return (
     <>
       <NextSeo
-        title="Build & Update Backend Services in Real-Time | Amplication Live Templates"
-        description="Discover Amplication's live templates, tailor-made to dynamically update your backend services with patches, versions, and new technologies. No more manual update of the infrastructure code."
+        title="Boost Your Platform Engineering with Amplication"
+        description="Empower devs to build better products faster. Streamline workflows and improve efficiency, simplifying the complexities of modern software development."
       />
 
       <main
@@ -98,12 +121,12 @@ const JovuPage = () => {
           <PageHero
             title={
               <>
-                Amplication&apos;s Live Templates: Keeping Services <span className="text-purple-bright">Always Up-to-Date</span>.
+                Boost Your Platform Engineering with Amplication
               </>
             }
             subTitle={''}
             subText={
-              "Built and managed by platform engineering teams, live templates make sure your projects not only start right but also remain aligned with your company's standards without the need for manual maintenance of infrastructure code."
+              "Empower devs to build better products faster. Streamline workflows and improve efficiency, simplifying the complexities of modern software development."
             }
             mainButton={{
               text: 'Book a Demo',
@@ -130,9 +153,17 @@ const JovuPage = () => {
           <Slider />
         </PageSection>
         <PageSection>
-          <h2 className="my-12 mx-auto text-[32px] !font-semibold leading-[48px] tracking-normal text-center max-w-[960px]">
-            Build, adapt and evolve your backend services in real-time with Live Templates.
-          </h2>
+          <WidePanelWithImage
+            image={mainFeature.image}
+            title={mainFeature.title}
+            content={mainFeature.content}
+            primaryBtn={mainFeature.primaryBtn}
+            secondaryBtn={mainFeature.secondaryBtn}
+            customClasses={mainFeature.customClasses}
+            alternate={false}
+            fullWidth={true}
+          />
+
           <CardsList
             cards={cards}
             customClasses={'tablet:!grid-cols-1 laptop:!grid-cols-3'}
@@ -158,7 +189,7 @@ const JovuPage = () => {
         <PageSection alternate>
           <StartNow
             title="Build smarter, better, faster"
-            description="Discover how Amplication can help you build powerful, scalable, and secure applications tailored to your business needs."
+            description="Discover how Amplication can help you empower your developers to build better products, faster. "
             linkPrimary={{
               href: process.env.NEXT_PUBLIC_BOOK_MEETING_URL,
               title: 'Get a Demo',
@@ -175,7 +206,7 @@ const JovuPage = () => {
     </>
   );
 };
-JovuPage.getLayout = function getLayout(page) {
+PlatformEngineeringPage.getLayout = function getLayout(page) {
   return (
     <MainLayout
       hideFooterBanner={true}
@@ -185,4 +216,4 @@ JovuPage.getLayout = function getLayout(page) {
     </MainLayout>
   );
 };
-export default JovuPage;
+export default PlatformEngineeringPage;

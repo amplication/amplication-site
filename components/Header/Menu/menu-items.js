@@ -51,6 +51,12 @@ const PLATFORM_MENU_ITEMS_1 = [
 
 const PRODUCTS_ITEMS_1 = [
     {
+        title: 'Enhance platform engineering',
+        image: IconBuildNew,
+        url: '/platform-engineering',
+        description: 'Scaffolding, Golden Paths, standardization, maintenance',
+    },
+    {
         title: 'Build new services',
         image: IconBuildNew,
         url: '/build-new-services',
@@ -115,7 +121,6 @@ const CUSTOMERS_ITEMS_2 = [
 
 const PRODUCT_MENU_ITEMS = [
     {
-        title: 'Products',
         menuItems: PRODUCTS_ITEMS_1,
     },
 
