@@ -8,7 +8,6 @@ const HeroBlock = () => {
   return (
     <>
       <PageHero
-        showTechStack={true}
         title={
           <div className="max-w-[480px] desktop:max-w-[680px]">
             Automate and Standardize Backend Development

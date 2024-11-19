@@ -14,7 +14,6 @@ const PageHero = ({
   mainButton,
   secondaryButton,
   imageNode,
-  showTechStack = false,
 }) => {
   const handleMainClick = useCallback(() => {
     analytics.event({
@@ -62,18 +61,6 @@ const PageHero = ({
               />
             )}
           </div>
-          {showTechStack && (
-            <div className="flex items-center justify-center laptop:justify-start tablet:items-center mt-4 gap-4">
-              <span className="text-lg font-bold">Supported Technologies:</span>
-
-              <div>
-                <Image src={dotnet} alt={'.NET'} />
-              </div>
-              <div>
-                <Image src={nodejs} alt={'Node.js'} />
-              </div>
-            </div>
-          )}
         </div>
         <div className="relative flex items-center max-w-[600px] mb-8 w-full laptop:min-h-[600px] laptop:!max-w-[51%] laptop:mb-0 ">
           <div className="">{imageNode}</div>
@@ -100,7 +87,6 @@ PageHero.propTypes = {
     eventParams: PropTypes.object,
   }),
   imageNode: PropTypes.node,
-  showTechStack: PropTypes.bool,
 };
 
 export default PageHero;
