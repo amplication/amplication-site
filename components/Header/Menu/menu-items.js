@@ -299,7 +299,13 @@ export const LOGIN_MENU_ITEM = {
 
 export const FOOTER_GROUPS = [
     {
-        title: 'Product',
+        title: 'Platform',
+        items: [...PLATFORM_MENU_ITEMS_1]
+
+    },
+
+    {
+        title: 'Solutions',
         items: [...PRODUCTS_ITEMS_1]
 
     },
@@ -315,19 +321,6 @@ export const FOOTER_GROUPS = [
         title: 'Resources',
         items: RESOURCES_MENU_ITEMS
     },
-    {
-        items: [
-            {
-                title: 'Enterprise',
-                url: '/enterprise',
-            },
-            {
-                title: 'Pricing',
-                url: '/pricing',
-            },
-        ]
-    },
-
     {
         title: 'About',
         items: ABOUT_ITEMS
