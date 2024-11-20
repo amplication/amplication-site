@@ -299,7 +299,7 @@ export const LOGIN_MENU_ITEM = {
 
 export const FOOTER_GROUPS = [
     {
-        title: 'Platform',
+        title: 'Platform ',
         items: [...PLATFORM_MENU_ITEMS_1]
 
     },
