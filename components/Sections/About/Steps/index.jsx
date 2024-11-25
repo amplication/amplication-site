@@ -10,9 +10,6 @@ const Steps = () => {
               <h2 className="main-title bracket-box !text-4xl large:!text-[50px] !leading-tight max-w-[400px]">
                 <span>Who</span> are we?
               </h2>
-              <Link href={'/team'} passHref={true}>
-                <a className="btn btn-primary btn-lg">Meet Our Team</a>
-              </Link>
             </div>
             <div className="col-md-12 col-lg-6">
               <div className="feature-description text-sm tablet:text-base desktop:text-lg text-white large:w-[124%] max-w-[642px]">
