@@ -223,11 +223,6 @@ const ABOUT_ITEMS = [
 
     },
     {
-        title: 'Team',
-        url: '/team',
-
-    },
-    {
         title: 'Contact us',
         url: '/contact-us',
 
