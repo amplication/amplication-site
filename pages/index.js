@@ -4,6 +4,7 @@ import Soc2Banner from '../components/Common/SOC2';
 import Facts from '../components/Sections/Enterprise/Facts';
 import HeroBlock from '../components/Sections/Enterprise/HeroBlock';
 import Slider from '../components/Sections/Enterprise/Slider';
+import IntegrateWithIdp from '../components/Sections/Enterprise/IntegrateWithIdp';
 import GetList from '../components/Sections/MainPage/GetList';
 import { MainLayout } from '../layouts';
 import CardsList from '../components/Common/CardsList';
@@ -11,6 +12,7 @@ import IconDev from '../public/images/icons/icon-development.svg';
 import IconDeploy from '../public/images/icons/icon-deploy.svg';
 import IconCloud from '../public/images/icons/icon-cloud.svg';
 import IconCollab from '../public/images/icons/icon-10.svg';
+
 
 
 
@@ -70,9 +72,14 @@ const Home = () => {
         <PageSection light className={'py-5'} innerClassName={"flex-grow"}>
           <Slider />
         </PageSection>
-        {/* <PageSection className={"py-10"} alternate>
-          <Facts />
-        </PageSection> */}
+
+        <PageSection alternate className={'py-5 pb-10'} innerClassName={"flex-grow"}>
+          <IntegrateWithIdp />
+        </PageSection>
+
+
+
+
         <PageSection className={'py-5'} >
           <Steps />
         </PageSection>
