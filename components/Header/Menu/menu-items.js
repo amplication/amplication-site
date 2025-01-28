@@ -69,12 +69,6 @@ const PRODUCTS_ITEMS_1 = [
         description: 'Head start development using existing DB',
     },
     {
-        title: 'Break the monolith',
-        image: IconBTM,
-        url: '/break-the-monolith',
-        description: 'Shift to microservices seamlessly',
-    },
-    {
         title: 'Modernize applications',
         image: IconModernize,
         url: '/application-modernization',
