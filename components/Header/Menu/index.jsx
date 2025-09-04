@@ -14,6 +14,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import OutlineButton from '../../Common/Button/button-outline';
 
 import {
   LEFT_MENU_ITEMS,
@@ -136,14 +137,12 @@ const Menu = () => {
         </Navbar>
       </div>
       <div className="hidden laptop:flex ml-1 desktop:ml-4 align-items-center">
-        <Button
-          text="Start Now"
-          backgroundColor="purpleBright"
-          hoverBackgroundColor="purpleBrightHover"
+        <OutlineButton
+          text="Try Overcut.ai"
           isLink={true}
-          onClick={handleStartNowClick}
-          href="https://app.amplication.com/login"
-          className="text-[15px] h-[40px] whitespace-nowrap !px-4"
+          href="https://app.overcut.ai"
+          delayLinkMs={300}
+          className="mb-[0px]"
         />
       </div>
     </>

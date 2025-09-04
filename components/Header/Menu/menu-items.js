@@ -241,19 +241,7 @@ export const RIGHT_MENU_ITEMS = [
         align: "start",
         columns: PRODUCT_MENU_ITEMS,
     },
-    {
-        title: 'Plugins',
-        url: '/plugins',
-    },
-    {
-        title: 'Pricing',
-        url: '/pricing',
-    },
-    {
-        title: 'Customers',
-        align: "end",
-        columns: CUSTOMERS_MENU_ITEMS,
-    },
+
     {
         title: 'Learn',
         align: "end",
@@ -277,7 +265,7 @@ export const RIGHT_MENU_ITEMS = [
 
 
 export const LOGIN_MENU_ITEM = {
-    title: 'Log In',
+    title: 'Log In to Amplication',
     url: 'https://app.amplication.com/login',
     onClickEventName: 'startNowClicked',
     onClickEventParams: {
