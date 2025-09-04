@@ -24,7 +24,7 @@ const MainLayout = ({
       <div className={concatClassnames(
         'banner-offset-wrapper flex-1 flex flex-col',
         paddingTopClasses,
-      )} style={{ marginTop: hasBanner ? '58px' : '0' }}>
+      )} >
         {children}
       </div>
       <Footer
